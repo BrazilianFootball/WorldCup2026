@@ -1,0 +1,32 @@
+ger	Alemanha	6	1
+ksa	Arábia Saudita	11	2
+arg	Argentina	13	3
+aus	Austrália	18	4
+bel	Bélgica	27	5
+bra	Brasil	37	6
+cmr	Camarões	44	7
+can	Canadá	46	8
+qat	Catar	49	9
+kor	Coreia do Sul	60	10
+crc	Costa Rica	63	11
+cro	Croácia	64	12
+den	Dinamarca	67	13
+ecu	Equador	73	14
+esp	Espanha	78	15
+usa	Estados Unidos	80	16
+fra	França	86	17
+gha	Gana	89	18
+ned	Holanda	104	19
+eng	Inglaterra	124	20
+irn	Irã	125	21
+jpn	Japão	132	22
+mar	Marrocos	155	23
+mex	México	161	24
+wal	País de Gales	182	25
+pol	Polônia	190	26
+por	Portugal	192	27
+sem	Senegal	216	28
+srb	Sérvia	218	29
+sui	Suíça	226	30
+tun	Tunísia	238	31
+uru	Uruguai	243	32

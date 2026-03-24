@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="images/favicon.ico">
+        <link rel="stylesheet" href="css/styles.css" type="text/css">
+        <title>EMAp: Copa do mundo</title>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119803899-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-119803899-1');
+        </script>
+    </head>
+    <body>
+        <!-- Início do cabeçalho-->
+        <div class="page">   
+            <header>
+                <div class="container-header">
+                    <div class="logo">
+                        <img src="images/logo.png" />
+                    </div>
+                    <div class="menu">
+                        <ul>
+                            <li><a href="index.html">Início</a></li>
+                            <li>
+                                <a href="descricao.html">Modelos</a>
+                                <ul>
+                                    <li><a href="descricao.html">Forças de ataque e defesa de cada seleção</a></li>
+                                    <li class="last"><a href="pagerank.html">PageRank</a></li>
+                                </ul>
+                            </li>
+                            <li class="active"><a href="previsoes.html">Previsões</a></li>
+                            <li><a href="chances.html">Chances</a></li>
+                            <li><a href="equipe.html">Equipe</a></li>
+							<li><a href="na_midia.html">Na Mídia</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <!--Final do cabeçalho-->
+
+            <!-- Banner das páginas -->
+            <div class="banner-cabecalho" style="background:url('images/banner.png')no-repeat center center / cover">
+                <div class="texto-banner">Previsões: Fase de Grupos</div>
+            </div>
+            <!--Fim do banner das páginas-->
+            <!-- Conteudo principal -->
+            <div class="container">
+                <div id="conteudo">
+                    <div class="rodadas">
+					{% for i in range (8) %}
+                        <!-- GRUPO  {{nome_g[i]}} -->
+                        <div class="grupo-{{nome_g[i]}} grupos">
+                            <div class="faixa-grupo">Grupo {{nome_g[i]}}</div>
+							{% for j in range(3) %}
+                            <!--RODADA {{rodada[j]}} DO GRUPO-->
+                            <div class="rodada-{{rodada[j]}} ly-rodada">        
+                                <div class="label-rodada">{{rodada[j]}}ª Rodada</div>
+                                <div class="esq-rodada qd-rodada">
+                                    <div class="celula letter-blue">Previsão</div>
+                                    <div class="img-rod"><a href = "images/disputas/{{cod[res[i][2*j][0]]}}X{{cod[res[i][2*j][1]]}}.png"> <img src="images/disputas/{{cod[res[i][2*j][0]]}}X{{cod[res[i][2*j][1]]}}.png" width="120" height="158"></a></div>
+                                    <div class="info-rod">
+                                        <div class="celula letter-blue">Resultado</div>
+                                        <div class="celula black-bold"> {{sel[res[i][2*j][0]]}}</div>
+                                        <div class="celula dark blue-bold">{{res[i][2*j][2]}} x {{res[i][2*j][3]}}</div>
+                                        <div class="celula black-bold">{{sel[res[i][2*j][1]]}}</div>
+                                    </div>
+                                </div>
+                                <div class="dir-rodada qd-rodada">
+                                    <div class="celula letter-blue">Previsão</div>
+                                    <div class="img-rod"><a href = "images/disputas/{{cod[res[i][2*j+1][0]]}}X{{cod[res[i][2*j+1][1]]}}.png"> <img src="images/disputas/{{cod[res[i][2*j+1][0]]}}X{{cod[res[i][2*j+1][1]]}}.png" width="120" height="158"></a></div>
+                                    <div class="info-rod">
+                                        <div class="celula letter-blue">Resultado</div>
+                                        <div class="celula black-bold"> {{sel[res[i][2*j+1][0]]}}</div>
+                                        <div class="celula dark blue-bold">{{res[i][2*j+1][2]}} x {{res[i][2*j+1][3]}}</div>
+                                        <div class="celula black-bold">{{sel[res[i][2*j+1][1]]}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <!-- FIM DO GRUPO {{nome_g[i]}} -->
+					{% endfor %}	
+                       
+                    </div>
+                </div>
+                <div id="barra-lateral-direita">
+                    <div class="menu-caixa">
+                        <div class="titulo-menu">Previsões dos jogos</div>
+                        <ul>
+                            <li><a href="#">Fase de grupos</a></li>
+                            <li><a href="#">Oitavas de final</a></li>
+                            <li><a href="#">Quartas de final</a></li>
+                            <li class="last"><a href="#">Semifinal</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-caixa margin-top-40">
+                        <div class="titulo-menu">Chances das seleções</div>
+                        <ul>
+                            <li><a href="#">Início da copa</a></li>
+                            <li><a href="#">Início das oitavas</a></li>
+                            <li><a href="#">Início das quartas</a></li>
+                            <li><a href="#">Início da semifinal</a></li>
+                            <li class="last"><a href="#">Início da final</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Final do conteudo-->
+        <footer id="footer">
+            <div class="container">
+                <div class="logo-rodape column-3"><img src="images/logo-rodape.png" /></div>
+                <div class="txt-middle column-3">Praia de Botafogo, 190 - Rio de Janeiro - RJ, <br>
+                    CEP: 22250-900. Tel:+55 21 3799-5917<br>
+                    emap@fgv.br</div>
+                <div class="txt-right column-3">© FGV 2018</div>
+            </div>
+        </footer>
+
+    </body>
+</html>

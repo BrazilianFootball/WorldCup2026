@@ -1,0 +1,31 @@
+DEV: WEBDC1VDS0005 - https://www-d.fgv.br/emap/copa-2022
+
+Diretório físico:
+
+\WEBDC1VDS0005\AppWeb\www\emap\copa-2022
+
+ 
+
+ 
+
+HML: WEBDC1VHM0028 ; WEBDC1VHM0029 - https://www18-h.fgv.br/emap/copa-2022
+
+Diretório físico:
+
+\WEBDC1VHM0028\AppWeb\www\emap\copa-2022
+
+\WEBDC1VHM0029\AppWeb\www\emap\copa-2022
+
+ 
+
+ 
+
+PROD: WEBDC1VPR0028; WEBDC1VPR0029 - https://www18.fgv.br/emap/copa-2022
+
+Diretório físico:
+
+\WEBDC1VPR0028\AppWeb\www\emap\copa-2022
+
+\WEBDC1VPR0029\AppWeb\www\emap\copa-2022
+
+ 

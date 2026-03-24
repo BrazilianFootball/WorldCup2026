@@ -1,0 +1,32 @@
+qat	Qatar	182	1	9
+ecu	Ecuador	71	2	14
+sen	Senegal	198	3	28
+ned	Netherlands	156	4	19
+eng	England	74	5	20
+irn	Iran	108	6	21
+usa	United States	239	7	16
+wal	Wales	246	8	25
+arg	Argentina	11	9	3
+ksa	Saudi Arabia	196	10	2
+mex	Mexico	146	11	24
+pol	Poland	179	12	26
+fra	France	83	13	17
+aus	Australia	15	14	4
+den	Denmark	66	15	13
+tun	Tunisia	231	16	31
+esp	Spain	214	17	15
+crc	Costa Rica	60	18	11
+ger	Germany	88	19	1
+jpn	Japan	115	20	22
+bel	Belgium	26	21	5
+can	Canada	45	22	8
+mar	Marroco	151	23	23
+cro	Croatia	61	24	12
+bra	Brazil	36	25	6
+srb	Serbia	199	26	29
+sui	Switzerland	219	27	30
+cmr	Cameroon	44	28	7
+por	Portugal	180	29	27
+gha	Ghana	89	30	18
+uru	Uruguay	241	31	32
+kor	South Korea	211	32	10

@@ -1,0 +1,232 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Mar  2 13:16:14 2018
+
+@author: paulo.carvalho
+"""
+import scipy as sp
+from scipy.linalg import norm
+
+def param_ntimes(ntimes, jogos, fator, beta):
+  nj = len(jogos)
+  ngmarc = sp.zeros(ntimes)
+  ngsofr = sp.zeros(ntimes)
+  #beta = sp.ones(ntimes)
+  sbeta = sp.zeros(ntimes)
+  salfa = sp.zeros(ntimes)
+  alfa = sp.zeros(ntimes)
+  beta_ant = sp.zeros(ntimes)
+  hoje = sp.array(jogos).max()
+  tol = 0.00001
+  it = 1
+  while(norm(beta-beta_ant)> tol):
+
+      if (it % 10 == 0):
+          p = sp.concatenate((alfa, beta)) 
+          ll = loglik(p, [alfa[0], fator, jogos])
+          print ([it, norm(beta-beta_ant), ll])
+      it +=1 
+      beta_ant = beta
+      sbeta[0:ntimes] = 0.0
+      salfa[0:ntimes] = 0.0
+      ngmarc[0:ntimes] = 0.0
+      ngsofr[0:ntimes] = 0.0
+      
+      for i in range (nj):
+        t1 = jogos[i][0]-1
+        t2 = jogos[i][3]-1
+        w = fator**float((jogos[i][4]-hoje)/1460.0)
+        importancia = jogos[i][5]
+        if (jogos[i][1] != -1):
+            sbeta[t1] = sbeta[t1] + w*importancia/beta[t2]
+            ngmarc[t1] = ngmarc[t1] + w*importancia*jogos[i][1]
+            sbeta[t2] =  sbeta[t2] + w*importancia/beta[t1]
+            ngmarc[t2] = ngmarc[t2] + w*importancia*jogos[i][2] 
+            
+      for i in range(ntimes):
+         if (ngmarc[i] > 0): 
+             alfa[i] = ngmarc[i]/sbeta[i]
+         else:
+             alfa[i] = 0.001
+
+      for i in range(nj):
+        t1 = jogos[i][0]-1
+        t2 = jogos[i][3]-1
+        w = fator**float((jogos[i][4]-hoje)/1460.0)
+        importancia = jogos[i][5]
+        if (jogos[i][1]  != -1):
+            salfa[t1] = salfa[t1] + w*importancia*alfa[t2]
+            ngsofr[t1] = ngsofr[t1] + w*importancia*jogos[i][2]
+            salfa[t2] =  salfa[t2] + w*importancia*alfa[t1]
+            ngsofr[t2] = ngsofr[t2] + w*importancia*jogos[i][1] 
+
+      for i in range(ntimes):
+          if ngsofr[i] > 0:
+            beta[i] = salfa[i]/ngsofr[i] 
+            if ntimes == 3:
+                print("aqui")
+          else:
+            beta[i] = 1.0
+
+      m = beta.mean()
+      beta = beta/m
+      alfa = alfa/m
+
+      
+  return ([alfa, beta])
+
+def loglik(p, info):
+   ntimes = int(len(p)/2)
+   alfa = p[0:ntimes]
+   beta = p[ntimes:2*ntimes]
+   alfa[0] = info[0]
+   fator = info[1]
+   jogos = info[2]
+   nj = len(jogos)
+   hoje = sp.array(jogos).max()
+   ll = 0.0
+   for i in range (nj):
+        t1 = jogos[i][0]-1
+        t2 = jogos[i][3]-1
+        w = fator**float((jogos[i][4]-hoje)/1460.0)*jogos[i][5]
+        g1 = jogos[i][1]
+        g2 = jogos[i][2]
+        if (jogos[i][1] != -1):            
+            lljogo = g1*sp.log(alfa[t1])-g1*sp.log(beta[t2])+g2*sp.log(alfa[t2])-g2*sp.log(beta[t1])
+            lljogo += -alfa[t1]/beta[t2]-alfa[t2]/beta[t1]
+            lljogo *= w
+            ll += lljogo
+   #print(ll)
+   return(-ll)
+    
+def derloglik(p, info):
+    ntimes = int(len(p)/2)
+    alfa = p[0:ntimes]
+    beta = p[ntimes:2*ntimes]
+    alfa[0] = info[0]
+    dalfa = sp.zeros(ntimes)
+    dbeta = sp.zeros(ntimes)
+    fator = info[1]
+    jogos = info[2]
+    nj = len(jogos)
+    hoje = sp.array(jogos).max()
+    for i in range (nj):
+        t1 = jogos[i][0]-1
+        t2 = jogos[i][3]-1
+        w = fator**float((jogos[i][4]-hoje)/1460.0)*jogos[i][5]
+        g1 = jogos[i][1]
+        g2 = jogos[i][2]
+        if (jogos[i][1] != -1):            
+            dalfa[t1] -= w*(g1/alfa[t1]-1/beta[t2])
+            dalfa[t2] -= w*(g2/alfa[t2]-1-beta[t1])
+            dbeta[t1] -= w*(-g2/beta[t1]+alfa[t2]/(beta[t1]*beta[t1]))
+            dbeta[t2] -= w*(-g1/beta[t2]+alfa[t1]/(beta[t2]*beta[t2]))
+    der = sp.concatenate((dalfa, dbeta))
+    der[0] = 0.0
+    return(der)
+
+def estimar_params_inic(entrada, conf):
+    jogos = []
+    for line in entrada:
+        s = line.split()
+        jogo = [0 for i in range(6)]
+        for i in range(5):
+            jogo[i] = int(s[i])
+        jogo[5] = float(s[5])
+        t1 = conf[jogo[0]]
+        t2 = conf[jogo[3]]
+        if (t1 != t2):
+            jogo[0] = t1
+            jogo[3] = t2
+            jogos.append(jogo)
+    #print(jogos)
+    jogou = [0 for i in range(250)]
+    njogos = len(jogos)
+    njogou = 0
+    for i in range(njogos):
+        t1 = conf[jogos[i][0]]
+        t2 = conf[jogos[i][3]]
+        jogou[t1] += 1
+        jogou[t2] += 1
+    for i in range(250):
+        if jogou[i] >0:
+            njogou +=1
+    print(njogos)
+    print(njogou) 
+    beta = sp.ones(3)       
+    params = param_ntimes(3, jogos, 5.0, beta)
+    return(params)
+
+def estimar_params(entrada, beta_inic):
+    jogos = []
+    for line in entrada:
+        s = line.split()
+        jogo = [0 for i in range(6)]
+        for i in range(5):
+            jogo[i] = int(s[i])
+        jogo[5] = float(s[5])
+        jogos.append(jogo)
+    #print(jogos)
+    jogou = [0 for i in range(250)]
+    njogos = len(jogos)
+    njogou = 0
+    for i in range(njogos):
+        t1 = jogos[i][0]
+        t2 = jogos[i][3]
+        jogou[t1] += 1
+        jogou[t2] += 1
+    for i in range(250):
+        if jogou[i] >0:
+            njogou +=1
+    print(njogos)
+    print(njogou)        
+    params = param_ntimes(243, jogos, 5.0, beta_inic)
+    return(params)    
+
+conf = [0, 1, 2, 1, 1, 1, 2, 1, 1, 3, 2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 3, 1, 2, 1, 3, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 3, 1, 1, 1, 1, 1, 2, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1, 1, 3, 1, 1, 2, 1, 1, 2, 1, 2, 1, 2, 2, 1, 2, 1, 1, 2, 2, 2, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 3, 3, 1, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 1, 3, 1, 1, 1, 1, 3, 1, 2, 1, 2, 1, 1] 
+selecoes_copa = open("selecoes_copa.txt", "r")
+selecoes = [0 for i in range(32)]
+nome_sel = ["" for i in range(32)]
+i = 0
+for line in selecoes_copa:
+    s = line.split('\t')
+    selecoes[i] = int(s[2])
+    nome_sel[i] = s[1]
+    i += 1
+
+entrada = open("internacionais.txt", "r")
+params = estimar_params_inic (entrada, conf)
+print (params)
+entrada.close()
+entrada = open("internacionais.txt", "r")
+beta_inic = sp.ones(243)
+for i in range (243):
+    beta_inic[i] = params[1][conf[i]-1]
+params = estimar_params(entrada, beta_inic)
+entrada.close()
+
+
+
+
+    
+#res = sp.optimize.minimize(loglik, p, args = ([params[0][0], 5.0, jogos]), jac = derloglik, method = 'BFGS', options = {'disp': True, 'maxiter':5})
+#print (res.fun)
+saida = open("params.txt", "w")
+for i in range(32):
+    saida.write("%16.8f \t" % params[0][selecoes[i]-1])
+    saida.write("%16.8f \t" % params[1][selecoes[i]-1])
+    saida.write(nome_sel[i] + "\n")
+saida.close()
+saida = open("params_todos.txt", "w")
+for i in range(1, 244):
+    saida.write("%3d\t" % i)
+    saida.write("%16.8f\t" % params[0][i-1])
+    saida.write("%16.8f\n" % params[1][i-1])
+saida.close()
+entrada.close()
+
+selecoes_copa.close()
+
+
+    
+

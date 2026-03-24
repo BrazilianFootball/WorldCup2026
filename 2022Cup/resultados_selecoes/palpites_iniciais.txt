@@ -1,0 +1,56 @@
+Grupo A
+qat 0 X 2 ecu
+sen 0 X 2 ned
+qat 0 X 1 sen
+ecu 0 X 2 ned
+qat 0 X 2 ned
+ecu 1 X 0 sen
+Grupo B
+eng 1 X 0 irn
+usa 1 X 0 wal
+eng 1 X 0 usa
+irn 1 X 0 wal
+eng 2 X 0 wal
+irn 1 X 0 usa
+Grupo C
+arg 1 X 0 ksa
+mex 0 X 1 pol
+arg 1 X 0 mex
+ksa 0 X 1 pol
+arg 2 X 0 pol
+ksa 0 X 0 mex
+Grupo D
+fra 1 X 0 aus
+den 1 X 0 tun
+fra 0 X 1 den
+aus 0 X 1 tun
+fra 1 X 0 tun
+aus 0 X 1 den
+Grupo E
+esp 2 X 0 crc
+ger 2 X 1 jpn
+esp 2 X 1 ger
+crc 0 X 1 jpn
+esp 2 X 0 jpn
+crc 0 X 2 ger
+Grupo F
+bel 2 X 0 can
+mar 0 X 1 cro
+bel 2 X 0 mar
+can 0 X 1 cro
+bel 2 X 1 cro
+can 0 X 1 mar
+Grupo G
+bra 2 X 0 srb
+sui 2 X 0 cmr
+bra 2 X 0 sui
+srb 2 X 0 cmr
+bra 2 X 0 cmr
+srb 1 X 2 sui
+Grupo H
+por 2 X 0 gha
+uru 1 X 0 kor
+por 1 X 0 uru
+gha 0 X 1 kor
+por 1 X 0 kor
+gha 0 X 2 uru

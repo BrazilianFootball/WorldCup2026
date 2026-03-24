@@ -1,0 +1,4250 @@
+sel1	gols1	gols2	sel2	data	peso
+Kuwait	1	2	Jordan	735234	1
+Uganda	3	0	Mauritania	735236	1
+Bahrain	0	1	Jordan	735237	1
+Qatar	0	0	Kuwait	735237	1
+Namibia	0	1	Ghana	735237	1
+Nigeria	2	1	Ethiopia	735237	1
+Mozambique	2	3	Mauritania	735238	1
+Zimbabwe	2	0	Gabon	735240	1
+Kuwait	1	1	Bahrain	735240	1
+Qatar	2	0	Jordan	735240	1
+Mali	2	1	Nigeria	735244	1
+South Africa	3	1	Mozambique	735244	1
+Zimbabwe	0	0	Morocco	735245	1
+Uganda	2	1	Burkina Faso	735245	1
+Ghana	1	0	Congo	735246	1
+Libya	2	0	Ethiopia	735246	1
+DR Congo	1	0	Mauritania	735247	1
+Gabon	0	0	Burundi	735247	1
+South Africa	1	1	Mali	735248	1
+Nigeria	4	2	Mozambique	735248	1
+Moldova	1	2	Norway	735248	1
+Burkina Faso	1	1	Morocco	735249	1
+Zimbabwe	0	0	Uganda	735249	1
+Ghana	1	1	Libya	735250	1
+Ethiopia	0	1	Congo	735250	1
+Moldova	1	2	Sweden	735250	1
+DR Congo	0	1	Gabon	735251	1
+Burundi	3	2	Mauritania	735251	1
+Poland	3	0	Norway	735251	1
+Mozambique	1	2	Mali	735252	1
+South Africa	3	1	Nigeria	735252	1
+Morocco	3	1	Uganda	735253	1
+Burkina Faso	0	1	Zimbabwe	735253	1
+Moldova	0	1	Poland	735253	1
+Congo	2	2	Libya	735254	1
+Ethiopia	0	1	Ghana	735254	1
+Iceland	0	2	Sweden	735254	1
+Mauritania	2	4	Gabon	735255	1
+Burundi	1	2	DR Congo	735255	1
+Chile	4	0	Costa Rica	735255	1
+Oman	0	0	Finland	735257	1
+Costa Rica	0	1	South Korea	735258	1
+Nigeria	3	3	Morocco	735258	1
+Mali	1	2	Zimbabwe	735258	1
+Ghana	1	0	DR Congo	735259	1
+Gabon	1	1	Libya	735259	1
+Mexico	4	0	South Korea	735262	1
+Zimbabwe	1	1	Libya	735262	1
+Nigeria	1	1	Ghana	735262	1
+Oman	0	0	Jordan	735264	2.5
+USA	2	0	South Korea	735265	1
+Zimbabwe	0	1	Nigeria	735265	1
+Libya	1	1	Ghana	735265	1
+Singapore	1	3	Jordan	735268	2.5
+St. Vincent and the Grenadines	3	2	Dominica	735271	1
+St. Vincent and the Grenadines	0	0	Dominica	735273	1
+Lebanon	3	1	Pakistan	735283	1
+Iraq	2	0	North Korea	735285	1
+Malaysia	0	0	Philippines	735293	1
+Iran	3	2	Kuwait	735295	2.5
+Barbados	0	2	Jamaica	735295	1
+Lithania	1	1	Kazakhstan	735297	1
+Azerbaijan	1	0	Philippines	735297	1
+Albania	2	0	Malta	735297	1
+St. Lucia	0	5	Jamaica	735297	1
+Malawi	1	4	Zimbabwe	735297	1
+Burundi	1	1	Rwanda	735297	1
+France	2	0	Netherlands	735297	1
+Mauritania	1	1	Niger	735297	1
+Burkina Faso	1	1	Comoros	735297	1
+Mozambique	1	1	Angola	735297	1
+Namibia	1	1	Tanzania	735297	1
+Jordan	2	1	Syria	735297	2.5
+Zambia	2	1	Uganda	735297	1
+Vietnam	3	1	Hong Kong	735297	2.5
+Senegal	1	1	Mali	735297	1
+Botswana	3	0	South Sudan	735297	1
+Yemen	1	2	Malaysia	735297	2.5
+Qatar	0	0	Bahrain	735297	2.5
+Oman	3	1	Singapore	735297	2.5
+Uzbekistan	1	1	United Arab Emirates	735297	2.5
+Georgia	2	0	Liechtenstein	735297	1
+India	2	2	Bangladesh	735297	1
+Iraq	3	1	China	735297	2.5
+Saudi Arabia	1	0	Indonesia	735297	2.5
+Thailand	2	5	Lebanon	735297	2.5
+Kosovo	0	0	Haiti	735297	1
+Gibraltar	0	2	Estonia	735297	1
+Morocco	1	1	Gabon	735297	1
+Portugal	5	1	Cameroon	735297	1
+England	1	0	Denmark	735297	1
+Wales	3	1	Iceland	735297	1
+Germany	1	0	Chile	735297	1
+Romania	0	0	Argentina	735297	1
+Spain	1	0	Italy	735297	1
+Ireland	1	2	Serbia	735297	1
+Algeria	2	0	Slovenia	735297	1
+Australia	3	4	Ecuador	735297	1
+Andorra	0	3	Moldova	735297	1
+FYR of Macedonia	2	1	Latvia	735297	1
+Iran	1	2	Guinea	735297	1
+Russia	2	0	Armenia	735297	1
+Bulgaria	2	1	Belarus	735297	1
+Luxembourg	0	0	Cape Verde	735297	1
+Belgium	2	2	Cote dIvoire	735297	1
+Japan	4	2	New Zealand	735297	1
+South Africa	0	5	Brazil	735297	1
+Greece	0	2	South Korea	735297	1
+Poland	0	1	Scotland	735297	1
+Montenegro	1	0	Ghana	735297	1
+Israel	1	3	Slovakia	735297	1
+Bosnia and Herzegovina	0	2	Egypt	735297	1
+Colombia	1	1	Tunisia	735297	1
+Hungary	1	2	Finland	735297	1
+Czech Republic	2	2	Norway	735297	1
+Cyprus	0	0	Northern Ireland	735297	1
+Turkey	2	1	Sweden	735297	1
+Ukraine	2	0	USA	735297	1
+Austria	1	1	Uruguay	735297	1
+Suisse	2	2	Croatia	735297	1
+Honduras	2	1	Venezuela	735298	1
+Mexico	0	0	Nigeria	735298	1
+Costa Rica	2	1	Paraguay	735298	1
+Lesotho	0	1	Swaziland	735299	1
+Lesotho	0	0	Swaziland	735301	1
+Yemen	2	0	Nepal	735317	1
+Andorra	0	1	Indonesia	735318	1
+Aruba	2	2	Guam	735319	1
+Cuba	1	0	Indonesia	735321	1
+Aruba	2	0	Guam	735322	1
+USA	2	2	Mexico	735326	1
+Philippines	3	0	Nepal	735334	1
+Mauritania	1	0	Mauritius	735335	2.5
+Afghanistan	0	0	Kyrgyzstan	735336	1
+Yemen	0	0	Chad	735338	1
+Guadeloupe	3	2	French Guiana	735340	1
+Guadeloupe	0	1	Martinique	735343	1
+Mauritius	0	2	Mauritania	735343	2.5
+Tanzania	0	3	Burundi	735349	1
+Philippines	0	0	Malaysia	735350	1
+Grenada	0	0	St. Vincent and the Grenadines	735353	1
+Dominica	0	2	St. Lucia	735354	1
+Panama	1	1	Serbia	735354	1
+Grenada	0	1	St. Lucia	735355	1
+Dominica	2	3	St. Vincent and the Grenadines	735356	1
+Tanzania	0	0	Malawi	735357	1
+Dominica	3	5	Grenada	735357	1
+Tajikistan	1	0	Afghanistan	735357	1
+St. Lucia	0	0	St. Vincent and the Grenadines	735358	1
+Botswana	1	4	Swaziland	735364	1
+Afghanistan	1	0	Kyrgyzstan	735365	1
+Germany	0	0	Poland	735366	1
+Maldives	7	1	Laos	735366	1
+Kuwait	3	2	Afghanistan	735367	1
+Indonesia	1	1	Dominican Republic	735368	1
+Kuwait	2	2	Kyrgyzstan	735369	1
+Namibia	1	0	Congo	735370	2.5
+Madagascar	2	1	Uganda	735370	2.5
+Malawi	2	0	Chad	735370	2.5
+Swaziland	1	1	Sierra Leone	735370	2.5
+Mauritania	1	0	Equatorial Guinea	735370	2.5
+São Tome e Ptincipe	0	2	Benin	735370	2.5
+Netherlands	1	1	Ecuador	735370	1
+Kenya	1	0	Comoros	735370	2.5
+Mozambique	5	0	South Sudan	735370	2.5
+Burundi	0	0	Botswana	735371	2.5
+Libya	0	0	Rwanda	735371	2.5
+Tanzania	1	0	Zimbabwe	735371	2.5
+Central African Republic	0	0	Guinea-Bissau	735371	2.5
+Iran	0	0	Belarus	735371	1
+Liberia	1	0	Lesotho	735371	2.5
+Palestine	1	0	Kyrgyzstan	735372	1
+Maldives	2	3	Myanmar	735372	1
+Turkmenistan	5	1	Laos	735373	1
+Philippines	0	0	Afghanistan	735373	1
+Finland	2	2	Czech Republic	735374	1
+Liechtenstein	1	5	Belarus	735374	1
+Myanmar	0	2	Palestine	735374	1
+Kyrgyzstan	0	2	Maldives	735374	1
+French Guiana	0	0	Suriname	735374	1
+Kosovo	1	6	Turkey	735374	1
+Burkina Faso	1	1	Senegal	735374	1
+Afghanistan	3	1	Turkmenistan	735375	1
+Laos	0	2	Philippines	735375	1
+Ukraine	2	1	Niger	735375	1
+Hungary	2	2	Denmark	735375	1
+Slovakia	2	0	Montenegro	735376	1
+Bulgaria	1	1	Canada	735376	1
+Maldives	0	0	Palestine	735376	1
+Kyrgyzstan	1	0	Myanmar	735376	1
+Saudi Arabia	0	4	Moldova	735377	1
+Morocco	4	0	Mozambique	735377	1
+Turkmenistan	0	2	Philippines	735377	1
+Afghanistan	0	0	Laos	735377	1
+Ireland	1	2	Turkey	735378	1
+Mali	1	2	Guinea	735378	1
+Thailand	1	1	Kuwait	735378	1
+Kosovo	1	3	Senegal	735378	1
+Russia	1	0	Slovakia	735379	1
+Australia	1	1	South Africa	735379	1
+Montenegro	0	0	Iran	735379	1
+Serbia	2	1	Jamaica	735379	1
+FYR of Macedonia	0	2	Cameroon	735379	1
+Belgium	5	1	Luxembourg	735379	1
+Estonia	1	1	Gibraltar	735379	1
+Moldova	1	1	Canada	735380	1
+Palestine	2	0	Afghanistan	735380	1
+United Arab Emirates	3	4	Armenia	735380	1
+Japan	1	0	Cyprus	735380	1
+France	4	0	Norway	735380	1
+Uzbekistan	0	1	Oman	735380	1
+Philippines	2	2	Maldives	735380	1
+Tanzania	1	0	Malawi	735380	1
+South Korea	0	1	Tunisia	735381	1
+Angola	2	0	Morocco	735381	1
+Scotland	2	2	Nigeria	735381	1
+Denmark	1	0	Sweden	735381	1
+Suriname	1	0	French Guiana	735381	1
+USA	2	0	Azerbaijan	735381	1
+Lithania	1	0	Finland	735382	1
+Latvia	1	1	Estonia	735382	1
+Cameroon	1	2	Paraguay	735382	1
+Saudi Arabia	0	2	Georgia	735382	1
+Mexico	3	0	Israel	735382	1
+Uzbekistan	0	1	Oman	735382	1
+Afghanistan	1	1	Maldives	735382	1
+Palestine	1	0	Philippines	735383	1
+Qatar	0	0	FYR of Macedonia	735383	1
+Comoros	1	1	Kenya	735383	2.5
+French Guiana	6	0	British Virgin Islands	735383	1
+Aruba	1	0	Turks and Caicos Islands	735383	1
+Montserrat	1	0	US Virgin Islands	735383	1
+South Sudan	0	0	Mozambique	735383	2.5
+New Zealand	0	0	South Africa	735383	1
+Honduras	0	2	Turkey	735383	1
+Uruguay	1	0	Northern Ireland	735383	1
+Suisse	1	0	Jamaica	735383	1
+Austria	1	1	Iceland	735383	1
+England	3	0	Peru	735383	1
+Iran	1	1	Angola	735383	1
+Spain	2	0	Bolivia	735383	1
+Algeria	3	1	Armenia	735384	1
+Chad	3	1	Malawi	735384	2.5
+Guinea-Bissau	3	1	Central African Republic	735384	2.5
+Uganda	1	0	Madagascar	735384	2.5
+Rwanda	3	0	Libya	735384	2.5
+Sierra Leone	1	0	Swaziland	735384	2.5
+Latvia	1	0	Lithania	735384	1
+Estonia	0	2	Finland	735384	1
+Colombia	2	2	Senegal	735384	1
+Albania	0	1	Romania	735384	1
+Norway	1	1	Russia	735384	1
+Italy	0	0	Ireland	735384	1
+Netherlands	1	0	Ghana	735384	1
+Chile	3	2	Egypt	735384	1
+Mexico	3	1	Ecuador	735384	1
+Portugal	0	0	Greece	735384	1
+Croatia	2	1	Mali	735384	1
+Bosnia and Herzegovina	2	1	Cote dIvoire	735384	1
+Congo	3	0	Namibia	735385	2.5
+Benin	2	0	São Tome e Ptincipe	735385	2.5
+Equatorial Guinea	3	0	Mauritania	735385	2.5
+Lesotho	2	0	Liberia	735385	2.5
+Zimbabwe	2	2	Tanzania	735385	2.5
+Botswana	1	0	Burundi	735385	2.5
+Panama	1	1	Serbia	735385	1
+Turks and Caicos Islands	0	6	French Guiana	735385	1
+USA	2	1	Turkey	735385	1
+Honduras	2	4	Israel	735385	1
+Sweden	0	2	Belgium	735385	1
+France	1	1	Paraguay	735385	1
+Germany	2	2	Cameroon	735385	1
+Aruba	7	0	British Virgin Islands	735385	1
+Costa Rica	1	3	Japan	735386	1
+Bonaire	2	1	US Virgin Islands	735386	1
+Brazil	4	0	Panama	735387	1
+British Virgin Islands	0	2	Turks and Caicos Islands	735387	1
+Aruba	0	2	French Guiana	735387	1
+United Arab Emirates	1	0	Georgia	735387	1
+Greece	0	0	Nigeria	735387	1
+Czech Republic	1	2	Austria	735387	1
+Mexico	0	1	Bosnia and Herzegovina	735387	1
+Suisse	2	0	Peru	735387	1
+Mexico	0	1	Bosnia and Herzegovina	735388	1
+Argentina	3	0	Trinidad and Tobago	735388	1
+Jamaica	2	2	Egypt	735388	1
+Greece	0	0	Nigeria	735388	1
+Montserrat	0	0	Bonaire	735388	1
+Iceland	1	0	Estonia	735388	1
+El Salvador	1	2	Cote dIvoire	735388	1
+Hungary	1	0	Albania	735388	1
+Algeria	2	1	Romania	735388	1
+Netherlands	2	0	Wales	735388	1
+Ecuador	2	2	England	735388	1
+Italy	1	1	Luxembourg	735388	1
+Gibraltar	1	0	Malta	735388	1
+Chile	2	0	Northern Ireland	735389	1
+Uruguay	2	0	Slovenia	735389	1
+Japan	4	3	Zambia	735390	1
+Brazil	1	0	Serbia	735390	1
+Poland	2	1	Lithania	735390	1
+Greece	2	1	Bolivia	735390	1
+Croatia	1	0	Australia	735390	1
+Russia	2	0	Morocco	735390	1
+Germany	6	1	Armenia	735390	1
+Mexico	0	1	Portugal	735390	1
+Colombia	3	0	Jordan	735390	1
+Argentina	2	0	Slovenia	735391	1
+England	0	0	Honduras	735391	1
+Belgium	1	0	Tunisia	735391	1
+El Salvador	0	2	Spain	735391	1
+Hungary	3	0	Kazakhstan	735391	1
+Costa Rica	1	1	Ireland	735391	1
+USA	2	1	Nigeria	735391	1
+Estonia	2	1	Tajikistan	735391	1
+Cameroon	1	0	Moldova	735391	1
+San Marino	0	3	Albania	735392	1
+France	8	0	Jamaica	735392	1
+Trinidad and Tobago	0	2	Iran	735392	1
+Ghana	4	0	South Korea	735393	1
+Ireland	1	5	Portugal	735394	1
+Brazil	3	1	Croatia	735396	4
+Chile	3	1	Australia	735397	4
+Spain	1	5	Netherlands	735397	4
+Mexico	1	0	Cameroon	735397	4
+Uruguay	1	3	Costa Rica	735398	4
+Colombia	3	0	Greece	735398	4
+Cote dIvoire	2	1	Japan	735398	4
+England	1	2	Italy	735398	4
+Suisse	2	1	Ecuador	735399	4
+Argentina	2	1	Bosnia and Herzegovina	735399	4
+France	3	0	Honduras	735399	4
+Germany	4	0	Portugal	735400	4
+Iran	0	0	Nigeria	735400	4
+Ghana	1	2	USA	735400	4
+Russia	1	1	South Korea	735401	4
+Belgium	2	1	Algeria	735401	4
+Brazil	0	0	Mexico	735401	4
+Australia	2	3	Netherlands	735402	4
+Cameroon	0	4	Croatia	735402	4
+Spain	0	2	Chile	735402	4
+Uruguay	2	1	England	735403	4
+Japan	0	0	Greece	735403	4
+Colombia	2	1	Cote dIvoire	735403	4
+China	2	0	FYR of Macedonia	735403	1
+Italy	0	1	Costa Rica	735404	4
+Suisse	2	5	France	735404	4
+Honduras	1	2	Ecuador	735404	4
+Indonesia	4	0	Pakistan	735405	1
+Argentina	1	0	Iran	735405	4
+Nigeria	1	0	Bosnia and Herzegovina	735405	4
+Germany	2	2	Ghana	735405	4
+USA	2	2	Portugal	735406	4
+South Korea	2	4	Algeria	735406	4
+Belgium	1	0	Russia	735406	4
+China	0	0	FYR of Macedonia	735406	1
+Netherlands	2	0	Chile	735407	4
+Cameroon	1	4	Brazil	735407	4
+Croatia	1	3	Mexico	735407	4
+Australia	0	3	Spain	735407	4
+Costa Rica	0	0	England	735408	4
+Italy	0	1	Uruguay	735408	4
+Greece	2	1	Cote dIvoire	735408	4
+Japan	1	4	Colombia	735408	4
+Indonesia	2	0	Nepal	735409	1
+Bosnia and Herzegovina	3	1	Iran	735409	4
+Nigeria	2	3	Argentina	735409	4
+Ecuador	0	0	France	735409	4
+Honduras	0	3	Suisse	735409	4
+Portugal	2	1	Ghana	735410	4
+Algeria	1	1	Russia	735410	4
+South Korea	0	1	Belgium	735410	4
+USA	0	1	Germany	735410	4
+Brazil	1	1	Chile	735412	4
+Colombia	2	0	Uruguay	735412	4
+Netherlands	2	1	Mexico	735413	4
+Costa Rica	1	1	Greece	735413	4
+China	1	3	Mali	735413	1
+France	2	0	Nigeria	735414	4
+Germany	1	1	Algeria	735414	4
+Belgium	1	1	USA	735415	4
+Argentina	0	0	Suisse	735415	4
+Botswana	4	2	Tanzania	735415	1
+Vietnam	6	0	Myanmar	735416	1
+France	0	1	Germany	735418	4
+Brazil	2	1	Colombia	735418	4
+Netherlands	1	1	Costa Rica	735419	4
+Argentina	1	0	Belgium	735419	4
+Malawi	1	1	Mozambique	735420	1
+Brazil	1	7	Germany	735422	4
+Netherlands	1	1	Argentina	735423	4
+Uganda	1	0	Seychelles	735425	1
+Brazil	0	3	Netherlands	735426	4
+Rwanda	1	0	Gabon	735426	1
+Germany	0	0	Argentina	735427	4
+Qatar	2	2	Indonesia	735428	1
+Botswana	2	0	Lesotho	735428	1
+Kenya	0	0	Burundi	735429	1
+Uganda	0	0	Malawi	735429	1
+Botswana	2	0	Guinea-Bissau	735433	2.5
+Sierra Leone	2	0	Seychelles	735433	2.5
+Uganda	2	0	Mauritania	735433	2.5
+Tanzania	2	2	Mozambique	735434	2.5
+Lesotho	1	0	Kenya	735434	2.5
+Congo	2	0	Rwanda	735434	2.5
+Benin	1	0	Malawi	735434	2.5
+Mongolia	4	0	Northern Mariana Islands	735435	1
+Guam	0	0	Macau	735435	1
+Macau	1	2	Northern Mariana Islands	735437	1
+Guam	2	0	Mongolia	735437	1
+Macau	3	2	Mongolia	735439	1
+Guam	5	0	Northern Mariana Islands	735439	1
+Gabon	0	1	Rwanda	735441	1
+Malawi	1	1	Benin	735447	2.5
+Rwanda	1	1	Congo	735447	2.5
+Guinea-Bissau	1	1	Botswana	735447	2.5
+Angola	1	0	Ethiopia	735448	1
+Mozambique	2	1	Tanzania	735448	2.5
+Mauritania	0	1	Uganda	735448	2.5
+Kenya	0	0	Lesotho	735448	2.5
+Peru	3	0	Panama	735452	1
+Tajikistan	4	1	Malaysia	735453	1
+Kazakhstan	2	1	Tajikistan	735457	1
+Angola	0	0	Botswana	735458	1
+Guatemala	3	0	Nicaragua	735459	1
+British Virgin Islands	2	4	Saint-Martin	735461	1
+Panama	4	0	Cuba	735465	1
+Azerbaijan	0	0	Uzbekistan	735465	1
+Guatemala	1	0	Cuba	735468	1
+French Guiana	0	1	Suriname	735469	1
+Seychelles	1	2	Sri Lanka	735471	1
+Norway	0	0	United Arab Emirates	735472	1
+Seychelles	3	0	Sri Lanka	735473	1
+Egypt	1	0	Kenya	735475	1
+El Salvador	2	0	Dominican Republic	735475	1
+Zambia	3	1	Sudan	735476	1
+Niger	2	0	Uganda	735478	1
+England	1	0	Norway	735479	1
+Dominica	0	0	Guyana	735479	1
+Costa Rica	3	0	Nicaragua	735479	1
+Philippines	5	1	Taiwan	735479	1
+Myanmar	4	1	Palestine	735479	1
+Latvia	2	0	Armenia	735479	1
+Lithania	1	1	United Arab Emirates	735479	1
+Ukraine	1	0	Moldova	735479	1
+Morocco	0	0	Qatar	735479	1
+Ireland	2	0	Oman	735479	1
+Germany	2	4	Argentina	735479	1
+Czech Republic	0	1	USA	735479	1
+Denmark	1	2	Turkey	735479	1
+Russia	4	0	Azerbaijan	735479	1
+Honduras	2	0	Belize	735480	1
+Martinique	6	0	Bonaire	735480	1
+Antigua and Barbuda	6	0	Anguilla	735480	1
+St. Kitts and Nevis	0	0	St. Lucia	735480	1
+Dominican Republic	0	1	St. Vincent and the Grenadines	735480	1
+Barbados	1	1	Suriname	735480	1
+Puerto Rico	2	2	Curacao	735480	1
+French Guiana	1	1	Grenada	735480	1
+Uzbekistan	2	0	Jordan	735480	1
+El Salvador	1	2	Guatemala	735480	1
+France	1	0	Spain	735480	1
+Iraq	0	2	Peru	735480	1
+China	3	1	Kuwait	735480	1
+Italy	2	0	Netherlands	735480	1
+Belarus	6	1	Tajikistan	735480	1
+Bosnia and Herzegovina	3	0	Liechtenstein	735480	1
+Sweden	2	0	Estonia	735480	1
+Slovakia	1	0	Malta	735480	1
+Croatia	2	0	Cyprus	735480	1
+Belgium	2	0	Australia	735480	1
+Japan	0	2	Uruguay	735481	1
+Sudan	0	3	South Africa	735481	2.5
+Guinea	2	1	Togo	735481	2.5
+Senegal	2	0	Egypt	735481	2.5
+South Korea	3	1	Venezuela	735481	1
+St. Lucia	2	0	Guyana	735481	1
+Morocco	3	0	Chad	735481	1
+Kazakhstan	7	1	Kyrgyzstan	735481	1
+Trinidad and Tobago	1	1	Guadeloupe	735482	1
+Singapore	2	1	Papua New Guinea	735482	1
+Tunisia	2	1	Botswana	735482	2.5
+Ghana	1	1	Uganda	735482	2.5
+Gabon	1	0	Angola	735482	2.5
+Niger	1	3	Cape Verde	735482	2.5
+Nigeria	2	3	Congo	735482	2.5
+Burkina Faso	2	0	Lesotho	735482	2.5
+Philippines	2	2	Myanmar	735482	1
+Cote dIvoire	2	1	Sierra Leone	735482	2.5
+Brazil	1	0	Colombia	735482	1
+Zambia	0	0	Mozambique	735482	2.5
+Ethiopia	1	2	Algeria	735482	1
+Vietnam	3	1	Hong Kong	735482	1
+Martinique	3	2	Barbados	735482	1
+St. Kitts and Nevis	5	0	Dominica	735482	1
+Puerto Rico	1	2	French Guiana	735482	1
+Curacao	2	1	Grenada	735482	1
+Antigua and Barbuda	2	1	Dominican Republic	735482	1
+Anguilla	0	4	St. Vincent and the Grenadines	735482	1
+Bonaire	3	2	Suriname	735482	1
+Palestine	3	3	Taiwan	735482	1
+DR Congo	0	2	Cameroon	735482	2.5
+Denmark	2	1	Armenia	735483	2.5
+Gibraltar	0	7	Poland	735483	2.5
+Hungary	1	2	Northern Ireland	735483	2.5
+Bolivia	0	4	Ecuador	735483	1
+Greece	0	1	Romania	735483	2.5
+Mali	2	0	Malawi	735483	2.5
+Portugal	0	1	Albania	735483	2.5
+Faroe Islands	1	3	Finland	735483	2.5
+Germany	2	1	Scotland	735483	2.5
+Morocco	3	0	Libya	735483	1
+Costa Rica	2	2	Panama	735483	1
+Burundi	2	0	Tanzania	735483	1
+Puerto Rico	2	2	Grenada	735483	1
+Serbia	1	1	France	735483	1
+Bonaire	1	4	Barbados	735483	1
+Curacao	0	0	French Guiana	735483	1
+Kosovo	1	0	Oman	735483	1
+Dominica	1	2	St. Lucia	735483	1
+Chile	0	0	Mexico	735483	1
+Paraguay	0	0	United Arab Emirates	735483	1
+Georgia	1	2	Ireland	735483	2.5
+Luxembourg	1	1	Belarus	735484	2.5
+Estonia	1	0	Slovenia	735484	2.5
+Spain	5	1	FYR of Macedonia	735484	2.5
+Ukraine	0	1	Slovakia	735484	2.5
+Montenegro	2	0	Moldova	735484	2.5
+Russia	4	0	Liechtenstein	735484	2.5
+Suisse	0	2	England	735484	2.5
+Austria	1	1	Sweden	735484	2.5
+San Marino	0	2	Lithania	735484	2.5
+Antigua and Barbuda	2	1	St. Vincent and the Grenadines	735484	1
+Anguilla	0	10	Dominican Republic	735484	1
+Guatemala	2	1	Belize	735484	1
+Honduras	0	1	El Salvador	735484	1
+Uzbekistan	3	1	New Zealand	735484	1
+Saudi Arabia	2	3	Australia	735484	1
+Martinique	0	0	Suriname	735484	1
+South Korea	0	1	Uruguay	735484	1
+St. Kitts and Nevis	2	0	Guyana	735484	1
+Iceland	3	0	Turkey	735485	2.5
+Kazakhstan	0	0	Latvia	735485	2.5
+Norway	0	2	Italy	735485	2.5
+Croatia	2	0	Malta	735485	2.5
+Azerbaijan	1	2	Bulgaria	735485	2.5
+Bosnia and Herzegovina	1	2	Cyprus	735485	2.5
+Andorra	1	2	Wales	735485	2.5
+Singapore	0	0	Hong Kong	735485	1
+China	1	1	Jordan	735485	1
+Qatar	0	2	Peru	735485	1
+Japan	2	2	Venezuela	735485	1
+Indonesia	0	0	Yemen	735485	1
+Czech Republic	2	1	Netherlands	735485	2.5
+Kuwait	0	1	Bahrain	735485	1
+Togo	2	3	Ghana	735486	2.5
+Malawi	3	2	Ethiopia	735486	2.5
+Angola	0	3	Burkina Faso	735486	2.5
+Algeria	1	0	Mali	735486	2.5
+Egypt	0	1	Tunisia	735486	2.5
+South Africa	0	0	Nigeria	735486	2.5
+Botswana	0	2	Senegal	735486	2.5
+Lesotho	1	1	Gabon	735486	2.5
+Cape Verde	2	1	Zambia	735486	2.5
+Namibia	1	1	Swaziland	735486	1
+Sierra Leone	0	2	DR Congo	735486	2.5
+Mozambique	1	1	Niger	735486	2.5
+Chile	1	0	Haiti	735486	1
+Brazil	1	0	Ecuador	735486	1
+Bolivia	0	1	Mexico	735486	1
+Canada	3	1	Jamaica	735486	1
+Congo	2	0	Sudan	735486	2.5
+Cameroon	4	1	Cote dIvoire	735486	2.5
+Uganda	2	0	Guinea	735486	2.5
+Panama	2	0	Nicaragua	735487	1
+El Salvador	2	0	Belize	735487	1
+Honduras	0	2	Guatemala	735487	1
+Honduras	1	0	Nicaragua	735490	1
+Guatemala	1	2	Costa Rica	735490	1
+El Salvador	0	1	Panama	735490	1
+Indonesia	2	0	Malaysia	735490	1
+Malaysia	4	1	Cambodia	735496	1
+British Virgin Islands	0	6	St. Vincent and the Grenadines	735497	1
+Indonesia	1	0	Cambodia	735501	1
+Botswana	1	0	Zimbabwe	735506	1
+Qatar	3	0	Uzbekistan	735512	1
+India	2	3	Palestine	735512	1
+Taiwan	0	2	Cambodia	735514	1
+Trinidad and Tobago	6	1	Dominican Republic	735514	1
+Guadeloupe	3	1	St. Vincent and the Grenadines	735514	1
+Martinique	1	1	Curacao	735514	1
+Haiti	2	2	French Guiana	735514	1
+Antigua and Barbuda	2	1	St. Lucia	735514	1
+St. Kitts and Nevis	2	3	Barbados	735514	1
+Liechtenstein	0	0	Montenegro	735515	2.5
+England	5	0	San Marino	735515	2.5
+Lithania	1	0	Estonia	735515	2.5
+Slovenia	1	0	Suisse	735515	2.5
+Morocco	4	0	Central African Republic	735515	1
+Sweden	1	1	Russia	735515	2.5
+FYR of Macedonia	3	2	Luxembourg	735515	2.5
+Belarus	0	2	Ukraine	735515	2.5
+Qatar	5	0	Lebanon	735515	1
+Moldova	1	2	Austria	735515	2.5
+Slovakia	2	1	Spain	735515	2.5
+Yemen	1	1	Iraq	735516	1
+Malta	0	3	Norway	735516	2.5
+Bulgaria	0	1	Croatia	735516	2.5
+Lesotho	0	0	Angola	735516	2.5
+Senegal	0	0	Tunisia	735516	2.5
+Cyprus	1	2	Israel	735516	2.5
+Belgium	6	0	Andorra	735516	2.5
+Turkey	1	2	Czech Republic	735516	2.5
+Botswana	0	2	Egypt	735516	2.5
+Latvia	0	3	Iceland	735516	2.5
+Netherlands	3	1	Kazakhstan	735516	2.5
+Wales	0	0	Bosnia and Herzegovina	735516	2.5
+China	3	0	Thailand	735516	1
+South Korea	2	0	Paraguay	735516	1
+Italy	2	1	Azerbaijan	735516	2.5
+Jordan	0	1	Kuwait	735516	1
+United Arab Emirates	0	0	Australia	735516	1
+Oman	3	4	Costa Rica	735516	1
+Japan	1	0	Jamaica	735516	1
+Saudi Arabia	1	1	Uruguay	735516	1
+Hong Kong	2	1	Singapore	735516	1
+French Guiana	1	2	St. Kitts and Nevis	735516	1
+Trinidad and Tobago	2	0	St. Lucia	735516	1
+Mexico	2	0	Honduras	735516	1
+Uzbekistan	0	0	Bahrain	735516	1
+Romania	1	1	Hungary	735517	2.5
+Finland	1	1	Greece	735517	2.5
+Guinea	1	1	Ghana	735517	2.5
+DR Congo	1	2	Cote dIvoire	735517	2.5
+Albania	1	1	Denmark	735517	2.5
+Scotland	1	0	Georgia	735517	2.5
+Poland	2	0	Germany	735517	2.5
+Northern Ireland	2	0	Faroe Islands	735517	2.5
+Armenia	1	1	Serbia	735517	2.5
+Malawi	0	2	Algeria	735517	2.5
+Congo	0	2	South Africa	735517	2.5
+Sierra Leone	0	0	Cameroon	735517	2.5
+Uganda	0	1	Togo	735517	2.5
+Ireland	7	0	Gibraltar	735517	2.5
+Mozambique	2	0	Cape Verde	735517	2.5
+Dominican Republic	0	0	Antigua and Barbuda	735517	1
+St. Vincent and the Grenadines	1	0	Curacao	735517	1
+Brazil	2	0	Argentina	735517	1
+Haiti	4	2	Barbados	735517	1
+Guadeloupe	1	2	Martinique	735517	1
+Sudan	1	0	Nigeria	735517	2.5
+France	2	1	Portugal	735517	1
+Colombia	3	0	El Salvador	735517	1
+Gabon	2	0	Burkina Faso	735517	2.5
+Niger	0	0	Zambia	735517	2.5
+Ethiopia	0	2	Mali	735517	2.5
+USA	1	1	Ecuador	735517	1
+Chile	3	0	Peru	735517	1
+Laos	3	2	Cambodia	735518	1
+Morocco	5	0	Mauritania	735518	1
+Timor-Leste	4	2	Brunei	735518	1
+Austria	1	0	Montenegro	735518	2.5
+Estonia	0	1	England	735518	2.5
+Russia	1	1	Moldova	735518	2.5
+Sweden	2	0	Liechtenstein	735518	2.5
+Luxembourg	0	4	Spain	735518	2.5
+Belarus	1	3	Slovakia	735518	2.5
+Trinidad and Tobago	1	0	Antigua and Barbuda	735518	1
+Ukraine	1	0	FYR of Macedonia	735518	2.5
+Pakistan	0	2	Palestine	735518	1
+Mexico	1	0	Panama	735518	1
+St. Lucia	2	3	Dominican Republic	735518	1
+Guadeloupe	0	1	Curacao	735518	1
+Martinique	4	3	St. Vincent and the Grenadines	735518	1
+Haiti	0	0	St. Kitts and Nevis	735518	1
+Barbados	0	2	French Guiana	735518	1
+Tanzania	4	1	Benin	735518	1
+Philippines	5	0	Papua New Guinea	735518	1
+Lithania	0	2	Slovenia	735518	2.5
+Andorra	1	4	Israel	735519	2.5
+Bosnia and Herzegovina	1	1	Belgium	735519	2.5
+Wales	2	1	Cyprus	735519	2.5
+Malta	0	1	Italy	735519	2.5
+Croatia	6	0	Azerbaijan	735519	2.5
+Latvia	1	1	Turkey	735519	2.5
+Iceland	2	0	Netherlands	735519	2.5
+Morocco	3	0	Kenya	735519	1
+Jordan	1	1	Kuwait	735519	1
+Oman	0	3	Uruguay	735519	1
+Kazakhstan	2	4	Czech Republic	735519	2.5
+Norway	2	1	Bulgaria	735519	2.5
+Myanmar	0	0	Timor-Leste	735520	1
+Germany	1	1	Ireland	735520	2.5
+Gibraltar	0	3	Georgia	735520	2.5
+Poland	2	2	Scotland	735520	2.5
+Faroe Islands	0	1	Hungary	735520	2.5
+Greece	0	2	Northern Ireland	735520	2.5
+Serbia	3	0	Albania	735520	2.5
+San Marino	0	4	Suisse	735520	2.5
+Denmark	0	1	Portugal	735520	2.5
+Brunei	2	4	Laos	735520	1
+Finland	0	2	Romania	735520	2.5
+Macau	2	2	Singapore	735520	1
+Armenia	0	3	France	735520	1
+United Arab Emirates	0	4	Uzbekistan	735520	1
+Saudi Arabia	1	1	Lebanon	735520	1
+USA	1	1	Honduras	735520	1
+South Korea	1	3	Costa Rica	735520	1
+Bahrain	0	0	Iraq	735520	1
+Japan	0	4	Brazil	735520	1
+Qatar	1	0	Australia	735520	1
+Hong Kong	0	7	Argentina	735520	1
+China	2	1	Paraguay	735520	1
+Cape Verde	1	0	Mozambique	735521	2.5
+Ghana	3	1	Guinea	735521	2.5
+Togo	1	0	Uganda	735521	2.5
+Zambia	3	0	Niger	735521	2.5
+Cote dIvoire	3	4	DR Congo	735521	2.5
+Tunisia	1	0	Senegal	735521	2.5
+Egypt	2	0	Botswana	735521	2.5
+Angola	4	0	Lesotho	735521	2.5
+Chile	2	2	Bolivia	735521	1
+Nigeria	3	1	Sudan	735521	2.5
+Algeria	3	0	Malawi	735521	2.5
+Canada	0	1	Colombia	735521	1
+Mali	2	3	Ethiopia	735521	2.5
+South Africa	0	0	Congo	735521	2.5
+Cameroon	2	0	Sierra Leone	735521	2.5
+Burkina Faso	1	1	Gabon	735521	2.5
+Peru	1	0	Guatemala	735521	1
+El Salvador	1	5	Ecuador	735521	1
+Swaziland	0	2	Zimbabwe	735521	1
+Brunei	1	3	Myanmar	735522	1
+Timor-Leste	2	3	Cambodia	735522	1
+Cambodia	0	1	Myanmar	735524	1
+Laos	2	0	Timor-Leste	735524	1
+Myanmar	2	1	Laos	735526	1
+Cambodia	1	0	Brunei	735526	1
+Bangladesh	1	1	Sri Lanka	735530	1
+Zambia	1	1	Cote dIvoire	735531	1
+Bangladesh	1	0	Sri Lanka	735533	1
+Philippines	3	0	Nepal	735537	1
+North Korea	0	1	Kuwait	735537	1
+Bahrain	2	2	North Korea	735539	1
+Kuwait	1	1	Yemen	735541	1
+Qatar	3	1	North Korea	735543	1
+Saudi Arabia	2	0	Palestine	735543	1
+United Arab Emirates	3	2	Lebanon	735543	1
+Bahrain	2	0	Singapore	735544	1
+Oman	2	0	Yemen	735544	1
+Vietnam	1	3	Palestine	735546	1
+Uganda	3	0	Ethiopia	735546	1
+Thailand	3	0	Philippines	735546	1
+Malaysia	0	3	Syria	735548	1
+Curacao	2	3	Trinidad and Tobago	735548	1
+Indonesia	4	0	Timor-Leste	735548	1
+Cuba	1	1	French Guiana	735549	1
+Argentina	2	1	Croatia	735549	1
+Netherlands	2	3	Mexico	735549	1
+Belgium	3	1	Iceland	735549	1
+Norway	0	1	Estonia	735549	1
+Turkey	0	4	Brazil	735549	1
+Haiti	2	2	Antigua and Barbuda	735549	1
+Taiwan	1	2	Guam	735550	1
+Yemen	0	0	Bahrain	735550	1
+Saudi Arabia	1	1	Qatar	735550	1
+Uruguay	1	1	Costa Rica	735550	1
+Trinidad and Tobago	4	2	French Guiana	735550	1
+Morocco	6	1	Benin	735550	1
+Singapore	2	0	Laos	735550	1
+North Korea	2	1	Hong Kong	735550	1
+Jamaica	1	1	Martinique	735550	1
+Germany	4	0	Gibraltar	735551	2.5
+Martinique	0	3	Haiti	735551	1
+Botswana	0	0	Tunisia	735551	2.5
+Serbia	1	3	Denmark	735551	2.5
+Portugal	1	0	Armenia	735551	2.5
+Romania	2	0	Northern Ireland	735551	2.5
+Hungary	1	0	Finland	735551	2.5
+Greece	0	1	Faroe Islands	735551	2.5
+Scotland	1	0	Ireland	735551	2.5
+France	1	1	Albania	735551	1
+Georgia	0	4	Poland	735551	2.5
+United Arab Emirates	0	0	Oman	735551	1
+Philippines	3	0	Cambodia	735551	1
+USA	1	2	Colombia	735551	1
+Japan	6	0	Honduras	735551	1
+China	1	1	New Zealand	735551	1
+Paraguay	2	1	Peru	735551	1
+Jordan	0	1	South Korea	735551	1
+Curacao	2	3	Cuba	735551	1
+Iraq	0	1	Kuwait	735551	1
+Sierra Leone	1	5	Cote dIvoire	735551	2.5
+Uganda	1	0	Ghana	735552	2.5
+San Marino	0	0	Estonia	735552	2.5
+Suisse	4	0	Lithania	735552	2.5
+Austria	1	0	Russia	735552	2.5
+Togo	1	4	Guinea	735552	2.5
+Cape Verde	3	1	Niger	735552	2.5
+Malawi	2	0	Mali	735552	2.5
+Egypt	0	1	Senegal	735552	2.5
+FYR of Macedonia	0	2	Slovakia	735552	2.5
+Mozambique	0	1	Zambia	735552	2.5
+Montenegro	1	1	Sweden	735552	2.5
+Spain	3	0	Belarus	735552	2.5
+Moldova	0	1	Liechtenstein	735552	2.5
+South Africa	2	1	Sudan	735552	2.5
+England	3	1	Slovenia	735552	2.5
+El Salvador	1	3	Panama	735552	1
+Jamaica	3	0	Antigua and Barbuda	735552	1
+French Guiana	4	1	Curacao	735552	1
+Chile	5	0	Venezuela	735552	1
+Indonesia	0	2	Syria	735552	1
+Angola	0	0	Gabon	735552	2.5
+Cameroon	1	0	DR Congo	735552	2.5
+Algeria	3	1	Ethiopia	735552	2.5
+Congo	0	2	Nigeria	735552	2.5
+Lesotho	0	1	Burkina Faso	735552	2.5
+Luxembourg	0	3	Ukraine	735552	2.5
+Bulgaria	1	1	Malta	735553	2.5
+Turkey	3	1	Kazakhstan	735553	2.5
+Cyprus	5	0	Andorra	735553	2.5
+Israel	3	0	Bosnia and Herzegovina	735553	2.5
+Italy	1	1	Croatia	735553	2.5
+Netherlands	6	0	Latvia	735553	2.5
+Czech Republic	2	1	Iceland	735553	2.5
+Saudi Arabia	3	0	Bahrain	735553	1
+Belgium	0	0	Wales	735553	2.5
+Yemen	0	0	Qatar	735553	1
+Taiwan	0	1	Hong Kong	735553	1
+Guam	1	5	North Korea	735553	1
+Swaziland	1	1	Tanzania	735553	1
+Vietnam	3	1	Malaysia	735553	1
+Antigua and Barbuda	0	2	Martinique	735553	1
+Cuba	0	0	Trinidad and Tobago	735553	1
+Azerbaijan	0	1	Norway	735553	2.5
+Iraq	1	1	Oman	735554	1
+Singapore	4	2	Cambodia	735554	1
+United Arab Emirates	2	2	Kuwait	735554	1
+Poland	2	2	Suisse	735554	1
+Jamaica	2	0	Haiti	735554	1
+Peru	2	1	Paraguay	735555	1
+Hungary	1	2	Russia	735555	1
+Cuba	1	2	Haiti	735555	1
+Slovenia	0	1	Colombia	735555	1
+Spain	0	1	Germany	735555	1
+Ukraine	0	0	Lithania	735555	1
+Estonia	1	0	Jordan	735555	1
+Argentina	0	1	Portugal	735555	1
+Italy	1	0	Albania	735555	1
+France	1	0	Sweden	735555	1
+Thailand	2	0	New Zealand	735555	1
+China	0	0	Honduras	735555	1
+Bolivia	3	2	Venezuela	735555	1
+Belarus	3	2	Mexico	735555	1
+Greece	0	2	Serbia	735555	1
+Chile	1	2	Uruguay	735555	1
+Ireland	4	1	USA	735555	1
+Iran	1	0	South Korea	735555	1
+Romania	2	0	Denmark	735555	1
+Slovakia	2	1	Finland	735555	1
+Scotland	1	3	England	735555	1
+Austria	1	2	Brazil	735555	1
+Panama	0	0	Canada	735555	1
+Nicaragua	0	2	El Salvador	735555	1
+Japan	2	1	Australia	735555	1
+Cote dIvoire	0	0	Cameroon	735556	2.5
+Ethiopia	0	0	Malawi	735556	2.5
+Sudan	0	1	Congo	735556	2.5
+Gabon	4	2	Lesotho	735556	2.5
+Ghana	3	1	Togo	735556	2.5
+Mali	2	0	Algeria	735556	2.5
+Nigeria	2	2	South Africa	735556	2.5
+DR Congo	3	1	Sierra Leone	735556	2.5
+Bahrain	0	0	Qatar	735556	1
+Burkina Faso	1	1	Angola	735556	2.5
+Hong Kong	0	0	Guam	735556	1
+Zambia	1	0	Cape Verde	735556	2.5
+Tunisia	2	1	Egypt	735556	2.5
+Niger	1	1	Mozambique	735556	2.5
+Senegal	3	0	Botswana	735556	2.5
+Guinea	2	0	Uganda	735556	2.5
+Saudi Arabia	1	0	Yemen	735556	1
+Taiwan	0	0	North Korea	735556	1
+Jamaica	1	1	Trinidad and Tobago	735556	1
+United Arab Emirates	2	0	Iraq	735557	1
+Kuwait	0	5	Oman	735557	1
+Philippines	4	1	Laos	735559	1
+Vietnam	2	2	Indonesia	735559	1
+Singapore	1	2	Thailand	735560	1
+Oman	1	3	Qatar	735560	1
+Saudi Arabia	3	2	United Arab Emirates	735560	1
+Malaysia	0	0	Myanmar	735560	1
+United Arab Emirates	1	0	Oman	735561	1
+Vietnam	3	0	Laos	735562	1
+Philippines	4	0	Indonesia	735562	1
+Malaysia	2	3	Thailand	735563	1
+Myanmar	2	4	Singapore	735563	1
+Saudi Arabia	1	2	Qatar	735563	1
+Vietnam	3	1	Philippines	735565	1
+Indonesia	5	1	Laos	735565	1
+Singapore	1	3	Malaysia	735566	1
+Thailand	2	0	Myanmar	735566	1
+South Africa	2	0	Cote dIvoire	735567	1
+Philippines	0	0	Thailand	735573	1
+Malaysia	1	2	Vietnam	735574	1
+Thailand	3	0	Philippines	735577	1
+Vietnam	2	4	Malaysia	735578	1
+China	4	0	Kyrgyzstan	735580	1
+Uzbekistan	1	0	Palestine	735580	1
+China	2	0	Kyrgyzstan	735584	1
+Thailand	2	0	Malaysia	735584	1
+Malaysia	3	2	Thailand	735587	1
+Jordan	2	1	Uzbekistan	735588	1
+China	0	0	Palestine	735588	1
+Iraq	1	1	Kuwait	735589	1
+Iraq	1	0	Uzbekistan	735592	1
+Qatar	3	0	Estonia	735594	1
+Uzbekistan	0	0	Iraq	735595	1
+United Arab Emirates	1	0	Jordan	735597	1
+Bahrain	4	1	Saudi Arabia	735597	1
+Qatar	2	2	Oman	735598	1
+China	4	1	Oman	735601	1
+South Africa	1	0	Zambia	735602	1
+Bahrain	1	0	Jordan	735602	1
+Iraq	0	1	Iran	735602	1
+Saudi Arabia	0	2	South Korea	735602	1
+Cameroon	1	1	DR Congo	735605	1
+Cape Verde	1	1	Equatorial Guinea	735605	1
+Senegal	1	0	Gabon	735607	1
+Australia	4	1	Kuwait	735607	3
+Saudi Arabia	0	1	China	735608	3
+Uzbekistan	1	0	North Korea	735608	3
+South Korea	1	0	Oman	735608	3
+Burkina Faso	5	1	Swaziland	735608	1
+Cameroon	1	1	South Africa	735608	1
+Cape Verde	3	2	Congo	735608	1
+Nigeria	0	1	Cote dIvoire	735609	1
+Tunisia	1	1	Algeria	735609	1
+United Arab Emirates	4	1	Qatar	735609	3
+Iran	2	0	Bahrain	735609	3
+Japan	4	0	Palestine	735610	3
+Jordan	0	1	Iraq	735610	3
+Senegal	5	2	Guinea	735611	1
+Botswana	0	2	Burkina Faso	735611	1
+Kuwait	0	1	South Korea	735611	3
+Oman	0	4	Australia	735611	3
+Mali	0	3	South Africa	735612	1
+China	2	1	Uzbekistan	735612	3
+North Korea	1	4	Saudi Arabia	735612	3
+Sweden	2	0	Cote dIvoire	735613	1
+Bahrain	1	2	United Arab Emirates	735613	3
+Qatar	0	1	Iran	735613	3
+Canada	1	2	Iceland	735614	1
+Palestine	1	5	Jordan	735614	3
+Iraq	0	1	Japan	735614	3
+Nigeria	2	0	Yemen	735615	1
+Oman	1	0	Kuwait	735615	3
+Australia	0	1	South Korea	735615	3
+Burkina Faso	0	2	Gabon	735615	3
+Equatorial Guinea	1	1	Congo	735615	3
+Tunisia	1	1	Cape Verde	735616	3
+Zambia	1	1	DR Congo	735616	3
+China	2	1	North Korea	735616	3
+Uzbekistan	3	1	Saudi Arabia	735616	3
+Sweden	0	1	Finland	735617	1
+Canada	1	1	Iceland	735617	1
+Iran	1	0	United Arab Emirates	735617	3
+Algeria	3	1	South Africa	735617	3
+Ghana	1	2	Senegal	735617	3
+Qatar	1	2	Bahrain	735617	3
+Cote dIvoire	1	1	Guinea	735618	3
+Mali	1	1	Cameroon	735618	3
+Japan	2	0	Jordan	735618	3
+Iraq	2	0	Palestine	735618	3
+Gabon	0	1	Congo	735619	3
+Equatorial Guinea	0	0	Burkina Faso	735619	3
+Cape Verde	0	0	DR Congo	735620	3
+Zambia	1	2	Tunisia	735620	3
+South Korea	0	0	Uzbekistan	735620	3
+Finland	0	0	Yemen	735620	1
+China	0	2	Australia	735620	3
+Ghana	1	0	Algeria	735621	3
+Japan	1	1	United Arab Emirates	735621	3
+South Africa	1	1	Senegal	735621	3
+Iran	1	1	Iraq	735621	3
+Cameroon	1	1	Guinea	735622	3
+Cote dIvoire	1	1	Mali	735622	3
+Congo	2	1	Burkina Faso	735623	3
+Gabon	0	2	Equatorial Guinea	735623	3
+Cape Verde	0	0	Zambia	735624	3
+South Korea	2	0	Iraq	735624	3
+DR Congo	1	1	Tunisia	735624	3
+Senegal	0	2	Algeria	735625	3
+South Africa	1	2	Ghana	735625	3
+Australia	2	0	United Arab Emirates	735625	3
+Chile	3	2	USA	735626	1
+Guinea	1	1	Mali	735626	3
+Cameroon	0	1	Cote dIvoire	735626	3
+Curacao	1	1	Aruba	735628	1
+Suriname	3	0	Bonaire	735628	1
+Iraq	2	3	United Arab Emirates	735628	3
+Congo	2	4	DR Congo	735629	3
+Tunisia	1	1	Equatorial Guinea	735629	3
+South Korea	1	1	Australia	735629	3
+Curacao	4	1	Bonaire	735630	1
+Suriname	1	0	Aruba	735630	1
+Cote dIvoire	3	1	Algeria	735630	3
+Ghana	3	0	Guinea	735630	3
+Barbados	2	2	Guyana	735631	1
+Bangladesh	1	0	Sri Lanka	735631	1
+Honduras	2	3	Venezuela	735633	1
+DR Congo	1	3	Cote dIvoire	735633	3
+Ghana	3	0	Equatorial Guinea	735634	3
+Pakistan	2	1	Afghanistan	735635	1
+DR Congo	1	1	Equatorial Guinea	735636	3
+Romania	0	0	Bulgaria	735636	1
+Cote dIvoire	1	1	Ghana	735637	3
+USA	2	0	Panama	735637	1
+Venezuela	2	1	Honduras	735641	1
+Romania	2	1	Moldova	735643	1
+Moldova	1	1	Kazakhstan	735647	1
+Anguilla	1	0	British Virgin Islands	735657	1
+Seychelles	0	2	Kenya	735657	1
+Anguilla	3	1	British Virgin Islands	735658	1
+Barbados	3	1	St. Vincent and the Grenadines	735663	1
+Bermuda	2	2	Grenada	735664	1
+Bermuda	2	0	Grenada	735665	1
+Barbados	2	2	St. Vincent and the Grenadines	735665	1
+Yemen	3	1	Pakistan	735669	2.5
+Taiwan	0	1	Brunei	735669	2.5
+India	2	0	Nepal	735669	2.5
+Cambodia	3	0	Macau	735669	2.5
+Timor-Leste	4	1	Mongolia	735669	2.5
+Sri Lanka	0	1	Bhutan	735669	2.5
+Antigua and Barbuda	1	0	Dominica	735672	1
+Bhutan	2	1	Sri Lanka	735674	2.5
+Mongolia	0	1	Timor-Leste	735674	2.5
+Macau	1	1	Cambodia	735674	2.5
+Brunei	0	2	Taiwan	735674	2.5
+Nepal	0	0	India	735674	2.5
+Antigua and Barbuda	1	0	British Virgin Islands	735679	1
+Guyana	2	0	St. Lucia	735680	1
+Barbados	0	1	US Virgin Islands	735680	2.5
+Pakistan	0	0	Yemen	735680	2.5
+Nicaragua	5	0	Anguilla	735681	2.5
+St. Kitts and Nevis	6	2	Turks and Caicos Islands	735681	2.5
+Scotland	1	0	Northern Ireland	735682	1
+Nigeria	0	1	Uganda	735682	1
+Swaziland	1	3	South Africa	735682	1
+Gabon	4	3	Mali	735682	1
+Mauritius	2	2	Burundi	735682	1
+Dominican Republic	0	3	Cuba	735682	1
+Georgia	2	0	Malta	735682	1
+Germany	2	2	Australia	735682	1
+Denmark	3	2	USA	735682	1
+Indonesia	0	1	Cameroon	735682	1
+French Guiana	3	1	Honduras	735683	1
+Oman	6	0	Malaysia	735683	1
+Jordan	0	1	Syria	735683	1
+US Virgin Islands	0	4	Barbados	735683	2.5
+Bahamas	0	5	Bermuda	735683	2.5
+Belize	0	0	Cayman Islands	735683	2.5
+Thailand	2	0	Singapore	735683	1
+Bahrain	0	6	Colombia	735683	1
+Cote dIvoire	2	0	Angola	735683	1
+Egypt	2	0	Equatorial Guinea	735683	1
+France	1	3	Brazil	735683	1
+Maldives	0	2	Tajikistan	735683	1
+Iran	2	0	Chile	735683	1
+Qatar	1	0	Algeria	735683	1
+England	4	0	Lithania	735684	2.5
+FYR of Macedonia	1	2	Belarus	735684	2.5
+Suisse	3	0	Estonia	735684	2.5
+Slovakia	3	0	Luxembourg	735684	2.5
+Liechtenstein	0	5	Austria	735684	2.5
+Slovenia	6	0	San Marino	735684	2.5
+Montenegro	0	3	Russia	735684	2.5
+Moldova	0	2	Sweden	735684	2.5
+Spain	1	0	Ukraine	735684	2.5
+Turks and Caicos Islands	2	6	St. Kitts and Nevis	735684	2.5
+Canada	1	0	Guatemala	735684	1
+British Virgin Islands	2	3	Dominica	735684	2.5
+Costa Rica	0	0	Paraguay	735684	1
+Japan	2	0	Tunisia	735684	1
+Gambia	1	0	Mauritania	735684	1
+China	2	2	Haiti	735684	1
+Trinidad and Tobago	0	1	Panama	735684	1
+South Korea	1	1	Uzbekistan	735684	1
+Netherlands	1	1	Turkey	735685	2.5
+Azerbaijan	2	0	Malta	735685	2.5
+Croatia	5	1	Norway	735685	2.5
+Bulgaria	2	2	Italy	735685	2.5
+Israel	0	3	Wales	735685	2.5
+Belgium	5	0	Cyprus	735685	2.5
+Czech Republic	1	1	Latvia	735685	2.5
+Kazakhstan	0	3	Iceland	735685	2.5
+Hong Kong	1	0	Guam	735685	1
+Curacao	2	1	Montserrat	735685	2.5
+Iraq	2	1	DR Congo	735685	1
+Morocco	0	1	Uruguay	735685	1
+Ghana	1	2	Senegal	735685	1
+Jamaica	2	1	Venezuela	735685	1
+Andorra	0	3	Bosnia and Herzegovina	735685	2.5
+Mauritius	1	1	Togo	735685	1
+Scotland	6	1	Gibraltar	735686	2.5
+Romania	1	0	Faroe Islands	735686	2.5
+Georgia	0	2	Germany	735686	2.5
+Zambia	2	0	Rwanda	735686	1
+Ireland	1	1	Poland	735686	2.5
+Portugal	2	1	Serbia	735686	2.5
+Albania	2	1	Armenia	735686	2.5
+Hungary	0	0	Greece	735686	2.5
+Northern Ireland	2	1	Finland	735686	2.5
+Bermuda	3	0	Bahamas	735686	2.5
+Tanzania	1	1	Malawi	735686	1
+Botswana	1	2	Mozambique	735686	1
+El Salvador	0	2	Argentina	735686	1
+Dominica	0	0	British Virgin Islands	735686	2.5
+France	2	0	Denmark	735686	1
+Cote dIvoire	1	1	Equatorial Guinea	735686	1
+Mexico	1	0	Ecuador	735686	1
+Anguilla	0	3	Nicaragua	735686	2.5
+South Africa	1	1	Nigeria	735686	1
+Guyana	2	0	Grenada	735686	1
+Brazil	1	0	Chile	735686	1
+Oman	1	4	Algeria	735687	1
+Cayman Islands	1	1	Belize	735687	2.5
+Honduras	3	0	French Guiana	735687	1
+Bahrain	2	1	Philippines	735687	1
+Jamaica	3	0	Cuba	735687	1
+Belarus	0	0	Gabon	735687	1
+Colombia	3	1	Kuwait	735687	1
+Thailand	2	3	Cameroon	735687	1
+Indonesia	2	1	Myanmar	735687	1
+Saudi Arabia	2	1	Jordan	735687	1
+FYR of Macedonia	0	0	Australia	735687	1
+Qatar	1	0	Slovenia	735687	1
+Netherlands	2	0	Spain	735688	1
+Luxembourg	1	2	Turkey	735688	1
+Portugal	0	2	Cape Verde	735688	1
+China	1	1	Tunisia	735688	1
+Mauritania	2	0	Niger	735688	1
+Tajikistan	2	3	Syria	735688	1
+Russia	0	0	Kazakhstan	735688	1
+Iraq	1	0	DR Congo	735688	1
+Singapore	2	2	Guam	735688	1
+Liechtenstein	1	0	San Marino	735688	1
+Israel	0	1	Belgium	735688	2.5
+South Korea	1	0	New Zealand	735688	1
+Slovakia	1	0	Czech Republic	735688	1
+Panama	2	1	Costa Rica	735688	1
+Kyrgyzstan	0	0	Afghanistan	735688	1
+Peru	0	1	Venezuela	735688	1
+Austria	1	1	Bosnia and Herzegovina	735688	1
+Italy	1	1	England	735688	1
+Sweden	3	1	Iran	735688	1
+Japan	5	1	Uzbekistan	735688	1
+Estonia	1	1	Iceland	735688	1
+Ghana	1	1	Mali	735688	1
+Puerto Rico	0	3	Canada	735688	1
+Suisse	1	1	USA	735688	1
+Ukraine	1	1	Latvia	735688	1
+Argentina	2	1	Ecuador	735689	1
+Mexico	1	0	Paraguay	735689	1
+El Salvador	0	0	Guatemala	735689	1
+Montserrat	2	2	Curacao	735689	2.5
+USA	2	0	Mexico	735703	1
+Suriname	1	0	Guyana	735719	1
+Zambia	2	0	Malawi	735728	1
+Barbados	1	3	St. Kitts and Nevis	735728	1
+Grenada	2	3	St. Vincent and the Grenadines	735730	1
+Kazakhstan	0	0	Burkina Faso	735730	1
+Dominican Republic	6	0	Cayman Islands	735731	1
+St. Lucia	1	1	Dominica	735731	1
+Grenada	1	2	Dominica	735732	1
+St. Lucia	1	2	St. Vincent and the Grenadines	735732	1
+Lesotho	0	0	South Africa	735732	1
+St. Lucia	0	2	Grenada	735734	1
+St. Vincent and the Grenadines	1	0	Dominica	735734	1
+Lesotho	1	1	South Africa	735734	1
+Namibia	0	0	Seychelles	735735	1
+Zimbabwe	2	0	Mauritius	735735	1
+Vietnam	1	1	North Korea	735735	1
+Tanzania	0	1	Swaziland	735736	1
+Lesotho	1	2	Madagascar	735736	1
+Seychelles	0	1	Zimbabwe	735737	1
+Namibia	2	0	Mauritius	735737	1
+Madagascar	2	0	Tanzania	735738	1
+Lesotho	0	2	Swaziland	735738	1
+Thailand	0	1	North Korea	735738	1
+Seychelles	0	1	Mauritius	735739	1
+Namibia	4	1	Zimbabwe	735739	1
+Madagascar	1	1	Swaziland	735740	1
+Lesotho	1	0	Tanzania	735740	1
+South Africa	1	1	Botswana	735742	1
+Zambia	1	1	Namibia	735742	1
+Lebanon	2	2	Syria	735742	1
+Thailand	1	0	Vietnam	735742	2.5
+Ghana	1	2	Madagascar	735743	1
+Mozambique	1	1	Malawi	735743	1
+South Africa	1	1	Malawi	735745	1
+Ghana	0	3	Zambia	735745	1
+Madagascar	2	3	Namibia	735746	1
+Botswana	1	2	Mozambique	735746	1
+Zambia	0	1	Malawi	735747	1
+Laos	0	2	Afghanistan	735747	1
+Madagascar	2	1	Botswana	735748	1
+Namibia	2	0	Mozambique	735748	1
+Bahrain	0	0	Oman	735748	1
+Bangladesh	1	2	Singapore	735748	1
+Jordan	0	0	Lebanon	735748	1
+Mexico	3	0	Guatemala	735748	1
+Honduras	2	0	El Salvador	735749	1
+Northern Ireland	1	1	Qatar	735749	1
+Cambodia	1	1	Laos	735751	1
+Bangladesh	1	1	Afghanistan	735751	1
+Peru	1	1	Mexico	735752	1
+Panama	1	1	Ecuador	735752	1
+Ireland	0	0	Northern Ireland	735753	1
+Cambodia	1	0	Myanmar	735754	1
+Thailand	1	1	Bahrain	735754	1
+Netherlands	3	4	USA	735754	1
+Oman	1	2	Syria	735754	1
+Hungary	4	0	Lithania	735754	1
+Scotland	1	0	Qatar	735754	1
+Jordan	2	2	Kuwait	735754	1
+Singapore	5	1	Brunei	735755	1
+Burkina Faso	2	3	Cameroon	735755	1
+Ecuador	4	0	Panama	735755	1
+Chad	2	1	Guinea	735755	1
+Niger	2	1	Gabon	735755	1
+Mali	2	2	Libya	735755	1
+Malaysia	0	0	Hong Kong	735755	1
+Colombia	1	0	Costa Rica	735755	1
+Bermuda	1	1	Puerto Rico	735755	1
+Paraguay	2	2	Honduras	735755	1
+Uruguay	5	1	Guatemala	735755	1
+Chile	1	0	El Salvador	735755	1
+Andorra	0	1	Equatorial Guinea	735755	1
+Curacao	1	0	Trinidad and Tobago	735755	1
+Ethiopia	0	1	Zambia	735756	1
+Ireland	0	0	England	735756	1
+Mauritania	1	0	Senegal	735756	1
+Croatia	4	0	Gibraltar	735756	1
+Kenya	2	0	South Sudan	735756	1
+Brazil	2	0	Mexico	735756	1
+Russia	4	2	Belarus	735756	1
+France	3	4	Belgium	735756	1
+Argentina	5	0	Bolivia	735756	1
+Serbia	4	1	Azerbaijan	735756	1
+Rwanda	2	0	Tanzania	735756	1
+Norway	0	0	Sweden	735757	1
+Denmark	2	1	Montenegro	735757	1
+Ghana	1	0	Togo	735757	1
+Egypt	2	1	Malawi	735757	1
+Turkey	4	0	Bulgaria	735757	1
+Malta	2	0	Lithania	735757	1
+Nicaragua	1	0	Suriname	735757	2.5
+DR Congo	1	1	Cameroon	735758	1
+Luxembourg	0	0	Moldova	735758	1
+Uganda	1	1	Gambia	735758	1
+Finland	0	2	Estonia	735758	1
+Georgia	1	2	Ukraine	735758	1
+Germany	1	2	USA	735759	1
+Suisse	3	0	Liechtenstein	735759	1
+Brazil	1	0	Honduras	735759	1
+St. Vincent and the Grenadines	2	2	Guyana	735759	2.5
+India	1	2	Oman	735760	2.5
+Afghanistan	0	6	Syria	735760	2.5
+Aruba	0	2	Barbados	735760	2.5
+Tajikistan	1	3	Jordan	735760	2.5
+Lebanon	0	1	Kuwait	735760	2.5
+Philippines	2	1	Bahrain	735760	2.5
+Malaysia	1	1	Timor-Leste	735760	2.5
+Cambodia	0	4	Singapore	735760	2.5
+Guam	1	0	Turkmenistan	735760	2.5
+Bangladesh	1	3	Kyrgyzstan	735760	2.5
+Dominican Republic	1	2	Belize	735760	2.5
+Uzbekistan	0	1	Iran	735760	1
+South Korea	3	0	United Arab Emirates	735760	1
+Spain	2	1	Costa Rica	735760	1
+Saudi Arabia	3	2	Palestine	735760	2.5
+Japan	4	0	Iraq	735760	1
+Curacao	0	0	Cuba	735760	2.5
+Yemen	0	1	North Korea	735760	2.5
+Maldives	0	1	Qatar	735760	2.5
+Laos	2	2	Myanmar	735760	2.5
+Hong Kong	7	0	Bhutan	735760	2.5
+Antigua and Barbuda	1	3	St. Lucia	735760	2.5
+Norway	0	0	Azerbaijan	735761	2.5
+Croatia	1	1	Italy	735761	2.5
+Kazakhstan	0	1	Turkey	735761	2.5
+Bosnia and Herzegovina	3	1	Israel	735761	2.5
+Latvia	0	2	Netherlands	735761	2.5
+Malta	0	1	Bulgaria	735761	2.5
+Dominica	0	2	Canada	735761	2.5
+Wales	1	0	Belgium	735761	2.5
+Morocco	1	0	Libya	735761	2.5
+Guinea	1	2	Swaziland	735761	2.5
+Chile	2	0	Ecuador	735761	3
+Iceland	2	1	Czech Republic	735761	2.5
+St. Kitts and Nevis	2	2	El Salvador	735761	2.5
+Tunisia	8	1	Djibouti	735761	2.5
+Andorra	1	3	Cyprus	735761	2.5
+Cape Verde	7	1	São Tome e Ptincipe	735762	2.5
+Gibraltar	0	7	Germany	735762	2.5
+Denmark	2	0	Serbia	735762	2.5
+Poland	4	0	Georgia	735762	2.5
+Guatemala	0	0	Bermuda	735762	2.5
+Faroe Islands	2	1	Greece	735762	2.5
+Ireland	1	1	Scotland	735762	2.5
+Algeria	4	0	Seychelles	735762	2.5
+Armenia	2	3	Portugal	735762	2.5
+Mali	2	0	South Sudan	735762	2.5
+Northern Ireland	0	0	Romania	735762	2.5
+Burkina Faso	2	0	Comoros	735762	2.5
+Argentina	2	2	Paraguay	735762	3
+Angola	4	0	Central African Republic	735762	2.5
+Puerto Rico	1	0	Grenada	735762	2.5
+Mexico	0	0	Bolivia	735762	3
+Uruguay	1	0	Jamaica	735762	3
+Nigeria	2	0	Chad	735762	2.5
+Senegal	3	1	Burundi	735762	2.5
+Finland	0	1	Hungary	735762	2.5
+Zambia	0	0	Guinea-Bissau	735762	2.5
+Uganda	2	0	Botswana	735762	2.5
+South Africa	0	0	Gambia	735762	2.5
+Albania	1	0	France	735762	1
+Malawi	1	2	Zimbabwe	735762	2.5
+Belarus	0	1	Spain	735763	2.5
+Liechtenstein	1	1	Moldova	735763	2.5
+Russia	0	1	Austria	735763	2.5
+Lithania	1	2	Suisse	735763	2.5
+Slovenia	2	3	England	735763	2.5
+Estonia	2	0	San Marino	735763	2.5
+Ukraine	3	0	Luxembourg	735763	2.5
+DR Congo	2	1	Madagascar	735763	2.5
+Sweden	3	1	Montenegro	735763	2.5
+Ethiopia	2	1	Lesotho	735763	2.5
+Egypt	3	0	Tanzania	735763	2.5
+Slovakia	2	1	FYR of Macedonia	735763	2.5
+Gabon	0	0	Cote dIvoire	735763	2.5
+Togo	2	1	Liberia	735763	2.5
+Ghana	7	1	Mauritius	735763	2.5
+Equatorial Guinea	1	1	Benin	735763	2.5
+Niger	1	0	Namibia	735763	2.5
+Cameroon	1	0	Mauritania	735763	2.5
+Mozambique	0	1	Rwanda	735763	2.5
+Colombia	0	1	Venezuela	735763	3
+Brazil	2	1	Peru	735763	3
+Cuba	1	1	Curacao	735763	2.5
+Sudan	1	0	Sierra Leone	735763	2.5
+Congo	1	1	Kenya	735763	2.5
+Barbados	1	0	Aruba	735764	2.5
+Ecuador	2	3	Bolivia	735764	3
+Guyana	4	4	St. Vincent and the Grenadines	735764	2.5
+Belize	3	0	Dominican Republic	735764	2.5
+St. Lucia	1	4	Antigua and Barbuda	735764	2.5
+Morocco	1	1	Tunisia	735764	1
+North Korea	4	2	Uzbekistan	735765	2.5
+Myanmar	0	2	South Korea	735765	2.5
+Bhutan	0	6	China	735765	2.5
+Cambodia	0	1	Afghanistan	735765	2.5
+Taiwan	0	2	Thailand	735765	2.5
+Poland	0	0	Greece	735765	1
+Paraguay	1	0	Jamaica	735765	3
+Chile	3	3	Mexico	735765	3
+Timor-Leste	0	1	United Arab Emirates	735765	2.5
+Guam	2	1	India	735765	2.5
+Malaysia	0	6	Palestine	735765	2.5
+Turkmenistan	1	1	Iran	735765	2.5
+Kyrgyzstan	1	2	Australia	735765	2.5
+Bangladesh	1	1	Tajikistan	735765	2.5
+Suriname	1	3	Nicaragua	735765	2.5
+Yemen	0	2	Philippines	735765	2.5
+Laos	0	2	Lebanon	735765	2.5
+Grenada	2	0	Puerto Rico	735765	2.5
+Japan	0	0	Singapore	735765	2.5
+Hong Kong	2	0	Maldives	735765	2.5
+Bermuda	0	1	Guatemala	735765	2.5
+South Africa	2	1	Angola	735765	1
+Italy	0	1	Portugal	735765	1
+Jordan	3	0	Trinidad and Tobago	735765	1
+El Salvador	4	1	St. Kitts and Nevis	735766	2.5
+Canada	4	0	Dominica	735766	2.5
+Argentina	1	0	Uruguay	735766	3
+Libya	1	0	Tunisia	735767	1
+Brazil	0	1	Colombia	735767	3
+Tunisia	0	1	Libya	735768	1
+Guinea-Bissau	1	1	Mali	735768	1
+Mexico	1	2	Ecuador	735768	3
+Peru	1	0	Venezuela	735768	3
+Senegal	3	1	Gambia	735769	1
+Uruguay	1	1	Paraguay	735769	3
+Chile	5	0	Bolivia	735769	3
+South Africa	3	0	Mauritius	735769	1
+Mozambique	5	1	Seychelles	735769	1
+Tanzania	0	3	Uganda	735769	1
+Argentina	1	0	Jamaica	735769	3
+Ethiopia	2	0	Kenya	735770	1
+Colombia	0	0	Peru	735770	3
+Zimbabwe	2	0	Comoros	735770	1
+Djibouti	1	2	Burundi	735770	1
+Brazil	2	1	Venezuela	735770	3
+Mauritania	2	1	Sierra Leone	735770	1
+Morocco	3	0	Libya	735770	1
+Swaziland	2	2	Angola	735770	1
+Namibia	2	1	Zambia	735770	1
+Lesotho	0	0	Botswana	735770	1
+Guinea	3	1	Liberia	735771	1
+Chile	1	0	Uruguay	735774	3
+Bolivia	1	3	Peru	735775	3
+Mexico	2	2	Costa Rica	735776	1
+Argentina	1	1	Colombia	735776	3
+Brazil	1	1	Paraguay	735776	3
+Chile	2	1	Peru	735779	3
+Argentina	6	1	Paraguay	735780	3
+Mexico	0	0	Honduras	735781	1
+Mauritius	0	2	South Africa	735782	1
+Uganda	1	1	Tanzania	735782	1
+Seychelles	0	4	Mozambique	735782	1
+Kenya	0	0	Ethiopia	735782	1
+Zambia	1	1	Namibia	735782	1
+Liberia	1	1	Guinea	735782	1
+Comoros	0	0	Zimbabwe	735782	1
+Mali	3	1	Guinea-Bissau	735782	1
+Burundi	2	0	Djibouti	735782	1
+Gambia	0	1	Senegal	735782	1
+Sierra Leone	0	2	Mauritania	735782	1
+USA	4	0	Guatemala	735783	1
+Angola	2	0	Swaziland	735783	1
+Peru	2	0	Paraguay	735783	3
+Chile	1	1	Argentina	735783	3
+Botswana	1	1	Lesotho	735784	1
+Panama	1	1	Haiti	735787	3
+USA	2	1	Honduras	735787	3
+El Salvador	0	0	Canada	735788	3
+Costa Rica	2	2	Jamaica	735788	3
+Mexico	6	0	Cuba	735789	3
+Trinidad and Tobago	3	1	Guatemala	735789	3
+USA	1	0	Haiti	735790	3
+Honduras	1	1	Panama	735790	3
+Jamaica	1	0	Canada	735791	3
+Costa Rica	1	1	El Salvador	735791	3
+Trinidad and Tobago	2	0	Cuba	735792	3
+Guatemala	0	0	Mexico	735792	3
+Haiti	1	0	Honduras	735793	3
+Panama	1	1	USA	735793	3
+Canada	0	0	Costa Rica	735794	3
+Jamaica	1	0	El Salvador	735794	3
+Cuba	1	0	Guatemala	735795	3
+Mexico	4	4	Trinidad and Tobago	735795	3
+USA	6	0	Cuba	735797	3
+Haiti	0	1	Jamaica	735798	3
+Trinidad and Tobago	1	1	Panama	735798	3
+Mexico	0	0	Costa Rica	735799	3
+Panama	1	1	Mexico	735802	3
+USA	1	2	Jamaica	735802	3
+USA	1	1	Panama	735804	3
+Jamaica	1	3	Mexico	735806	3
+Maldives	1	3	Mayotte	735810	1
+Seychelles	3	0	Madagascar	735810	1
+Reunion	1	0	Mauritius	735810	1
+China	0	2	South Korea	735812	1
+Comoros	0	3	Mauritius	735812	1
+North Korea	2	1	Japan	735812	1
+Maldives	2	1	Seychelles	735812	1
+Mayotte	1	1	Madagascar	735812	1
+Madagascar	4	0	Maldives	735814	1
+Seychelles	0	1	Mayotte	735814	1
+Reunion	3	0	Comoros	735814	1
+Japan	1	1	South Korea	735815	1
+China	2	0	North Korea	735815	1
+Mayotte	2	1	Mauritius	735816	1
+Reunion	0	0	Madagascar	735816	1
+Mauritius	3	1	Madagascar	735817	1
+Mayotte	1	3	Reunion	735818	1
+China	1	1	Japan	735819	1
+South Korea	0	0	North Korea	735819	1
+Fiji	5	0	Tonga	735829	1
+Cambodia	2	0	Bhutan	735830	1
+Lebanon	2	3	Iraq	735836	1
+Fiji	6	0	American Samoa	735837	1
+Qatar	4	0	Singapore	735838	1
+United Arab Emirates	1	0	Myanmar	735838	1
+St. Vincent and the Grenadines	2	2	Barbados	735838	1
+Tanzania	1	2	Libya	735838	1
+Rwanda	3	1	Ethiopia	735838	1
+Oman	1	0	Yemen	735838	1
+Laos	2	1	Cambodia	735839	1
+Malaysia	0	0	Bangladesh	735839	1
+Niger	0	0	Burkina Faso	735840	1
+Tonga	0	3	Cook Islands	735841	2.5
+Samoa	3	2	American Samoa	735841	2.5
+Lebanon	0	0	Palestine	735841	1
+India	0	0	Nepal	735841	1
+Congo	2	3	Ghana	735842	1
+Maldives	2	1	Seychelles	735843	1
+Cook Islands	1	0	Samoa	735843	2.5
+Tonga	1	2	American Samoa	735843	2.5
+China	0	0	Hong Kong	735844	2.5
+Netherlands	0	1	Iceland	735844	2.5
+Israel	4	0	Andorra	735844	2.5
+Cyprus	0	1	Wales	735844	2.5
+Uzbekistan	1	0	Yemen	735844	2.5
+Turkey	1	1	Latvia	735844	2.5
+Azerbaijan	0	0	Croatia	735844	2.5
+Bulgaria	0	1	Norway	735844	2.5
+Belgium	3	1	Bosnia and Herzegovina	735844	2.5
+Italy	1	0	Malta	735844	2.5
+Czech Republic	2	1	Kazakhstan	735844	2.5
+Qatar	15	0	Bhutan	735844	2.5
+Jordan	0	0	Kyrgyzstan	735844	2.5
+United Arab Emirates	10	0	Malaysia	735844	2.5
+Australia	5	0	Bangladesh	735844	2.5
+Philippines	2	0	Maldives	735844	1
+Syria	1	0	Singapore	735844	2.5
+Japan	3	0	Cambodia	735844	2.5
+Thailand	2	0	Afghanistan	735844	1
+Iran	6	0	Guam	735844	2.5
+South Korea	8	0	Laos	735844	2.5
+Bahrain	0	1	North Korea	735844	2.5
+Kuwait	9	0	Myanmar	735844	2.5
+Iraq	5	1	Taiwan	735844	2.5
+Saudi Arabia	7	0	Timor-Leste	735844	2.5
+Oman	3	1	Turkmenistan	735844	2.5
+American Samoa	2	0	Cook Islands	735845	2.5
+Zimbabwe	1	1	Guinea	735845	2.5
+Faroe Islands	1	3	Northern Ireland	735845	2.5
+Germany	3	1	Poland	735845	2.5
+Greece	0	1	Finland	735845	2.5
+Gibraltar	0	4	Ireland	735845	2.5
+Djibouti	0	2	Togo	735845	2.5
+Burundi	2	0	Niger	735845	2.5
+Gambia	0	1	Cameroon	735845	2.5
+Hungary	0	0	Romania	735845	2.5
+Grenada	1	3	Haiti	735845	2.5
+Central African Republic	2	0	DR Congo	735845	2.5
+Serbia	2	0	Armenia	735845	2.5
+Benin	1	1	Mali	735845	2.5
+Tonga	0	3	Samoa	735845	2.5
+St. Vincent and the Grenadines	2	0	Aruba	735845	2.5
+Venezuela	0	3	Honduras	735845	1
+Portugal	0	1	France	735845	1
+Kenya	1	2	Zambia	735845	2.5
+Denmark	0	0	Albania	735845	2.5
+Georgia	1	0	Scotland	735845	2.5
+Mauritania	3	1	South Africa	735846	2.5
+Rwanda	0	1	Ghana	735846	2.5
+Guinea-Bissau	2	4	Congo	735846	2.5
+South Sudan	1	0	Equatorial Guinea	735846	2.5
+Comoros	0	1	Uganda	735846	2.5
+San Marino	0	6	England	735846	2.5
+Liberia	1	0	Tunisia	735846	2.5
+Ukraine	3	1	Belarus	735846	2.5
+Montenegro	2	0	Liechtenstein	735846	2.5
+Russia	1	0	Sweden	735846	2.5
+Spain	2	0	Slovakia	735846	2.5
+Suisse	3	2	Slovenia	735846	2.5
+Luxembourg	1	0	FYR of Macedonia	735846	2.5
+Namibia	0	2	Senegal	735846	2.5
+Jamaica	2	3	Nicaragua	735846	2.5
+Austria	1	0	Moldova	735846	2.5
+Seychelles	1	1	Ethiopia	735846	2.5
+Mexico	3	3	Trinidad and Tobago	735846	1
+Panama	0	1	Uruguay	735846	1
+USA	2	1	Peru	735846	1
+Brazil	1	0	Costa Rica	735846	1
+Argentina	7	0	Bolivia	735846	1
+Chile	3	2	Paraguay	735846	1
+Estonia	1	0	Lithania	735846	2.5
+Antigua and Barbuda	1	0	Guatemala	735846	2.5
+São Tome e Ptincipe	0	3	Morocco	735846	2.5
+Canada	3	0	Belize	735846	2.5
+Curacao	0	1	El Salvador	735846	2.5
+Tanzania	0	0	Nigeria	735846	2.5
+Gabon	4	0	Sudan	735846	2.5
+Botswana	1	0	Burkina Faso	735846	2.5
+Iceland	0	0	Kazakhstan	735847	2.5
+Norway	2	0	Croatia	735847	2.5
+Italy	1	0	Bulgaria	735847	2.5
+Malta	2	2	Azerbaijan	735847	2.5
+Bosnia and Herzegovina	3	0	Andorra	735847	2.5
+Turkey	3	0	Netherlands	735847	2.5
+Wales	0	0	Israel	735847	2.5
+Cyprus	0	1	Belgium	735847	2.5
+Swaziland	2	2	Malawi	735847	2.5
+Lesotho	1	3	Algeria	735847	2.5
+Madagascar	0	0	Angola	735847	2.5
+Libya	1	2	Cape Verde	735847	2.5
+Mauritius	1	0	Mozambique	735847	2.5
+Sierra Leone	0	0	Cote dIvoire	735847	2.5
+Latvia	1	2	Czech Republic	735847	2.5
+Chad	1	5	Egypt	735847	2.5
+Albania	0	1	Portugal	735848	2.5
+Finland	1	0	Faroe Islands	735848	2.5
+Romania	0	0	Greece	735848	2.5
+Armenia	0	0	Denmark	735848	2.5
+Northern Ireland	1	1	Hungary	735848	2.5
+Ireland	1	0	Georgia	735848	2.5
+Poland	8	1	Gibraltar	735848	2.5
+Myanmar	1	1	New Zealand	735848	1
+Scotland	2	3	Germany	735848	2.5
+France	2	1	Serbia	735848	1
+Moldova	0	2	Montenegro	735849	2.5
+Palestine	0	0	United Arab Emirates	735849	2.5
+Laos	0	2	Kuwait	735849	2.5
+Cambodia	0	6	Syria	735849	2.5
+FYR of Macedonia	0	1	Spain	735849	2.5
+Belarus	2	0	Luxembourg	735849	2.5
+Slovenia	1	0	Estonia	735849	2.5
+Liechtenstein	0	7	Russia	735849	2.5
+Sweden	1	4	Austria	735849	2.5
+India	0	3	Iran	735849	2.5
+England	2	0	Suisse	735849	2.5
+Lebanon	0	3	South Korea	735849	2.5
+Lithania	2	1	San Marino	735849	2.5
+Yemen	0	4	Bahrain	735849	2.5
+Slovakia	0	0	Ukraine	735849	2.5
+Thailand	2	2	Iraq	735849	2.5
+Philippines	1	5	Uzbekistan	735849	2.5
+Hong Kong	2	3	Qatar	735849	2.5
+South Africa	1	0	Senegal	735849	1
+Ecuador	2	0	Honduras	735849	1
+Venezuela	1	1	Panama	735849	1
+Zambia	1	1	Gabon	735849	1
+Tajikistan	0	3	Australia	735849	2.5
+Taiwan	1	2	Vietnam	735849	2.5
+Maldives	0	3	China	735849	2.5
+Bangladesh	0	4	Jordan	735849	2.5
+Malaysia	1	2	Saudi Arabia	735849	2.5
+Nigeria	2	0	Niger	735849	1
+Guam	0	0	Oman	735849	2.5
+Afghanistan	0	6	Japan	735849	2.5
+Guatemala	2	0	Antigua and Barbuda	735850	2.5
+El Salvador	1	0	Curacao	735850	2.5
+Belize	1	1	Canada	735850	2.5
+Haiti	3	0	Grenada	735850	2.5
+Nicaragua	0	2	Jamaica	735850	2.5
+Costa Rica	1	0	Uruguay	735850	1
+Colombia	1	1	Peru	735850	1
+Argentina	2	2	Mexico	735850	1
+USA	1	4	Brazil	735850	1
+Aruba	2	1	St. Vincent and the Grenadines	735850	2.5
+Rwanda	0	1	Gabon	735853	1
+Botswana	2	3	Ethiopia	735871	1
+Oman	2	1	Syria	735873	1
+Jordan	3	0	Iraq	735874	1
+Comoros	0	0	Lesotho	735878	2.5
+Tanzania	2	0	Malawi	735878	2.5
+Mauritius	2	5	Kenya	735878	2.5
+Seychelles	0	1	Burundi	735878	2.5
+Hungary	2	1	Faroe Islands	735879	2.5
+Singapore	1	0	Afghanistan	735879	2.5
+Jordan	2	0	Australia	735879	2.5
+Oman	1	1	Iran	735879	2.5
+Timor-Leste	1	1	Palestine	735879	2.5
+Turkmenistan	2	1	India	735879	2.5
+Vietnam	1	1	Iraq	735879	2.5
+Albania	0	2	Serbia	735879	2.5
+Portugal	1	0	Denmark	735879	2.5
+Romania	1	1	Finland	735879	2.5
+Ireland	1	0	Germany	735879	2.5
+Scotland	2	2	Poland	735879	2.5
+Syria	0	3	Japan	735879	2.5
+Northern Ireland	3	1	Greece	735879	2.5
+Georgia	4	0	Gibraltar	735879	2.5
+Saudi Arabia	2	1	United Arab Emirates	735879	2.5
+Kuwait	0	1	South Korea	735879	2.5
+São Tome e Ptincipe	1	0	Ethiopia	735879	2.5
+Bhutan	3	4	Maldives	735879	2.5
+Colombia	2	0	Peru	735879	2.5
+France	4	0	Armenia	735879	1
+Laos	1	3	Malaysia	735879	1
+Venezuela	0	1	Paraguay	735879	2.5
+Nigeria	0	2	DR Congo	735879	1
+North Korea	0	0	Philippines	735879	2.5
+Liberia	1	1	Guinea-Bissau	735879	2.5
+South Sudan	1	1	Mauritania	735879	2.5
+Bolivia	0	2	Uruguay	735879	2.5
+Myanmar	0	2	Lebanon	735879	2.5
+Kyrgyzstan	2	2	Tajikistan	735879	2.5
+Bahrain	0	4	Uzbekistan	735879	2.5
+Qatar	1	0	China	735879	2.5
+Gambia	1	1	Namibia	735880	2.5
+Montenegro	2	3	Austria	735880	2.5
+Slovakia	0	1	Belarus	735880	2.5
+Spain	4	0	Luxembourg	735880	2.5
+Moldova	1	2	Russia	735880	2.5
+Suisse	7	0	San Marino	735880	2.5
+Djibouti	0	6	Swaziland	735880	2.5
+Liechtenstein	0	2	Sweden	735880	2.5
+Slovenia	1	1	Lithania	735880	2.5
+Chile	2	0	Brazil	735880	2.5
+Thailand	1	0	Hong Kong	735880	1
+England	2	0	Estonia	735880	2.5
+Somalia	0	2	Niger	735880	2.5
+Taiwan	5	1	Macau	735880	1
+Costa Rica	0	1	South Africa	735880	1
+Tunisia	3	3	Gabon	735880	1
+Burkina Faso	1	4	Mali	735880	1
+FYR of Macedonia	0	2	Ukraine	735880	2.5
+Algeria	1	2	Guinea	735880	1
+Argentina	0	2	Ecuador	735880	2.5
+Panama	1	2	Trinidad and Tobago	735880	1
+Morocco	0	1	Cote dIvoire	735880	1
+Honduras	1	1	Guatemala	735880	1
+Croatia	3	0	Bulgaria	735881	2.5
+Israel	1	2	Cyprus	735881	2.5
+Bosnia and Herzegovina	2	0	Wales	735881	2.5
+Andorra	1	4	Belgium	735881	2.5
+Kazakhstan	1	2	Netherlands	735881	2.5
+Norway	2	0	Malta	735881	2.5
+Eritrea	0	2	Botswana	735881	2.5
+Iceland	2	2	Latvia	735881	2.5
+Central African Republic	0	3	Madagascar	735881	2.5
+Chad	1	0	Sierra Leone	735881	2.5
+Kosovo	2	0	Equatorial Guinea	735881	1
+USA	2	2	Mexico	735881	1
+El Salvador	1	3	Haiti	735881	1
+Czech Republic	0	2	Turkey	735881	2.5
+Azerbaijan	1	3	Italy	735881	2.5
+Poland	2	1	Ireland	735882	2.5
+Finland	1	1	Northern Ireland	735882	2.5
+Nigeria	3	0	Cameroon	735882	1
+Gibraltar	0	6	Scotland	735882	2.5
+Germany	2	1	Georgia	735882	2.5
+Egypt	3	0	Zambia	735882	1
+Faroe Islands	0	3	Romania	735882	2.5
+Malawi	1	0	Tanzania	735882	2.5
+Serbia	1	2	Portugal	735882	2.5
+Kenya	0	0	Mauritius	735882	2.5
+Greece	4	3	Hungary	735882	2.5
+Armenia	0	3	Albania	735882	2.5
+Ethiopia	3	0	São Tome e Ptincipe	735882	2.5
+Denmark	1	2	France	735882	1
+Ukraine	0	1	Spain	735883	2.5
+Sweden	2	0	Moldova	735883	2.5
+Russia	2	0	Montenegro	735883	2.5
+Lithania	0	3	England	735883	2.5
+Luxembourg	2	4	Slovakia	735883	2.5
+Austria	3	0	Liechtenstein	735883	2.5
+Estonia	0	1	Suisse	735883	2.5
+Morocco	1	1	Guinea	735883	1
+Gabon	1	2	DR Congo	735883	1
+Belarus	0	0	FYR of Macedonia	735883	2.5
+San Marino	0	2	Slovenia	735883	2.5
+Timor-Leste	0	1	Malaysia	735884	2.5
+Madagascar	2	2	Central African Republic	735884	2.5
+Ecuador	2	0	Bolivia	735884	2.5
+Lesotho	1	1	Comoros	735884	2.5
+Guinea-Bissau	1	3	Liberia	735884	2.5
+Namibia	2	1	Gambia	735884	2.5
+Sierra Leone	2	1	Chad	735884	2.5
+Burundi	2	0	Seychelles	735884	2.5
+Netherlands	2	3	Czech Republic	735884	2.5
+Mauritania	4	0	South Sudan	735884	2.5
+Jordan	3	0	Tajikistan	735884	2.5
+Italy	2	1	Norway	735884	2.5
+Bulgaria	2	0	Azerbaijan	735884	2.5
+Cyprus	2	3	Bosnia and Herzegovina	735884	2.5
+Turkey	1	0	Iceland	735884	2.5
+Wales	2	0	Andorra	735884	2.5
+Latvia	0	1	Kazakhstan	735884	2.5
+Belgium	3	1	Israel	735884	2.5
+Syria	5	2	Afghanistan	735884	2.5
+Oman	3	0	India	735884	2.5
+Malta	0	1	Croatia	735884	2.5
+North Korea	1	0	Yemen	735884	2.5
+Congo	2	1	Benin	735884	1
+Botswana	3	1	Eritrea	735884	2.5
+Algeria	1	0	Senegal	735884	1
+South Korea	3	0	Jamaica	735884	1
+Iran	1	1	Japan	735884	1
+Vietnam	0	3	Thailand	735884	2.5
+Singapore	2	1	Cambodia	735884	2.5
+Niger	4	0	Somalia	735884	2.5
+Bahrain	2	0	Philippines	735884	2.5
+Kyrgyzstan	2	0	Bangladesh	735884	2.5
+Bhutan	0	1	Hong Kong	735884	2.5
+Turkmenistan	1	0	Guam	735884	2.5
+Kuwait	0	0	Lebanon	735884	2.5
+Myanmar	3	1	Laos	735884	2.5
+Qatar	4	0	Maldives	735884	2.5
+Trinidad and Tobago	0	0	Nicaragua	735885	1
+Guatemala	1	1	El Salvador	735885	1
+Mexico	1	0	Panama	735885	1
+Uruguay	3	0	Colombia	735885	2.5
+Peru	3	4	Chile	735885	2.5
+Paraguay	0	0	Argentina	735885	2.5
+Brazil	3	1	Venezuela	735885	2.5
+USA	0	1	Costa Rica	735885	1
+Canada	1	1	Ghana	735885	1
+Honduras	1	1	South Africa	735885	1
+Zambia	3	0	Mozambique	735888	1
+Chad	0	2	Gabon	735888	1
+Swaziland	2	1	Djibouti	735888	2.5
+Uganda	2	0	Sudan	735888	1
+South Africa	0	2	Angola	735888	1
+Niger	2	0	Togo	735888	1
+Nigeria	2	0	Burkina Faso	735888	1
+Burundi	2	0	Ethiopia	735889	1
+Mali	2	1	Mauritania	735889	1
+Guinea	2	0	Senegal	735889	1
+Cameroon	0	0	Congo	735889	1
+Ghana	2	1	Cote dIvoire	735889	1
+Zimbabwe	3	1	Lesotho	735889	1
+Gabon	0	1	Chad	735895	1
+Senegal	3	1	Guinea	735895	1
+Mauritania	1	1	Mali	735895	1
+Angola	1	2	South Africa	735895	1
+Togo	1	1	Niger	735896	1
+Sudan	0	2	Uganda	735896	1
+Burkina Faso	0	0	Nigeria	735896	1
+Mozambique	1	1	Zambia	735896	1
+Lesotho	1	1	Zimbabwe	735896	1
+Ethiopia	3	0	Burundi	735896	1
+Cote dIvoire	1	0	Ghana	735901	1
+Congo	0	1	Cameroon	735902	1
+Cambodia	6	1	Brunei	735905	1
+St. Vincent and the Grenadines	2	1	Antigua and Barbuda	735906	1
+United Arab Emirates	5	1	Turkmenistan	735907	1
+Hong Kong	5	0	Myanmar	735909	1
+Vanuatu	1	1	Fiji	735909	1
+Palestine	0	0	Saudi Arabia	735911	2.5
+Vanuatu	2	1	Fiji	735912	2.5
+Mozambique	1	0	Gabon	735913	2.5
+Sudan	0	1	Zambia	735913	2.5
+Estonia	3	0	Georgia	735913	1
+Jordan	2	0	Malta	735913	1
+Ecuador	2	1	Uruguay	735914	2.5
+Thailand	4	2	Taiwan	735914	2.5
+Lebanon	7	0	Laos	735914	2.5
+Philippines	0	1	Yemen	735914	2.5
+Benin	2	1	Burkina Faso	735914	2.5
+Bolivia	4	2	Venezuela	735914	2.5
+Burundi	2	3	DR Congo	735914	2.5
+India	1	0	Guam	735914	2.5
+South Korea	4	0	Myanmar	735914	2.5
+Uzbekistan	3	1	North Korea	735914	2.5
+Norway	0	1	Hungary	735914	2.5
+Afghanistan	3	0	Cambodia	735914	2.5
+Australia	3	0	Kyrgyzstan	735914	2.5
+Iran	3	1	Turkmenistan	735914	2.5
+Palestine	6	0	Malaysia	735914	2.5
+Andorra	0	1	St. Kitts and Nevis	735914	1
+Maldives	0	1	Hong Kong	735914	2.5
+United Arab Emirates	8	0	Timor-Leste	735914	2.5
+Tajikistan	5	0	Bangladesh	735914	2.5
+FYR of Macedonia	4	1	Montenegro	735914	1
+China	12	0	Bhutan	735914	2.5
+Togo	0	1	Uganda	735914	2.5
+Morocco	2	0	Equatorial Guinea	735914	2.5
+Singapore	0	3	Japan	735914	2.5
+Oman	0	1	New Zealand	735914	1
+Namibia	0	1	Guinea	735914	2.5
+Luxembourg	1	0	Greece	735915	1
+Madagascar	2	2	Senegal	735915	2.5
+Kenya	1	0	Cape Verde	735915	2.5
+Liberia	0	1	Cote dIvoire	735915	2.5
+Angola	1	3	South Africa	735915	2.5
+Bosnia and Herzegovina	1	1	Ireland	735915	2.5
+Mauritania	1	2	Tunisia	735915	2.5
+Chile	1	1	Colombia	735915	2.5
+Niger	0	3	Cameroon	735915	2.5
+Comoros	0	0	Ghana	735915	2.5
+Libya	1	0	Rwanda	735915	2.5
+Slovakia	3	2	Suisse	735915	1
+Swaziland	0	0	Nigeria	735915	2.5
+Spain	2	0	England	735915	1
+Czech Republic	4	1	Serbia	735915	1
+Wales	2	3	Netherlands	735915	1
+Belgium	3	1	Italy	735915	1
+Northern Ireland	1	0	Latvia	735915	1
+Poland	4	2	Iceland	735915	1
+France	2	0	Germany	735915	1
+Qatar	1	2	Turkey	735915	1
+Guatemala	1	2	Trinidad and Tobago	735916	2.5
+Ethiopia	3	4	Congo	735916	2.5
+Sweden	2	1	Denmark	735916	2.5
+Mexico	3	0	El Salvador	735916	2.5
+Costa Rica	1	0	Haiti	735916	2.5
+Jamaica	0	2	Panama	735916	2.5
+Canada	1	0	Honduras	735916	2.5
+Chad	1	0	Egypt	735916	2.5
+USA	6	1	St. Vincent and the Grenadines	735916	2.5
+Argentina	1	1	Brazil	735916	2.5
+Tanzania	2	2	Algeria	735916	2.5
+Botswana	2	1	Mali	735916	2.5
+Gabon	1	1	Mozambique	735916	2.5
+Russia	1	0	Portugal	735916	1
+Hong Kong	2	0	Macau	735916	1
+Peru	1	0	Paraguay	735916	2.5
+Ukraine	2	0	Slovenia	735916	2.5
+Guinea	2	0	Namibia	735917	2.5
+Zambia	2	0	Sudan	735917	2.5
+Hungary	2	1	Norway	735917	2.5
+DR Congo	2	2	Burundi	735917	2.5
+Uganda	3	0	Togo	735917	2.5
+Equatorial Guinea	1	0	Morocco	735917	2.5
+Albania	2	2	Georgia	735918	1
+Ireland	2	0	Bosnia and Herzegovina	735918	2.5
+Cote dIvoire	3	0	Liberia	735919	2.5
+Congo	2	1	Ethiopia	735919	2.5
+St. Vincent and the Grenadines	0	4	Guatemala	735919	2.5
+Tunisia	2	1	Mauritania	735919	2.5
+Malaysia	1	2	United Arab Emirates	735919	2.5
+Rwanda	1	3	Libya	735919	2.5
+Cameroon	0	0	Niger	735919	2.5
+Honduras	0	2	Mexico	735919	2.5
+Ghana	2	0	Comoros	735919	2.5
+South Africa	1	0	Angola	735919	2.5
+Algeria	7	0	Tanzania	735919	2.5
+Nigeria	2	0	Swaziland	735919	2.5
+Venezuela	1	3	Ecuador	735919	2.5
+Colombia	0	1	Argentina	735919	2.5
+Mali	2	0	Botswana	735919	2.5
+Senegal	3	0	Madagascar	735919	2.5
+Cape Verde	2	0	Kenya	735919	2.5
+Denmark	2	2	Sweden	735919	2.5
+Slovenia	1	1	Ukraine	735919	2.5
+Burkina Faso	2	0	Benin	735919	2.5
+Guam	0	6	Iran	735919	2.5
+North Korea	2	0	Bahrain	735919	2.5
+Estonia	3	0	St. Kitts and Nevis	735919	1
+Timor-Leste	0	10	Saudi Arabia	735919	2.5
+Austria	1	2	Suisse	735919	1
+FYR of Macedonia	0	1	Lebanon	735919	1
+Azerbaijan	2	1	Moldova	735919	1
+Egypt	4	0	Chad	735919	2.5
+Bangladesh	0	4	Australia	735919	2.5
+Russia	1	3	Croatia	735919	1
+Luxembourg	0	2	Portugal	735919	1
+Slovakia	3	1	Iceland	735919	1
+Poland	3	1	Czech Republic	735919	1
+Turkey	0	0	Greece	735919	1
+England	2	0	France	735919	1
+Laos	0	5	South Korea	735919	2.5
+Turkmenistan	2	1	Oman	735919	2.5
+Singapore	1	2	Syria	735919	2.5
+Cambodia	0	2	Japan	735919	2.5
+Taiwan	0	2	Iraq	735919	2.5
+Yemen	1	3	Uzbekistan	735919	2.5
+Bhutan	0	3	Qatar	735919	2.5
+Kyrgyzstan	1	0	Jordan	735919	2.5
+Italy	2	2	Romania	735919	1
+Hong Kong	0	0	China	735919	2.5
+Haiti	0	1	Jamaica	735920	2.5
+Paraguay	2	1	Bolivia	735920	2.5
+Brazil	3	0	Peru	735920	2.5
+El Salvador	0	0	Canada	735920	2.5
+Panama	1	2	Costa Rica	735920	2.5
+Trinidad and Tobago	0	0	USA	735920	2.5
+Uruguay	3	0	Chile	735920	2.5
+Burundi	1	0	Sansibar	735923	1
+Ethiopia	0	1	Rwanda	735923	1
+Somalia	0	4	Tanzania	735924	1
+Kenya	2	0	Uganda	735924	1
+South Sudan	2	0	Djibouti	735925	1
+Sudan	1	2	Malawi	735925	1
+Rwanda	2	1	Tanzania	735926	1
+Sansibar	0	4	Uganda	735926	1
+Kenya	1	1	Burundi	735927	1
+Somalia	2	0	Ethiopia	735927	1
+Malawi	3	0	Djibouti	735927	1
+South Sudan	0	0	Sudan	735927	1
+Rwanda	3	0	Somalia	735929	1
+Sansibar	3	1	Kenya	735929	1
+South Sudan	2	0	Malawi	735929	1
+Djibouti	0	4	Sudan	735929	1
+Uganda	1	0	Burundi	735930	1
+Tanzania	1	1	Ethiopia	735930	1
+Uganda	2	0	Malawi	735932	1
+Tanzania	1	1	Ethiopia	735932	1
+South Sudan	1	1	Sudan	735933	1
+Rwanda	1	1	Kenya	735933	1
+Uganda	1	1	Ethiopia	735935	1
+Rwanda	1	1	Sudan	735935	1
+Ethiopia	1	1	Sudan	735937	1
+Uganda	1	0	Rwanda	735937	1
+Nicaragua	5	0	Cuba	735940	1
+Nicaragua	1	0	Cuba	735943	1
+Costa Rica	1	0	Nicaragua	735947	1
+Honduras	2	0	Cuba	735948	1
+Bangladesh	1	0	Nepal	735949	1
+Nepal	0	1	Sri Lanka	735955	1
+Afghanistan	4	0	Bangladesh	735956	1
+Maldives	3	1	Bhutan	735956	1
+India	2	0	Sri Lanka	735957	1
+Bangladesh	1	3	Maldives	735958	1
+Bhutan	0	3	Afghanistan	735958	1
+Martinique	2	0	Guadeloupe	735958	1
+India	4	1	Nepal	735959	1
+Bhutan	0	3	Bangladesh	735960	1
+Afghanistan	4	1	Maldives	735960	1
+Afghanistan	5	0	Sri Lanka	735963	1
+India	3	2	Maldives	735963	1
+India	1	1	Afghanistan	735966	1
+Rwanda	1	1	Cameroon	735969	1
+Sweden	1	1	Estonia	735969	1
+Angola	1	1	Nigeria	735969	1
+Bangladesh	4	2	Sri Lanka	735971	1
+Trinidad and Tobago	0	1	Haiti	735971	1
+Panama	4	0	Cuba	735972	1
+Finland	0	3	Sweden	735973	1
+Rwanda	1	0	DR Congo	735973	1
+Maldives	3	2	Cambodia	735974	1
+Finland	0	1	Iceland	735976	1
+Nepal	1	0	Sri Lanka	735976	1
+Bangladesh	0	0	Nepal	735978	1
+United Arab Emirates	2	1	Iceland	735979	1
+Rwanda	1	0	Cote dIvoire	735979	1
+Gabon	0	0	Morocco	735979	1
+DR Congo	3	0	Ethiopia	735980	1
+Angola	0	1	Cameroon	735980	1
+Tunisia	2	2	Guinea	735981	1
+Nigeria	4	1	Niger	735981	1
+Zimbabwe	0	1	Zambia	735982	1
+Mali	2	2	Uganda	735982	1
+Maldives	1	4	Nepal	735982	1
+Rwanda	2	1	Gabon	735983	1
+Morocco	0	1	Cote dIvoire	735983	1
+DR Congo	4	2	Angola	735984	1
+Cameroon	0	0	Ethiopia	735984	1
+Tunisia	1	1	Nigeria	735985	1
+Niger	2	2	Guinea	735985	1
+Uganda	0	1	Zambia	735986	1
+Zimbabwe	0	1	Mali	735986	1
+Cote dIvoire	4	1	Gabon	735987	1
+Morocco	4	1	Rwanda	735987	1
+Cameroon	3	1	DR Congo	735988	1
+Ethiopia	1	2	Angola	735988	1
+Guinea	1	0	Nigeria	735989	1
+Niger	0	5	Tunisia	735989	1
+Egypt	0	1	Jordan	735990	1
+Uganda	1	1	Zimbabwe	735990	1
+Zambia	0	0	Mali	735990	1
+Nicaragua	1	3	Honduras	735991	1
+Egypt	2	0	Libya	735992	1
+Rwanda	1	1	DR Congo	735993	1
+Cameroon	0	0	Cote dIvoire	735993	1
+Zambia	1	1	Guinea	735994	1
+Tunisia	1	2	Mali	735994	1
+USA	3	2	Iceland	735994	1
+Venezuela	1	0	Costa Rica	735997	1
+DR Congo	1	1	Guinea	735997	1
+Mali	1	0	Cote dIvoire	735998	1
+Bahrain	2	0	Lebanon	735999	1
+Senegal	2	0	Mauritania	735999	1
+USA	1	0	Canada	736000	1
+Guadeloupe	1	1	Martinique	736000	1
+Guinea	1	2	Cote dIvoire	736001	1
+DR Congo	3	0	Mali	736001	1
+Mexico	2	0	Senegal	736005	1
+Guatemala	3	1	Honduras	736005	1
+Uzbekistan	2	0	Lebanon	736008	1
+Panama	1	0	El Salvador	736012	1
+Guyana	2	0	Suriname	736015	1
+St. Kitts and Nevis	3	0	Bermuda	736016	1
+French Guiana	2	3	Suriname	736019	1
+Egypt	2	0	Burkina Faso	736021	1
+Guatemala	1	0	El Salvador	736026	1
+Nicaragua	1	1	El Salvador	736033	1
+Sint Maarten	2	0	Anguilla	736036	1
+St. Vincent and the Grenadines	0	4	Martinique	736036	1
+Nicaragua	1	0	Panama	736039	1
+United Arab Emirates	6	1	Bangladesh	736041	1
+Iraq	0	1	Syria	736041	1
+Taiwan	3	2	Guam	736042	1
+Grenada	2	2	Trinidad and Tobago	736043	1
+Cuba	2	1	Bermuda	736045	1
+Sierra Leone	1	1	Malawi	736045	1
+Guinea-Bissau	1	0	Kenya	736046	2.5
+Antigua and Barbuda	2	1	Aruba	736046	1
+São Tome e Ptincipe	2	1	Libya	736046	2.5
+Gibraltar	0	0	Liechtenstein	736046	1
+Guadeloupe	1	1	Suriname	736046	1
+Barbados	1	0	Curacao	736046	1
+Chad	0	1	Tanzania	736046	2.5
+Zambia	1	1	Congo	736046	2.5
+Grenada	5	0	Sint Maarten	736046	1
+Guyana	7	0	Anguilla	736046	1
+Poland	1	0	Serbia	736046	1
+Romania	1	0	Lithania	736046	1
+Martinique	3	0	British Virgin Islands	736046	1
+Slovenia	1	0	FYR of Macedonia	736046	1
+Croatia	2	0	Israel	736046	1
+South Sudan	1	2	Benin	736046	2.5
+Iraq	2	2	Thailand	736047	2.5
+Saudi Arabia	2	0	Malaysia	736047	2.5
+Ecuador	2	2	Paraguay	736047	2.5
+Bolivia	2	3	Colombia	736047	2.5
+United Arab Emirates	2	0	Palestine	736047	2.5
+Uzbekistan	1	0	Philippines	736047	2.5
+Vietnam	4	1	Taiwan	736047	2.5
+Peru	2	2	Venezuela	736047	2.5
+Australia	7	0	Tajikistan	736047	2.5
+Ghana	3	1	Mozambique	736047	2.5
+Comoros	1	0	Botswana	736047	2.5
+Madagascar	1	1	Central African Republic	736047	2.5
+Djibouti	0	1	Liberia	736047	2.5
+Chile	1	2	Argentina	736047	2.5
+Syria	6	0	Cambodia	736047	2.5
+South Korea	1	0	Lebanon	736047	2.5
+Japan	5	0	Afghanistan	736047	2.5
+Oman	1	0	Guam	736047	2.5
+Czech Republic	0	1	Scotland	736047	1
+Italy	1	1	Spain	736047	1
+Wales	1	1	Northern Ireland	736047	1
+Turkey	2	1	Sweden	736047	1
+Estonia	0	0	Norway	736047	1
+Denmark	2	1	Iceland	736047	1
+Ukraine	1	0	Cyprus	736047	1
+Malta	0	0	Moldova	736047	1
+Solomon Islands	2	0	Papua New Guinea	736047	1
+Bahrain	3	0	Yemen	736047	2.5
+Jordan	8	0	Bangladesh	736047	2.5
+China	4	0	Maldives	736047	2.5
+Iran	4	0	India	736047	2.5
+Qatar	2	0	Hong Kong	736047	2.5
+Singapore	2	1	Myanmar	736047	1
+Greece	2	1	Montenegro	736047	1
+Haiti	0	0	Panama	736048	2.5
+Tunisia	1	0	Togo	736048	2.5
+Algeria	7	1	Ethiopia	736048	2.5
+Gabon	2	1	Sierra Leone	736048	2.5
+Guinea	0	0	Malawi	736048	2.5
+Swaziland	1	1	Zimbabwe	736048	2.5
+Nigeria	1	1	Egypt	736048	2.5
+Mauritania	2	1	Gambia	736048	2.5
+Guatemala	2	0	USA	736048	2.5
+Mali	1	0	Equatorial Guinea	736048	2.5
+Jamaica	1	1	Costa Rica	736048	2.5
+Cote dIvoire	1	0	Sudan	736048	2.5
+Slovakia	0	0	Latvia	736048	1
+Luxembourg	0	3	Bosnia and Herzegovina	736048	1
+Armenia	0	0	Belarus	736048	1
+St. Vincent and the Grenadines	2	3	Trinidad and Tobago	736048	2.5
+Brazil	2	2	Uruguay	736048	2.5
+Vanuatu	1	0	New Caledonia	736048	1
+Canada	0	3	Mexico	736048	2.5
+Portugal	0	1	Bulgaria	736048	1
+Ireland	1	0	Suisse	736048	1
+Netherlands	2	3	France	736048	1
+El Salvador	2	2	Honduras	736048	2.5
+DR Congo	2	1	Angola	736049	2.5
+Burkina Faso	1	0	Uganda	736049	2.5
+Senegal	2	0	Niger	736049	2.5
+Seychelles	2	0	Lesotho	736049	2.5
+Vanuatu	2	1	New Caledonia	736049	1
+Cameroon	2	2	South Africa	736049	2.5
+Mauritius	1	0	Rwanda	736049	2.5
+Burundi	1	3	Namibia	736049	2.5
+Cape Verde	0	1	Morocco	736049	2.5
+Sint Maarten	1	2	US Virgin Islands	736049	1
+British Virgin Islands	0	7	Dominica	736049	1
+Curacao	2	1	Dominican Republic	736049	1
+Hungary	1	1	Croatia	736049	1
+Russia	3	0	Lithania	736049	1
+Poland	5	0	Finland	736049	1
+Austria	2	1	Albania	736049	1
+Anguilla	0	4	Puerto Rico	736049	1
+Germany	2	3	England	736049	1
+Kazakhstan	1	0	Azerbaijan	736049	1
+Aruba	0	2	St. Kitts and Nevis	736049	1
+Bermuda	2	1	French Guiana	736049	1
+Romania	0	0	Spain	736050	1
+Mozambique	0	0	Ghana	736050	2.5
+Kenya	0	1	Guinea-Bissau	736050	2.5
+Zimbabwe	4	0	Swaziland	736050	2.5
+Botswana	2	1	Comoros	736050	2.5
+Benin	4	1	South Sudan	736050	2.5
+Solomon Islands	1	2	Papua New Guinea	736050	1
+Thailand	0	1	South Korea	736050	1
+Congo	1	1	Zambia	736050	2.5
+Sierra Leone	1	0	Gabon	736051	2.5
+Equatorial Guinea	0	1	Mali	736051	2.5
+Libya	4	0	São Tome e Ptincipe	736051	2.5
+Central African Republic	2	1	Madagascar	736051	2.5
+Northern Ireland	1	0	Slovenia	736051	1
+Liechtenstein	2	3	Faroe Islands	736051	1
+Andorra	0	1	Moldova	736051	1
+Ukraine	1	0	Wales	736051	1
+Australia	5	1	Jordan	736052	2.5
+Maldives	4	2	Bhutan	736052	2.5
+Palestine	7	0	Timor-Leste	736052	2.5
+China	2	0	Qatar	736052	2.5
+Iran	2	0	Oman	736052	2.5
+India	1	2	Turkmenistan	736052	2.5
+Paraguay	2	2	Brazil	736052	2.5
+USA	4	0	Guatemala	736052	2.5
+Panama	1	0	Haiti	736052	2.5
+Costa Rica	3	0	Jamaica	736052	2.5
+Honduras	2	0	El Salvador	736052	2.5
+Lebanon	1	1	Myanmar	736052	2.5
+South Korea	3	0	Kuwait	736052	2.5
+Afghanistan	2	1	Singapore	736052	2.5
+Mexico	2	0	Canada	736052	2.5
+Japan	5	0	Syria	736052	2.5
+Namibia	1	3	Burundi	736052	2.5
+Egypt	1	0	Nigeria	736052	2.5
+Liberia	5	0	Djibouti	736052	2.5
+Uganda	0	0	Burkina Faso	736052	2.5
+Lesotho	2	1	Seychelles	736052	2.5
+Togo	0	0	Tunisia	736052	2.5
+Angola	0	2	DR Congo	736052	2.5
+Rwanda	5	0	Mauritius	736052	2.5
+South Africa	0	0	Cameroon	736052	2.5
+Gambia	0	0	Mauritania	736052	2.5
+Malawi	1	2	Guinea	736052	2.5
+Niger	1	2	Senegal	736052	2.5
+Ethiopia	3	3	Algeria	736052	2.5
+Sudan	1	1	Cote dIvoire	736052	2.5
+Tajikistan	0	1	Kyrgyzstan	736052	2.5
+Trinidad and Tobago	6	0	St. Vincent and the Grenadines	736052	2.5
+Georgia	1	1	Kazakhstan	736052	1
+Uruguay	1	0	Peru	736052	2.5
+Venezuela	1	4	Chile	736052	2.5
+Scotland	1	0	Denmark	736052	1
+France	4	2	Russia	736052	1
+England	1	2	Netherlands	736052	1
+Portugal	2	1	Belgium	736052	1
+Ireland	2	2	Slovakia	736052	1
+Germany	4	1	Italy	736052	1
+Sweden	1	1	Czech Republic	736052	1
+Suisse	0	2	Bosnia and Herzegovina	736052	1
+Norway	2	0	Finland	736052	1
+Greece	2	3	Iceland	736052	1
+FYR of Macedonia	0	2	Bulgaria	736052	1
+Estonia	0	1	Serbia	736052	1
+Uzbekistan	1	0	Bahrain	736052	2.5
+Morocco	2	0	Cape Verde	736052	2.5
+Austria	1	2	Turkey	736052	1
+Philippines	3	2	North Korea	736052	2.5
+Gibraltar	0	5	Latvia	736052	1
+Malaysia	0	0	Macau	736052	1
+Dominican Republic	2	0	Barbados	736052	1
+Dominica	1	4	Martinique	736052	1
+St. Kitts and Nevis	1	0	Antigua and Barbuda	736052	1
+US Virgin Islands	1	2	Grenada	736052	1
+French Guiana	3	0	Cuba	736052	1
+Suriname	3	2	Guadeloupe	736052	1
+Luxembourg	0	2	Albania	736052	1
+Colombia	3	1	Ecuador	736052	2.5
+Iraq	1	0	Vietnam	736052	2.5
+United Arab Emirates	1	1	Saudi Arabia	736052	2.5
+Argentina	2	0	Bolivia	736052	2.5
+Montenegro	0	0	Belarus	736052	1
+Puerto Rico	0	1	Guyana	736053	1
+Martinique	0	2	Panama	736081	1
+Hungary	0	0	Cote dIvoire	736104	1
+Botswana	2	1	Lesotho	736105	1
+Puerto Rico	1	3	USA	736106	1
+England	2	1	Turkey	736106	1
+Peru	4	0	Trinidad and Tobago	736108	1
+Panama	0	0	Venezuela	736109	1
+Serbia	2	1	Cyprus	736109	1
+DR Congo	1	1	Romania	736109	1
+USA	1	0	Ecuador	736110	1
+Azerbaijan	0	0	Andorra	736110	1
+Slovakia	3	1	Georgia	736111	1
+England	2	1	Australia	736111	1
+Morocco	2	0	Congo	736111	1
+Northern Ireland	3	0	Belarus	736111	1
+Czech Republic	6	0	Malta	736111	1
+Croatia	1	0	Moldova	736111	1
+Nigeria	1	0	Mali	736111	1
+Ireland	1	1	Netherlands	736111	1
+Togo	1	0	Zambia	736111	1
+Guatemala	1	7	Armenia	736112	1
+Myanmar	0	0	Malaysia	736112	1
+New Zealand	3	1	Fiji	736112	2.5
+Gabon	0	2	Mauritania	736112	1
+Rwanda	0	2	Senegal	736112	1
+Vanuatu	0	1	Solomon Islands	736112	2.5
+Costa Rica	2	1	Venezuela	736112	1
+Argentina	1	0	Honduras	736112	1
+Uruguay	3	1	Trinidad and Tobago	736112	1
+Chile	1	2	Jamaica	736112	1
+Mexico	1	0	Paraguay	736112	1
+Suisse	1	2	Belgium	736112	1
+Tahiti	4	0	Samoa	736113	2.5
+FYR of Macedonia	3	1	Azerbaijan	736113	1
+Albania	3	1	Qatar	736113	1
+Laos	1	1	Nepal	736113	1
+Lithania	2	0	Estonia	736113	1
+Cambodia	2	0	Timor-Leste	736113	1
+Kenya	1	1	Tanzania	736113	1
+Papua New Guinea	1	1	New Caledonia	736113	2.5
+Portugal	3	0	Norway	736113	1
+Romania	3	4	Ukraine	736113	1
+Spain	3	1	Bosnia and Herzegovina	736113	1
+Germany	1	3	Slovakia	736113	1
+Peru	3	1	El Salvador	736113	1
+USA	4	0	Bolivia	736113	1
+Turkey	1	0	Montenegro	736113	1
+Italy	1	0	Scotland	736113	1
+Colombia	3	1	Haiti	736114	1
+Panama	0	2	Brazil	736114	1
+Sweden	0	0	Slovenia	736114	1
+France	3	2	Cameroon	736114	1
+Vanuatu	0	5	New Zealand	736115	2.5
+Solomon Islands	0	1	Fiji	736115	2.5
+Zimbabwe	2	0	Uganda	736115	1
+Vietnam	2	0	Syria	736115	1
+Serbia	3	1	Israel	736115	1
+Ireland	1	2	Belarus	736115	1
+Austria	2	1	Malta	736115	1
+Luxembourg	1	3	Nigeria	736115	1
+Kenya	1	1	Sudan	736115	1
+Guyana	2	5	Curacao	736116	1
+New Caledonia	7	0	Samoa	736116	2.5
+Papua New Guinea	2	2	Tahiti	736116	2.5
+St. Kitts and Nevis	1	0	Suriname	736116	1
+Martinique	2	0	Guadeloupe	736116	1
+Grenada	1	1	Puerto Rico	736116	1
+Latvia	2	1	Lithania	736116	1
+El Salvador	0	4	Armenia	736116	1
+Belgium	1	1	Finland	736116	1
+Norway	3	2	Iceland	736116	1
+Czech Republic	2	1	Russia	736116	1
+Spain	6	1	South Korea	736116	1
+Estonia	2	0	Andorra	736116	1
+Poland	1	2	Netherlands	736116	1
+Laos	0	1	India	736117	2.5
+Seychelles	0	2	Algeria	736117	2.5
+Malaysia	3	0	Timor-Leste	736117	2.5
+Maldives	0	2	Yemen	736117	2.5
+Tajikistan	5	0	Bangladesh	736117	2.5
+England	1	0	Portugal	736117	1
+FYR of Macedonia	1	3	Iran	736117	1
+Taiwan	2	2	Cambodia	736117	2.5
+Guatemala	1	1	Venezuela	736117	1
+Mexico	1	0	Chile	736117	1
+Djibouti	0	3	Tunisia	736118	2.5
+São Tome e Ptincipe	1	2	Cape Verde	736118	2.5
+Libya	1	1	Morocco	736118	2.5
+Namibia	1	0	Niger	736118	2.5
+Kosovo	2	0	Faroe Islands	736118	1
+Sierra Leone	1	0	Sudan	736118	2.5
+Burundi	0	2	Senegal	736118	2.5
+Mauritania	0	1	Cameroon	736118	2.5
+China	4	2	Trinidad and Tobago	736118	1
+Guinea-Bissau	3	2	Zambia	736118	2.5
+Myanmar	0	1	Singapore	736118	1
+Albania	1	3	Ukraine	736118	1
+Suisse	2	1	Moldova	736118	1
+Canada	1	1	Azerbaijan	736118	1
+Japan	7	2	Bulgaria	736118	1
+United Arab Emirates	1	3	Jordan	736118	1
+Thailand	1	1	Syria	736118	1
+Vietnam	1	1	Hong Kong	736118	1
+Denmark	1	1	Bosnia and Herzegovina	736118	1
+Romania	5	1	Georgia	736118	1
+Costa Rica	0	0	Paraguay	736119	3
+Gambia	0	4	South Africa	736119	2.5
+USA	0	2	Colombia	736119	3
+Botswana	1	2	Uganda	736119	2.5
+Rwanda	2	3	Mozambique	736119	2.5
+Fiji	2	3	Vanuatu	736119	2.5
+Tanzania	0	2	Egypt	736119	2.5
+South Sudan	0	3	Mali	736119	2.5
+New Zealand	1	0	Solomon Islands	736119	2.5
+France	3	0	Scotland	736119	1
+US Virgin Islands	0	7	Guyana	736119	1
+Estonia	0	0	Latvia	736119	1
+Austria	0	2	Netherlands	736119	1
+Germany	2	0	Hungary	736119	1
+Slovakia	0	0	Northern Ireland	736119	1
+Australia	1	0	Greece	736119	1
+Suriname	2	1	St. Vincent and the Grenadines	736119	1
+Croatia	10	0	San Marino	736119	1
+Cote dIvoire	2	1	Gabon	736119	2.5
+Central African Republic	3	1	Angola	736120	2.5
+Jamaica	0	1	Venezuela	736120	3
+Comoros	0	1	Burkina Faso	736120	2.5
+Liberia	2	2	Togo	736120	2.5
+Zimbabwe	3	0	Malawi	736120	2.5
+Brazil	0	0	Ecuador	736120	3
+Mauritius	0	2	Ghana	736120	2.5
+Swaziland	1	0	Guinea	736120	2.5
+Kenya	2	1	Congo	736120	2.5
+Madagascar	1	6	DR Congo	736120	2.5
+Lesotho	1	2	Ethiopia	736120	2.5
+Haiti	0	1	Peru	736120	3
+Czech Republic	1	2	South Korea	736120	1
+Belgium	3	2	Norway	736120	1
+Puerto Rico	1	1	Antigua and Barbuda	736120	1
+United Arab Emirates	0	1	Syria	736120	1
+Guadeloupe	2	1	Dominica	736120	1
+Bermuda	0	1	Dominican Republic	736120	1
+Slovenia	0	1	Turkey	736120	1
+Tahiti	1	1	New Caledonia	736120	2.5
+Sweden	3	0	Wales	736120	1
+Samoa	0	8	Papua New Guinea	736120	2.5
+Thailand	2	0	Jordan	736120	1
+Serbia	1	1	Russia	736120	1
+Vietnam	0	0	Singapore	736121	1
+Timor-Leste	0	3	Malaysia	736121	2.5
+Iceland	4	0	Liechtenstein	736121	1
+Mexico	3	1	Uruguay	736121	3
+Italy	2	0	Finland	736121	1
+Myanmar	3	0	Hong Kong	736121	1
+Poland	0	0	Lithania	736121	1
+Argentina	2	1	Chile	736122	3
+Australia	1	2	Greece	736122	1
+Panama	2	1	Bolivia	736122	3
+Bangladesh	0	1	Tajikistan	736122	2.5
+Yemen	2	0	Maldives	736122	2.5
+Cambodia	2	0	Taiwan	736122	2.5
+Japan	1	2	Bosnia and Herzegovina	736122	1
+Canada	2	1	Uzbekistan	736122	1
+China	0	1	Kazakhstan	736122	1
+St. Vincent and the Grenadines	0	1	St. Kitts and Nevis	736122	1
+Dominican Republic	2	1	French Guiana	736122	1
+Spain	0	1	Georgia	736122	1
+Denmark	4	0	Bulgaria	736122	1
+Iran	6	0	Kyrgyzstan	736122	1
+India	6	1	Laos	736122	2.5
+USA	4	0	Costa Rica	736123	3
+Dominica	0	4	Martinique	736123	1
+Antigua and Barbuda	5	1	Grenada	736123	1
+Colombia	2	1	Paraguay	736123	3
+Curacao	7	0	US Virgin Islands	736123	1
+Namibia	0	0	Malawi	736123	1
+Portugal	7	0	Estonia	736123	1
+Brazil	7	1	Haiti	736124	3
+Ecuador	2	2	Peru	736124	3
+Uruguay	0	1	Venezuela	736125	3
+France	2	1	Romania	736125	3
+Mexico	2	0	Jamaica	736125	3
+England	1	1	Russia	736126	3
+Zimbabwe	2	2	Swaziland	736126	1
+Albania	0	1	Suisse	736126	3
+Seychelles	0	1	Madagascar	736126	1
+Chile	2	1	Bolivia	736126	3
+Argentina	5	0	Panama	736126	3
+Wales	2	1	Slovakia	736126	3
+Colombia	2	3	Costa Rica	736127	3
+Benin	2	1	Equatorial Guinea	736127	2.5
+USA	1	0	Paraguay	736127	3
+Germany	2	0	Ukraine	736127	3
+Poland	1	0	Northern Ireland	736127	3
+Malawi	3	0	Angola	736127	1
+Lesotho	3	0	Mauritius	736127	1
+Turkey	0	1	Croatia	736127	3
+Madagascar	0	0	Zimbabwe	736128	1
+Swaziland	4	0	Seychelles	736128	1
+Ecuador	4	0	Haiti	736128	3
+Spain	1	0	Czech Republic	736128	3
+Belgium	0	2	Italy	736128	3
+Brazil	0	1	Peru	736128	3
+Ireland	1	1	Sweden	736128	3
+Portugal	1	1	Iceland	736129	3
+Austria	0	2	Hungary	736129	3
+Mexico	1	1	Venezuela	736129	3
+Angola	0	2	Lesotho	736129	1
+Uruguay	3	0	Jamaica	736129	3
+Mauritius	0	1	Malawi	736129	1
+Argentina	3	0	Bolivia	736130	3
+France	2	0	Albania	736130	3
+Chile	4	2	Panama	736130	3
+Swaziland	1	0	Madagascar	736130	1
+Romania	1	1	Suisse	736130	3
+Zimbabwe	5	0	Seychelles	736130	1
+Russia	1	2	Slovakia	736130	3
+Malawi	0	1	Lesotho	736131	1
+Germany	0	0	Poland	736131	3
+Angola	0	2	Mauritius	736131	1
+England	2	1	Wales	736131	3
+Ukraine	0	2	Northern Ireland	736131	3
+Papua New Guinea	2	0	Malaysia	736132	1
+USA	2	1	Ecuador	736132	3
+Spain	3	0	Turkey	736132	3
+Czech Republic	2	2	Croatia	736132	3
+Italy	1	0	Sweden	736132	3
+South Africa	1	1	Lesotho	736133	1
+Botswana	1	1	Namibia	736133	1
+Portugal	0	0	Austria	736133	3
+Iceland	1	1	Hungary	736133	3
+Belgium	3	0	Ireland	736133	3
+Peru	1	1	Colombia	736133	3
+Zambia	1	1	Swaziland	736134	1
+Romania	0	1	Albania	736134	3
+DR Congo	1	0	Mozambique	736134	1
+Mexico	0	7	Chile	736134	3
+Argentina	4	1	Venezuela	736134	3
+Suisse	0	0	France	736134	3
+Russia	0	3	Wales	736135	3
+Slovakia	0	0	England	736135	3
+Croatia	2	1	Spain	736136	3
+Northern Ireland	0	1	Germany	736136	3
+Czech Republic	0	2	Turkey	736136	3
+Namibia	3	0	Mozambique	736136	1
+Lesotho	2	3	Zambia	736136	1
+Ukraine	0	1	Poland	736136	3
+Botswana	1	1	DR Congo	736137	1
+New Caledonia	1	2	Malaysia	736137	1
+South Africa	5	1	Swaziland	736137	1
+Sweden	0	1	Belgium	736137	3
+Italy	0	1	Ireland	736137	3
+Iceland	2	1	Austria	736137	3
+USA	0	4	Argentina	736137	3
+Hungary	3	3	Portugal	736137	3
+Colombia	0	2	Chile	736138	3
+Zambia	0	1	Namibia	736139	1
+Croatia	0	0	Portugal	736140	3
+Wales	1	0	Northern Ireland	736140	3
+Suisse	1	1	Poland	736140	3
+South Africa	3	2	Botswana	736140	1
+Swaziland	1	0	DR Congo	736140	1
+Fiji	1	1	Malaysia	736141	1
+France	2	1	Ireland	736141	3
+USA	0	1	Colombia	736141	3
+Germany	3	0	Slovakia	736141	3
+Hungary	0	4	Belgium	736141	3
+Italy	2	0	Spain	736142	3
+England	1	2	Iceland	736142	3
+Argentina	1	1	Chile	736142	3
+Macau	2	2	Mongolia	736145	1
+Taiwan	8	1	Northern Mariana Islands	736145	1
+Poland	1	1	Portugal	736145	3
+Wales	3	1	Belgium	736146	3
+Germany	1	1	Italy	736147	3
+Northern Mariana Islands	1	3	Macau	736147	1
+Mongolia	0	2	Taiwan	736147	1
+France	5	2	Iceland	736148	3
+Northern Mariana Islands	0	8	Mongolia	736149	1
+Taiwan	3	2	Macau	736149	1
+Portugal	2	0	Wales	736151	3
+Germany	0	2	France	736152	3
+Portugal	0	0	France	736155	3
+Uzbekistan	2	1	Iraq	736169	1
+Cambodia	2	1	Singapore	736173	1
+Oman	1	0	Turkmenistan	736184	1
+Qatar	2	1	Iraq	736184	1
+Bhutan	0	3	India	736189	1
+North Korea	1	0	Iraq	736192	1
+Jordan	2	3	Qatar	736194	1
+Iraq	1	1	North Korea	736197	1
+Honduras	1	0	Nicaragua	736200	1
+Qatar	3	0	Thailand	736200	1
+Saudi Arabia	4	0	Laos	736200	1
+North Korea	2	0	United Arab Emirates	736200	1
+Uzbekistan	1	0	Burkina Faso	736200	1
+Panama	0	0	Guatemala	736202	1
+Tajikistan	0	0	Syria	736203	1
+Dominican Republic	5	0	Puerto Rico	736204	1
+Egypt	1	1	Guinea	736206	1
+Kyrgyzstan	2	0	Kazakhstan	736206	1
+Uganda	0	0	Kenya	736206	1
+Germany	2	0	Finland	736207	1
+Albania	0	0	Morocco	736207	1
+Puerto Rico	0	1	Dominican Republic	736207	1
+Lebanon	1	1	Jordan	736207	1
+Ireland	4	0	Oman	736207	1
+Turkey	0	0	Russia	736207	1
+Estonia	1	1	Malta	736207	1
+Denmark	5	0	Liechtenstein	736207	1
+Czech Republic	3	0	Armenia	736207	1
+Norway	0	1	Belarus	736207	1
+Japan	1	2	United Arab Emirates	736208	2.5
+Bolivia	2	0	Peru	736208	2.5
+Colombia	2	0	Venezuela	736208	2.5
+Iran	2	0	Qatar	736208	2.5
+South Korea	3	2	China	736208	2.5
+Ecuador	0	3	Brazil	736208	2.5
+Uzbekistan	1	0	Syria	736208	2.5
+Australia	2	0	Iraq	736208	2.5
+Maldives	5	0	Bangladesh	736208	1
+Hong Kong	4	2	Cambodia	736208	1
+Nicaragua	0	0	St. Kitts and Nevis	736208	1
+Italy	1	3	France	736208	1
+Portugal	5	0	Gibraltar	736208	1
+Belgium	0	2	Spain	736208	1
+Netherlands	1	2	Greece	736208	1
+Bahrain	3	1	Singapore	736208	1
+Saudi Arabia	1	0	Thailand	736208	2.5
+Mali	5	2	Benin	736209	2.5
+Morocco	2	0	São Tome e Ptincipe	736209	2.5
+Paraguay	2	1	Chile	736209	2.5
+Argentina	1	0	Uruguay	736209	2.5
+Guinea	1	0	Zimbabwe	736209	2.5
+Sudan	1	2	Gabon	736209	2.5
+South Africa	1	1	Mauritania	736209	2.5
+DR Congo	4	1	Central African Republic	736209	2.5
+Togo	5	0	Djibouti	736209	2.5
+Haiti	0	1	Costa Rica	736209	2.5
+El Salvador	1	3	Mexico	736209	2.5
+Panama	2	0	Jamaica	736209	2.5
+St. Vincent and the Grenadines	0	6	USA	736209	2.5
+Algeria	6	0	Lesotho	736209	2.5
+Niger	0	0	Burundi	736209	2.5
+Honduras	2	1	Canada	736209	2.5
+Trinidad and Tobago	2	2	Guatemala	736209	2.5
+Latvia	3	1	Luxembourg	736209	1
+Mozambique	1	0	Mauritius	736210	2.5
+Ethiopia	2	1	Seychelles	736210	2.5
+Nigeria	1	0	Tanzania	736210	2.5
+Ghana	1	1	Rwanda	736210	2.5
+Cape Verde	0	1	Libya	736210	2.5
+Cote dIvoire	1	1	Sierra Leone	736210	2.5
+Angola	1	1	Madagascar	736210	2.5
+Senegal	2	0	Namibia	736210	2.5
+India	4	1	Puerto Rico	736210	1
+Cameroon	2	0	Gambia	736210	2.5
+Bahrain	0	0	Jordan	736211	1
+Tunisia	4	1	Liberia	736211	2.5
+Burkina Faso	2	1	Botswana	736211	2.5
+Malawi	1	0	Swaziland	736211	2.5
+Equatorial Guinea	4	0	South Sudan	736211	2.5
+Uganda	1	0	Comoros	736211	2.5
+Congo	1	0	Guinea-Bissau	736211	2.5
+Zambia	1	1	Kenya	736211	2.5
+Norway	0	3	Germany	736211	2.5
+Czech Republic	0	0	Northern Ireland	736211	2.5
+Slovakia	0	1	England	736211	2.5
+Lithania	2	2	Slovenia	736211	2.5
+Kazakhstan	2	2	Poland	736211	2.5
+Denmark	1	0	Armenia	736211	2.5
+San Marino	0	1	Azerbaijan	736211	2.5
+Romania	1	1	Montenegro	736211	2.5
+Malta	1	5	Scotland	736211	2.5
+Lebanon	2	0	Afghanistan	736212	1
+Serbia	2	2	Ireland	736212	2.5
+Finland	1	1	Kosovo	736212	2.5
+Georgia	1	2	Austria	736212	2.5
+Spain	8	0	Liechtenstein	736212	2.5
+Wales	4	0	Moldova	736212	2.5
+Croatia	1	1	Turkey	736212	2.5
+Israel	1	3	Italy	736212	2.5
+Ukraine	1	1	Iceland	736212	2.5
+Gibraltar	1	4	Greece	736213	2.5
+Mexico	0	0	Honduras	736213	2.5
+China	0	0	Iran	736213	2.5
+Chile	0	0	Bolivia	736213	2.5
+Syria	0	0	South Korea	736213	2.5
+Qatar	0	1	Uzbekistan	736213	2.5
+Peru	2	1	Ecuador	736213	2.5
+Venezuela	2	2	Argentina	736213	2.5
+Costa Rica	3	1	Panama	736213	2.5
+Jamaica	0	2	Haiti	736213	2.5
+Maldives	4	0	Laos	736213	2.5
+Bangladesh	0	0	Bhutan	736213	2.5
+Iraq	1	2	Saudi Arabia	736213	2.5
+Thailand	0	2	Japan	736213	2.5
+USA	4	0	Trinidad and Tobago	736213	2.5
+Canada	3	1	El Salvador	736213	2.5
+United Arab Emirates	0	1	Australia	736213	2.5
+Albania	2	1	FYR of Macedonia	736213	2.5
+Uruguay	4	0	Paraguay	736213	2.5
+Brazil	2	1	Colombia	736213	2.5
+Kyrgyzstan	1	2	Philippines	736213	1
+South Africa	1	0	Egypt	736213	1
+Cameroon	2	1	Gabon	736213	1
+Belarus	0	0	France	736213	2.5
+Palestine	1	1	Tajikistan	736213	1
+Cyprus	0	3	Belgium	736213	2.5
+Sweden	1	1	Netherlands	736213	2.5
+Russia	1	0	Ghana	736213	1
+Indonesia	3	0	Malaysia	736213	1
+Bulgaria	4	3	Luxembourg	736213	2.5
+Bosnia and Herzegovina	5	0	Estonia	736213	2.5
+Andorra	0	1	Latvia	736213	2.5
+Guatemala	9	3	St. Vincent and the Grenadines	736213	2.5
+Suisse	2	0	Portugal	736213	2.5
+Faroe Islands	0	0	Hungary	736213	2.5
+Qatar	3	0	Serbia	736236	1
+Botswana	1	1	Angola	736237	1
+Togo	1	0	Uganda	736241	1
+DR Congo	0	1	Kenya	736241	1
+Trinidad and Tobago	4	0	Dominican Republic	736242	1
+Tajikistan	3	3	Palestine	736242	1
+Solomon Islands	0	3	New Caledonia	736242	1
+Kosovo	0	6	Croatia	736243	2.5
+Moldova	0	3	Serbia	736243	2.5
+South Korea	3	2	Qatar	736243	2.5
+China	0	1	Syria	736243	2.5
+Liechtenstein	0	2	Albania	736243	2.5
+Japan	2	1	Iraq	736243	2.5
+United Arab Emirates	3	1	Thailand	736243	2.5
+Italy	1	1	Spain	736243	2.5
+Iceland	3	2	Finland	736243	2.5
+Turkey	2	2	Ukraine	736243	2.5
+Ireland	1	0	Georgia	736243	2.5
+Cambodia	0	2	Hong Kong	736243	1
+Uzbekistan	0	1	Iran	736243	2.5
+Vietnam	5	2	North Korea	736243	1
+Ecuador	3	0	Chile	736243	2.5
+Austria	2	2	Wales	736243	2.5
+Canada	4	0	Mauritania	736243	1
+Kyrgyzstan	0	0	Lebanon	736243	1
+Curacao	3	0	Antigua and Barbuda	736243	1
+FYR of Macedonia	1	2	Israel	736243	2.5
+Saudi Arabia	2	2	Australia	736243	2.5
+Hungary	2	3	Suisse	736244	2.5
+Latvia	0	2	Faroe Islands	736244	2.5
+Peru	2	2	Argentina	736244	2.5
+Portugal	6	0	Andorra	736244	2.5
+Brazil	5	0	Bolivia	736244	2.5
+Uruguay	3	0	Venezuela	736244	2.5
+Ghana	0	0	Uganda	736244	2.5
+Luxembourg	0	1	Sweden	736244	2.5
+Netherlands	4	1	Belarus	736244	2.5
+France	4	1	Bulgaria	736244	2.5
+Paraguay	0	1	Colombia	736244	2.5
+Singapore	0	0	Malaysia	736244	1
+Philippines	1	3	Bahrain	736244	1
+Oman	1	1	Jordan	736244	1
+Cuba	0	2	USA	736244	1
+Belgium	4	0	Bosnia and Herzegovina	736244	2.5
+Greece	2	0	Cyprus	736244	2.5
+Estonia	4	0	Gibraltar	736244	2.5
+Scotland	1	1	Lithania	736245	2.5
+Burkina Faso	1	1	South Africa	736245	2.5
+Senegal	2	0	Cape Verde	736245	2.5
+Cote dIvoire	3	1	Mali	736245	2.5
+DR Congo	4	0	Libya	736245	2.5
+Gabon	0	0	Morocco	736245	2.5
+England	2	0	Malta	736245	2.5
+Poland	3	2	Denmark	736245	2.5
+Northern Ireland	4	0	San Marino	736245	2.5
+Montenegro	5	0	Kazakhstan	736245	2.5
+Slovenia	1	0	Slovakia	736245	2.5
+Timor-Leste	1	2	Taiwan	736245	2.5
+Armenia	0	5	Romania	736245	2.5
+Dominican Republic	1	2	Martinique	736245	1
+Germany	3	0	Czech Republic	736245	2.5
+Azerbaijan	1	0	Norway	736245	2.5
+Belize	1	2	Honduras	736245	1
+Solomon Islands	0	1	New Caledonia	736245	1
+Suriname	2	2	Guyana	736245	1
+Albania	0	2	Spain	736246	2.5
+Zambia	1	2	Nigeria	736246	2.5
+Moldova	1	3	Ireland	736246	2.5
+Israel	2	1	Liechtenstein	736246	2.5
+Congo	1	2	Egypt	736246	2.5
+Algeria	1	1	Cameroon	736246	2.5
+Tunisia	2	0	Guinea	736246	2.5
+Serbia	3	2	Austria	736246	2.5
+Ukraine	3	0	Kosovo	736246	2.5
+Finland	0	1	Croatia	736246	2.5
+Iceland	2	0	Turkey	736246	2.5
+Antigua and Barbuda	2	0	Puerto Rico	736246	1
+French Guiana	1	0	St. Kitts and Nevis	736246	1
+Togo	2	0	Mozambique	736246	1
+Russia	3	4	Costa Rica	736246	1
+Indonesia	2	2	Vietnam	736246	1
+Cambodia	4	0	Sri Lanka	736246	1
+Wales	1	1	Georgia	736246	2.5
+FYR of Macedonia	2	3	Italy	736246	2.5
+New Zealand	1	2	Mexico	736246	1
+Bhutan	3	1	Bangladesh	736247	2.5
+Netherlands	0	1	France	736247	2.5
+Estonia	0	2	Greece	736247	2.5
+Gibraltar	0	6	Belgium	736247	2.5
+Latvia	0	2	Hungary	736247	2.5
+Belarus	1	1	Luxembourg	736247	2.5
+Faroe Islands	0	6	Portugal	736247	2.5
+Andorra	1	2	Suisse	736247	2.5
+Philippines	1	3	North Korea	736247	1
+Sweden	3	0	Bulgaria	736247	2.5
+Bosnia and Herzegovina	2	0	Cyprus	736247	2.5
+Germany	2	0	Northern Ireland	736248	2.5
+Czech Republic	0	0	Azerbaijan	736248	2.5
+Kazakhstan	0	0	Romania	736248	2.5
+Poland	2	1	Armenia	736248	2.5
+Slovenia	0	0	England	736248	2.5
+Colombia	2	2	Uruguay	736248	2.5
+Bolivia	2	2	Ecuador	736248	2.5
+Venezuela	0	2	Brazil	736248	2.5
+Laos	1	1	Maldives	736248	2.5
+Norway	4	1	San Marino	736248	2.5
+Denmark	0	1	Montenegro	736248	2.5
+Australia	1	1	Japan	736248	2.5
+Argentina	0	1	Paraguay	736248	2.5
+Chile	2	1	Peru	736248	2.5
+Taiwan	2	1	Timor-Leste	736248	2.5
+Iraq	4	0	Thailand	736248	2.5
+Oman	2	2	Bahrain	736248	1
+Lithania	2	0	Malta	736248	2.5
+Malaysia	1	1	Afghanistan	736248	1
+Hong Kong	2	0	Singapore	736248	1
+South Africa	1	1	Ghana	736248	1
+Qatar	1	0	Syria	736248	2.5
+Lebanon	1	1	Equatorial Guinea	736248	1
+Saudi Arabia	3	0	United Arab Emirates	736248	2.5
+Slovakia	3	0	Scotland	736248	2.5
+Uzbekistan	2	0	China	736248	2.5
+Kyrgyzstan	1	0	Turkmenistan	736248	1
+Morocco	4	0	Canada	736248	1
+Iran	1	0	South Korea	736248	2.5
+Panama	0	1	Mexico	736249	1
+USA	1	1	New Zealand	736249	1
+Puerto Rico	2	2	Curacao	736249	1
+Martinique	0	0	Trinidad and Tobago	736249	1
+Guyana	2	2	Jamaica	736249	1
+Brunei	2	1	Timor-Leste	736252	1
+Cambodia	2	1	Laos	736252	1
+Timor-Leste	1	2	Laos	736255	1
+Brunei	0	3	Cambodia	736255	1
+Cambodia	3	2	Timor-Leste	736258	1
+Laos	4	3	Brunei	736258	1
+Brunei	4	0	Timor-Leste	736270	1
+Honduras	5	0	Belize	736270	1
+Macau	2	1	Mongolia	736271	1
+Sri Lanka	1	2	Laos	736271	1
+Myanmar	0	0	Indonesia	736272	1
+Zimbabwe	1	0	Zambia	736273	1
+Timor-Leste	0	0	Nepal	736273	1
+Hong Kong	3	2	Guam	736274	1
+Jordan	0	0	Iraq	736274	1
+North Korea	2	0	Taiwan	736274	1
+Mongolia	2	0	Sri Lanka	736274	1
+Laos	1	4	Macau	736274	1
+Tahiti	1	0	Solomon Islands	736275	2.5
+Vietnam	3	2	Indonesia	736276	1
+Nepal	3	0	Brunei	736276	1
+Uganda	0	1	Zambia	736276	1
+Guam	0	2	North Korea	736277	1
+United Arab Emirates	2	0	Bahrain	736277	1
+Syria	2	0	Singapore	736277	1
+Haiti	2	5	French Guiana	736277	1
+Netherlands	1	1	Belgium	736277	1
+Hong Kong	4	2	Taiwan	736277	1
+Mongolia	0	3	Laos	736277	1
+Greece	0	1	Belarus	736277	1
+Philippines	1	0	Kyrgyzstan	736277	1
+Sri Lanka	1	1	Macau	736277	1
+Tajikistan	3	0	Turkmenistan	736277	1
+Lebanon	1	1	Palestine	736278	1
+Uzbekistan	1	0	Jordan	736278	1
+Qatar	2	1	Russia	736278	1
+Iran	8	1	Papua New Guinea	736278	1
+Colombia	0	0	Chile	736278	2.5
+Venezuela	5	0	Bolivia	736279	2.5
+Honduras	0	1	Panama	736279	2.5
+Brazil	3	0	Argentina	736279	2.5
+Denmark	4	1	Kazakhstan	736279	2.5
+Paraguay	1	4	Peru	736279	2.5
+Malta	0	1	Slovenia	736279	2.5
+Libya	0	1	Tunisia	736279	2.5
+Slovakia	4	0	Lithania	736279	2.5
+Uruguay	2	1	Ecuador	736279	2.5
+Romania	0	3	Poland	736279	2.5
+Czech Republic	2	1	Norway	736279	2.5
+Japan	4	0	Oman	736279	1
+South Korea	2	0	Canada	736279	1
+Togo	2	2	Comoros	736279	1
+France	2	1	Sweden	736279	2.5
+England	3	0	Scotland	736279	2.5
+Northern Ireland	4	0	Azerbaijan	736279	2.5
+Armenia	3	2	Montenegro	736279	2.5
+San Marino	0	8	Germany	736279	2.5
+Morocco	0	0	Cote dIvoire	736280	2.5
+Ukraine	1	0	Finland	736280	2.5
+Spain	4	0	FYR of Macedonia	736280	2.5
+Liechtenstein	0	4	Italy	736280	2.5
+Albania	0	3	Israel	736280	2.5
+Wales	1	1	Serbia	736280	2.5
+Georgia	1	1	Moldova	736280	2.5
+Austria	0	1	Ireland	736280	2.5
+South Africa	2	1	Senegal	736280	2.5
+USA	1	2	Mexico	736280	2.5
+Croatia	2	0	Iceland	736280	2.5
+Trinidad and Tobago	0	2	Costa Rica	736280	2.5
+Nepal	1	1	Laos	736280	1
+New Zealand	2	0	New Caledonia	736280	2.5
+Nigeria	3	1	Algeria	736280	2.5
+Mali	0	0	Gabon	736280	2.5
+Uganda	1	0	Congo	736280	2.5
+Turkey	2	0	Kosovo	736280	2.5
+Cameroon	1	1	Zambia	736280	2.5
+Kenya	1	0	Mozambique	736280	1
+Taiwan	2	0	Guam	736280	1
+Hong Kong	0	1	North Korea	736280	1
+Cape Verde	0	2	Burkina Faso	736280	2.5
+Macau	1	1	Brunei	736280	1
+Cyprus	3	1	Gibraltar	736281	2.5
+Guinea	1	2	DR Congo	736281	2.5
+Luxembourg	1	3	Netherlands	736281	2.5
+Bulgaria	1	0	Belarus	736281	2.5
+Hungary	4	0	Andorra	736281	2.5
+Portugal	4	1	Latvia	736281	2.5
+Suisse	2	0	Faroe Islands	736281	2.5
+Egypt	2	0	Ghana	736281	2.5
+Belgium	8	1	Estonia	736281	2.5
+Zimbabwe	3	0	Tanzania	736281	1
+Solomon Islands	1	0	Tahiti	736281	2.5
+Tajikistan	1	0	Afghanistan	736281	1
+Greece	1	1	Bosnia and Herzegovina	736281	2.5
+Jamaica	1	0	Suriname	736281	1
+St. Kitts and Nevis	0	0	Haiti	736281	1
+Singapore	1	0	Cambodia	736281	1
+Brunei	2	3	Laos	736282	1
+Malaysia	2	1	Papua New Guinea	736282	1
+Myanmar	0	3	Oman	736282	1
+Poland	1	1	Slovenia	736282	1
+Ecuador	3	0	Venezuela	736283	2.5
+China	0	0	Qatar	736283	2.5
+United Arab Emirates	2	0	Iraq	736283	2.5
+Peru	0	2	Brazil	736283	2.5
+Argentina	3	0	Colombia	736283	2.5
+Chile	3	1	Uruguay	736283	2.5
+Panama	0	0	Mexico	736283	2.5
+Bolivia	1	0	Paraguay	736283	2.5
+Costa Rica	4	0	USA	736283	2.5
+Japan	2	1	Saudi Arabia	736283	2.5
+Syria	0	0	Iran	736283	2.5
+Thailand	2	2	Australia	736283	2.5
+New Caledonia	0	0	New Zealand	736283	2.5
+Ukraine	2	0	Serbia	736283	1
+Honduras	3	1	Trinidad and Tobago	736283	2.5
+South Korea	2	1	Uzbekistan	736283	2.5
+Malta	0	2	Iceland	736283	1
+Czech Republic	1	1	Denmark	736283	1
+Jordan	0	0	Lebanon	736283	1
+Italy	0	0	Germany	736283	1
+Austria	0	0	Slovakia	736283	1
+Northern Ireland	0	3	Croatia	736283	1
+England	2	2	Spain	736283	1
+France	0	0	Cote dIvoire	736283	1
+Kenya	1	0	Liberia	736283	1
+Morocco	2	1	Togo	736283	1
+Russia	1	0	Romania	736283	1
+Tunisia	0	0	Mauritania	736283	1
+Macau	0	1	Nepal	736283	1
+Mozambique	1	1	South Africa	736283	1
+Comoros	1	1	Gabon	736283	1
+Bahrain	0	0	Kyrgyzstan	736283	1
+Hungary	0	2	Sweden	736284	1
+Thailand	4	2	Indonesia	736287	1
+St. Kitts and Nevis	1	1	Estonia	736287	1
+Philippines	0	0	Singapore	736287	1
+Malaysia	3	2	Cambodia	736288	1
+Myanmar	1	2	Vietnam	736288	1
+Antigua and Barbuda	0	1	Estonia	736290	1
+Philippines	2	2	Indonesia	736290	1
+Thailand	1	0	Singapore	736290	1
+Cambodia	1	3	Myanmar	736291	1
+Malaysia	0	1	Vietnam	736291	1
+Philippines	0	1	Thailand	736293	1
+Singapore	1	2	Indonesia	736293	1
+Myanmar	1	0	Malaysia	736294	1
+Vietnam	2	1	Cambodia	736294	1
+Indonesia	2	1	Vietnam	736301	1
+Myanmar	0	2	Thailand	736302	1
+Vietnam	2	2	Indonesia	736305	1
+Thailand	4	0	Myanmar	736306	1
+Indonesia	2	1	Thailand	736312	1
+Thailand	2	0	Indonesia	736315	1
+Cote dIvoire	0	0	Zimbabwe	736324	1
+Nicaragua	2	1	Trinidad and Tobago	736325	1
+Nicaragua	1	3	Trinidad and Tobago	736328	1
+Tunisia	2	0	Uganda	736333	1
+Morocco	1	0	Burkina Faso	736333	1
+Trinidad and Tobago	1	1	Suriname	736333	1
+Cameroon	2	0	DR Congo	736334	1
+Suriname	2	4	Haiti	736335	1
+Algeria	3	1	Mauritania	736336	1
+Mali	1	2	Burkina Faso	736336	1
+Libya	1	2	Senegal	736337	1
+Egypt	1	0	Tunisia	736337	1
+Sweden	1	2	Cote dIvoire	736337	1
+Haiti	3	3	Trinidad and Tobago	736337	1
+Slovakia	1	3	Uganda	736337	1
+Morocco	1	0	Finland	736338	1
+Cameroon	1	1	Zimbabwe	736339	1
+Saudi Arabia	0	0	Slovenia	736339	1
+Algeria	6	0	Mauritania	736339	1
+China	0	2	Iceland	736339	1
+Cote dIvoire	3	0	Uganda	736340	1
+Congo	0	2	Senegal	736340	1
+Chile	1	1	Croatia	736340	1
+Sweden	6	0	Slovakia	736341	1
+Honduras	2	1	Nicaragua	736342	1
+Slovenia	2	0	Finland	736342	1
+Panama	0	0	Belize	736343	1
+Costa Rica	0	0	El Salvador	736343	1
+Burkina Faso	1	1	Cameroon	736343	3
+China	1	1	Croatia	736343	1
+Gabon	1	1	Guinea-Bissau	736343	3
+Cambodia	2	7	Saudi Arabia	736343	1
+Algeria	2	2	Zimbabwe	736344	3
+Tunisia	0	2	Senegal	736344	3
+Belize	0	3	Costa Rica	736344	1
+El Salvador	1	2	Honduras	736344	1
+Iceland	0	1	Chile	736344	1
+Panama	2	1	Nicaragua	736345	1
+DR Congo	1	0	Morocco	736345	3
+Cote dIvoire	0	0	Togo	736345	3
+El Salvador	3	1	Belize	736346	1
+Qatar	1	1	Moldova	736346	1
+Ghana	1	0	Uganda	736346	3
+Mali	0	0	Egypt	736346	3
+Gabon	1	1	Burkina Faso	736347	3
+Cameroon	2	1	Guinea-Bissau	736347	3
+Costa Rica	0	0	Nicaragua	736347	1
+Panama	0	1	Honduras	736347	1
+Algeria	1	2	Tunisia	736348	3
+Senegal	2	0	Zimbabwe	736348	3
+Morocco	3	1	Togo	736349	3
+Cote dIvoire	2	2	DR Congo	736349	3
+Nicaragua	3	1	Belize	736349	1
+Egypt	1	0	Uganda	736350	3
+Ghana	1	0	Mali	736350	3
+Panama	1	0	El Salvador	736350	1
+Honduras	1	1	Costa Rica	736350	1
+Belize	0	1	Honduras	736351	1
+El Salvador	1	0	Nicaragua	736351	1
+Panama	1	0	Costa Rica	736351	1
+Bermuda	2	4	Canada	736351	1
+Guinea-Bissau	0	2	Burkina Faso	736351	3
+Cameroon	0	0	Gabon	736351	3
+Uzbekistan	2	2	Georgia	736352	1
+Senegal	2	2	Algeria	736352	3
+Zimbabwe	2	4	Tunisia	736352	3
+Togo	1	3	DR Congo	736353	3
+Morocco	1	0	Cote dIvoire	736353	3
+Jordan	1	0	Georgia	736354	1
+Uganda	1	1	Mali	736354	3
+Egypt	1	0	Ghana	736354	3
+Brazil	1	0	Colombia	736355	1
+Burkina Faso	2	0	Tunisia	736357	3
+Senegal	1	1	Cameroon	736357	3
+USA	0	0	Serbia	736358	1
+Egypt	1	0	Morocco	736358	3
+DR Congo	1	2	Ghana	736358	3
+Burkina Faso	1	1	Egypt	736361	3
+Cameroon	2	0	Ghana	736362	3
+USA	1	0	Jamaica	736364	1
+Burkina Faso	1	0	Ghana	736364	3
+Egypt	1	2	Cameroon	736365	3
+Mexico	1	0	Iceland	736368	1
+Honduras	0	1	Jamaica	736377	1
+Ecuador	3	1	Honduras	736382	1
+San Marino	0	2	Andorra	736382	1
+Qatar	1	2	Azerbaijan	736397	1
+Trinidad and Tobago	2	0	Barbados	736398	1
+Burundi	7	0	Djibouti	736399	1
+Burundi	1	0	Djibouti	736401	1
+Iran	0	1	Iraq	736406	1
+San Marino	0	2	Moldova	736407	1
+Indonesia	1	3	Myanmar	736409	1
+Philippines	0	0	Malaysia	736410	1
+São Tome e Ptincipe	0	1	Madagascar	736410	2.5
+Djibouti	2	0	South Sudan	736410	2.5
+Yemen	0	1	Palestine	736410	1
+Scotland	1	1	Canada	736410	1
+Vietnam	1	1	Taiwan	736410	1
+Cambodia	2	3	India	736410	1
+Czech Republic	3	0	Lithania	736410	1
+Germany	1	0	England	736410	1
+Cyprus	3	1	Kazakhstan	736410	1
+Qatar	0	1	Iran	736411	2.5
+Papua New Guinea	1	3	Tahiti	736411	2.5
+China	1	0	South Korea	736411	2.5
+United Arab Emirates	0	2	Japan	736411	2.5
+Iraq	1	1	Australia	736411	2.5
+Thailand	0	3	Saudi Arabia	736411	2.5
+Syria	1	0	Uzbekistan	736411	2.5
+Curacao	1	1	El Salvador	736411	1
+Bahrain	1	1	Tajikistan	736411	1
+Jordan	4	0	Hong Kong	736411	1
+Kenya	1	1	Uganda	736411	1
+Colombia	1	0	Bolivia	736411	2.5
+Nigeria	1	1	Senegal	736411	1
+Afghanistan	2	1	Singapore	736411	1
+Georgia	1	3	Serbia	736412	2.5
+Venezuela	2	2	Peru	736412	2.5
+Paraguay	2	1	Ecuador	736412	2.5
+Argentina	1	0	Chile	736412	2.5
+Croatia	1	0	Ukraine	736412	2.5
+Ireland	0	0	Wales	736412	2.5
+Uruguay	1	4	Brazil	736412	2.5
+Comoros	2	0	Mauritius	736412	2.5
+Spain	4	1	Israel	736412	2.5
+Austria	2	0	Moldova	736412	2.5
+Turkey	2	0	Finland	736412	2.5
+Liechtenstein	0	3	FYR of Macedonia	736412	2.5
+Guinea	2	2	Gabon	736412	1
+Mauritania	1	0	Benin	736412	1
+Russia	0	2	Cote dIvoire	736412	1
+Italy	2	0	Albania	736412	2.5
+Trinidad and Tobago	1	0	Panama	736412	2.5
+Libya	0	0	Togo	736412	1
+Mexico	2	0	Costa Rica	736412	2.5
+USA	6	0	Honduras	736412	2.5
+Morocco	2	0	Burkina Faso	736412	1
+Tunisia	0	1	Cameroon	736412	1
+Kosovo	1	2	Iceland	736412	2.5
+Andorra	0	0	Faroe Islands	736413	2.5
+Sweden	4	0	Belarus	736413	2.5
+Luxembourg	1	3	France	736413	2.5
+Haiti	3	1	Nicaragua	736413	3
+Portugal	3	0	Hungary	736413	2.5
+Suisse	1	0	Latvia	736413	2.5
+Cyprus	0	0	Estonia	736413	2.5
+South Africa	3	1	Guinea-Bissau	736413	1
+Fiji	0	2	New Zealand	736413	2.5
+Mozambique	2	0	Angola	736413	1
+Tanzania	2	0	Botswana	736413	1
+Belgium	1	1	Greece	736413	2.5
+Bulgaria	2	0	Netherlands	736413	2.5
+Bosnia and Herzegovina	5	0	Gibraltar	736413	2.5
+Madagascar	3	2	São Tome e Ptincipe	736414	2.5
+England	2	0	Lithania	736414	2.5
+Armenia	2	0	Kazakhstan	736414	2.5
+Taiwan	1	3	Turkmenistan	736414	2.5
+San Marino	0	6	Czech Republic	736414	2.5
+Romania	0	0	Denmark	736414	2.5
+Azerbaijan	1	4	Germany	736414	2.5
+Kenya	2	1	DR Congo	736414	1
+Scotland	1	0	Slovenia	736414	2.5
+Northern Ireland	2	0	Norway	736414	2.5
+Zimbabwe	0	0	Zambia	736414	1
+Montenegro	1	2	Poland	736414	2.5
+Malta	1	3	Slovakia	736414	2.5
+Central African Republic	1	2	Gambia	736415	1
+Mauritania	2	1	Congo	736415	1
+Turkey	3	1	Moldova	736415	1
+Honduras	1	1	Costa Rica	736416	2.5
+Panama	1	1	USA	736416	2.5
+Iran	1	0	China	736416	2.5
+Saudi Arabia	1	0	Iraq	736416	2.5
+Lebanon	2	0	Hong Kong	736416	2.5
+New Zealand	2	0	Fiji	736416	2.5
+Australia	2	0	United Arab Emirates	736416	2.5
+South Sudan	6	0	Djibouti	736416	2.5
+Chile	3	1	Venezuela	736416	2.5
+Myanmar	0	1	India	736416	2.5
+Philippines	4	1	Nepal	736416	2.5
+Jordan	7	0	Cambodia	736416	2.5
+Japan	4	0	Thailand	736416	2.5
+Bahrain	0	0	Singapore	736416	2.5
+Mauritius	1	1	Comoros	736416	2.5
+Oman	14	0	Bhutan	736416	2.5
+Afghanistan	1	1	Vietnam	736416	2.5
+Kyrgyzstan	1	0	Macau	736416	2.5
+Maldives	0	3	Palestine	736416	2.5
+Trinidad and Tobago	0	1	Mexico	736416	2.5
+Yemen	2	1	Tajikistan	736416	2.5
+Brazil	3	0	Paraguay	736416	2.5
+Uzbekistan	1	0	Qatar	736416	2.5
+Portugal	2	3	Sweden	736416	1
+Estonia	3	0	Croatia	736416	1
+Russia	3	3	Belgium	736416	1
+Austria	1	1	Finland	736416	1
+Netherlands	1	2	Italy	736416	1
+Bolivia	2	0	Argentina	736416	2.5
+Georgia	5	0	Latvia	736416	1
+Albania	1	2	Bosnia and Herzegovina	736416	1
+Egypt	3	0	Togo	736416	1
+South Africa	0	0	Angola	736416	1
+France	0	2	Spain	736416	1
+South Korea	1	0	Syria	736416	2.5
+Cameroon	1	2	Guinea	736416	1
+Mozambique	1	0	Lesotho	736416	1
+FYR of Macedonia	3	0	Belarus	736416	1
+Luxembourg	0	2	Cape Verde	736416	1
+Ireland	0	1	Iceland	736416	1
+Peru	2	1	Uruguay	736416	2.5
+Morocco	1	0	Tunisia	736416	1
+Ecuador	0	2	Colombia	736416	2.5
+Tanzania	2	1	Burundi	736416	1
+Tahiti	1	2	Papua New Guinea	736417	2.5
+Nicaragua	3	0	Haiti	736417	3
+Kenya	0	0	Malawi	736437	1
+Madagascar	1	0	Malawi	736441	1
+Somalia	1	2	South Sudan	736441	1
+Mauritius	2	1	Seychelles	736441	1
+Martinique	4	1	Guadeloupe	736445	1
+Seychelles	1	1	Mauritius	736448	1
+Malawi	0	1	Madagascar	736448	1
+South Sudan	2	0	Somalia	736449	1
+Grenada	2	2	Trinidad and Tobago	736449	1
+Burkina Faso	1	1	Benin	736453	1
+St. Kitts and Nevis	2	1	Barbados	736456	1
+Senegal	2	0	Mauritania	736460	1
+Egypt	1	0	Yemen	736462	1
+Guadeloupe	2	2	Dominica	736466	1
+Benin	2	2	Burkina Faso	736470	1
+Ghana	1	1	Benin	736474	1
+Fiji	1	1	Solomon Islands	736474	1
+Honduras	2	2	El Salvador	736477	1
+Mexico	1	2	Croatia	736477	1
+Fiji	1	0	Solomon Islands	736477	1
+Italy	8	0	San Marino	736480	1
+Morocco	1	2	Netherlands	736480	1
+Cote dIvoire	1	1	Benin	736480	1
+Togo	0	3	Nigeria	736481	1
+Suisse	1	0	Belarus	736481	1
+Iraq	1	0	Jordan	736481	1
+France	5	0	Paraguay	736482	1
+Mexico	3	1	Ireland	736482	1
+Chile	3	0	Burkina Faso	736482	1
+Oman	1	1	Syria	736482	1
+Nicaragua	0	1	Bolivia	736482	1
+Rwanda	2	0	Morocco	736482	1
+Northern Ireland	1	0	New Zealand	736482	1
+Ethiopia	0	0	Uganda	736483	1
+Portugal	4	0	Cyprus	736483	1
+USA	1	1	Venezuela	736483	1
+Gabon	0	0	Zambia	736484	1
+Luxembourg	2	1	Albania	736484	1
+Togo	2	0	Comoros	736484	1
+Lesotho	1	0	Mauritania	736484	1
+Armenia	5	0	St. Kitts and Nevis	736484	1
+Netherlands	5	0	Cote dIvoire	736484	1
+Ireland	3	1	Uruguay	736484	1
+Montenegro	1	2	Iran	736484	1
+Belgium	2	1	Czech Republic	736485	1
+FYR of Macedonia	0	0	Turkey	736485	1
+DR Congo	2	0	Botswana	736485	1
+Hungary	0	3	Russia	736485	1
+Egypt	1	0	Libya	736485	1
+Senegal	0	0	Uganda	736485	1
+Liberia	1	0	Sierra Leone	736485	1
+Bahrain	0	2	Palestine	736486	1
+Singapore	1	1	Myanmar	736486	1
+Senegal	0	0	Uganda	736486	1
+Qatar	2	2	North Korea	736486	1
+Afghanistan	2	1	Maldives	736486	1
+India	2	0	Nepal	736486	1
+Uzbekistan	2	0	Thailand	736486	1
+Ukraine	0	1	Malta	736486	1
+Algeria	2	1	Guinea	736486	1
+Denmark	1	1	Germany	736486	1
+Israel	1	1	Moldova	736486	1
+Georgia	3	0	St. Kitts and Nevis	736487	1
+United Arab Emirates	4	0	Laos	736487	1
+Fiji	2	2	New Caledonia	736487	2.5
+China	8	1	Philippines	736487	1
+Japan	1	1	Syria	736487	1
+Spain	2	2	Colombia	736487	1
+Bolivia	3	2	Nicaragua	736487	1
+Hong Kong	0	0	Jordan	736487	1
+Finland	1	1	Liechtenstein	736487	1
+Italy	3	0	Uruguay	736487	1
+Iraq	0	0	South Korea	736487	1
+Costa Rica	0	0	Panama	736488	2.5
+Australia	3	2	Saudi Arabia	736488	2.5
+Cambodia	0	2	Indonesia	736488	1
+Mexico	3	0	Honduras	736488	2.5
+Venezuela	1	1	Ecuador	736488	1
+Peru	1	0	Paraguay	736488	1
+USA	2	0	Trinidad and Tobago	736488	2.5
+Solomon Islands	3	2	Papua New Guinea	736489	2.5
+Netherlands	5	0	Luxembourg	736489	2.5
+Libya	5	1	Seychelles	736489	2.5
+Sudan	1	3	Madagascar	736489	2.5
+Gibraltar	1	2	Cyprus	736489	2.5
+Botswana	0	1	Mauritania	736489	2.5
+Estonia	0	2	Belgium	736489	2.5
+Faroe Islands	0	2	Suisse	736489	2.5
+Latvia	0	3	Portugal	736489	2.5
+Sweden	2	1	France	736489	2.5
+Belarus	2	1	Bulgaria	736489	2.5
+Brazil	0	1	Argentina	736489	1
+Russia	1	1	Chile	736489	1
+Bosnia and Herzegovina	0	0	Greece	736489	2.5
+Andorra	1	0	Hungary	736489	2.5
+Cameroon	1	0	Morocco	736490	2.5
+Niger	0	0	Swaziland	736490	2.5
+Guinea-Bissau	1	0	Namibia	736490	2.5
+Cote dIvoire	2	3	Guinea	736490	2.5
+Sierra Leone	2	1	Kenya	736490	2.5
+Senegal	3	0	Equatorial Guinea	736490	2.5
+Nigeria	0	2	South Africa	736490	2.5
+Tanzania	1	1	Lesotho	736490	2.5
+Burundi	3	0	South Sudan	736490	2.5
+Burkina Faso	3	1	Angola	736490	2.5
+Mali	2	1	Gabon	736490	2.5
+DR Congo	3	1	Congo	736490	2.5
+Azerbaijan	0	1	Northern Ireland	736490	2.5
+Grenada	1	2	Bermuda	736490	1
+Norway	1	1	Czech Republic	736490	2.5
+Poland	3	1	Romania	736490	2.5
+Germany	7	0	San Marino	736490	2.5
+Lithania	1	2	Slovakia	736490	2.5
+Montenegro	4	1	Armenia	736490	2.5
+Scotland	2	2	England	736490	2.5
+Malawi	1	0	Comoros	736490	2.5
+Zambia	0	1	Mozambique	736490	2.5
+Kazakhstan	1	3	Denmark	736490	2.5
+Slovenia	2	0	Malta	736490	2.5
+Mexico	1	1	USA	736491	2.5
+Ghana	5	0	Ethiopia	736491	2.5
+Zimbabwe	3	0	Liberia	736491	2.5
+New Caledonia	2	1	Fiji	736491	2.5
+Central African Republic	2	1	Rwanda	736491	2.5
+Algeria	1	0	Togo	736491	2.5
+Cape Verde	0	1	Uganda	736491	2.5
+Kosovo	1	4	Turkey	736491	2.5
+FYR of Macedonia	1	2	Spain	736491	2.5
+Italy	5	0	Liechtenstein	736491	2.5
+Iceland	1	0	Croatia	736491	2.5
+Moldova	2	2	Georgia	736491	2.5
+Ireland	1	1	Austria	736491	2.5
+Finland	1	2	Ukraine	736491	2.5
+Israel	0	3	Albania	736491	2.5
+Serbia	1	1	Wales	736491	2.5
+Benin	1	0	Gambia	736491	2.5
+Iran	2	0	Uzbekistan	736492	2.5
+Tunisia	1	0	Egypt	736492	2.5
+Latvia	1	2	Estonia	736492	1
+Belarus	1	0	New Zealand	736492	1
+Turkmenistan	1	2	Bahrain	736493	2.5
+Thailand	1	1	United Arab Emirates	736493	2.5
+Malaysia	1	2	Lebanon	736493	2.5
+India	1	0	Kyrgyzstan	736493	2.5
+Cambodia	1	0	Afghanistan	736493	2.5
+Nepal	0	0	Yemen	736493	2.5
+Qatar	3	2	South Korea	736493	2.5
+Hong Kong	1	1	North Korea	736493	2.5
+Macau	0	4	Myanmar	736493	2.5
+Palestine	2	1	Oman	736493	2.5
+Bhutan	0	2	Maldives	736493	2.5
+Tajikistan	3	4	Philippines	736493	2.5
+Vietnam	0	0	Jordan	736493	2.5
+France	3	2	England	736493	1
+Cameroon	0	4	Colombia	736493	1
+Syria	2	2	China	736493	2.5
+South Africa	1	2	Zambia	736493	1
+Papua New Guinea	1	2	Solomon Islands	736493	2.5
+Costa Rica	2	1	Trinidad and Tobago	736493	2.5
+Panama	2	2	Honduras	736493	2.5
+Romania	3	2	Chile	736493	1
+Singapore	0	6	Argentina	736493	1
+Norway	1	1	Sweden	736493	1
+Australia	0	4	Brazil	736493	1
+Iraq	1	1	Japan	736493	2.5
+Indonesia	0	0	Puerto Rico	736493	1
+Canada	2	1	Curacao	736494	1
+Peru	3	1	Jamaica	736494	1
+Ecuador	3	0	El Salvador	736494	1
+Russia	2	0	New Zealand	736497	3
+Curacao	0	0	Nicaragua	736497	1
+French Guiana	3	0	Barbados	736497	1
+Portugal	2	2	Mexico	736498	3
+Cameroon	0	2	Chile	736498	3
+Australia	2	3	Germany	736499	3
+Russia	0	1	Portugal	736501	3
+Mexico	2	1	New Zealand	736501	3
+Germany	1	1	Chile	736502	3
+Cameroon	1	1	Australia	736502	3
+New Zealand	0	4	Portugal	736504	3
+Mexico	2	1	Russia	736504	3
+Chile	1	1	Australia	736505	3
+Germany	3	1	Cameroon	736505	3
+Tanzania	2	0	Malawi	736505	1
+Mauritius	0	1	Angola	736505	1
+Mozambique	0	4	Zimbabwe	736506	1
+Madagascar	2	0	Seychelles	736506	1
+Angola	0	0	Tanzania	736507	1
+Malawi	0	0	Mauritius	736507	1
+Seychelles	1	2	Mozambique	736508	1
+St. Vincent and the Grenadines	1	2	St. Lucia	736508	1
+Portugal	1	1	Chile	736508	3
+Zimbabwe	0	0	Madagascar	736508	1
+Germany	4	1	Mexico	736509	3
+Mexico	1	0	Ghana	736509	1
+Tanzania	1	1	Mauritius	736509	1
+Malawi	0	0	Angola	736509	1
+Grenada	1	1	Dominica	736509	1
+Zimbabwe	6	0	Seychelles	736510	1
+Mozambique	1	4	Madagascar	736510	1
+Dominica	2	1	Barbados	736510	1
+USA	2	1	Ghana	736511	1
+Botswana	1	2	Zambia	736511	1
+Namibia	1	1	Lesotho	736511	1
+Grenada	2	0	St. Lucia	736511	1
+South Africa	0	1	Tanzania	736512	1
+Portugal	1	1	Mexico	736512	3
+Chile	0	1	Germany	736512	3
+Swaziland	1	2	Zimbabwe	736512	1
+Grenada	4	3	St. Vincent and the Grenadines	736513	1
+Barbados	1	1	St. Lucia	736513	1
+Namibia	1	0	Swaziland	736514	1
+St. Lucia	0	0	Dominica	736514	1
+Botswana	0	2	South Africa	736514	1
+St. Vincent and the Grenadines	4	2	Barbados	736514	1
+Zambia	4	2	Tanzania	736515	1
+Lesotho	3	4	Zimbabwe	736515	1
+Grenada	0	2	Barbados	736516	1
+Dominica	2	2	St. Vincent and the Grenadines	736516	1
+Tanzania	1	1	Lesotho	736517	1
+South Africa	1	0	Namibia	736517	1
+Mauritania	2	1	Senegal	736518	1
+Honduras	0	1	Costa Rica	736518	3
+French Guiana	2	4	Canada	736518	3
+USA	1	1	Panama	736518	3
+Martinique	2	0	Nicaragua	736519	3
+Togo	1	2	Ghana	736519	1
+Thailand	3	0	North Korea	736519	1
+Zambia	1	3	Zimbabwe	736519	1
+Mexico	3	1	El Salvador	736520	3
+Curacao	0	2	Jamaica	736520	3
+Costa Rica	1	1	Canada	736522	3
+Honduras	3	0	French Guiana	736522	3
+Panama	2	1	Nicaragua	736523	3
+USA	3	2	Martinique	736523	3
+El Salvador	2	0	Curacao	736524	3
+Burkina Faso	1	1	Belarus	736524	1
+South Sudan	0	0	Uganda	736524	1
+Mexico	0	0	Jamaica	736524	3
+Comoros	2	0	Lesotho	736525	1
+Panama	3	0	Martinique	736525	3
+Canada	0	0	Honduras	736525	3
+Costa Rica	3	0	French Guiana	736525	3
+Botswana	0	2	South Africa	736525	1
+Sierra Leone	1	1	Senegal	736525	1
+Djibouti	1	5	Ethiopia	736525	1
+Tanzania	1	1	Rwanda	736525	1
+Gambia	0	0	Mali	736525	1
+Guinea-Bissau	1	3	Guinea	736525	1
+Liberia	0	2	Mauritania	736526	1
+Togo	1	1	Benin	736526	1
+Burkina Faso	1	1	North Korea	736526	1
+Belarus	1	1	Thailand	736526	1
+Madagascar	2	2	Mozambique	736526	1
+Mauritius	0	1	Angola	736526	1
+Namibia	1	0	Zimbabwe	736526	1
+Swaziland	0	4	Zambia	736526	1
+Nicaragua	0	3	USA	736526	3
+Jamaica	1	1	El Salvador	736527	3
+Curacao	0	2	Mexico	736527	3
+USA	2	0	El Salvador	736529	3
+Costa Rica	1	0	Panama	736529	3
+Mexico	1	0	Honduras	736530	3
+Jamaica	2	1	Canada	736530	3
+Benin	1	1	Togo	736531	1
+Senegal	3	1	Sierra Leone	736532	1
+Guinea	7	0	Guinea-Bissau	736532	1
+Mali	4	0	Gambia	736532	1
+Rwanda	0	0	Tanzania	736532	1
+Uganda	5	1	South Sudan	736532	1
+South Africa	1	0	Botswana	736532	1
+Zambia	3	0	Swaziland	736532	1
+Costa Rica	0	2	USA	736532	3
+Mexico	0	1	Jamaica	736533	3
+Mozambique	0	2	Madagascar	736533	1
+Lesotho	1	0	Comoros	736533	1
+Zimbabwe	1	1	Namibia	736533	1
+Burundi	0	0	Sudan	736533	1
+Angola	3	2	Mauritius	736533	1
+Mauritania	0	1	Liberia	736533	1
+DR Congo	1	0	Burkina Faso	736535	1
+Ecuador	3	1	Trinidad and Tobago	736536	1
+USA	2	1	Jamaica	736536	3
+Morocco	1	1	Burkina Faso	736538	1
+Solomon Islands	0	0	Vanuatu	736538	1
+Sudan	1	0	Burundi	736539	1
+Equatorial Guinea	1	0	Congo	736540	1
+Morocco	3	1	DR Congo	736541	1
+Zambia	0	0	Ethiopia	736546	1
+Rwanda	2	1	Sudan	736548	1
+Algeria	1	2	Libya	736552	1
+Egypt	1	1	Morocco	736552	1
+São Tome e Ptincipe	0	2	Cameroon	736552	1
+Congo	0	0	DR Congo	736552	1
+Uganda	3	0	Rwanda	736553	1
+Mauritania	2	2	Mali	736553	1
+Burkina Faso	2	2	Ghana	736553	1
+South Africa	2	2	Zambia	736553	1
+Niger	2	1	Cote dIvoire	736554	1
+Madagascar	0	0	Angola	736554	1
+Benin	1	0	Nigeria	736554	1
+Ethiopia	1	1	Sudan	736554	1
+Comoros	2	1	Namibia	736554	1
+Senegal	3	1	Guinea	736556	1
+Andorra	0	1	Qatar	736557	1
+Morocco	3	1	Egypt	736559	1
+Libya	1	1	Algeria	736559	1
+DR Congo	1	1	Congo	736559	1
+Cote dIvoire	1	0	Niger	736560	1
+Angola	1	0	Madagascar	736560	1
+Mali	0	1	Mauritania	736560	1
+Rwanda	2	0	Uganda	736560	1
+Sudan	1	0	Ethiopia	736560	1
+Cameroon	2	0	São Tome e Ptincipe	736560	1
+India	2	1	Mauritius	736560	1
+Zambia	2	0	South Africa	736560	1
+Nigeria	2	0	Benin	736560	1
+Ghana	1	2	Burkina Faso	736561	1
+Namibia	2	0	Comoros	736561	1
+St. Kitts and Nevis	1	1	Mauritius	736563	1
+Malaysia	1	2	Syria	736563	1
+Guinea	5	0	Senegal	736564	1
+Qatar	2	1	Turkmenistan	736564	1
+India	1	1	St. Kitts and Nevis	736565	1
+Trinidad and Tobago	1	2	Jamaica	736565	1
+Uzbekistan	5	0	Kyrgyzstan	736566	1
+Iraq	1	1	Syria	736567	1
+Bahrain	0	0	Jordan	736570	1
+Myanmar	1	0	Malaysia	736570	1
+United Arab Emirates	2	1	Saudi Arabia	736570	2.5
+Oman	2	0	Afghanistan	736571	1
+Cyprus	3	2	Bosnia and Herzegovina	736572	2.5
+Greece	0	0	Estonia	736572	2.5
+Syria	3	1	Qatar	736572	2.5
+Guinea	3	2	Libya	736572	2.5
+Belgium	9	0	Gibraltar	736572	2.5
+China	1	0	Uzbekistan	736572	2.5
+Suisse	3	0	Andorra	736572	2.5
+Venezuela	0	0	Colombia	736572	2.5
+Japan	2	0	Australia	736572	2.5
+Portugal	5	1	Faroe Islands	736572	2.5
+South Korea	0	0	Iran	736572	2.5
+Togo	2	0	Niger	736572	1
+Hungary	3	1	Latvia	736572	2.5
+Mauritania	1	1	Kenya	736572	1
+Singapore	1	1	Hong Kong	736572	1
+Thailand	1	2	Iraq	736572	2.5
+Bulgaria	3	2	Sweden	736572	2.5
+France	4	0	Netherlands	736572	2.5
+Luxembourg	1	0	Belarus	736572	2.5
+Uganda	1	0	Egypt	736572	2.5
+Slovakia	1	0	Slovenia	736573	2.5
+Nigeria	4	0	Cameroon	736573	2.5
+Cape Verde	2	1	South Africa	736573	2.5
+Trinidad and Tobago	1	2	Honduras	736573	2.5
+Ghana	1	1	Congo	736573	2.5
+Lithania	0	3	Scotland	736573	2.5
+Morocco	6	0	Mali	736573	2.5
+Mexico	1	0	Panama	736573	2.5
+Tunisia	2	1	DR Congo	736573	2.5
+USA	0	2	Costa Rica	736573	2.5
+New Zealand	6	1	Solomon Islands	736573	2.5
+Denmark	4	0	Poland	736573	2.5
+Brazil	2	0	Ecuador	736573	2.5
+Kazakhstan	0	3	Montenegro	736573	2.5
+Uruguay	0	0	Argentina	736573	2.5
+Chile	0	3	Paraguay	736573	2.5
+Malta	0	4	England	736573	2.5
+Peru	2	1	Bolivia	736573	2.5
+Czech Republic	1	2	Germany	736573	2.5
+San Marino	0	3	Northern Ireland	736573	2.5
+Norway	2	0	Azerbaijan	736573	2.5
+Romania	1	0	Armenia	736573	2.5
+Wales	1	0	Austria	736574	2.5
+Canada	2	0	Jamaica	736574	1
+Zambia	3	1	Algeria	736574	2.5
+Croatia	1	0	Kosovo	736574	2.5
+Serbia	3	0	Moldova	736574	2.5
+Ukraine	2	0	Turkey	736574	2.5
+Israel	0	1	FYR of Macedonia	736574	2.5
+Gabon	0	3	Cote dIvoire	736574	2.5
+Tanzania	2	0	Botswana	736574	1
+Finland	1	0	Iceland	736574	2.5
+Georgia	1	1	Ireland	736574	2.5
+Mozambique	1	1	Kenya	736574	1
+Indonesia	0	0	Fiji	736574	1
+Hong Kong	4	0	Macau	736574	1
+Senegal	0	0	Burkina Faso	736574	2.5
+Albania	2	0	Liechtenstein	736574	2.5
+Spain	3	0	Italy	736574	2.5
+Netherlands	3	1	Bulgaria	736575	2.5
+Latvia	0	3	Suisse	736575	2.5
+Faroe Islands	1	0	Andorra	736575	2.5
+Estonia	1	0	Cyprus	736575	2.5
+Belarus	0	4	Sweden	736575	2.5
+Greece	1	2	Belgium	736575	2.5
+Hungary	0	1	Portugal	736575	2.5
+Gibraltar	0	4	Bosnia and Herzegovina	736575	2.5
+France	0	0	Luxembourg	736575	2.5
+Equatorial Guinea	1	2	Benin	736575	1
+England	2	1	Slovakia	736576	2.5
+Germany	6	0	Norway	736576	2.5
+Northern Ireland	2	0	Czech Republic	736576	2.5
+Azerbaijan	5	1	San Marino	736576	2.5
+Montenegro	1	0	Romania	736576	2.5
+Armenia	1	4	Denmark	736576	2.5
+Libya	1	0	Guinea	736576	2.5
+Cameroon	1	1	Nigeria	736576	2.5
+Scotland	2	0	Malta	736576	2.5
+Togo	0	1	Malawi	736576	1
+Poland	3	0	Kazakhstan	736576	2.5
+Slovenia	4	0	Lithania	736576	2.5
+DR Congo	2	2	Tunisia	736577	2.5
+Kosovo	0	1	Finland	736577	2.5
+Ecuador	1	2	Peru	736577	2.5
+Honduras	1	1	USA	736577	2.5
+Argentina	1	1	Venezuela	736577	2.5
+Qatar	1	2	China	736577	2.5
+Colombia	1	1	Brazil	736577	2.5
+Bahrain	5	0	Taiwan	736577	2.5
+Iran	2	2	Syria	736577	2.5
+Jordan	4	1	Afghanistan	736577	2.5
+Panama	3	0	Trinidad and Tobago	736577	2.5
+Bhutan	0	2	Palestine	736577	2.5
+Oman	5	0	Maldives	736577	2.5
+Singapore	1	1	Turkmenistan	736577	2.5
+Nepal	1	2	Tajikistan	736577	2.5
+North Korea	2	2	Lebanon	736577	2.5
+Macau	0	2	India	736577	2.5
+Philippines	2	2	Yemen	736577	2.5
+Malaysia	1	1	Hong Kong	736577	2.5
+Bolivia	1	0	Chile	736577	2.5
+Cambodia	1	2	Vietnam	736577	2.5
+Paraguay	1	2	Uruguay	736577	2.5
+Liechtenstein	0	8	Spain	736577	2.5
+Australia	2	1	Thailand	736577	2.5
+Italy	1	0	Israel	736577	2.5
+Ireland	0	1	Serbia	736577	2.5
+FYR of Macedonia	1	1	Albania	736577	2.5
+Austria	1	1	Georgia	736577	2.5
+Iraq	1	0	United Arab Emirates	736577	2.5
+Iceland	2	0	Ukraine	736577	2.5
+Turkey	1	0	Croatia	736577	2.5
+Moldova	0	2	Wales	736577	2.5
+Costa Rica	1	1	Mexico	736577	2.5
+Saudi Arabia	1	0	Japan	736577	2.5
+Cote dIvoire	1	2	Gabon	736577	2.5
+Algeria	0	1	Zambia	736577	2.5
+Mali	0	0	Morocco	736577	2.5
+Burkina Faso	2	2	Senegal	736577	2.5
+Uzbekistan	0	0	South Korea	736577	2.5
+South Africa	1	2	Cape Verde	736577	2.5
+Congo	1	5	Ghana	736577	2.5
+Solomon Islands	2	2	New Zealand	736577	2.5
+Niger	2	0	Mauritania	736577	1
+Egypt	1	0	Uganda	736577	2.5
+Macau	3	1	Laos	736604	1
+Uganda	1	2	Madagascar	736606	1
+Indonesia	3	1	Cambodia	736606	1
+Jordan	1	1	Oman	736606	1
+Malta	1	1	Lithania	736607	2.5
+San Marino	0	8	Norway	736607	2.5
+Bolivia	0	0	Brazil	736607	2.5
+England	1	0	Slovenia	736607	2.5
+Scotland	1	0	Slovakia	736607	2.5
+Venezuela	0	0	Uruguay	736607	2.5
+Romania	3	1	Kazakhstan	736607	2.5
+Azerbaijan	1	2	Czech Republic	736607	2.5
+Montenegro	0	1	Denmark	736607	2.5
+Armenia	1	6	Poland	736607	2.5
+Hong Kong	4	0	Laos	736607	1
+Qatar	3	1	Singapore	736607	1
+Iraq	2	1	Kenya	736607	1
+Iran	2	0	Togo	736607	1
+Syria	1	1	Australia	736607	2.5
+Taiwan	4	2	Mongolia	736607	1
+Northern Ireland	1	3	Germany	736607	2.5
+Spain	3	0	Albania	736608	2.5
+Turkey	0	3	Iceland	736608	2.5
+Liechtenstein	0	1	Israel	736608	2.5
+Croatia	1	1	Finland	736608	2.5
+Ireland	2	0	Moldova	736608	2.5
+Austria	3	2	Serbia	736608	2.5
+Italy	1	1	FYR of Macedonia	736608	2.5
+Mexico	3	1	Trinidad and Tobago	736608	2.5
+Georgia	0	1	Wales	736608	2.5
+Kosovo	0	2	Ukraine	736608	2.5
+Comoros	1	0	Mauritania	736608	1
+Japan	2	1	New Zealand	736608	1
+USA	4	0	Panama	736608	2.5
+Colombia	1	2	Paraguay	736608	2.5
+Chile	2	1	Ecuador	736608	2.5
+Argentina	0	0	Peru	736608	2.5
+Mali	0	0	Cote dIvoire	736608	2.5
+Cameroon	2	0	Algeria	736609	2.5
+Gibraltar	0	6	Estonia	736609	2.5
+Libya	1	2	DR Congo	736609	2.5
+South Africa	3	1	Burkina Faso	736609	2.5
+Nigeria	1	0	Zambia	736609	2.5
+Cape Verde	0	2	Senegal	736609	2.5
+Morocco	3	0	Gabon	736609	2.5
+Sweden	8	0	Luxembourg	736609	2.5
+Uganda	0	0	Ghana	736609	2.5
+Guinea	1	4	Tunisia	736609	2.5
+Cyprus	1	2	Greece	736609	2.5
+Suisse	5	2	Hungary	736609	2.5
+Costa Rica	1	1	Honduras	736609	2.5
+Bulgaria	0	1	France	736609	2.5
+Bosnia and Herzegovina	3	4	Belgium	736609	2.5
+Faroe Islands	0	0	Latvia	736609	2.5
+Belarus	1	3	Netherlands	736609	2.5
+Tanzania	1	1	Malawi	736609	1
+Saudi Arabia	5	2	Jamaica	736609	1
+Russia	4	2	South Korea	736609	1
+Grenada	1	0	Guyana	736609	1
+Andorra	0	2	Portugal	736609	2.5
+Kazakhstan	1	1	Armenia	736610	2.5
+Czech Republic	5	0	San Marino	736610	2.5
+Slovenia	2	2	Scotland	736610	2.5
+Germany	5	1	Azerbaijan	736610	2.5
+Lithania	0	1	England	736610	2.5
+Poland	4	2	Montenegro	736610	2.5
+Slovakia	3	0	Malta	736610	2.5
+Egypt	2	1	Congo	736610	2.5
+Thailand	1	0	Kenya	736610	1
+Denmark	1	1	Romania	736610	2.5
+Norway	1	0	Northern Ireland	736610	2.5
+Albania	0	1	Italy	736611	2.5
+Moldova	0	1	Austria	736611	2.5
+Wales	0	1	Ireland	736611	2.5
+Serbia	1	0	Georgia	736611	2.5
+Finland	2	2	Turkey	736611	2.5
+FYR of Macedonia	4	0	Liechtenstein	736611	2.5
+Israel	0	1	Spain	736611	2.5
+Iceland	2	0	Kosovo	736611	2.5
+Ukraine	0	2	Croatia	736611	2.5
+Lebanon	5	0	North Korea	736612	2.5
+Belgium	4	0	Cyprus	736612	2.5
+Trinidad and Tobago	2	1	USA	736612	2.5
+Australia	1	1	Syria	736612	2.5
+Yemen	1	1	Philippines	736612	2.5
+Taiwan	2	1	Bahrain	736612	2.5
+Panama	2	1	Costa Rica	736612	2.5
+Honduras	3	2	Mexico	736612	2.5
+Afghanistan	3	3	Jordan	736612	2.5
+Vietnam	5	0	Cambodia	736612	2.5
+Palestine	10	0	Bhutan	736612	2.5
+Maldives	1	3	Oman	736612	2.5
+Turkmenistan	2	1	Singapore	736612	2.5
+Tajikistan	3	0	Nepal	736612	2.5
+Myanmar	2	2	Kyrgyzstan	736612	2.5
+Portugal	2	0	Suisse	736612	2.5
+Hong Kong	2	0	Malaysia	736612	2.5
+Netherlands	2	0	Sweden	736612	2.5
+South Korea	1	3	Morocco	736612	1
+Paraguay	0	1	Venezuela	736612	2.5
+Japan	3	3	Haiti	736612	1
+Russia	1	1	Iran	736612	1
+Qatar	1	2	Curacao	736612	1
+Gabon	0	1	Benin	736612	1
+Brazil	3	0	Chile	736612	2.5
+Estonia	1	2	Bosnia and Herzegovina	736612	2.5
+France	2	1	Belarus	736612	2.5
+Uruguay	4	2	Bolivia	736612	2.5
+Peru	1	1	Colombia	736612	2.5
+Greece	4	0	Gibraltar	736612	2.5
+Luxembourg	1	1	Bulgaria	736612	2.5
+Hungary	1	0	Faroe Islands	736612	2.5
+Ecuador	1	3	Argentina	736612	2.5
+Latvia	4	0	Andorra	736612	2.5
+India	4	1	Macau	736613	2.5
+Grenada	0	5	Panama	736626	1
+Bermuda	2	3	Barbados	736630	1
+Ethiopia	2	3	Rwanda	736638	1
+Saudi Arabia	2	0	Latvia	736640	1
+Congo	1	1	Benin	736641	1
+Czech Republic	2	1	Iceland	736641	1
+Lesotho	1	0	Zimbabwe	736641	1
+Nicaragua	0	3	Dominican Republic	736641	1
+Hong Kong	0	2	Bahrain	736642	1
+Northern Ireland	0	1	Suisse	736642	2.5
+Croatia	4	1	Greece	736642	2.5
+Singapore	0	1	Lebanon	736642	1
+Scotland	0	1	Netherlands	736642	1
+Iran	2	1	Panama	736642	1
+Luxembourg	2	1	Hungary	736642	1
+Finland	3	0	Estonia	736642	1
+Armenia	4	1	Belarus	736642	1
+Cambodia	1	2	Myanmar	736642	1
+Romania	2	0	Turkey	736642	1
+United Arab Emirates	0	1	Haiti	736643	1
+Ukraine	2	1	Slovakia	736643	1
+North Korea	4	1	Malaysia	736643	2.5
+Algeria	1	1	Nigeria	736643	2.5
+South Africa	0	2	Senegal	736643	2.5
+Sweden	1	0	Italy	736643	2.5
+Honduras	0	0	Australia	736643	2.5
+France	2	0	Wales	736643	1
+England	0	0	Germany	736643	1
+China	0	2	Serbia	736643	1
+Brazil	3	1	Japan	736643	1
+Belgium	3	3	Mexico	736643	1
+Poland	0	0	Uruguay	736643	1
+Georgia	1	0	Cyprus	736643	1
+Portugal	3	0	Saudi Arabia	736643	1
+Tunisia	0	0	Libya	736644	2.5
+Zambia	2	2	Cameroon	736644	2.5
+DR Congo	3	1	Guinea	736644	2.5
+Gabon	0	0	Mali	736644	2.5
+New Zealand	0	0	Peru	736644	2.5
+South Korea	2	1	Colombia	736644	1
+Denmark	0	0	Ireland	736644	2.5
+Namibia	3	1	Zimbabwe	736644	1
+Malawi	1	1	Lesotho	736644	1
+Trinidad and Tobago	2	2	Grenada	736644	1
+FYR of Macedonia	2	0	Norway	736644	1
+Qatar	0	1	Czech Republic	736644	1
+Spain	5	0	Costa Rica	736644	1
+Dominican Republic	1	0	Nicaragua	736644	1
+Cote dIvoire	0	2	Morocco	736644	2.5
+Russia	0	1	Argentina	736644	1
+Comoros	1	1	Madagascar	736644	1
+Suisse	0	0	Northern Ireland	736645	2.5
+Benin	1	1	Tanzania	736645	1
+Greece	0	0	Croatia	736645	2.5
+Ghana	1	1	Egypt	736645	2.5
+Congo	1	1	Uganda	736645	2.5
+Malta	0	3	Estonia	736645	1
+Togo	6	0	Mauritius	736645	1
+Iraq	1	1	Syria	736646	1
+Malaysia	1	4	North Korea	736646	2.5
+Turkey	2	3	Albania	736646	1
+Italy	0	0	Sweden	736646	2.5
+Venezuela	0	1	Iran	736646	1
+Poland	0	1	Mexico	736646	1
+Bulgaria	1	0	Saudi Arabia	736646	1
+Armenia	3	2	Cyprus	736646	1
+Kosovo	4	3	Latvia	736646	1
+Georgia	2	2	Belarus	736646	1
+Ireland	1	5	Denmark	736647	2.5
+Nepal	0	0	Philippines	736647	2.5
+Algeria	3	0	Central African Republic	736647	1
+Palestine	8	1	Maldives	736647	2.5
+Bhutan	2	4	Oman	736647	2.5
+Tajikistan	0	0	Yemen	736647	2.5
+Hong Kong	0	1	Lebanon	736647	2.5
+Vietnam	0	0	Afghanistan	736647	2.5
+India	2	2	Myanmar	736647	2.5
+Macau	3	4	Kyrgyzstan	736647	2.5
+Singapore	0	3	Bahrain	736647	2.5
+Senegal	2	1	South Africa	736647	2.5
+Burkina Faso	4	0	Cape Verde	736647	2.5
+Cambodia	0	1	Jordan	736647	2.5
+Turkmenistan	2	1	Taiwan	736647	2.5
+Hungary	1	0	Costa Rica	736647	1
+Romania	0	3	Netherlands	736647	1
+Germany	2	2	France	736647	1
+England	0	0	Brazil	736647	1
+Wales	1	1	Panama	736647	1
+Belgium	1	0	Japan	736647	1
+Portugal	1	1	USA	736647	1
+China	0	4	Colombia	736647	1
+Russia	3	3	Spain	736647	1
+Argentina	2	4	Nigeria	736647	1
+Qatar	1	1	Iceland	736647	1
+Austria	2	1	Uruguay	736647	1
+South Korea	1	1	Serbia	736647	1
+United Arab Emirates	1	0	Uzbekistan	736647	1
+Slovakia	1	0	Norway	736647	1
+Trinidad and Tobago	1	1	Guyana	736648	1
+Australia	3	1	Honduras	736648	2.5
+Peru	2	0	New Zealand	736649	2.5
+Fiji	0	2	Estonia	736652	1
+Vanuatu	0	1	Estonia	736656	1
+Indonesia	2	1	Guyana	736658	1
+New Caledonia	1	1	Estonia	736659	1
+Philippines	3	1	Laos	736664	1
+Tonga	0	8	Solomon Islands	736665	1
+New Caledonia	1	2	Vanuatu	736665	1
+St. Kitts and Nevis	1	0	Grenada	736665	1
+Fiji	8	0	Tuvalu	736665	1
+Timor-Leste	1	2	Laos	736666	1
+Taiwan	3	0	Philippines	736666	1
+Kenya	2	0	Rwanda	736666	1
+Libya	0	0	Tanzania	736666	1
+Uganda	0	0	Burundi	736667	1
+Taiwan	3	1	Timor-Leste	736667	1
+South Sudan	0	3	Ethiopia	736668	1
+Kenya	0	0	Libya	736668	1
+Sansibar	3	1	Rwanda	736668	1
+Philippines	0	1	Timor-Leste	736668	1
+Taiwan	2	0	Laos	736668	1
+Tuvalu	2	1	New Caledonia	736668	1
+Vanuatu	5	0	Tonga	736669	1
+Solomon Islands	0	0	Fiji	736669	1
+Burundi	4	1	Ethiopia	736670	1
+Tanzania	1	2	Sansibar	736670	1
+Rwanda	0	0	Libya	736670	1
+Uganda	5	1	South Sudan	736671	1
+Solomon Islands	6	0	Tuvalu	736672	1
+Kenya	0	0	Sansibar	736672	1
+Tonga	2	4	New Caledonia	736672	1
+Rwanda	2	1	Tanzania	736672	1
+South Korea	2	2	China	736672	1
+Japan	1	0	North Korea	736672	1
+Vanuatu	1	1	Fiji	736672	1
+Ethiopia	1	1	Uganda	736673	1
+Libya	1	0	Sansibar	736674	1
+South Sudan	0	0	Burundi	736674	1
+Kenya	1	0	Tanzania	736674	1
+North Korea	0	1	South Korea	736675	1
+Japan	2	1	China	736675	1
+Tuvalu	0	10	Vanuatu	736675	1
+New Caledonia	0	1	Solomon Islands	736675	1
+Fiji	4	0	Tonga	736675	1
+Kenya	0	0	Burundi	736677	1
+Qatar	1	2	Liechtenstein	736677	1
+Uganda	1	2	Sansibar	736678	1
+Tuvalu	4	3	Tonga	736678	1
+Oman	1	0	Yemen	736678	1
+Fiji	4	1	New Caledonia	736678	1
+Solomon Islands	2	3	Vanuatu	736678	1
+Japan	1	4	South Korea	736679	1
+China	1	1	North Korea	736679	1
+Burundi	1	2	Uganda	736680	1
+Kenya	1	1	Sansibar	736680	1
+United Arab Emirates	1	0	Iraq	736680	1
+Bahrain	0	0	Kuwait	736681	1
+Kuwait	1	2	Saudi Arabia	736685	1
+Oman	0	1	United Arab Emirates	736685	1
+Qatar	4	0	Yemen	736686	1
+Bahrain	1	1	Iraq	736686	1
+Jordan	1	1	Libya	736688	1
+Oman	1	0	Kuwait	736688	1
+United Arab Emirates	0	0	Saudi Arabia	736688	1
+Iraq	2	1	Qatar	736689	1
+Yemen	0	1	Bahrain	736689	1
+Saudi Arabia	0	2	Oman	736691	1
+Kuwait	0	0	United Arab Emirates	736691	1
+Iraq	3	0	Yemen	736692	1
+Qatar	1	1	Bahrain	736692	1
+Oman	1	0	Bahrain	736696	1
+Iraq	1	1	United Arab Emirates	736696	1
+Cameroon	1	1	Guinea	736697	1
+Oman	1	1	United Arab Emirates	736699	1
+Morocco	3	1	Cameroon	736700	1
+Guinea	1	1	Uganda	736700	1
+Rwanda	0	0	Sudan	736700	1
+Mauritania	1	1	Libya	736700	1
+Sweden	1	1	Estonia	736701	1
+Rwanda	1	1	Namibia	736701	1
+Cote dIvoire	3	1	Sudan	736702	1
+Uganda	0	1	Congo	736703	1
+Cameroon	0	0	Nigeria	736704	1
+Burkina Faso	2	0	Libya	736704	1
+Rwanda	1	4	Algeria	736704	1
+Sweden	1	0	Denmark	736705	1
+Jordan	1	2	Finland	736705	1
+Morocco	4	0	Mauritania	736707	1
+Guinea	1	2	Sudan	736708	1
+Zambia	3	1	Uganda	736708	1
+Indonesia	1	4	Iceland	736708	1
+Cote dIvoire	0	1	Namibia	736708	1
+Denmark	2	3	Jordan	736709	1
+Libya	3	0	Equatorial Guinea	736709	1
+Nigeria	0	0	Rwanda	736709	1
+Angola	0	0	Burkina Faso	736710	1
+Cameroon	0	1	Congo	736710	1
+Morocco	3	1	Guinea	736711	1
+Sudan	1	0	Mauritania	736711	1
+Cote dIvoire	0	2	Zambia	736712	1
+Uganda	0	1	Namibia	736712	1
+Rwanda	1	0	Equatorial Guinea	736713	1
+Libya	0	1	Nigeria	736713	1
+Congo	2	0	Burkina Faso	736714	1
+Angola	1	0	Cameroon	736714	1
+Mauritania	0	1	Guinea	736715	1
+Sudan	0	0	Morocco	736715	1
+Uganda	0	0	Cote dIvoire	736716	1
+Namibia	1	1	Zambia	736716	1
+Equatorial Guinea	1	3	Nigeria	736717	1
+Rwanda	0	1	Libya	736717	1
+Burkina Faso	1	1	Cameroon	736718	1
+Congo	0	0	Angola	736718	1
+Zambia	0	1	Sudan	736721	1
+South Korea	1	0	Moldova	736721	1
+Morocco	2	0	Namibia	736721	1
+Nigeria	1	1	Angola	736722	1
+Congo	1	1	Libya	736722	1
+USA	0	0	Bosnia and Herzegovina	736723	1
+Azerbaijan	0	0	Moldova	736724	1
+South Korea	2	2	Jamaica	736724	1
+Sudan	0	1	Nigeria	736725	1
+Morocco	1	1	Libya	736725	1
+Mexico	1	0	Bosnia and Herzegovina	736726	1
+South Korea	1	0	Latvia	736728	1
+Libya	1	1	Sudan	736728	1
+Morocco	4	0	Nigeria	736729	1
+Saudi Arabia	3	0	Moldova	736751	1
+Iraq	4	1	Saudi Arabia	736753	1
+Iran	4	0	Sierra Leone	736770	1
+Tahiti	0	0	New Caledonia	736773	1
+South Africa	3	5	Angola	736774	1
+Zambia	5	4	Zimbabwe	736774	1
+Liechtenstein	0	1	Andorra	736774	1
+Jordan	1	0	Kuwait	736774	1
+South Africa	1	1	Angola	736774	1
+Laos	0	1	Cambodia	736774	1
+Togo	0	0	Madagascar	736774	1
+Iraq	2	3	Qatar	736774	1
+Zambia	1	1	Zimbabwe	736774	1
+Macau	0	1	Mauritius	736775	1
+Malaysia	2	2	Mongolia	736775	1
+Malta	0	1	Luxembourg	736775	1
+Nicaragua	3	1	Cuba	736775	1
+Kyrgyzstan	5	1	Myanmar	736775	2.5
+Thailand	4	2	Gabon	736775	1
+Bahrain	0	0	Palestine	736775	1
+Algeria	4	1	Tanzania	736775	1
+Denmark	1	0	Panama	736775	1
+China	0	6	Wales	736775	1
+Philippines	3	2	Fiji	736775	1
+Burkina Faso	2	0	Guinea-Bissau	736775	1
+Belize	4	2	Grenada	736775	1
+Slovakia	2	1	United Arab Emirates	736775	1
+Dominican Republic	4	0	Turks and Caicos Islands	736775	1
+Thailand	1	1	Gabon	736775	1
+Antigua and Barbuda	3	2	Bermuda	736775	1
+Faroe Islands	1	1	Latvia	736775	1
+Gambia	1	1	Central African Republic	736776	1
+Greece	0	1	Suisse	736776	1
+Turkey	1	0	Ireland	736776	1
+Finland	0	0	FYR of Macedonia	736776	1
+Guadeloupe	0	1	Trinidad and Tobago	736776	1
+Japan	1	1	Mali	736776	1
+Curacao	1	1	Bolivia	736776	1
+Tunisia	1	0	Iran	736776	1
+Mexico	3	0	Iceland	736776	1
+France	2	3	Colombia	736776	1
+Uruguay	2	0	Czech Republic	736776	1
+Argentina	2	0	Italy	736776	1
+Senegal	1	1	Uzbekistan	736776	1
+Cyprus	0	0	Montenegro	736776	1
+Norway	4	1	Australia	736776	1
+Hungary	2	3	Kazakhstan	736776	1
+Bulgaria	0	1	Bosnia and Herzegovina	736776	1
+Portugal	2	1	Egypt	736776	1
+Russia	0	3	Brazil	736776	1
+Saudi Arabia	1	1	Ukraine	736776	1
+Netherlands	0	1	England	736776	1
+Tahiti	4	3	New Caledonia	736776	1
+Serbia	1	2	Morocco	736776	1
+Azerbaijan	0	1	Belarus	736776	1
+Austria	3	0	Slovenia	736776	1
+Poland	0	1	Nigeria	736776	1
+Singapore	3	2	Maldives	736776	1
+Germany	1	1	Spain	736776	1
+Scotland	0	1	Costa Rica	736776	1
+Peru	2	0	Croatia	736777	1
+Kenya	2	2	Comoros	736777	1
+Botswana	1	0	Lesotho	736777	1
+Georgia	4	0	Lithania	736777	1
+Armenia	0	0	Estonia	736777	1
+Mauritania	2	0	Guinea	736777	1
+Togo	2	2	Cote dIvoire	736777	1
+Northern Ireland	2	1	South Korea	736777	1
+Sweden	1	2	Chile	736777	1
+Uganda	3	1	São Tome e Ptincipe	736777	1
+Kosovo	1	0	Madagascar	736777	1
+Canada	1	0	New Zealand	736777	1
+Zambia	0	2	South Africa	736777	1
+Qatar	2	2	Syria	736777	1
+Angola	4	2	Zimbabwe	736777	1
+Israel	1	2	Romania	736777	1
+Barbados	0	0	Bermuda	736778	1
+United Arab Emirates	0	1	Gabon	736778	1
+Martinique	0	0	Trinidad and Tobago	736778	1
+Faroe Islands	3	0	Liechtenstein	736778	1
+Thailand	2	3	Slovakia	736778	1
+Dominican Republic	2	1	St. Kitts and Nevis	736778	1
+Kuwait	1	3	Cameroon	736778	1
+Congo	2	0	Guinea-Bissau	736778	1
+Gibraltar	1	0	Latvia	736778	1
+Portugal	0	3	Netherlands	736779	1
+China	1	4	Czech Republic	736779	1
+Wales	0	1	Uruguay	736779	1
+Albania	0	1	Norway	736779	1
+Nicaragua	3	3	Cuba	736779	1
+Jamaica	1	1	Antigua and Barbuda	736779	1
+Finland	5	0	Malta	736779	1
+Bulgaria	2	1	Kazakhstan	736779	1
+Colombia	0	0	Australia	736780	1
+Belgium	4	0	Saudi Arabia	736780	1
+Cote dIvoire	2	1	Moldova	736780	1
+Senegal	0	0	Bosnia and Herzegovina	736780	1
+Japan	1	2	Ukraine	736780	1
+Kenya	2	3	Central African Republic	736780	1
+Morocco	2	0	Uzbekistan	736780	1
+England	1	1	Italy	736780	1
+Slovenia	0	2	Belarus	736780	1
+Denmark	0	0	Chile	736780	1
+Seychelles	0	0	Swaziland	736780	1
+Tanzania	2	0	DR Congo	736780	1
+Curacao	1	0	Bolivia	736780	1
+Namibia	2	1	Lesotho	736780	1
+Iraq	1	1	Syria	736780	1
+Poland	3	2	South Korea	736780	1
+Uganda	0	0	Malawi	736780	1
+Laos	2	2	Bangladesh	736780	1
+Luxembourg	0	4	Austria	736780	1
+Nigeria	0	2	Serbia	736780	1
+Kosovo	2	0	Burkina Faso	736780	1
+Romania	1	0	Sweden	736780	1
+North Korea	2	0	Hong Kong	736780	2.5
+Germany	0	1	Brazil	736780	1
+Spain	6	1	Argentina	736780	1
+Yemen	2	1	Nepal	736780	2.5
+Myanmar	1	0	Macau	736780	2.5
+Lebanon	2	1	Malaysia	736780	2.5
+Afghanistan	2	1	Cambodia	736780	2.5
+Jordan	1	1	Vietnam	736780	2.5
+Russia	1	3	France	736780	1
+Bahrain	4	0	Turkmenistan	736780	2.5
+Taiwan	1	0	Singapore	736780	2.5
+Philippines	2	1	Tajikistan	736780	2.5
+Oman	1	0	Palestine	736780	2.5
+Maldives	7	0	Bhutan	736780	2.5
+Kyrgyzstan	2	1	India	736780	2.5
+Tunisia	1	0	Costa Rica	736780	1
+Hungary	1	0	Scotland	736780	1
+Mongolia	0	2	Mauritius	736780	1
+Armenia	0	1	Lithania	736780	1
+Georgia	2	0	Estonia	736780	1
+Azerbaijan	1	1	FYR of Macedonia	736780	1
+Egypt	0	1	Greece	736780	1
+Montenegro	2	2	Turkey	736780	1
+Suisse	6	0	Panama	736780	1
+Iran	2	1	Algeria	736780	1
+USA	1	0	Paraguay	736781	1
+Iceland	1	3	Peru	736781	1
+Mexico	0	1	Croatia	736781	1
+Malaysia	7	0	Bhutan	736785	1
+Antigua and Barbuda	0	0	Dominica	736785	1
+Zimbabwe	0	1	Botswana	736802	1
+Trinidad and Tobago	0	1	Panama	736802	1
+Swaziland	1	0	Namibia	736803	1
+St. Kitts and Nevis	1	3	Jamaica	736810	1
+Antigua and Barbuda	0	2	Jamaica	736813	1
+Iraq	0	0	Palestine	736822	1
+Saudi Arabia	2	0	Algeria	736823	1
+Kuwait	2	0	Palestine	736825	1
+Saudi Arabia	2	0	Greece	736829	1
+Iran	1	0	Uzbekistan	736832	1
+Jordan	3	0	Cyprus	736834	1
+Kenya	0	1	Swaziland	736839	1
+China	1	0	Myanmar	736840	1
+Kuwait	1	1	Egypt	736840	1
+Cameroon	0	1	Burkina Faso	736841	1
+Niger	3	3	Central African Republic	736841	1
+Comoros	1	1	Seychelles	736841	1
+Madagascar	2	1	Mozambique	736841	1
+South Korea	2	0	Honduras	736842	1
+Bosnia and Herzegovina	0	0	Montenegro	736842	1
+Italy	2	1	Saudi Arabia	736842	1
+Mexico	0	0	Wales	736842	1
+France	2	0	Ireland	736842	1
+Botswana	2	1	Angola	736842	1
+Kenya	1	0	Equatorial Guinea	736842	1
+Nigeria	1	1	DR Congo	736842	1
+Portugal	2	2	Tunisia	736842	1
+Mauritius	1	0	Malawi	736842	1
+Turkey	2	1	Iran	736842	1
+Seychelles	1	1	Madagascar	736843	1
+USA	3	0	Bolivia	736843	1
+Malta	1	1	Armenia	736843	1
+Azerbaijan	3	0	Kyrgyzstan	736843	1
+Mozambique	3	0	Comoros	736843	1
+Albania	0	3	Kosovo	736843	1
+Malawi	1	1	Botswana	736844	1
+Panama	0	0	Northern Ireland	736844	1
+Estonia	2	0	Lithania	736844	1
+Austria	1	0	Russia	736844	1
+Argentina	4	0	Haiti	736844	1
+Peru	2	0	Scotland	736844	1
+Angola	1	0	Mauritius	736844	1
+Japan	0	2	Ghana	736844	1
+Romania	3	2	Chile	736845	1
+Slovakia	1	1	Netherlands	736845	1
+Morocco	0	0	Ukraine	736845	1
+Luxembourg	0	0	Senegal	736845	1
+Mozambique	2	1	Seychelles	736845	1
+Madagascar	1	0	Comoros	736845	1
+Egypt	0	0	Colombia	736846	1
+France	3	1	Italy	736846	1
+Australia	4	0	Czech Republic	736846	1
+South Korea	1	3	Bosnia and Herzegovina	736846	1
+Botswana	6	0	Mauritius	736846	1
+Tunisia	2	2	Turkey	736846	1
+Angola	0	0	Malawi	736846	1
+Algeria	2	3	Cape Verde	736846	1
+Georgia	1	0	Malta	736846	1
+Sweden	0	0	Denmark	736847	1
+Niger	2	1	Uganda	736847	1
+Iceland	2	3	Norway	736847	1
+England	2	1	Nigeria	736847	1
+Latvia	1	0	Estonia	736847	1
+Ireland	2	1	USA	736847	1
+Zambia	4	3	Namibia	736847	1
+Mexico	1	0	Scotland	736847	1
+Belgium	0	0	Portugal	736847	1
+Thailand	0	2	China	736847	1
+Austria	2	1	Germany	736847	1
+Lesotho	1	0	Swaziland	736847	1
+Montenegro	0	2	Slovenia	736847	1
+Saudi Arabia	0	3	Peru	736848	1
+Croatia	0	2	Brazil	736848	1
+Albania	1	4	Ukraine	736848	1
+Costa Rica	3	0	Northern Ireland	736848	1
+Andorra	2	4	Cape Verde	736848	1
+Spain	1	1	Suisse	736848	1
+Honduras	0	1	El Salvador	736848	1
+Zimbabwe	3	1	Botswana	736848	1
+South Africa	3	4	Madagascar	736848	1
+Barbados	0	0	Belize	736849	1
+Moldova	0	0	Armenia	736849	1
+Serbia	0	1	Chile	736849	1
+Italy	1	1	Netherlands	736849	1
+Morocco	2	1	Slovakia	736849	1
+Romania	2	0	Finland	736850	1
+Swaziland	0	2	Botswana	736850	1
+Kazakhstan	3	0	Azerbaijan	736850	1
+Namibia	1	4	South Africa	736850	1
+Lithania	1	1	Latvia	736850	1
+Russia	1	1	Turkey	736850	1
+Luxembourg	1	0	Georgia	736850	1
+Czech Republic	1	0	Nigeria	736851	1
+Lesotho	1	3	Zimbabwe	736851	1
+Belgium	3	0	Egypt	736851	1
+Norway	1	0	Panama	736851	1
+Belarus	1	1	Hungary	736851	1
+Zambia	1	0	Madagascar	736851	1
+England	2	0	Costa Rica	736852	1
+Iceland	2	2	Ghana	736852	1
+South Korea	0	0	Bolivia	736852	1
+Portugal	3	0	Algeria	736852	1
+Belgium	4	1	Costa Rica	736856	1
+Senegal	2	0	South Korea	736856	1
+Japan	4	2	Paraguay	736857	1
+Poland	4	0	Lithania	736857	1
+Russia	5	0	Saudi Arabia	736859	8
+Morocco	0	1	Iran	736860	8
+Egypt	0	1	Uruguay	736860	8
+Portugal	3	3	Spain	736860	8
+France	2	1	Australia	736861	8
+Argentina	1	1	Iceland	736861	8
+Peru	0	1	Denmark	736861	8
+Croatia	2	0	Nigeria	736861	8
+Costa Rica	0	1	Serbia	736862	8
+Brazil	1	1	Suisse	736862	8
+Germany	0	1	Mexico	736862	8
+Sweden	1	0	South Korea	736863	8
+Tunisia	1	2	England	736863	8
+Belgium	3	0	Panama	736863	8
+Poland	1	2	Senegal	736864	8
+Colombia	1	2	Japan	736864	8
+Russia	3	1	Egypt	736864	8
+Iran	0	1	Spain	736865	8
+Uruguay	1	0	Saudi Arabia	736865	8
+Portugal	1	0	Morocco	736865	8
+France	1	0	Peru	736866	8
+Denmark	1	1	Australia	736866	8
+Argentina	0	3	Croatia	736866	8
+Nigeria	2	0	Iceland	736867	8
+Brazil	2	0	Costa Rica	736867	8
+Serbia	1	2	Suisse	736867	8
+South Korea	1	2	Mexico	736868	8
+Belgium	5	2	Tunisia	736868	8
+Germany	2	1	Sweden	736868	8
+England	6	1	Panama	736869	8
+Senegal	2	2	Japan	738869	8
+Poland	0	3	Colombia	738869	8
