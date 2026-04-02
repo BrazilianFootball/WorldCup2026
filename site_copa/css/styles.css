@@ -380,26 +380,72 @@ table{
 color: red;
 }
 
-.ball-award-section {
-  width: 100%;
-  max-width: 1100px;
-}
-
 .ball-award-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
-  margin-bottom: 24px;
 }
 
 .ball-award-header select {
-  padding: 8px 12px;
   border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 14px;
 }
+
+.ball-award-filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ball-award-filter label {
+  font-size: 16px;
+  color: #000000;
+}
+
+.ball-award-filter select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  min-width: 110px;
+  height: 40px;
+  padding: 0 42px 0 14px;
+
+  border: 2px solid #28456f;
+  border-radius: 12px;
+  background-color: #0d1b2a;
+  color: #ffffff;
+
+  font-family: "gotham-medium";
+  font-size: 15px;
+  cursor: pointer;
+  outline: none;
+
+  background-image:
+    linear-gradient(45deg, transparent 50%, #5aa1f2 50%),
+    linear-gradient(135deg, #5aa1f2 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) calc(50% - 3px),
+    calc(100% - 13px) calc(50% - 3px);
+    
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+
+.ball-award-filter select:focus {
+  box-shadow: 0 0 0 3px rgba(90, 161, 242, 0.18);
+}
+
+.ball-award-filter select option {
+  background: #0d1b2a;
+  color: #ffffff;
+}
+
 
 /* CONFIGURAÇÕES DO CARD DE JOGADOR */
 .flip-card {
@@ -426,7 +472,6 @@ color: red;
   backface-visibility: hidden;
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.18);
   background: #0d1b2a;
   color: #fff;
   border: 5px solid #0d1b2a;
@@ -527,10 +572,11 @@ color: red;
 
 
 .ball-award-grid {
-display: grid;
-grid-template-columns: repeat(3, minmax(240px, 1fr));
-gap: 22px;
-align-items: start;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(240px, 1fr));
+    gap: 22px;
+    align-items: start;
+    margin-bottom: 25px;
 }
 
 
