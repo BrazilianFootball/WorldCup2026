@@ -374,6 +374,174 @@ table{
     font-family: "gotham-bold";
     color:#0093d2;
 }
+/*=============== VISUALIZAÇÃO DAS BOLAS DE OURO/PRATA/BRONZE JOGADORES ======================*/
+
+.error {
+color: red;
+}
+
+.ball-award-section {
+  width: 100%;
+  max-width: 1100px;
+}
+
+.ball-award-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.ball-award-header select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* CONFIGURAÇÕES DO CARD DE JOGADOR */
+.flip-card {
+  perspective: 1200px;
+  height: 460px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s ease;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+  background: #0d1b2a;
+  color: #fff;
+  border: 5px solid #0d1b2a;
+}
+
+.flip-card-front {
+  display: flex;
+  flex-direction: column;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  background: #0d1b2a;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.scorer-info {
+  padding: 16px;
+  text-align: center;
+}
+
+.scorer-info h3 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.scorer-info h3 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.scorer-info h3 a:hover {
+  text-decoration: underline;
+}
+
+.scorer-team {
+  font-size: 15px;
+  opacity: 0.9;
+  margin-bottom: 8px;
+}
+
+.scorer-award {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.award-gold {
+  color: #f5d76e;
+}
+
+.award-silver {
+  color: #c0c0c0;
+}
+
+.award-bronze {
+  color: #cd7f32;
+}
+
+.card-back-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.card-back-list {
+  display: grid;
+  gap: 12px;
+}
+
+.card-back-item {
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.card-back-item strong {
+  display: block;
+  font-size: 13px;
+  opacity: 0.8;
+  margin-bottom: 3px;
+}
+
+
+
+.ball-award-grid {
+display: grid;
+grid-template-columns: repeat(3, minmax(240px, 1fr));
+gap: 22px;
+align-items: start;
+}
+
+
+@media (max-width: 700px) {
+  .ball-award-grid {
+    /* HAVE ONLY ONE CARD PER ROW ON MOBILE */
+    grid-template-columns: 1fr;
+  }
+}
+
+
 /*=============== Rodapé ======================*/
 #footer{
     background: #21386a;
