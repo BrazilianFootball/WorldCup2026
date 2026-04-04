@@ -1,0 +1,64 @@
+
+<!-- BANNER FINAL -->
+<svg width="100%" height="200" viewBox="0 0 1200 200" xmlns="http://www.w3.org/2000/svg">
+ 
+  <!-- BACKGROUND -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0">
+      <!-- <stop offset="0%" stop-color="#4DA3FF"/>
+      <stop offset="100%" stop-color="#0E2A47"/> -->
+      <stop offset="0%" stop-color="#4db2e1"/>
+      <stop offset="100%" stop-color="#77d0ac"/>
+    </linearGradient>
+
+    <!-- <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0 L0 0 0 60" fill="none" stroke="#ffffff14" stroke-width="1"/>
+    </pattern> -->
+  </defs>
+
+  <rect width="1200" height="200" fill="url(#bg)" />
+  <rect width="1200" height="200" fill="url(#grid)" />
+
+
+<!-- FORMULAS -->
+  <!-- <g transform="translate(960,73)" fill="#ffffffa3" font-size="12" font-family="Courier">
+    <text x="30">P(win) = σ(w·x + b)</text>
+    <text y="20" x="30">λ = exp(β₀ + β₁x)</text>
+    <text y="40" x="30">Score ~ Poisson(λ)</text>
+  </g> -->
+
+    s
+<!-- FIELD  (120x70) -->
+<g transform="translate(950,70) rotate(-9)" stroke="#ffffffcf" stroke-width="1.5" fill="none">
+  <!-- Campo principal -->
+  <rect x="0" y="0" width="120" height="70" rx="6"/>
+  <line x1="60" y1="0" x2="60" y2="70"/>
+  <circle cx="60" cy="35" r="10"/>
+
+  <!-- Gols (proporcionais) -->
+  <rect x="-3" y="26" width="6" height="18" stroke="#ffffffc4"/>
+  <rect x="117" y="26" width="6" height="18" stroke="#ffffffc4"/>
+
+  <!-- Jogadores Time Azul -->
+  <g fill="#4DA3FF">
+    <circle cx="20" cy="18" r="2"><animate attributeName="cy" values="18;25;18" dur="2.0s" repeatCount="indefinite"/></circle>
+    <circle cx="40" cy="50" r="2"><animate attributeName="cx" values="40;48;40" dur="2.5s" repeatCount="indefinite"/></circle>
+    <circle cx="60" cy="30" r="2"><animate attributeName="cy" values="30;38;30" dur="1.2s" repeatCount="indefinite"/></circle>
+  </g>
+
+  <!-- Jogadores Time Amarelo -->
+  <g fill="#FFD166">
+    <circle cx="100" cy="20" r="2"><animate attributeName="cy" values="20;28;20" dur="3s" repeatCount="indefinite"/></circle>
+    <circle cx="80" cy="52" r="2"><animate attributeName="cx" values="80;72;80" dur="2.5s" repeatCount="indefinite"/></circle>
+    <circle cx="70" cy="32" r="2"><animate attributeName="cy" values="32;25;32" dur="2.7s" repeatCount="indefinite"/></circle>
+  </g>
+
+  <!-- Bola (trajetória curta para o novo espaço) -->
+  <circle r="2" fill="white">
+    <animateMotion dur="7s" repeatCount="indefinite"
+      path="M15,35 Q60,5 105,35 Q60,65 15,35"/>
+  </circle>
+</g>
+
+</svg>
+
