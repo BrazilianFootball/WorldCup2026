@@ -4,11 +4,7 @@ from pathlib import Path
 import kagglehub
 import pandas as pd
 
-KAGGLE_DATASET = "martj42/international-football-results-from-1872-to-2017"
-ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = ROOT / "data"
-
-DATASET_FILES = ("results.csv", "shootouts.csv", "goalscorers.csv")
+from src.constants import DATA_DIR, DATASET_FILES, KAGGLE_DATASET
 
 
 def get_data() -> None:

@@ -5,17 +5,19 @@ from __future__ import annotations
 import argparse
 import time
 
+from src.constants import (
+    DEFAULT_HALF_LIFE_WEEKS,
+    DEFAULT_HOST_BOOST,
+    DEFAULT_MIN_DATE,
+    DEFAULT_REG_LAMBDA,
+    DEFAULT_SEED,
+    GROUPS,
+    TEAM_NAME_MAP,
+)
+from src.export_probs import export_phase_probs
 from src.model import build_model
-from src.tournament import GROUPS, TEAM_NAME_MAP, WorldCup2026, resolve_team_name
-
-STAGE_LABELS = [
-    ("champion", "Campeão"),
-    ("final", "Final"),
-    ("semifinals", "Semifinal"),
-    ("quarterfinals", "Quartas"),
-    ("round_of_16", "Oitavas (R16)"),
-    ("round_of_32", "Fase eliminatória (R32)"),
-]
+from src.tournament import WorldCup2026
+from src.utils import load_wc_results, resolve_team_name
 
 
 def print_top_n(
@@ -88,14 +90,14 @@ def main() -> None:
     parser.add_argument(
         "--seed",
         type=int,
-        default=42,
-        help="Seed do gerador aleatório (padrão: 42)",
+        default=DEFAULT_SEED,
+        help=f"Seed do gerador aleatório (padrão: {DEFAULT_SEED})",
     )
     parser.add_argument(
         "--min-date",
         type=str,
-        default="2023-01-01",
-        help="Data mínima para dados de treino (padrão: 2023-01-01)",
+        default=DEFAULT_MIN_DATE,
+        help=f"Data mínima para dados de treino (padrão: {DEFAULT_MIN_DATE})",
     )
     parser.add_argument(
         "--top",
@@ -103,7 +105,43 @@ def main() -> None:
         default=20,
         help="Número de seleções no ranking (padrão: 20)",
     )
+    parser.add_argument(
+        "--half-life",
+        type=float,
+        default=DEFAULT_HALF_LIFE_WEEKS,
+        help=(
+            "Meia-vida em semanas para o peso temporal "
+            f"(padrão: {DEFAULT_HALF_LIFE_WEEKS})"
+        ),
+    )
+    parser.add_argument(
+        "--reg-lambda",
+        type=float,
+        default=DEFAULT_REG_LAMBDA,
+        help=(
+            "Força da regularização L2 em log-espaço " f"(padrão: {DEFAULT_REG_LAMBDA})"
+        ),
+    )
+    parser.add_argument(
+        "--host-boost",
+        type=float,
+        default=DEFAULT_HOST_BOOST,
+        help=(
+            "Fração da vantagem de mandante para sedes "
+            f"(padrão: {DEFAULT_HOST_BOOST})"
+        ),
+    )
+    parser.add_argument(
+        "--wc-results",
+        type=str,
+        default=None,
+        help="Caminho para CSV com resultados já ocorridos na Copa",
+    )
     args = parser.parse_args()
+
+    wc_df, known = None, None
+    if args.wc_results:
+        wc_df, known = load_wc_results(args.wc_results)
 
     print("=" * 60)
     print("  SIMULAÇÃO DA COPA DO MUNDO FIFA 2026")
@@ -111,19 +149,34 @@ def main() -> None:
     print(f"  Simulações: {args.num_simulations:,}")
     print(f"  Seed: {args.seed}")
     print(f"  Dados desde: {args.min_date}")
+    print(f"  Meia-vida: {args.half_life:.0f} semanas")
+    print(f"  Regularização: {args.reg_lambda}")
+    print(f"  Host boost: {args.host_boost}")
+    if known:
+        print(f"  Resultados da Copa fixados: {len(known)} jogos")
     print()
 
-    print("Ajustando modelo Dixon-Coles...")
+    print("Ajustando modelo Dixon-Coles (ataque/defesa)...")
     t0 = time.time()
-    model = build_model(min_date=args.min_date)
+    model = build_model(
+        min_date=args.min_date,
+        half_life_weeks=args.half_life,
+        reg_lambda=args.reg_lambda,
+        extra_data=wc_df,
+    )
     t_fit = time.time() - t0
     print(f"  Modelo ajustado em {t_fit:.1f}s ({len(model.teams)} seleções)")
-    print(f"  Home effect: {model.home_effect:.4f}")
+    print(f"  Home effect (γ): {model.home_effect:.4f}")
     print(f"  Rho (Dixon-Coles): {model.rho:.4f}")
 
     print(f"\nSimulando {args.num_simulations:,} torneios...")
     t0 = time.time()
-    wc = WorldCup2026(model, seed=args.seed)
+    wc = WorldCup2026(
+        model,
+        seed=args.seed,
+        known_results=known,
+        host_boost=args.host_boost,
+    )
     tr = wc.simulate(n=args.num_simulations)
     t_sim = time.time() - t0
     print(f"  Simulação concluída em {t_sim:.1f}s")
@@ -139,6 +192,10 @@ def main() -> None:
 
     print_top_n(stage_results, args.num_simulations, top_n=args.top)
     # print_group_probs(stage_results, args.num_simulations)
+
+    print("Exportando matrizes de probabilidade...")
+    prob_path = export_phase_probs(wc, known)
+    print(f"  Salvo em: {prob_path}")
 
 
 if __name__ == "__main__":

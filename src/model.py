@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-from pathlib import Path
-
 import numpy as np
 import pandas as pd
 from numpy.typing import NDArray
@@ -11,35 +9,41 @@ from scipy.optimize import minimize
 from scipy.special import gammaln
 from scipy.stats import poisson
 
-DATA_DIR = Path(__file__).resolve().parent.parent / "data"
-
-COLUMNS = [
-    "date",
-    "home_team",
-    "away_team",
-    "home_score",
-    "away_score",
-    "tournament",
-    "neutral",
-]
+from src.constants import (
+    COLUMNS,
+    DATA_DIR,
+    DEFAULT_HALF_LIFE_WEEKS,
+    DEFAULT_MIN_DATE,
+    DEFAULT_REG_LAMBDA,
+    DEFAULT_TOURNAMENT_WEIGHT,
+    MAX_GOALS,
+    TOURNAMENT_WEIGHT,
+)
 
 
 def load_and_prepare_data(
-    min_date: str = "2023-01-01",
+    min_date: str = DEFAULT_MIN_DATE,
     min_opponents: int = 1,
     min_games: int = 1,
+    half_life_weeks: float = DEFAULT_HALF_LIFE_WEEKS,
+    extra_data: pd.DataFrame | None = None,
 ) -> tuple[pd.DataFrame, list[str]]:
     """Load match data, apply temporal weights, and filter teams via BFS."""
     data = pd.read_csv(DATA_DIR / "results.csv")
     data = data[data["date"] >= min_date][COLUMNS]
 
+    if extra_data is not None:
+        data = pd.concat([data, extra_data[COLUMNS]], ignore_index=True)
+
     data["date"] = pd.to_datetime(data["date"])
-    data["weeks_since_min_date"] = (
-        data["date"] - pd.to_datetime(min_date)
-    ).dt.days // 7
     max_date = data["date"].max()
-    weeks_size = (max_date - pd.to_datetime(min_date)).days // 7
-    data["game_weight"] = 0.3 + 0.7 * (data["weeks_since_min_date"] / weeks_size)
+    weeks_ago = (max_date - data["date"]).dt.days / 7.0
+
+    time_weight = 0.3 + 0.7 * np.power(2.0, -weeks_ago / half_life_weeks)
+    tourn_weight = (
+        data["tournament"].map(TOURNAMENT_WEIGHT).fillna(DEFAULT_TOURNAMENT_WEIGHT)
+    )
+    data["game_weight"] = time_weight * tourn_weight
 
     teams_to_evaluate = {"Brazil"}
     teams_to_consider: set[str] = set()
@@ -89,53 +93,59 @@ def load_and_prepare_data(
 
 
 class DixonColesModel:
-    """Dixon-Coles bivariate Poisson model with analytical gradient."""
+    """Dixon-Coles model with separate attack/defense and regularization."""
 
-    def __init__(self) -> None:
+    def __init__(self, reg_lambda: float = DEFAULT_REG_LAMBDA) -> None:
         self.teams: list[str] = []
-        self.strengths: NDArray[np.floating] = np.array([])
-        self.home_effect: float = 0.0
+        self.attack: NDArray[np.floating] = np.array([])
+        self.defense: NDArray[np.floating] = np.array([])
+        self.home_effect: float = 1.0
         self.rho: float = 0.0
+        self.reg_lambda = reg_lambda
         self._fitted = False
 
     def fit(self, data: pd.DataFrame, teams: list[str]) -> None:
         self.teams = teams
         team_idx = {t: i for i, t in enumerate(teams)}
-        n_teams = len(teams)
+        n = len(teams)
+        reg = self.reg_lambda
 
-        home_idx = data["home_team"].map(team_idx).values
-        away_idx = data["away_team"].map(team_idx).values
-        home_score = data["home_score"].values.astype(float)
-        away_score = data["away_score"].values.astype(float)
-        has_home = ~data["neutral"].values
-        weight = data["game_weight"].values
+        hi = data["home_team"].map(team_idx).values
+        ai = data["away_team"].map(team_idx).values
+        hs = data["home_score"].values.astype(float)
+        a_s = data["away_score"].values.astype(float)
+        has_home = (~data["neutral"].values).astype(float)
+        w = data["game_weight"].values
+        hs_lf = gammaln(hs + 1)
+        as_lf = gammaln(a_s + 1)
 
-        home_log_fact = gammaln(home_score + 1)
-        away_log_fact = gammaln(away_score + 1)
+        m00 = (hs == 0) & (a_s == 0)
+        m10 = (hs == 1) & (a_s == 0)
+        m01 = (hs == 0) & (a_s == 1)
+        m11 = (hs == 1) & (a_s == 1)
 
-        m00 = (home_score == 0) & (away_score == 0)
-        m10 = (home_score == 1) & (away_score == 0)
-        m01 = (home_score == 0) & (away_score == 1)
-        m11 = (home_score == 1) & (away_score == 1)
-
+        # params: [a[0..n-1], d[0..n-1], gamma, rho]
+        # att = exp(a - mean(a)), def_ = exp(d - mean(d))
         def nll_and_grad(params: NDArray) -> tuple[float, NDArray]:
-            he = params[-2]
+            a_raw = params[:n]
+            d_raw = params[n : 2 * n]
+            gamma = params[-2]
             rho = params[-1]
-            s = np.empty(n_teams)
-            s[0] = 1.0
-            s[1:] = params[:-2]
 
-            hf = s[home_idx] + he * has_home
-            af = s[away_idx]
-            hl = hf / af
-            al = af / hf
-            log_r = np.log(hl)
+            ac = a_raw - a_raw.mean()
+            dc = d_raw - d_raw.mean()
+            att = np.exp(ac)
+            df = np.exp(dc)
 
-            ll_h = home_score * log_r - hl - home_log_fact
-            ll_a = -away_score * log_r - al - away_log_fact
+            g = np.where(has_home, gamma, 1.0)
+            hl = att[hi] * df[ai] * g
+            al = att[ai] * df[hi]
 
-            tau = np.ones(len(home_score))
-            tau[m00] = 1 - rho
+            ll_h = hs * np.log(hl) - hl - hs_lf
+            ll_a = a_s * np.log(al) - al - as_lf
+
+            tau = np.ones_like(hl)
+            tau[m00] = 1 - hl[m00] * al[m00] * rho
             tau[m10] = 1 + al[m10] * rho
             tau[m01] = 1 + hl[m01] * rho
             tau[m11] = 1 - rho
@@ -143,42 +153,65 @@ class DixonColesModel:
             if np.any(tau <= 0):
                 return 1e10, np.zeros(len(params))
 
-            nll = -float((weight * (ll_h + ll_a + np.log(tau))).sum())
+            nll = -float((w * (ll_h + ll_a + np.log(tau))).sum())
+            nll += reg * float((ac**2).sum() + (dc**2).sum())
 
-            dt_dfh = np.zeros(len(home_score))
-            dt_dfh[m10] = -al[m10] * rho / (hf[m10] * tau[m10])
-            dt_dfh[m01] = rho / (af[m01] * tau[m01])
+            # ∂log(τ)/∂hl and ∂log(τ)/∂al
+            dtau_dhl = np.zeros_like(hl)
+            dtau_dhl[m00] = -al[m00] * rho
+            dtau_dhl[m01] = rho
+            dlt_dhl = dtau_dhl / tau
 
-            dt_dfa = np.zeros(len(home_score))
-            dt_dfa[m10] = rho / (hf[m10] * tau[m10])
-            dt_dfa[m01] = -hl[m01] * rho / (af[m01] * tau[m01])
+            dtau_dal = np.zeros_like(al)
+            dtau_dal[m00] = -hl[m00] * rho
+            dtau_dal[m10] = rho
+            dlt_dal = dtau_dal / tau
 
-            sd = home_score - away_score
-            dnll_dfh = -weight * (sd / hf - 1 / af + af / hf**2 + dt_dfh)
-            dnll_dfa = -weight * (-sd / af + hf / af**2 - 1 / hf + dt_dfa)
+            dll_dhl = hs / hl - 1 + dlt_dhl
+            dll_dal = a_s / al - 1 + dlt_dal
 
-            sg = np.zeros(n_teams)
-            np.add.at(sg, home_idx, dnll_dfh)
-            np.add.at(sg, away_idx, dnll_dfa)
+            # Gradient w.r.t. centered log-attack (a_c)
+            ac_g = np.zeros(n)
+            np.add.at(ac_g, hi, w * dll_dhl * hl)
+            np.add.at(ac_g, ai, w * dll_dal * al)
+            ac_g = -ac_g + 2 * reg * ac
+
+            # Gradient w.r.t. centered log-defense (d_c)
+            dc_g = np.zeros(n)
+            np.add.at(dc_g, ai, w * dll_dhl * hl)
+            np.add.at(dc_g, hi, w * dll_dal * al)
+            dc_g = -dc_g + 2 * reg * dc
+
+            # Chain rule: ∂f/∂a[k] = ∂f/∂ac[k] - mean(∂f/∂ac)
+            a_g = ac_g - ac_g.mean()
+            d_g = dc_g - dc_g.mean()
+
+            # Home-effect gradient
+            mask = has_home.astype(bool)
+            gamma_g = -float((w[mask] * dll_dhl[mask] * hl[mask] / gamma).sum())
+
+            # Rho gradient
+            dt_drho = np.zeros_like(hl)
+            dt_drho[m00] = -hl[m00] * al[m00]
+            dt_drho[m10] = al[m10]
+            dt_drho[m01] = hl[m01]
+            dt_drho[m11] = -1
+            rho_g = -float((w * dt_drho / tau).sum())
 
             grad = np.empty(len(params))
-            grad[:-2] = sg[1:]
-            grad[-2] = (dnll_dfh * has_home).sum()
-
-            dt_drho = np.zeros(len(home_score))
-            dt_drho[m00] = -1 / tau[m00]
-            dt_drho[m10] = al[m10] / tau[m10]
-            dt_drho[m01] = hl[m01] / tau[m01]
-            dt_drho[m11] = -1 / tau[m11]
-            grad[-1] = -(weight * dt_drho).sum()
-
+            grad[:n] = a_g
+            grad[n : 2 * n] = d_g
+            grad[-2] = gamma_g
+            grad[-1] = rho_g
             return nll, grad
 
-        bounds = [(1e-6, None)] * (n_teams - 1)
-        bounds.append((1e-6, None))
-        bounds.append((-1.0 + 1e-6, 1.0 - 1e-6))
+        bounds: list[tuple[float | None, float | None]] = []
+        bounds += [(None, None)] * (2 * n)  # a, d unconstrained
+        bounds += [(0.5, 3.0)]  # gamma
+        bounds += [(-1.0 + 1e-6, 1.0 - 1e-6)]  # rho
 
-        x0 = np.ones(n_teams + 1)
+        x0 = np.zeros(2 * n + 2)
+        x0[-2] = 1.2
         x0[-1] = 0.0
 
         res = minimize(
@@ -192,30 +225,52 @@ class DixonColesModel:
         if not res.success:
             raise RuntimeError(f"Optimization failed: {res.message}")
 
-        self.strengths = np.concatenate([[1.0], res.x[:-2]])
+        ac = res.x[:n] - res.x[:n].mean()
+        dc = res.x[n : 2 * n] - res.x[n : 2 * n].mean()
+        self.attack = np.exp(ac)
+        self.defense = np.exp(dc)
         self.home_effect = float(res.x[-2])
         self.rho = float(res.x[-1])
         self._fitted = True
 
+    def get_attack(self, team: str) -> float:
+        return float(self.attack[self.teams.index(team)])
+
+    def get_defense(self, team: str) -> float:
+        return float(self.defense[self.teams.index(team)])
+
     def get_strength(self, team: str) -> float:
-        return float(self.strengths[self.teams.index(team)])
+        """Overall strength (attack / defense). Higher is better."""
+        idx = self.teams.index(team)
+        return float(self.attack[idx] / self.defense[idx])
 
     def match_probs(
         self,
         home: str,
         away: str,
         neutral: bool = True,
-        max_goals: int = 10,
+        max_goals: int = MAX_GOALS,
         lambda_scale: float = 1.0,
+        home_boost: float = 0.0,
     ) -> NDArray[np.floating]:
-        """Return (max_goals+1) x (max_goals+1) score probability matrix."""
-        hs = self.get_strength(home)
-        as_ = self.get_strength(away)
-        if not neutral:
-            hs += self.home_effect
+        """Return (max_goals+1) x (max_goals+1) score probability matrix.
 
-        hl = hs / as_ * lambda_scale
-        al = as_ / hs * lambda_scale
+        home_boost: fraction of home_effect to apply (0 = neutral, 1 = full).
+        Ignored when neutral=False (uses full home_effect).
+        """
+        att_h = self.get_attack(home)
+        def_h = self.get_defense(home)
+        att_a = self.get_attack(away)
+        def_a = self.get_defense(away)
+
+        gamma = 1.0
+        if not neutral:
+            gamma = self.home_effect
+        elif home_boost > 0:
+            gamma = 1.0 + (self.home_effect - 1.0) * home_boost
+
+        hl = att_h * def_a * gamma * lambda_scale
+        al = att_a * def_h * lambda_scale
         goals = np.arange(max_goals + 1)
         prob = np.outer(poisson.pmf(goals, hl), poisson.pmf(goals, al))
 
@@ -231,12 +286,13 @@ class DixonColesModel:
         home: str,
         away: str,
         neutral: bool = True,
+        home_boost: float = 0.0,
         rng: np.random.Generator | None = None,
     ) -> tuple[int, int]:
         """Simulate a single match, returning (home_goals, away_goals)."""
         if rng is None:
             rng = np.random.default_rng()
-        prob = self.match_probs(home, away, neutral=neutral)
+        prob = self.match_probs(home, away, neutral=neutral, home_boost=home_boost)
         mg = prob.shape[0]
         idx = rng.choice(mg * mg, p=prob.ravel())
         return int(idx // mg), int(idx % mg)
@@ -246,18 +302,28 @@ class DixonColesModel:
         home: str,
         away: str,
         neutral: bool = True,
+        home_boost: float = 0.0,
     ) -> tuple[float, float, float]:
         """Return (home_win_prob, draw_prob, away_win_prob)."""
-        prob = self.match_probs(home, away, neutral=neutral)
+        prob = self.match_probs(home, away, neutral=neutral, home_boost=home_boost)
         hw = float(np.tril(prob, k=-1).sum())
         d = float(np.trace(prob))
         aw = float(np.triu(prob, k=1).sum())
         return hw, d, aw
 
 
-def build_model(min_date: str = "2023-01-01") -> DixonColesModel:
+def build_model(
+    min_date: str = DEFAULT_MIN_DATE,
+    half_life_weeks: float = DEFAULT_HALF_LIFE_WEEKS,
+    reg_lambda: float = DEFAULT_REG_LAMBDA,
+    extra_data: pd.DataFrame | None = None,
+) -> DixonColesModel:
     """Convenience function: load data, fit model, return it."""
-    data, teams = load_and_prepare_data(min_date=min_date)
-    model = DixonColesModel()
+    data, teams = load_and_prepare_data(
+        min_date=min_date,
+        half_life_weeks=half_life_weeks,
+        extra_data=extra_data,
+    )
+    model = DixonColesModel(reg_lambda=reg_lambda)
     model.fit(data, teams)
     return model

@@ -7,99 +7,18 @@ from itertools import combinations
 
 import numpy as np
 
+from src.constants import (
+    DEFAULT_HOST_BOOST,
+    GROUPS,
+    HOST_TEAMS,
+    MAX_GOALS,
+    QUARTERFINAL_PAIRS,
+    ROUND_OF_16_PAIRS,
+    ROUND_OF_32_FIXED,
+    SEMIFINAL_PAIRS,
+)
 from src.model import DixonColesModel
-
-# ──────────────────────────────────────────────
-# Groups (draw Dec 5 2025 + playoffs Mar 31 2026)
-# All 48 teams confirmed
-# ──────────────────────────────────────────────
-GROUPS: dict[str, list[str]] = {
-    "A": ["Mexico", "South Korea", "South Africa", "Czech Republic"],
-    "B": ["Canada", "Switzerland", "Qatar", "Bosnia and Herzegovina"],
-    "C": ["Brazil", "Morocco", "Scotland", "Haiti"],
-    "D": ["United States", "Australia", "Paraguay", "Turkey"],
-    "E": ["Germany", "Ecuador", "Ivory Coast", "Curacao"],
-    "F": ["Netherlands", "Japan", "Tunisia", "Sweden"],
-    "G": ["Belgium", "Egypt", "Iran", "New Zealand"],
-    "H": ["Spain", "Uruguay", "Saudi Arabia", "Cabo Verde"],
-    "I": ["France", "Senegal", "Norway", "Iraq"],
-    "J": ["Argentina", "Austria", "Algeria", "Jordan"],
-    "K": ["Portugal", "Colombia", "Uzbekistan", "DR Congo"],
-    "L": ["England", "Croatia", "Ghana", "Panama"],
-}
-
-# Map of team name variants the model might use
-TEAM_NAME_MAP: dict[str, str] = {
-    "United States": "United States",
-    "South Korea": "South Korea",
-    "Ivory Coast": "Côte d'Ivoire",
-    "Curacao": "Curaçao",
-    "Cabo Verde": "Cape Verde",
-    "DR Congo": "DR Congo",
-}
-
-# ──────────────────────────────────────────────
-# Round-of-32 fixed slots (FIFA regulations)
-# Format: (slot_description, team_source)
-# 1X = winner of group X, 2X = runner-up of group X
-# 3{...} = best 3rd-place from one of the listed groups
-# ──────────────────────────────────────────────
-ROUND_OF_32_FIXED: list[tuple[str, str]] = [
-    ("1E", "3_ABCDF"),  # Match 74
-    ("1I", "3_CDFGH"),  # Match 77
-    ("2A", "2B"),  # Match 73
-    ("1F", "2C"),  # Match 75
-    ("1C", "2F"),  # Match 76
-    ("2E", "2I"),  # Match 78
-    ("1A", "3_CEFHI"),  # Match 79
-    ("1L", "3_EHIJK"),  # Match 80
-    ("1D", "3_BEFIJ"),  # Match 81
-    ("1G", "3_AEHIJ"),  # Match 82
-    ("2K", "2L"),  # Match 83
-    ("1H", "2J"),  # Match 84
-    ("1B", "3_EFGIJ"),  # Match 85
-    ("1J", "2H"),  # Match 86
-    ("1K", "3_DEIJL"),  # Match 87
-    ("2D", "2G"),  # Match 88
-]
-
-# Bracket from Round of 16 onward (indices into ROUND_OF_32_FIXED results)
-# Each tuple is (idx_match_A, idx_match_B)
-ROUND_OF_16_PAIRS: list[tuple[int, int]] = [
-    (0, 1),  # W74 vs W77  → Match 89
-    (2, 3),  # W73 vs W75  → Match 90
-    (4, 5),  # W76 vs W78  → Match 91
-    (6, 7),  # W79 vs W80  → Match 92
-    (10, 11),  # W83 vs W84  → Match 93
-    (8, 9),  # W81 vs W82  → Match 94
-    (13, 15),  # W86 vs W88  → Match 95
-    (12, 14),  # W85 vs W87  → Match 96
-]
-
-QUARTERFINAL_PAIRS: list[tuple[int, int]] = [
-    (0, 1),  # W89 vs W90  → Match 97
-    (4, 5),  # W93 vs W94  → Match 98
-    (2, 3),  # W91 vs W92  → Match 99
-    (6, 7),  # W95 vs W96  → Match 100
-]
-
-SEMIFINAL_PAIRS: list[tuple[int, int]] = [
-    (0, 1),  # W97 vs W98  → Match 101
-    (2, 3),  # W99 vs W100 → Match 102
-]
-
-
-def resolve_team_name(name: str, known_teams: list[str]) -> str:
-    """Try to match a team name to the model's team list."""
-    if name in known_teams:
-        return name
-    mapped = TEAM_NAME_MAP.get(name)
-    if mapped and mapped in known_teams:
-        return mapped
-    raise ValueError(
-        f"Team '{name}' not found in model (tried alias '{mapped}'). "
-        f"Add it to TEAM_NAME_MAP or check the spelling."
-    )
+from src.utils import resolve_team_name
 
 
 @dataclass
@@ -143,9 +62,16 @@ class WorldCup2026:
         (i, sb) for i, (_, sb) in enumerate(ROUND_OF_32_FIXED) if sb.startswith("3_")
     ]
 
-    def __init__(self, model: DixonColesModel, seed: int = 42) -> None:
+    def __init__(
+        self,
+        model: DixonColesModel,
+        seed: int = 42,
+        known_results: dict[tuple[str, str], tuple[int, int]] | None = None,
+        host_boost: float = DEFAULT_HOST_BOOST,
+    ) -> None:
         self.model = model
         self.rng = np.random.default_rng(seed)
+        self._host_boost = host_boost
 
         self.groups: dict[str, list[str]] = {}
         for gname, teams in GROUPS.items():
@@ -155,9 +81,29 @@ class WorldCup2026:
         for teams in self.groups.values():
             self.all_teams.extend(teams)
 
+        self._team_idx = {t: i for i, t in enumerate(self.all_teams)}
         self._group_names = list(self.groups.keys())
         self._n_groups = len(self._group_names)
         self._third_cache: dict[frozenset[str], dict[int, str]] = {}
+
+        self._host_indices: set[int] = set()
+        for ht in HOST_TEAMS:
+            try:
+                resolved = resolve_team_name(ht, model.teams)
+                self._host_indices.add(self._team_idx[resolved])
+            except (ValueError, KeyError):
+                pass
+
+        self._known: dict[tuple[int, int], tuple[int, int]] = {}
+        if known_results:
+            for (ta, tb), (sa, sb) in known_results.items():
+                ra = resolve_team_name(ta, model.teams)
+                rb = resolve_team_name(tb, model.teams)
+                ia = self._team_idx[ra]
+                ib = self._team_idx[rb]
+                self._known[(ia, ib)] = (sa, sb)
+                self._known[(ib, ia)] = (sb, sa)
+
         self._precompute_probs()
 
     # ── fast-path helpers (index-based) ──────────────────────────
@@ -165,24 +111,46 @@ class WorldCup2026:
     def _precompute_probs(self) -> None:
         """Precompute flattened score-probability vectors for every team pair."""
         nt = len(self.all_teams)
-        mg = 11
+        mg = MAX_GOALS + 1
         self._mg = mg
         self._mg2 = mg * mg
         self._flat_probs = np.zeros((nt, nt, self._mg2))
         self._flat_probs_et = np.zeros((nt, nt, self._mg2))
-        self._strengths = np.array([self.model.get_strength(t) for t in self.all_teams])
+        hb = self._host_boost
+        hi = self._host_indices
         for i in range(nt):
             for j in range(i + 1, nt):
                 ti, tj = self.all_teams[i], self.all_teams[j]
-                prob = self.model.match_probs(ti, tj, neutral=True)
-                self._flat_probs[i, j] = prob.ravel()
-                self._flat_probs[j, i] = prob.T.ravel()
+                i_host = i in hi and j not in hi
+                j_host = j in hi and i not in hi
 
-                prob_et = self.model.match_probs(
-                    ti, tj, neutral=True, lambda_scale=1 / 3
-                )
-                self._flat_probs_et[i, j] = prob_et.ravel()
-                self._flat_probs_et[j, i] = prob_et.T.ravel()
+                if i_host:
+                    p = self.model.match_probs(ti, tj, home_boost=hb)
+                    pe = self.model.match_probs(
+                        ti, tj, home_boost=hb, lambda_scale=1 / 3
+                    )
+                    self._flat_probs[i, j] = p.ravel()
+                    self._flat_probs[j, i] = p.T.ravel()
+                    self._flat_probs_et[i, j] = pe.ravel()
+                    self._flat_probs_et[j, i] = pe.T.ravel()
+                elif j_host:
+                    p = self.model.match_probs(tj, ti, home_boost=hb)
+                    pe = self.model.match_probs(
+                        tj, ti, home_boost=hb, lambda_scale=1 / 3
+                    )
+                    self._flat_probs[j, i] = p.ravel()
+                    self._flat_probs[i, j] = p.T.ravel()
+                    self._flat_probs_et[j, i] = pe.ravel()
+                    self._flat_probs_et[i, j] = pe.T.ravel()
+                else:
+                    p = self.model.match_probs(ti, tj, neutral=True)
+                    pe = self.model.match_probs(
+                        ti, tj, neutral=True, lambda_scale=1 / 3
+                    )
+                    self._flat_probs[i, j] = p.ravel()
+                    self._flat_probs[j, i] = p.T.ravel()
+                    self._flat_probs_et[i, j] = pe.ravel()
+                    self._flat_probs_et[j, i] = pe.T.ravel()
 
     def _ko(self, i: int, j: int) -> int:
         """Fast knockout match using precomputed flat-prob lookup."""
@@ -230,6 +198,9 @@ class WorldCup2026:
         return matchups
 
     def _simulate_group_match(self, team_a: str, team_b: str) -> tuple[int, int]:
+        key = (self._team_idx[team_a], self._team_idx[team_b])
+        if key in self._known:
+            return self._known[key]
         return self.model.simulate_match(team_a, team_b, neutral=True, rng=self.rng)
 
     def _simulate_knockout_match(self, team_a: str, team_b: str) -> str:
@@ -443,10 +414,16 @@ class WorldCup2026:
         for gi in range(ng):
             base = gi * 4
             for mi, (li, lj) in enumerate(match_pairs):
-                flat = self._flat_probs[base + li, base + lj]
-                samples = self.rng.choice(mg2, size=n, p=flat)
-                group_hg[gi, mi] = samples // mg
-                group_ag[gi, mi] = samples % mg
+                ia, ib = base + li, base + lj
+                known = self._known.get((ia, ib))
+                if known is not None:
+                    group_hg[gi, mi, :] = known[0]
+                    group_ag[gi, mi, :] = known[1]
+                else:
+                    flat = self._flat_probs[ia, ib]
+                    samples = self.rng.choice(mg2, size=n, p=flat)
+                    group_hg[gi, mi] = samples // mg
+                    group_ag[gi, mi] = samples % mg
 
         # ── Phase 2: vectorised standings ────────────────────────
         pts = np.zeros((ng, n, 4), dtype=np.int16)
