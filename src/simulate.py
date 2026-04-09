@@ -35,11 +35,22 @@ def print_top_n(
     print(header)
     print("=" * len(header))
 
-    ranked = sorted(results["champion"].items(), key=lambda x: x[1], reverse=True)[
-        :top_n
+    stages = [
+        "champion",
+        "final",
+        "semifinals",
+        "quarterfinals",
+        "round_of_16",
+        "round_of_32",
     ]
+    all_teams = results["champion"].keys()
+    ranked = sorted(
+        all_teams,
+        key=lambda t: tuple(results[s].get(t, 0) for s in stages),
+        reverse=True,
+    )[:top_n]
 
-    for pos, (team, _) in enumerate(ranked, 1):
+    for pos, team in enumerate(ranked, 1):
         champ = results["champion"][team] / n_sims * 100
         final = results["final"][team] / n_sims * 100
         semi = results["semifinals"][team] / n_sims * 100
