@@ -587,6 +587,75 @@ color: red;
   }
 }
 
+/* =============== EQUIPE ======================*/
+
+.equipe-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(120px, 0.5fr));
+    gap: 20px;
+}
+
+.membro-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+    justify-items: center;
+    text-align: center;
+}
+
+/* Permite reordenar visualmente os elementos internos sem mudar o HTML */
+.membro-info,
+.membro-foto {
+    display: contents;
+}
+
+.membro-info strong {
+    grid-row: 2;
+    font-size: 15px;
+    line-height: 1.35;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.membro-foto img {
+    grid-row: 1;
+    width: 112.5px;
+    height: 168px;
+    border-radius: 6px;
+    display: block;
+    margin: 0 auto;
+}
+
+.membro-info span {
+    grid-row: 3;
+    display: block;
+    font-size: 13px;
+    line-height: 1;
+}
+
+.membro-foto a {
+    grid-row: 4;
+    display: block;
+    font-size: 12px;
+    line-height: 1;
+    word-break: break-word;
+}
+
+@media (max-width: 1200px) {
+    .equipe-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .membro-card {
+        padding: 16px;
+    }
+}
 
 /* <!-- CHAVEAMENTO ELIMINATÓRIO -->  */
 
