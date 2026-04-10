@@ -561,11 +561,11 @@ document.addEventListener('DOMContentLoaded', () => {
         desc: 'Camisa branca — o Brasil perdeu a final (Maracanazo) com essa camisa. Foi o trauma que levou à adoção do amarelo.', kit: 'away'
       },
       {
-        year: 1954, era: '1954-1965', img:"https://cdn.footballkitarchive.com/2024/05/27/Hy9QpKtqdXg3lNH-small.jpg",
+        year: 1954, era: '1954-1965', img:"https://www.tetereinaldim.com.br/wp-content/uploads/2014/06/Camisa-do-Brasil-de-1954.jpg",
         desc: 'Primeira vez com amarelo! A nova camisa, desenhada pelo artista Aldyr Garcia Schlee, surge após o trauma de 1950.', kit: 'home'
       },
       {
-        year: 1958, era: '1954-1965', img:"https://cdn.footballkitarchive.com/2024/02/04/q8CU5QtTlEvVtwS-small.jpg",
+        year: 1958, era: '1954-1965', img:"https://cdn.awsli.com.br/2500x2500/1166/1166432/produto/44826973/f4fc1e472d.jpg",
         desc: 'Com a camisa amarela, Pelé com 17 anos marca seu primeiro gol na Copa. Brasil bicampeão na Suécia.', kit: 'home'
       },
       {
