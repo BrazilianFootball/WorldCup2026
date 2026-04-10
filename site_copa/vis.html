@@ -49,10 +49,73 @@
             </div>
             <!--Fim do banner das páginas-->
 			<!-- Conteudo principal -->
-            <div class="container"> 
-                <div id="conteudo">
-                    <div class="texto font-16" style="width: 100%; max-width: 800px;">
+            <div class="container" style="display:flex;justify-content:center;">
+                <div id="conteudo" style="width:100%;max-width:960px;margin:0 auto;">
+                    <div class="texto font-16" style="width: 100%; max-width: 800px; margin: 0 auto;">
+                        <!-- CHAVEAMENTO ELIMINATÓRIO -->
+                        <p class="section-title"><b>Chaveamento das últimas 5 edições da Copa do Mundo.</b><br>
+                        <font size="2"><i>Passe o mouse sobre um time para destacar sua trajetória no torneio.</i>
+                        </font>
+                        </p>
 
+                        <div
+                        style="width:100%;max-width:900px;background:#fff;border:1px solid #e0e0e0;border-radius:6px;padding:18px 18px 14px;margin-bottom:28px;font-family:'Lato','Helvetica Neue',sans-serif;font-size:13px;">
+
+                        <!-- Controls -->
+                        <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px;flex-wrap:wrap;">
+                            <span
+                            style="font-size:11px;font-weight:700;color:#888;letter-spacing:.5px;text-transform:uppercase;">Edição:</span>
+                            <div id="bk-pills" style="display:flex;gap:4px;flex-wrap:wrap;"></div>
+                            <div id="bk-badge"
+                            style="margin-left:auto;display:flex;align-items:center;gap:8px;border:1.5px solid #f0c040;border-radius:5px;padding:5px 13px 5px 10px;">
+                            <span style="font-size:20px;">🏆</span>
+                            <div>
+                                <div
+                                style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#b8860b;">
+                                Campeão</div>
+                                <div id="bk-cbName" style="font-size:14px;font-weight:900;color:#1a1a1a;line-height:1;">—</div>
+                                <div id="bk-cbYear" style="font-size:10px;color:#aaa;">—</div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <p style="font-size:11px;color:#bbb;font-style:italic;margin-bottom:10px;">Passe o mouse
+                            sobre um time para destacar sua trajetória no torneio.</p>
+
+                        <!-- Bracket scroll -->
+                        <div id="bk-scroll" style="overflow-x:auto;padding-bottom:6px;">
+                            <div id="bk-bw" style="position:relative;display:flex;min-width:820px;transition:opacity .18s;">
+                            <svg id="bk-svg"
+                                style="position:absolute;top:0;left:0;pointer-events:none;overflow:visible;z-index:0;"></svg>
+                            </div>
+                        </div>
+
+                        <!-- Legend -->
+                        <div style="display:flex;gap:16px;margin-top:10px;flex-wrap:wrap;">
+                            <div style="display:flex;align-items:center;gap:6px;font-size:10px;color:#aaa;">
+                            <div style="width:22px;height:2px;border-radius:1px;background:#d4aa18;"></div>
+                            Trajetória do campeão
+                            </div>
+                            <div style="display:flex;align-items:center;gap:6px;font-size:10px;color:#aaa;">
+                            <div style="width:22px;height:2px;border-radius:1px;background:#1a5276;"></div> Time
+                            em destaque
+                            </div>
+                            <div style="display:flex;align-items:center;gap:6px;font-size:10px;color:#aaa;">
+                            <div style="width:22px;height:2px;border-radius:1px;background:#ddd;"></div>
+                            Eliminado
+                            </div>
+                        </div>
+
+                        <!-- Path summary -->
+                        <div style="margin-top:16px;border-top:1.5px solid #eee;padding-top:14px;">
+                            <div id="bk-pathTitle"
+                            style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:12px;">
+                            TRAJETÓRIA DO CAMPEÃO</div>
+                            <div id="bk-pathCards" style="display:flex;gap:10px;flex-wrap:wrap;align-items:stretch;"></div>
+                        </div>
+                        </div>
+
+                        <!-- Ranking de gols -->
                         <p><b>Ranking do total de gols marcados ao longo das edições da Copa do Mundo.</b><br>
                         <font size="2"><i>(contribuição de Iara Castro, aluna de Mestrado em Matemática Aplicada e Ciência de Dados na EMAp)</i></font> <br>
                         <div class="flourish-embed flourish-chart" data-src="visualisation/28344097">
@@ -82,6 +145,139 @@
                             </div>
                         </div>
                         <div id="ballAwardGrid" class="ball-award-grid"></div>
+
+                        <!-- ====== EVOLUÇÃO DAS BOLAS DA COPA DO MUNDO ====== -->
+                        <div style="width:100%; max-width:960px; margin:32px auto; font-family:'Lato',sans-serif;">
+                        <p class="section-title"><b>Evolução das Bolas da Copa do Mundo (1930–2026)</b></p>
+
+                        <div id="balls-container"
+                            style="background:#fff; border:1px solid #e0e0e0; border-radius:8px; padding:24px;">
+                            <div id="ball-detail" style="display:flex; background:#f7f9fc; border:1.5px solid #e8edf4; border-radius:8px; padding:20px; margin-bottom:20px; align-items:center; gap:20px; flex-wrap:wrap;">
+                            <!-- O JS vai preencher o conteúdo aqui -->
+                            </div>  
+
+                            <div id="balls-grid"
+                            style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+                            </div>
+
+                        </div>
+                        <p style="font-size:12px; color:#777;">
+                            Informações e imagens: © FIFA
+                        </p>
+                        </div>
+
+                        <!-- ====== CAMISAS DA SELEÇÃO BRASILEIRA (ABAIXO) ====== -->
+                        <div style="width:100%; max-width:960px; margin:0 auto 40px; font-family:'Lato',sans-serif;">
+                        <p class="section-title"><b>Evolução das Camisas da Seleção Brasileira (1930–2026)</b></p>
+                        <div style="background:#fff; border:1px solid #e0e0e0; border-radius:8px; padding:24px;">
+                            <div id="shirt-filter"
+                            style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px; justify-content:center;">
+                            </div>
+                            <div id="shirt-detail"
+                            style="display:flex; align-items:center; justify-content:center; gap:40px; flex-wrap:wrap; background:#f9f9f9; border:1.5px solid #eee; border-radius:8px; padding:28px; margin-bottom:20px; min-height:260px;">
+                            </div>
+                            <div id="shirts-grid" style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center;">
+                            </div>
+                        </div>
+                        </div>
+
+                        <p class="section-title"><b>Quem vestiu a seleção nos últimos anos? </b></p>   
+                        <div class="timeline-container">
+                            
+                            <div class="line"></div>
+
+                            <div class="event bottom">
+                                <div class="label"><span class="brand">In-House</span><span class="year">até 1934</span></div>
+                                <div class="dot"></div>
+                            
+                            </div>
+
+                            <div class="event top">
+                                <div class="label"><span class="brand">Ceppo / In-House</span><span class="year">1938</span></div>
+                                <div class="dot"></div>
+                            </div>
+
+                            <div class="event bottom">
+                                <div class="label"><span class="brand">In-House</span><span class="year">1939</span></div>
+                                <div class="dot"></div>
+                            </div>
+
+                            <div class="event top">
+                                <div class="label"><span class="brand">Ceppo</span><span class="year">1940</span></div>
+                                <div class="dot"></div>    
+                            </div>
+
+                            <div class="event bottom">
+                                <div class="label"><span class="brand">Ceppo / In-House</span><span class="year">1950</span></div>
+                                <div class="dot"></div>
+                            </div>
+
+                            <div class="event top">
+                                <div class="label"><span class="brand">Athleta / Ceppo</span><span class="year">1953</span></div>
+                                <div class="dot"></div>
+                            </div>
+
+                            <div class="event bottom">
+                                <div class="label"><span class="brand">Athleta</span><span class="year">1954</span></div>
+                                <div class="dot"></div>
+                            </div>
+
+                            <div class="event top">
+                                <div class="label"><span class="brand">Athleta / In-House</span><span class="year">1957</span></div>
+                                <div class="dot"></div> 
+                            </div>
+
+                            <div class="event bottom">
+                                <div class="label"><span class="brand">Athleta / Idrott</span><span class="year">1958</span></div>
+                                <div class="dot"></div> 
+                            </div>
+
+                            <div class="event top">
+                                <div class="label"><span class="brand">Ceppo</span><span class="year">1959</span></div>
+                                <div class="dot"></div> 
+                            </div>
+
+                            <div class="event bottom">
+                                <div class="label"><span class="brand">Athleta</span><span class="year">1962-1970</span></div>
+                                <div class="dot"></div>
+                            </div>
+
+                            <div class="event top">
+                                <div class="label"><span class="brand">Superball</span><span class="year">1971</span></div>
+                                <div class="dot"></div>
+                            </div>
+
+                            <div class="event bottom">
+                                <div class="label"><span class="brand">Athleta</span><span class="year">1974</span></div>
+                                <div class="dot"></div>
+                            </div>
+
+                            <div class="event top">
+                                <div class="label"><span class="brand">adidas</span><span class="year">1977-1980</span></div>
+                                <div class="dot"></div> 
+                            </div>
+
+                            <div class="event bottom">
+                                <div class="label"><span class="brand">Topper</span><span class="year">1981-1990</span></div>
+                                <div class="dot"></div>
+                            </div>
+
+                            <div class="event top">
+                                <div class="label"><span class="brand">Umbro</span><span class="year">1991-1996</span></div>
+                                <div class="dot"></div>
+                            </div>
+
+                            <div class="event bottom">
+                                <div class="label"><span class="brand">Nike</span><span class="year">1997-2024</span></div>
+                                <div class="dot"></div>
+                            </div>
+
+                            <div class="event top">
+                                <div class="label"><span class="brand">Air Jordan / Nike</span><span class="year">desde 2024</span></div>
+                                <div class="dot"></div>
+                            
+                            </div>
+                        </div>
 
                     </div><center>
                 </div></center>

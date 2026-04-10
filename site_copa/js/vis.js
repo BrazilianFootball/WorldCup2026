@@ -255,3 +255,498 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+
+
+//  CHAVEAMENTO ELIMINATÓRIO 
+(function () {
+const BK_ED = {
+    2022: {
+    host: 'Qatar', champion: 'Argentina', champFlag: '🇦🇷', rounds: [
+        [{ a: 'Netherlands', af: '🇳🇱', as: 3, b: 'USA', bf: '🇺🇸', bs: 1, w: 'a' }, { a: 'Argentina', af: '🇦🇷', as: 2, b: 'Australia', bf: '🇦🇺', bs: 1, w: 'a' }, { a: 'Japan', af: '🇯🇵', as: 1, b: 'Croatia', bf: '🇭🇷', bs: 1, w: 'b', n: 'pens' }, { a: 'Brazil', af: '🇧🇷', as: 4, b: 'South Korea', bf: '🇰🇷', bs: 1, w: 'a' }, { a: 'France', af: '🇫🇷', as: 3, b: 'Poland', bf: '🇵🇱', bs: 1, w: 'a' }, { a: 'England', af: '󠁧󠁢󠁥󠁮ENG', as: 3, b: 'Senegal', bf: '🇸🇳', bs: 0, w: 'a' }, { a: 'Morocco', af: '🇲🇦', as: 0, b: 'Spain', bf: '🇪🇸', bs: 0, w: 'a', n: 'pens' }, { a: 'Portugal', af: '🇵🇹', as: 6, b: 'Switzerland', bf: '🇨🇭', bs: 1, w: 'a' }],
+        [{ a: 'Netherlands', af: '🇳🇱', as: 2, b: 'Argentina', bf: '🇦🇷', bs: 2, w: 'b', n: 'pens' }, { a: 'Croatia', af: '🇭🇷', as: 1, b: 'Brazil', bf: '🇧🇷', bs: 1, w: 'a', n: 'pens' }, { a: 'France', af: '🇫🇷', as: 2, b: 'England', bf: '󠁧󠁢󠁥󠁮Eng', bs: 1, w: 'a' }, { a: 'Morocco', af: '🇲🇦', as: 1, b: 'Portugal', bf: '🇵🇹', bs: 0, w: 'a' }],
+        [{ a: 'Argentina', af: '🇦🇷', as: 3, b: 'Croatia', bf: '🇭🇷', bs: 0, w: 'a' }, { a: 'France', af: '🇫🇷', as: 2, b: 'Morocco', bf: '🇲🇦', bs: 0, w: 'a' }],
+        [{ a: 'Argentina', af: '🇦🇷', as: 3, b: 'France', bf: '🇫🇷', bs: 3, w: 'a', n: 'pens' }]]
+    },
+    2018: {
+    host: 'Russia', champion: 'France', champFlag: '🇫🇷', rounds: [
+        [{ a: 'France', af: '🇫🇷', as: 4, b: 'Argentina', bf: '🇦🇷', bs: 3, w: 'a' }, { a: 'Uruguay', af: '🇺🇾', as: 2, b: 'Portugal', bf: '🇵🇹', bs: 1, w: 'a' }, { a: 'Belgium', af: '🇧🇪', as: 3, b: 'Japan', bf: '🇯🇵', bs: 2, w: 'a' }, { a: 'Brazil', af: '🇧🇷', as: 2, b: 'Mexico', bf: '🇲🇽', bs: 0, w: 'a' }, { a: 'Croatia', af: '🇭🇷', as: 1, b: 'Denmark', bf: '🇩🇰', bs: 1, w: 'a', n: 'pens' }, { a: 'Russia', af: '🇷🇺', as: 1, b: 'Spain', bf: '🇪🇸', bs: 1, w: 'a', n: 'pens' }, { a: 'Sweden', af: '🇸🇪', as: 1, b: 'Switzerland', bf: '🇨🇭', bs: 0, w: 'a' }, { a: 'Colombia', af: '🇨🇴', as: 1, b: 'England', bf: 'Eng', bs: 1, w: 'b', n: 'pens' }],
+        [{ a: 'France', af: '🇫🇷', as: 2, b: 'Uruguay', bf: '🇺🇾', bs: 0, w: 'a' }, { a: 'Belgium', af: '🇧🇪', as: 2, b: 'Brazil', bf: '🇧🇷', bs: 1, w: 'a' }, { a: 'Croatia', af: '🇭🇷', as: 2, b: 'Russia', bf: '🇷🇺', bs: 2, w: 'a', n: 'pens' }, { a: 'Sweden', af: '🇸🇪', as: 0, b: 'England', bf: 'Eng', bs: 2, w: 'b' }],
+        [{ a: 'France', af: '🇫🇷', as: 1, b: 'Belgium', bf: '🇧🇪', bs: 0, w: 'a' }, { a: 'Croatia', af: '🇭🇷', as: 2, b: 'England', bf: '󠁧󠁢Eng', bs: 1, w: 'a' }],
+        [{ a: 'France', af: '🇫🇷', as: 4, b: 'Croatia', bf: '🇭🇷', bs: 2, w: 'a' }]]
+    },
+    2014: {
+    host: 'Brazil', champion: 'Germany', champFlag: '🇩🇪', rounds: [
+        [{ a: 'Germany', af: '🇩🇪', as: 2, b: 'Algeria', bf: '🇩🇿', bs: 1, w: 'a', n: 'AET' }, { a: 'France', af: '🇫🇷', as: 2, b: 'Nigeria', bf: '🇳🇬', bs: 0, w: 'a' }, { a: 'Brazil', af: '🇧🇷', as: 1, b: 'Chile', bf: '🇨🇱', bs: 1, w: 'a', n: 'pens' }, { a: 'Colombia', af: '🇨🇴', as: 2, b: 'Uruguay', bf: '🇺🇾', bs: 0, w: 'a' }, { a: 'Netherlands', af: '🇳🇱', as: 2, b: 'Mexico', bf: '🇲🇽', bs: 1, w: 'a' }, { a: 'Costa Rica', af: '🇨🇷', as: 1, b: 'Greece', bf: '🇬🇷', bs: 1, w: 'a', n: 'pens' }, { a: 'Argentina', af: '🇦🇷', as: 1, b: 'Switzerland', bf: '🇨🇭', bs: 0, w: 'a', n: 'AET' }, { a: 'Belgium', af: '🇧🇪', as: 2, b: 'USA', bf: '🇺🇸', bs: 1, w: 'a', n: 'AET' }],
+        [{ a: 'Germany', af: '🇩🇪', as: 1, b: 'France', bf: '🇫🇷', bs: 0, w: 'a' }, { a: 'Brazil', af: '🇧🇷', as: 2, b: 'Colombia', bf: '🇨🇴', bs: 1, w: 'a' }, { a: 'Netherlands', af: '🇳🇱', as: 0, b: 'Costa Rica', bf: '🇨🇷', bs: 0, w: 'a', n: 'pens' }, { a: 'Argentina', af: '🇦🇷', as: 1, b: 'Belgium', bf: '🇧🇪', bs: 0, w: 'a' }],
+        [{ a: 'Germany', af: '🇩🇪', as: 7, b: 'Brazil', bf: '🇧🇷', bs: 1, w: 'a' }, { a: 'Netherlands', af: '🇳🇱', as: 0, b: 'Argentina', bf: '🇦🇷', bs: 0, w: 'b', n: 'pens' }],
+        [{ a: 'Germany', af: '🇩🇪', as: 1, b: 'Argentina', bf: '🇦🇷', bs: 0, w: 'a', n: 'AET' }]]
+    },
+    2010: {
+    host: 'South Africa', champion: 'Spain', champFlag: '🇪🇸', rounds: [
+        [{ a: 'Spain', af: '🇪🇸', as: 1, b: 'Portugal', bf: '🇵🇹', bs: 0, w: 'a' }, { a: 'Paraguay', af: '🇵🇾', as: 0, b: 'Japan', bf: '🇯🇵', bs: 0, w: 'a', n: 'pens' }, { a: 'Germany', af: '🇩🇪', as: 4, b: 'England', bf: 'Eng', bs: 1, w: 'a' }, { a: 'Argentina', af: '🇦🇷', as: 3, b: 'Mexico', bf: '🇲🇽', bs: 1, w: 'a' }, { a: 'Netherlands', af: '🇳🇱', as: 2, b: 'Slovakia', bf: '🇸🇰', bs: 1, w: 'a' }, { a: 'Brazil', af: '🇧🇷', as: 3, b: 'Chile', bf: '🇨🇱', bs: 0, w: 'a' }, { a: 'Uruguay', af: '🇺🇾', as: 2, b: 'South Korea', bf: '🇰🇷', bs: 1, w: 'a' }, { a: 'Ghana', af: '🇬🇭', as: 2, b: 'USA', bf: '🇺🇸', bs: 1, w: 'a', n: 'AET' }],
+        [{ a: 'Spain', af: '🇪🇸', as: 1, b: 'Paraguay', bf: '🇵🇾', bs: 0, w: 'a' }, { a: 'Germany', af: '🇩🇪', as: 4, b: 'Argentina', bf: '🇦🇷', bs: 0, w: 'a' }, { a: 'Netherlands', af: '🇳🇱', as: 2, b: 'Brazil', bf: '🇧🇷', bs: 1, w: 'a' }, { a: 'Uruguay', af: '🇺🇾', as: 1, b: 'Ghana', bf: '🇬🇭', bs: 1, w: 'a', n: 'pens' }],
+        [{ a: 'Spain', af: '🇪🇸', as: 1, b: 'Germany', bf: '🇩🇪', bs: 0, w: 'a' }, { a: 'Netherlands', af: '🇳🇱', as: 3, b: 'Uruguay', bf: '🇺🇾', bs: 2, w: 'a' }],
+        [{ a: 'Spain', af: '🇪🇸', as: 1, b: 'Netherlands', bf: '🇳🇱', bs: 0, w: 'a', n: 'AET' }]]
+    },
+    2006: {
+    host: 'Germany', champion: 'Italy', champFlag: '🇮🇹', rounds: [
+        [{ a: 'Italy', af: '🇮🇹', as: 1, b: 'Australia', bf: '🇦🇺', bs: 0, w: 'a' }, { a: 'Ukraine', af: '🇺🇦', as: 0, b: 'Switzerland', bf: '🇨🇭', bs: 0, w: 'a', n: 'pens' }, { a: 'Germany', af: '🇩🇪', as: 2, b: 'Sweden', bf: '🇸🇪', bs: 0, w: 'a' }, { a: 'Argentina', af: '🇦🇷', as: 2, b: 'Mexico', bf: '🇲🇽', bs: 1, w: 'a', n: 'AET' }, { a: 'England', af: 'eng', as: 1, b: 'Ecuador', bf: '🇪🇨', bs: 0, w: 'a' }, { a: 'Portugal', af: '🇵🇹', as: 1, b: 'Netherlands', bf: '🇳🇱', bs: 0, w: 'a' }, { a: 'Brazil', af: '🇧🇷', as: 3, b: 'Ghana', bf: '🇬🇭', bs: 0, w: 'a' }, { a: 'France', af: '🇫🇷', as: 3, b: 'Spain', bf: '🇪🇸', bs: 1, w: 'a' }],
+        [{ a: 'Italy', af: '🇮🇹', as: 3, b: 'Ukraine', bf: '🇺🇦', bs: 0, w: 'a' }, { a: 'Germany', af: '🇩🇪', as: 1, b: 'Argentina', bf: '🇦🇷', bs: 1, w: 'a', n: 'pens' }, { a: 'England', af: 'eng', as: 0, b: 'Portugal', bf: '🇵🇹', bs: 0, w: 'b', n: 'pens' }, { a: 'Brazil', af: '🇧🇷', as: 0, b: 'France', bf: '🇫🇷', bs: 1, w: 'b' }],
+        [{ a: 'Italy', af: '🇮🇹', as: 2, b: 'Germany', bf: '🇩🇪', bs: 0, w: 'a', n: 'AET' }, { a: 'Portugal', af: '🇵🇹', as: 0, b: 'France', bf: '🇫🇷', bs: 1, w: 'b' }],
+        [{ a: 'Italy', af: '🇮🇹', as: 1, b: 'France', bf: '🇫🇷', bs: 1, w: 'a', n: 'pens' }]]
+    }
+};
+const BK_RL = ['Oitavas de Final', 'Quartas de Final', 'Semifinais', 'Final'];
+const BK_RS = ['Oitavas', 'Quartas', 'Semifinal', 'Final'];
+let bkYear = 2022, bkHov = null, bkLM = {};
+const bkW = m => m.w === 'a' ? m.a : m.b;
+function bkRP(el, c) { const er = el.getBoundingClientRect(), cr = c.getBoundingClientRect(); return { right: er.right - cr.left, left: er.left - cr.left, cy: er.top - cr.top + er.height / 2 }; }
+function bkInit() { bkPills(); bkEdition(); }
+function bkPills() {
+    const el = document.getElementById('bk-pills'); el.innerHTML = '';
+    Object.keys(BK_ED).sort((a, b) => +b - +a).forEach(y => {
+    const btn = document.createElement('button'); btn.className = 'bk-pill' + (y == bkYear ? ' bk-active' : ''); btn.textContent = y; btn.onclick = () => bkSwitch(+y); el.appendChild(btn);
+    });
+}
+function bkEdition() {
+    const ed = BK_ED[bkYear];
+    document.getElementById('bk-cbName').textContent = ed.champFlag + ' ' + ed.champion;
+    document.getElementById('bk-cbYear').textContent = ed.host + ' · ' + bkYear;
+    bkBracket(ed); bkPath(ed);
+    bkHL();
+}
+function bkBracket(ed) {
+    const bw = document.getElementById('bk-bw'); bw.querySelectorAll('.bk-rc').forEach(e => e.remove());
+    ed.rounds.forEach((matches, ri) => {
+    const col = document.createElement('div'); col.className = 'bk-rc';
+    col.innerHTML = `<div class="bk-rc-head">${BK_RL[ri]}</div>`;
+    const body = document.createElement('div'); body.className = 'bk-rc-body';
+    matches.forEach((m, mi) => {
+        const card = document.createElement('div'); card.className = 'bk-mc'; card.dataset.r = ri; card.dataset.m = mi;
+        ['a', 'b'].forEach(slot => {
+        const row = document.createElement('div'); row.className = 'bk-tr' + (m.w === slot ? ' bk-won' : ''); row.dataset.team = m[slot] || '';
+        const note = m.w === slot && m.n ? `<span class="bk-nt">${m.n}</span>` : '';
+        row.innerHTML = `<span class="bk-tf">${m[slot + 'f'] || ''}</span><span class="bk-tn${!m[slot] ? ' bk-tbd' : ''}">${m[slot] || 'A definir'}</span>${m[slot + 's'] !== undefined ? `<span class="bk-ts">${m[slot + 's']}</span>` : ''}${note}`;
+        row.addEventListener('mouseenter', () => { bkHov = m[slot]; bkHL(); });
+        row.addEventListener('mouseleave', () => { bkHov = null; bkHL(); });
+        card.appendChild(row);
+        });
+        body.appendChild(card);
+    });
+    col.appendChild(body); bw.appendChild(col);
+    });
+    requestAnimationFrame(() => requestAnimationFrame(bkLines));
+}
+function bkLines() {
+    const ed = BK_ED[bkYear], bw = document.getElementById('bk-bw'), svg = document.getElementById('bk-svg');
+    svg.setAttribute('width', bw.scrollWidth); svg.setAttribute('height', bw.offsetHeight);
+    svg.innerHTML = ''; bkLM = {}; const champ = ed.champion;
+    ed.rounds.forEach((matches, ri) => {
+    if (ri >= ed.rounds.length - 1) return;
+    matches.forEach((match, mi) => {
+        const nextMi = Math.floor(mi / 2), isTop = mi % 2 === 0;
+        const srcCard = bw.querySelector(`.bk-mc[data-r="${ri}"][data-m="${mi}"]`);
+        const tgtCard = bw.querySelector(`.bk-mc[data-r="${ri + 1}"][data-m="${nextMi}"]`);
+        if (!srcCard || !tgtCard) return;
+        const sr = bkRP(srcCard, bw), tr = bkRP(tgtCard, bw);
+        const x0 = sr.right, y0 = sr.cy;
+        const tgtRows = tgtCard.querySelectorAll('.bk-tr');
+        const trr = bkRP(isTop ? tgtRows[0] : tgtRows[1], bw);
+        const x3 = tr.left, y3 = trr.cy, mx = x0 + (x3 - x0) * 0.5;
+        const d = `M ${x0} ${y0} H ${mx} V ${y3} H ${x3}`;
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.setAttribute('d', d); path.setAttribute('fill', 'none'); path.setAttribute('stroke-linecap', 'round'); path.setAttribute('stroke-linejoin', 'round');
+        const winner = bkW(match); bkLM[`${ri}-${mi}`] = { path, winner };
+        bkLS(path, winner === champ, false); svg.appendChild(path);
+    });
+    });
+}
+
+function bkLS(path, isChamp, isHov) {
+    if (isHov) { path.setAttribute('stroke', '#4c9bc2'); path.setAttribute('stroke-width', '2'); path.setAttribute('opacity', '0.9'); }
+    else if (isChamp) { path.setAttribute('stroke', '#f7db09'); path.setAttribute('stroke-width', '1.8'); path.setAttribute('opacity', '0.65'); }
+    else { path.setAttribute('stroke', '#e2e3e0'); path.setAttribute('stroke-width', '1.5'); path.setAttribute('opacity', '1'); }
+}
+
+function bkHL() {
+    const ed = BK_ED[bkYear], champ = ed.champion;
+    document.querySelectorAll('.bk-mc').forEach(card => {
+    card.classList.remove('bk-is-champ', 'bk-is-hover');
+    const m = ed.rounds[+card.dataset.r][+card.dataset.m];
+    if (bkHov && (m.a === bkHov || m.b === bkHov)) card.classList.add('bk-is-hover');
+    else if (m.a === champ || m.b === champ) card.classList.add('bk-is-champ');
+    });
+    document.querySelectorAll('.bk-tr').forEach(row => { row.classList.remove('bk-hl'); if (bkHov && row.dataset.team === bkHov) row.classList.add('bk-hl'); });
+    Object.values(bkLM).forEach(({ path, winner }) => bkLS(path, winner === champ, bkHov && winner === bkHov));
+    const t = document.getElementById('bk-pathTitle');
+    if (bkHov) { t.innerHTML = `TRAJETÓRIA — <span style="color:#1a5276">${bkHov}</span>`; bkPath(ed, bkHov); }
+    else { t.innerHTML = 'TRAJETÓRIA DO CAMPEÃO'; bkPath(ed); }
+}
+function bkPath(ed, over) {
+    const target = over || ed.champion;
+    let tf = over ? '' : ed.champFlag;
+    if (over) for (const r of ed.rounds) for (const m of r) { if (m.a === target) { tf = m.af; break; } if (m.b === target) { tf = m.bf; break; } }
+    const c = document.getElementById('bk-pathCards'); c.innerHTML = '';
+    const tr = document.createElement('div'); tr.className = 'bk-trophy';
+    tr.innerHTML = `<div style="font-size:20px">${over ? '⚽' : '🏆'}</div><div style="font-size:28px;line-height:1">${tf}</div><div style="font-size:13px;font-weight:900;color:#7d5a00;line-height:1;margin-top:2px">${target}</div><div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#bbb">${over ? bkYear : 'Campeão ' + bkYear}</div>`;
+    c.appendChild(tr);
+    ed.rounds.forEach((round, ri) => {
+    round.forEach(m => {
+        const isA = m.a === target, isB = m.b === target; if (!isA && !isB) return;
+        const won = (isA && m.w === 'a') || (isB && m.w === 'b');
+        const myS = isA ? m.as : m.bs, oppS = isA ? m.bs : m.as, opp = isA ? m.b : m.a, oppF = isA ? m.bf : m.af;
+        const card = document.createElement('div'); card.className = 'bk-pc'; if (!won) card.style.opacity = '0.5';
+        card.innerHTML = `<div class="bk-pc-rnd">${BK_RS[ri]}</div><div class="bk-pc-w"><span class="wf">${tf}</span><span class="wn">${target}</span><span class="ws">${myS}</span></div><div class="bk-pc-sep"></div><div class="bk-pc-l"><span class="lf">${oppF}</span><span class="ln">${opp}</span><span class="ls">${oppS}</span></div>${m.n ? `<span class="bk-pc-note">${m.n}</span>` : ''}`;
+        c.appendChild(card);
+    });
+    });
+}
+function bkSwitch(y) {
+    if (y === bkYear) return;
+    const bw = document.getElementById('bk-bw'); bkHov = null; bw.style.opacity = 0;
+    setTimeout(() => { bkYear = y; bkPills(); bkEdition(); bw.style.opacity = 1; }, 180);
+}
+document.addEventListener('DOMContentLoaded', () => {
+    bkInit();
+    window.addEventListener('resize', () => requestAnimationFrame(bkLines));
+});
+})();
+
+
+/* =========================================================
+    EVOLUÇÃO DAS BOLAS DA COPA DO MUNDO
+   ========================================================= */
+(function () {
+
+  const BALLS = [
+    { year: 2026, name: "Puma Orbita", img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwUzNeEWNxQK4z3-HmKJEV-qpFXfkgXymzow&s", panels: "orbita", desc: "Bola oficial com estrutura esférica aprimorada e 20 painéis irregulares. Copa dos EUA, México e Canadá — primeiro torneio com 48 seleções.", host: "EUA/CAN/MEX" },
+    { year: 2022, name: "Al Rihla", img:"https://digitalhub.fifa.com/transform/ce00eb6b-cee2-49df-aeaa-10d4a2e41316/FIFA-World-Cup-Qatar-2022-official-match-ball-Al-Rihla?&io=transform:fill,width:1024&quality=75", panels: "alrihla", desc: "20 painéis de diferentes formatos. Mais rápida da história em voo. Inspirada em barcos e arquitetura do Catar. Argentina tricampeã.", host: "Catar" },
+    { year: 2018, name: "Telstar 18",img:"https://digitalhub.fifa.com/transform/07487a6b-1bd8-4850-8c99-239c8de73c65/2018-FIFA-World-Cup-Russia-official-match-ball-Telstar-18?&io=transform:fill,width:1024&quality=75",  panels: "telstar18", desc: "Homenagem ao Telstar original de 1970 com design de pixels digitais em P&B. Primeira bola com chip NFC. França bicampeã.", host: "Rússia" },
+    { year: 2014, name: "Brazuca", img:"https://digitalhub.fifa.com/transform/f3c744d4-b4c0-403d-a461-6fc9fba7f494/2014-FIFA-World-Cup-Brazil-official-match-ball-Brazuca?&io=transform:fill,width:1024&quality=75",   panels: "brazuca", desc: "6 painéis em forma de hélice, a bola mais testada da história (600 pessoas, 3 anos de testes). Cores do Brasil. Alemanha e campeã.", host: "Brasil" },
+    { year: 2010, name: "Jabulani", img:"https://digitalhub.fifa.com/transform/d75d71cf-892a-4547-86d4-143a31fdc3bf/2010-FIFA-World-Cup-South-Africa-official-match-ball-Jabulani?&io=transform:fill,width:1024&quality=75",  panels: "jabulani", desc: "8 painéis em forma de propelina, termocolados. Muito criticada por trajetória instável ('efeito borboleta'). VUVUZELA, WAKA WAKA e o PRIMEIRO TÍTULO ESPANHOL.", host: "África do Sul" },
+    { year: 2006, name: "Teamgeist", img:"https://digitalhub.fifa.com/transform/44bb6dab-2512-479c-a5c0-8fe78bc1ff2e/2006-FIFA-World-Cup-Germany-official-match-ball-Teamgeist?&io=transform:fill,width:1024&quality=75",  panels: "teamgeist", desc: "Apenas 14 painéis termocolados (sem costura), inspirado no movimento de hélice. Mais esférica da história até então. Itália campeã, Zidane dá uma cabeçada.", host: "Alemanha" },
+    { year: 2002, name: "Fevernova", img:"https://digitalhub.fifa.com/transform/a557b04b-09ac-447f-91de-238828bd4435/2002-FIFA-World-Cup-Japan-South-Korea-official-match-ball-Fevernova?&io=transform:fill,width:1024&quality=75", panels: "fevernova", desc: "Design em ondas laranja, vermelhas e douradas inspirado em motivos asiáticos. Criticada pelos goleiros por trajetória imprevisível. Brasil pentacampeão.", host: "Coreia/Japão" },
+    { year: 1998, name: "Tricolore", img:"https://digitalhub.fifa.com/transform/bb2315eb-d08d-4af8-901a-bf58ad6a1b4d/1998-FIFA-World-Cup-France-official-match-ball-Tricolore?&io=transform:fill,width:1024&quality=75", panels: "tricolor", desc: "Primeira bola colorida (azul, vermelho, dourado) da Copa. Design multicolorido em homenagem à França. França campeã em casa.", host: "França" },
+    { year: 1994, name: "Questra", img:"https://digitalhub.fifa.com/transform/aea4e93f-1250-43fb-8ec6-a206609f7857/1994-FIFA-World-Cup-USA-official-match-ball-Questra?&io=transform:fill,width:1024&quality=75",  panels: "questra", desc: "Design futurista em azul e branco, com espuma de polietileno. Mais rápida e responsiva. Brasil tetracampeão, Baggio perde o pênalti final.", host: "EUA" },
+    { year: 1990, name: "Etrusco Unico", img:"https://digitalhub.fifa.com/transform/a867e037-8b0e-40d8-9e6a-5bbdc6fbe783/1990-FIFA-World-Cup-Italy-official-match-ball-Etrusco-Unico?&io=transform:fill,width:1024&quality=75", panels: "azteca", desc: "Decoração inspirada na arte etrusca italiana. Primeira bola com núcleo de polibutadieno para maior precisão. Alemanha campeã.", host: "Itália" },
+    { year: 1986, name: "Azteca", img:"https://digitalhub.fifa.com/transform/4adf2e7b-14f8-4679-82fe-f2c5687188c1/1986-FIFA-World-Cup-Mexico-official-match-ball-Azteca?&io=transform:fill,width:1024&quality=75",  panels: "azteca", desc: "Primeira bola sintética (poliuretano) da Copa. Padrão inspirado em mosaicos astecas. Copa do México — mão de Deus e gol do século de Maradona.", host: "México" },
+    { year: 1982, name: "Tango España", img:"https://digitalhub.fifa.com/transform/3b256e13-51c8-4b7f-bd9c-91dcabf0ab3f/1982-FIFA-World-Cup-Spain-official-match-ball-Tango-Espana?&io=transform:fill,width:1024&quality=75",  panels: "tango", desc: "Primeira bola impermeável da Copa, com revestimento especial. Manteve o design Tango. Copa da Espanha, Itália tricampeã.", host: "Espanha" },
+    { year: 1978, name: "Tango River Plate", img:"https://digitalhub.fifa.com/transform/4123c86e-0a7c-48b3-a815-3d7fb07d7566/1978-FIFA-World-Cup-Argentina-official-match-ball-Tango?&io=transform:fill,width:1024&quality=75",  panels: "tango", desc: "Primeira Tango: 20 círculos com triângulos curvos criam a ilusão de 12 faces esféricas. Padrão clássico que durou décadas. Argentina campeã em casa.", host: "Argentina" },
+    { year: 1974, name: "Telstar Durlast", img:"https://digitalhub.fifa.com/transform/d749f413-b26b-4317-813b-69bff3fd4a10/1974-FIFA-World-Cup-West-Germany-official-match-ball-Telstar-Durlast?&io=transform:fill,width:1024&quality=75", panels: "telstar", desc: "Versão aprimorada do Telstar, com revestimento Durlast mais durável e resistente à água. Alemanha Ocidental campeã.", host: "Alemanha Occ." },
+    { year: 1970, name: "Telstar", img:"https://digitalhub.fifa.com/transform/247cbf49-feea-4219-a382-2f7a9e61c1e1/1970-FIFA-World-Cup-Mexico-official-match-ball-Telstar?&io=transform:fill,width:1024&quality=75", panels: "telstar", desc: "Ícone absoluto: a primeira bola branca com 32 painéis pretos e brancos (12 pentágonos pretos + 20 hexágonos brancos). Adidas estreia na Copa. Pelé ergue a taça.", host: "México" },
+    { year: 1966, name: "Challenge 4-Star", img:"https://digitalhub.fifa.com/transform/0e323528-f3e2-4888-8ea0-9aebba14d08a/1966-FIFA-World-Cup-official-match-ball-Challenge-4-Star?&io=transform:fill,width:1024&quality=75",panels: "classic", desc: "Única bola vermelha-alaranjada da história da Copa. Copa da Inglaterra, onde o país-sede venceu o único título.", host: "Inglaterra" },
+    { year: 1962, name: "Crack", img:"https://digitalhub.fifa.com/transform/9cc7554d-17bd-47f5-8cc3-aac62a4b1c80/1962-FIFA-World-Cup-Chile-official-match-ball-Crack?&io=transform:fill,width:1024&quality=75",panels: "classic", desc: "Bola amarela-dourada, produzida no Chile. A Copa foi marcada pela falta de Pelé lesionado, e pelo Brasil bicampeão.", host: "Chile" },
+    { year: 1958, name: "Top Star", img:"https://digitalhub.fifa.com/transform/208d1c9d-5934-4e30-95ce-ea8ad962d05c/1958-FIFA-World-Cup-Sweden-official-match-ball-Top-Star?&io=transform:fill,width:1024&quality=75", panels: "classic", desc: "Bola dourada amarela, muito mais consistente em forma. Copa da Suécia, onde Pelé brilhou com 17 anos.", host: "Suécia" },
+    { year: 1954, name: "Swiss WC", img:"https://images.fastcompany.com/image/upload/fc/3032101-inline-s-swissworldchampion-1954.jpg",panels: "classic", desc: "Bola dourada brilhante, a mais redonda até então. Introduziu painéis hexagonais mais regulares, usada na Copa da Suíça.", host: "Suíça" },
+    { year: 1950, name: "Super Duplo T", img:"https://digitalhub.fifa.com/transform/9bfc026e-7c07-434c-80e3-f4602369b726/1950-FIFA-World-Cup-Brazil-match-ball-Duplo-T?&io=transform:fill,width:1024&quality=75",panels: "leather", desc: "Bola usada na Copa do Mundo no Brasil, com painéis de couro mais claros. Famosa pelo 'Maracanazo' - derrota do Brasil para o Uruguai.", host: "Brasil" },
+    { year: 1938, name: "Allen", img:"https://digitalhub.fifa.com/transform/23ca6174-13b7-4fc2-8178-bd5d268a6f14/1938-FIFA-World-Cup-Italy-Allen-official-match-ball?&io=transform:fill,width:1024&quality=75",  panels: "leather", desc: "Primeira bola a ter uma câmara de ar de borracha. Painéis de couro dourado escuro, usada na Copa da França.", host: "França" },
+    { year: 1934, name: "Federale 102", img:"https://digitalhub.fifa.com/transform/15101f27-81d2-48b2-a1ca-0f42f58bf7e9/1934-FIFA-World-Cup-Italy-Federale-102-match-ball?&io=transform:fill,width:1024&quality=75", panels: "leather", desc: "Bola italiana de couro marrom-alaranjado, mais redonda que a de 1930, com 13 painéis costurados manualmente.", host: "Itália" },
+    { year: 1930, name: "T-Model / Tiento", img:"https://digitalhub.fifa.com/transform/30cbf02a-9e51-457f-8169-a30a2eeea3ce/FIFA-World-Cup-Uruguay-1930-ball-T-model?&io=transform:fill,width:1024&quality=75", panels: "leather", desc: "Bola de couro tradicional com painéis costurados. Cada time trouxe sua própria bola; a Argentina jogou o primeiro tempo com a sua, o Uruguai o segundo com a deles.", host: "Uruguai" }
+];
+  
+
+  let selectedYear = 2026; 
+  function renderBalls() {
+    const grid = document.getElementById('balls-grid');
+    if (!grid) return;
+
+    BALLS.forEach((ball) => {
+      const card = document.createElement('div');
+      card.className = 'ball-card';
+      card.style.width = '90px';
+      card.style.textAlign = 'center';
+      card.style.cursor = 'pointer';
+
+      const img = document.createElement('img');
+      // img.src = `images/ball/wc-ball-${ball.year}.png`;
+      img.src = ball.img;
+      img.alt = ball.name;
+      img.style.width = '72px';
+      img.style.height = '72px';
+      img.style.objectFit = 'contain';
+
+      const yearEl = document.createElement('div');
+      yearEl.textContent = ball.year;
+      yearEl.style.fontSize = '12px';
+      yearEl.style.fontWeight = '700';
+
+      const nameEl = document.createElement('div');
+      nameEl.textContent = ball.name;
+      nameEl.style.fontSize = '11px';
+
+      card.appendChild(img);
+      card.appendChild(yearEl);
+      card.appendChild(nameEl);
+
+      card.addEventListener('click', () => {
+        document.querySelectorAll('.ball-card').forEach(c => c.classList.remove('ball-selected'));
+        showBallDetail(ball);
+      });
+
+      // card.addEventListener('mouseenter', () => {
+      //   document.querySelectorAll('.ball-card').forEach(c => c.classList.remove('ball-selected'));
+      //   card.classList.add('ball-selected');
+      //   showBallDetail(ball);
+      // });
+
+      grid.appendChild(card);
+    });
+
+    const detailDiv = document.createElement('div');
+    detailDiv.id = 'ball-detail';
+    // detailDiv.style.cssText =
+    //   'display:none;background:#f7f9fc;border:1.5px solid #e8edf4;border-radius:8px;padding:20px;margin-top:20px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;';
+
+    document.getElementById('balls-container').appendChild(detailDiv);
+
+    const defaultBall = BALLS.find(b => b.year === selectedYear);
+    if (defaultBall) {
+      showBallDetail(defaultBall);
+    }    
+  }
+
+  function showBallDetail(ball) {
+    const d = document.getElementById('ball-detail');
+    d.innerHTML = '';
+    d.style.display = 'flex';
+
+    const img = document.createElement('img');
+    img.src = ball.img;
+    img.style.width = '120px';
+    img.style.height = '120px';
+    img.style.objectFit = 'contain';
+    img.style.flexShrink = '0'; 
+
+    const info = document.createElement('div');
+    info.style.flex = '1'; 
+
+    info.innerHTML = `
+      <div style="font-size:20px;font-weight:900;color:#1a5276;">
+        ${ball.year} — ${ball.name}
+      </div>
+      <div style="font-size:12px;color:#c9940a;margin-bottom:10px;">
+        🏟️ ${ball.host}
+      </div>
+      <div style="font-size:13px;color:#444;">
+        ${ball.desc}
+      </div>
+    `;
+
+    d.appendChild(img);
+    d.appendChild(info);
+  }
+
+  document.addEventListener('DOMContentLoaded', renderBalls);
+
+})();
+
+
+/* =========================================================
+  CAMISAS DA SELEÇÃO BRASILEIRA
+========================================================= */
+(function () {
+
+  const SHIRTS = [
+      {
+      year: 1930, era: '1930-1950', img:"https://images.tcdn.com.br/img/img_prod/311840/camisa_brasil_1930_retro_branca_50832_1_20201130180836.jpg",
+        desc: 'Camisa branca com gola em V. O Brasil usava branco antes do amarelo se tornar padrão, após o trauma de 1950.', kit: 'away'
+      },
+      {
+        year: 1938, era: '1930-1950', img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC81mJb9ExZpDbD_AlrlNd7kzBzzrxrH7Law&s",
+        desc: 'Camisa branca com detalhes verdes. Copa da França — Brasil ficou em 3º lugar, com Leônidas artilheiro.', kit: 'away'
+      },
+      {
+        year: 1950, era: '1930-1950', img:"https://cdn.awsli.com.br/600x450/1166/1166432/produto/336955101/camiseta-branca-50_-gbop5hje9i.jpg",
+        desc: 'Camisa branca — o Brasil perdeu a final (Maracanazo) com essa camisa. Foi o trauma que levou à adoção do amarelo.', kit: 'away'
+      },
+      {
+        year: 1954, era: '1954-1965', img:"https://cdn.footballkitarchive.com/2024/05/27/Hy9QpKtqdXg3lNH-small.jpg",
+        desc: 'Primeira vez com amarelo! A nova camisa, desenhada pelo artista Aldyr Garcia Schlee, surge após o trauma de 1950.', kit: 'home'
+      },
+      {
+        year: 1958, era: '1954-1965', img:"https://cdn.footballkitarchive.com/2024/02/04/q8CU5QtTlEvVtwS-small.jpg",
+        desc: 'Com a camisa amarela, Pelé com 17 anos marca seu primeiro gol na Copa. Brasil bicampeão na Suécia.', kit: 'home'
+      },
+      {
+        year: 1962, era: '1954-1965', img:"https://cdn.awsli.com.br/600x450/1166/1166432/produto/44803145/0cdf8fae63.jpg",
+        desc: 'Brasil tricampeão no Chile. Garrincha assume o protagonismo após lesão de Pelé na fase de grupos.', kit: 'home'
+      },
+      {
+        year: 1966, era: '1954-1965', img:"https://http2.mlstatic.com/D_NQ_NP_698094-MLB96522843993_102025-O-camisa-seleco-brasileira-1966-retro-original-athleta.webp",
+        desc: 'Eliminação precoce na fase de grupos pela primeira vez. Pelé sofre muitas faltas e jura não jogar mais Copas.', kit: 'home'
+      },
+      {
+        year: 1970, era: '1970-1982', img:"https://http2.mlstatic.com/D_NQ_NP_2X_770749-MLB88871631525_072025-F-camisa-brasil-retr-1970-amarela-e-verde.webp",
+        desc: 'Camisa com gola V, considerada o melhor time da história. Pelé, Jairzinho, Tostão — tetracampeão! Número 10 icônico.', kit: 'home'
+      },
+      {
+        year: 1974, era: '1970-1982', img:"https://cdn.awsli.com.br/600x450/1166/1166432/produto/44803823/72d39125d8.jpg",
+        desc: 'Geração pós-1970, 4º lugar. Rivelino e Zico presentes. Camisa com gola V ajustada.', kit: 'home'
+      },
+      {
+        year: 1978, era: '1970-1982', img:"https://cdn.footballkitarchive.com/2023/04/18/AsfRjOAn7cjuLXE-small.jpg",
+        desc: 'Brasil fica em 3º lugar, invicto no torneio. Zico, Rivellino, Roberto Dinamite. Controverso 3x0 sobre Polônia.', kit: 'home'
+      },
+      {
+        year: 1982, era: '1970-1982', img:"https://cdn.footballkitarchive.com/2021/06/26/WFFHFdPLhVqxv0m-small.jpg",
+        desc: 'A camisa mais amada da história do Brasil! Listras verdes nas mangas. Seleção de Zico, Sócrates, Falcão — eliminada pela Itália de Rossi.', kit: 'home'
+      },
+      {
+        year: 1986, era: '1986-1994', img:"https://minasretro.com.br/wp-content/uploads/2023/04/brasil86.jpg",
+        desc: 'Listras verdes finas nas mangas. Eliminados pela França nos pênaltis. Zico perde o pênalti. Sócrates também.', kit: 'home'
+      },
+      {
+        year: 1990, era: '1986-1994',   img:"https://cdn.footballkitarchive.com/2025/03/17/ecTOq0HQAVe5e8L-small.jpg",
+        desc: 'Camisa com listras verdes nas mangas. Eliminados pela Argentina de Maradona no jogo que ficou famoso pelo gol de Caniggia.', kit: 'home'
+      },
+      {
+        year: 1994, era: '1986-1994',   img:"https://cdn.footballkitarchive.com/2025/03/17/KuuQXaQBGw0zmyI-small.jpg",
+        desc: 'Tetracampeão! Romário e Bebeto. Baggio perde o pênalti. Copa dos EUA. Camisa com detalhes verdes nas mangas e ombros.', kit: 'home'
+      },
+      {
+        year: 1998, era: '1998-2006',   img:"https://images.mantosdofutebol.com.br/wp-content/uploads/2014/06/Camisa-amarela-do-Brasil-1998-Nike.jpeg",
+        desc: 'Camisa com detalhe azul. Vice-campeão — Brasil perde a final para a França. Ronaldo joga doente — o episódio do desmaio.', kit: 'home'
+      },
+      {
+        year: 2002, era: '1998-2006',   img:"https://images.mantosdofutebol.com.br/wp-content/uploads/2014/06/Camisa-amarela-do-Brasil-2002-Nike.jpg",
+        desc: 'PENTACAMPEÃO! Ronaldo ressurge, marca 8 gols. Ronaldinho, Rivaldo. Camisa sem gola, com detalhe verde.', kit: 'home'
+      },
+      {
+        year: 2006, era: '1998-2006', img:"https://images.mantosdofutebol.com.br/wp-content/uploads/2014/06/Camisa-amarela-do-Brasil-2006-Nike.jpg",
+        desc: 'Eliminados pela França nas quartas. Ronaldo iguala o recorde de Gerd Müller. Camisa mais simples, sem detalhes.', kit: 'home'
+      },
+      {
+        year: 2010, era: '2010-2018', img:"https://images.mantosdofutebol.com.br/wp-content/uploads/2014/06/Camisa-amarela-do-Brasil-2010-Nike.jpg",
+        desc: 'Eliminados pela Holanda nas quartas. Robinho, Kaká. Camisa com ombros verdes e faixa central.', kit: 'home'
+      },
+      {
+        year: 2014, era: '2010-2018', img:"https://images.mantosdofutebol.com.br/wp-content/uploads/2014/06/Camisa-amarela-do-Brasil-2014-Nike.jpg",
+        desc: 'Eliminação dolorosa: 7x1 para a Alemanha. Neymar se machuca nas quartas. 4º lugar em casa. Camisa com faixas diagonais.', kit: 'home'
+      },
+      {
+        year: 2018, era: '2010-2018', img:"https://images.mantosdofutebol.com.br/wp-content/uploads/2014/06/Camisas-do-Brasil-2018-2019-Nike-1.jpg",
+        desc: 'Eliminados pela Bélgica nas quartas. Neymar lidera a equipe. Camisa com detalhes azuis e verde nas laterais.', kit: 'home'
+      },
+      {
+        year: 2022, era: '2022-2026', img:"https://cdn.footballkitarchive.com/2022/09/21/FkjC5ZbQXwT51px.jpg",
+        desc: 'Eliminados pela Croácia nas quartas (pênaltis). Neymar marca gol olímpico. Copa do Catar. Camisa com trama especial amarela e verde.', kit: 'home'
+      },
+      {
+        year: 2026, era: '2022-2026', img:"https://store.fifa.com/_next/image?url=https%3A%2F%2Flegends.broadleafcloud.com%2Fapi%2Fasset%2Fcontent%2FAURORA_IF7054-724_PHSFH001-1500.jpeg%3FcontextRequest%3D%257B%2522forceCatalogForFetch%2522%3Afalse%2C%2522forceFilterByCatalogIncludeInheritance%2522%3Afalse%2C%2522forceFilterByCatalogExcludeInheritance%2522%3Afalse%2C%2522applicationId%2522%3A%252201GPYEXET5B7Y61HW8TB4R0YWE%2522%2C%2522tenantId%2522%3A%2522FIFA%2522%257D&w=640&q=50",
+        desc: 'Copa do Mundo nos EUA, México e Canadá. Primeira Copa com 48 seleções. A busca pelo hexacampeonato.', kit: 'home'
+      },
+    ];
+
+  let selectedYear = 2026;
+
+  function renderShirts() {
+    const filterDiv = document.getElementById('shirt-filter');
+    const eras = [...new Set(SHIRTS.map(s => s.era))];
+
+    // BOTÃO TODAS
+    const allBtn = document.createElement('button');
+    allBtn.textContent = 'Todas';
+    allBtn.className = 'era-pill active';
+    allBtn.onclick = () => {
+      setActive(filterDiv, allBtn);
+      renderGrid(SHIRTS);
+    };
+    filterDiv.appendChild(allBtn);
+
+    // ERAS
+    eras.forEach(era => {
+      const btn = document.createElement('button');
+      btn.textContent = era;
+      btn.className = 'era-pill';
+
+      btn.onclick = () => {
+        setActive(filterDiv, btn);
+        renderGrid(SHIRTS.filter(s => s.era === era));
+      };
+
+      filterDiv.appendChild(btn);
+    });
+
+    renderGrid(SHIRTS);
+    showShirtDetail(SHIRTS.find(s => s.year === selectedYear));
+  }
+
+  function setActive(parent, el) {
+    parent.querySelectorAll('.era-pill').forEach(b => b.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  function renderGrid(shirts) {
+    const grid = document.getElementById('shirts-grid');
+    grid.innerHTML = '';
+
+    shirts.forEach(shirt => {
+      const card = document.createElement('div');
+      card.className = 'shirt-thumb' + (shirt.year === selectedYear ? ' shirt-selected' : '');
+
+      const img = document.createElement('img');
+      img.src = shirt.img
+      const year = document.createElement('div');
+      year.className = 'shirt-thumb-year';
+      year.textContent = shirt.year;
+
+      card.appendChild(img);
+      card.appendChild(year);
+
+      // //  HOVER (mostra detalhe)
+      // card.addEventListener('mouseenter', () => {
+      //   showShirtDetail(shirt);
+      // });
+
+      //  CLICK (fixa seleção)
+      card.addEventListener('click', () => {
+        selectedYear = shirt.year;
+
+        document.querySelectorAll('.shirt-thumb')
+          .forEach(c => c.classList.remove('shirt-selected'));
+
+        card.classList.add('shirt-selected');
+        showShirtDetail(shirt);
+      });
+
+      
+
+      grid.appendChild(card);
+    });
+  }
+
+  function showShirtDetail(shirt) {
+    const d = document.getElementById('shirt-detail');
+    d.innerHTML = '';
+
+    const img = document.createElement('img');
+    img.src = shirt.img;
+    img.style.width = '140px';
+    img.style.objectFit = 'contain';
+    img.style.flexShrink = '0';
+
+    const info = document.createElement('div');
+    info.style.flex = '1';
+
+    info.innerHTML = `
+      <div style="font-size:22px;font-weight:900;color:#009c3b;">
+        ${shirt.year}
+      </div>
+
+      <div style="font-size:12px;margin:10px 0;color:#666;">
+        🇧🇷 Seleção Brasileira
+      </div>
+
+      <div style="font-size:14px;color:#444;">
+        ${shirt.desc}
+      </div>
+    `;
+
+    d.appendChild(img);
+    d.appendChild(info);
+  }
+
+  document.addEventListener('DOMContentLoaded', renderShirts);
+
+})();
