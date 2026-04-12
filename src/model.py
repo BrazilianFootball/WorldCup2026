@@ -35,6 +35,9 @@ def load_and_prepare_data(
     if extra_data is not None:
         data = pd.concat([data, extra_data[COLUMNS]], ignore_index=True)
 
+    # Scheduled fixtures (e.g. future World Cup games) often have empty scores.
+    data = data.dropna(subset=["home_score", "away_score"])
+
     data["date"] = pd.to_datetime(data["date"])
     max_date = data["date"].max()
     weeks_ago = (max_date - data["date"]).dt.days / 7.0

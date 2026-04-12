@@ -1,8 +1,13 @@
 import shutil
+import sys
 from pathlib import Path
 
 import kagglehub
 import pandas as pd
+
+_REPO_ROOT = Path(__file__).resolve().parent.parent
+if str(_REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(_REPO_ROOT))
 
 from src.constants import DATA_DIR, DATASET_FILES, KAGGLE_DATASET
 
