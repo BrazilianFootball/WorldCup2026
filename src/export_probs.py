@@ -102,7 +102,7 @@ def build_prob_dataframe(
     """Compute probability matrices and return a flat DataFrame."""
     rows: list[dict] = []
     for home, away, group in matchups:
-        prob = wc.model.match_probs(home, away, neutral=True, max_goals=max_goals)
+        prob = wc.params.match_probs(home, away, neutral=True, max_goals=max_goals)
         for i in range(prob.shape[0]):
             for j in range(prob.shape[1]):
                 p = prob[i, j]
@@ -171,7 +171,7 @@ def main() -> None:
 
     print("Ajustando modelo...")
     model = build_model(min_date=args.min_date, extra_data=wc_df)
-    wc = WorldCup2026(model, seed=args.seed, known_results=known)
+    wc = WorldCup2026(model.fitted_parameters(), seed=args.seed, known_results=known)
 
     phase = detect_phase(known, wc.groups)
     label = PHASE_LABELS[phase]

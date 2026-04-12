@@ -181,15 +181,18 @@ def main() -> None:
         reg_lambda=args.reg_lambda,
         extra_data=wc_df,
     )
+    tournament_params = model.fitted_parameters()
     t_fit = time.time() - t0
-    print(f"  Modelo ajustado em {t_fit:.1f}s ({len(model.teams)} seleções)")
-    print(f"  Home effect (γ): {model.home_effect:.4f}")
-    print(f"  Rho (Dixon-Coles): {model.rho:.4f}")
+    print(
+        f"  Modelo ajustado em {t_fit:.1f}s ({len(tournament_params.teams)} seleções)"
+    )
+    print(f"  Home effect (γ): {tournament_params.home_effect:.4f}")
+    print(f"  Rho (Dixon-Coles): {tournament_params.rho:.4f}")
 
     print(f"\nSimulando {args.num_simulations:,} torneios...")
     t0 = time.time()
     wc = WorldCup2026(
-        model,
+        tournament_params,
         seed=args.seed,
         known_results=known,
         host_boost=args.host_boost,

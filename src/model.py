@@ -7,7 +7,6 @@ import pandas as pd
 from numpy.typing import NDArray
 from scipy.optimize import minimize
 from scipy.special import gammaln
-from scipy.stats import poisson
 
 from src.constants import (
     COLUMNS,
@@ -16,9 +15,10 @@ from src.constants import (
     DEFAULT_MIN_DATE,
     DEFAULT_REG_LAMBDA,
     DEFAULT_TOURNAMENT_WEIGHT,
-    MAX_GOALS,
     TOURNAMENT_WEIGHT,
 )
+from src.data_classes import TournamentModelParams
+from src.dixon_coles_base import BaseDixonColesMatchModel
 
 
 def load_and_prepare_data(
@@ -95,8 +95,8 @@ def load_and_prepare_data(
     return data, teams
 
 
-class DixonColesModel:
-    """Dixon-Coles model with separate attack/defense and regularization."""
+class DixonColesModel(BaseDixonColesMatchModel):
+    """Dixon-Coles model with separate attack/defense and regularization (MLE)."""
 
     def __init__(self, reg_lambda: float = DEFAULT_REG_LAMBDA) -> None:
         self.teams: list[str] = []
@@ -106,6 +106,12 @@ class DixonColesModel:
         self.rho: float = 0.0
         self.reg_lambda = reg_lambda
         self._fitted = False
+
+    def get_rho(self) -> float:
+        return float(self.rho)
+
+    def get_home_effect(self) -> float:
+        return float(self.home_effect)
 
     def fit(self, data: pd.DataFrame, teams: list[str]) -> None:
         self.teams = teams
@@ -236,83 +242,23 @@ class DixonColesModel:
         self.rho = float(res.x[-1])
         self._fitted = True
 
+    def fitted_parameters(self) -> TournamentModelParams:
+        """Snapshot of fitted parameters for tournament simulation."""
+        if not self._fitted:
+            raise RuntimeError("Call fit() before fitted_parameters().")
+        return TournamentModelParams(
+            teams=list(self.teams),
+            attack=np.asarray(self.attack, dtype=float).copy(),
+            defense=np.asarray(self.defense, dtype=float).copy(),
+            rho=float(self.rho),
+            home_effect=float(self.home_effect),
+        )
+
     def get_attack(self, team: str) -> float:
         return float(self.attack[self.teams.index(team)])
 
     def get_defense(self, team: str) -> float:
         return float(self.defense[self.teams.index(team)])
-
-    def get_strength(self, team: str) -> float:
-        """Overall strength (attack / defense). Higher is better."""
-        idx = self.teams.index(team)
-        return float(self.attack[idx] / self.defense[idx])
-
-    def match_probs(
-        self,
-        home: str,
-        away: str,
-        neutral: bool = True,
-        max_goals: int = MAX_GOALS,
-        lambda_scale: float = 1.0,
-        home_boost: float = 0.0,
-    ) -> NDArray[np.floating]:
-        """Return (max_goals+1) x (max_goals+1) score probability matrix.
-
-        home_boost: fraction of home_effect to apply (0 = neutral, 1 = full).
-        Ignored when neutral=False (uses full home_effect).
-        """
-        att_h = self.get_attack(home)
-        def_h = self.get_defense(home)
-        att_a = self.get_attack(away)
-        def_a = self.get_defense(away)
-
-        gamma = 1.0
-        if not neutral:
-            gamma = self.home_effect
-        elif home_boost > 0:
-            gamma = 1.0 + (self.home_effect - 1.0) * home_boost
-
-        hl = att_h * def_a * gamma * lambda_scale
-        al = att_a * def_h * lambda_scale
-        goals = np.arange(max_goals + 1)
-        prob = np.outer(poisson.pmf(goals, hl), poisson.pmf(goals, al))
-
-        prob[0, 0] *= 1 - hl * al * self.rho
-        prob[1, 0] *= 1 + al * self.rho
-        prob[0, 1] *= 1 + hl * self.rho
-        prob[1, 1] *= 1 - self.rho
-        prob /= prob.sum()
-        return prob
-
-    def simulate_match(
-        self,
-        home: str,
-        away: str,
-        neutral: bool = True,
-        home_boost: float = 0.0,
-        rng: np.random.Generator | None = None,
-    ) -> tuple[int, int]:
-        """Simulate a single match, returning (home_goals, away_goals)."""
-        if rng is None:
-            rng = np.random.default_rng()
-        prob = self.match_probs(home, away, neutral=neutral, home_boost=home_boost)
-        mg = prob.shape[0]
-        idx = rng.choice(mg * mg, p=prob.ravel())
-        return int(idx // mg), int(idx % mg)
-
-    def win_draw_loss(
-        self,
-        home: str,
-        away: str,
-        neutral: bool = True,
-        home_boost: float = 0.0,
-    ) -> tuple[float, float, float]:
-        """Return (home_win_prob, draw_prob, away_win_prob)."""
-        prob = self.match_probs(home, away, neutral=neutral, home_boost=home_boost)
-        hw = float(np.tril(prob, k=-1).sum())
-        d = float(np.trace(prob))
-        aw = float(np.triu(prob, k=1).sum())
-        return hw, d, aw
 
 
 def build_model(
