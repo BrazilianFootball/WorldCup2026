@@ -22,11 +22,11 @@ local:
 	@echo "Done. Activate: source .venv/bin/activate  or use: uv run <command>"
 
 check:
-	uv run ruff check src/
+	uv run ruff check src/ notebooks/
 	uv run mypy src/
 
 format:
-	uv run ruff format src/
+	uv run ruff format src/ notebooks/
 
 test:
 	uv run pre-commit run --all-files
