@@ -420,7 +420,7 @@ document.addEventListener('DOMContentLoaded', () => {
 (function () {
 
   const BALLS = [
-    { year: 2026, name: "Puma Orbita", img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwUzNeEWNxQK4z3-HmKJEV-qpFXfkgXymzow&s", panels: "orbita", desc: "Bola oficial com estrutura esférica aprimorada e 20 painéis irregulares. Copa dos EUA, México e Canadá — primeiro torneio com 48 seleções.", host: "EUA/CAN/MEX" },
+    { year: 2026, name: "Trionda Pro", img:"images/wc-ball-trionda-2026.png", panels: "orbita",desc: "Bola oficial da Copa do Mundo da FIFA 2026. O seu nome e design são inspirados na famosa 'ola' das arquibancadas e na união dos três países-sede: Estados Unidos, México e Canadá. Primeiro Mundial com 48 seleções.", host: "EUA/CAN/MEX" },
     { year: 2022, name: "Al Rihla", img:"https://digitalhub.fifa.com/transform/ce00eb6b-cee2-49df-aeaa-10d4a2e41316/FIFA-World-Cup-Qatar-2022-official-match-ball-Al-Rihla?&io=transform:fill,width:1024&quality=75", panels: "alrihla", desc: "20 painéis de diferentes formatos. Mais rápida da história em voo. Inspirada em barcos e arquitetura do Catar. Argentina tricampeã.", host: "Catar" },
     { year: 2018, name: "Telstar 18",img:"https://digitalhub.fifa.com/transform/07487a6b-1bd8-4850-8c99-239c8de73c65/2018-FIFA-World-Cup-Russia-official-match-ball-Telstar-18?&io=transform:fill,width:1024&quality=75",  panels: "telstar18", desc: "Homenagem ao Telstar original de 1970 com design de pixels digitais em P&B. Primeira bola com chip NFC. França bicampeã.", host: "Rússia" },
     { year: 2014, name: "Brazuca", img:"https://digitalhub.fifa.com/transform/f3c744d4-b4c0-403d-a461-6fc9fba7f494/2014-FIFA-World-Cup-Brazil-official-match-ball-Brazuca?&io=transform:fill,width:1024&quality=75",   panels: "brazuca", desc: "6 painéis em forma de hélice, a bola mais testada da história (600 pessoas, 3 anos de testes). Cores do Brasil. Alemanha e campeã.", host: "Brasil" },
@@ -438,7 +438,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { year: 1966, name: "Challenge 4-Star", img:"https://digitalhub.fifa.com/transform/0e323528-f3e2-4888-8ea0-9aebba14d08a/1966-FIFA-World-Cup-official-match-ball-Challenge-4-Star?&io=transform:fill,width:1024&quality=75",panels: "classic", desc: "Única bola vermelha-alaranjada da história da Copa. Copa da Inglaterra, onde o país-sede venceu o único título.", host: "Inglaterra" },
     { year: 1962, name: "Crack", img:"https://digitalhub.fifa.com/transform/9cc7554d-17bd-47f5-8cc3-aac62a4b1c80/1962-FIFA-World-Cup-Chile-official-match-ball-Crack?&io=transform:fill,width:1024&quality=75",panels: "classic", desc: "Bola amarela-dourada, produzida no Chile. A Copa foi marcada pela falta de Pelé lesionado, e pelo Brasil bicampeão.", host: "Chile" },
     { year: 1958, name: "Top Star", img:"https://digitalhub.fifa.com/transform/208d1c9d-5934-4e30-95ce-ea8ad962d05c/1958-FIFA-World-Cup-Sweden-official-match-ball-Top-Star?&io=transform:fill,width:1024&quality=75", panels: "classic", desc: "Bola dourada amarela, muito mais consistente em forma. Copa da Suécia, onde Pelé brilhou com 17 anos.", host: "Suécia" },
-    { year: 1954, name: "Swiss WC", img:"https://images.fastcompany.com/image/upload/fc/3032101-inline-s-swissworldchampion-1954.jpg",panels: "classic", desc: "Bola dourada brilhante, a mais redonda até então. Introduziu painéis hexagonais mais regulares, usada na Copa da Suíça.", host: "Suíça" },
+    { year: 1954, name: "Swiss WC", img:"images/wc-ball-swiss_world_champion-1954.png",panels: "classic", desc: "Bola dourada brilhante, a mais redonda até então. Introduziu painéis hexagonais mais regulares, usada na Copa da Suíça.", host: "Suíça" },
     { year: 1950, name: "Super Duplo T", img:"https://digitalhub.fifa.com/transform/9bfc026e-7c07-434c-80e3-f4602369b726/1950-FIFA-World-Cup-Brazil-match-ball-Duplo-T?&io=transform:fill,width:1024&quality=75",panels: "leather", desc: "Bola usada na Copa do Mundo no Brasil, com painéis de couro mais claros. Famosa pelo 'Maracanazo' - derrota do Brasil para o Uruguai.", host: "Brasil" },
     { year: 1938, name: "Allen", img:"https://digitalhub.fifa.com/transform/23ca6174-13b7-4fc2-8178-bd5d268a6f14/1938-FIFA-World-Cup-Italy-Allen-official-match-ball?&io=transform:fill,width:1024&quality=75",  panels: "leather", desc: "Primeira bola a ter uma câmara de ar de borracha. Painéis de couro dourado escuro, usada na Copa da França.", host: "França" },
     { year: 1934, name: "Federale 102", img:"https://digitalhub.fifa.com/transform/15101f27-81d2-48b2-a1ca-0f42f58bf7e9/1934-FIFA-World-Cup-Italy-Federale-102-match-ball?&io=transform:fill,width:1024&quality=75", panels: "leather", desc: "Bola italiana de couro marrom-alaranjado, mais redonda que a de 1930, com 13 painéis costurados manualmente.", host: "Itália" },
@@ -557,7 +557,7 @@ document.addEventListener('DOMContentLoaded', () => {
         desc: 'Camisa branca com detalhes verdes. Copa da França — Brasil ficou em 3º lugar, com Leônidas artilheiro.', kit: 'away'
       },
       {
-        year: 1950, era: '1930-1950', img:"https://cdn.awsli.com.br/600x450/1166/1166432/produto/336955101/camiseta-branca-50_-gbop5hje9i.jpg",
+        year: 1950, era: '1930-1950', img:"https://cdn.awsli.com.br/1166/1166432/produto/44805095/b5d11169b2.jpg",
         desc: 'Camisa branca — o Brasil perdeu a final (Maracanazo) com essa camisa. Foi o trauma que levou à adoção do amarelo.', kit: 'away'
       },
       {
@@ -585,11 +585,11 @@ document.addEventListener('DOMContentLoaded', () => {
         desc: 'Geração pós-1970, 4º lugar. Rivelino e Zico presentes. Camisa com gola V ajustada.', kit: 'home'
       },
       {
-        year: 1978, era: '1970-1982', img:"https://cdn.footballkitarchive.com/2023/04/18/AsfRjOAn7cjuLXE-small.jpg",
+        year: 1978, era: '1970-1982', img:"images/shirts/wc-shirt-1978.png",
         desc: 'Brasil fica em 3º lugar, invicto no torneio. Zico, Rivellino, Roberto Dinamite. Controverso 3x0 sobre Polônia.', kit: 'home'
       },
       {
-        year: 1982, era: '1970-1982', img:"https://cdn.footballkitarchive.com/2021/06/26/WFFHFdPLhVqxv0m-small.jpg",
+        year: 1982, era: '1970-1982', img:"images/shirts/wc-shirt-1982.png",
         desc: 'A camisa mais amada da história do Brasil! Listras verdes nas mangas. Seleção de Zico, Sócrates, Falcão — eliminada pela Itália de Rossi.', kit: 'home'
       },
       {
@@ -597,39 +597,39 @@ document.addEventListener('DOMContentLoaded', () => {
         desc: 'Listras verdes finas nas mangas. Eliminados pela França nos pênaltis. Zico perde o pênalti. Sócrates também.', kit: 'home'
       },
       {
-        year: 1990, era: '1986-1994',   img:"https://cdn.footballkitarchive.com/2025/03/17/ecTOq0HQAVe5e8L-small.jpg",
+        year: 1990, era: '1986-1994',   img:"images/shirts/wc-shirt-1990.png",
         desc: 'Camisa com listras verdes nas mangas. Eliminados pela Argentina de Maradona no jogo que ficou famoso pelo gol de Caniggia.', kit: 'home'
       },
       {
-        year: 1994, era: '1986-1994',   img:"https://cdn.footballkitarchive.com/2025/03/17/KuuQXaQBGw0zmyI-small.jpg",
+        year: 1994, era: '1986-1994',   img:"images/shirts/wc-shirt-1994.png",
         desc: 'Tetracampeão! Romário e Bebeto. Baggio perde o pênalti. Copa dos EUA. Camisa com detalhes verdes nas mangas e ombros.', kit: 'home'
       },
       {
-        year: 1998, era: '1998-2006',   img:"https://images.mantosdofutebol.com.br/wp-content/uploads/2014/06/Camisa-amarela-do-Brasil-1998-Nike.jpeg",
+        year: 1998, era: '1998-2006',   img:"images/shirts/wc-shirt-1998.png",
         desc: 'Camisa com detalhe azul. Vice-campeão — Brasil perde a final para a França. Ronaldo joga doente — o episódio do desmaio.', kit: 'home'
       },
       {
-        year: 2002, era: '1998-2006',   img:"https://images.mantosdofutebol.com.br/wp-content/uploads/2014/06/Camisa-amarela-do-Brasil-2002-Nike.jpg",
+        year: 2002, era: '1998-2006',   img:"images/shirts/wc-shirt-2002.png",
         desc: 'PENTACAMPEÃO! Ronaldo ressurge, marca 8 gols. Ronaldinho, Rivaldo. Camisa sem gola, com detalhe verde.', kit: 'home'
       },
       {
-        year: 2006, era: '1998-2006', img:"https://images.mantosdofutebol.com.br/wp-content/uploads/2014/06/Camisa-amarela-do-Brasil-2006-Nike.jpg",
+        year: 2006, era: '1998-2006', img:"images/shirts/wc-shirt-2006.png",
         desc: 'Eliminados pela França nas quartas. Ronaldo iguala o recorde de Gerd Müller. Camisa mais simples, sem detalhes.', kit: 'home'
       },
       {
-        year: 2010, era: '2010-2018', img:"https://images.mantosdofutebol.com.br/wp-content/uploads/2014/06/Camisa-amarela-do-Brasil-2010-Nike.jpg",
+        year: 2010, era: '2010-2018', img:"images/shirts/wc-shirt-2010.png",
         desc: 'Eliminados pela Holanda nas quartas. Robinho, Kaká. Camisa com ombros verdes e faixa central.', kit: 'home'
       },
       {
-        year: 2014, era: '2010-2018', img:"https://images.mantosdofutebol.com.br/wp-content/uploads/2014/06/Camisa-amarela-do-Brasil-2014-Nike.jpg",
+        year: 2014, era: '2010-2018', img:"images/shirts/wc-shirt-2014.png",
         desc: 'Eliminação dolorosa: 7x1 para a Alemanha. Neymar se machuca nas quartas. 4º lugar em casa. Camisa com faixas diagonais.', kit: 'home'
       },
       {
-        year: 2018, era: '2010-2018', img:"https://images.mantosdofutebol.com.br/wp-content/uploads/2014/06/Camisas-do-Brasil-2018-2019-Nike-1.jpg",
+        year: 2018, era: '2010-2018', img:"images/shirts/wc-shirt-2018.png",
         desc: 'Eliminados pela Bélgica nas quartas. Neymar lidera a equipe. Camisa com detalhes azuis e verde nas laterais.', kit: 'home'
       },
       {
-        year: 2022, era: '2022-2026', img:"https://cdn.footballkitarchive.com/2022/09/21/FkjC5ZbQXwT51px.jpg",
+        year: 2022, era: '2022-2026', img:"images/shirts/wc-shirt-2022.png",
         desc: 'Eliminados pela Croácia nas quartas (pênaltis). Neymar marca gol olímpico. Copa do Catar. Camisa com trama especial amarela e verde.', kit: 'home'
       },
       {
@@ -640,9 +640,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let selectedYear = 2026;
 
+  const SHIRTS_DESC = [...SHIRTS].sort((a, b) => b.year - a.year);
+
   function renderShirts() {
     const filterDiv = document.getElementById('shirt-filter');
-    const eras = [...new Set(SHIRTS.map(s => s.era))];
+    const eras = [...new Set(SHIRTS_DESC.map(s => s.era))];
 
     // BOTÃO TODAS
     const allBtn = document.createElement('button');
@@ -650,7 +652,7 @@ document.addEventListener('DOMContentLoaded', () => {
     allBtn.className = 'era-pill active';
     allBtn.onclick = () => {
       setActive(filterDiv, allBtn);
-      renderGrid(SHIRTS);
+      renderGrid(SHIRTS_DESC);
     };
     filterDiv.appendChild(allBtn);
 
@@ -668,8 +670,8 @@ document.addEventListener('DOMContentLoaded', () => {
       filterDiv.appendChild(btn);
     });
 
-    renderGrid(SHIRTS);
-    showShirtDetail(SHIRTS.find(s => s.year === selectedYear));
+    renderGrid(SHIRTS_DESC);
+    showShirtDetail(SHIRTS_DESC.find(s => s.year === selectedYear));
   }
 
   function setActive(parent, el) {
