@@ -1,0 +1,1829 @@
+<!ATUALIZADO EM: 18/11/2022>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>      
+        <link rel="shortcut icon" href="images/favicon.ico">
+        <link rel="stylesheet" href="css/styles.css" type="text/css">
+        <script src="js/jquery-3.2.1.min.js"></script> 
+        <script src="js/scripts.js"></script> 
+        <title>EMAp: Copa do mundo</title>
+        <style>
+
+        .page-analises #conteudo {
+        flex: 1;
+        width: 100% !important; 
+        max-width: 1000px;
+        margin: 0; 
+        }
+       
+
+
+        .page-analises #barra-lateral-direita {
+        width: 180px;       
+        flex-shrink: 0;
+        font-size: 10px;  
+        }
+
+       
+
+        .page-analises .dash {
+        width: 100%;
+        margin: 0;
+        }
+        </style>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119803899-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-119803899-1');
+        </script>
+    </head>
+
+    <body class="page">
+        <!-- Início do cabeçalho-->
+        <div class="page">   
+            <header>
+                <div class="container-header">
+                    <div class="logo">
+                        <img src="images/logo.png" />
+                    </div>
+
+                    <nav class="menu">
+                        <ul>
+                            <li> <a href="index.html">Início</a></li>
+                            <li><a href="modelos.html">Modelos</a></li>
+                            <li class="active"><a href="previsoes.html">Previsões</a></li>
+                            <li><a href="chances.html">Chances</a></li>
+                            <li><a href="vis.html">Retrospectiva</a></li>
+                            <li><a href="analises.html">Análises</a></li>
+                            <li><a href="equipe.html">Equipe</a></li>
+			                <!-- <li><a href="na_midia.html">Na Mídia</a></li> -->
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            <!--Final do cabeçalho-->
+
+            <!-- Banner das páginas -->
+            <div class="banner-cabecalho" style="background:url('images/banner-background.svg')no-repeat center center / cover">
+                <div class="texto-banner">Previsões</div>
+            </div>
+            <!--Fim do banner das páginas-->
+            <!-- Conteudo principal -->
+            <div class="container"> 
+                <div id="conteudo">
+                    <style>
+
+                        /* ── RESET (escopado ao dashboard) ── */
+                        .dash *, .dash *::before, .dash *::after {
+                        box-sizing: border-box;
+                        margin: 0;
+                        padding: 0;
+                        }
+
+                        /* ── DESIGN TOKENS ── */
+                        :root {
+                        /* Blues */
+                        --navy:  #0b1f3a;
+                        --navy2: #f7fbff;
+                        --navy3: #1f4e8c;
+                        --navy4: #3aa0ff;
+                        --blue5: #00e0ff;
+
+                        /* Neon accents */
+                        --neon-blue: #00d4ff;
+                        --neon-glow: rgba(0, 212, 255, .35);
+
+                        /* Gold — champion theme */
+                        --gold:      #c9a227;
+                        --gold2:     #f0c840;
+                        --gold3:     #fff3b0;
+                        --gold-glow: rgba(240, 200, 64, .45);
+
+                        /* Text */
+                        --white: #ffffff;
+                        --slate: #dbe7f5;
+                        --muted: #6b8bab;
+                        --faint: #9fb6cc;
+
+                        /* UI surfaces */
+                        --border:  #d6e4f2;
+                        --border2: #ffffff;
+                        --card:    #ffffff;
+                        --card2:   #fffaf0;
+
+                        /* State backgrounds */
+                        --won-bg: linear-gradient(90deg, #1f4e8c, #3aa0ff);
+                        --hl-bg:  rgb(255, 255, 255);
+
+                        /* Border radii */
+                        --r5: 6px;
+                        --r8: 10px;
+                        }
+
+                        /* ── TIPOGRAFIA DO DASHBOARD ── */
+                        .dash {
+                        font-family: 'Lato', sans-serif;
+                        font-size: 13px;
+                        }
+
+                        /* ── DASHBOARD WRAPPER ── */
+
+                        .dash {
+                        width: 100%;        /* ocupa todo espaço disponível */
+                        max-width: none;    /* REMOVE o limite de 1080px */
+                        margin: 0;          /* remove centralização */
+                        }
+
+
+
+                        /* ════════════════════════════════════════
+                        HEADER
+                        ════════════════════════════════════════ */
+                        .dh {
+                        background: #0f3c68;
+                        padding: 13px 20px 0;
+                        border-bottom: 3px solid #f0c040;
+                        }
+
+                        .dh-top {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        padding-bottom: 11px;
+                        }
+
+                        .dh-icon { font-size: 20px; }
+
+                        .dh-ti {
+                        font-size: 14.5px;
+                        font-weight: 900;
+                        color: #ffffff;
+                        letter-spacing: .3px;
+                        }
+
+                        .dh-su {
+                        font-size: 9px;
+                        color: #aac4d8;
+                        letter-spacing: 1.2px;
+                        text-transform: uppercase;
+                        margin-top: 1px;
+                        }
+
+                        /* Badge — projected champion */
+                        .dh-badge {
+                        margin-left: auto;
+                        background: rgba(255, 255, 255, 0.1);
+                        border: 1px solid rgba(255, 255, 255, 0.2);
+                        border-radius: 5px;
+                        padding: 5px 11px;
+                        text-align: right;
+                        }
+
+                        .dh-bl {
+                        font-size: 7.5px;
+                        color: #f0c040;
+                        letter-spacing: 2px;
+                        text-transform: uppercase;
+                        }
+
+                        .dh-bv {
+                        font-size: 13px;
+                        font-weight: 700;
+                        color: #ffffff;
+                        }
+
+                        /* ── TABS ── */
+                        .tabs {
+                        display: flex;
+                        gap: 2px;
+                        padding-top: 3px;
+                        }
+
+                        .tab {
+                        font-family: inherit;
+                        font-size: 10.5px;
+                        font-weight: 700;
+                        letter-spacing: 1px;
+                        text-transform: uppercase;
+                        padding: 8px 18px;
+                        background: none;
+                        border: none;
+                        color: #aac4d8;
+                        cursor: pointer;
+                        border-radius: 5px 5px 0 0;
+                        transition: all .14s;
+                        position: relative;
+                        top: 1px;
+                        }
+
+                        .tab:hover {
+                        color: #ffffff;
+                        background: rgba(255, 255, 255, 0.1);
+                        }
+
+                        .tab.active {
+                        background: #ffffff;
+                        color: #0f3c68;
+                        box-shadow: 0 -2px 0 #f0c040;
+                        }
+
+
+                        /* ════════════════════════════════════════
+                        PANELS
+                        ════════════════════════════════════════ */
+                        .panel        { display: none; }
+                        .panel.active { display: block; }
+
+
+                        /* ════════════════════════════════════════
+                        PATH PANEL (champion journey cards)
+                        ════════════════════════════════════════ */
+                        #bk-pathPanel {
+                        margin-top: 18px;
+                        border-top: 1.5px solid var(--border);
+                        padding-top: 16px;
+                        }
+
+                        #bk-pathTitle {
+                        font-size: 10px;
+                        font-weight: 700;
+                        letter-spacing: 2.5px;
+                        text-transform: uppercase;
+                        color: var(--muted);
+                        margin-bottom: 14px;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        }
+
+                        /* Decorative horizontal rule inside the title */
+                        #bk-pathTitle span {
+                        flex: 1;
+                        height: 1px;
+                        background: var(--border);
+                        display: block;
+                        }
+
+                        #bk-pathCards {
+                        display: flex;
+                        gap: 8px;
+                        flex-wrap: wrap;
+                        align-items: stretch;
+                        }
+
+                        /* Individual round card */
+                        .pc {
+                        background: var(--card);
+                        border: 1px solid var(--border);
+                        border-radius: var(--r8);
+                        padding: 11px 13px;
+                        min-width: 130px;
+                        flex: 1;
+                        max-width: 175px;
+                        transition: border-color .15s;
+                        position: relative;
+                        overflow: hidden;
+                        }
+
+                        /* Colored top stripe per round */
+                        .pc::before {
+                        content: '';
+                        position: absolute;
+                        top: 0; left: 0; right: 0;
+                        height: 2.5px;
+                        }
+
+                        .pc.r32::before { background: #0670c7; }
+                        .pc.r16::before { background: #0514e6; }
+                        .pc.qf::before  { background: #0736f1; }
+                        .pc.sf::before  { background: #0a1af4; }
+                        .pc.fin::before { background: linear-gradient(90deg, var(--gold), var(--gold3)); }
+
+                        /* Final card gets gold treatment */
+                        .pc.fin {
+                        border-color: rgba(252, 220, 92, 0.982);
+                        background: linear-gradient(135deg, var(--card2), rgb(255, 248, 233));
+                        }
+
+                        .pc-rnd {
+                        font-size: 8px;
+                        font-weight: 700;
+                        letter-spacing: 2px;
+                        text-transform: uppercase;
+                        color: var(--muted);
+                        margin-bottom: 9px;
+                        }
+
+                        .pc-w  { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+                        .pc-wf { font-size: 15px; line-height: 1; }
+                        .pc-wn { font-size: 12px; font-weight: 700; color: var(--white); flex: 1; line-height: 1.2; }
+                        .pc-ws { font-size: 17px; font-weight: 800; color: var(--gold); line-height: 1; }
+
+                        .pc.fin .pc-ws { color: var(--gold); font-size: 19px; }
+                        .pc.fin .pc-wn { color: var(--gold2); }
+
+                        .pc-sep { height: 1px; background: var(--border); margin: 5px 0; }
+
+                        .pc-l  { display: flex; align-items: center; gap: 6px; }
+                        .pc-lf { font-size: 12px; line-height: 1; opacity: .45; }
+                        .pc-ln { font-size: 11px; color: var(--muted); flex: 1; }
+                        .pc-ls { font-size: 13px; font-weight: 700; color: var(--faint); line-height: 1; }
+
+                        .pc-city {
+                        display: inline-flex;
+                        align-items: center;
+                        margin-top: 6px;
+                        font-size: 7.5px;
+                        font-weight: 700;
+                        letter-spacing: 1px;
+                        text-transform: uppercase;
+                        color: var(--faint);
+                        background: rgba(255, 255, 255, .04);
+                        border: 1px solid var(--border2);
+                        padding: 2px 6px;
+                        border-radius: 3px;
+                        }
+
+                        .pc-empty {
+                        font-size: 11px;
+                        color: var(--faint);
+                        font-style: italic;
+                        padding: 6px 0;
+                        }
+
+
+                        /* ════════════════════════════════════════
+                        BRACKET
+                        ════════════════════════════════════════ */
+                        #panel-bracket { background: #ffffff; padding: 14px 10px; overflow-x: auto; }
+
+                        /* Disclaimer bar */
+                        .disc {
+                        font-size: 9px;
+                        color: #2a4a60;
+                        padding: 6px 10px;
+                        background: rgba(0, 0, 0, .2);
+                        border-left: 2px solid #1a3a52;
+                        border-radius: 0 3px 3px 0;
+                        margin-bottom: 12px;
+                        line-height: 1.6;
+                        }
+
+                        .disc b { color: #3a5a72; }
+
+                        /* Bracket outer wrapper — positions the SVG overlay */
+                        .bk-wrap {
+                        position: relative;
+                        display: flex;
+                        align-items: stretch;
+                        width: 100%;
+                        min-width: 980px;
+                        }
+
+                        /* SVG connector lines rendered behind the cards */
+                        #bsv {
+                        position: absolute;
+                        top: 0; left: 0;
+                        pointer-events: none;
+                        overflow: visible;
+                        z-index: 0;
+                        }
+
+                        /* Left / right bracket halves */
+                        .half { display: flex; flex: 1; min-width: 240px; } /* era 280px */
+                        .lh   { flex-direction: row; }
+                        .rh   { flex-direction: row-reverse; }
+
+                        /* Column of match cards per round */
+                        .rc {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        flex: 1;
+                        min-width: 60px;    /* era 65px */
+                        padding: 18px 0 0;
+                        position: relative;
+                        }
+
+                        /* Round label above each column */
+                        .rc::before {
+                        content: attr(data-l);
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        font-size: 6.5px;
+                        font-weight: 700;
+                        letter-spacing: 2px;
+                        text-transform: uppercase;
+                        color: #1e3a52;
+                        white-space: nowrap;
+                        }
+
+                        /* ── MATCH CARD ── */
+                        .mc {
+                        background: #ffffff;
+                        border: 1.5px solid #e2e2e2;
+                        border-radius: 6px;
+                        margin: 3px 4px;    /* era 3px 6px — reduzido para ganhar espaço horizontal */
+                        overflow: hidden;
+                        transition: all .18s;
+                        position: relative;
+                        }
+
+                        /* Cards that involve the projected champion get a gold border */
+                        .mc.cp {
+                        border-color: #fbc811;
+                        box-shadow: 0 1px 8px rgba(250, 208, 0, 0.25);
+                        }
+
+                        /* Highlighted card (hovered team's matches) */
+                        .mc.lit {
+                        border-color: #ffee03 !important;
+                        box-shadow: 0 2px 14px rgba(255, 225, 0, 0.25);
+                        }
+
+                        /* Dimmed card (not in hovered team's path) */
+                        .mc.dim {
+                        opacity: .25;
+                        filter: grayscale(60%);
+                        }
+
+                        /* ── TEAM ROW ── */
+                        .tr {
+                        display: flex;
+                        align-items: center;
+                        gap: 3px;           /* era 4px */
+                        padding: 4px 4px;   /* era 4px 5px */
+                        border-bottom: 1px solid #162c42;
+                        transition: background .1s;
+                        }
+
+                        .tr:last-of-type { border-bottom: none; }
+
+                        /* Winning team row */
+                        .tr.won { background: #1a5276; }
+
+                        /* Row highlighted when its team is hovered */
+                        .tr.hl                { background: rgba(240, 192, 40, .2) !important; }
+                        .tr.hl .tn            { color: #082480fc !important; font-weight: 700 !important; }
+                        .tr.hl .tp            { color: #0b0781 !important; }
+
+                        /* Right-half rows are mirrored (prob | name | flag) */
+                        .rh .tr { flex-direction: row-reverse; }
+
+                        /* Win probability percentage */
+                        .tp {
+                        font-size: 8px;     /* era 8.5px */
+                        font-weight: 700;
+                        min-width: 22px;    /* era 24px */
+                        color: #1e3a52;
+                        letter-spacing: .2px;
+                        flex-shrink: 0;
+                        }
+
+                        .lh .tp      { text-align: right; }
+                        .rh .tp      { text-align: left; }
+                        .tr.won .tp  { color: #f6d608; }
+
+                        /* Flag emoji */
+                        .tf { font-size: 11px; line-height: 1; flex-shrink: 0; } /* era 12px */
+
+                        /* Team name */
+                        .tn {
+                        font-size: 9px;
+                        font-weight: 500;
+                        flex: 1;
+                        min-width: 0;
+                        color: #6a8aaa;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        }
+
+                        .rh .tn      { text-align: right; }
+                        .tr.won .tn  { color: #ffffff; font-weight: 700; }
+
+                        /* ── FINAL (center column) ── */
+                        #fc, .fc {
+                        border: none !important;
+                        outline: none !important;
+                        box-shadow: none !important;
+                        }
+
+                        .fc {
+                        width: 130px;       /* era 136px */
+                        flex-shrink: 0;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 7px;
+                        padding: 18px 2px 4px;
+                        }
+
+                        .fc-lbl {
+                        font-size: 6.5px;
+                        font-weight: 700;
+                        letter-spacing: 2px;
+                        text-transform: uppercase;
+                        color: #a67c00;
+                        text-align: center;
+                        }
+
+                        /* Final match card */
+                        .fmc {
+                        border: 1.5px solid #c9940a;
+                        border-radius: 4px;
+                        overflow: hidden;
+                        background: #fffdf5;
+                        width: 126px;       /* era 132px */
+                        transition: opacity .18s, filter .18s;
+                        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+                        }
+
+                        .fmc .tn { font-size: 9.5px; color: #1a1a1a; font-weight: 700; }
+                        .fmc .tp { min-width: 26px; font-size: 9px; color: #c9940a; font-weight: 800; }
+                        .fmc .tr { padding: 5px 6px; border-bottom: 1px solid #f2ece0; }
+                        .fmc .tr:last-child { border-bottom: none; }
+
+                        /* Champion summary box below the final card */
+                        .champ {
+                        background: linear-gradient(140deg, #150e00, #0d0a00);
+                        border: 1px solid rgba(201, 148, 10, .35);
+                        border-radius: 7px;
+                        padding: 11px 8px;
+                        text-align: center;
+                        width: 100%;
+                        }
+
+                        .champ-f { font-size: 24px; line-height: 1; margin: 3px 0 2px; }
+                        .champ-n { font-size: 12px; font-weight: 900; color: #d4aa30; letter-spacing: .3px; }
+                        .champ-l { font-size: 6.5px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #6a4a10; margin-top: 2px; }
+                        .champ-p { font-size: 9px; color: #f2c512; margin-top: 3px; }
+
+                        /* ── BRACKET LEGEND ── */
+                        .bk-leg {
+                        display: flex;
+                        gap: 14px;
+                        margin-top: 10px;
+                        flex-wrap: wrap;
+                        padding-top: 8px;
+                        border-top: 1px solid #162c42;
+                        }
+
+                        .bk-li  { display: flex; align-items: center; gap: 5px; font-size: 8.5px; color: #1e3a52; }
+                        .bk-ln  { width: 16px; height: 2px; border-radius: 1px; }
+                        .bk-ln.g  { background: #c9940a; }
+                        .bk-ln.gr { background: #162c4242; }
+                        .bk-hint  { margin-left: auto; font-size: 8px; color: #1e3a52; font-style: italic; }
+
+                        /* SVG path transition */
+                        #bsv path { transition: all .25s ease; }
+
+                        /* Champion path highlight class (applied via JS) */
+                        .champion-line {
+                        stroke: #f0c040 !important;
+                        stroke-width: 3 !important;
+                        opacity: 1 !important;
+                        }
+
+
+                        /* ════════════════════════════════════════
+                        GROUP STAGE PANEL
+                        ════════════════════════════════════════ */
+                        #panel-groups {
+                        padding: 20px;
+                        background: #ffffff;
+                        }
+
+                        /* Responsive 3-column grid */
+                        .g-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+                        @media (max-width: 900px) { .g-grid { grid-template-columns: repeat(2, 1fr); } }
+                        @media (max-width: 600px) { .g-grid { grid-template-columns: 1fr; } }
+
+                        /* Group card */
+                        .g-card {
+                        background: #fff;
+                        border-radius: 10px;
+                        border: 1px solid #e1e7ef;
+                        overflow: hidden;
+                        box-shadow: 0 4px 12px rgba(0, 0, 0, .05);
+                        transition: .2s;
+                        }
+
+                        .g-card:hover {
+                        transform: translateY(-2px);
+                        box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+                        }
+
+                        /* Group card header */
+                        .g-head {
+                        background: linear-gradient(90deg, #0f3c68, #1f6fb2);
+                        color: #fff;
+                        padding: 10px 12px;
+                        font-size: 11px;
+                        font-weight: 800;
+                        letter-spacing: 1.5px;
+                        display: flex;
+                        justify-content: space-between;
+                        }
+
+                        .g-head span { font-size: 9px; opacity: .7; }
+
+                        .g-note {
+                        font-size: 10px;
+                        color: #6a8aaa;
+                        margin-bottom: 14px;
+                        line-height: 1.6;
+                        }
+
+                        /* Team row inside a group card */
+                        .g-team {
+                        padding: 8px 12px;
+                        border-bottom: 1px solid #eef2f6;
+                        cursor: pointer;
+                        }
+
+                        .g-team:last-child { border: none; }
+
+                        .g-team:hover {
+                        background: #f5f9ff;
+                        transform: scale(1.01);
+                        transition: .15s;
+                        }
+
+                        .g-row {
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                        }
+
+                        /* Position badge */
+                        .g-badge { width: 22px; text-align: center; font-size: 11px; font-weight: 900; }
+
+                        .b1 { color: #c9a227; } /* 1st — gold   */
+                        .b2 { color: #6c8ebf; } /* 2nd — silver */
+                        .b3 { color: #cd7f32; } /* 3rd — bronze */
+                        .b4 { color: #bbb;    } /* 4th — grey   */
+
+                        .g-name { flex: 1; font-size: 11px; font-weight: 700; color: #1e3a52; }
+                        .g-prob { font-size: 10px; font-weight: 900; }
+
+                        /* Probability progress bar */
+                        .g-progress {
+                        margin-top: 5px;
+                        height: 5px;
+                        background: #eef3f8;
+                        border-radius: 3px;
+                        overflow: hidden;
+                        }
+
+                        /* Bar fill — starts at 0, animated to data-width via JS */
+                        .g-fill {
+                        height: 100%;
+                        width: 0;
+                        background: linear-gradient(90deg, #00c6ff, #0072ff);
+                        transition: width 1.2s cubic-bezier(.22, 1, .36, 1);
+                        }
+
+                        /* Status-specific bar colors */
+                        .qualify .g-fill { background: linear-gradient(90deg, #00c853, #64dd17); }
+                        .playoff .g-fill { background: linear-gradient(90deg, #ffb300, #ff6f00); }
+                        .elim    .g-fill { background: #d0d7e2; }
+
+                        /* Top-2 cutoff divider inside a group card */
+                        .g-cut {
+                        height: 1px;
+                        background: linear-gradient(90deg, transparent, #c9a227, transparent);
+                        margin: 6px 0;
+                        position: relative;
+                        }
+
+                        .g-cut::after {
+                        content: 'Top 2 avançam';
+                        position: absolute;
+                        top: -7px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        font-size: 7px;
+                        background: #fff;
+                        padding: 0 6px;
+                        color: #c9a227;
+                        font-weight: 800;
+                        letter-spacing: 1px;
+                        }
+
+                        /* Favorite team flame badge */
+                        .g-fav { font-size: 9px; margin-left: 4px; color: #ff9800; }
+
+
+                        /* ════════════════════════════════════════
+                        TOOLTIP (floating, pointer-events: none)
+                        ════════════════════════════════════════ */
+                        .tt {
+                        position: fixed;
+                        background: #0d1c2c;
+                        border: 1px solid #1a3452;
+                        border-radius: 10px;
+                        padding: 13px 15px;
+                        width: 244px;
+                        box-shadow: 0 8px 32px rgba(0, 0, 0, .5);
+                        z-index: 9999;
+                        display: none;
+                        pointer-events: none;
+                        }
+
+                        .tt.on { display: block; }
+
+                        .tt-h {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        margin-bottom: 9px;
+                        padding-bottom: 8px;
+                        border-bottom: 1px solid #1a3452;
+                        }
+
+                        .tt-flag { font-size: 22px; line-height: 1; }
+                        .tt-name { font-size: 12.5px; font-weight: 900; color: #d8e8f0; }
+                        .tt-rank { font-size: 8.5px; color: #2a4a60; margin-top: 2px; }
+
+                        .tt-lbl {
+                        font-size: 7px;
+                        font-weight: 700;
+                        letter-spacing: 1.5px;
+                        text-transform: uppercase;
+                        color: #1e3a52;
+                        display: block;
+                        margin-bottom: 2px;
+                        }
+
+                        .tt-val       { font-size: 10px; color: #6a8aaa; font-weight: 500; line-height: 1.4; }
+                        .tt-val.it    { font-style: italic; color: #4a6a82; }
+                        .tt-row       { margin-bottom: 7px; }
+                        .tt-div       { height: 1px; background: #1a3452; margin: 7px 0; }
+
+                        .tt-ph { display: flex; justify-content: space-between; margin-bottom: 2px; }
+                        .tt-pl { font-size: 7px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #1e3a52; }
+                        .tt-pv { font-size: 12px; font-weight: 900; color: #c9940a; }
+
+                        /* Title probability bar */
+                        .pb-bg { height: 4px; background: #1a3452; border-radius: 2px; overflow: hidden; }
+                        .pb-f  { height: 100%; border-radius: 2px; background: linear-gradient(90deg, #7a5a08, #f0c040); }
+
+                        /* World Cup medals */
+                        .medals { display: flex; gap: 4px; margin-top: 2px; flex-wrap: wrap; }
+                        .med    { font-size: 7.5px; font-weight: 700; padding: 2px 5px; border-radius: 8px; }
+                        .med.g  { background: rgba(240, 192, 40, .12); color: #c9940a; border: 1px solid rgba(201, 148, 10, .25); }
+                        .med.s  { background: rgba(255, 255, 255, .05); color: #6a8aaa; border: 1px solid rgba(255, 255, 255, .08); }
+                        .med.b  { background: rgba(160, 90, 30, .1);   color: #8a6030; border: 1px solid rgba(160, 120, 50, .18); }
+
+
+                        /* ════════════════════════════════════════
+                        STATS PANEL (below bracket)
+                        ════════════════════════════════════════ */
+                        #stats-panel {
+                        margin-top: 14px;
+                        background: linear-gradient(135deg, #ffffff, #f7f9fc);
+                        border: 1px solid #dbe3ec;
+                        border-radius: 10px;
+                        padding: 16px;
+                        min-height: 120px;
+                        box-shadow: 0 4px 18px rgba(0, 0, 0, .06);
+                        }
+
+                        .sp-empty {
+                        color: #6a8aaa;
+                        font-size: 11px;
+                        text-align: center;
+                        padding: 30px 0;
+                        }
+
+                        .sp-header {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        margin-bottom: 10px;
+                        }
+
+                        .sp-flag { font-size: 26px; }
+
+                        .sp-name {
+                        font-size: 16px;
+                        font-weight: 900;
+                        color: #0f3c68;
+                        }
+
+                        .sp-grid {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 10px;
+                        }
+
+                        .sp-box {
+                        background: #f0f4f9;
+                        border-left: 3px solid #0f3c68;
+                        padding: 8px;
+                        border-radius: 6px;
+                        }
+
+                        .sp-label {
+                        font-size: 8px;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        color: #6a8aaa;
+                        }
+
+                        .sp-value {
+                        font-size: 11px;
+                        font-weight: 700;
+                        color: #1e3a52;
+                        }
+
+                    </style>
+
+                    <div class="dash">
+
+                    <!-- ── HEADER ── -->
+                    <div class="dh">
+                        <div class="dh-top">
+                        <div class="dh-icon">
+                            <img src="images/logo-rodape.png" alt="Logo">
+                        </div>
+                        <div>
+                            <div class="dh-ti">Copa do Mundo 2026 — Projeção Estatística</div>
+                            <div class="dh-su">EUA · Canadá · México &nbsp;|&nbsp; 11 Jun – 19 Jul 2026 &nbsp;|&nbsp; 48 seleções · 12 grupos</div>
+                        </div>
+                        <div class="dh-badge">
+                            <div class="dh-bl">Campeão projetado</div>
+                            <div class="dh-bv">🇧🇷 Brasil</div>
+                        </div>
+                        </div>
+
+                        <!-- Tab navigation -->
+                        <div class="tabs">
+                        <button class="tab active" onclick="switchTab('bracket', this)">🏆 Chaveamento</button>
+                        <button class="tab"        onclick="switchTab('groups',  this)">📊 Fase de Grupos</button>
+                        </div>
+                    </div>
+
+                    <!-- ── BRACKET PANEL ── -->
+                    <div class="panel active" id="panel-bracket">
+
+                        <p class="disc">
+                        ⚠️ <b>Projeção estatística</b> baseada no modelo FGV EMAp.
+                        % = chance de vencer aquela partida.
+                        Passe o mouse ou click sobre qualquer seleção para destacar sua trajetória completa.
+                        </p>
+
+                        <!-- SVG lines are drawn behind the match cards -->
+            
+                        <div class="bk-wrap" id="bw">
+                        <svg id="bsv"></svg>
+                        <div class="half lh" id="lh"></div>
+                        <div class="fc"      id="fc"></div>
+                        <div class="half rh" id="rh"></div>
+                        </div> 
+
+                        <!-- Legend -->
+                        <div class="bk-leg">
+                        <div class="bk-li"><div class="bk-ln g"></div>Trajetória do campeão projetado</div>
+                        <div class="bk-li"><div class="bk-ln gr"></div>Outros jogos</div>
+                        <div class="bk-hint">Passe o mouse ou click sobre um país — para destacar sua trajetória</div>
+                        </div>
+
+                        <!-- Path summary cards (rendered by showPath()) -->
+                        <div id="bk-pathPanel">
+                        <div id="bk-pathTitle">TRAJETÓRIA DO CAMPEÃO PROJETADO <span></span></div>
+                        <div id="bk-pathCards"></div>
+                        </div>
+
+                        <!-- Fixed stats panel (rendered by showStats()) -->
+                        <div id="stats-panel">
+                        <div class="sp-empty">Passe o mouse ou click sobre uma seleção</div>
+                        </div>
+
+                    </div>
+
+                    <!-- ── GROUP STAGE PANEL ── -->
+                    <div class="panel" id="panel-groups">
+                        <p class="g-note">
+                        1º e 2º Classificação direta &nbsp;&nbsp;|&nbsp;&nbsp;
+                        3º disputa por melhor 3º &nbsp;&nbsp;|&nbsp;&nbsp; 4º eliminado
+                        <br>
+                        As barras indicam a probabilidade de cada seleção terminar na posição exibida.
+                        &nbsp;&nbsp;|&nbsp;&nbsp; 🔥 favorito do grupo
+                        </p>
+                        <div class="g-grid" id="gg"></div>
+                    </div>
+
+                    </div><!-- /.dash -->
+
+                    <!-- Floating tooltip (hidden until applyHov triggers showTT) -->
+                    <div class="tt" id="tt"></div>
+
+
+                    <script>
+
+                    // ════════════════════════════════════════
+                    // TEAM DATABASE
+                    // Keys match team names used throughout match data.
+                    // wc: [gold, silver, bronze] World Cup medals
+                    // prob: estimated 2026 title probability (%)
+                    // ════════════════════════════════════════
+                    const TD = {
+                        'Brasil':        { flag:'🇧🇷', rank:6,  apps:22, best:'Campeão 5× (1958,62,70,94,2002)',         last:'Quartas 2022 — eliminado pela Croácia nos pênaltis', players:'Neymar Jr., Casemiro., Estevão,',              prob:14.2, wc:[5,0,2] },
+                        'Marrocos':      { flag:'🇲🇦', rank:11, apps:6,  best:'Semifinal 2022 — primeiro africano',       last:'Semifinal 2022 — eliminado pela França',             players:'Hakimi, En-Nesyri, Ziyech, Ounahi',            prob:3.2,  wc:[0,0,0] },
+                        'França':        { flag:'🇫🇷', rank:1,  apps:16, best:'Campeão 2× (1998, 2018)',                  last:'Vice-campeão 2022 — derrota para Argentina na final', players:'Mbappé, Griezmann, Camavinga, Tchouaméni',     prob:12.8, wc:[2,2,2] },
+                        'Senegal':       { flag:'🇸🇳', rank:14, apps:4,  best:'Quartas de final (2002)',                   last:'Oitavas 2022 — eliminado pela Inglaterra',           players:'Mané, Koulibaly, Sarr, Diatta',                prob:1.5,  wc:[0,0,0] },
+                        'Espanha':       { flag:'🇪🇸', rank:2,  apps:16, best:'Campeão 1× (2010) + Euro 2024',            last:'Oitavas 2022 — eliminada pelo Marrocos nos pênaltis', players:'Yamal, Pedri, Rodri, Morata, Williams',        prob:11.5, wc:[1,1,0] },
+                        'Alemanha':      { flag:'🇩🇪', rank:12, apps:20, best:'Campeão 4× (1954,74,90,2014)',             last:'Fase de grupos 2022 — eliminação precoce',            players:'Musiala, Wirtz, Havertz, Kimmich, Rüdiger',    prob:8.8,  wc:[4,4,4] },
+                        'Países Baixos': { flag:'🇳🇱', rank:7,  apps:11, best:'Vice-campeão 3× (1974,78,2010)',           last:'Quartas 2022 — eliminado pela Argentina',             players:'Van Dijk, De Jong, Gakpo, Depay',              prob:6.2,  wc:[0,3,1] },
+                        'Bélgica':       { flag:'🇧🇪', rank:9,  apps:14, best:'3º lugar (1986)',                          last:'Oitavas 2022 — eliminada pelo Marrocos',              players:'De Bruyne, Lukaku, Tielemans',                 prob:5.5,  wc:[0,0,1] },
+                        'Argentina':     { flag:'🇦🇷', rank:3,  apps:18, best:'Campeão 3× (1978,1986,2022)',             last:'Campeão 2022 — venceu a França na final',             players:'Messi, L.Martínez, Mac Allister, De Paul',     prob:11.0, wc:[3,3,0] },
+                        'Portugal':      { flag:'🇵🇹', rank:5,  apps:9,  best:'3º lugar 1966 / Euro 2016',               last:'Quartas 2022 — eliminado pelo Marrocos',              players:'Cristiano Ronaldo, Bruno Fernandes, G.Ramos',  prob:7.5,  wc:[0,0,1] },
+                        'Inglaterra':    { flag:'ENG', rank:4,  apps:17, best:'Campeão 1× (1966)',                        last:'Quartas 2022 — eliminada pela França',                players:'Bellingham, Kane, Saka, Foden',                prob:9.5,  wc:[1,0,0] },
+                        'EUA':           { flag:'🇺🇸', rank:14, apps:11, best:'3º lugar (1930)',                          last:'Oitavas 2022 — eliminado pelos Países Baixos',        players:'Pulisic, McKennie, Adams, Turner, Reyna',      prob:3.2,  wc:[0,0,1] },
+                        'Coreia Sul':    { flag:'🇰🇷', rank:25, apps:11, best:'4º lugar / Semifinal (2002)',              last:'Oitavas 2022 — eliminada pelo Brasil',                players:'Son, Kim Min-Jae, Lee Kang-In',                prob:1.2,  wc:[0,0,1] },
+                        'Austrália':     { flag:'🇦🇺', rank:22, apps:6,  best:'Quartas de final (2006)',                  last:'Oitavas 2022 — eliminada pela Argentina',            players:'Leckie, Ryan, Irvine, Duke',                   prob:1.0,  wc:[0,0,0] },
+                        'Noruega':       { flag:'🇳🇴', rank:31, apps:3,  best:'Quartas de final (1938)',                  last:'Não se classificou para 2022',                       players:'Haaland, Ödegaard, Ajer',                      prob:1.8,  wc:[0,0,0] },
+                        'Suíça':         { flag:'🇨🇭', rank:19, apps:12, best:'Quartas (1934,38,54)',                     last:'Quartas 2022 — eliminada por Portugal',              players:'Xhaka, Embolo, Sommer, Shaqiri',               prob:1.8,  wc:[0,0,0] },
+                        'C.Marfim':      { flag:'🇨🇮', rank:46, apps:4,  best:'Fase de grupos (múltiplas)',               last:'Não se classificou para 2022',                       players:'Haller, Zaha, Pépé, Seri',                     prob:0.5,  wc:[0,0,0] },
+                        'Turquia':       { flag:'🇹🇷', rank:37, apps:5,  best:'3º lugar (2002)',                          last:'Não se classificou para 2022',                       players:'Çalhanoglu, Demiral, Yıldız, Güler',           prob:1.0,  wc:[0,0,1] },
+                        'Equador':       { flag:'🇪🇨', rank:44, apps:4,  best:'Oitavas de final (2006)',                  last:'Fase de grupos 2022',                                players:'Valencia, Caicedo, Plata',                     prob:1.0,  wc:[0,0,0] },
+                        'Iraque':        { flag:'🇮🇶', rank:57, apps:2,  best:'Fase de grupos (1986)',                    last:'Retorno histórico após 40 anos',                     players:'Amjed, Shahin, Abbas',                         prob:0.1,  wc:[0,0,0] },
+                        'Jordânia':      { flag:'🇯🇴', rank:63, apps:0,  best:'Estreia na Copa do Mundo',                 last:'Primeira participação na história',                   players:'Baha Faisal, Sahel',                           prob:0.1,  wc:[0,0,0] },
+                        'Áustria':       { flag:'🇦🇹', rank:24, apps:7,  best:'3º lugar (1954)',                          last:'Não se classificou para 2022',                       players:'Alaba, Arnautovic, Baumgartner',               prob:0.8,  wc:[0,0,1] },
+                        'Argélia':       { flag:'🇩🇿', rank:28, apps:4,  best:'Oitavas de final (2014)',                  last:'Não se classificou para 2022',                       players:'Mahrez, Belaïli, Slimani',                     prob:0.5,  wc:[0,0,0] },
+                        'Congo':         { flag:'🇨🇩', rank:46, apps:1,  best:'Fase de grupos 1974 (Zaire)',              last:'Retorno histórico após 52 anos',                     players:'Kakuta, Meschack, Inonga',                     prob:0.2,  wc:[0,0,0] },
+                        'Colômbia':      { flag:'🇨🇴', rank:13, apps:7,  best:'Quartas de final (2014)',                  last:'Não se classificou para 2022',                       players:'Díaz, Arias, Borja, Cuesta',                   prob:2.5,  wc:[0,0,0] },
+                        'Uzbequistão':   { flag:'🇺🇿', rank:50, apps:0,  best:'Estreia na Copa do Mundo',                 last:'Primeira participação na história',                   players:'Shorakhmedov, Shodiev',                        prob:0.1,  wc:[0,0,0] },
+                        'Panamá':        { flag:'🇵🇦', rank:33, apps:2,  best:'Fase de grupos (2018)',                    last:'Não se classificou para 2022',                       players:'Godoy, Murillo, Davis',                        prob:0.3,  wc:[0,0,0] },
+                        'Gana':          { flag:'🇬🇭', rank:74, apps:4,  best:'Quartas de final (2010)',                  last:'Fase de grupos 2022',                                players:'Kudus, Ayew, Djiku',                           prob:0.4,  wc:[0,0,0] },
+                        'Croácia':       { flag:'🇭🇷', rank:10, apps:7,  best:'Vice-campeão 2018 / 3º 2022',             last:'3º lugar 2022',                                      players:'Modrić, Kovačić, Gvardiol',                    prob:3.8,  wc:[0,1,2] },
+                        'Paraguai':      { flag:'🇵🇾', rank:33, apps:9,  best:'Quartas de final (1986)',                  last:'Não se classificou para 2022',                       players:'Sanabria, Almirón, Villasanti',                prob:0.5,  wc:[0,0,0] },
+                        'Uruguai':       { flag:'🇺🇾', rank:18, apps:14, best:'Campeão 2× (1930,1950)',                   last:'Fase de grupos 2022',                                players:'Valverde, Bentancur, Núñez, Suárez',           prob:3.5,  wc:[2,0,2] },
+                        'Japão':         { flag:'🇯🇵', rank:17, apps:7,  best:'Oitavas de final (múltiplas)',             last:'Oitavas 2022 — eliminado pela Croácia nos pênaltis', players:'Minamino, Doan, Morita, Ueda',                 prob:2.2,  wc:[0,0,0] },
+                    };
+
+                    // Safe accessor — returns a blank placeholder for unknown teams
+                    function gt(name) {
+                        return TD[name] || { flag:'🏳️', rank:'?', apps:0, best:'—', last:'—', players:'—', prob:0, wc:[0,0,0] };
+                    }
+
+
+                    // ════════════════════════════════════════
+                    // VENUE / ROUND METADATA
+                    // ════════════════════════════════════════
+
+                    // Host city for each match ID
+                    const CITIES = {
+                        L1:'Houston',   L2:'Miami',        L3:'Los Angeles',  L4:'Seattle',    L5:'Dallas',
+                        L6:'Boston',    L7:'NJ/NY',        L8:'Atlanta',
+                        RL1:'Houston',  RL2:'Seattle',     RL3:'Philadelphia', RL4:'Dallas',
+                        QL1:'Miami',    QL2:'Los Angeles', SL:'Dallas',
+                        R1:'Toronto',   R2:'Kansas City',  R3:'San Francisco', R4:'Vancouver',
+                        R5:'Atlanta',   R6:'Miami',        R7:'Seattle',        R8:'Dallas',
+                        RR1:'Boston',   RR2:'Los Angeles', RR3:'Houston',       RR4:'Kansas City',
+                        QR1:'Dallas',   QR2:'San Francisco', SR:'Atlanta',       F:'Nova York / NJ',
+                    };
+
+                    // Human-readable round label for each match ID
+                    const RND_LBL = {
+                        L1:'R32',  L2:'R32',  L3:'R32',  L4:'R32',  L5:'R32',  L6:'R32',  L7:'R32',  L8:'R32',
+                        R1:'R32',  R2:'R32',  R3:'R32',  R4:'R32',  R5:'R32',  R6:'R32',  R7:'R32',  R8:'R32',
+                        RL1:'Oitavas', RL2:'Oitavas', RL3:'Oitavas', RL4:'Oitavas',
+                        RR1:'Oitavas', RR2:'Oitavas', RR3:'Oitavas', RR4:'Oitavas',
+                        QL1:'Quartas', QL2:'Quartas', QR1:'Quartas', QR2:'Quartas',
+                        SL:'Semifinal', SR:'Semifinal', F:'Final · 19 Jul',
+                    };
+
+                    // CSS class applied to path cards, controlling the top-stripe color
+                    const RND_CLS = {
+                        L1:'r32', L2:'r32', L3:'r32', L4:'r32', L5:'r32', L6:'r32', L7:'r32', L8:'r32',
+                        R1:'r32', R2:'r32', R3:'r32', R4:'r32', R5:'r32', R6:'r32', R7:'r32', R8:'r32',
+                        RL1:'r16', RL2:'r16', RL3:'r16', RL4:'r16',
+                        RR1:'r16', RR2:'r16', RR3:'r16', RR4:'r16',
+                        QL1:'qf',  QL2:'qf',  QR1:'qf',  QR2:'qf',
+                        SL:'sf',  SR:'sf',  F:'fin',
+                    };
+
+
+                    // ════════════════════════════════════════
+                    // MATCH DATA
+                    // Each match: { id, a, pa, b, pb, w }
+                    //   a/b  — team names
+                    //   pa/pb — win probabilities (%)
+                    //   w    — 'a' or 'b' (projected winner)
+                    // ════════════════════════════════════════
+
+                    const RL = ['R32', 'Oitavas', 'Quartas', 'Semifinal'];
+
+                    // Left bracket half (rounds from R32 to SF)
+                    const ML = [
+                        [
+                        { id:'L1', a:'Brasil',        pa:82, b:'Coreia Sul',   pb:18, w:'a' },
+                        { id:'L2', a:'Marrocos',      pa:56, b:'Suíça',        pb:44, w:'a' },
+                        { id:'L3', a:'França',        pa:86, b:'Iraque',       pb:14, w:'a' },
+                        { id:'L4', a:'Senegal',       pa:44, b:'Noruega',      pb:56, w:'b' },
+                        { id:'L5', a:'Espanha',       pa:85, b:'C.Marfim',     pb:15, w:'a' },
+                        { id:'L6', a:'Alemanha',      pa:63, b:'Turquia',      pb:37, w:'a' },
+                        { id:'L7', a:'Países Baixos', pa:66, b:'Equador',      pb:34, w:'a' },
+                        { id:'L8', a:'Bélgica',       pa:88, b:'Austrália',    pb:12, w:'a' },
+                        ],
+                        [
+                        { id:'RL1', a:'Brasil',        pa:63, b:'Marrocos',     pb:37, w:'a' },
+                        { id:'RL2', a:'França',        pa:68, b:'Noruega',      pb:32, w:'a' },
+                        { id:'RL3', a:'Espanha',       pa:56, b:'Alemanha',     pb:44, w:'a' },
+                        { id:'RL4', a:'Países Baixos', pa:53, b:'Bélgica',      pb:47, w:'a' },
+                        ],
+                        [
+                        { id:'QL1', a:'Brasil',  pa:54, b:'França',        pb:46, w:'a' },
+                        { id:'QL2', a:'Espanha', pa:56, b:'Países Baixos', pb:44, w:'a' },
+                        ],
+                        [
+                        { id:'SL', a:'Brasil', pa:58, b:'Espanha', pb:42, w:'a' },
+                        ],
+                    ];
+
+                    // Right bracket half
+                    const MR = [
+                        [
+                        { id:'R1', a:'Argentina', pa:94, b:'Jordânia',    pb:6,  w:'a' },
+                        { id:'R2', a:'Áustria',   pa:54, b:'Argélia',     pb:46, w:'a' },
+                        { id:'R3', a:'Portugal',  pa:86, b:'Congo',       pb:14, w:'a' },
+                        { id:'R4', a:'Colômbia',  pa:77, b:'Uzbequistão', pb:23, w:'a' },
+                        { id:'R5', a:'Inglaterra',pa:82, b:'Gana',        pb:18, w:'a' },
+                        { id:'R6', a:'Croácia',   pa:63, b:'Panamá',      pb:37, w:'a' },
+                        { id:'R7', a:'EUA',       pa:62, b:'Paraguai',    pb:38, w:'a' },
+                        { id:'R8', a:'Uruguai',   pa:54, b:'Japão',       pb:46, w:'a' },
+                        ],
+                        [
+                        { id:'RR1', a:'Argentina', pa:75, b:'Áustria',   pb:25, w:'a' },
+                        { id:'RR2', a:'Portugal',  pa:53, b:'Colômbia',  pb:47, w:'a' },
+                        { id:'RR3', a:'Inglaterra',pa:57, b:'Croácia',   pb:43, w:'a' },
+                        { id:'RR4', a:'EUA',       pa:56, b:'Uruguai',   pb:44, w:'a' },
+                        ],
+                        [
+                        { id:'QR1', a:'Argentina', pa:52, b:'Portugal',  pb:48, w:'a' },
+                        { id:'QR2', a:'Inglaterra',pa:48, b:'EUA',       pb:52, w:'b' },
+                        ],
+                        [
+                        { id:'SR', a:'Argentina', pa:64, b:'EUA', pb:36, w:'a' },
+                        ],
+                    ];
+
+                    // Final match
+                    const MF = { id:'F', a:'Brasil', pa:55, b:'Argentina', pb:45, w:'a' };
+
+                    // Projected champion
+                    const CHAMP = 'Brasil';
+
+                    // Flat list of all matches — used for path lookups
+                    const ALL = [...ML.flat(), ...MR.flat(), MF];
+
+                    // Currently selected (pinned) team
+                    let selectedTeam = CHAMP;
+
+
+                    // ════════════════════════════════════════
+                    // HELPERS
+                    // ════════════════════════════════════════
+
+                    // Returns a Set of match IDs in which a given team participates
+                    function teamMatchIds(team) {
+                        return new Set(ALL.filter(m => m.a === team || m.b === team).map(m => m.id));
+                    }
+
+                    // Unified handler: select a team and update all UI sections at once
+                    function selectTeam(team) {
+                        selectedTeam = team;
+                        applyHov(team);
+                        showStats(team);
+                        showPath(team);
+                    }
+
+
+                    // ════════════════════════════════════════
+                    // TAB SWITCHING
+                    // ════════════════════════════════════════
+                    function switchTab(id, btn) {
+                        document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+                        document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+                        document.getElementById('panel-' + id).classList.add('active');
+                        btn.classList.add('active');
+
+                        // SVG lines must be re-measured after the panel becomes visible
+                        if (id === 'bracket') {
+                        requestAnimationFrame(() => requestAnimationFrame(drawLines));
+                        }
+                    }
+
+
+                    // ════════════════════════════════════════
+                    // BRACKET BUILDER
+                    // ════════════════════════════════════════
+
+                    /**
+                    * Creates a single team row (<div class="tr">) inside a match card.
+                    * Attaches hover / click handlers that drive the whole UI.
+                    */
+                    function mkRow(name, prob, won, mid) {
+                        const t = gt(name);
+                        const row = document.createElement('div');
+                        row.className = 'tr' + (won ? ' won' : '');
+                        row.dataset.team = name;
+                        row.dataset.mid  = mid;
+                        row.innerHTML = `
+                        <span class="tp">${prob}%</span>
+                        <span class="tf">${t.flag}</span>
+                        <span class="tn">${name}</span>
+                        `;
+
+                        row.addEventListener('mouseenter', () => {
+                        applyHov(name);
+                        showStats(name);
+                        showPath(name);
+                        });
+
+                        row.addEventListener('mouseleave', () => {
+                        // Restore the pinned team when the cursor leaves
+                        applyHov(selectedTeam);
+                        showStats(selectedTeam);
+                        showPath(selectedTeam);
+                        });
+
+                        row.addEventListener('click', () => selectTeam(name));
+
+                        return row;
+                    }
+
+                    /**
+                    * Creates a match card (<div class="mc">) containing two team rows.
+                    * Cards involving the projected champion get an extra "cp" class.
+                    */
+                    function mkCard(m) {
+                        const inCP = m.a === CHAMP || m.b === CHAMP;
+                        const card = document.createElement('div');
+                        card.className  = 'mc' + (inCP ? ' cp' : '');
+                        card.dataset.id = m.id;
+                        card.appendChild(mkRow(m.a, m.pa, m.w === 'a', m.id));
+                        card.appendChild(mkRow(m.b, m.pb, m.w === 'b', m.id));
+                        return card;
+                    }
+
+                    /**
+                    * Builds one bracket half (left or right).
+                    * @param {Array}  rounds  - Array of round arrays, each containing match objects
+                    * @param {string} contId  - ID of the container element ('lh' or 'rh')
+                    */
+                    function buildHalf(rounds, contId) {
+                        const cont = document.getElementById(contId);
+                        rounds.forEach((matches, ri) => {
+                        const col = document.createElement('div');
+                        col.className = 'rc';
+                        col.setAttribute('data-l', RL[ri]);
+                        matches.forEach(m => col.appendChild(mkCard(m)));
+                        cont.appendChild(col);
+                        });
+                    }
+
+                    /**
+                    * Builds the center Final column with the match card and champion summary.
+                    */
+                    function buildFinal() {
+                        const fc  = document.getElementById('fc');
+                        const t   = gt(CHAMP);
+
+                        const lbl = document.createElement('div');
+                        lbl.className   = 'fc-lbl';
+                        lbl.textContent = 'FINAL · 19/Jul · NJ';
+
+                        const fmc = document.createElement('div');
+                        fmc.className = 'fmc';
+                        fmc.id        = 'fmc';
+
+                        ['a', 'b'].forEach(sl => {
+                        const name = MF[sl];
+                        const prob = sl === 'a' ? MF.pa : MF.pb;
+                        const won  = MF.w === sl;
+                        const t2   = gt(name);
+
+                        const row = document.createElement('div');
+                        row.className   = 'tr' + (won ? ' won' : '');
+                        row.dataset.team = name;
+                        row.dataset.mid  = 'F';
+                        row.innerHTML = `
+                            <span class="tp">${prob}%</span>
+                            <span class="tf">${t2.flag}</span>
+                            <span class="tn">${name}</span>
+                        `;
+
+                        row.addEventListener('mouseenter', () => {
+                            applyHov(name);
+                            showStats(name);
+                            showPath(name);
+                        });
+
+                        row.addEventListener('mouseleave', () => {
+                            applyHov(selectedTeam);
+                            showStats(selectedTeam);
+                            showPath(selectedTeam);
+                        });
+
+                        row.addEventListener('click', () => selectTeam(name));
+
+                        fmc.appendChild(row);
+                        });
+
+                        // Champion summary below the Final card
+                        const cbox = document.createElement('div');
+                        cbox.innerHTML = `
+                        <div class="champ-n">${t.flag} ${CHAMP}</div>
+                        <div class="champ-l">Campeão Projetado</div>
+                        <div class="champ-p">${t.prob}% prob. de título</div>
+                        `;
+
+                        fc.appendChild(lbl);
+                        fc.appendChild(fmc);
+                        fc.appendChild(cbox);
+                    }
+
+
+                    // ════════════════════════════════════════
+                    // SVG CONNECTOR LINES
+                    // ════════════════════════════════════════
+
+                    // Map from matchId → { path, winner, isCP }
+                    const LR = {};
+
+                    /**
+                    * Returns bounding-box coordinates relative to the bracket wrapper (#bw).
+                    */
+                    function rp(el) {
+                        const bw = document.getElementById('bw');
+                        const er = el.getBoundingClientRect();
+                        const cr = bw.getBoundingClientRect();
+                        return {
+                        left:  er.left  - cr.left,
+                        right: er.right - cr.left,
+                        cy:    er.top   - cr.top + er.height / 2,
+                        };
+                    }
+
+                    /**
+                    * Applies stroke styling to an SVG path based on its context:
+                    *   isHovPath — part of the hovered/selected team's path → bright gold
+                    *   isCP      — part of the champion's default path      → muted gold
+                    *   default   — inactive connector                       → dark blue
+                    */
+                    function setLS(p, isCP, isHovPath) {
+                        if (isHovPath) {
+                        p.setAttribute('stroke',       '#FFD700');
+                        p.setAttribute('stroke-width', '3.5');
+                        p.setAttribute('opacity',      '1');
+                        } else if (isCP) {
+                        p.setAttribute('stroke',       '#d4af37');
+                        p.setAttribute('stroke-width', '2');
+                        p.setAttribute('opacity',      '.8');
+                        } else {
+                        p.setAttribute('stroke',       '#2a4a6a');
+                        p.setAttribute('stroke-width', '1.4');
+                        p.setAttribute('opacity',      '.6');
+                        }
+                    }
+
+                    /**
+                    * Creates an SVG <path> element for a single connector.
+                    */
+                    function mkPathEl(d, isCP) {
+                        const p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                        p.setAttribute('d',                d);
+                        p.setAttribute('fill',             'none');
+                        p.setAttribute('stroke-linecap',   'round');
+                        p.setAttribute('stroke-linejoin',  'round');
+                        setLS(p, isCP, false);
+                        return p;
+                    }
+
+                    /**
+                    * Draws all connector lines for one bracket half.
+                    * Each line goes from the center of a match card to the target team row
+                    * in the next round's card.
+                    */
+                    function connectHalf(rounds, contId, side) {
+                        const svg  = document.getElementById('bsv');
+                        const cols = document.getElementById(contId).querySelectorAll('.rc');
+
+                        rounds.forEach((matches, ri) => {
+                        if (ri >= rounds.length - 1) return; // no next column for the last round
+
+                        const srcCards = cols[ri].querySelectorAll('.mc');
+                        const tgtCards = cols[ri + 1].querySelectorAll('.mc');
+
+                        matches.forEach((m, mi) => {
+                            const nextMatchIdx = Math.floor(mi / 2);
+                            const isTopSlot    = mi % 2 === 0;
+
+                            const src = srcCards[mi];
+                            const tgt = tgtCards[nextMatchIdx];
+                            if (!src || !tgt) return;
+
+                            const sr   = rp(src);
+                            const tr   = rp(tgt);
+                            const rows = tgt.querySelectorAll('.tr');
+                            const tr2  = rows[isTopSlot ? 0 : 1];
+                            if (!tr2) return;
+
+                            const ty     = rp(tr2).cy;
+                            const winner = m.w === 'a' ? m.a : m.b;
+                            const isCP   = winner === CHAMP;
+
+                            let d;
+                            if (side === 'left') {
+                            const mx = sr.right + (tr.left  - sr.right) * .5;
+                            d = `M ${sr.right} ${sr.cy} H ${mx} V ${ty} H ${tr.left}`;
+                            } else {
+                            const mx = sr.left  + (tr.right - sr.left)  * .5;
+                            d = `M ${sr.left}  ${sr.cy} H ${mx} V ${ty} H ${tr.right}`;
+                            }
+
+                            const path = mkPathEl(d, isCP);
+                            LR[m.id] = { path, winner, isCP };
+                            svg.appendChild(path);
+                        });
+                        });
+                    }
+
+                    /**
+                    * (Re)draws the entire SVG overlay.
+                    * Called on initial render and on window resize.
+                    */
+                    function drawLines() {
+                        const bw  = document.getElementById('bw');
+                        const svg = document.getElementById('bsv');
+                        if (!bw || !svg) return;
+
+                        svg.setAttribute('width',  bw.scrollWidth);
+                        svg.setAttribute('height', bw.offsetHeight);
+                        svg.innerHTML = '';
+                        Object.keys(LR).forEach(k => delete LR[k]);
+
+                        connectHalf(ML, 'lh', 'left');
+                        connectHalf(MR, 'rh', 'right');
+
+                        // Connect the two semifinal cards to the Final card (runs after DOM settles)
+                        setTimeout(() => {
+                        const lCols = document.getElementById('lh').querySelectorAll('.rc');
+                        const rCols = document.getElementById('rh').querySelectorAll('.rc');
+                        const fRows = document.getElementById('fmc')?.querySelectorAll('.tr');
+
+                        const lSF = lCols[lCols.length - 1]?.querySelector('.mc');
+                        const rSF = rCols[rCols.length - 1]?.querySelector('.mc');
+
+                        if (lSF && fRows?.[0]) {
+                            const sr     = rp(lSF);
+                            const tr     = rp(fRows[0]);
+                            const mx     = sr.right + (tr.left - sr.right) * .5;
+                            const slMatch = ML[ML.length - 1][0];
+                            const winner = slMatch.w === 'a' ? slMatch.a : slMatch.b;
+                            const p = mkPathEl(
+                            `M ${sr.right} ${sr.cy} H ${mx} V ${tr.cy} H ${tr.left}`,
+                            winner === CHAMP
+                            );
+                            LR['SL-F'] = { path: p, winner, isCP: winner === CHAMP };
+                            svg.appendChild(p);
+                        }
+
+                        if (rSF && fRows?.[1]) {
+                            const sr     = rp(rSF);
+                            const tr     = rp(fRows[1]);
+                            const mx     = tr.right + (sr.left - tr.right) * .5;
+                            const srMatch = MR[MR.length - 1][0];
+                            const winner = srMatch.w === 'a' ? srMatch.a : srMatch.b;
+                            const p = mkPathEl(
+                            `M ${sr.left} ${sr.cy} H ${mx} V ${tr.cy} H ${tr.right}`,
+                            winner === CHAMP
+                            );
+                            LR['SR-F'] = { path: p, winner, isCP: winner === CHAMP };
+                            svg.appendChild(p);
+                        }
+                        }, 0);
+                    }
+
+
+                    // ════════════════════════════════════════
+                    // HOVER / SELECTION EFFECT
+                    // ════════════════════════════════════════
+
+                    /**
+                    * Highlights all match cards, rows, and SVG lines that belong to `team`.
+                    * Everything else is left at normal opacity (no dimming).
+                    */
+                    function applyHov(team) {
+                        const pids = teamMatchIds(team);
+
+                        // Highlight match cards that include this team
+                        document.querySelectorAll('.mc').forEach(c => {
+                        c.classList.toggle('lit', pids.has(c.dataset.id));
+                        });
+
+                        // Highlight the Final card border
+                        const fmc = document.getElementById('fmc');
+                        if (fmc) {
+                        fmc.style.borderColor = pids.has('F') ? '#f0c040' : '';
+                        }
+
+                        // Re-style all SVG connector lines
+                        Object.values(LR).forEach(({ path, winner, isCP }) => {
+                        setLS(path, isCP, winner === team);
+                        });
+
+                        // Highlight individual team name rows
+                        document.querySelectorAll('.tr').forEach(r => {
+                        r.classList.toggle('hl', r.dataset.team === team);
+                        });
+                    }
+
+                    /**
+                    * Resets all visual highlights to the default state.
+                    */
+                    function clearHov() {
+                        document.querySelectorAll('.mc').forEach(c => c.classList.remove('dim', 'lit'));
+
+                        const fmc = document.getElementById('fmc');
+                        if (fmc) {
+                        fmc.classList.remove('dim-f');
+                        fmc.style.borderColor = '';
+                        }
+
+                        document.querySelectorAll('.tr').forEach(r => r.classList.remove('hl'));
+                        Object.values(LR).forEach(({ path, isCP }) => setLS(path, isCP, false));
+                    }
+
+
+                    // ════════════════════════════════════════
+                    // TOOLTIP
+                    // ════════════════════════════════════════
+
+                    function showTT(name, e) {
+                        const d   = gt(name);
+                        const bw  = Math.min(100, (d.prob / 15) * 100);
+                        const wc  = d.wc || [0, 0, 0];
+                        const medals = [
+                        wc[0] ? `<span class="med g">🥇 ${wc[0]}×</span>` : '',
+                        wc[1] ? `<span class="med s">🥈 ${wc[1]}×</span>` : '',
+                        wc[2] ? `<span class="med b">🥉 ${wc[2]}×</span>` : '',
+                        ].filter(Boolean).join('');
+
+                        const tt = document.getElementById('tt');
+                        tt.innerHTML = `
+                        <div class="tt-h">
+                            <div class="tt-flag">${d.flag}</div>
+                            <div>
+                            <div class="tt-name">${name}</div>
+                            <div class="tt-rank">Ranking FIFA: #${d.rank} · ${d.apps} Copa(s)</div>
+                            </div>
+                        </div>
+                        ${medals ? `<div class="medals">${medals}</div>` : ''}
+                        <div class="tt-div"></div>
+                        <div class="tt-row"><span class="tt-lbl">Melhor Resultado</span><div class="tt-val">${d.best}</div></div>
+                        <div class="tt-row"><span class="tt-lbl">Copa 2022</span><div class="tt-val it">${d.last}</div></div>
+                        <div class="tt-row"><span class="tt-lbl">Jogadores Destaque</span><div class="tt-val">${d.players}</div></div>
+                        <div class="tt-div"></div>
+                        <div>
+                            <div class="tt-ph">
+                            <span class="tt-pl">Prob. Título 2026</span>
+                            <span class="tt-pv">${d.prob}%</span>
+                            </div>
+                            <div class="pb-bg"><div class="pb-f" style="width:${bw}%"></div></div>
+                        </div>
+                        `;
+
+                        tt.classList.add('on');
+                        moveTT(e);
+                    }
+
+                    function moveTT(e) {
+                        const tt = document.getElementById('tt');
+                        const x  = e.clientX + 14;
+                        const y  = e.clientY - 115;
+                        tt.style.left = Math.min(x, window.innerWidth  - 252) + 'px';
+                        tt.style.top  = Math.max(6, Math.min(y, window.innerHeight - 370)) + 'px';
+                    }
+
+                    function hideTT() {
+                        document.getElementById('tt').classList.remove('on');
+                    }
+
+
+                    // ════════════════════════════════════════
+                    // STATS PANEL
+                    // ════════════════════════════════════════
+
+                    /**
+                    * Populates the #stats-panel with key data for the given team.
+                    */
+                    function showStats(name) {
+                        const d     = gt(name);
+                        const panel = document.getElementById('stats-panel');
+
+                        panel.innerHTML = `
+                        <div class="sp-header">
+                            <div class="sp-flag">${d.flag}</div>
+                            <div class="sp-name">${name}</div>
+                        </div>
+                        <div class="sp-grid">
+                            <div class="sp-box">
+                            <div class="sp-label">Ranking FIFA</div>
+                            <div class="sp-value">#${d.rank}</div>
+                            </div>
+                            <div class="sp-box">
+                            <div class="sp-label">Copas disputadas</div>
+                            <div class="sp-value">${d.apps}</div>
+                            </div>
+                            <div class="sp-box">
+                            <div class="sp-label">Melhor resultado</div>
+                            <div class="sp-value">${d.best}</div>
+                            </div>
+                            <div class="sp-box">
+                            <div class="sp-label">Última Copa</div>
+                            <div class="sp-value">${d.last}</div>
+                            </div>
+                            <div class="sp-box">
+                            <div class="sp-label">Jogadores</div>
+                            <div class="sp-value">${d.players}</div>
+                            </div>
+                            <div class="sp-box">
+                            <div class="sp-label">Prob. título</div>
+                            <div class="sp-value">${d.prob}%</div>
+                            </div>
+                        </div>
+                        `;
+                    }
+
+
+                    // ════════════════════════════════════════
+                    // PATH PANEL
+                    // ════════════════════════════════════════
+
+                    /**
+                    * Renders the journey summary cards for every match the given team appears in.
+                    */
+                    function showPath(name) {
+                        const title = document.getElementById('bk-pathTitle');
+                        const cards = document.getElementById('bk-pathCards');
+
+                        title.innerHTML = `TRAJETÓRIA — ${name.toUpperCase()} <span></span>`;
+
+                        const matches = ALL.filter(m => m.a === name || m.b === name);
+                        cards.innerHTML = '';
+
+                        if (!matches.length) {
+                        cards.innerHTML = '<p class="pc-empty">Nenhum confronto encontrado.</p>';
+                        return;
+                        }
+
+                        matches.forEach(m => {
+                        const isA      = m.a === name;
+                        const opp      = isA ? m.b : m.a;
+                        const myProb   = isA ? m.pa : m.pb;
+                        const oppProb  = isA ? m.pb : m.pa;
+                        const oData    = gt(opp);
+                        const myData   = gt(name);
+                        const rCls     = RND_CLS[m.id] || 'r32';
+                        const rLbl     = RND_LBL[m.id] || '—';
+                        const city     = CITIES[m.id]  || '';
+
+                        const card = document.createElement('div');
+                        card.className = `pc ${rCls}`;
+                        card.innerHTML = `
+                            <div class="pc-rnd">${rLbl}</div>
+                            <div class="pc-w">
+                            <span class="pc-wf">${myData.flag}</span>
+                            <span class="pc-wn">${name}</span>
+                            <span class="pc-ws">${myProb}%</span>
+                            </div>
+                            <div class="pc-sep"></div>
+                            <div class="pc-l">
+                            <span class="pc-lf">${oData.flag}</span>
+                            <span class="pc-ln">${opp}</span>
+                            <span class="pc-ls">${oppProb}%</span>
+                            </div>
+                            ${city ? `<div class="pc-city">📍 ${city}</div>` : ''}
+                        `;
+                        cards.appendChild(card);
+                        });
+                    }
+
+
+                    // ════════════════════════════════════════
+                    // GROUP STAGE BUILDER
+                    // ════════════════════════════════════════
+
+                    // Group data: each entry has a host city and four teams.
+                    // p[]: [prob 1st, prob 2nd, prob 3rd, prob 4th] (should sum to 100)
+                    const GD = {
+                        A: { host:'México',        teams:[{n:'México',       f:'🇲🇽', p:[55,25,14,6]}, {n:'Coreia Sul', f:'🇰🇷', p:[24,36,26,14]}, {n:'Rep.Tcheca', f:'🇨🇿', p:[15,28,35,22]}, {n:'África Sul',    f:'🇿🇦', p:[6,11,25,58]}] },
+                        B: { host:'Canadá',        teams:[{n:'Canadá',       f:'🇨🇦', p:[44,30,18,8]}, {n:'Suíça',      f:'🇨🇭', p:[28,32,26,14]}, {n:'Bósnia',     f:'🇧🇦', p:[22,30,30,18]}, {n:'Catar',         f:'🇶🇦', p:[6,8,26,60]}]  },
+                        C: { host:'Brasil',        teams:[{n:'Brasil',       f:'🇧🇷', p:[75,18,6,1]},  {n:'Marrocos',   f:'🇲🇦', p:[18,45,28,9]},  {n:'Escócia',    f:'🏴󠁧󠁢󠁳󠁣󠁴󠁿', p:[6,28,42,24]},  {n:'Haiti',         f:'🇭🇹', p:[1,9,24,66]}]  },
+                        D: { host:'EUA',           teams:[{n:'EUA',          f:'🇺🇸', p:[46,28,18,8]}, {n:'Turquia',    f:'🇹🇷', p:[24,24,18,34]}, {n:'Austrália',  f:'🇦🇺', p:[20,30,30,20]}, {n:'Paraguai',      f:'🇵🇾', p:[10,18,34,38]}] },
+                        E: { host:'Alemanha',      teams:[{n:'Alemanha',     f:'🇩🇪', p:[70,20,8,2]},  {n:'Equador',    f:'🇪🇨', p:[16,36,32,16]}, {n:'C.Marfim',   f:'🇨🇮', p:[10,28,38,24]}, {n:'Curaçao',       f:'🇨🇼', p:[4,16,22,58]}]  },
+                        F: { host:'Países Baixos', teams:[{n:'P.Baixos',     f:'🇳🇱', p:[42,30,18,10]},{n:'Japão',      f:'🇯🇵', p:[25,28,28,19]}, {n:'Suécia',     f:'🇸🇪', p:[26,30,28,16]}, {n:'Tunísia',       f:'🇹🇳', p:[7,12,26,55]}]  },
+                        G: { host:'Bélgica',       teams:[{n:'Bélgica',      f:'🇧🇪', p:[58,26,12,4]}, {n:'Egito',      f:'🇪🇬', p:[20,36,32,12]}, {n:'Irã',        f:'🇮🇷', p:[16,26,36,22]}, {n:'Nova Zelândia', f:'🇳🇿', p:[6,12,20,62]}]  },
+                        H: { host:'Espanha',       teams:[{n:'Espanha',      f:'🇪🇸', p:[74,18,6,2]},  {n:'Uruguai',    f:'🇺🇾', p:[18,40,30,12]}, {n:'Ar.Saudita', f:'🇸🇦', p:[5,26,40,29]},  {n:'Cabo Verde',    f:'🇨🇻', p:[3,16,24,57]}]  },
+                        I: { host:'França',        teams:[{n:'França',       f:'🇫🇷', p:[72,20,7,1]},  {n:'Senegal',    f:'🇸🇳', p:[18,38,30,14]}, {n:'Noruega',    f:'🇳🇴', p:[8,30,38,24]},  {n:'Iraque',        f:'🇮🇶', p:[2,12,25,61]}]  },
+                        J: { host:'Argentina',     teams:[{n:'Argentina',    f:'🇦🇷', p:[76,17,6,1]},  {n:'Áustria',    f:'🇦🇹', p:[15,36,31,18]}, {n:'Argélia',    f:'🇩🇿', p:[7,32,38,23]},  {n:'Jordânia',      f:'🇯🇴', p:[2,15,25,58]}]  },
+                        K: { host:'Portugal',      teams:[{n:'Portugal',     f:'🇵🇹', p:[62,26,10,2]}, {n:'Colômbia',   f:'🇨🇴', p:[26,38,26,10]}, {n:'Congo',      f:'🇨🇩', p:[8,22,38,32]},  {n:'Uzbequistão',   f:'🇺🇿', p:[4,14,26,56]}]  },
+                        L: { host:'Inglaterra',    teams:[{n:'Inglaterra',   f:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', p:[62,24,10,4]}, {n:'Croácia',    f:'🇭🇷', p:[26,38,26,10]}, {n:'Panamá',     f:'🇵🇦', p:[6,20,38,36]},  {n:'Gana',          f:'🇬🇭', p:[6,18,26,50]}]  },
+                    };
+
+                    /**
+                    * Builds and injects all group cards into #gg.
+                    * Progress bar widths start at 0 and animate to their target after a short delay.
+                    */
+                    function buildGroups() {
+                        const grid = document.getElementById('gg');
+
+                        Object.entries(GD).forEach(([letter, g]) => {
+                        const card = document.createElement('div');
+                        card.className = 'g-card';
+
+                        // Team with the highest probability of finishing 1st is the group favorite
+                        const favorite = g.teams.reduce((a, b) => a.p[0] > b.p[0] ? a : b);
+
+                        card.innerHTML = `
+                            <div class="g-head">
+                            Grupo ${letter}
+                            <span>${g.host}</span>
+                            </div>
+                        `;
+
+                        g.teams.forEach((t, i) => {
+                            // Determine which probability to display and which status class to apply
+                            let probDisplay, statusClass, badgeClass, label;
+
+                            if (i === 0) {
+                            probDisplay = t.p[0] + t.p[1]; // combined Q1+Q2 displayed for 1st
+                            statusClass = 'qualify';
+                            badgeClass  = 'b1';
+                            label       = '1º';
+                            } else if (i === 1) {
+                            probDisplay = t.p[0] + t.p[1];
+                            statusClass = 'qualify';
+                            badgeClass  = 'b2';
+                            label       = '2º';
+                            } else if (i === 2) {
+                            probDisplay = t.p[2]; // best 3rd probability
+                            statusClass = 'playoff';
+                            badgeClass  = 'b3';
+                            label       = '3º';
+                            } else {
+                            probDisplay = t.p[3]; // elimination probability
+                            statusClass = 'elim';
+                            badgeClass  = 'b4';
+                            label       = '4º';
+                            }
+
+                            const isFav = t.n === favorite.n;
+                            const row   = document.createElement('div');
+                            row.className = `g-team ${statusClass}`;
+                            row.innerHTML = `
+                            <div class="g-row">
+                                <div class="g-badge ${badgeClass}">${label}</div>
+                                <div class="g-name">
+                                ${t.f} ${t.n}
+                                ${isFav ? '<span class="g-fav">🔥</span>' : ''}
+                                </div>
+                                <div class="g-prob">${probDisplay}%</div>
+                            </div>
+                            <div class="g-progress">
+                                <div class="g-fill" data-width="${probDisplay}"></div>
+                            </div>
+                            `;
+
+                            // Group panel interactions mirror the bracket panel
+                            row.addEventListener('mouseenter', () => showStats(t.n));
+                            row.addEventListener('mouseleave', () => showStats(selectedTeam));
+                            row.addEventListener('click',      () => selectTeam(t.n));
+
+                            card.appendChild(row);
+
+                            // Render the Top-2 cutoff divider after the 2nd team row
+                            if (i === 1) {
+                            const cut = document.createElement('div');
+                            cut.className = 'g-cut';
+                            card.appendChild(cut);
+                            }
+                        });
+
+                        grid.appendChild(card);
+                        });
+
+                        // Trigger CSS transition — setting width after a brief delay ensures the
+                        // animation runs even if the element was just inserted into the DOM
+                        setTimeout(() => {
+                        document.querySelectorAll('.g-fill').forEach(el => {
+                            el.style.width = el.dataset.width + '%';
+                        });
+                        }, 100);
+                    }
+
+
+                    // ════════════════════════════════════════
+                    // INIT
+                    // ════════════════════════════════════════
+
+                    // Set the pinned team before building the UI so the first render is correct
+                    selectedTeam = CHAMP;
+
+                    buildHalf(ML, 'lh');
+                    buildHalf(MR, 'rh');
+                    buildFinal();
+                    buildGroups();
+
+                    // First render: draw lines and apply champion highlight
+                    requestAnimationFrame(() => {
+                        drawLines();
+                        applyHov(selectedTeam);
+                        showStats(selectedTeam);
+                        showPath(selectedTeam);
+                    });
+
+                    // Re-draw SVG lines whenever the viewport is resized
+                    window.addEventListener('resize', () => requestAnimationFrame(drawLines));
+
+                    // Clicking outside any match card resets the selection to the champion
+                    document.addEventListener('click', e => {
+                        const clickedInside = e.target.closest('.mc') || e.target.closest('.tr');
+                        if (!clickedInside) {
+                        selectedTeam = CHAMP;
+                        clearHov();
+                        drawLines();
+                        applyHov(selectedTeam);
+                        showStats(selectedTeam);
+                        showPath(selectedTeam);
+                        }
+                    });
+
+                    </script>
+
+
+                  
+
+                </div>
+
+                <div id="barra-lateral-direita">
+                    <div class="menu-caixa">
+                        <div class="titulo-menu">Previsões dos jogos</div>
+                        <ul>
+                            <li><a href="previsoes_grupos.html">Fase de grupos</a></li>
+                            <li><a href="previsoes_oitavas.html">Oitavas de final</a></li>
+                            <li><a href="previsoes_quartas.html">Quartas de final</a></li>
+                            <li><a href="previsoes_semis.html">Semifinais</a></li>
+                            <li class="last"><a href="previsoes_finais.html">Finais</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-caixa margin-top-40">
+                        <div class="titulo-menu">Chances das seleções</div>
+                        <ul>                     
+                            <li><a href="chances_grupos.html">Antes e durante a Copa</a></li>
+                            <li class="last"><a href="chances_finais.html">Finais</a></li>
+                        </ul>
+                    </div>
+                    <div class="caixa max-665">
+                        <div class="linhas-caixa menu-caixa">
+                            <div class="titulo-menu">Outras Informações </div>
+                                <ul>
+                                    <li><a href="bases_dados.html">Base de Dados</a></li>
+                                    <li><a href="rede_jogos.html">Rede de jogos</a></li>
+                                    <li><a href="estatisticas.html">Estatísticas</a></li>
+                                    <li class="last"><a href="vis.html">Visualizações</a></li>
+                                </ul>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+        <!--Final do conteudo-->
+        <footer id="footer">
+            <div class="container">
+                <div class="logo-rodape column-3"><img src="images/logo-rodape.png" /></div>
+                <div class="txt-middle column-3">Praia de Botafogo, 190 - Rio de Janeiro - RJ, <br>
+                    CEP: 22250-900. Tel:+55 21 3799-5917<br>
+                    emap@fgv.br</div>
+                <div class="txt-right column-3">© FGV 2026</div>
+            </div>
+        </footer>
+
+    </body>
+</html>

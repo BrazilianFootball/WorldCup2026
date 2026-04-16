@@ -1,13 +1,11 @@
-<!ATUALIZADO EM: 16/04/2026>
-
+<!ATUALIZADO EM: 14/12/2022>
+	
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8"/>      
         <link rel="shortcut icon" href="images/favicon.ico">
         <link rel="stylesheet" href="css/styles.css" type="text/css">
-        <script src="js/jquery-3.2.1.min.js"></script> 
-        <script src="js/scripts.js"></script> 
         <title>EMAp: Copa do mundo</title>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119803899-1"></script>
@@ -32,11 +30,11 @@
                     <div class="menu">
                         <ul>
                             <li> <a href="index.html">Início</a></li>
-                            <li><a href="modelos.html">Modelos</a></li>
+                            <li class="active"><a href="modelos.html">Modelos</a></li>
                             <li><a href="previsoes.html">Previsões</a></li>
                             <li><a href="chances.html">Chances</a></li>
                             <li><a href="vis.html">Retrospectiva</a></li>
-                            <li class="active"><a href="analises.html">Análises</a></li>
+                            <li><a href="analises.html">Análises</a></li>
                             <li><a href="equipe.html">Equipe</a></li>
 			                <!--<li><a href="na_midia.html">Na Mídia</a></li>-->
                         </ul>
@@ -47,19 +45,50 @@
 
             <!-- Banner das páginas -->
             <div class="banner-cabecalho" style="background:url('images/banner-background.svg')no-repeat center center / cover">
-                <div class="texto-banner">Outras análises</div>
+                <div class="texto-banner">Formulação dos Modelos</div>
             </div>
             <!--Fim do banner das páginas-->
             <!-- Conteudo principal -->
-            <div class="container"> 
+            <div class="container">
                 <div id="conteudo">
                     <div class="texto max-665 font-16">
-                       <p>Página ainda sendo construída.<br> <ul>            
+                        <p> A partir do histórico de todos os confrontos entre as 222 seleções da FIFA, realizados nos últimos 5 anos, foram gerados parâmetros de defesa e ataque 
+                        para cada seleção, de acordo com os gols marcados ou sofridos. No nosso modelo, nem todos os jogos tem o mesmo peso: 
+                        
+                        <ul>
+                            <li><b>Fase recente:</b> destaca um peso maior aos jogos mais recentes.</li>
+                            <li><b>Importância do jogo:</b> leva em conta a natureza do jogo (um jogo de Copa América vale muito mais que um amistoso, por exemplo).</li>
+                        </ul>
+                        
+                        Consideramos que o número de gols marcados por uma equipe segue uma distribuição de Poisson, que depende 
+                        tanto do seu parâmetro de ataque, como da força de defesa do adversário. Uma descrição mais técnica da inspiração do modelo
+			            encontra-se no artigo <a href="Previsoes_Copa_2018.pdf" target="_blank">Previsões para os jogos da Copa do Mundo de 2018</a>. 
+                        
+                        <ul>
+                            <li><b>A base de dados pode ser acessada <a href="bases_dados.html">AQUI.</a></b></li>
+                            <li><b>A implementação pode ser acessada <a href="implementacao.html">AQUI.</a></b></li>
+                        </ul>
 
-                    </div><center>
-                  
+			            <p>Com estas forças podemos simular o confronto entre duas seleções quaisquer.
+                           O modelo é probabilistico, ou seja, cada simulação pode apresentar um placar diferente. No entanto, é claro, 
+                           os placares mais favoráveis aos times fortes são os que aparecem com maior frequência. 
+                           As probabilidades dos placares dos jogos da Copa podem ser visualizados nas seguintes páginas:
+							<ul>
+							  <li> <a href="previsoes.html" target="_blank">Previsões da fase de grupos</a> (atualizado em -/-/26)</li>
+                              <li> <a href="previsoes_oitavas.html">Jogos das oitavas</a> (atualizado em -/-/26).</li>
+							  <li> <a href="previsoes_quartas.html" target="_blank">Jogos das quartas de final</a> (atualizado em -/-/26).</li>
+                              <li> <a href="previsoes_semis.html" target="_blank">Jogos das semifinais</a> (atualizado em -/-/26).</li>
+                              <li> <a href="previsoes_finais.html" target="_blank">Jogos das finais</a> (atualizado em -/-/26).</li>
+							</ul>
+						</p>
+                        <p>Além da análise de cada jogo, foram feitas um milhão de simulações de toda a tabela da Copa. O percentual deste um milhão de simulações em que o Brasil terminou
+                            como campeão é o número que apontamos como a probabilidade do Brasil sagrar-se campeão aa Copa. Com os parâmetros obtidos pré-Copa, obteve-se chance de título de 
+                            cerca de 40% para a Seleção Brasileira. Após cada fase, os parâmetros serão atualizados, e toda a tabela será simulada novamente até a final. 
+                        </p>
+                     
+                    </div>
+                </div>
 
-                </div></center>
                 <div id="barra-lateral-direita">
                     <div class="menu-caixa">
                         <div class="titulo-menu">Previsões dos jogos</div>
@@ -67,18 +96,18 @@
                             <li><a href="previsoes_grupos.html">Fase de grupos</a></li>
                             <li><a href="previsoes_oitavas.html">Oitavas de final</a></li>
                             <li><a href="previsoes_quartas.html">Quartas de final</a></li>
-                            <li><a href="previsoes_semis.html">Semifinais</a></li>
+							<li><a href="previsoes_semis.html">Semifinais</a></li>
                             <li class="last"><a href="previsoes_finais.html">Finais</a></li>
                         </ul>
                     </div>
                     <div class="menu-caixa margin-top-40">
                         <div class="titulo-menu">Chances das seleções</div>
                         <ul>                     
-                            <li><a href="chances_grupos.html">Antes e durante a Copa</a></li>
+			                <li><a href="chances_grupos.html">Antes e Durante a Copa</a></li>
                             <li class="last"><a href="chances_finais.html">Finais</a></li>
                         </ul>
                     </div>
-                    <div class="caixa max-665">
+ 		 <div class="caixa max-665">
                         <div class="linhas-caixa menu-caixa">
                             <div class="titulo-menu">Outras Informações </div>
                             <ul>
@@ -88,7 +117,6 @@
                                 <li class="last"><a href="visua.html">Visualizações</a></li>
                             </ul>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -102,6 +130,5 @@
                 <div class="txt-right column-3">© FGV 2026</div>
             </div>
         </footer>
-
     </body>
 </html>

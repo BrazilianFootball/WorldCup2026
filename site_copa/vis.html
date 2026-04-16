@@ -10,6 +10,16 @@
         <title>EMAp: Copa do mundo</title>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119803899-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-119803899-1');
+        </script>
+
 		<style>
 			.error {
 				color: red;
@@ -29,16 +39,18 @@
                     <div class="logo">
                         <img src="images/logo.png" />
                     </div>
-                    <div class="menu">
+
+                    <nav class="menu">
                         <ul>
                             <li><a href="index.html">Início</a></li>
-                            <li><a href="descricao.html">Modelo</a></li>
+                            <li><a href="modelos.html">Modelos</a></li>
                             <li><a href="previsoes.html">Previsões</a></li>
                             <li><a href="chances.html">Chances</a></li>
                             <li class='active'> <a href="vis.html">Retrospectiva</a></li>
                             <li><a href="analises.html">Análises</a></li>
                             <li><a href="equipe.html">Equipe</a></li>
                         </ul>
+                    </nav>
                 </div>
             </header>
             <!--Final do cabeçalho-->
@@ -50,43 +62,39 @@
             <!--Fim do banner das páginas-->
 			<!-- Conteudo principal -->
             <div class="container" style="display:flex;justify-content:center;">
-                <div id="conteudo" style="width:100%;max-width:960px;margin:0 auto;">
-                    <div class="texto font-16" style="width: 100%; max-width: 800px; margin: 0 auto;">
+                <div id="conteudo" style="width:100%;max-width:1200px;margin:0 auto;">
+                    <div class="texto font-16" style="width: 100%; max-width: 850px; margin: 0 auto;">
                         <!-- CHAVEAMENTO ELIMINATÓRIO -->
                         <p><b>Chaveamento das últimas 5 edições da Copa do Mundo.</b><br>
-                        <font size="2"><i>Passe o mouse sobre um time para destacar sua trajetória no torneio.</i>
-                        </font>
+                        <font size="2"><i>Passe o mouse sobre um time para destacar sua trajetória no torneio.</i></font>
                         </p>
 
                         <div
                         style="width:100%;max-width:900px;background:#fff;border:1px solid #e0e0e0;border-radius:6px;padding:18px 18px 14px;margin-bottom:28px;font-family:'Lato','Helvetica Neue',sans-serif;font-size:13px;">
 
                         <!-- Controls -->
-                        <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px;flex-wrap:wrap;">
-                            <span
-                            style="font-size:11px;font-weight:700;color:#888;letter-spacing:.5px;text-transform:uppercase;">Edição:</span>
+                        <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:12px">
+                            <span style="font-size:11px;font-weight:700;color:#888;letter-spacing:.5px;text-transform:uppercase;">Edição:</span>
                             <div id="bk-pills" style="display:flex;gap:4px;flex-wrap:wrap;"></div>
                             <div id="bk-badge"
                             style="margin-left:auto;display:flex;align-items:center;gap:8px;border:1.5px solid #f0c040;border-radius:5px;padding:5px 13px 5px 10px;">
                             <span style="font-size:20px;">🏆</span>
                             <div>
-                                <div
-                                style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#b8860b;">
-                                Campeão</div>
+                                <div style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#b8860b;">
+                                Campeão </div>
                                 <div id="bk-cbName" style="font-size:14px;font-weight:900;color:#1a1a1a;line-height:1;">—</div>
                                 <div id="bk-cbYear" style="font-size:10px;color:#aaa;">—</div>
                             </div>
                             </div>
                         </div>
 
-                        <p style="font-size:11px;color:#bbb;font-style:italic;margin-bottom:10px;">Passe o mouse
-                            sobre um time para destacar sua trajetória no torneio.</p>
+                        <!--<p style="font-size:11px;color:#bbb;font-style:italic;margin-bottom:10px;">
+                            Passe o mouse sobre um time para destacar sua trajetória no torneio.</p> -->
 
                         <!-- Bracket scroll -->
                         <div id="bk-scroll" style="overflow-x:auto;padding-bottom:6px;">
-                            <div id="bk-bw" style="position:relative;display:flex;min-width:820px;transition:opacity .18s;">
-                            <svg id="bk-svg"
-                                style="position:absolute;top:0;left:0;pointer-events:none;overflow:visible;z-index:0;"></svg>
+                            <div id="bk-bw" style="position:relative;display:flex;min-width:800px;transition:opacity .18s;">
+                            <svg id="bk-svg" style="position:absolute;top:0;left:0;pointer-events:none;overflow:visible;z-index:0;"></svg>
                             </div>
                         </div>
 
@@ -318,7 +326,7 @@
                     <div class="menu-caixa margin-top-40">
                         <div class="titulo-menu">Chances das seleções</div>
                         <ul>
-                            <li><a href="chances_grupos.html">Antes e durante a Copa</a></li>
+                            <li><a href="chances_grupos.html">Antes e Durante a Copa</a></li>
                             <li class="last"><a href="chances_finais.html">Finais</a></li>
                         </ul>
                     </div>
