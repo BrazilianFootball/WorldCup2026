@@ -1205,6 +1205,196 @@ box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 .brand { font-weight: bold; display: block; }
 .year { color: #888; font-size: 10px; }
 
+/* =============== CONTATO ====================== */
+
+.contato-equipe {
+    margin-top: 60px;
+    padding-top: 25px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.contato-topo {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.contato-tag {
+    display: block;
+    margin-bottom: 10px;
+    font-family: 'gotham-bold';
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #0093d2;
+}
+
+.contato-topo h2 {
+    margin: 0 0 12px;
+    font-family: 'gotham-bold';
+    font-size: 32px;
+    color: #21386a;
+}
+
+.contato-topo p {
+    max-width: 760px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #4b4b4b;
+}
+
+.contato-grid {
+    max-width: 1010px;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 10px;
+    align-items: start;
+    /* centralize horizontalmente */
+    margin: 0 auto;
+}
+
+.contato-canais {
+    max-width:280px;
+    display: grid;
+    gap: 15px;
+}
+
+.contato-card,
+.contato-form-box {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.contato-card {
+    padding: 20px 20px;
+}
+
+.contato-card-titulo {
+    display: block;
+    margin-bottom: 10px;
+    font-family: 'gotham-bold';
+    font-size: 20px;
+    color: #21386a;
+}
+
+.contato-card a,
+.contato-card-texto {
+    display: block;
+    font-size: 14px;
+    line-height: 1.6;
+    word-break: break-word;
+    color: #444;
+}
+
+.contato-card-titulo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contato-icone {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+}
+
+.contato-form-box {
+    padding: 30px;
+}
+
+.contato-form-box h3 {
+    margin: 0 0 24px;
+    font-family: 'gotham-bold';
+    font-size: 24px;
+    color: #21386a;
+}
+
+.contato-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 24px;
+}
+
+.contato-form-grupo label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: 'gotham-medium';
+    font-size: 14px;
+    color: #21386a;
+}
+
+.contato-form-grupo input,
+.contato-form-grupo textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #d7d7d7;
+    border-radius: 8px;
+    font-family: 'gotham-book';
+    font-size: 14px;
+    color: #333;
+    background: #fff;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contato-form-grupo input:focus,
+.contato-form-grupo textarea:focus {
+    border-color: #0093d2;
+    box-shadow: 0 0 0 2px rgba(0, 147, 210, 0.12);
+}
+
+.contato-form-grupo textarea {
+    min-height: 170px;
+    resize: vertical;
+}
+
+.contato-form-grupo.full {
+    grid-column: 1 / -1;
+}
+
+.contato-botao {
+    margin-top: 22px;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    background: #21386a;
+    color: #fff;
+    font-family: 'gotham-medium';
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.contato-botao:hover {
+    background: #0093d2;
+}
+
+.contato-observacao {
+    margin: 14px 0 0;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #777;
+}
+
+@media (max-width: 900px) {
+    .contato-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contato-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contato-topo h2 {
+        font-size: 28px;
+    }
+
+    .contato-form-box {
+        padding: 22px;
+    }
+}
+
 
 /*=============== Rodapé ======================*/
 #footer{
@@ -1238,3 +1428,5 @@ box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 .flourish-footer {
   display: none !important;
 }
+
+
