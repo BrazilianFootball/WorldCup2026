@@ -541,9 +541,9 @@ color: red;
   backface-visibility: hidden;
   border-radius: 18px;
   overflow: hidden;
-  background: #0d1b2a;
+  background: #889cb1;
   color: #fff;
-  border: 5px solid #0d1b2a;
+  border: 5px solid #889cb1;
 }
 
 .flip-card-front {
@@ -557,7 +557,7 @@ color: red;
   object-fit: cover;
   object-position: top;
   display: block;
-  background: #0d1b2a;
+  background: #889cb1;
 }
 
 .flip-card-back {
@@ -600,15 +600,15 @@ color: red;
 }
 
 .award-gold {
-  color: #f5d76e;
+  color: #c5ad57;
 }
 
 .award-silver {
-  color: #c0c0c0;
+  color: #9e9e9e;
 }
 
 .award-bronze {
-  color: #cd7f32;
+  color: #b5712c;
 }
 
 .card-back-title {
