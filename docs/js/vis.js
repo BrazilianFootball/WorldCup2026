@@ -263,38 +263,38 @@ document.addEventListener("DOMContentLoaded", function () {
 const BK_ED = {
     2022: {
     host: 'Qatar', champion: 'Argentina', champFlag: '🇦🇷', rounds: [
-        [{ a: 'Netherlands', af: '🇳🇱', as: 3, b: 'USA', bf: '🇺🇸', bs: 1, w: 'a' }, { a: 'Argentina', af: '🇦🇷', as: 2, b: 'Australia', bf: '🇦🇺', bs: 1, w: 'a' }, { a: 'Japan', af: '🇯🇵', as: 1, b: 'Croatia', bf: '🇭🇷', bs: 1, w: 'b', n: 'pens' }, { a: 'Brazil', af: '🇧🇷', as: 4, b: 'South Korea', bf: '🇰🇷', bs: 1, w: 'a' }, { a: 'France', af: '🇫🇷', as: 3, b: 'Poland', bf: '🇵🇱', bs: 1, w: 'a' }, { a: 'England', af: '🇪🇳🇬', as: 3, b: 'Senegal', bf: '🇸🇳', bs: 0, w: 'a' }, { a: 'Morocco', af: '🇲🇦', as: 0, b: 'Spain', bf: '🇪🇸', bs: 0, w: 'a', n: 'pens' }, { a: 'Portugal', af: '🇵🇹', as: 6, b: 'Switzerland', bf: '🇨🇭', bs: 1, w: 'a' }],
-        [{ a: 'Netherlands', af: '🇳🇱', as: 2, b: 'Argentina', bf: '🇦🇷', bs: 2, w: 'b', n: 'pens' }, { a: 'Croatia', af: '🇭🇷', as: 1, b: 'Brazil', bf: '🇧🇷', bs: 1, w: 'a', n: 'pens' }, { a: 'France', af: '🇫🇷', as: 2, b: 'England', bf: '🇪🇳🇬', bs: 1, w: 'a' }, { a: 'Morocco', af: '🇲🇦', as: 1, b: 'Portugal', bf: '🇵🇹', bs: 0, w: 'a' }],
-        [{ a: 'Argentina', af: '🇦🇷', as: 3, b: 'Croatia', bf: '🇭🇷', bs: 0, w: 'a' }, { a: 'France', af: '🇫🇷', as: 2, b: 'Morocco', bf: '🇲🇦', bs: 0, w: 'a' }],
-        [{ a: 'Argentina', af: '🇦🇷', as: 3, b: 'France', bf: '🇫🇷', bs: 3, w: 'a', n: 'pens' }]]
+        [{ a: 'Países Baixos', af: '🇳🇱', as: 3, b: 'Estados Unidos', bf: '🇺🇸', bs: 1, w: 'a' }, { a: 'Argentina', af: '🇦🇷', as: 2, b: 'Austrália', bf: '🇦🇺', bs: 1, w: 'a' }, { a: 'Japão', af: '🇯🇵', as: 1, b: 'Croácia', bf: '🇭🇷', bs: 1, w: 'b', n: 'pens' }, { a: 'Brasil', af: '🇧🇷', as: 4, b: 'Coreia do Sul', bf: '🇰🇷', bs: 1, w: 'a' }, { a: 'França', af: '🇫🇷', as: 3, b: 'Polônia', bf: '🇵🇱', bs: 1, w: 'a' }, { a: 'Inglaterra', af: '🇬🇧', as: 3, b: 'Senegal', bf: '🇸🇳', bs: 0, w: 'a' }, { a: 'Marrocos', af: '🇲🇦', as: 0, b: 'Espanha', bf: '🇪🇸', bs: 0, w: 'a', n: 'pens' }, { a: 'Portugal', af: '🇵🇹', as: 6, b: 'Suíça', bf: '🇨🇭', bs: 1, w: 'a' }],
+        [{ a: 'Países Baixos', af: '🇳🇱', as: 2, b: 'Argentina', bf: '🇦🇷', bs: 2, w: 'b', n: 'pens' }, { a: 'Croácia', af: '🇭🇷', as: 1, b: 'Brasil', bf: '🇧🇷', bs: 1, w: 'a', n: 'pens' }, { a: 'França', af: '🇫🇷', as: 2, b: 'Inglaterra', bf: '🇬🇧', bs: 1, w: 'a' }, { a: 'Marrocos', af: '🇲🇦', as: 1, b: 'Portugal', bf: '🇵🇹', bs: 0, w: 'a' }],
+        [{ a: 'Argentina', af: '🇦🇷', as: 3, b: 'Croácia', bf: '🇭🇷', bs: 0, w: 'a' }, { a: 'França', af: '🇫🇷', as: 2, b: 'Marrocos', bf: '🇲🇦', bs: 0, w: 'a' }],
+        [{ a: 'Argentina', af: '🇦🇷', as: 3, b: 'França', bf: '🇫🇷', bs: 3, w: 'a', n: 'pens' }]]
     },
     2018: {
-    host: 'Russia', champion: 'France', champFlag: '🇫🇷', rounds: [
-        [{ a: 'France', af: '🇫🇷', as: 4, b: 'Argentina', bf: '🇦🇷', bs: 3, w: 'a' }, { a: 'Uruguay', af: '🇺🇾', as: 2, b: 'Portugal', bf: '🇵🇹', bs: 1, w: 'a' }, { a: 'Belgium', af: '🇧🇪', as: 3, b: 'Japan', bf: '🇯🇵', bs: 2, w: 'a' }, { a: 'Brazil', af: '🇧🇷', as: 2, b: 'Mexico', bf: '🇲🇽', bs: 0, w: 'a' }, { a: 'Croatia', af: '🇭🇷', as: 1, b: 'Denmark', bf: '🇩🇰', bs: 1, w: 'a', n: 'pens' }, { a: 'Russia', af: '🇷🇺', as: 1, b: 'Spain', bf: '🇪🇸', bs: 1, w: 'a', n: 'pens' }, { a: 'Sweden', af: '🇸🇪', as: 1, b: 'Switzerland', bf: '🇨🇭', bs: 0, w: 'a' }, { a: 'Colombia', af: '🇨🇴', as: 1, b: 'England', bf: '🇪🇳🇬', bs: 1, w: 'b', n: 'pens' }],
-        [{ a: 'France', af: '🇫🇷', as: 2, b: 'Uruguay', bf: '🇺🇾', bs: 0, w: 'a' }, { a: 'Belgium', af: '🇧🇪', as: 2, b: 'Brazil', bf: '🇧🇷', bs: 1, w: 'a' }, { a: 'Croatia', af: '🇭🇷', as: 2, b: 'Russia', bf: '🇷🇺', bs: 2, w: 'a', n: 'pens' }, { a: 'Sweden', af: '🇸🇪', as: 0, b: 'England', bf: '🇪🇳🇬', bs: 2, w: 'b' }],
-        [{ a: 'France', af: '🇫🇷', as: 1, b: 'Belgium', bf: '🇧🇪', bs: 0, w: 'a' }, { a: 'Croatia', af: '🇭🇷', as: 2, b: 'England', bf: '🇪🇳🇬', bs: 1, w: 'a' }],
-        [{ a: 'France', af: '🇫🇷', as: 4, b: 'Croatia', bf: '🇭🇷', bs: 2, w: 'a' }]]
+    host: 'Rússia', champion: 'França', champFlag: '🇫🇷', rounds: [
+        [{ a: 'França', af: '🇫🇷', as: 4, b: 'Argentina', bf: '🇦🇷', bs: 3, w: 'a' }, { a: 'Uruguai', af: '🇺🇾', as: 2, b: 'Portugal', bf: '🇵🇹', bs: 1, w: 'a' }, { a: 'Bélgica', af: '🇧🇪', as: 3, b: 'Japão', bf: '🇯🇵', bs: 2, w: 'a' }, { a: 'Brasil', af: '🇧🇷', as: 2, b: 'México', bf: '🇲🇽', bs: 0, w: 'a' }, { a: 'Croácia', af: '🇭🇷', as: 1, b: 'Dinamarca', bf: '🇩🇰', bs: 1, w: 'a', n: 'pens' }, { a: 'Rússia', af: '🇷🇺', as: 1, b: 'Espanha', bf: '🇪🇸', bs: 1, w: 'a', n: 'pens' }, { a: 'Suécia', af: '🇸🇪', as: 1, b: 'Suíça', bf: '🇨🇭', bs: 0, w: 'a' }, { a: 'Colômbia', af: '🇨🇴', as: 1, b: 'Inglaterra', bf: '🇬🇧', bs: 1, w: 'b', n: 'pens' }],
+        [{ a: 'França', af: '🇫🇷', as: 2, b: 'Uruguai', bf: '🇺🇾', bs: 0, w: 'a' }, { a: 'Bélgica', af: '🇧🇪', as: 2, b: 'Brasil', bf: '🇧🇷', bs: 1, w: 'a' }, { a: 'Croácia', af: '🇭🇷', as: 2, b: 'Rússia', bf: '🇷🇺', bs: 2, w: 'a', n: 'pens' }, { a: 'Suécia', af: '🇸🇪', as: 0, b: 'Inglaterra', bf: '🇬🇧', bs: 2, w: 'b' }],
+        [{ a: 'França', af: '🇫🇷', as: 1, b: 'Bélgica', bf: '🇧🇪', bs: 0, w: 'a' }, { a: 'Croácia', af: '🇭🇷', as: 2, b: 'Inglaterra', bf: '🇬🇧', bs: 1, w: 'a' }],
+        [{ a: 'França', af: '🇫🇷', as: 4, b: 'Croácia', bf: '🇭🇷', bs: 2, w: 'a' }]]
     },
     2014: {
-    host: 'Brazil', champion: 'Germany', champFlag: '🇩🇪', rounds: [
-        [{ a: 'Germany', af: '🇩🇪', as: 2, b: 'Algeria', bf: '🇩🇿', bs: 1, w: 'a', n: 'AET' }, { a: 'France', af: '🇫🇷', as: 2, b: 'Nigeria', bf: '🇳🇬', bs: 0, w: 'a' }, { a: 'Brazil', af: '🇧🇷', as: 1, b: 'Chile', bf: '🇨🇱', bs: 1, w: 'a', n: 'pens' }, { a: 'Colombia', af: '🇨🇴', as: 2, b: 'Uruguay', bf: '🇺🇾', bs: 0, w: 'a' }, { a: 'Netherlands', af: '🇳🇱', as: 2, b: 'Mexico', bf: '🇲🇽', bs: 1, w: 'a' }, { a: 'Costa Rica', af: '🇨🇷', as: 1, b: 'Greece', bf: '🇬🇷', bs: 1, w: 'a', n: 'pens' }, { a: 'Argentina', af: '🇦🇷', as: 1, b: 'Switzerland', bf: '🇨🇭', bs: 0, w: 'a', n: 'AET' }, { a: 'Belgium', af: '🇧🇪', as: 2, b: 'USA', bf: '🇺🇸', bs: 1, w: 'a', n: 'AET' }],
-        [{ a: 'Germany', af: '🇩🇪', as: 1, b: 'France', bf: '🇫🇷', bs: 0, w: 'a' }, { a: 'Brazil', af: '🇧🇷', as: 2, b: 'Colombia', bf: '🇨🇴', bs: 1, w: 'a' }, { a: 'Netherlands', af: '🇳🇱', as: 0, b: 'Costa Rica', bf: '🇨🇷', bs: 0, w: 'a', n: 'pens' }, { a: 'Argentina', af: '🇦🇷', as: 1, b: 'Belgium', bf: '🇧🇪', bs: 0, w: 'a' }],
-        [{ a: 'Germany', af: '🇩🇪', as: 7, b: 'Brazil', bf: '🇧🇷', bs: 1, w: 'a' }, { a: 'Netherlands', af: '🇳🇱', as: 0, b: 'Argentina', bf: '🇦🇷', bs: 0, w: 'b', n: 'pens' }],
-        [{ a: 'Germany', af: '🇩🇪', as: 1, b: 'Argentina', bf: '🇦🇷', bs: 0, w: 'a', n: 'AET' }]]
+    host: 'Brasil', champion: 'Alemanha', champFlag: '🇩🇪', rounds: [
+        [{ a: 'Alemanha', af: '🇩🇪', as: 2, b: 'Argélia', bf: '🇩🇿', bs: 1, w: 'a', n: 'AET' }, { a: 'França', af: '🇫🇷', as: 2, b: 'Nigéria', bf: '🇳🇬', bs: 0, w: 'a' }, { a: 'Brasil', af: '🇧🇷', as: 1, b: 'Chile', bf: '🇨🇱', bs: 1, w: 'a', n: 'pens' }, { a: 'Colômbia', af: '🇨🇴', as: 2, b: 'Uruguai', bf: '🇺🇾', bs: 0, w: 'a' }, { a: 'Países Baixos', af: '🇳🇱', as: 2, b: 'México', bf: '🇲🇽', bs: 1, w: 'a' }, { a: 'Costa Rica', af: '🇨🇷', as: 1, b: 'Grécia', bf: '🇬🇷', bs: 1, w: 'a', n: 'pens' }, { a: 'Argentina', af: '🇦🇷', as: 1, b: 'Suíça', bf: '🇨🇭', bs: 0, w: 'a', n: 'AET' }, { a: 'Bélgica', af: '🇧🇪', as: 2, b: 'Estados Unidos', bf: '🇺🇸', bs: 1, w: 'a', n: 'AET' }],
+        [{ a: 'Alemanha', af: '🇩🇪', as: 1, b: 'França', bf: '🇫🇷', bs: 0, w: 'a' }, { a: 'Brasil', af: '🇧🇷', as: 2, b: 'Colômbia', bf: '🇨🇴', bs: 1, w: 'a' }, { a: 'Países Baixos', af: '🇳🇱', as: 0, b: 'Costa Rica', bf: '🇨🇷', bs: 0, w: 'a', n: 'pens' }, { a: 'Argentina', af: '🇦🇷', as: 1, b: 'Bélgica', bf: '🇧🇪', bs: 0, w: 'a' }],
+        [{ a: 'Alemanha', af: '🇩🇪', as: 7, b: 'Brasil', bf: '🇧🇷', bs: 1, w: 'a' }, { a: 'Países Baixos', af: '🇳🇱', as: 0, b: 'Argentina', bf: '🇦🇷', bs: 0, w: 'b', n: 'pens' }],
+        [{ a: 'Alemanha', af: '🇩🇪', as: 1, b: 'Argentina', bf: '🇦🇷', bs: 0, w: 'a', n: 'AET' }]]
     },
     2010: {
-    host: 'South Africa', champion: 'Spain', champFlag: '🇪🇸', rounds: [
-        [{ a: 'Spain', af: '🇪🇸', as: 1, b: 'Portugal', bf: '🇵🇹', bs: 0, w: 'a' }, { a: 'Paraguay', af: '🇵🇾', as: 0, b: 'Japan', bf: '🇯🇵', bs: 0, w: 'a', n: 'pens' }, { a: 'Germany', af: '🇩🇪', as: 4, b: 'England', bf: 'Eng', bs: 1, w: 'a' }, { a: 'Argentina', af: '🇦🇷', as: 3, b: 'Mexico', bf: '🇲🇽', bs: 1, w: 'a' }, { a: 'Netherlands', af: '🇳🇱', as: 2, b: 'Slovakia', bf: '🇸🇰', bs: 1, w: 'a' }, { a: 'Brazil', af: '🇧🇷', as: 3, b: 'Chile', bf: '🇨🇱', bs: 0, w: 'a' }, { a: 'Uruguay', af: '🇺🇾', as: 2, b: 'South Korea', bf: '🇰🇷', bs: 1, w: 'a' }, { a: 'Ghana', af: '🇬🇭', as: 2, b: 'USA', bf: '🇺🇸', bs: 1, w: 'a', n: 'AET' }],
-        [{ a: 'Spain', af: '🇪🇸', as: 1, b: 'Paraguay', bf: '🇵🇾', bs: 0, w: 'a' }, { a: 'Germany', af: '🇩🇪', as: 4, b: 'Argentina', bf: '🇦🇷', bs: 0, w: 'a' }, { a: 'Netherlands', af: '🇳🇱', as: 2, b: 'Brazil', bf: '🇧🇷', bs: 1, w: 'a' }, { a: 'Uruguay', af: '🇺🇾', as: 1, b: 'Ghana', bf: '🇬🇭', bs: 1, w: 'a', n: 'pens' }],
-        [{ a: 'Spain', af: '🇪🇸', as: 1, b: 'Germany', bf: '🇩🇪', bs: 0, w: 'a' }, { a: 'Netherlands', af: '🇳🇱', as: 3, b: 'Uruguay', bf: '🇺🇾', bs: 2, w: 'a' }],
-        [{ a: 'Spain', af: '🇪🇸', as: 1, b: 'Netherlands', bf: '🇳🇱', bs: 0, w: 'a', n: 'AET' }]]
+    host: 'África do Sul', champion: 'Espanha', champFlag: '🇪🇸', rounds: [
+        [{ a: 'Espanha', af: '🇪🇸', as: 1, b: 'Portugal', bf: '🇵🇹', bs: 0, w: 'a' }, { a: 'Paraguai', af: '🇵🇾', as: 0, b: 'Japão', bf: '🇯🇵', bs: 0, w: 'a', n: 'pens' }, { a: 'Alemanha', af: '🇩🇪', as: 4, b: 'Inglaterra', bf: '🇬🇧', bs: 1, w: 'a' }, { a: 'Argentina', af: '🇦🇷', as: 3, b: 'México', bf: '🇲🇽', bs: 1, w: 'a' }, { a: 'Países Baixos', af: '🇳🇱', as: 2, b: 'Eslováquia', bf: '🇸🇰', bs: 1, w: 'a' }, { a: 'Brasil', af: '🇧🇷', as: 3, b: 'Chile', bf: '🇨🇱', bs: 0, w: 'a' }, { a: 'Uruguai', af: '🇺🇾', as: 2, b: 'Coreia do Sul', bf: '🇰🇷', bs: 1, w: 'a' }, { a: 'Gana', af: '🇬🇭', as: 2, b: 'Estados Unidos', bf: '🇺🇸', bs: 1, w: 'a', n: 'AET' }],
+        [{ a: 'Espanha', af: '🇪🇸', as: 1, b: 'Paraguai', bf: '🇵🇾', bs: 0, w: 'a' }, { a: 'Alemanha', af: '🇩🇪', as: 4, b: 'Argentina', bf: '🇦🇷', bs: 0, w: 'a' }, { a: 'Países Baixos', af: '🇳🇱', as: 2, b: 'Brasil', bf: '🇧🇷', bs: 1, w: 'a' }, { a: 'Uruguai', af: '🇺🇾', as: 1, b: 'Gana', bf: '🇬🇭', bs: 1, w: 'a', n: 'pens' }],
+        [{ a: 'Espanha', af: '🇪🇸', as: 1, b: 'Alemanha', bf: '🇩🇪', bs: 0, w: 'a' }, { a: 'Países Baixos', af: '🇳🇱', as: 3, b: 'Uruguai', bf: '🇺🇾', bs: 2, w: 'a' }],
+        [{ a: 'Espanha', af: '🇪🇸', as: 1, b: 'Países Baixos', bf: '🇳🇱', bs: 0, w: 'a', n: 'AET' }]]
     },
     2006: {
-    host: 'Germany', champion: 'Italy', champFlag: '🇮🇹', rounds: [
-        [{ a: 'Italy', af: '🇮🇹', as: 1, b: 'Australia', bf: '🇦🇺', bs: 0, w: 'a' }, { a: 'Ukraine', af: '🇺🇦', as: 0, b: 'Switzerland', bf: '🇨🇭', bs: 0, w: 'a', n: 'pens' }, { a: 'Germany', af: '🇩🇪', as: 2, b: 'Sweden', bf: '🇸🇪', bs: 0, w: 'a' }, { a: 'Argentina', af: '🇦🇷', as: 2, b: 'Mexico', bf: '🇲🇽', bs: 1, w: 'a', n: 'AET' }, { a: 'England', af: 'eng', as: 1, b: 'Ecuador', bf: '🇪🇨', bs: 0, w: 'a' }, { a: 'Portugal', af: '🇵🇹', as: 1, b: 'Netherlands', bf: '🇳🇱', bs: 0, w: 'a' }, { a: 'Brazil', af: '🇧🇷', as: 3, b: 'Ghana', bf: '🇬🇭', bs: 0, w: 'a' }, { a: 'France', af: '🇫🇷', as: 3, b: 'Spain', bf: '🇪🇸', bs: 1, w: 'a' }],
-        [{ a: 'Italy', af: '🇮🇹', as: 3, b: 'Ukraine', bf: '🇺🇦', bs: 0, w: 'a' }, { a: 'Germany', af: '🇩🇪', as: 1, b: 'Argentina', bf: '🇦🇷', bs: 1, w: 'a', n: 'pens' }, { a: 'England', af: 'eng', as: 0, b: 'Portugal', bf: '🇵🇹', bs: 0, w: 'b', n: 'pens' }, { a: 'Brazil', af: '🇧🇷', as: 0, b: 'France', bf: '🇫🇷', bs: 1, w: 'b' }],
-        [{ a: 'Italy', af: '🇮🇹', as: 2, b: 'Germany', bf: '🇩🇪', bs: 0, w: 'a', n: 'AET' }, { a: 'Portugal', af: '🇵🇹', as: 0, b: 'France', bf: '🇫🇷', bs: 1, w: 'b' }],
-        [{ a: 'Italy', af: '🇮🇹', as: 1, b: 'France', bf: '🇫🇷', bs: 1, w: 'a', n: 'pens' }]]
+    host: 'Alemanha', champion: 'Itália', champFlag: '🇮🇹', rounds: [
+        [{ a: 'Itália', af: '🇮🇹', as: 1, b: 'Austrália', bf: '🇦🇺', bs: 0, w: 'a' }, { a: 'Ucrânia', af: '🇺🇦', as: 0, b: 'Suíça', bf: '🇨🇭', bs: 0, w: 'a', n: 'pens' }, { a: 'Alemanha', af: '🇩🇪', as: 2, b: 'Suécia', bf: '🇸🇪', bs: 0, w: 'a' }, { a: 'Argentina', af: '🇦🇷', as: 2, b: 'México', bf: '🇲🇽', bs: 1, w: 'a', n: 'AET' }, { a: 'Inglaterra', af: '🇬🇧', as: 1, b: 'Equador', bf: '🇪🇨', bs: 0, w: 'a' }, { a: 'Portugal', af: '🇵🇹', as: 1, b: 'Países Baixos', bf: '🇳🇱', bs: 0, w: 'a' }, { a: 'Brasil', af: '🇧🇷', as: 3, b: 'Gana', bf: '🇬🇭', bs: 0, w: 'a' }, { a: 'França', af: '🇫🇷', as: 3, b: 'Espanha', bf: '🇪🇸', bs: 1, w: 'a' }],
+        [{ a: 'Itália', af: '🇮🇹', as: 3, b: 'Ucrânia', bf: '🇺🇦', bs: 0, w: 'a' }, { a: 'Alemanha', af: '🇩🇪', as: 1, b: 'Argentina', bf: '🇦🇷', bs: 1, w: 'a', n: 'pens' }, { a: 'Inglaterra', af: '🇬🇧', as: 0, b: 'Portugal', bf: '🇵🇹', bs: 0, w: 'b', n: 'pens' }, { a: 'Brasil', af: '🇧🇷', as: 0, b: 'França', bf: '🇫🇷', bs: 1, w: 'b' }],
+        [{ a: 'Itália', af: '🇮🇹', as: 2, b: 'Alemanha', bf: '🇩🇪', bs: 0, w: 'a', n: 'AET' }, { a: 'Portugal', af: '🇵🇹', as: 0, b: 'França', bf: '🇫🇷', bs: 1, w: 'b' }],
+        [{ a: 'Itália', af: '🇮🇹', as: 1, b: 'França', bf: '🇫🇷', bs: 1, w: 'a', n: 'pens' }]]
     }
 };
 const BK_RL = ['Oitavas de Final', 'Quartas de Final', 'Semifinais', 'Final'];
@@ -633,7 +633,7 @@ document.addEventListener('DOMContentLoaded', () => {
         desc: 'Eliminados pela Croácia nas quartas (pênaltis). Neymar marca gol olímpico. Copa do Catar. Camisa com trama especial amarela e verde.', kit: 'home'
       },
       {
-        year: 2026, era: '2022-2026', img:"https://store.fifa.com/_next/image?url=https%3A%2F%2Flegends.broadleafcloud.com%2Fapi%2Fasset%2Fcontent%2FAURORA_IF7054-724_PHSFH001-1500.jpeg%3FcontextRequest%3D%257B%2522forceCatalogForFetch%2522%3Afalse%2C%2522forceFilterByCatalogIncludeInheritance%2522%3Afalse%2C%2522forceFilterByCatalogExcludeInheritance%2522%3Afalse%2C%2522applicationId%2522%3A%252201GPYEXET5B7Y61HW8TB4R0YWE%2522%2C%2522tenantId%2522%3A%2522FIFA%2522%257D&w=640&q=50",
+        year: 2026, era: '2022-2026', img:"images/shirts/wc-shirt-2026.png",
         desc: 'Copa do Mundo nos EUA, México e Canadá. Primeira Copa com 48 seleções. A busca pelo hexacampeonato.', kit: 'home'
       },
     ];
