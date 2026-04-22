@@ -313,8 +313,7 @@ function buildFinal() {
     const cbox = document.createElement('div');
     cbox.innerHTML = `
     <div class="champ-n">${t.flag} ${CHAMP}</div>
-    <div class="champ-l">Campeão Projetado</div>
-    <div class="champ-p">${t.prob}% prob. de título</div>
+    <div class="champ-p">${t.prob}% Prob. de Título</div>
     `;
 
     fc.appendChild(lbl);
@@ -322,6 +321,10 @@ function buildFinal() {
     fc.appendChild(cbox);
 }
 
+//Versão Antiga:
+//<div class="champ-n">${t.flag} ${CHAMP}</div>
+// <div class="champ-l">Campeão Projetado</div>
+//<div class="champ-p">${t.prob}% prob. de título</div>
 
 // ════════════════════════════════════════
 // SVG CONNECTOR LINES

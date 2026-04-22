@@ -175,7 +175,7 @@ header{
 }
 .texto-banner.inicial{
     font-size: 37px;
-    top: 25%;
+    top: 50%;
 }
 .texto-banner{
     position: absolute;
@@ -484,11 +484,11 @@ color: red;
   -moz-appearance: none;
 
   min-width: 110px;
-  height: 40px;
+  height: 35px;
   padding: 0 42px 0 14px;
 
   border-radius: 12px;
-  background-color: #0d1b2a;
+  background-color: #315173;
   color: #ffffff;
 
   font-family: "gotham-medium";
@@ -497,10 +497,10 @@ color: red;
   outline: none;
 
   background-image:
-    linear-gradient(45deg, transparent 50%, #5aa1f2 50%),
-    linear-gradient(135deg, #5aa1f2 50%, transparent 50%);
+    linear-gradient(45deg, transparent 50%, #ffffff 50%),
+    linear-gradient(135deg, #ffffff 50%, transparent 50%);
   background-position:
-    calc(100% - 18px) calc(50% - 3px),
+    calc(100% - 18.5px) calc(50% - 3px),
     calc(100% - 13px) calc(50% - 3px);
     
   background-size: 6px 6px, 6px 6px;
@@ -544,9 +544,9 @@ color: red;
   backface-visibility: hidden;
   border-radius: 18px;
   overflow: hidden;
-  background: #889cb1;
+  background: #315173;
   color: #fff;
-  border: 5px solid #889cb1;
+  border: 5px solid #315173;
 }
 
 .flip-card-front {
@@ -560,7 +560,7 @@ color: red;
   object-fit: cover;
   object-position: top;
   display: block;
-  background: #889cb1;
+  background: #315173;
 }
 
 .flip-card-back {
@@ -582,20 +582,30 @@ color: red;
   line-height: 1.2;
 }
 
-.scorer-info h3 a {
-  color: #fff;
+#conteudo .scorer-info h3 a {
+  color: #ffffff !important;
   text-decoration: none;
+  font-size: 17px;
 }
 
-.scorer-info h3 a:hover {
-  text-decoration: underline;
+.flip-card-front .ball-award-icon {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  margin: 12px auto 0;
+  background: transparent;
 }
 
+/* Nome do Time */
 .scorer-team {
   font-size: 15px;
   opacity: 0.9;
   margin-bottom: 8px;
+  color:#26beff
 }
+
 
 .scorer-award {
   font-size: 14px;
@@ -603,15 +613,15 @@ color: red;
 }
 
 .award-gold {
-  color: #c5ad57;
+  color: #e3c865;
 }
 
 .award-silver {
-  color: #9e9e9e;
+  color: #cfcfcf;
 }
 
 .award-bronze {
-  color: #b5712c;
+  color: #e59443;
 }
 
 .card-back-title {
@@ -641,8 +651,6 @@ color: red;
   margin-bottom: 3px;
 }
 
-
-
 .ball-award-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(240px, 1fr));
@@ -650,10 +658,6 @@ color: red;
     align-items: start;
     margin-bottom: 25px;
 }
-
-
-
-
 
 
 /* =============== EQUIPE ======================*/

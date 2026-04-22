@@ -25,6 +25,20 @@
 			.error {
 				color: red;
 			}
+
+            /* Rolagem suave para os links internos da barra lateral */
+			html {
+				scroll-behavior: smooth;
+			}
+
+			/* Evita que o título da seção fique colado/escondido no topo após o clique */
+			.secao-visualizacao {
+				scroll-margin-top: 120px;
+			}
+
+			.error {
+				color: red;
+			}
 		</style>
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.17.0"></script>
@@ -71,7 +85,7 @@
                 <div id="conteudo" style="width:100%;max-width:1200px;margin:0 auto;">
                     <div class="texto font-16" style="width: 100%; max-width: 850px; margin: 0 auto;">
                         <!-- CHAVEAMENTO ELIMINATÓRIO -->
-                        <p><b>Chaveamento das últimas 5 edições da Copa do Mundo.</b><br>
+                        <p id="chaveamentos-anteriores" class="secao-visualizacao"><b>Chaveamento das últimas 5 edições da Copa do Mundo.</b><br>
                         <font size="2"><i>Passe o mouse sobre um time para destacar sua trajetória no torneio.</i></font>
                         </p>
 
@@ -132,7 +146,7 @@
                         <br>
 
                         <!-- Ranking de gols -->
-                        <p><b>Ranking do total de gols marcados ao longo das edições da Copa do Mundo.</b><br>
+                        <p id="total-de-gols" class="secao-visualizacao"><b>Ranking do total de gols marcados ao longo das edições da Copa do Mundo.</b><br>
                         <font size="2"><i>(contribuição de Iara Castro, aluna de Mestrado em Matemática Aplicada e Ciência de Dados na EMAp)</i></font> <br>
                         <div class="flourish-embed flourish-chart" data-src="visualisation/28344097">
                             <script src="https://public.flourish.studio/resources/embed.js"></script>
@@ -141,7 +155,7 @@
 
                         <br>
 
-						<p><b>Mapa com o total de partidas de cada país em edições da Copa do Mundo.</b><br>
+						<p id="total-de-partidas" class="secao-visualizacao"><b>Mapa com o total de partidas de cada país em edições da Copa do Mundo.</b><br>
 
                         <div class="flourish-embed flourish-chart" data-src="visualisation/28232010" style="width: 100%; max-width: 800px;">
                             <script src="https://public.flourish.studio/resources/embed.js"></script>
@@ -151,7 +165,7 @@
 
                         <br>
 
-                       <p><b>Mapa com a melhor classificação de cada país em edições da Copa do Mundo (1930-2022).</b><br>
+                       <p id="melhor-classificacao" class="secao-visualizacao"><b>Mapa com a melhor classificação de cada país em edições da Copa do Mundo (1930-2022).</b><br>
                        <font size="2"><i>(contribuição de Carlos César de Oliveira Fonseca, Cientista de Dados da EMAp)</i></font> <br>
 
                         <div id="vis">
@@ -161,7 +175,7 @@
                         <br><br>
 
 
-                        <div class="ball-award-header">
+                        <div id="bola-de-ouro-prata-bronze" class="ball-award-header secao-visualizacao">
                             <p><b>Bola de Ouro, Prata e Bronze por edição da Copa do Mundo</b></p>
                             <div class="ball-award-filter">
                                 <label for="tournamentSelect">Edição: </label>
@@ -176,7 +190,7 @@
 
                         <!-- ====== EVOLUÇÃO DAS BOLAS DA COPA DO MUNDO ====== -->
                         <!-- <div style="width:100%; max-width:960px; margin:32px auto; font-family:'Lato',sans-serif;"> -->
-                        <p><b>Evolução das Bolas da Copa do Mundo (1930-2026)</b></p>
+                        <p id="evolucao-das-bolas" class="secao-visualizacao"><b>Evolução das Bolas da Copa do Mundo (1930-2026)</b></p>
 
                         <div id="balls-container"style="background:#fff; border:1px solid #e0e0e0; border-radius:8px; padding:24px;">
                             <div id="ball-detail" style="display:flex; background:#f7f9fc; border:1.5px solid #e8edf4; border-radius:8px; padding:20px; margin-bottom:20px; align-items:center; gap:20px; flex-wrap:wrap;">
@@ -198,7 +212,7 @@
                         <!-- ====== CAMISAS DA SELEÇÃO BRASILEIRA (ABAIXO) ====== -->
                         
                         <!-- <div style="width:100%; max-width:960px; margin:0 auto 40px; font-family:'Lato',sans-serif;"> -->
-                        <p><b>Evolução das Camisas da Seleção Brasileira (1930–2026)</b></p>
+                        <p id="evolucao-das-camisas" class="secao-visualizacao"><b>Evolução das Camisas da Seleção Brasileira (1930-2026)</b></p>
                         <!-- <div style="background:#fff; border:1px solid #e0e0e0; border-radius:8px; padding:24px;"> -->
                         <div id="shirt-filter"
                         style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px; justify-content:center;">
@@ -208,14 +222,10 @@
                         </div>
                         <div id="shirts-grid" style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center;">
                         </div>
-                        <!-- </div> -->
-                        <!-- </div> -->
-
-
                         <br>
 
 
-                        <p><b>Quem vestiu a seleção nos últimos anos? </b></p>   
+                        <p id="quem-vestiu-a-selecao" class="secao-visualizacao"><b>Quem vestiu a seleção nos últimos anos? </b></p>   
                         <div class="timeline-container">
                             
                             <div class="line"></div>
@@ -317,38 +327,32 @@
                 </div></center>
 
 
-                <!-- BARRA LATERAL
+                <!-- BARRA LATERAL-->
                 <div id="barra-lateral-direita">
                     <div class="menu-caixa">
-                        <div class="titulo-menu">Previsões dos jogos</div>
+                        <div class="titulo-menu">Copa do Mundo</div>
                         <ul>
-                            <li><a href="previsoes_grupos.html">Fase de grupos</a></li>
-                            <li><a href="previsoes_oitavas.html">Oitavas de final</a></li>
-                            <li><a href="previsoes_quartas.html">Quartas de final</a></li>
-			                <li><a href="previsoes_semis.html">Semifinais</a></li>
-                            <li class="last"><a href="previsoes_finais.html">Finais</a></li>
+
+                            <li><a href="#chaveamentos-anteriores">Chaveamentos Anteriores</a></li>
+                            <li><a href="#total-de-gols">Total de Gols</a></li>
+                            <li><a href="#total-de-partidas">Total de Partidas</a></li>
+			                <li><a href="#melhor-classificacao">Melhor Classificação</a></li>
+                            <li><a href="#bola-de-ouro-prata-bronze">Bola de Ouro, Prata e Bronze</a></li>
+                            <!--<li><a href="page_rank.html">Page Rank</a></li>-->
+                        </ul>
                         </ul>
                     </div>
-                    <div class="menu-caixa margin-top-40">
-                        <div class="titulo-menu">Chances das seleções</div>
-                        <ul>
-                            <li><a href="chances_grupos.html">Antes e Durante a Copa</a></li>
-                            <li class="last"><a href="chances_finais.html">Finais</a></li>
-                        </ul>
-                    </div>
- 		            <div class="caixa max-665">
-                        <div class="linhas-caixa menu-caixa">
-                            <div class="titulo-menu">Outras Informações </div>
+                    
+ 		            <div class="menu-caixa margin-top-40">
+                        <div class="titulo-menu">Seleção Brasileira </div>
                             <ul>
-                                <li><a href="bases_dados.html">Base de Dados</a></li>
-                                 <li><a href="rede_jogos.html">Rede de jogos</a></li>
-                                <li><a href="estatisticas.html">Estatísticas</a></li>
-                                <li class="last"><a href="visua.html">Visualizações</a></li>
+                                <li><a href="#evolucao-das-bolas">Evolução das Bolas</a></li>
+                                    <li><a href="#evolucao-das-camisas">Evolução das Camisas</a></li>
+                                <li><a href="#quem-vestiu-a-selecao">Quem Vestiu a Seleção?</a></li>
                             </ul>
                         </div>
-
                     </div>
-                </div> -->
+                </div> 
 
             </div>
         </div>

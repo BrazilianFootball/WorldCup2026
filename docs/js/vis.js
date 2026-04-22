@@ -5,6 +5,7 @@ function gtag() {
 gtag('js', new Date());
 gtag('config', 'UA-119803899-1');
 
+
 (function (vegaEmbed) {
   // Cole aqui, sem alterar, o mesmo objeto que hoje está dentro do <script> do mapa em vis.html
   // WE REMOVED TITLE "title": {"text": ["1930-2022"], "subtitle": ["Melhor classifica\u00e7\u00e3o de cada sele\u00e7\u00e3o em", "alguma edi\u00e7\u00e3o da Copa do Mundo de Futebol"]}
@@ -129,6 +130,16 @@ document.addEventListener("DOMContentLoaded", function () {
     return "";
   }
 
+  function getAwardImage(premio) {
+    const value = normalizeText(premio);
+
+    if (value === "bola de ouro" || value === "golden ball") return "images/bola_de_ouro.png";
+    if (value === "bola de prata" || value === "silver ball") return "images/bola_de_prata.png";
+    if (value === "bola de bronze" || value === "bronze ball") return "images/bola_de_bronze.png";
+
+    return "";
+  }
+
   function getImageUrl(player) {
     const directImage =
       (player.player_image_url || "").trim() ||
@@ -187,6 +198,14 @@ document.addEventListener("DOMContentLoaded", function () {
               <div class="ball-award-prize ${getAwardClass(player.premio)}">
                 ${escapeHtml(player.premio || "-")}
               </div>
+
+              ${getAwardImage(player.premio) ? `
+                <img
+                  class="ball-award-icon"
+                  src="${escapeHtml(getAwardImage(player.premio))}"
+                  alt="${escapeHtml(player.premio || '')}"
+                />
+              ` : ""}
             </div>
           </div>
 
@@ -195,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             <div class="card-back-list">
               <div class="card-back-item">
-                <strong>Idade</strong>
+                <strong>Idade na Edição</strong>
                 ${escapeHtml(player.age || "-")}
               </div>
 
@@ -205,7 +224,7 @@ document.addEventListener("DOMContentLoaded", function () {
               </div>
 
               <div class="card-back-item">
-                <strong>Gols no Torneio</strong>
+                <strong>Gols na Edição</strong>
                 ${escapeHtml(player.n_gols || "-")}
               </div>
 

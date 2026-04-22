@@ -107,7 +107,7 @@ text-align: right;
 .dh-bl {
 font-size: 7.5px;
 color: #f0c040;
-letter-spacing: 2px;
+letter-spacing: 1px;
 text-transform: uppercase;
 }
 
@@ -120,7 +120,7 @@ color: #ffffff;
 /* ── TABS ── */
 .tabs {
 display: flex;
-gap: 2px;
+gap: 1px;
 padding-top: 3px;
 }
 
@@ -484,8 +484,8 @@ width: 100%;
 
 .champ-f { font-size: 24px; line-height: 1; margin: 3px 0 2px; }
 .champ-n { font-size: 12px; font-weight: 900; color: #d4aa30; letter-spacing: .3px; }
-.champ-l { font-size: 6.5px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #6a4a10; margin-top: 2px; }
-.champ-p { font-size: 9px; color: #d4aa30; margin-top: 3px; }
+/*.champ-l { font-size: 6.5px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #6a4a10; margin-top: 2px; }*/
+.champ-p { font-size: 9px; color: #162c42; margin-top: 3px; }
 
 /* ── BRACKET LEGEND ── */
 .bk-leg {
