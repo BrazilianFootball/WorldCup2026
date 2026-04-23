@@ -99,7 +99,7 @@ gtag('config', 'UA-119803899-1');
 })(vegaEmbed);
 
 document.addEventListener("DOMContentLoaded", function () {
-  const CSV_PATH = "csv/golden_ball.csv";
+  const CSV_PATH = "csv/vis/golden_ball.csv";
   const FALLBACK_IMG = "images/placeholder.jpg";
 
   function escapeHtml(text) {

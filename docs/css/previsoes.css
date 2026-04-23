@@ -766,3 +766,36 @@ font-size: 12px;
 font-weight: 700;
 color: #1e3a52;
 }
+
+.placeholder-box {
+    max-width: 560px;
+    /* margin 100px on top and bottom */
+    margin: 150px auto;
+    background: #f8fafc;
+    border: 1px solid #d9e2f1;
+    border-radius: 10px;
+    padding: 18px 20px;
+    box-shadow: 0 4px 14px rgba(18, 43, 84, 0.08);
+    text-align: center;
+}
+
+.placeholder-icon-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+    line-height: 1;
+    font-size: 30px;
+}
+
+.placeholder-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #233f77;
+    margin-bottom: 8px;
+}
+
+.placeholder-text {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #4a5568;
+}

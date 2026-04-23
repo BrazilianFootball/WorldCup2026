@@ -6,11 +6,8 @@
         <link rel="icon" href="images/favicon.png">
         <meta charset="UTF-8"/>      
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="images/favicon.ico">
         <link rel="stylesheet" href="css/previsoes.css" type="text/css">
         <link rel="stylesheet" href="css/styles.css" type="text/css">
-        <script src="js/jquery-3.2.1.min.js"></script> 
-        <script src="js/scripts.js"></script> 
         <title>EMAp: Copa do mundo</title>
         <style>
 
@@ -86,7 +83,7 @@
             <!--Fim do banner das páginas-->
             <!-- Conteudo principal -->
             <div class="container"> 
-                <div id="conteudo"  style="width:100%;max-width:1200px;margin:0 auto;">
+                <div id="conteudo" style="width: 100%; max-width: 1200px; margin: 0 auto;">
                     <div class="dash">
 
                     <!-- ── HEADER ── -->
@@ -121,8 +118,9 @@
                     <div class="panel active" id="panel-bracket">
 
                         <p class="disc">
-                        ⚠️ <b>Projeção estatística</b> baseada no modelo FGV EMAp.
-                        % = chance de vencer aquela partida.
+                        ⚠️ <b>Projeção do modelo da FGV EMAp.</b> 
+                        
+                        &nbsp; % = Chance de vencer a partida.
                         </p>
 
                         <!-- SVG lines are drawn behind the match cards -->
@@ -167,29 +165,23 @@
                     </div>
 
                     <!-- ── R 32 PANEL ── -->
-                    <div id="panel-r32" class="panel">Conteúdo do R 32</div>
-
+                    <div id="panel-r32" class="panel"></div>
                     <!-- ── OITAVAS PANEL ── -->
-                    <div id="panel-oitavas" class="panel">Conteúdo das Oitavas</div>
-
+                    <div id="panel-oitavas" class="panel"></div>
                     <!-- ── QUARTAS PANEL ── -->
-                    <div id="panel-quartas" class="panel">Conteúdo das Quartas</div>
-
-                     <!-- ── SEMI-FINAIS PANEL ── -->
-                     <div id="panel-semis" class="panel">Conteúdo das Semi-Finais</div>
-
-                     <!-- ── FINAL PANEL ── -->
-                     <div id="panel-final" class="panel">Conteúdo da Final</div>
-
-                    </div><!-- /.dash -->
+                    <div id="panel-quartas" class="panel"></div>
+                    <!-- ── SEMI-FINAIS PANEL ── -->
+                    <div id="panel-semis" class="panel"></div>
+                    <!-- ── FINAL PANEL ── -->
+                    <div id="panel-final" class="panel"></div>
 
                     <!-- Floating tooltip (hidden until applyHov triggers showTT) -->
                     <div class="tt" id="tt"></div>
 
                 </div>
             </div> 
-        <!--Final do conteudo-->
-
+            <!--Final do conteudo-->
+        </div>
         <footer id="footer">
             <div class="container">
                 <div class="logo-rodape column-3"><img src="images/logo-rodape.png" /></div>

@@ -1,3 +1,44 @@
+const PLACEHOLDERS = {
+    'panel-r32': 'das <b>Eliminatórias</b>',
+    'panel-oitavas': 'das <b>Oitavas de Final</b>',
+    'panel-quartas': 'das <b>Quartas de Final</b>',
+    'panel-semis': 'da <b>Semifinal</b>',
+    'panel-final': 'da <b>Final</b>'
+};
+
+
+function makePlaceholder(panelId, stageLabel) {
+    return `
+        <div class="placeholder-box">
+            <div class="placeholder-icon-wrap">
+                ⚙️
+            </div>
+            <div class="placeholder-title">
+                Probabilidades de placares em breve!
+            </div>
+            <div class="placeholder-text">
+                As probabilidades de placares ${stageLabel} serão disponibilizadas quando os confrontos forem definidos.
+            </div>
+        </div>
+    `;
+}
+
+function renderPlaceholder(panelId, stageLabel) {
+    const panel = document.getElementById(panelId);
+    if (!panel) return;
+    panel.innerHTML = makePlaceholder(panelId, stageLabel);
+}
+
+function renderAllPlaceholders() {
+    Object.entries(PLACEHOLDERS).forEach(([panelId, stageLabel]) => {
+        renderPlaceholder(panelId, stageLabel);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    renderAllPlaceholders();
+});
+
 // ════════════════════════════════════════
 // TEAM DATABASE
 // Keys match team names used throughout match data.
