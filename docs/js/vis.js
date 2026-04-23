@@ -230,7 +230,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
               <div class="card-back-item">
                 <strong>Aparições na Edição</strong>
-                ${escapeHtml(player.list_tournaments || "-")}
+                ${escapeHtml(player.n_matches || "-")}
               </div>
             </div>
           </div>
