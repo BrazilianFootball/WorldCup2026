@@ -270,7 +270,7 @@ border-radius: 3px;
 }
 
 .pc-empty {
-font-size: 11px;
+font-size: 12px;
 color: var(--faint);
 font-style: italic;
 padding: 6px 0;
@@ -685,11 +685,13 @@ display: block;
 margin-bottom: 2px;
 }
 
-.tt-val       { font-size: 10px; color: #6a8aaa; font-weight: 500; line-height: 1.4; }
-.tt-val.it    { font-style: italic; color: #4a6a82; }
-.tt-row       { margin-bottom: 7px; }
-.tt-div       { height: 1px; background: #1a3452; margin: 7px 0; }
-
+.tt-val{ font-size: 10px; color: #6a8aaa; font-weight: 500; line-height: 1.4; }
+.tt-val.it{ font-style: italic; color: #4a6a82; }
+.tt-row{ margin-bottom: 7px; }
+.tt-div{ height: 1px; background: #1a3452; margin: 7px 0; }
+.tt-ph { display: flex; justify-content: space-between; margin-bottom: 2px; }
+.tt-pl { font-size: 7px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #1e3a52; }
+.tt-pv { font-size: 12px; font-weight: 900; color: #c9940a; }
 .tt-ph { display: flex; justify-content: space-between; margin-bottom: 2px; }
 .tt-pl { font-size: 7px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #1e3a52; }
 .tt-pv { font-size: 12px; font-weight: 900; color: #c9940a; }
@@ -773,10 +775,337 @@ color: #1e3a52;
     margin: 150px auto;
     background: #f8fafc;
     border: 1px solid #d9e2f1;
+}
+/* ════════════════════════════════════════
+PREVISIONS PROBS
+════════════════════════════════════════ */
+#panel-r32,
+#panel-oitavas,
+#panel-quartas,
+#panel-semis,
+#panel-final  {
+    background: #ffffff;
+    padding: 20px;
+    min-height: 520px;
+}
+
+.scorecards-grid {
+    width: 100%;
+    max-width: 1260px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    align-items: start;
+    margin: 0 auto;
+}
+
+.scorecards-grid.scorecards-grid-two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.match-card {
+    border: 1px solid #dbe3ec;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .2s;
+}
+
+.match-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+}
+
+.match-card .g-head {
+    background: linear-gradient(90deg, #0f3c68, #1f6fb2);
+    color: #fff;
+    padding: 10px 12px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.match-card .g-head span {
+    font-size: 9px;
+    opacity: .75;
+    white-space: nowrap;
+}
+
+/*
+.score-card {
+    width: 100%;
+    background: linear-gradient(135deg, #4F66A3, #6A7FC2);
+    color: #ffffff;
+    padding: 13px 11px 10px;
+    font-family: 'Lato', Arial, sans-serif;
+    min-height: 230px;
+}
+*/
+
+.score-card {
+    width: 100%;
+    background: #ffffff;
+    color: #233b65;
+    padding: 15px 13px 12px;
+    font-family: 'Lato', Arial, sans-serif;
+    min-height: 230px;
+    border-left: 1px solid #d8e2f0;
+    border-right: 1px solid #d8e2f0;
+}
+
+.score-card-top {
+    display: grid;
+    grid-template-columns: 54px 1fr 54px;
+    column-gap: 8px;
+    align-items: start;
+    margin-bottom: 10px;
+}
+
+.score-flag-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.score-flag {
+    width: 48px;
+    height: 34px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: rgba(255,255,255,.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.1px solid #99a9b6;
+}
+
+.score-flag img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.score-flag-fallback {
+    font-size: 8px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    line-height: 1.1;
+    padding: 3px;
+}
+
+.score-main {
+    text-align: center;
+}
+
+.score-main-result {
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: .5px;
+    /* new */
+    color: #233b65;
+}
+
+.score-main-prob {
+    margin-top: 5px;
+    font-size: 9px;
+    line-height: 1;
+    font-weight: 700;
+    /* new */
+    color: #4e8ccb;
+
+}
+
+.score-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.score-outcome-card {
+    border-radius: 11px;
+    /*background: rgba(255, 255, 255, .14);*/
+    background: #f3f6fb;
+    /* new */
+    border: 1px solid #dbe4f2;
+    padding: 8px 7px 7px;
+    display: flex;
+    flex-direction: column;
+    min-height: 145px;
+}
+
+/* X Vence - Empate - Y vence */
+.score-outcome-title {
+    text-align: center;
+    font-size: 10px;
+    line-height: 1.1;
+    font-weight: 900;
+    margin-bottom: 7px;
+    min-height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #233b65;
+    
+}
+
+.score-outcome-list {
+    flex: 1;
+}
+
+.score-row {
+    display: grid;
+    grid-template-columns: 22px 1fr 20px;
+    align-items: center;
+    column-gap: 4px;
+    height: 9px;
+    margin-bottom: 2px;
+}
+
+/* 1x0, etc */
+.score-label {
+    font-size: 7.5px;
+    line-height: 1;
+    font-weight: 900;
+    color: #233b65;
+}
+
+.score-bar-space {
+    height: 8px;
+    position: relative;
+}
+
+.score-bar {
+    height: 8px;
+    width: var(--w);
+    min-width: 2px;
+    border-radius: 0 1px 1px 0;
+}
+
+/* XX% */
+.score-value {
+    font-size: 7px;
+    line-height: 1;
+    font-weight: 500;
+    text-align: right;
+    color: #233b65;
+}
+
+.score-outcome-card.home .score-bar,
+.score-outcome-card.home .score-total {
+    background: #20ab8d8f;
+}
+
+.score-outcome-card.draw .score-bar,
+.score-outcome-card.draw .score-total {
+    background: #91b0b5f7;
+}
+
+.score-outcome-card.away .score-bar,
+.score-outcome-card.away .score-total {
+    background: #f6795ad5;
+}
+
+/* País X: Total | Empate: Total | País Y: Total */
+.score-total {
+    margin-top: 6px;
+    height: 14px;
+    border-radius: 8px;
+    padding: 0 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 7.7px;
+    line-height: 1;
+    font-weight: 900;
+    /*color: #ffffff;*/
+    color: #ffffff;
+}
+
+.score-total.tall {
+    height: 17px;
+}
+
+.score-total-label {
+    line-height: 1.05;
+    white-space: normal;
+}
+
+.score-total-value {
+    white-space: nowrap;
+}
+
+
+.score-empty,
+.score-error {
+    grid-column: 1 / -1;
+    padding: 22px;
+    border-radius: 14px;
+    background: #f7f9fc;
+    border: 1px solid #dbe4f0;
+    text-align: center;
+    color: #263f73;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.real-result {
+    background: #edf2f8;
+    border-top: 1px solid #dbe3ec;
+    padding: 3px 12px;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: .4px;
+    color: #233b65;
+}
+
+.real-result span {
+    color: #0f3c68;
+    font-size: 11px;
+}
+
+@media (max-width: 1180px) {
+    .scorecards-grid {
+        /*grid-template-columns: repeat(3, minmax(0, 1fr)); */
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 920px) {
+    .scorecards-grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 620px) {
+    .scorecards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.placeholder-box {
+    max-width: 560px;
+    /* margin 100px on top and bottom */
+    margin: 150px auto;
+    background: #f8fafc;
+    border: 1px solid #d9e2f1;
     border-radius: 10px;
     padding: 18px 20px;
     box-shadow: 0 4px 14px rgba(18, 43, 84, 0.08);
     text-align: center;
+}
+
+.placeholder-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #233f77;
+    margin-bottom: 8px;
 }
 
 .placeholder-icon-wrap {
@@ -787,15 +1116,180 @@ color: #1e3a52;
     font-size: 30px;
 }
 
-.placeholder-title {
-    font-size: 22px;
-    font-weight: 700;
-    color: #233f77;
-    margin-bottom: 8px;
-}
-
 .placeholder-text {
     font-size: 15px;
     line-height: 1.5;
     color: #4a5568;
+}
+
+
+/* FILTERS */
+
+.filterbar {
+    width: 100%;
+    max-width: 1260px;
+    /* 16px é o espaço entre as barras (pesquisa e filtro de data) e o começo dos cards em baixo */
+    margin: 0 auto 16px;
+    border-radius: 10px;
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 2.2fr 220px;
+    align-items: center;
+}
+
+.search-wrap {
+    position: relative;
+    width: 100%;
+}
+
+.search-icon {
+    position: absolute;
+    left: 11px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 13px;
+}
+
+/* INPUT: Pesquisar país... */
+.country-filter {
+    width: 100%;
+    height: 30px;
+    border: 1px solid #cfd9ea;
+    border-radius: 8px;
+    padding: 0 12px 0 34px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #233b65;
+    outline: none;
+    background: #ffffff;
+}
+
+/* Quando uma data é clicada */
+.country-filter:focus,
+.date-dropdown-btn:focus {
+    border-color: #1f6fb2;
+}
+
+#date-filter {
+    min-width: 170px;
+    height: 30px;
+    border: 1px solid #cfd9ea;
+    border-radius: 8px;
+    padding: 5px 8px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #233b65;
+    outline: none;
+    background: #ffffff;
+}
+
+.date-dropdown {
+    position: relative;
+    width: 100%;
+}
+
+/* Texto: Todas as Datas */
+.date-dropdown-btn {
+    width: 100%;
+    height: 30px;
+    border: 1px solid #cfd9ea;
+    border-radius: 9px;
+    padding: 0 12px;
+    background: #ffffff;
+    /*color: #233b65;*/
+    color: #777;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.date-dropdown-btn span {
+    color: inherit;
+}
+
+.date-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    z-index: 20;
+    width: 100%;
+    min-width: 220px;
+    background: #ffffff;
+    border: 1px solid #cfd9ea;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.date-dropdown.open .date-dropdown-menu {
+    display: block;
+}
+
+.filter-field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* TEXTOS OPÇÕES DE DATAS */
+.date-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 8px;
+    border-radius: 7px;
+    /*color: #233b65;*/
+    color: #666;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.date-option:hover {
+    background: #f0f5fb;
+}
+
+.date-option input {
+    accent-color: #1f6fb2;
+}
+
+.no-results {
+    display: none;
+    max-width: 1260px;
+    margin: 12px auto 0;
+    padding: 16px;
+    border-radius: 10px;
+    background: #f8fafc;
+    border: 1px solid #d7e2f0;
+    color: #233b65;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+
+@media (max-width: 920px) {
+    .scorecards-grid, .scorecards-grid.scorecards-grid-two{
+        grid-template-columns: 1fr;
+    }
+
+    .filterbar {
+        /*flex-direction: column;
+        align-items: stretch;*/
+        width: 100%;
+        max-width: 1260px;
+        margin: 0 auto 15px;
+        border-radius: 100px;
+        padding: 10px;
+        display: grid;
+        gap: 10px;
+        align-items: end;
+    }
+
+    #date-filter {
+        width: 100%;
+    }
 }

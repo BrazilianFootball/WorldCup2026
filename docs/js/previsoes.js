@@ -3,7 +3,7 @@ const PLACEHOLDERS = {
     'panel-oitavas': 'das <b>Oitavas de Final</b>',
     'panel-quartas': 'das <b>Quartas de Final</b>',
     'panel-semis': 'da <b>Semifinal</b>',
-    'panel-final': 'da <b>Final</b>'
+    'panel-final': 'da <b>Final e Disputa pelo 3º lugar</b>'
 };
 
 
@@ -28,17 +28,6 @@ function renderPlaceholder(panelId, stageLabel) {
     if (!panel) return;
     panel.innerHTML = makePlaceholder(panelId, stageLabel);
 }
-
-function renderAllPlaceholders() {
-    Object.entries(PLACEHOLDERS).forEach(([panelId, stageLabel]) => {
-        renderPlaceholder(panelId, stageLabel);
-    });
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-    renderAllPlaceholders();
-});
-
 // ════════════════════════════════════════
 // TEAM DATABASE
 // Keys match team names used throughout match data.
@@ -882,3 +871,569 @@ document.addEventListener('click', e => {
     showPath(selectedTeam);
     }
 });
+
+// ════════════════════════════════════════
+// SCORE PROBABILITY CARDS
+// Uses partidas.csv
+// one_zero = home 1 x 0 away
+// ════════════════════════════════════════
+
+const MATCHES_CSV_URL = 'csv/placares/partidas.csv';
+const FLAGS_CSV_URL = 'images/flags/flag.csv';
+const SCORE_STAGES = [
+    {panelId: 'panel-r32',     groupValue: 'R32',       showFilters: true,  gridClass: 'scorecards-grid', showPlaceholder: false},
+    {panelId: 'panel-oitavas', groupValue: 'oitavas',   showFilters: true,  gridClass: 'scorecards-grid', showPlaceholder: false},
+    {panelId: 'panel-quartas', groupValue: 'quartas',   showFilters: false, gridClass: 'scorecards-grid scorecards-grid-two', showPlaceholder: false},
+    {panelId: 'panel-semis',   groupValue: 'semifinal', showFilters: false, gridClass: 'scorecards-grid scorecards-grid-two', showPlaceholder: false},
+    {panelId: 'panel-final',   groupValue: 'final',     showFilters: false, gridClass: 'scorecards-grid scorecards-grid-two', showPlaceholder: true}
+];
+
+
+
+(function () {
+    const NUMBER_WORDS = ['zero', 'one', 'two', 'three', 'four'];
+
+    function scoreKey(homeGoals, awayGoals) {
+        return `${NUMBER_WORDS[homeGoals]}_${NUMBER_WORDS[awayGoals]}`;
+    }
+
+    function escapeHTML(value) {
+        return String(value ?? '')
+            .replaceAll('&', '&amp;')
+            .replaceAll('<', '&lt;')
+            .replaceAll('>', '&gt;')
+            .replaceAll('"', '&quot;')
+            .replaceAll("'", '&#039;');
+    }
+
+    function normalizeName(value) {
+        return String(value ?? '')
+            .trim()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .toLowerCase();
+    }
+
+    function parseNumber(value) {
+        if (value === undefined || value === null || value === '') return null;
+
+        const n = Number(
+            String(value)
+                .trim()
+                .replace('%', '')
+                .replace(',', '.')
+        );
+
+        return Number.isFinite(n) ? n : null;
+    }
+
+    function formatPct(value) {
+        const rounded = Math.round(value * 10) / 10;
+        return Number.isInteger(rounded) ? String(rounded) : String(rounded);
+    }
+
+    function parseCSV(text) {
+        const firstLine = text.split(/\r?\n/)[0] || '';
+        const delimiter =
+            (firstLine.match(/;/g) || []).length > (firstLine.match(/,/g) || []).length
+                ? ';'
+                : ',';
+
+        const rows = [];
+        let row = [];
+        let cell = '';
+        let insideQuotes = false;
+
+        for (let i = 0; i < text.length; i++) {
+            const char = text[i];
+            const next = text[i + 1];
+
+            if (char === '"' && next === '"') {
+                cell += '"';
+                i++;
+                continue;
+            }
+
+            if (char === '"') {
+                insideQuotes = !insideQuotes;
+                continue;
+            }
+
+            if (char === delimiter && !insideQuotes) {
+                row.push(cell.trim());
+                cell = '';
+                continue;
+            }
+
+            if ((char === '\n' || char === '\r') && !insideQuotes) {
+                if (cell !== '' || row.length) {
+                    row.push(cell.trim());
+                    rows.push(row);
+                    row = [];
+                    cell = '';
+                }
+
+                if (char === '\r' && next === '\n') i++;
+                continue;
+            }
+
+            cell += char;
+        }
+
+        if (cell !== '' || row.length) {
+            row.push(cell.trim());
+            rows.push(row);
+        }
+
+        if (!rows.length) return [];
+
+        const headers = rows[0].map(h => h.trim());
+
+        return rows.slice(1)
+            .filter(r => r.some(Boolean))
+            .map(r => {
+                const obj = {};
+                headers.forEach((h, i) => {
+                    obj[h] = (r[i] ?? '').trim();
+                });
+                return obj;
+            });
+    }
+
+    async function loadCSV(url) {
+        const response = await fetch(url, { cache: 'no-store' });
+
+        if (!response.ok) {
+            throw new Error(`Não foi possível carregar ${url}`);
+        }
+
+        return parseCSV(await response.text());
+    }
+
+    function normalizeFlagUrl(url) {
+        if (!url) return '';
+
+        let value = String(url).trim();
+
+        if (value.includes('github.com') && value.includes('/blob/')) {
+            value = value
+                .replace('https://github.com/', 'https://raw.githubusercontent.com/')
+                .replace('/blob/', '/');
+        }
+
+        return value;
+    }
+
+    function getHomeCountry(row) {
+        return row.home_country || row.home_team || row.home || '';
+    }
+
+    function getAwayCountry(row) {
+        return row.away_country || row.away_team || row.away || '';
+    }
+
+    function getMatchGroup(row) {
+        return row.group || row.stage || row.round || '';
+    }
+
+    function findFlagUrl(flagRows, countryName) {
+        const country = normalizeName(countryName);
+
+        const row = flagRows.find(item =>
+            normalizeName(item.country_pt) === country
+        );
+
+        return row ? normalizeFlagUrl(row.svg_github) : '';
+    }
+
+    function getOutcomeGroups(row) {
+        const homeWin = [];
+        const draw = [];
+        const awayWin = [];
+
+        for (let h = 0; h <= 4; h++) {
+            for (let a = 0; a <= 4; a++) {
+                const key = scoreKey(h, a);
+                const value = parseNumber(row[key]);
+
+                if (value === null) continue;
+
+                const item = {
+                    key,
+                    label: `${h}x${a}`,
+                    homeGoals: h,
+                    awayGoals: a,
+                    value
+                };
+
+                if (h > a) homeWin.push(item);
+                else if (h === a) draw.push(item);
+                else awayWin.push(item);
+            }
+        }
+
+        const byProbability = (a, b) => b.value - a.value;
+
+        homeWin.sort(byProbability);
+        draw.sort(byProbability);
+        awayWin.sort(byProbability);
+
+        return { homeWin, draw, awayWin };
+    }
+
+    function sumOutcomes(outcomes) {
+        return outcomes.reduce((sum, item) => sum + item.value, 0);
+    }
+
+    function getBestScore(...groups) {
+        return groups
+            .flat()
+            .slice()
+            .sort((a, b) => b.value - a.value)[0];
+    }
+
+    function renderOutcomeRows(outcomes) {
+        const maxValue = Math.max(...outcomes.map(item => item.value), 1);
+
+        return outcomes.map(item => {
+            const width = Math.max(2, (item.value / maxValue) * 100);
+
+            return `
+                <div class="score-row">
+                    <div class="score-label">${escapeHTML(item.label)}</div>
+                    <div class="score-bar-space">
+                        <div class="score-bar" style="--w:${width}%"></div>
+                    </div>
+                    <div class="score-value">${formatPct(item.value)}</div>
+                </div>
+            `;
+        }).join('');
+    }
+
+    function renderOutcomeCard(type, title, totalLabel, totalValue, outcomes) {
+        return `
+            <div class="score-outcome-card ${type}">
+                <div class="score-outcome-title">${escapeHTML(title)}</div>
+
+                <div class="score-outcome-list">
+                    ${renderOutcomeRows(outcomes)}
+                </div>
+
+                <div class="score-total">
+                    <span class="score-total-label">${escapeHTML(totalLabel)}</span>
+                    <span class="score-total-value">${formatPct(totalValue)}%</span>
+                </div>
+            </div>
+        `;
+    }
+
+    function renderFlag(country, flagUrl) {
+        if (flagUrl) {
+            return `<img src="${escapeHTML(flagUrl)}" alt="${escapeHTML(country)}">`;
+        }
+
+        return `<div class="score-flag-fallback">${escapeHTML(country)}</div>`;
+    }
+
+    function renderScoreCard(row, flagRows) {
+        const homeCountry = getHomeCountry(row);
+        const awayCountry = getAwayCountry(row);
+
+        const { homeWin, draw, awayWin } = getOutcomeGroups(row);
+
+        const best = getBestScore(homeWin, draw, awayWin) || {
+            label: '0x0',
+            value: 0
+        };
+
+        const homeTotal = sumOutcomes(homeWin);
+        const drawTotal = sumOutcomes(draw);
+        const awayTotal = sumOutcomes(awayWin);
+
+        const homeFlag = findFlagUrl(flagRows, homeCountry);
+        const awayFlag = findFlagUrl(flagRows, awayCountry);
+
+        const matchTitle = `${homeCountry} X ${awayCountry}`;
+        const matchDate = row.date || '';
+
+        const homeReal = row.home_real || '—';
+        const awayReal = row.away_real || '—';
+
+        const searchText = normalizeName(`${homeCountry} ${awayCountry}`);
+
+        return `
+            <section 
+                class="match-card g-card"
+                data-home="${escapeHTML(homeCountry)}"
+                data-away="${escapeHTML(awayCountry)}"
+                data-search="${escapeHTML(searchText)}"
+                data-date="${escapeHTML(matchDate)}"
+            >
+                <div class="g-head">
+                    <div>${escapeHTML(matchTitle)}</div>
+                    <span>${escapeHTML(matchDate)}</span>
+                </div>
+
+                <article class="score-card">
+                    <div class="score-card-top">
+                        <div class="score-flag-wrap">
+                            <div class="score-flag">
+                                ${renderFlag(homeCountry, homeFlag)}
+                            </div>
+                        </div>
+
+                        <div class="score-main">
+                            <div class="score-main-result">${escapeHTML(best.label.replace('x', ' x '))}</div>
+                            <div class="score-main-prob">Probabilidade: ${formatPct(best.value)}%</div>
+                        </div>
+
+                        <div class="score-flag-wrap">
+                            <div class="score-flag">
+                                ${renderFlag(awayCountry, awayFlag)}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="score-columns">
+                        ${renderOutcomeCard(
+                            'home',
+                            `${homeCountry} vence`,
+                            homeCountry,
+                            homeTotal,
+                            homeWin
+                        )}
+
+                        ${renderOutcomeCard(
+                            'draw',
+                            'Empate',
+                            'Empate',
+                            drawTotal,
+                            draw
+                        )}
+
+                        ${renderOutcomeCard(
+                            'away',
+                            `${awayCountry} vence`,
+                            awayCountry,
+                            awayTotal,
+                            awayWin
+                        )}
+                    </div>
+                </article>
+
+                <div class="real-result">
+                    Resultado Real: <span>${escapeHTML(homeReal)} x ${escapeHTML(awayReal)}</span>
+                </div>
+            </section>
+        `;
+    }
+
+    function renderScorePanelShell(panel, stage) {
+        const filtersHTML = stage.showFilters === false ? '' : `
+            <div class="filterbar">
+                <div class="filter-field search-field">
+                    <div class="search-wrap">
+                        <span class="search-icon">🔎</span>
+                        <input 
+                            class="country-filter" 
+                            type="text" 
+                            placeholder="Pesquisar país..."
+                            autocomplete="off"
+                        >
+                    </div>
+                </div>
+
+                <div class="filter-field date-field">
+                    <div class="date-dropdown">
+                        <button type="button" class="date-dropdown-btn">
+                            Todas as datas
+                            <span>▾</span>
+                        </button>
+
+                        <div class="date-dropdown-menu"></div>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        panel.innerHTML = `
+            ${filtersHTML}
+
+            <div class="${stage.gridClass || 'scorecards-grid'}"></div>
+
+            <div class="no-results">
+                Nenhum confronto encontrado com os filtros selecionados.
+            </div>
+        `;
+    }
+
+    function populateDateFilter(panel) {
+        const dateMenu = panel.querySelector('.date-dropdown-menu');
+        if (!dateMenu) return;
+
+        const dates = [...panel.querySelectorAll('.match-card')]
+            .map(card => card.dataset.date)
+            .filter(Boolean);
+
+        const uniqueDates = [...new Set(dates)];
+
+        dateMenu.innerHTML = uniqueDates
+            .map(date => `
+                <label class="date-option">
+                    <input type="checkbox" value="${escapeHTML(date)}">
+                    <span>${escapeHTML(date)}</span>
+                </label>
+            `)
+            .join('');
+    }
+
+    function attachScoreFilters(panel) {
+        const countryInput = panel.querySelector('.country-filter');
+        const dateButton = panel.querySelector('.date-dropdown-btn');
+        const dateMenu = panel.querySelector('.date-dropdown-menu');
+        const dateDropdown = panel.querySelector('.date-dropdown');
+
+        if (countryInput) {
+            countryInput.addEventListener('input', () => applyScoreFilters(panel));
+        }
+
+        if (dateButton && dateMenu && dateDropdown) {
+            dateButton.addEventListener('click', function (event) {
+                event.stopPropagation();
+                dateDropdown.classList.toggle('open');
+            });
+
+            dateMenu.querySelectorAll('input[type="checkbox"]').forEach(input => {
+                input.addEventListener('change', () => applyScoreFilters(panel));
+            });
+
+            document.addEventListener('click', function (event) {
+                if (!dateDropdown.contains(event.target)) {
+                    dateDropdown.classList.remove('open');
+                }
+            });
+        }
+    }
+
+    function applyScoreFilters(panel) {
+        const countryInput = panel.querySelector('.country-filter');
+        const dateMenu = panel.querySelector('.date-dropdown-menu');
+        const dateButton = panel.querySelector('.date-dropdown-btn');
+        const noResults = panel.querySelector('.no-results');
+
+        const countryQuery = normalizeName(countryInput?.value || '');
+
+        const selectedDates = dateMenu
+            ? [...dateMenu.querySelectorAll('input[type="checkbox"]:checked')].map(input => input.value)
+            : [];
+
+        if (dateButton) {
+            const label = selectedDates.length
+                ? `${selectedDates.length} data${selectedDates.length > 1 ? 's' : ''} selecionada${selectedDates.length > 1 ? 's' : ''}`
+                : 'Todas as datas';
+
+            dateButton.innerHTML = `${label}<span>▾</span>`;
+        }
+
+        let visibleCount = 0;
+
+        panel.querySelectorAll('.match-card').forEach(card => {
+            const matchesCountry =
+                !countryQuery ||
+                card.dataset.search.includes(countryQuery);
+
+            const matchesDate =
+                !selectedDates.length ||
+                selectedDates.includes(card.dataset.date);
+
+            const shouldShow = matchesCountry && matchesDate;
+
+            card.style.display = shouldShow ? '' : 'none';
+
+            if (shouldShow) visibleCount++;
+        });
+
+        if (noResults) {
+            noResults.style.display = visibleCount ? 'none' : 'block';
+        }
+    }
+
+    function adjustScoreTotalHeights(panel) {
+        panel.querySelectorAll('.score-total').forEach(total => {
+            const label = total.querySelector('.score-total-label');
+            if (!label) return;
+
+            total.classList.remove('tall');
+
+            requestAnimationFrame(() => {
+                const isTwoLines = label.scrollHeight > 10;
+                total.classList.toggle('tall', isTwoLines);
+            });
+        });
+    }
+
+    function renderScoreStage(stage, matchRows, flagRows) {
+        if (stage.showPlaceholder) {
+            renderPlaceholder(stage.panelId,PLACEHOLDERS[stage.panelId] || 'desta fase');
+            return;
+        }
+
+        const panel = document.getElementById(stage.panelId);
+        if (!panel) return;
+
+        renderScorePanelShell(panel, stage);
+
+        const container = panel.querySelector('.scorecards-grid');
+
+        const stageRows = matchRows.filter(row =>
+            normalizeName(getMatchGroup(row)) === normalizeName(stage.groupValue)
+        );
+
+        const cards = stageRows
+            .map(row => renderScoreCard(row, flagRows))
+            .join('');
+
+        container.innerHTML = cards || `
+            <div class="score-empty">
+                Nenhum confronto encontrado para esta fase.
+            </div>
+        `;
+
+        if (stage.showFilters !== false) {
+            populateDateFilter(panel);
+            attachScoreFilters(panel);
+        }
+        adjustScoreTotalHeights(panel);
+    }
+
+    async function renderScoreStagePanels() {
+        try {
+            const [matchRows, flagRows] = await Promise.all([
+                loadCSV(MATCHES_CSV_URL),
+                loadCSV(FLAGS_CSV_URL)
+            ]);
+
+            SCORE_STAGES.forEach(stage => {
+                renderScoreStage(stage, matchRows, flagRows);
+            });
+        } catch (error) {
+            SCORE_STAGES.forEach(stage => {
+                const panel = document.getElementById(stage.panelId);
+                if (!panel) return;
+
+                panel.innerHTML = `
+                    <div class="score-error">
+                        Erro ao carregar os arquivos CSV.<br>
+                        Verifique:<br>
+                        ${escapeHTML(MATCHES_CSV_URL)}<br>
+                        ${escapeHTML(FLAGS_CSV_URL)}
+                    </div>
+                `;
+            });
+
+            console.error(error);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', renderScoreStagePanels);
+})();

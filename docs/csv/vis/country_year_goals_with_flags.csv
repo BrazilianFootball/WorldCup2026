@@ -31,7 +31,7 @@ Haiti,0,0,0,0,0,0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,ht,https://public.flourish.stu
 Honduras,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2,2,2,2,3,3,3,hn,https://public.flourish.studio/country-flags/svg/hn.svg,https://raw.githubusercontent.com/hampusborgos/country-flags/refs/heads/main/svg/hn.svg,Américas,Honduras
 Hungary,0,5,20,20,47,54,62,70,70,70,73,85,87,87,87,87,87,87,87,87,87,87,hu,https://public.flourish.studio/country-flags/svg/hu.svg,https://raw.githubusercontent.com/hampusborgos/country-flags/refs/heads/main/svg/hu.svg,Europa,Hungria
 Iceland,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,is,https://public.flourish.studio/country-flags/svg/is.svg,https://raw.githubusercontent.com/hampusborgos/country-flags/refs/heads/main/svg/is.svg,Europa,Islândia
-Iran,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2,4,4,6,6,7,9,13,,,,Ásia,Irã
+Iran,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2,4,4,6,6,7,9,13,,https://upload.wikimedia.org/wikipedia/commons/c/ca/Flag_of_Iran.svg,https://upload.wikimedia.org/wikipedia/commons/c/ca/Flag_of_Iran.svg,Ásia,Irã
 Iraq,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,iq,https://public.flourish.studio/country-flags/svg/iq.svg,https://raw.githubusercontent.com/hampusborgos/country-flags/refs/heads/main/svg/iq.svg,Ásia,Iraque
 Ireland,0,0,0,0,0,0,0,0,0,0,0,0,0,2,4,4,10,10,10,10,10,10,ie,https://public.flourish.studio/country-flags/svg/ie.svg,https://raw.githubusercontent.com/hampusborgos/country-flags/refs/heads/main/svg/ie.svg,Europa,Irlanda
 Israel,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,il,https://public.flourish.studio/country-flags/svg/il.svg,https://raw.githubusercontent.com/hampusborgos/country-flags/refs/heads/main/svg/il.svg,Ásia,Israel
@@ -64,13 +64,13 @@ Serbia and Montenegro,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2,,,,Europa,Sér
 Slovakia,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,5,5,5,sk,https://public.flourish.studio/country-flags/svg/sk.svg,https://raw.githubusercontent.com/hampusborgos/country-flags/refs/heads/main/svg/sk.svg,Europa,Eslováquia
 Slovenia,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,5,5,5,5,si,https://public.flourish.studio/country-flags/svg/si.svg,https://raw.githubusercontent.com/hampusborgos/country-flags/refs/heads/main/svg/si.svg,Europa,Eslovênia
 South Africa,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,8,8,11,11,11,11,za,https://public.flourish.studio/country-flags/svg/za.svg,https://raw.githubusercontent.com/hampusborgos/country-flags/refs/heads/main/svg/za.svg,África,África do Sul
-South Korea,0,0,0,0,0,0,0,0,0,0,0,0,4,5,9,11,19,22,28,31,34,39,,,,Ásia,Coreia do Sul
+South Korea,0,0,0,0,0,0,0,0,0,0,0,0,4,5,9,11,19,22,28,31,34,39,rok,https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg,https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg,Ásia,Coreia do Sul
 Spain,0,4,4,14,14,14,16,20,20,20,22,26,37,43,53,61,71,80,88,92,99,108,es,https://public.flourish.studio/country-flags/svg/es.svg,https://raw.githubusercontent.com/hampusborgos/country-flags/refs/heads/main/svg/es.svg,Europa,Espanha
 Sweden,0,4,15,26,26,38,38,38,40,47,48,48,48,51,66,66,71,74,74,74,80,80,se,https://public.flourish.studio/country-flags/svg/se.svg,https://raw.githubusercontent.com/hampusborgos/country-flags/refs/heads/main/svg/se.svg,Europa,Suécia
 Switzerland,0,5,10,14,25,25,27,28,28,28,28,28,28,28,33,33,33,37,38,45,50,55,ch,https://public.flourish.studio/country-flags/svg/ch.svg,https://raw.githubusercontent.com/hampusborgos/country-flags/refs/heads/main/svg/ch.svg,Europa,Suíça
 Togo,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,tg,https://public.flourish.studio/country-flags/svg/tg.svg,https://raw.githubusercontent.com/hampusborgos/country-flags/refs/heads/main/svg/tg.svg,África,Togo
 Tunisia,0,0,0,0,0,0,0,0,0,0,3,3,3,3,3,4,5,8,8,8,13,14,tn,https://public.flourish.studio/country-flags/svg/tn.svg,https://raw.githubusercontent.com/hampusborgos/country-flags/refs/heads/main/svg/tn.svg,África,Tunísia
-Turkey,0,0,0,0,10,10,10,10,10,10,10,10,10,10,10,10,20,20,20,20,20,20,,,,Ásia,Turquia
+Turkey,0,0,0,0,10,10,10,10,10,10,10,10,10,10,10,10,20,20,20,20,20,20,tr,https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg,https://raw.githubusercontent.com/hampusborgos/country-flags/refs/heads/main/svg/tr.svg,Ásia,Turquia
 Ukraine,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,5,5,5,5,ua,https://public.flourish.studio/country-flags/svg/ua.svg,https://raw.githubusercontent.com/hampusborgos/country-flags/refs/heads/main/svg/ua.svg,Europa,Ucrânia
 United Arab Emirates,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2,2,2,2,2,ae,https://public.flourish.studio/country-flags/svg/ae.svg,https://raw.githubusercontent.com/hampusborgos/country-flags/refs/heads/main/svg/ae.svg,Ásia,Emirados Árabes Unidos
 United States,7,8,8,12,12,12,12,12,12,12,12,12,12,14,17,18,25,27,32,37,37,40,us,https://public.flourish.studio/country-flags/svg/us.svg,https://raw.githubusercontent.com/hampusborgos/country-flags/refs/heads/main/svg/us.svg,Américas,Estados Unidos
