@@ -1023,12 +1023,11 @@ PREVISIONS PROBS
     font-size: 7.7px;
     line-height: 1;
     font-weight: 900;
-    /*color: #ffffff;*/
     color: #ffffff;
 }
 
 .score-total.tall {
-    height: 17px;
+    height: 18px;
 }
 
 .score-total-label {
@@ -1291,5 +1290,47 @@ PREVISIONS PROBS
 
     #date-filter {
         width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .dh {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .dh-top {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .dash {
+        overflow-x: hidden;
+    }
+
+    .tabs {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        gap: 0px;
+    }
+
+    .tab {
+        flex: 0 1 auto;
+        min-width: unset;
+        padding: 7px 11px;
+        font-size: 8px;
+        letter-spacing: 0.2px;
+        white-space: nowrap;
+        text-align: center;
+    }
+}
+
+@media (max-width: 430px) {
+    .tab {
+        padding: 6px 1px;
+        font-size: 6.5px;
+        letter-spacing: 0;
     }
 }

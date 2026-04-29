@@ -1567,3 +1567,9 @@ box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         grid-template-columns: 1fr;
     }
 }
+
+@media (prefers-color-scheme: dark) and (max-width: 1024px) {
+    .menu-toggle span {
+        background-color: #ffffff;
+    }
+}

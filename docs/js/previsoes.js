@@ -1363,12 +1363,9 @@ const SCORE_STAGES = [
             const label = total.querySelector('.score-total-label');
             if (!label) return;
 
-            total.classList.remove('tall');
+            const textLength = label.textContent.trim().length;
 
-            requestAnimationFrame(() => {
-                const isTwoLines = label.scrollHeight > 10;
-                total.classList.toggle('tall', isTwoLines);
-            });
+            total.classList.toggle('tall', textLength >= 10);
         });
     }
 
