@@ -190,24 +190,24 @@ const SCORE_STAGES = [
                 <input class="country-filter group-country-filter" type="text" placeholder="Pesquisar país..." autocomplete="off">
                 </div>
 
-                <div class="groups-mode">
-                <button type="button" class="groups-mode-btn active" data-mode="games">Grupos</button>
-                <button type="button" class="groups-mode-btn" data-mode="matches">Partidas</button>
-                </div>
-
-                <div class="date-dropdown group-dropdown">
-                <button type="button" class="date-dropdown-btn group-dropdown-btn">
-                    Todos os grupos <span>▾</span>
-                </button>
-                <div class="date-dropdown-menu group-dropdown-menu"></div>
-                </div>
-
                 <!-- Aparece só no modo Partidas -->
                 <div class="date-dropdown groups-date-dropdown">
                 <button type="button" class="date-dropdown-btn groups-date-dropdown-btn">
                     Todas as datas <span>▾</span>
                 </button>
                 <div class="date-dropdown-menu groups-date-dropdown-menu"></div>
+                </div>
+
+                <div class="groups-mode">
+                    <button type="button" class="groups-mode-btn active" data-mode="games">Grupos</button>
+                    <button type="button" class="groups-mode-btn" data-mode="matches">Partidas</button>
+                </div>
+
+                <div class="date-dropdown group-dropdown">
+                    <button type="button" class="date-dropdown-btn group-dropdown-btn">
+                        Todos os grupos <span>▾</span>
+                    </button>
+                    <div class="date-dropdown-menu group-dropdown-menu"></div>
                 </div>
             </div>
 

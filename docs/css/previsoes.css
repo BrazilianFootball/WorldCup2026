@@ -1383,10 +1383,10 @@ PREVISIONS PROBS
     }
 
     .tab {
-        flex: 1 1 25%;
+        flex: 1 1 28%;
         min-width: 90px;
-        padding: 7px 11px;
-        font-size: 10px;
+        padding: 7px 14px;
+        font-size: 12px;
         letter-spacing: 0.2px;
         white-space: nowrap;
         text-align: center;
