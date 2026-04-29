@@ -54,6 +54,9 @@ class TournamentResult:
     """Accumulated results across many simulations."""
 
     counts: int = 0
+    first_place: dict[str, int] = field(default_factory=dict)
+    second_place: dict[str, int] = field(default_factory=dict)
+    third_place: dict[str, int] = field(default_factory=dict)
     group_stage: dict[str, int] = field(default_factory=dict)
     round_of_32: dict[str, int] = field(default_factory=dict)
     round_of_16: dict[str, int] = field(default_factory=dict)
@@ -662,6 +665,10 @@ class WorldCup2026:
         r_global = bases + second_local
         t_global = bases + third_local
 
+        first_c = np.bincount(w_global.reshape(-1), minlength=nt)
+        second_c = np.bincount(r_global.reshape(-1), minlength=nt)
+        third_c = np.bincount(t_global.reshape(-1), minlength=nt)
+
         # ── Phase 4: best 8 thirds ──────────────────────────────
         gi_ax = np.arange(ng)[:, None]
         sim_ax = np.arange(n)[None, :]
@@ -765,7 +772,18 @@ class WorldCup2026:
                 )
             ] += 1
 
-        return self._accumulate_counts(n, r32_c, r16_c, qf_c, sf_c, final_c, champ_c)
+        return self._accumulate_counts(
+            n,
+            first_c,
+            second_c,
+            third_c,
+            r32_c,
+            r16_c,
+            qf_c,
+            sf_c,
+            final_c,
+            champ_c,
+        )
 
     def _simulate_with_series(self, n: int) -> TournamentResult:
         assert self.series_params is not None
@@ -834,6 +852,10 @@ class WorldCup2026:
         r_global = bases + second_local
         t_global = bases + third_local
 
+        first_c = np.bincount(w_global.reshape(-1), minlength=nt)
+        second_c = np.bincount(r_global.reshape(-1), minlength=nt)
+        third_c = np.bincount(t_global.reshape(-1), minlength=nt)
+
         gi_ax = np.arange(ng)[:, None]
         sim_ax = np.arange(n)[None, :]
         t_pts = pts[gi_ax, sim_ax, third_local]
@@ -887,11 +909,25 @@ class WorldCup2026:
 
             champ_c[self._ko(sfw[0], sfw[1], sim=sim)] += 1
 
-        return self._accumulate_counts(n, r32_c, r16_c, qf_c, sf_c, final_c, champ_c)
+        return self._accumulate_counts(
+            n,
+            first_c,
+            second_c,
+            third_c,
+            r32_c,
+            r16_c,
+            qf_c,
+            sf_c,
+            final_c,
+            champ_c,
+        )
 
     def _accumulate_counts(
         self,
         n: int,
+        first_c: np.ndarray,
+        second_c: np.ndarray,
+        third_c: np.ndarray,
         r32_c: np.ndarray,
         r16_c: np.ndarray,
         qf_c: np.ndarray,
@@ -902,6 +938,9 @@ class WorldCup2026:
         tr = TournamentResult(counts=n)
         for i, t in enumerate(self.all_teams):
             tr.group_stage[t] = n
+            tr.first_place[t] = int(first_c[i])
+            tr.second_place[t] = int(second_c[i])
+            tr.third_place[t] = int(third_c[i])
             tr.round_of_32[t] = int(r32_c[i])
             tr.round_of_16[t] = int(r16_c[i])
             tr.quarterfinals[t] = int(qf_c[i])
