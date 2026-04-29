@@ -158,12 +158,12 @@ STAGE_LABELS = [
 ]
 
 PHASE_LABELS = {
-    "group_stage": "fase_de_grupos",
-    "round_of_32": "rodada_de_32",
-    "round_of_16": "oitavas_de_final",
-    "quarterfinals": "quartas_de_final",
-    "semifinals": "semifinais",
-    "final": "final",
+    "group_stage": ["fase_de_grupos", ""],
+    "round_of_32": ["rodada_de_32", "16s"],
+    "round_of_16": ["oitavas_de_final", "8s"],
+    "quarterfinals": ["quartas_de_final", "4s"],
+    "semifinals": ["semifinais", "SF"],
+    "final": ["final", "F"],
 }
 
 SCORE_MAP = {
@@ -196,7 +196,7 @@ SCORE_MAP = {
 
 ALL_SCORE_COLS = list(SCORE_MAP.values())
 
-TEAM_MAP = {
+TEAM_MAP_EN_TO_PT = {
     # Group A
     "Mexico": "México",
     "South Korea": "Coreia do Sul",
@@ -258,3 +258,5 @@ TEAM_MAP = {
     "Ghana": "Gana",
     "Panama": "Panamá",
 }
+
+TEAM_MAP_PT_TO_EN = {v: k for k, v in TEAM_MAP_EN_TO_PT.items()}
