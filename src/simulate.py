@@ -159,7 +159,7 @@ def main() -> None:
     parser.add_argument(
         "--wc-results",
         type=str,
-        default=None,
+        default="data/world_cup_results.csv",
         help="Caminho para CSV com resultados já ocorridos na Copa",
     )
     args = parser.parse_args()

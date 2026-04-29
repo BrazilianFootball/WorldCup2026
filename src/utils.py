@@ -9,7 +9,12 @@ import pandas as pd
 from numpy.typing import NDArray
 from scipy.stats import poisson
 
-from src.constants import GROUP_STAGE_MATCHES, MAX_GOALS, TEAM_NAME_MAP
+from src.constants import (
+    GROUP_STAGE_MATCHES,
+    MAX_GOALS,
+    TEAM_MAP_PT_TO_EN,
+    TEAM_NAME_MAP,
+)
 
 
 def resolve_team_name(name: str, known_teams: list[str]) -> str:
@@ -34,10 +39,21 @@ def load_wc_results(
     and a dict mapping (team_a, team_b) -> (goals_a, goals_b).
     """
     df = pd.read_csv(path)
-    df["home_team"] = df["home_team"].replace(TEAM_NAME_MAP)
-    df["away_team"] = df["away_team"].replace(TEAM_NAME_MAP)
+    df.rename(
+        {
+            "home_real": "home_score",
+            "away_real": "away_score",
+        },
+        axis=1,
+        inplace=True,
+    )
+    df.dropna(inplace=True)
+    df["home_team"] = df["home_team"].replace(TEAM_MAP_PT_TO_EN)
+    df["away_team"] = df["away_team"].replace(TEAM_MAP_PT_TO_EN)
     if "date" not in df.columns:
         df["date"] = pd.Timestamp.now().strftime("%Y-%m-%d")
+    else:
+        df["date"] = pd.to_datetime(df["date"] + "/2026", format="%d/%m/%Y")
     if "tournament" not in df.columns:
         df["tournament"] = "FIFA World Cup"
     if "neutral" not in df.columns:

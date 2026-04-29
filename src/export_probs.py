@@ -20,7 +20,7 @@ from src.constants import (
     ROUND_OF_16_PAIRS,
     SCORE_MAP,
     SEMIFINAL_PAIRS,
-    TEAM_MAP,
+    TEAM_MAP_EN_TO_PT,
 )
 from src.model import build_model
 from src.tournament import WorldCup2026
@@ -103,7 +103,6 @@ def build_prob_dataframe(
     matchups,
     max_goals=4,
     results_path="data/world_cup_results.csv",
-    output_path="docs/csv/placares/partidas.csv",
 ):
     results_df = pd.read_csv(results_path)
     for col in ["home_team", "away_team", "group"]:
@@ -112,8 +111,8 @@ def build_prob_dataframe(
     rows = []
 
     for home_en, away_en, group in matchups:
-        home = TEAM_MAP.get(home_en)
-        away = TEAM_MAP.get(away_en)
+        home = TEAM_MAP_EN_TO_PT.get(home_en)
+        away = TEAM_MAP_EN_TO_PT.get(away_en)
 
         if home is None or away is None:
             raise ValueError(f"Time sem mapeamento: {home_en} vs {away_en}")
@@ -139,24 +138,26 @@ def build_prob_dataframe(
             flipped = True
 
         if len(match_info) != 1:
-            raise ValueError(
-                f"Jogo não encontrado (nem invertido): {home} vs {away} ({group})"
-            )
+            date = None
+            home_real = None
+            away_real = None
+        else:
+            date = match_info["date"].values[0]
+            home_real = match_info["home_real"].values[0]
+            away_real = match_info["away_real"].values[0]
 
         if flipped:
             prob = prob.T
             home, away = away, home
 
-        match_info = match_info.iloc[0]
-
         row = {
             "group": group,
             "home_team": home,
             "away_team": away,
-            "date": match_info["date"],
+            "date": date,
             **dict.fromkeys(ALL_SCORE_COLS, 0.0),
-            "home_real": match_info["home_real"],
-            "away_real": match_info["away_real"],
+            "home_real": home_real,
+            "away_real": away_real,
         }
 
         for i in range(prob.shape[0]):
@@ -173,9 +174,23 @@ def build_prob_dataframe(
         + ["home_real", "away_real"]
     ]
 
-    df.to_csv(output_path, index=False)
-
     return df
+
+
+def save_matches_to_prod(
+    df: pd.DataFrame, prod_path="docs/csv/placares/partidas.csv"
+) -> None:
+    path = Path(prod_path)
+    key_cols = ["group", "home_team", "away_team"]
+    if path.exists():
+        existing = pd.read_csv(path)
+        combined = pd.concat([existing, df], ignore_index=True)
+        combined = combined.drop_duplicates(subset=key_cols, keep="first")
+    else:
+        combined = df.copy()
+        combined = combined.drop_duplicates(subset=key_cols, keep="first")
+
+    combined.to_csv(path, index=False)
 
 
 def export_phase_probs(
@@ -185,9 +200,13 @@ def export_phase_probs(
 ) -> Path:
     """Detect current phase, compute probability matrices, save to CSV."""
     phase = detect_phase(known, wc.groups)
-    label = PHASE_LABELS[phase]
+    label = PHASE_LABELS[phase][0]
     matchups = get_phase_matchups(wc, known, phase)
     df = build_prob_dataframe(wc, matchups, max_goals=max_goals)
+    if df["group"].values[0] == "":
+        df["group"] = PHASE_LABELS[phase][1]
+
+    save_matches_to_prod(df)
     output_path = DATA_DIR / f"probs_{label}.csv"
     df.to_csv(output_path, index=False)
     return output_path
@@ -214,7 +233,7 @@ def build_stage_dataframe(
 
     for stage in stages:
         for team_en, value in results[stage].items():
-            team_pt = TEAM_MAP.get(team_en, team_en)
+            team_pt = TEAM_MAP_EN_TO_PT.get(team_en, team_en)
             mapped_results[stage][team_pt] += value
 
     all_teams = mapped_results["champion"].keys()
@@ -319,7 +338,7 @@ def main() -> None:
     wc = WorldCup2026(model.fitted_parameters(), seed=args.seed, known_results=known)
 
     phase = detect_phase(known, wc.groups)
-    label = PHASE_LABELS[phase]
+    label = PHASE_LABELS[phase][0]
     print(f"Fase detectada: {label}")
 
     matchups = get_phase_matchups(wc, known, phase)
