@@ -9,6 +9,7 @@ from pathlib import Path
 import pandas as pd
 
 from src.constants import (
+    ALL_SCORE_COLS,
     DATA_DIR,
     DEFAULT_MIN_DATE,
     DEFAULT_SEED,
@@ -16,7 +17,9 @@ from src.constants import (
     PHASE_LABELS,
     QUARTERFINAL_PAIRS,
     ROUND_OF_16_PAIRS,
+    SCORE_MAP,
     SEMIFINAL_PAIRS,
+    TEAM_MAP,
 )
 from src.model import build_model
 from src.tournament import WorldCup2026
@@ -95,29 +98,83 @@ def get_phase_matchups(
 
 
 def build_prob_dataframe(
-    wc: WorldCup2026,
-    matchups: list[tuple[str, str, str]],
-    max_goals: int = MAX_GOALS,
-) -> pd.DataFrame:
-    """Compute probability matrices and return a flat DataFrame."""
-    rows: list[dict] = []
-    for home, away, group in matchups:
-        prob = wc.params.match_probs(home, away, neutral=True, max_goals=max_goals)
+    wc,
+    matchups,
+    max_goals=4,
+    results_path="data/world_cup_results.csv",
+    output_path="docs/csv/placares/partidas.csv",
+):
+    results_df = pd.read_csv(results_path)
+    for col in ["home_team", "away_team", "group"]:
+        results_df[col] = results_df[col].astype(str).str.strip()
+
+    rows = []
+
+    for home_en, away_en, group in matchups:
+        home = TEAM_MAP.get(home_en)
+        away = TEAM_MAP.get(away_en)
+
+        if home is None or away is None:
+            raise ValueError(f"Time sem mapeamento: {home_en} vs {away_en}")
+
+        prob = wc.params.match_probs(
+            home_en, away_en, neutral=True, max_goals=max_goals
+        )
+
+        match_info = results_df[
+            (results_df["group"] == group)
+            & (results_df["home_team"] == home)
+            & (results_df["away_team"] == away)
+        ]
+
+        flipped = False
+
+        if match_info.empty:
+            match_info = results_df[
+                (results_df["group"] == group)
+                & (results_df["home_team"] == away)
+                & (results_df["away_team"] == home)
+            ]
+            flipped = True
+
+        if len(match_info) != 1:
+            raise ValueError(
+                f"Jogo não encontrado (nem invertido): {home} vs {away} ({group})"
+            )
+
+        if flipped:
+            prob = prob.T
+            home, away = away, home
+
+        match_info = match_info.iloc[0]
+
+        row = {
+            "group": group,
+            "home_team": home,
+            "away_team": away,
+            "date": match_info["date"],
+            **{col: 0.0 for col in ALL_SCORE_COLS},
+            "home_real": match_info["home_real"],
+            "away_real": match_info["away_real"],
+        }
+
         for i in range(prob.shape[0]):
             for j in range(prob.shape[1]):
-                p = prob[i, j]
-                if p > 1e-10:
-                    rows.append(
-                        {
-                            "group": group,
-                            "home_team": home,
-                            "away_team": away,
-                            "home_score": i,
-                            "away_score": j,
-                            "probability": round(p, 8),
-                        }
-                    )
-    return pd.DataFrame(rows)
+                if (i, j) in SCORE_MAP:
+                    row[SCORE_MAP[(i, j)]] = round(100 * prob[i, j], 4)
+
+        rows.append(row)
+
+    df = pd.DataFrame(rows)
+    df = df[
+        ["group", "home_team", "away_team", "date"]
+        + ALL_SCORE_COLS
+        + ["home_real", "away_real"]
+    ]
+
+    df.to_csv(output_path, index=False)
+
+    return df
 
 
 def export_phase_probs(
