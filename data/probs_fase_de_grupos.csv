@@ -1,0 +1,2593 @@
+group,home_team,away_team,home_score,away_score,probability
+A,Mexico,South Korea,0,0,0.1357654
+A,Mexico,South Korea,0,1,0.11585742
+A,Mexico,South Korea,0,2,0.0585823
+A,Mexico,South Korea,0,3,0.0186256
+A,Mexico,South Korea,0,4,0.00444135
+A,Mexico,South Korea,0,5,0.00084725
+A,Mexico,South Korea,1,0,0.13432469
+A,Mexico,South Korea,1,1,0.14175915
+A,Mexico,South Korea,1,2,0.06427726
+A,Mexico,South Korea,1,3,0.02043625
+A,Mexico,South Korea,1,4,0.00487311
+A,Mexico,South Korea,1,5,0.00092961
+A,Mexico,South Korea,2,0,0.07752076
+A,Mexico,South Korea,2,1,0.07394063
+A,Mexico,South Korea,2,2,0.03526292
+A,Mexico,South Korea,2,3,0.01121146
+A,Mexico,South Korea,2,4,0.00267342
+A,Mexico,South Korea,2,5,0.00050999
+A,Mexico,South Korea,3,0,0.02835226
+A,Mexico,South Korea,3,1,0.02704287
+A,Mexico,South Korea,3,2,0.01289698
+A,Mexico,South Korea,3,3,0.00410045
+A,Mexico,South Korea,3,4,0.00097777
+A,Mexico,South Korea,3,5,0.00018652
+A,Mexico,South Korea,4,0,0.00777712
+A,Mexico,South Korea,4,1,0.00741795
+A,Mexico,South Korea,4,2,0.00353768
+A,Mexico,South Korea,4,3,0.00112477
+A,Mexico,South Korea,4,4,0.00026821
+A,Mexico,South Korea,4,5,5.116e-05
+A,Mexico,South Korea,5,0,0.00170663
+A,Mexico,South Korea,5,1,0.00162781
+A,Mexico,South Korea,5,2,0.00077632
+A,Mexico,South Korea,5,3,0.00024682
+A,Mexico,South Korea,5,4,5.886e-05
+A,Mexico,South Korea,5,5,1.123e-05
+A,Mexico,South Africa,0,0,0.15093295
+A,Mexico,South Africa,0,1,0.09334974
+A,Mexico,South Africa,0,2,0.03445683
+A,Mexico,South Africa,0,3,0.00793197
+A,Mexico,South Africa,0,4,0.00136945
+A,Mexico,South Africa,0,5,0.00018915
+A,Mexico,South Africa,1,0,0.17357392
+A,Mexico,South Africa,1,1,0.13075481
+A,Mexico,South Africa,1,2,0.04292651
+A,Mexico,South Africa,1,3,0.00988169
+A,Mexico,South Africa,1,4,0.00170607
+A,Mexico,South Africa,1,5,0.00023564
+A,Mexico,South Africa,2,0,0.11213012
+A,Mexico,South Africa,2,1,0.0774371
+A,Mexico,South Africa,2,2,0.02673904
+A,Mexico,South Africa,2,3,0.00615533
+A,Mexico,South Africa,2,4,0.00106272
+A,Mexico,South Africa,2,5,0.00014678
+A,Mexico,South Africa,3,0,0.04656411
+A,Mexico,South Africa,3,1,0.03215719
+A,Mexico,South Africa,3,2,0.01110388
+A,Mexico,South Africa,3,3,0.00255611
+A,Mexico,South Africa,3,4,0.00044131
+A,Mexico,South Africa,3,5,6.095e-05
+A,Mexico,South Africa,4,0,0.01450246
+A,Mexico,South Africa,4,1,0.0100154
+A,Mexico,South Africa,4,2,0.00345832
+A,Mexico,South Africa,4,3,0.00079611
+A,Mexico,South Africa,4,4,0.00013745
+A,Mexico,South Africa,4,5,1.898e-05
+A,Mexico,South Africa,5,0,0.00361345
+A,Mexico,South Africa,5,1,0.00249545
+A,Mexico,South Africa,5,2,0.00086168
+A,Mexico,South Africa,5,3,0.00019836
+A,Mexico,South Africa,5,4,3.425e-05
+A,Mexico,South Africa,5,5,4.73e-06
+A,Mexico,Czech Republic,0,0,0.13498179
+A,Mexico,Czech Republic,0,1,0.11010929
+A,Mexico,Czech Republic,0,2,0.05348343
+A,Mexico,Czech Republic,0,3,0.01629391
+A,Mexico,Czech Republic,0,4,0.003723
+A,Mexico,Czech Republic,0,5,0.00068053
+A,Mexico,Czech Republic,1,0,0.13942439
+A,Mexico,Czech Republic,1,1,0.14068707
+A,Mexico,Czech Republic,1,2,0.06112553
+A,Mexico,Czech Republic,1,3,0.0186221
+A,Mexico,Czech Republic,1,4,0.00425497
+A,Mexico,Czech Republic,1,5,0.00077777
+A,Mexico,Czech Republic,2,0,0.08363178
+A,Mexico,Czech Republic,2,1,0.07643613
+A,Mexico,Czech Republic,2,2,0.0349298
+A,Mexico,Czech Republic,2,3,0.01064148
+A,Mexico,Czech Republic,2,4,0.00243147
+A,Mexico,Czech Republic,2,5,0.00044445
+A,Mexico,Czech Republic,3,0,0.03186056
+A,Mexico,Czech Republic,3,1,0.02911929
+A,Mexico,Czech Republic,3,2,0.01330694
+A,Mexico,Czech Republic,3,3,0.004054
+A,Mexico,Czech Republic,3,4,0.0009263
+A,Mexico,Czech Republic,3,5,0.00016932
+A,Mexico,Czech Republic,4,0,0.00910326
+A,Mexico,Czech Republic,4,1,0.00832002
+A,Mexico,Czech Republic,4,2,0.00380208
+A,Mexico,Czech Republic,4,3,0.00115832
+A,Mexico,Czech Republic,4,4,0.00026466
+A,Mexico,Czech Republic,4,5,4.838e-05
+A,Mexico,Czech Republic,5,0,0.0020808
+A,Mexico,Czech Republic,5,1,0.00190177
+A,Mexico,Czech Republic,5,2,0.00086907
+A,Mexico,Czech Republic,5,3,0.00026477
+A,Mexico,Czech Republic,5,4,6.05e-05
+A,Mexico,Czech Republic,5,5,1.106e-05
+A,South Korea,South Africa,0,0,0.10950703
+A,South Korea,South Africa,0,1,0.08469491
+A,South Korea,South Africa,0,2,0.04046087
+A,South Korea,South Africa,0,3,0.01195818
+A,South Korea,South Africa,0,4,0.00265068
+A,South Korea,South Africa,0,5,0.00047004
+A,South Korea,South Africa,1,0,0.1365516
+A,South Korea,South Africa,1,1,0.13347251
+A,South Korea,South Africa,1,2,0.05625799
+A,South Korea,South Africa,1,3,0.01662701
+A,South Korea,South Africa,1,4,0.00368558
+A,South Korea,South Africa,1,5,0.00065356
+A,South Korea,South Africa,2,0,0.09950173
+A,South Korea,South Africa,2,1,0.08822302
+A,South Korea,South Africa,2,2,0.03911139
+A,South Korea,South Africa,2,3,0.01155935
+A,South Korea,South Africa,2,4,0.00256227
+A,South Korea,South Africa,2,5,0.00045437
+A,South Korea,South Africa,3,0,0.04611672
+A,South Korea,South Africa,3,1,0.0408893
+A,South Korea,South Africa,3,2,0.01812721
+A,South Korea,South Africa,3,3,0.00535748
+A,South Korea,South Africa,3,4,0.00118755
+A,South Korea,South Africa,3,5,0.00021059
+A,South Korea,South Africa,4,0,0.01603051
+A,South Korea,South Africa,4,1,0.01421342
+A,South Korea,South Africa,4,2,0.00630115
+A,South Korea,South Africa,4,3,0.0018623
+A,South Korea,South Africa,4,4,0.0004128
+A,South Korea,South Africa,4,5,7.32e-05
+A,South Korea,South Africa,5,0,0.00445786
+A,South Korea,South Africa,5,1,0.00395255
+A,South Korea,South Africa,5,2,0.00175226
+A,South Korea,South Africa,5,3,0.00051788
+A,South Korea,South Africa,5,4,0.00011479
+A,South Korea,South Africa,5,5,2.036e-05
+A,South Korea,Czech Republic,0,0,0.0933925
+A,South Korea,Czech Republic,0,1,0.09498571
+A,South Korea,Czech Republic,0,2,0.05967077
+A,South Korea,Czech Republic,0,3,0.02333954
+A,South Korea,Czech Republic,0,4,0.00684674
+A,South Korea,Czech Republic,0,5,0.00160682
+A,South Korea,Czech Republic,1,0,0.10383926
+A,South Korea,Czech Republic,1,1,0.13644912
+A,South Korea,Czech Republic,1,2,0.07611385
+A,South Korea,Czech Republic,1,3,0.02977106
+A,South Korea,Czech Republic,1,4,0.00873346
+A,South Korea,Czech Republic,1,5,0.0020496
+A,South Korea,Czech Republic,2,0,0.07051184
+A,South Korea,Czech Republic,2,1,0.0827397
+A,South Korea,Czech Republic,2,2,0.04854403
+A,South Korea,Czech Republic,2,3,0.01898744
+A,South Korea,Czech Republic,2,4,0.00557004
+A,South Korea,Czech Republic,2,5,0.00130719
+A,South Korea,Czech Republic,3,0,0.02998078
+A,South Korea,Czech Republic,3,1,0.03517991
+A,South Korea,Czech Republic,3,2,0.02064033
+A,South Korea,Czech Republic,3,3,0.00807323
+A,South Korea,Czech Republic,3,4,0.00236831
+A,South Korea,Czech Republic,3,5,0.0005558
+A,South Korea,Czech Republic,4,0,0.0095606
+A,South Korea,Czech Republic,4,1,0.01121855
+A,South Korea,Czech Republic,4,2,0.00658201
+A,South Korea,Czech Republic,4,3,0.00257448
+A,South Korea,Czech Republic,4,4,0.00075523
+A,South Korea,Czech Republic,4,5,0.00017724
+A,South Korea,Czech Republic,5,0,0.00243903
+A,South Korea,Czech Republic,5,1,0.002862
+A,South Korea,Czech Republic,5,2,0.00167916
+A,South Korea,Czech Republic,5,3,0.00065678
+A,South Korea,Czech Republic,5,4,0.00019267
+A,South Korea,Czech Republic,5,5,4.522e-05
+A,South Africa,Czech Republic,0,0,0.11178313
+A,South Africa,Czech Republic,0,1,0.13331278
+A,South Africa,Czech Republic,0,2,0.09326932
+A,South Africa,Czech Republic,0,3,0.04142178
+A,South Africa,Czech Republic,0,4,0.01379685
+A,South Africa,Czech Republic,0,5,0.00367639
+A,South Africa,Czech Republic,1,0,0.0903565
+A,South Africa,Czech Republic,1,1,0.13600354
+A,South Africa,Czech Republic,1,2,0.08613953
+A,South Africa,Czech Republic,1,3,0.03825537
+A,South Africa,Czech Republic,1,4,0.01274218
+A,South Africa,Czech Republic,1,5,0.00339535
+A,South Africa,Czech Republic,2,0,0.04481711
+A,South Africa,Czech Republic,2,1,0.05971109
+A,South Africa,Czech Republic,2,2,0.03977738
+A,South Africa,Czech Republic,2,3,0.01766551
+A,South Africa,Czech Republic,2,4,0.00588406
+A,South Africa,Czech Republic,2,5,0.0015679
+A,South Africa,Czech Republic,3,0,0.01379705
+A,South Africa,Czech Republic,3,1,0.0183822
+A,South Africa,Czech Republic,3,2,0.01224556
+A,South Africa,Czech Republic,3,3,0.00543837
+A,South Africa,Czech Republic,3,4,0.00181142
+A,South Africa,Czech Republic,3,5,0.00048268
+A,South Africa,Czech Republic,4,0,0.00318559
+A,South Africa,Czech Republic,4,1,0.00424425
+A,South Africa,Czech Republic,4,2,0.00282737
+A,South Africa,Czech Republic,4,3,0.00125566
+A,South Africa,Czech Republic,4,4,0.00041824
+A,South Africa,Czech Republic,4,5,0.00011145
+A,South Africa,Czech Republic,5,0,0.00058841
+A,South Africa,Czech Republic,5,1,0.00078396
+A,South Africa,Czech Republic,5,2,0.00052225
+A,South Africa,Czech Republic,5,3,0.00023193
+A,South Africa,Czech Republic,5,4,7.725e-05
+A,South Africa,Czech Republic,5,5,2.059e-05
+B,Canada,Switzerland,0,0,0.10191422
+B,Canada,Switzerland,0,1,0.1235582
+B,Canada,Switzerland,0,2,0.08900815
+B,Canada,Switzerland,0,3,0.04055986
+B,Canada,Switzerland,0,4,0.01386195
+B,Canada,Switzerland,0,5,0.00379003
+B,Canada,Switzerland,1,0,0.08740905
+B,Canada,Switzerland,1,1,0.13525827
+B,Canada,Switzerland,1,2,0.0879008
+B,Canada,Switzerland,1,3,0.04005525
+B,Canada,Switzerland,1,4,0.01368949
+B,Canada,Switzerland,1,5,0.00374287
+B,Canada,Switzerland,2,0,0.0464494
+B,Canada,Switzerland,2,1,0.06349916
+B,Canada,Switzerland,2,2,0.04340361
+B,Canada,Switzerland,2,3,0.01977846
+B,Canada,Switzerland,2,4,0.00675959
+B,Canada,Switzerland,2,5,0.00184815
+B,Canada,Switzerland,3,0,0.01529051
+B,Canada,Switzerland,3,1,0.02090305
+B,Canada,Switzerland,3,2,0.01428788
+B,Canada,Switzerland,3,3,0.0065108
+B,Canada,Switzerland,3,4,0.00222516
+B,Canada,Switzerland,3,5,0.00060839
+B,Canada,Switzerland,4,0,0.00377507
+B,Canada,Switzerland,4,1,0.00516075
+B,Canada,Switzerland,4,2,0.00352753
+B,Canada,Switzerland,4,3,0.00160745
+B,Canada,Switzerland,4,4,0.00054937
+B,Canada,Switzerland,4,5,0.0001502
+B,Canada,Switzerland,5,0,0.00074562
+B,Canada,Switzerland,5,1,0.00101931
+B,Canada,Switzerland,5,2,0.00069673
+B,Canada,Switzerland,5,3,0.00031749
+B,Canada,Switzerland,5,4,0.00010851
+B,Canada,Switzerland,5,5,2.967e-05
+B,Canada,Qatar,0,0,0.06517932
+B,Canada,Qatar,0,1,0.04200027
+B,Canada,Qatar,0,2,0.01833657
+B,Canada,Qatar,0,3,0.00477079
+B,Canada,Qatar,0,4,0.00093094
+B,Canada,Qatar,0,5,0.00014533
+B,Canada,Qatar,1,0,0.11831529
+B,Canada,Qatar,1,1,0.10122407
+B,Canada,Qatar,1,2,0.03755938
+B,Canada,Qatar,1,3,0.00977216
+B,Canada,Qatar,1,4,0.00190688
+B,Canada,Qatar,1,5,0.00029768
+B,Canada,Qatar,2,0,0.12627915
+B,Canada,Qatar,2,1,0.09856556
+B,Canada,Qatar,2,2,0.03846703
+B,Canada,Qatar,2,3,0.01000832
+B,Canada,Qatar,2,4,0.00195297
+B,Canada,Qatar,2,5,0.00030487
+B,Canada,Qatar,3,0,0.08622053
+B,Canada,Qatar,3,1,0.06729832
+B,Canada,Qatar,3,2,0.02626441
+B,Canada,Qatar,3,3,0.00683345
+B,Canada,Qatar,3,4,0.00133344
+B,Canada,Qatar,3,5,0.00020816
+B,Canada,Qatar,4,0,0.04415206
+B,Canada,Qatar,4,1,0.03446232
+B,Canada,Qatar,4,2,0.01344956
+B,Canada,Qatar,4,3,0.00349929
+B,Canada,Qatar,4,4,0.00068283
+B,Canada,Qatar,4,5,0.0001066
+B,Canada,Qatar,5,0,0.01808761
+B,Canada,Qatar,5,1,0.01411805
+B,Canada,Qatar,5,2,0.00550983
+B,Canada,Qatar,5,3,0.00143354
+B,Canada,Qatar,5,4,0.00027973
+B,Canada,Qatar,5,5,4.367e-05
+B,Canada,Bosnia and Herzegovina,0,0,0.11354005
+B,Canada,Bosnia and Herzegovina,0,1,0.06780466
+B,Canada,Bosnia and Herzegovina,0,2,0.02524834
+B,Canada,Bosnia and Herzegovina,0,3,0.00576484
+B,Canada,Bosnia and Herzegovina,0,4,0.0009872
+B,Canada,Bosnia and Herzegovina,0,5,0.00013524
+B,Canada,Bosnia and Herzegovina,1,0,0.16083978
+B,Canada,Bosnia and Herzegovina,1,1,0.12013917
+B,Canada,Bosnia and Herzegovina,1,2,0.03912025
+B,Canada,Bosnia and Herzegovina,1,3,0.00893216
+B,Canada,Bosnia and Herzegovina,1,4,0.00152958
+B,Canada,Bosnia and Herzegovina,1,5,0.00020955
+B,Canada,Bosnia and Herzegovina,2,0,0.12918698
+B,Canada,Bosnia and Herzegovina,2,1,0.08849009
+B,Canada,Bosnia and Herzegovina,2,2,0.03030683
+B,Canada,Bosnia and Herzegovina,2,3,0.00691983
+B,Canada,Bosnia and Herzegovina,2,4,0.00118498
+B,Canada,Bosnia and Herzegovina,2,5,0.00016234
+B,Canada,Bosnia and Herzegovina,3,0,0.06672159
+B,Canada,Bosnia and Herzegovina,3,1,0.04570275
+B,Canada,Bosnia and Herzegovina,3,2,0.01565266
+B,Canada,Bosnia and Herzegovina,3,3,0.0035739
+B,Canada,Bosnia and Herzegovina,3,4,0.00061201
+B,Canada,Bosnia and Herzegovina,3,5,8.384e-05
+B,Canada,Bosnia and Herzegovina,4,0,0.02584493
+B,Canada,Bosnia and Herzegovina,4,1,0.01770318
+B,Canada,Bosnia and Herzegovina,4,2,0.00606313
+B,Canada,Bosnia and Herzegovina,4,3,0.00138437
+B,Canada,Bosnia and Herzegovina,4,4,0.00023707
+B,Canada,Bosnia and Herzegovina,4,5,3.248e-05
+B,Canada,Bosnia and Herzegovina,5,0,0.00800892
+B,Canada,Bosnia and Herzegovina,5,1,0.00548593
+B,Canada,Bosnia and Herzegovina,5,2,0.00187887
+B,Canada,Bosnia and Herzegovina,5,3,0.00042899
+B,Canada,Bosnia and Herzegovina,5,4,7.346e-05
+B,Canada,Bosnia and Herzegovina,5,5,1.006e-05
+B,Switzerland,Qatar,0,0,0.03585103
+B,Switzerland,Qatar,0,1,0.02095067
+B,Switzerland,Qatar,0,2,0.00920004
+B,Switzerland,Qatar,0,3,0.00231141
+B,Switzerland,Qatar,0,4,0.00043554
+B,Switzerland,Qatar,0,5,6.565e-05
+B,Switzerland,Qatar,1,0,0.08522164
+B,Switzerland,Qatar,1,1,0.07030406
+B,Switzerland,Qatar,1,2,0.02519015
+B,Switzerland,Qatar,1,3,0.00632876
+B,Switzerland,Qatar,1,4,0.00119253
+B,Switzerland,Qatar,1,5,0.00017977
+B,Switzerland,Qatar,2,0,0.12140963
+B,Switzerland,Qatar,2,1,0.0915087
+B,Switzerland,Qatar,2,2,0.03448591
+B,Switzerland,Qatar,2,3,0.00866422
+B,Switzerland,Qatar,2,4,0.0016326
+B,Switzerland,Qatar,2,5,0.0002461
+B,Switzerland,Qatar,3,0,0.11080842
+B,Switzerland,Qatar,3,1,0.08351837
+B,Switzerland,Qatar,3,2,0.03147467
+B,Switzerland,Qatar,3,3,0.00790768
+B,Switzerland,Qatar,3,4,0.00149004
+B,Switzerland,Qatar,3,5,0.00022461
+B,Switzerland,Qatar,4,0,0.07584966
+B,Switzerland,Qatar,4,1,0.0571693
+B,Switzerland,Qatar,4,2,0.02154478
+B,Switzerland,Qatar,4,3,0.0054129
+B,Switzerland,Qatar,4,4,0.00101995
+B,Switzerland,Qatar,4,5,0.00015375
+B,Switzerland,Qatar,5,0,0.04153598
+B,Switzerland,Qatar,5,1,0.03130644
+B,Switzerland,Qatar,5,2,0.01179812
+B,Switzerland,Qatar,5,3,0.00296416
+B,Switzerland,Qatar,5,4,0.00055853
+B,Switzerland,Qatar,5,5,8.42e-05
+B,Switzerland,Bosnia and Herzegovina,0,0,0.07103997
+B,Switzerland,Bosnia and Herzegovina,0,1,0.03916958
+B,Switzerland,Bosnia and Herzegovina,0,2,0.01451067
+B,Switzerland,Bosnia and Herzegovina,0,3,0.00319932
+B,Switzerland,Bosnia and Herzegovina,0,4,0.00052904
+B,Switzerland,Bosnia and Herzegovina,0,5,6.999e-05
+B,Switzerland,Bosnia and Herzegovina,1,0,0.13268006
+B,Switzerland,Bosnia and Herzegovina,1,1,0.09557936
+B,Switzerland,Bosnia and Herzegovina,1,2,0.03005363
+B,Switzerland,Bosnia and Herzegovina,1,3,0.00662624
+B,Switzerland,Bosnia and Herzegovina,1,4,0.00109572
+B,Switzerland,Bosnia and Herzegovina,1,5,0.00014495
+B,Switzerland,Bosnia and Herzegovina,2,0,0.14227319
+B,Switzerland,Bosnia and Herzegovina,2,1,0.09410543
+B,Switzerland,Bosnia and Herzegovina,2,2,0.03112263
+B,Switzerland,Bosnia and Herzegovina,2,3,0.00686194
+B,Switzerland,Bosnia and Herzegovina,2,4,0.00113469
+B,Switzerland,Bosnia and Herzegovina,2,5,0.00015011
+B,Switzerland,Bosnia and Herzegovina,3,0,0.09822257
+B,Switzerland,Bosnia and Herzegovina,3,1,0.06496851
+B,Switzerland,Bosnia and Herzegovina,3,2,0.02148645
+B,Switzerland,Bosnia and Herzegovina,3,3,0.00473734
+B,Switzerland,Bosnia and Herzegovina,3,4,0.00078337
+B,Switzerland,Bosnia and Herzegovina,3,5,0.00010363
+B,Switzerland,Bosnia and Herzegovina,4,0,0.05085818
+B,Switzerland,Bosnia and Herzegovina,4,1,0.03363972
+B,Switzerland,Bosnia and Herzegovina,4,2,0.01112536
+B,Switzerland,Bosnia and Herzegovina,4,3,0.00245293
+B,Switzerland,Bosnia and Herzegovina,4,4,0.00040562
+B,Switzerland,Bosnia and Herzegovina,4,5,5.366e-05
+B,Switzerland,Bosnia and Herzegovina,5,0,0.02106688
+B,Switzerland,Bosnia and Herzegovina,5,1,0.01393452
+B,Switzerland,Bosnia and Herzegovina,5,2,0.00460844
+B,Switzerland,Bosnia and Herzegovina,5,3,0.00101607
+B,Switzerland,Bosnia and Herzegovina,5,4,0.00016802
+B,Switzerland,Bosnia and Herzegovina,5,5,2.223e-05
+B,Qatar,Bosnia and Herzegovina,0,0,0.08462885
+B,Qatar,Bosnia and Herzegovina,0,1,0.10054554
+B,Qatar,Bosnia and Herzegovina,0,2,0.07346976
+B,Qatar,Bosnia and Herzegovina,0,3,0.03359822
+B,Qatar,Bosnia and Herzegovina,0,4,0.01152352
+B,Qatar,Bosnia and Herzegovina,0,5,0.00316187
+B,Qatar,Bosnia and Herzegovina,1,0,0.08576057
+B,Qatar,Bosnia and Herzegovina,1,1,0.13321518
+B,Qatar,Bosnia and Herzegovina,1,2,0.08688078
+B,Qatar,Bosnia and Herzegovina,1,3,0.03973117
+B,Qatar,Bosnia and Herzegovina,1,4,0.013627
+B,Qatar,Bosnia and Herzegovina,1,5,0.00373903
+B,Qatar,Bosnia and Herzegovina,2,0,0.05458597
+B,Qatar,Bosnia and Herzegovina,2,1,0.0748876
+B,Qatar,Bosnia and Herzegovina,2,2,0.05136991
+B,Qatar,Bosnia and Herzegovina,2,3,0.02349181
+B,Qatar,Bosnia and Herzegovina,2,4,0.00805722
+B,Qatar,Bosnia and Herzegovina,2,5,0.00221077
+B,Qatar,Bosnia and Herzegovina,3,0,0.02151666
+B,Qatar,Bosnia and Herzegovina,3,1,0.02951915
+B,Qatar,Bosnia and Herzegovina,3,2,0.02024896
+B,Qatar,Bosnia and Herzegovina,3,3,0.00925999
+B,Qatar,Bosnia and Herzegovina,3,4,0.00317599
+B,Qatar,Bosnia and Herzegovina,3,5,0.00087144
+B,Qatar,Bosnia and Herzegovina,4,0,0.00636107
+B,Qatar,Bosnia and Herzegovina,4,1,0.00872688
+B,Qatar,Bosnia and Herzegovina,4,2,0.00598629
+B,Qatar,Bosnia and Herzegovina,4,3,0.00273757
+B,Qatar,Bosnia and Herzegovina,4,4,0.00093893
+B,Qatar,Bosnia and Herzegovina,4,5,0.00025763
+B,Qatar,Bosnia and Herzegovina,5,0,0.00150444
+B,Qatar,Bosnia and Herzegovina,5,1,0.00206397
+B,Qatar,Bosnia and Herzegovina,5,2,0.0014158
+B,Qatar,Bosnia and Herzegovina,5,3,0.00064746
+B,Qatar,Bosnia and Herzegovina,5,4,0.00022206
+B,Qatar,Bosnia and Herzegovina,5,5,6.093e-05
+C,Brazil,Morocco,0,0,0.1950438
+C,Brazil,Morocco,0,1,0.12980422
+C,Brazil,Morocco,0,2,0.04944895
+C,Brazil,Morocco,0,3,0.01194354
+C,Brazil,Morocco,0,4,0.00216357
+C,Brazil,Morocco,0,5,0.00031354
+C,Brazil,Morocco,1,0,0.17138461
+C,Brazil,Morocco,1,1,0.13570925
+C,Brazil,Morocco,1,2,0.04674638
+C,Brazil,Morocco,1,3,0.01129079
+C,Brazil,Morocco,1,4,0.00204532
+C,Brazil,Morocco,1,5,0.00029641
+C,Brazil,Morocco,2,0,0.08416742
+C,Brazil,Morocco,2,1,0.06098759
+C,Brazil,Morocco,2,2,0.02209576
+C,Brazil,Morocco,2,3,0.00533685
+C,Brazil,Morocco,2,4,0.00096677
+C,Brazil,Morocco,2,5,0.0001401
+C,Brazil,Morocco,3,0,0.02652245
+C,Brazil,Morocco,3,1,0.01921813
+C,Brazil,Morocco,3,2,0.00696271
+C,Brazil,Morocco,3,3,0.00168172
+C,Brazil,Morocco,3,4,0.00030464
+C,Brazil,Morocco,3,5,4.415e-05
+C,Brazil,Morocco,4,0,0.00626822
+C,Brazil,Morocco,4,1,0.00454195
+C,Brazil,Morocco,4,2,0.00164554
+C,Brazil,Morocco,4,3,0.00039745
+C,Brazil,Morocco,4,4,7.2e-05
+C,Brazil,Morocco,4,5,1.043e-05
+C,Brazil,Morocco,5,0,0.00118513
+C,Brazil,Morocco,5,1,0.00085874
+C,Brazil,Morocco,5,2,0.00031112
+C,Brazil,Morocco,5,3,7.515e-05
+C,Brazil,Morocco,5,4,1.361e-05
+C,Brazil,Morocco,5,5,1.97e-06
+C,Brazil,Scotland,0,0,0.08695657
+C,Brazil,Scotland,0,1,0.04794351
+C,Brazil,Scotland,0,2,0.01721338
+C,Brazil,Scotland,0,3,0.00372177
+C,Brazil,Scotland,0,4,0.00060352
+C,Brazil,Scotland,0,5,7.829e-05
+C,Brazil,Scotland,1,0,0.14762664
+C,Brazil,Scotland,1,1,0.10421702
+C,Brazil,Scotland,1,2,0.03213549
+C,Brazil,Scotland,1,3,0.00694814
+C,Brazil,Scotland,1,4,0.00112671
+C,Brazil,Scotland,1,5,0.00014617
+C,Brazil,Scotland,2,0,0.14259145
+C,Brazil,Scotland,2,1,0.09249081
+C,Brazil,Scotland,2,2,0.02999671
+C,Brazil,Scotland,2,3,0.00648571
+C,Brazil,Scotland,2,4,0.00105173
+C,Brazil,Scotland,2,5,0.00013644
+C,Brazil,Scotland,3,0,0.0887342
+C,Brazil,Scotland,3,1,0.05755673
+C,Brazil,Scotland,3,2,0.01866686
+C,Brazil,Scotland,3,3,0.00403604
+C,Brazil,Scotland,3,4,0.00065449
+C,Brazil,Scotland,3,5,8.491e-05
+C,Brazil,Scotland,4,0,0.04141426
+C,Brazil,Scotland,4,1,0.02686303
+C,Brazil,Scotland,4,2,0.00871225
+C,Brazil,Scotland,4,3,0.00188371
+C,Brazil,Scotland,4,4,0.00030546
+C,Brazil,Scotland,4,5,3.963e-05
+C,Brazil,Scotland,5,0,0.01546318
+C,Brazil,Scotland,5,1,0.01003007
+C,Brazil,Scotland,5,2,0.00325296
+C,Brazil,Scotland,5,3,0.00070334
+C,Brazil,Scotland,5,4,0.00011405
+C,Brazil,Scotland,5,5,1.48e-05
+C,Brazil,Haiti,0,0,0.0225556
+C,Brazil,Haiti,0,1,0.00757858
+C,Brazil,Haiti,0,2,0.00208176
+C,Brazil,Haiti,0,3,0.00031029
+C,Brazil,Haiti,0,4,3.469e-05
+C,Brazil,Haiti,0,5,3.1e-06
+C,Brazil,Haiti,1,0,0.07308148
+C,Brazil,Haiti,1,1,0.03518597
+C,Brazil,Haiti,1,2,0.00747942
+C,Brazil,Haiti,1,3,0.00111482
+C,Brazil,Haiti,1,4,0.00012462
+C,Brazil,Haiti,1,5,1.115e-05
+C,Brazil,Haiti,2,0,0.1343976
+C,Brazil,Haiti,2,1,0.06009649
+C,Brazil,Haiti,2,2,0.01343621
+C,Brazil,Haiti,2,3,0.00200269
+C,Brazil,Haiti,2,4,0.00022388
+C,Brazil,Haiti,2,5,2.002e-05
+C,Brazil,Haiti,3,0,0.16095658
+C,Brazil,Haiti,3,1,0.07197246
+C,Brazil,Haiti,3,2,0.0160914
+C,Brazil,Haiti,3,3,0.00239845
+C,Brazil,Haiti,3,4,0.00026812
+C,Brazil,Haiti,3,5,2.398e-05
+C,Brazil,Haiti,4,0,0.14457301
+C,Brazil,Haiti,4,1,0.06464647
+C,Brazil,Haiti,4,2,0.01445348
+C,Brazil,Haiti,4,3,0.00215431
+C,Brazil,Haiti,4,4,0.00024083
+C,Brazil,Haiti,4,5,2.154e-05
+C,Brazil,Haiti,5,0,0.10388569
+C,Brazil,Haiti,5,1,0.04645295
+C,Brazil,Haiti,5,2,0.01038582
+C,Brazil,Haiti,5,3,0.00154802
+C,Brazil,Haiti,5,4,0.00017305
+C,Brazil,Haiti,5,5,1.548e-05
+C,Morocco,Scotland,0,0,0.17285863
+C,Morocco,Scotland,0,1,0.08733462
+C,Morocco,Scotland,0,2,0.02607393
+C,Morocco,Scotland,0,3,0.00485819
+C,Morocco,Scotland,0,4,0.0006789
+C,Morocco,Scotland,0,5,7.59e-05
+C,Morocco,Scotland,1,0,0.19985249
+C,Morocco,Scotland,1,1,0.12100006
+C,Morocco,Scotland,1,2,0.03215259
+C,Morocco,Scotland,1,3,0.00599079
+C,Morocco,Scotland,1,4,0.00083717
+C,Morocco,Scotland,1,5,9.359e-05
+C,Morocco,Scotland,2,0,0.12689571
+C,Morocco,Scotland,2,1,0.07093101
+C,Morocco,Scotland,2,2,0.01982419
+C,Morocco,Scotland,2,3,0.00369371
+C,Morocco,Scotland,2,4,0.00051617
+C,Morocco,Scotland,2,5,5.77e-05
+C,Morocco,Scotland,3,0,0.05215971
+C,Morocco,Scotland,3,1,0.02915576
+C,Morocco,Scotland,3,2,0.00814861
+C,Morocco,Scotland,3,3,0.00151828
+C,Morocco,Scotland,3,4,0.00021217
+C,Morocco,Scotland,3,5,2.372e-05
+C,Morocco,Scotland,4,0,0.01607995
+C,Morocco,Scotland,4,1,0.00898822
+C,Morocco,Scotland,4,2,0.00251208
+C,Morocco,Scotland,4,3,0.00046806
+C,Morocco,Scotland,4,4,6.541e-05
+C,Morocco,Scotland,4,5,7.31e-06
+C,Morocco,Scotland,5,0,0.00396574
+C,Morocco,Scotland,5,1,0.00221673
+C,Morocco,Scotland,5,2,0.00061954
+C,Morocco,Scotland,5,3,0.00011544
+C,Morocco,Scotland,5,4,1.613e-05
+C,Morocco,Scotland,5,5,1.8e-06
+C,Morocco,Haiti,0,0,0.06873079
+C,Morocco,Haiti,0,1,0.02217907
+C,Morocco,Haiti,0,2,0.00487202
+C,Morocco,Haiti,0,3,0.00062579
+C,Morocco,Haiti,0,4,6.029e-05
+C,Morocco,Haiti,0,5,4.65e-06
+C,Morocco,Haiti,1,0,0.15262643
+C,Morocco,Haiti,1,1,0.06311826
+C,Morocco,Haiti,1,2,0.01156213
+C,Morocco,Haiti,1,3,0.00148511
+C,Morocco,Haiti,1,4,0.00014307
+C,Morocco,Haiti,1,5,1.103e-05
+C,Morocco,Haiti,2,0,0.18479216
+C,Morocco,Haiti,2,1,0.07120742
+C,Morocco,Haiti,2,2,0.01371946
+C,Morocco,Haiti,2,3,0.00176221
+C,Morocco,Haiti,2,4,0.00016976
+C,Morocco,Haiti,2,5,1.308e-05
+C,Morocco,Haiti,3,0,0.14618116
+C,Morocco,Haiti,3,1,0.05632914
+C,Morocco,Haiti,3,2,0.01085288
+C,Morocco,Haiti,3,3,0.00139401
+C,Morocco,Haiti,3,4,0.00013429
+C,Morocco,Haiti,3,5,1.035e-05
+C,Morocco,Haiti,4,0,0.08672824
+C,Morocco,Haiti,4,1,0.03341968
+C,Morocco,Haiti,4,2,0.00643893
+C,Morocco,Haiti,4,3,0.00082706
+C,Morocco,Haiti,4,4,7.967e-05
+C,Morocco,Haiti,4,5,6.14e-06
+C,Morocco,Haiti,5,0,0.0411642
+C,Morocco,Haiti,5,1,0.01586213
+C,Morocco,Haiti,5,2,0.00305614
+C,Morocco,Haiti,5,3,0.00039255
+C,Morocco,Haiti,5,4,3.782e-05
+C,Morocco,Haiti,5,5,2.91e-06
+C,Scotland,Haiti,0,0,0.06184559
+C,Scotland,Haiti,0,1,0.03864906
+C,Scotland,Haiti,0,2,0.0165234
+C,Scotland,Haiti,0,3,0.00419129
+C,Scotland,Haiti,0,4,0.00079737
+C,Scotland,Haiti,0,5,0.00012135
+C,Scotland,Haiti,1,0,0.11645676
+C,Scotland,Haiti,1,1,0.09703433
+C,Scotland,Haiti,1,2,0.03510235
+C,Scotland,Haiti,1,3,0.00890399
+C,Scotland,Haiti,1,4,0.00169393
+C,Scotland,Haiti,1,5,0.00025781
+C,Scotland,Haiti,2,0,0.12877564
+C,Scotland,Haiti,2,1,0.09799487
+C,Scotland,Haiti,2,2,0.03728576
+C,Scotland,Haiti,2,3,0.00945783
+C,Scotland,Haiti,2,4,0.00179929
+C,Scotland,Haiti,2,5,0.00027384
+C,Scotland,Haiti,3,0,0.09119043
+C,Scotland,Haiti,3,1,0.06939352
+C,Scotland,Haiti,3,2,0.02640332
+C,Scotland,Haiti,3,3,0.00669741
+C,Scotland,Haiti,3,4,0.00127414
+C,Scotland,Haiti,3,5,0.00019392
+C,Scotland,Haiti,4,0,0.0484313
+C,Scotland,Haiti,4,1,0.03685494
+C,Scotland,Haiti,4,2,0.01402282
+C,Scotland,Haiti,4,3,0.003557
+C,Scotland,Haiti,4,4,0.0006767
+C,Scotland,Haiti,4,5,0.00010299
+C,Scotland,Haiti,5,0,0.02057751
+C,Scotland,Haiti,5,1,0.01565895
+C,Scotland,Haiti,5,2,0.00595802
+C,Scotland,Haiti,5,3,0.0015113
+C,Scotland,Haiti,5,4,0.00028751
+C,Scotland,Haiti,5,5,4.376e-05
+D,United States,Australia,0,0,0.133608
+D,United States,Australia,0,1,0.14380996
+D,United States,Australia,0,2,0.08954508
+D,United States,Australia,0,3,0.03547956
+D,United States,Australia,0,4,0.01054329
+D,United States,Australia,0,5,0.00250648
+D,United States,Australia,1,0,0.10450828
+D,United States,Australia,1,1,0.13922941
+D,United States,Australia,1,2,0.07867375
+D,United States,Australia,1,3,0.03117212
+D,United States,Australia,1,4,0.00926327
+D,United States,Australia,1,5,0.00220218
+D,United States,Australia,2,0,0.0489218
+D,United States,Australia,2,1,0.05815141
+D,United States,Australia,2,2,0.03456114
+D,United States,Australia,2,3,0.01369382
+D,United States,Australia,2,4,0.00406932
+D,United States,Australia,2,5,0.00096741
+D,United States,Australia,3,0,0.01432746
+D,United States,Australia,3,1,0.01703049
+D,United States,Australia,3,2,0.01012173
+D,United States,Australia,3,3,0.00401043
+D,United States,Australia,3,4,0.00119176
+D,United States,Australia,3,5,0.00028332
+D,United States,Australia,4,0,0.00314701
+D,United States,Australia,4,1,0.00374072
+D,United States,Australia,4,2,0.00222322
+D,United States,Australia,4,3,0.00088089
+D,United States,Australia,4,4,0.00026177
+D,United States,Australia,4,5,6.223e-05
+D,United States,Australia,5,0,0.00055299
+D,United States,Australia,5,1,0.00065731
+D,United States,Australia,5,2,0.00039066
+D,United States,Australia,5,3,0.00015479
+D,United States,Australia,5,4,4.6e-05
+D,United States,Australia,5,5,1.094e-05
+D,United States,Paraguay,0,0,0.16034059
+D,United States,Paraguay,0,1,0.14512412
+D,United States,Paraguay,0,2,0.07540527
+D,United States,Paraguay,0,3,0.02492395
+D,United States,Paraguay,0,4,0.00617864
+D,United States,Paraguay,0,5,0.00122535
+D,United States,Paraguay,1,0,0.12864257
+D,United States,Paraguay,1,1,0.14143146
+D,United States,Paraguay,1,2,0.06666893
+D,United States,Paraguay,1,3,0.02203629
+D,United States,Paraguay,1,4,0.0054628
+D,United States,Paraguay,1,5,0.00108338
+D,United States,Paraguay,2,0,0.05994771
+D,United States,Paraguay,2,1,0.05944412
+D,United States,Paraguay,2,2,0.02947238
+D,United States,Paraguay,2,3,0.0097416
+D,United States,Paraguay,2,4,0.00241494
+D,United States,Paraguay,2,5,0.00047893
+D,United States,Paraguay,3,0,0.01766742
+D,United States,Paraguay,3,1,0.01751901
+D,United States,Paraguay,3,2,0.00868592
+D,United States,Paraguay,3,3,0.00287098
+D,United States,Paraguay,3,4,0.00071172
+D,United States,Paraguay,3,5,0.00014115
+D,United States,Paraguay,4,0,0.00390512
+D,United States,Paraguay,4,1,0.00387232
+D,United States,Paraguay,4,2,0.0019199
+D,United States,Paraguay,4,3,0.00063459
+D,United States,Paraguay,4,4,0.00015731
+D,United States,Paraguay,4,5,3.12e-05
+D,United States,Paraguay,5,0,0.00069054
+D,United States,Paraguay,5,1,0.00068474
+D,United States,Paraguay,5,2,0.00033949
+D,United States,Paraguay,5,3,0.00011221
+D,United States,Paraguay,5,4,2.782e-05
+D,United States,Paraguay,5,5,5.52e-06
+D,United States,Turkey,0,0,0.0731511
+D,United States,Turkey,0,1,0.08976808
+D,United States,Turkey,0,2,0.06911761
+D,United States,Turkey,0,3,0.03313916
+D,United States,Turkey,0,4,0.01191669
+D,United States,Turkey,0,5,0.00342815
+D,United States,Turkey,1,0,0.07872636
+D,United States,Turkey,1,1,0.12868963
+D,United States,Turkey,1,2,0.08799514
+D,United States,Turkey,1,3,0.04219019
+D,United States,Turkey,1,4,0.0151714
+D,United States,Turkey,1,5,0.00436445
+D,United States,Turkey,2,0,0.05414778
+D,United States,Turkey,2,1,0.07788515
+D,United States,Turkey,2,2,0.05601428
+D,United States,Turkey,2,3,0.02685663
+D,United States,Turkey,2,4,0.00965752
+D,United States,Turkey,2,5,0.00277824
+D,United States,Turkey,3,0,0.02297891
+D,United States,Turkey,3,1,0.03305243
+D,United States,Turkey,3,2,0.023771
+D,United States,Turkey,3,3,0.01139726
+D,United States,Turkey,3,4,0.0040984
+D,United States,Turkey,3,5,0.00117901
+D,United States,Turkey,4,0,0.00731374
+D,United States,Turkey,4,1,0.01051995
+D,United States,Turkey,4,2,0.00756585
+D,United States,Turkey,4,3,0.00362752
+D,United States,Turkey,4,4,0.00130444
+D,United States,Turkey,4,5,0.00037526
+D,United States,Turkey,5,0,0.00186226
+D,United States,Turkey,5,1,0.00267863
+D,United States,Turkey,5,2,0.00192645
+D,United States,Turkey,5,3,0.00092366
+D,United States,Turkey,5,4,0.00033214
+D,United States,Turkey,5,5,9.555e-05
+D,Australia,Paraguay,0,0,0.19549413
+D,Australia,Paraguay,0,1,0.13594747
+D,Australia,Paraguay,0,2,0.05393022
+D,Australia,Paraguay,0,3,0.01358914
+D,Australia,Paraguay,0,4,0.00256811
+D,Australia,Paraguay,0,5,0.00038826
+D,Australia,Paraguay,1,0,0.16538347
+D,Australia,Paraguay,1,1,0.13685044
+D,Australia,Paraguay,1,2,0.04917772
+D,Australia,Paraguay,1,3,0.01239162
+D,Australia,Paraguay,1,4,0.0023418
+D,Australia,Paraguay,1,5,0.00035405
+D,Australia,Paraguay,2,0,0.078477
+D,Australia,Paraguay,2,1,0.05932305
+D,Australia,Paraguay,2,2,0.02242201
+D,Australia,Paraguay,2,3,0.00564982
+D,Australia,Paraguay,2,4,0.00106772
+D,Australia,Paraguay,2,5,0.00016142
+D,Australia,Paraguay,3,0,0.02385378
+D,Australia,Paraguay,3,1,0.01803177
+D,Australia,Paraguay,3,2,0.00681537
+D,Australia,Paraguay,3,3,0.00171731
+D,Australia,Paraguay,3,4,0.00032454
+D,Australia,Paraguay,3,5,4.907e-05
+D,Australia,Paraguay,4,0,0.00543793
+D,Australia,Paraguay,4,1,0.00411069
+D,Australia,Paraguay,4,2,0.00155369
+D,Australia,Paraguay,4,3,0.00039149
+D,Australia,Paraguay,4,4,7.399e-05
+D,Australia,Paraguay,4,5,1.119e-05
+D,Australia,Paraguay,5,0,0.00099174
+D,Australia,Paraguay,5,1,0.00074969
+D,Australia,Paraguay,5,2,0.00028336
+D,Australia,Paraguay,5,3,7.14e-05
+D,Australia,Paraguay,5,4,1.349e-05
+D,Australia,Paraguay,5,5,2.04e-06
+D,Australia,Turkey,0,0,0.09687159
+D,Australia,Turkey,0,1,0.09212899
+D,Australia,Turkey,0,2,0.05419641
+D,Australia,Turkey,0,3,0.01980925
+D,Australia,Turkey,0,4,0.00543034
+D,Australia,Turkey,0,5,0.0011909
+D,Australia,Turkey,1,0,0.11164939
+D,Australia,Turkey,1,1,0.13651961
+D,Australia,Turkey,1,2,0.07116312
+D,Australia,Turkey,1,3,0.02601073
+D,Australia,Turkey,1,4,0.00713036
+D,Australia,Turkey,1,5,0.00156372
+D,Australia,Turkey,2,0,0.07771445
+D,Australia,Turkey,2,1,0.08521589
+D,Australia,Turkey,2,2,0.0467207
+D,Australia,Turkey,2,3,0.01707682
+D,Australia,Turkey,2,4,0.00468129
+D,Australia,Turkey,2,5,0.00102663
+D,Australia,Turkey,3,0,0.03401457
+D,Australia,Turkey,3,1,0.03729784
+D,Australia,Turkey,3,2,0.02044902
+D,Australia,Turkey,3,3,0.00747429
+D,Australia,Turkey,3,4,0.00204894
+D,Australia,Turkey,3,5,0.00044934
+D,Australia,Turkey,4,0,0.01116579
+D,Australia,Turkey,4,1,0.01224357
+D,Australia,Turkey,4,2,0.0067127
+D,Australia,Turkey,4,3,0.00245355
+D,Australia,Turkey,4,4,0.00067259
+D,Australia,Turkey,4,5,0.0001475
+D,Australia,Turkey,5,0,0.00293227
+D,Australia,Turkey,5,1,0.00321531
+D,Australia,Turkey,5,2,0.00176283
+D,Australia,Turkey,5,3,0.00064433
+D,Australia,Turkey,5,4,0.00017663
+D,Australia,Turkey,5,5,3.874e-05
+D,Paraguay,Turkey,0,0,0.11810554
+D,Paraguay,Turkey,0,1,0.11568852
+D,Paraguay,Turkey,0,2,0.0676669
+D,Paraguay,Turkey,0,3,0.024889
+D,Paraguay,Turkey,0,4,0.00686594
+D,Paraguay,Turkey,0,5,0.00151524
+D,Paraguay,Turkey,1,0,0.11479111
+D,Paraguay,Turkey,1,1,0.14130116
+D,Paraguay,Turkey,1,2,0.07412066
+D,Paraguay,Turkey,1,3,0.0272628
+D,Paraguay,Turkey,1,4,0.00752078
+D,Paraguay,Turkey,1,5,0.00165976
+D,Paraguay,Turkey,2,0,0.06668028
+D,Paraguay,Turkey,2,1,0.07357831
+D,Paraguay,Turkey,2,2,0.04059497
+D,Paraguay,Turkey,2,3,0.0149315
+D,Paraguay,Turkey,2,4,0.00411904
+D,Paraguay,Turkey,2,5,0.00090903
+D,Paraguay,Turkey,3,0,0.02434664
+D,Paraguay,Turkey,3,1,0.02686529
+D,Paraguay,Turkey,3,2,0.01482225
+D,Paraguay,Turkey,3,3,0.00545187
+D,Paraguay,Turkey,3,4,0.00150396
+D,Paraguay,Turkey,3,5,0.00033191
+D,Paraguay,Turkey,4,0,0.00666718
+D,Paraguay,Turkey,4,1,0.0073569
+D,Paraguay,Turkey,4,2,0.00405898
+D,Paraguay,Turkey,4,3,0.00149296
+D,Paraguay,Turkey,4,4,0.00041185
+D,Paraguay,Turkey,4,5,9.089e-05
+D,Paraguay,Turkey,5,0,0.00146061
+D,Paraguay,Turkey,5,1,0.00161171
+D,Paraguay,Turkey,5,2,0.00088922
+D,Paraguay,Turkey,5,3,0.00032707
+D,Paraguay,Turkey,5,4,9.023e-05
+D,Paraguay,Turkey,5,5,1.991e-05
+E,Germany,Ecuador,0,0,0.17242549
+E,Germany,Ecuador,0,1,0.1341348
+E,Germany,Ecuador,0,2,0.06010741
+E,Germany,Ecuador,0,3,0.01707571
+E,Germany,Ecuador,0,4,0.00363824
+E,Germany,Ecuador,0,5,0.00062014
+E,Germany,Ecuador,1,0,0.14984699
+E,Germany,Ecuador,1,1,0.14052508
+E,Germany,Ecuador,1,2,0.05693338
+E,Germany,Ecuador,1,3,0.01617401
+E,Germany,Ecuador,1,4,0.00344611
+E,Germany,Ecuador,1,5,0.0005874
+E,Germany,Ecuador,2,0,0.07424409
+E,Germany,Ecuador,2,1,0.06327525
+E,Germany,Ecuador,2,2,0.02696348
+E,Germany,Ecuador,2,3,0.00765996
+E,Germany,Ecuador,2,4,0.00163207
+E,Germany,Ecuador,2,5,0.00027819
+E,Germany,Ecuador,3,0,0.02344119
+E,Germany,Ecuador,3,1,0.01997798
+E,Germany,Ecuador,3,2,0.00851321
+E,Germany,Ecuador,3,3,0.00241849
+E,Germany,Ecuador,3,4,0.0005153
+E,Germany,Ecuador,3,5,8.783e-05
+E,Germany,Ecuador,4,0,0.00555084
+E,Germany,Ecuador,4,1,0.00473076
+E,Germany,Ecuador,4,2,0.00201592
+E,Germany,Ecuador,4,3,0.00057269
+E,Germany,Ecuador,4,4,0.00012202
+E,Germany,Ecuador,4,5,2.08e-05
+E,Germany,Ecuador,5,0,0.00105154
+E,Germany,Ecuador,5,1,0.00089619
+E,Germany,Ecuador,5,2,0.00038189
+E,Germany,Ecuador,5,3,0.00010849
+E,Germany,Ecuador,5,4,2.312e-05
+E,Germany,Ecuador,5,5,3.94e-06
+E,Germany,Ivory Coast,0,0,0.09527815
+E,Germany,Ivory Coast,0,1,0.06891081
+E,Germany,Ivory Coast,0,2,0.03160418
+E,Germany,Ivory Coast,0,3,0.00887151
+E,Germany,Ivory Coast,0,4,0.00186772
+E,Germany,Ivory Coast,0,5,0.00031457
+E,Germany,Ivory Coast,1,0,0.13481315
+E,Germany,Ivory Coast,1,1,0.12485384
+E,Germany,Ivory Coast,1,2,0.04998243
+E,Germany,Ivory Coast,1,3,0.01403041
+E,Germany,Ivory Coast,1,4,0.00295383
+E,Germany,Ivory Coast,1,5,0.0004975
+E,Germany,Ivory Coast,2,0,0.11146575
+E,Germany,Ivory Coast,2,1,0.09386762
+E,Germany,Ivory Coast,2,2,0.03952393
+E,Germany,Ivory Coast,2,3,0.01109464
+E,Germany,Ivory Coast,2,4,0.00233576
+E,Germany,Ivory Coast,2,5,0.0003934
+E,Germany,Ivory Coast,3,0,0.05876151
+E,Germany,Ivory Coast,3,1,0.04948429
+E,Germany,Ivory Coast,3,2,0.02083587
+E,Germany,Ivory Coast,3,3,0.00584877
+E,Germany,Ivory Coast,3,4,0.00123134
+E,Germany,Ivory Coast,3,5,0.00020739
+E,Germany,Ivory Coast,4,0,0.02323303
+E,Germany,Ivory Coast,4,1,0.01956501
+E,Germany,Ivory Coast,4,2,0.00823805
+E,Germany,Ivory Coast,4,3,0.00231248
+E,Germany,Ivory Coast,4,4,0.00048685
+E,Germany,Ivory Coast,4,5,8.2e-05
+E,Germany,Ivory Coast,5,0,0.00734867
+E,Germany,Ivory Coast,5,1,0.00618846
+E,Germany,Ivory Coast,5,2,0.00260572
+E,Germany,Ivory Coast,5,3,0.00073144
+E,Germany,Ivory Coast,5,4,0.00015399
+E,Germany,Ivory Coast,5,5,2.594e-05
+E,Germany,Curaçao,0,0,0.02725308
+E,Germany,Curaçao,0,1,0.01032625
+E,Germany,Curaçao,0,2,0.00309411
+E,Germany,Curaçao,0,3,0.00051197
+E,Germany,Curaçao,0,4,6.354e-05
+E,Germany,Curaçao,0,5,6.31e-06
+E,Germany,Curaçao,1,0,0.08109851
+E,Germany,Curaçao,1,1,0.04345954
+E,Germany,Curaçao,1,2,0.01025554
+E,Germany,Curaçao,1,3,0.00169695
+E,Germany,Curaçao,1,4,0.00021059
+E,Germany,Curaçao,1,5,2.091e-05
+E,Germany,Curaçao,2,0,0.13794842
+E,Germany,Curaçao,2,1,0.06847767
+E,Germany,Curaçao,2,2,0.01699618
+E,Germany,Curaçao,2,3,0.0028123
+E,Germany,Curaçao,2,4,0.00034901
+E,Germany,Curaçao,2,5,3.465e-05
+E,Germany,Curaçao,3,0,0.15241167
+E,Germany,Curaçao,3,1,0.07565724
+E,Germany,Curaçao,3,2,0.01877815
+E,Germany,Curaçao,3,3,0.00310716
+E,Germany,Curaçao,3,4,0.0003856
+E,Germany,Curaçao,3,5,3.828e-05
+E,Germany,Curaçao,4,0,0.1262935
+E,Germany,Curaçao,4,1,0.06269216
+E,Germany,Curaçao,4,2,0.01556021
+E,Germany,Curaçao,4,3,0.0025747
+E,Germany,Curaçao,4,4,0.00031952
+E,Germany,Curaçao,4,5,3.172e-05
+E,Germany,Curaçao,5,0,0.08372088
+E,Germany,Curaçao,5,1,0.04155909
+E,Germany,Curaçao,5,2,0.01031498
+E,Germany,Curaçao,5,3,0.00170679
+E,Germany,Curaçao,5,4,0.00021181
+E,Germany,Curaçao,5,5,2.103e-05
+E,Ecuador,Ivory Coast,0,0,0.2572035
+E,Ecuador,Ivory Coast,0,1,0.12327667
+E,Ecuador,Ivory Coast,0,2,0.03313527
+E,Ecuador,Ivory Coast,0,3,0.00567079
+E,Ecuador,Ivory Coast,0,4,0.00072788
+E,Ecuador,Ivory Coast,0,5,7.474e-05
+E,Ecuador,Ivory Coast,1,0,0.21231154
+E,Ecuador,Ivory Coast,1,1,0.11778253
+E,Ecuador,Ivory Coast,1,2,0.02874724
+E,Ecuador,Ivory Coast,1,3,0.00491982
+E,Ecuador,Ivory Coast,1,4,0.00063149
+E,Ecuador,Ivory Coast,1,5,6.484e-05
+E,Ecuador,Ivory Coast,2,0,0.09461358
+E,Ecuador,Ivory Coast,2,1,0.04857666
+E,Ecuador,Ivory Coast,2,2,0.01247016
+E,Ecuador,Ivory Coast,2,3,0.00213415
+E,Ecuador,Ivory Coast,2,4,0.00027393
+E,Ecuador,Ivory Coast,2,5,2.813e-05
+E,Ecuador,Ivory Coast,3,0,0.02736137
+E,Ecuador,Ivory Coast,3,1,0.01404792
+E,Ecuador,Ivory Coast,3,2,0.00360625
+E,Ecuador,Ivory Coast,3,3,0.00061718
+E,Ecuador,Ivory Coast,3,4,7.922e-05
+E,Ecuador,Ivory Coast,3,5,8.13e-06
+E,Ecuador,Ivory Coast,4,0,0.00593449
+E,Ecuador,Ivory Coast,4,1,0.0030469
+E,Ecuador,Ivory Coast,4,2,0.00078217
+E,Ecuador,Ivory Coast,4,3,0.00013386
+E,Ecuador,Ivory Coast,4,4,1.718e-05
+E,Ecuador,Ivory Coast,4,5,1.76e-06
+E,Ecuador,Ivory Coast,5,0,0.00102972
+E,Ecuador,Ivory Coast,5,1,0.00052868
+E,Ecuador,Ivory Coast,5,2,0.00013572
+E,Ecuador,Ivory Coast,5,3,2.323e-05
+E,Ecuador,Ivory Coast,5,4,2.98e-06
+E,Ecuador,Ivory Coast,5,5,3.1e-07
+E,Ecuador,Curaçao,0,0,0.12469545
+E,Ecuador,Curaçao,0,1,0.03323739
+E,Ecuador,Curaçao,0,2,0.0055524
+E,Ecuador,Curaçao,0,3,0.00056013
+E,Ecuador,Curaçao,0,4,4.238e-05
+E,Ecuador,Curaçao,0,5,2.57e-06
+E,Ecuador,Curaçao,1,0,0.21699084
+E,Ecuador,Curaçao,1,1,0.07017192
+E,Ecuador,Curaçao,1,2,0.0100957
+E,Ecuador,Curaçao,1,3,0.00101847
+E,Ecuador,Curaçao,1,4,7.706e-05
+E,Ecuador,Curaçao,1,5,4.66e-06
+E,Ecuador,Curaçao,2,0,0.200414
+E,Ecuador,Curaçao,2,1,0.0606541
+E,Ecuador,Curaçao,2,2,0.0091783
+E,Ecuador,Curaçao,2,3,0.00092592
+E,Ecuador,Curaçao,2,4,7.006e-05
+E,Ecuador,Curaçao,2,5,4.24e-06
+E,Ecuador,Curaçao,3,0,0.12146817
+E,Ecuador,Curaçao,3,1,0.03676161
+E,Ecuador,Curaçao,3,2,0.00556284
+E,Ecuador,Curaçao,3,3,0.00056119
+E,Ecuador,Curaçao,3,4,4.246e-05
+E,Ecuador,Curaçao,3,5,2.57e-06
+E,Ecuador,Curaçao,4,0,0.05521514
+E,Ecuador,Curaçao,4,1,0.01671053
+E,Ecuador,Curaçao,4,2,0.00252867
+E,Ecuador,Curaçao,4,3,0.0002551
+E,Ecuador,Curaçao,4,4,1.93e-05
+E,Ecuador,Curaçao,4,5,1.17e-06
+E,Ecuador,Curaçao,5,0,0.02007908
+E,Ecuador,Curaçao,5,1,0.00607681
+E,Ecuador,Curaçao,5,2,0.00091956
+E,Ecuador,Curaçao,5,3,9.277e-05
+E,Ecuador,Curaçao,5,4,7.02e-06
+E,Ecuador,Curaçao,5,5,4.2e-07
+E,Ivory Coast,Curaçao,0,0,0.10585961
+E,Ivory Coast,Curaçao,0,1,0.04633689
+E,Ivory Coast,Curaçao,0,2,0.01290856
+E,Ivory Coast,Curaçao,0,3,0.00217432
+E,Ivory Coast,Curaçao,0,4,0.00027468
+E,Ivory Coast,Curaçao,0,5,2.776e-05
+E,Ivory Coast,Curaçao,1,0,0.1768956
+E,Ivory Coast,Curaçao,1,1,0.09654479
+E,Ivory Coast,Curaçao,1,2,0.02319188
+E,Ivory Coast,Curaçao,1,3,0.00390643
+E,Ivory Coast,Curaçao,1,4,0.0004935
+E,Ivory Coast,Curaçao,1,5,4.987e-05
+E,Ivory Coast,Curaçao,2,0,0.16317817
+E,Ivory Coast,Curaçao,2,1,0.08245709
+E,Ivory Coast,Curaçao,2,2,0.02083358
+E,Ivory Coast,Curaçao,2,3,0.0035092
+E,Ivory Coast,Curaçao,2,4,0.00044332
+E,Ivory Coast,Curaçao,2,5,4.48e-05
+E,Ivory Coast,Curaçao,3,0,0.09772346
+E,Ivory Coast,Curaçao,3,1,0.04938156
+E,Ivory Coast,Curaçao,3,2,0.01247673
+E,Ivory Coast,Curaçao,3,3,0.00210158
+E,Ivory Coast,Curaçao,3,4,0.00026549
+E,Ivory Coast,Curaçao,3,5,2.683e-05
+E,Ivory Coast,Curaçao,4,0,0.04389316
+E,Ivory Coast,Curaçao,4,1,0.02218006
+E,Ivory Coast,Curaçao,4,2,0.00560401
+E,Ivory Coast,Curaçao,4,3,0.00094394
+E,Ivory Coast,Curaçao,4,4,0.00011925
+E,Ivory Coast,Curaçao,4,5,1.205e-05
+E,Ivory Coast,Curaçao,5,0,0.01577193
+E,Ivory Coast,Curaçao,5,1,0.00796986
+E,Ivory Coast,Curaçao,5,2,0.00201366
+E,Ivory Coast,Curaçao,5,3,0.00033918
+E,Ivory Coast,Curaçao,5,4,4.285e-05
+E,Ivory Coast,Curaçao,5,5,4.33e-06
+F,Netherlands,Japan,0,0,0.09348507
+F,Netherlands,Japan,0,1,0.10179879
+F,Netherlands,Japan,0,2,0.06787971
+F,Netherlands,Japan,0,3,0.02830424
+F,Netherlands,Japan,0,4,0.00885165
+F,Netherlands,Japan,0,5,0.00221456
+F,Netherlands,Japan,1,0,0.09712392
+F,Netherlands,Japan,1,1,0.13663956
+F,Netherlands,Japan,1,2,0.08125504
+F,Netherlands,Japan,1,3,0.03388143
+F,Netherlands,Japan,1,4,0.01059582
+F,Netherlands,Japan,1,5,0.00265092
+F,Netherlands,Japan,2,0,0.06215772
+F,Netherlands,Japan,2,1,0.07775491
+F,Netherlands,Japan,2,2,0.04863295
+F,Netherlands,Japan,2,3,0.02027879
+F,Netherlands,Japan,2,4,0.00634183
+F,Netherlands,Japan,2,5,0.00158664
+F,Netherlands,Japan,3,0,0.02480185
+F,Netherlands,Japan,3,1,0.03102536
+F,Netherlands,Japan,3,2,0.01940527
+F,Netherlands,Japan,3,3,0.00809154
+F,Netherlands,Japan,3,4,0.00253049
+F,Netherlands,Japan,3,5,0.00063309
+F,Netherlands,Japan,4,0,0.00742223
+F,Netherlands,Japan,4,1,0.00928469
+F,Netherlands,Japan,4,2,0.00580724
+F,Netherlands,Japan,4,3,0.00242148
+F,Netherlands,Japan,4,4,0.00075728
+F,Netherlands,Japan,4,5,0.00018946
+F,Netherlands,Japan,5,0,0.00177695
+F,Netherlands,Japan,5,1,0.00222284
+F,Netherlands,Japan,5,2,0.00139031
+F,Netherlands,Japan,5,3,0.00057972
+F,Netherlands,Japan,5,4,0.0001813
+F,Netherlands,Japan,5,5,4.536e-05
+F,Netherlands,Tunisia,0,0,0.11403638
+F,Netherlands,Tunisia,0,1,0.07451495
+F,Netherlands,Tunisia,0,2,0.03020655
+F,Netherlands,Tunisia,0,3,0.00753635
+F,Netherlands,Tunisia,0,4,0.00141021
+F,Netherlands,Tunisia,0,5,0.0002111
+F,Netherlands,Tunisia,1,0,0.15372435
+F,Netherlands,Tunisia,1,1,0.12589913
+F,Netherlands,Tunisia,1,2,0.04479662
+F,Netherlands,Tunisia,1,3,0.01117649
+F,Netherlands,Tunisia,1,4,0.00209135
+F,Netherlands,Tunisia,1,5,0.00031307
+F,Netherlands,Tunisia,2,0,0.11858412
+F,Netherlands,Tunisia,2,1,0.08875808
+F,Netherlands,Tunisia,2,2,0.03321691
+F,Netherlands,Tunisia,2,3,0.00828742
+F,Netherlands,Tunisia,2,4,0.00155075
+F,Netherlands,Tunisia,2,5,0.00023214
+F,Netherlands,Tunisia,3,0,0.05862047
+F,Netherlands,Tunisia,3,1,0.04387637
+F,Netherlands,Tunisia,3,2,0.01642034
+F,Netherlands,Tunisia,3,3,0.00409678
+F,Netherlands,Tunisia,3,4,0.00076659
+F,Netherlands,Tunisia,3,5,0.00011476
+F,Netherlands,Tunisia,4,0,0.02173368
+F,Netherlands,Tunisia,4,1,0.01626727
+F,Netherlands,Tunisia,4,2,0.00608788
+F,Netherlands,Tunisia,4,3,0.00151889
+F,Netherlands,Tunisia,4,4,0.00028422
+F,Netherlands,Tunisia,4,5,4.255e-05
+F,Netherlands,Tunisia,5,0,0.00644625
+F,Netherlands,Tunisia,5,1,0.0048249
+F,Netherlands,Tunisia,5,2,0.00180568
+F,Netherlands,Tunisia,5,3,0.00045051
+F,Netherlands,Tunisia,5,4,8.43e-05
+F,Netherlands,Tunisia,5,5,1.262e-05
+F,Netherlands,Sweden,0,0,0.04895471
+F,Netherlands,Sweden,0,1,0.0419376
+F,Netherlands,Sweden,0,2,0.0251468
+F,Netherlands,Sweden,0,3,0.00897165
+F,Netherlands,Sweden,0,4,0.00240062
+F,Netherlands,Sweden,0,5,0.00051388
+F,Netherlands,Sweden,1,0,0.08608842
+F,Netherlands,Sweden,1,1,0.10260082
+F,Netherlands,Sweden,1,2,0.05220387
+F,Netherlands,Sweden,1,3,0.01862483
+F,Netherlands,Sweden,1,4,0.0049836
+F,Netherlands,Sweden,1,5,0.0010668
+F,Netherlands,Sweden,2,0,0.09460218
+F,Netherlands,Sweden,2,1,0.10125395
+F,Netherlands,Sweden,2,2,0.05418671
+F,Netherlands,Sweden,2,3,0.01933225
+F,Netherlands,Sweden,2,4,0.00517289
+F,Netherlands,Sweden,2,5,0.00110732
+F,Netherlands,Sweden,3,0,0.06546361
+F,Netherlands,Sweden,3,1,0.07006655
+F,Netherlands,Sweden,3,2,0.03749657
+F,Netherlands,Sweden,3,3,0.01337769
+F,Netherlands,Sweden,3,4,0.00357958
+F,Netherlands,Sweden,3,5,0.00076625
+F,Netherlands,Sweden,4,0,0.03397504
+F,Netherlands,Sweden,4,1,0.03636393
+F,Netherlands,Sweden,4,2,0.01946039
+F,Netherlands,Sweden,4,3,0.0069429
+F,Netherlands,Sweden,4,4,0.00185777
+F,Netherlands,Sweden,4,5,0.00039768
+F,Netherlands,Sweden,5,0,0.0141062
+F,Netherlands,Sweden,5,1,0.01509805
+F,Netherlands,Sweden,5,2,0.00807982
+F,Netherlands,Sweden,5,3,0.00288264
+F,Netherlands,Sweden,5,4,0.00077133
+F,Netherlands,Sweden,5,5,0.00016511
+F,Japan,Tunisia,0,0,0.16254687
+F,Japan,Tunisia,0,1,0.08846673
+F,Japan,Tunisia,0,2,0.02860928
+F,Japan,Tunisia,0,3,0.00576793
+F,Japan,Tunisia,0,4,0.00087216
+F,Japan,Tunisia,0,5,0.0001055
+F,Japan,Tunisia,1,0,0.1897431
+F,Japan,Tunisia,1,1,0.12460945
+F,Japan,Tunisia,1,2,0.03582834
+F,Japan,Tunisia,1,3,0.00722337
+F,Japan,Tunisia,1,4,0.00109223
+F,Japan,Tunisia,1,5,0.00013212
+F,Japan,Tunisia,2,0,0.12265273
+F,Japan,Tunisia,2,1,0.07418428
+F,Japan,Tunisia,2,2,0.02243451
+F,Japan,Tunisia,2,3,0.00452303
+F,Japan,Tunisia,2,4,0.00068392
+F,Japan,Tunisia,2,5,8.273e-05
+F,Japan,Tunisia,3,0,0.05120068
+F,Japan,Tunisia,3,1,0.0309678
+F,Japan,Tunisia,3,2,0.00936516
+F,Japan,Tunisia,3,3,0.00188811
+F,Japan,Tunisia,3,4,0.0002855
+F,Japan,Tunisia,3,5,3.454e-05
+F,Japan,Tunisia,4,0,0.01603007
+F,Japan,Tunisia,4,1,0.0096955
+F,Japan,Tunisia,4,2,0.00293207
+F,Japan,Tunisia,4,3,0.00059114
+F,Japan,Tunisia,4,4,8.938e-05
+F,Japan,Tunisia,4,5,1.081e-05
+F,Japan,Tunisia,5,0,0.004015
+F,Japan,Tunisia,5,1,0.0024284
+F,Japan,Tunisia,5,2,0.00073439
+F,Japan,Tunisia,5,3,0.00014806
+F,Japan,Tunisia,5,4,2.239e-05
+F,Japan,Tunisia,5,5,2.71e-06
+F,Japan,Sweden,0,0,0.07943383
+F,Japan,Sweden,0,1,0.05791671
+F,Japan,Sweden,0,2,0.02754697
+F,Japan,Sweden,0,3,0.00794176
+F,Japan,Sweden,0,4,0.0017172
+F,Japan,Sweden,0,5,0.00029704
+F,Japan,Sweden,1,0,0.12333009
+F,Japan,Sweden,1,1,0.11745307
+F,Japan,Sweden,1,2,0.04829137
+F,Japan,Sweden,1,3,0.01392234
+F,Japan,Sweden,1,4,0.00301035
+F,Japan,Sweden,1,5,0.00052073
+F,Japan,Sweden,2,0,0.11317152
+F,Japan,Sweden,2,1,0.09788164
+F,Japan,Sweden,2,2,0.04232874
+F,Japan,Sweden,2,3,0.01220332
+F,Japan,Sweden,2,4,0.00263865
+F,Japan,Sweden,2,5,0.00045643
+F,Japan,Sweden,3,0,0.066132
+F,Japan,Sweden,3,1,0.05719732
+F,Japan,Sweden,3,2,0.02473488
+F,Japan,Sweden,3,3,0.00713104
+F,Japan,Sweden,3,4,0.0015419
+F,Japan,Sweden,3,5,0.00026672
+F,Japan,Sweden,4,0,0.02898327
+F,Japan,Sweden,4,1,0.02506753
+F,Japan,Sweden,4,2,0.01084041
+F,Japan,Sweden,4,3,0.00312528
+F,Japan,Sweden,4,4,0.00067576
+F,Japan,Sweden,4,5,0.00011689
+F,Japan,Sweden,5,0,0.01016186
+F,Japan,Sweden,5,1,0.00878895
+F,Japan,Sweden,5,2,0.00380077
+F,Japan,Sweden,5,3,0.00109576
+F,Japan,Sweden,5,4,0.00023693
+F,Japan,Sweden,5,5,4.098e-05
+F,Tunisia,Sweden,0,0,0.12716695
+F,Tunisia,Sweden,0,1,0.1217709
+F,Tunisia,Sweden,0,2,0.06898723
+F,Tunisia,Sweden,0,3,0.02464026
+F,Tunisia,Sweden,0,4,0.0066006
+F,Tunisia,Sweden,0,5,0.00141453
+F,Tunisia,Sweden,1,0,0.11905633
+F,Tunisia,Sweden,1,1,0.14206077
+F,Tunisia,Sweden,1,2,0.07236242
+F,Tunisia,Sweden,1,3,0.02584578
+F,Tunisia,Sweden,1,4,0.00692353
+F,Tunisia,Sweden,1,5,0.00148373
+F,Tunisia,Sweden,2,0,0.06610919
+F,Tunisia,Sweden,2,1,0.07083691
+F,Tunisia,Sweden,2,2,0.03795137
+F,Tunisia,Sweden,2,3,0.01355514
+F,Tunisia,Sweden,2,4,0.00363113
+F,Tunisia,Sweden,2,5,0.00077816
+F,Tunisia,Sweden,3,0,0.02311452
+F,Tunisia,Sweden,3,1,0.02476753
+F,Tunisia,Sweden,3,2,0.01326938
+F,Tunisia,Sweden,3,3,0.00473944
+F,Tunisia,Sweden,3,4,0.00126959
+F,Tunisia,Sweden,3,5,0.00027208
+F,Tunisia,Sweden,4,0,0.00606135
+F,Tunisia,Sweden,4,1,0.00649482
+F,Tunisia,Sweden,4,2,0.00347964
+F,Tunisia,Sweden,4,3,0.00124283
+F,Tunisia,Sweden,4,4,0.00033293
+F,Tunisia,Sweden,4,5,7.135e-05
+F,Tunisia,Sweden,5,0,0.00127158
+F,Tunisia,Sweden,5,1,0.00136252
+F,Tunisia,Sweden,5,2,0.00072998
+F,Tunisia,Sweden,5,3,0.00026073
+F,Tunisia,Sweden,5,4,6.984e-05
+F,Tunisia,Sweden,5,5,1.497e-05
+G,Belgium,Egypt,0,0,0.14439394
+G,Belgium,Egypt,0,1,0.09957072
+G,Belgium,Egypt,0,2,0.04098079
+G,Belgium,Egypt,0,3,0.01053816
+G,Belgium,Egypt,0,4,0.00203241
+G,Belgium,Egypt,0,5,0.00031358
+G,Belgium,Egypt,1,0,0.16035655
+G,Belgium,Egypt,1,1,0.13552792
+G,Belgium,Egypt,1,2,0.0497022
+G,Belgium,Egypt,1,3,0.01278086
+G,Belgium,Egypt,1,4,0.00246494
+G,Belgium,Egypt,1,5,0.00038031
+G,Belgium,Egypt,2,0,0.10128834
+G,Belgium,Egypt,2,1,0.07813851
+G,Belgium,Egypt,2,2,0.03013983
+G,Belgium,Egypt,2,3,0.00775042
+G,Belgium,Egypt,2,4,0.00149476
+G,Belgium,Egypt,2,5,0.00023063
+G,Belgium,Egypt,3,0,0.04094807
+G,Belgium,Egypt,3,1,0.03158924
+G,Belgium,Egypt,3,2,0.0121847
+G,Belgium,Egypt,3,3,0.00313328
+G,Belgium,Egypt,3,4,0.00060429
+G,Belgium,Egypt,3,5,9.324e-05
+G,Belgium,Egypt,4,0,0.01241563
+G,Belgium,Egypt,4,1,0.00957799
+G,Belgium,Egypt,4,2,0.00369445
+G,Belgium,Egypt,4,3,0.00095002
+G,Belgium,Egypt,4,4,0.00018322
+G,Belgium,Egypt,4,5,2.827e-05
+G,Belgium,Egypt,5,0,0.00301158
+G,Belgium,Egypt,5,1,0.00232327
+G,Belgium,Egypt,5,2,0.00089614
+G,Belgium,Egypt,5,3,0.00023044
+G,Belgium,Egypt,5,4,4.444e-05
+G,Belgium,Egypt,5,5,6.86e-06
+G,Belgium,Iran,0,0,0.09436172
+G,Belgium,Iran,0,1,0.08016193
+G,Belgium,Iran,0,2,0.04275113
+G,Belgium,Iran,0,3,0.01405838
+G,Belgium,Iran,0,4,0.00346724
+G,Belgium,Iran,0,5,0.00068411
+G,Belgium,Iran,1,0,0.12087152
+G,Belgium,Iran,1,1,0.13217143
+G,Belgium,Iran,1,2,0.06198514
+G,Belgium,Iran,1,3,0.02038334
+G,Belgium,Iran,1,4,0.00502718
+G,Belgium,Iran,1,5,0.00099189
+G,Belgium,Iran,2,0,0.09234423
+G,Belgium,Iran,2,1,0.09110006
+G,Belgium,Iran,2,2,0.04493633
+G,Belgium,Iran,2,3,0.01477696
+G,Belgium,Iran,2,4,0.00364447
+G,Belgium,Iran,2,5,0.00071907
+G,Belgium,Iran,3,0,0.04463016
+G,Belgium,Iran,3,1,0.04402885
+G,Belgium,Iran,3,2,0.02171782
+G,Belgium,Iran,3,3,0.00714174
+G,Belgium,Iran,3,4,0.00176138
+G,Belgium,Iran,3,5,0.00034753
+G,Belgium,Iran,4,0,0.01617739
+G,Belgium,Iran,4,1,0.01595943
+G,Belgium,Iran,4,2,0.0078722
+G,Belgium,Iran,4,3,0.00258871
+G,Belgium,Iran,4,4,0.00063846
+G,Belgium,Iran,4,5,0.00012597
+G,Belgium,Iran,5,0,0.00469114
+G,Belgium,Iran,5,1,0.00462794
+G,Belgium,Iran,5,2,0.00228279
+G,Belgium,Iran,5,3,0.00075068
+G,Belgium,Iran,5,4,0.00018514
+G,Belgium,Iran,5,5,3.653e-05
+G,Belgium,New Zealand,0,0,0.10875281
+G,Belgium,New Zealand,0,1,0.05694759
+G,Belgium,New Zealand,0,2,0.0188097
+G,Belgium,New Zealand,0,3,0.00378283
+G,Belgium,New Zealand,0,4,0.00057057
+G,Belgium,New Zealand,0,5,6.885e-05
+G,Belgium,New Zealand,1,0,0.16758235
+G,Belgium,New Zealand,1,1,0.10977401
+G,Belgium,New Zealand,1,2,0.03148447
+G,Belgium,New Zealand,1,3,0.00633185
+G,Belgium,New Zealand,1,4,0.00095505
+G,Belgium,New Zealand,1,5,0.00011524
+G,Belgium,New Zealand,2,0,0.14477697
+G,Belgium,New Zealand,2,1,0.08734845
+G,Belgium,New Zealand,2,2,0.02635002
+G,Belgium,New Zealand,2,3,0.00529926
+G,Belgium,New Zealand,2,4,0.0007993
+G,Belgium,New Zealand,2,5,9.645e-05
+G,Belgium,New Zealand,3,0,0.08077794
+G,Belgium,New Zealand,3,1,0.04873585
+G,Belgium,New Zealand,3,2,0.01470193
+G,Belgium,New Zealand,3,3,0.00295671
+G,Belgium,New Zealand,3,4,0.00044597
+G,Belgium,New Zealand,3,5,5.381e-05
+G,Belgium,New Zealand,4,0,0.03380239
+G,Belgium,New Zealand,4,1,0.02039403
+G,Belgium,New Zealand,4,2,0.00615218
+G,Belgium,New Zealand,4,3,0.00123727
+G,Belgium,New Zealand,4,4,0.00018662
+G,Belgium,New Zealand,4,5,2.252e-05
+G,Belgium,New Zealand,5,0,0.01131597
+G,Belgium,New Zealand,5,1,0.00682728
+G,Belgium,New Zealand,5,2,0.00205955
+G,Belgium,New Zealand,5,3,0.0004142
+G,Belgium,New Zealand,5,4,6.247e-05
+G,Belgium,New Zealand,5,5,7.54e-06
+G,Egypt,Iran,0,0,0.16590701
+G,Egypt,Iran,0,1,0.14419338
+G,Egypt,Iran,0,2,0.07186987
+G,Egypt,Iran,0,3,0.02278174
+G,Egypt,Iran,0,4,0.00541612
+G,Egypt,Iran,0,5,0.0010301
+G,Egypt,Iran,1,0,0.13434565
+G,Egypt,Iran,1,1,0.14133421
+G,Egypt,Iran,1,2,0.06389246
+G,Egypt,Iran,1,3,0.02025301
+G,Egypt,Iran,1,4,0.00481494
+G,Egypt,Iran,1,5,0.00091576
+G,Egypt,Iran,2,0,0.06281016
+G,Egypt,Iran,2,1,0.05972981
+G,Egypt,Iran,2,2,0.02840026
+G,Egypt,Iran,2,3,0.00900248
+G,Egypt,Iran,2,4,0.00214025
+G,Egypt,Iran,2,5,0.00040706
+G,Egypt,Iran,3,0,0.01861279
+G,Egypt,Iran,3,1,0.01769997
+G,Egypt,Iran,3,2,0.00841596
+G,Egypt,Iran,3,3,0.00266774
+G,Egypt,Iran,3,4,0.00063423
+G,Egypt,Iran,3,5,0.00012062
+G,Egypt,Iran,4,0,0.0041367
+G,Egypt,Iran,4,1,0.00393383
+G,Egypt,Iran,4,2,0.00187045
+G,Egypt,Iran,4,3,0.00059291
+G,Egypt,Iran,4,4,0.00014096
+G,Egypt,Iran,4,5,2.681e-05
+G,Egypt,Iran,5,0,0.00073551
+G,Egypt,Iran,5,1,0.00069944
+G,Egypt,Iran,5,2,0.00033257
+G,Egypt,Iran,5,3,0.00010542
+G,Egypt,Iran,5,4,2.506e-05
+G,Egypt,Iran,5,5,4.77e-06
+G,Egypt,New Zealand,0,0,0.20664992
+G,Egypt,New Zealand,0,1,0.11038292
+G,Egypt,New Zealand,0,2,0.0339
+G,Egypt,New Zealand,0,3,0.00657183
+G,Egypt,New Zealand,0,4,0.00095551
+G,Egypt,New Zealand,0,5,0.00011114
+G,Egypt,New Zealand,1,0,0.1995304
+G,Egypt,New Zealand,1,1,0.12584266
+G,Egypt,New Zealand,1,2,0.03479181
+G,Egypt,New Zealand,1,3,0.00674472
+G,Egypt,New Zealand,1,4,0.00098065
+G,Egypt,New Zealand,1,5,0.00011406
+G,Egypt,New Zealand,2,0,0.10556945
+G,Egypt,New Zealand,2,1,0.06139688
+G,Egypt,New Zealand,2,2,0.01785354
+G,Egypt,New Zealand,2,3,0.00346108
+G,Egypt,New Zealand,2,4,0.00050322
+G,Egypt,New Zealand,2,5,5.853e-05
+G,Egypt,New Zealand,3,0,0.03611556
+G,Egypt,New Zealand,3,1,0.02100402
+G,Egypt,New Zealand,3,2,0.00610774
+G,Egypt,New Zealand,3,3,0.00118404
+G,Egypt,New Zealand,3,4,0.00017215
+G,Egypt,New Zealand,3,5,2.002e-05
+G,Egypt,New Zealand,4,0,0.00926641
+G,Egypt,New Zealand,4,1,0.00538914
+G,Egypt,New Zealand,4,2,0.0015671
+G,Egypt,New Zealand,4,3,0.0003038
+G,Egypt,New Zealand,4,4,4.417e-05
+G,Egypt,New Zealand,4,5,5.14e-06
+G,Egypt,New Zealand,5,0,0.00190204
+G,Egypt,New Zealand,5,1,0.00110618
+G,Egypt,New Zealand,5,2,0.00032167
+G,Egypt,New Zealand,5,3,6.236e-05
+G,Egypt,New Zealand,5,4,9.07e-06
+G,Egypt,New Zealand,5,5,1.05e-06
+G,Iran,New Zealand,0,0,0.14098388
+G,Iran,New Zealand,0,1,0.08723644
+G,Iran,New Zealand,0,2,0.03253803
+G,Iran,New Zealand,0,3,0.00754089
+G,Iran,New Zealand,0,4,0.00131074
+G,Iran,New Zealand,0,5,0.00018226
+G,Iran,New Zealand,1,0,0.17032163
+G,Iran,New Zealand,1,1,0.12920458
+G,Iran,New Zealand,1,2,0.04270432
+G,Iran,New Zealand,1,3,0.00989699
+G,Iran,New Zealand,1,4,0.00172027
+G,Iran,New Zealand,1,5,0.00023921
+G,Iran,New Zealand,2,0,0.1159436
+G,Iran,New Zealand,2,1,0.08061197
+G,Iran,New Zealand,2,2,0.0280235
+G,Iran,New Zealand,2,3,0.00649462
+G,Iran,New Zealand,2,4,0.00112888
+G,Iran,New Zealand,2,5,0.00015697
+G,Iran,New Zealand,3,0,0.05072313
+G,Iran,New Zealand,3,1,0.03526621
+G,Iran,New Zealand,3,2,0.01225975
+G,Iran,New Zealand,3,3,0.00284127
+G,Iran,New Zealand,3,4,0.00049386
+G,Iran,New Zealand,3,5,6.867e-05
+G,Iran,New Zealand,4,0,0.01664281
+G,Iran,New Zealand,4,1,0.01157123
+G,Iran,New Zealand,4,2,0.00402256
+G,Iran,New Zealand,4,3,0.00093225
+G,Iran,New Zealand,4,4,0.00016204
+G,Iran,New Zealand,4,5,2.253e-05
+G,Iran,New Zealand,5,0,0.00436855
+G,Iran,New Zealand,5,1,0.00303732
+G,Iran,New Zealand,5,2,0.00105588
+G,Iran,New Zealand,5,3,0.00024471
+G,Iran,New Zealand,5,4,4.253e-05
+G,Iran,New Zealand,5,5,5.91e-06
+H,Spain,Uruguay,0,0,0.15622613
+H,Spain,Uruguay,0,1,0.09607303
+H,Spain,Uruguay,0,2,0.03509409
+H,Spain,Uruguay,0,3,0.00800814
+H,Spain,Uruguay,0,4,0.00137054
+H,Spain,Uruguay,0,5,0.00018765
+H,Spain,Uruguay,1,0,0.17562968
+H,Spain,Uruguay,1,1,0.13110598
+H,Spain,Uruguay,1,2,0.04266605
+H,Spain,Uruguay,1,3,0.00973599
+H,Spain,Uruguay,1,4,0.00166624
+H,Spain,Uruguay,1,5,0.00022813
+H,Spain,Uruguay,2,0,0.11068616
+H,Spain,Uruguay,2,1,0.07577258
+H,Spain,Uruguay,2,2,0.02593587
+H,Spain,Uruguay,2,3,0.00591832
+H,Spain,Uruguay,2,4,0.00101288
+H,Spain,Uruguay,2,5,0.00013868
+H,Spain,Uruguay,3,0,0.044856
+H,Spain,Uruguay,3,1,0.03070714
+H,Spain,Uruguay,3,2,0.01051061
+H,Spain,Uruguay,3,3,0.00239842
+H,Spain,Uruguay,3,4,0.00041047
+H,Spain,Uruguay,3,5,5.62e-05
+H,Spain,Uruguay,4,0,0.01363355
+H,Spain,Uruguay,4,1,0.00933314
+H,Spain,Uruguay,4,2,0.0031946
+H,Spain,Uruguay,4,3,0.00072898
+H,Spain,Uruguay,4,4,0.00012476
+H,Spain,Uruguay,4,5,1.708e-05
+H,Spain,Uruguay,5,0,0.00331503
+H,Spain,Uruguay,5,1,0.00226937
+H,Spain,Uruguay,5,2,0.00077677
+H,Spain,Uruguay,5,3,0.00017725
+H,Spain,Uruguay,5,4,3.034e-05
+H,Spain,Uruguay,5,5,4.15e-06
+H,Spain,Saudi Arabia,0,0,0.07438099
+H,Spain,Saudi Arabia,0,1,0.02591373
+H,Spain,Saudi Arabia,0,2,0.0060709
+H,Spain,Saudi Arabia,0,3,0.00083717
+H,Spain,Saudi Arabia,0,4,8.658e-05
+H,Spain,Saudi Arabia,0,5,7.16e-06
+H,Spain,Saudi Arabia,1,0,0.15693217
+H,Spain,Saudi Arabia,1,1,0.0697794
+H,Spain,Saudi Arabia,1,2,0.01372299
+H,Spain,Saudi Arabia,1,3,0.00189238
+H,Spain,Saudi Arabia,1,4,0.00019572
+H,Spain,Saudi Arabia,1,5,1.619e-05
+H,Spain,Saudi Arabia,2,0,0.1812523
+H,Spain,Saudi Arabia,2,1,0.0749832
+H,Spain,Saudi Arabia,2,2,0.01551009
+H,Spain,Saudi Arabia,2,3,0.00213882
+H,Spain,Saudi Arabia,2,4,0.0002212
+H,Spain,Saudi Arabia,2,5,1.83e-05
+H,Spain,Saudi Arabia,3,0,0.13657081
+H,Spain,Saudi Arabia,3,1,0.05649868
+H,Spain,Saudi Arabia,3,2,0.01168662
+H,Spain,Saudi Arabia,3,3,0.00161157
+H,Spain,Saudi Arabia,3,4,0.00016667
+H,Spain,Saudi Arabia,3,5,1.379e-05
+H,Spain,Saudi Arabia,4,0,0.077178
+H,Spain,Saudi Arabia,4,1,0.03192816
+H,Spain,Saudi Arabia,4,2,0.00660426
+H,Spain,Saudi Arabia,4,3,0.00091072
+H,Spain,Saudi Arabia,4,4,9.419e-05
+H,Spain,Saudi Arabia,4,5,7.79e-06
+H,Spain,Saudi Arabia,5,0,0.03489146
+H,Spain,Saudi Arabia,5,1,0.01443443
+H,Spain,Saudi Arabia,5,2,0.00298573
+H,Spain,Saudi Arabia,5,3,0.00041173
+H,Spain,Saudi Arabia,5,4,4.258e-05
+H,Spain,Saudi Arabia,5,5,3.52e-06
+H,Spain,Cape Verde,0,0,0.05117281
+H,Spain,Cape Verde,0,1,0.01841354
+H,Spain,Cape Verde,0,2,0.00471598
+H,Spain,Cape Verde,0,3,0.00069501
+H,Spain,Cape Verde,0,4,7.682e-05
+H,Spain,Cape Verde,0,5,6.79e-06
+H,Spain,Cape Verde,1,0,0.12460523
+H,Spain,Cape Verde,1,1,0.05930133
+H,Spain,Cape Verde,1,2,0.01246365
+H,Spain,Cape Verde,1,3,0.00183681
+H,Spain,Cape Verde,1,4,0.00020302
+H,Spain,Cape Verde,1,5,1.795e-05
+H,Spain,Cape Verde,2,0,0.16851525
+H,Spain,Cape Verde,2,1,0.07450386
+H,Spain,Cape Verde,2,2,0.0164698
+H,Spain,Cape Verde,2,3,0.00242721
+H,Spain,Cape Verde,2,4,0.00026828
+H,Spain,Cape Verde,2,5,2.372e-05
+H,Spain,Cape Verde,3,0,0.14845374
+H,Spain,Cape Verde,3,1,0.06563427
+H,Spain,Cape Verde,3,2,0.01450909
+H,Spain,Cape Verde,3,3,0.00213825
+H,Spain,Cape Verde,3,4,0.00023634
+H,Spain,Cape Verde,3,5,2.09e-05
+H,Spain,Cape Verde,4,0,0.09808539
+H,Spain,Cape Verde,4,1,0.04336545
+H,Spain,Cape Verde,4,2,0.00958635
+H,Spain,Cape Verde,4,3,0.00141277
+H,Spain,Cape Verde,4,4,0.00015615
+H,Spain,Cape Verde,4,5,1.381e-05
+H,Spain,Cape Verde,5,0,0.05184507
+H,Spain,Cape Verde,5,1,0.02292171
+H,Spain,Cape Verde,5,2,0.00506707
+H,Spain,Cape Verde,5,3,0.00074675
+H,Spain,Cape Verde,5,4,8.254e-05
+H,Spain,Cape Verde,5,5,7.3e-06
+H,Uruguay,Saudi Arabia,0,0,0.19957563
+H,Uruguay,Saudi Arabia,0,1,0.07320122
+H,Uruguay,Saudi Arabia,0,2,0.01571938
+H,Uruguay,Saudi Arabia,0,3,0.00210627
+H,Uruguay,Saudi Arabia,0,4,0.00021167
+H,Uruguay,Saudi Arabia,0,5,1.702e-05
+H,Uruguay,Saudi Arabia,1,0,0.23562161
+H,Uruguay,Saudi Arabia,1,1,0.10173717
+H,Uruguay,Saudi Arabia,1,2,0.01944105
+H,Uruguay,Saudi Arabia,1,3,0.00260494
+H,Uruguay,Saudi Arabia,1,4,0.00026178
+H,Uruguay,Saudi Arabia,1,5,2.105e-05
+H,Uruguay,Saudi Arabia,2,0,0.14880114
+H,Uruguay,Saudi Arabia,2,1,0.05981433
+H,Uruguay,Saudi Arabia,2,2,0.01202193
+H,Uruguay,Saudi Arabia,2,3,0.00161084
+H,Uruguay,Saudi Arabia,2,4,0.00016188
+H,Uruguay,Saudi Arabia,2,5,1.301e-05
+H,Uruguay,Saudi Arabia,3,0,0.06134363
+H,Uruguay,Saudi Arabia,3,1,0.0246586
+H,Uruguay,Saudi Arabia,3,2,0.00495607
+H,Uruguay,Saudi Arabia,3,3,0.00066407
+H,Uruguay,Saudi Arabia,3,4,6.674e-05
+H,Uruguay,Saudi Arabia,3,5,5.37e-06
+H,Uruguay,Saudi Arabia,4,0,0.0189668
+H,Uruguay,Saudi Arabia,4,1,0.00762418
+H,Uruguay,Saudi Arabia,4,2,0.00153236
+H,Uruguay,Saudi Arabia,4,3,0.00020532
+H,Uruguay,Saudi Arabia,4,4,2.063e-05
+H,Uruguay,Saudi Arabia,4,5,1.66e-06
+H,Uruguay,Saudi Arabia,5,0,0.00469146
+H,Uruguay,Saudi Arabia,5,1,0.00188585
+H,Uruguay,Saudi Arabia,5,2,0.00037903
+H,Uruguay,Saudi Arabia,5,3,5.079e-05
+H,Uruguay,Saudi Arabia,5,4,5.1e-06
+H,Uruguay,Saudi Arabia,5,5,4.1e-07
+H,Uruguay,Cape Verde,0,0,0.15879269
+H,Uruguay,Cape Verde,0,1,0.06114091
+H,Uruguay,Cape Verde,0,2,0.01419597
+H,Uruguay,Cape Verde,0,3,0.00203283
+H,Uruguay,Cape Verde,0,4,0.00021832
+H,Uruguay,Cape Verde,0,5,1.876e-05
+H,Uruguay,Cape Verde,1,0,0.2175051
+H,Uruguay,Cape Verde,1,1,0.10051433
+H,Uruguay,Cape Verde,1,2,0.02052708
+H,Uruguay,Cape Verde,1,3,0.00293944
+H,Uruguay,Cape Verde,1,4,0.00031569
+H,Uruguay,Cape Verde,1,5,2.712e-05
+H,Uruguay,Cape Verde,2,0,0.16083221
+H,Uruguay,Cape Verde,2,1,0.06909254
+H,Uruguay,Cape Verde,2,2,0.01484087
+H,Uruguay,Cape Verde,2,3,0.00212518
+H,Uruguay,Cape Verde,2,4,0.00022824
+H,Uruguay,Cape Verde,2,5,1.961e-05
+H,Uruguay,Cape Verde,3,0,0.07752001
+H,Uruguay,Cape Verde,3,1,0.03330212
+H,Uruguay,Cape Verde,3,2,0.00715319
+H,Uruguay,Cape Verde,3,3,0.00102432
+H,Uruguay,Cape Verde,3,4,0.00011001
+H,Uruguay,Cape Verde,3,5,9.45e-06
+H,Uruguay,Cape Verde,4,0,0.02802308
+H,Uruguay,Cape Verde,4,1,0.01203855
+H,Uruguay,Cape Verde,4,2,0.00258584
+H,Uruguay,Cape Verde,4,3,0.00037029
+H,Uruguay,Cape Verde,4,4,3.977e-05
+H,Uruguay,Cape Verde,4,5,3.42e-06
+H,Uruguay,Cape Verde,5,0,0.00810416
+H,Uruguay,Cape Verde,5,1,0.0034815
+H,Uruguay,Cape Verde,5,2,0.00074782
+H,Uruguay,Cape Verde,5,3,0.00010709
+H,Uruguay,Cape Verde,5,4,1.15e-05
+H,Uruguay,Cape Verde,5,5,9.9e-07
+H,Saudi Arabia,Cape Verde,0,0,0.19464515
+H,Saudi Arabia,Cape Verde,0,1,0.14325667
+H,Saudi Arabia,Cape Verde,0,2,0.05992427
+H,Saudi Arabia,Cape Verde,0,3,0.01595463
+H,Saudi Arabia,Cape Verde,0,4,0.0031859
+H,Saudi Arabia,Cape Verde,0,5,0.00050894
+H,Saudi Arabia,Cape Verde,1,0,0.15736153
+H,Saudi Arabia,Cape Verde,1,1,0.13790502
+H,Saudi Arabia,Cape Verde,1,2,0.05236323
+H,Saudi Arabia,Cape Verde,1,3,0.01394153
+H,Saudi Arabia,Cape Verde,1,4,0.00278391
+H,Saudi Arabia,Cape Verde,1,5,0.00044472
+H,Saudi Arabia,Cape Verde,2,0,0.0717199
+H,Saudi Arabia,Cape Verde,2,1,0.05728553
+H,Saudi Arabia,Cape Verde,2,2,0.02287811
+H,Saudi Arabia,Cape Verde,2,3,0.00609122
+H,Saudi Arabia,Cape Verde,2,4,0.00121632
+H,Saudi Arabia,Cape Verde,2,5,0.00019431
+H,Saudi Arabia,Cape Verde,3,0,0.02089018
+H,Saudi Arabia,Cape Verde,3,1,0.01668581
+H,Saudi Arabia,Cape Verde,3,2,0.00666381
+H,Saudi Arabia,Cape Verde,3,3,0.00177422
+H,Saudi Arabia,Cape Verde,3,4,0.00035428
+H,Saudi Arabia,Cape Verde,3,5,5.66e-05
+H,Saudi Arabia,Cape Verde,4,0,0.00456358
+H,Saudi Arabia,Cape Verde,4,1,0.00364511
+H,Saudi Arabia,Cape Verde,4,2,0.00145575
+H,Saudi Arabia,Cape Verde,4,3,0.00038759
+H,Saudi Arabia,Cape Verde,4,4,7.74e-05
+H,Saudi Arabia,Cape Verde,4,5,1.236e-05
+H,Saudi Arabia,Cape Verde,5,0,0.00079755
+H,Saudi Arabia,Cape Verde,5,1,0.00063704
+H,Saudi Arabia,Cape Verde,5,2,0.00025441
+H,Saudi Arabia,Cape Verde,5,3,6.774e-05
+H,Saudi Arabia,Cape Verde,5,4,1.353e-05
+H,Saudi Arabia,Cape Verde,5,5,2.16e-06
+I,France,Senegal,0,0,0.1201128
+I,France,Senegal,0,1,0.08532755
+I,France,Senegal,0,2,0.03712669
+I,France,Senegal,0,3,0.01000548
+I,France,Senegal,0,4,0.00202232
+I,France,Senegal,0,5,0.000327
+I,France,Senegal,1,0,0.14907809
+I,France,Senegal,1,1,0.13230972
+I,France,Senegal,1,2,0.05085173
+I,France,Senegal,1,3,0.01370432
+I,France,Senegal,1,4,0.00276994
+I,France,Senegal,1,5,0.00044789
+I,France,Senegal,2,0,0.10655639
+I,France,Senegal,2,1,0.08614943
+I,France,Senegal,2,2,0.03482534
+I,France,Senegal,2,3,0.00938527
+I,France,Senegal,2,4,0.00189697
+I,France,Senegal,2,5,0.00030673
+I,France,Senegal,3,0,0.04864943
+I,France,Senegal,3,1,0.03933242
+I,France,Senegal,3,2,0.01589987
+I,France,Senegal,3,3,0.00428495
+I,France,Senegal,3,4,0.00086608
+I,France,Senegal,3,5,0.00014004
+I,France,Senegal,4,0,0.01665855
+I,France,Senegal,4,1,0.01346822
+I,France,Senegal,4,2,0.00544444
+I,France,Senegal,4,3,0.00146725
+I,France,Senegal,4,4,0.00029656
+I,France,Senegal,4,5,4.795e-05
+I,France,Senegal,5,0,0.00456338
+I,France,Senegal,5,1,0.00368943
+I,France,Senegal,5,2,0.00149143
+I,France,Senegal,5,3,0.00040193
+I,France,Senegal,5,4,8.124e-05
+I,France,Senegal,5,5,1.314e-05
+I,France,Norway,0,0,0.08640445
+I,France,Norway,0,1,0.07539466
+I,France,Norway,0,2,0.04179728
+I,France,Norway,0,3,0.01424072
+I,France,Norway,0,4,0.00363896
+I,France,Norway,0,5,0.0007439
+I,France,Norway,1,0,0.1143256
+I,France,Norway,1,1,0.12977713
+I,France,Norway,1,2,0.06305863
+I,France,Norway,1,3,0.02148466
+I,France,Norway,1,4,0.00549002
+I,France,Norway,1,5,0.0011223
+I,France,Norway,2,0,0.0910606
+I,France,Norway,2,1,0.09307558
+I,France,Norway,2,2,0.04756758
+I,France,Norway,2,3,0.01620672
+I,France,Norway,2,4,0.00414133
+I,France,Norway,2,5,0.00084659
+I,France,Norway,3,0,0.0457937
+I,France,Norway,3,1,0.04680702
+I,France,Norway,3,2,0.02392138
+I,France,Norway,3,3,0.00815024
+I,France,Norway,3,4,0.00208265
+I,France,Norway,3,5,0.00042575
+I,France,Norway,4,0,0.01727199
+I,France,Norway,4,1,0.01765418
+I,France,Norway,4,2,0.00902241
+I,France,Norway,4,3,0.00307402
+I,France,Norway,4,4,0.00078551
+I,France,Norway,4,5,0.00016058
+I,France,Norway,5,0,0.00521157
+I,France,Norway,5,1,0.00532689
+I,France,Norway,5,2,0.00272238
+I,France,Norway,5,3,0.00092754
+I,France,Norway,5,4,0.00023702
+I,France,Norway,5,5,4.845e-05
+I,France,Iraq,0,0,0.08871164
+I,France,Iraq,0,1,0.03580207
+I,France,Iraq,0,2,0.0094504
+I,France,Iraq,0,3,0.00148949
+I,France,Iraq,0,4,0.00017607
+I,France,Iraq,0,5,1.665e-05
+I,France,Iraq,1,0,0.16617399
+I,France,Iraq,1,1,0.08471642
+I,France,Iraq,1,2,0.0190422
+I,France,Iraq,1,3,0.00300126
+I,France,Iraq,1,4,0.00035477
+I,France,Iraq,1,5,3.355e-05
+I,France,Iraq,2,0,0.17161975
+I,France,Iraq,2,1,0.08114758
+I,France,Iraq,2,2,0.01918465
+I,France,Iraq,2,3,0.00302372
+I,France,Iraq,2,4,0.00035743
+I,France,Iraq,2,5,3.38e-05
+I,France,Iraq,3,0,0.1152691
+I,France,Iraq,3,1,0.0545031
+I,France,Iraq,3,2,0.01288545
+I,France,Iraq,3,3,0.00203089
+I,France,Iraq,3,4,0.00024007
+I,France,Iraq,3,5,2.27e-05
+I,France,Iraq,4,0,0.05806572
+I,France,Iraq,4,1,0.02745542
+I,France,Iraq,4,2,0.00649092
+I,France,Iraq,4,3,0.00102304
+I,France,Iraq,4,4,0.00012093
+I,France,Iraq,4,5,1.144e-05
+I,France,Iraq,5,0,0.02340004
+I,France,Iraq,5,1,0.01106433
+I,France,Iraq,5,2,0.00261579
+I,France,Iraq,5,3,0.00041228
+I,France,Iraq,5,4,4.873e-05
+I,France,Iraq,5,5,4.61e-06
+I,Senegal,Norway,0,0,0.10813894
+I,Senegal,Norway,0,1,0.11721433
+I,Senegal,Norway,0,2,0.07599671
+I,Senegal,Norway,0,3,0.03103291
+I,Senegal,Norway,0,4,0.00950411
+I,Senegal,Norway,0,5,0.00232858
+I,Senegal,Norway,1,0,0.10124044
+I,Senegal,Norway,1,1,0.13928306
+I,Senegal,Norway,1,2,0.08111262
+I,Senegal,Norway,1,3,0.03312197
+I,Senegal,Norway,1,4,0.01014391
+I,Senegal,Norway,1,5,0.00248533
+I,Senegal,Norway,2,0,0.05768781
+I,Senegal,Norway,2,1,0.07066967
+I,Senegal,Norway,2,2,0.04328646
+I,Senegal,Norway,2,3,0.01767583
+I,Senegal,Norway,2,4,0.00541338
+I,Senegal,Norway,2,5,0.00132632
+I,Senegal,Norway,3,0,0.02052374
+I,Senegal,Norway,3,1,0.02514233
+I,Senegal,Norway,3,2,0.01540013
+I,Senegal,Norway,3,3,0.00628858
+I,Senegal,Norway,3,4,0.00192593
+I,Senegal,Norway,3,5,0.00047187
+I,Senegal,Norway,4,0,0.00547634
+I,Senegal,Norway,4,1,0.00670871
+I,Senegal,Norway,4,2,0.00410921
+I,Senegal,Norway,4,3,0.00167798
+I,Senegal,Norway,4,4,0.0005139
+I,Senegal,Norway,4,5,0.00012591
+I,Senegal,Norway,5,0,0.001169
+I,Senegal,Norway,5,1,0.00143207
+I,Senegal,Norway,5,2,0.00087717
+I,Senegal,Norway,5,3,0.00035819
+I,Senegal,Norway,5,4,0.0001097
+I,Senegal,Norway,5,5,2.688e-05
+I,Senegal,Iraq,0,0,0.1426051
+I,Senegal,Iraq,0,1,0.07184229
+I,Senegal,Iraq,0,2,0.02197908
+I,Senegal,Iraq,0,3,0.00415184
+I,Senegal,Iraq,0,4,0.00058821
+I,Senegal,Iraq,0,5,6.667e-05
+I,Senegal,Iraq,1,0,0.18939235
+I,Senegal,Iraq,1,1,0.11630017
+I,Senegal,Iraq,1,2,0.03133095
+I,Senegal,Iraq,1,3,0.0059184
+I,Senegal,Iraq,1,4,0.00083849
+I,Senegal,Iraq,1,5,9.503e-05
+I,Senegal,Iraq,2,0,0.13906999
+I,Senegal,Iraq,2,1,0.07881076
+I,Senegal,Iraq,2,2,0.02233097
+I,Senegal,Iraq,2,3,0.00421831
+I,Senegal,Iraq,2,4,0.00059763
+I,Senegal,Iraq,2,5,6.773e-05
+I,Senegal,Iraq,3,0,0.06608094
+I,Senegal,Iraq,3,1,0.03744797
+I,Senegal,Iraq,3,2,0.01061086
+I,Senegal,Iraq,3,3,0.00200439
+I,Senegal,Iraq,3,4,0.00028397
+I,Senegal,Iraq,3,5,3.219e-05
+I,Senegal,Iraq,4,0,0.02354942
+I,Senegal,Iraq,4,1,0.01334542
+I,Senegal,Iraq,4,2,0.00378142
+I,Senegal,Iraq,4,3,0.00071431
+I,Senegal,Iraq,4,4,0.0001012
+I,Senegal,Iraq,4,5,1.147e-05
+I,Senegal,Iraq,5,0,0.00671389
+I,Senegal,Iraq,5,1,0.00380475
+I,Senegal,Iraq,5,2,0.00107807
+I,Senegal,Iraq,5,3,0.00020365
+I,Senegal,Iraq,5,4,2.885e-05
+I,Senegal,Iraq,5,5,3.27e-06
+I,Norway,Iraq,0,0,0.09449422
+I,Norway,Iraq,0,1,0.05053467
+I,Norway,Iraq,0,2,0.01739567
+I,Norway,Iraq,0,3,0.0036195
+I,Norway,Iraq,0,4,0.00056483
+I,Norway,Iraq,0,5,7.051e-05
+I,Norway,Iraq,1,0,0.15571762
+I,Norway,Iraq,1,1,0.10564947
+I,Norway,Iraq,1,2,0.03134999
+I,Norway,Iraq,1,3,0.00652297
+I,Norway,Iraq,1,4,0.00101792
+I,Norway,Iraq,1,5,0.00012708
+I,Norway,Iraq,2,0,0.14500258
+I,Norway,Iraq,2,1,0.09051171
+I,Norway,Iraq,2,2,0.02824905
+I,Norway,Iraq,2,3,0.00587776
+I,Norway,Iraq,2,4,0.00091724
+I,Norway,Iraq,2,5,0.00011451
+I,Norway,Iraq,3,0,0.08710656
+I,Norway,Iraq,3,1,0.05437258
+I,Norway,Iraq,3,2,0.01696989
+I,Norway,Iraq,3,3,0.00353091
+I,Norway,Iraq,3,4,0.00055101
+I,Norway,Iraq,3,5,6.879e-05
+I,Norway,Iraq,4,0,0.03924526
+I,Norway,Iraq,4,1,0.02449719
+I,Norway,Iraq,4,2,0.00764567
+I,Norway,Iraq,4,3,0.00159083
+I,Norway,Iraq,4,4,0.00024825
+I,Norway,Iraq,4,5,3.099e-05
+I,Norway,Iraq,5,0,0.01414535
+I,Norway,Iraq,5,1,0.00882963
+I,Norway,Iraq,5,2,0.00275576
+I,Norway,Iraq,5,3,0.00057339
+I,Norway,Iraq,5,4,8.948e-05
+I,Norway,Iraq,5,5,1.117e-05
+J,Argentina,Austria,0,0,0.11829158
+J,Argentina,Austria,0,1,0.05168885
+J,Argentina,Austria,0,2,0.01414747
+J,Argentina,Austria,0,3,0.00235616
+J,Argentina,Austria,0,4,0.0002943
+J,Argentina,Austria,0,5,2.941e-05
+J,Argentina,Austria,1,0,0.18609342
+J,Argentina,Austria,1,1,0.10039041
+J,Argentina,Austria,1,2,0.02384405
+J,Argentina,Austria,1,3,0.00397105
+J,Argentina,Austria,1,4,0.00049601
+J,Argentina,Austria,1,5,4.956e-05
+J,Argentina,Austria,2,0,0.16098587
+J,Argentina,Austria,2,1,0.08043305
+J,Argentina,Austria,2,2,0.0200933
+J,Argentina,Austria,2,3,0.00334639
+J,Argentina,Austria,2,4,0.00041799
+J,Argentina,Austria,2,5,4.177e-05
+J,Argentina,Austria,3,0,0.09044149
+J,Argentina,Austria,3,1,0.0451871
+J,Argentina,Austria,3,2,0.01128837
+J,Argentina,Austria,3,3,0.00188
+J,Argentina,Austria,3,4,0.00023482
+J,Argentina,Austria,3,5,2.346e-05
+J,Argentina,Austria,4,0,0.03810736
+J,Argentina,Austria,4,1,0.0190395
+J,Argentina,Austria,4,2,0.00475633
+J,Argentina,Austria,4,3,0.00079213
+J,Argentina,Austria,4,4,9.894e-05
+J,Argentina,Austria,4,5,9.89e-06
+J,Argentina,Austria,5,0,0.01284518
+J,Argentina,Austria,5,1,0.00641781
+J,Argentina,Austria,5,2,0.00160326
+J,Argentina,Austria,5,3,0.00026701
+J,Argentina,Austria,5,4,3.335e-05
+J,Argentina,Austria,5,5,3.33e-06
+J,Argentina,Algeria,0,0,0.10221084
+J,Argentina,Algeria,0,1,0.04593219
+J,Argentina,Algeria,0,2,0.01319597
+J,Argentina,Algeria,0,3,0.00228929
+J,Argentina,Algeria,0,4,0.00029787
+J,Argentina,Algeria,0,5,3.101e-05
+J,Argentina,Algeria,1,0,0.17246323
+J,Argentina,Algeria,1,1,0.09702275
+J,Argentina,Algeria,1,2,0.02400469
+J,Argentina,Algeria,1,3,0.00416444
+J,Argentina,Algeria,1,4,0.00054185
+J,Argentina,Algeria,1,5,5.64e-05
+J,Argentina,Algeria,2,0,0.16120858
+J,Argentina,Algeria,2,1,0.08390149
+J,Argentina,Algeria,2,2,0.02183339
+J,Argentina,Algeria,2,3,0.00378775
+J,Argentina,Algeria,2,4,0.00049284
+J,Argentina,Algeria,2,5,5.13e-05
+J,Argentina,Algeria,3,0,0.09775115
+J,Argentina,Algeria,3,1,0.05087488
+J,Argentina,Algeria,3,2,0.01323899
+J,Argentina,Algeria,3,3,0.00229676
+J,Argentina,Algeria,3,4,0.00029884
+J,Argentina,Algeria,3,5,3.111e-05
+J,Argentina,Algeria,4,0,0.04445461
+J,Argentina,Algeria,4,1,0.02313654
+J,Argentina,Algeria,4,2,0.00602074
+J,Argentina,Algeria,4,3,0.0010445
+J,Argentina,Algeria,4,4,0.0001359
+J,Argentina,Algeria,4,5,1.415e-05
+J,Argentina,Algeria,5,0,0.01617342
+J,Argentina,Algeria,5,1,0.0084175
+J,Argentina,Algeria,5,2,0.00219046
+J,Argentina,Algeria,5,3,0.00038001
+J,Argentina,Algeria,5,4,4.944e-05
+J,Argentina,Algeria,5,5,5.15e-06
+J,Argentina,Jordan,0,0,0.05488284
+J,Argentina,Jordan,0,1,0.01839879
+J,Argentina,Jordan,0,2,0.00434354
+J,Argentina,Jordan,0,3,0.00059165
+J,Argentina,Jordan,0,4,6.044e-05
+J,Argentina,Jordan,0,5,4.94e-06
+J,Argentina,Jordan,1,0,0.13227127
+J,Argentina,Jordan,1,1,0.05807954
+J,Argentina,Jordan,1,2,0.01128245
+J,Argentina,Jordan,1,3,0.00153681
+J,Argentina,Jordan,1,4,0.000157
+J,Argentina,Jordan,1,5,1.283e-05
+J,Argentina,Jordan,2,0,0.17550312
+J,Argentina,Jordan,2,1,0.07171729
+J,Argentina,Jordan,2,2,0.01465321
+J,Argentina,Jordan,2,3,0.00199595
+J,Argentina,Jordan,2,4,0.00020391
+J,Argentina,Jordan,2,5,1.666e-05
+J,Argentina,Jordan,3,0,0.15195786
+J,Argentina,Jordan,3,1,0.06209579
+J,Argentina,Jordan,3,2,0.01268736
+J,Argentina,Jordan,3,3,0.00172818
+J,Argentina,Jordan,3,4,0.00017655
+J,Argentina,Jordan,3,5,1.443e-05
+J,Argentina,Jordan,4,0,0.09867855
+J,Argentina,Jordan,4,1,0.04032383
+J,Argentina,Jordan,4,2,0.00823893
+J,Argentina,Jordan,4,3,0.00112225
+J,Argentina,Jordan,4,4,0.00011465
+J,Argentina,Jordan,4,5,9.37e-06
+J,Argentina,Jordan,5,0,0.05126398
+J,Argentina,Jordan,5,1,0.02094842
+J,Argentina,Jordan,5,2,0.00428016
+J,Argentina,Jordan,5,3,0.00058301
+J,Argentina,Jordan,5,4,5.956e-05
+J,Argentina,Jordan,5,5,4.87e-06
+J,Austria,Algeria,0,0,0.09776879
+J,Austria,Algeria,0,1,0.10046369
+J,Austria,Algeria,0,2,0.06320811
+J,Austria,Algeria,0,3,0.02483521
+J,Austria,Algeria,0,4,0.00731853
+J,Austria,Algeria,0,5,0.00172532
+J,Austria,Algeria,1,0,0.10433976
+J,Austria,Algeria,1,1,0.13776877
+J,Austria,Algeria,1,2,0.07719837
+J,Austria,Algeria,1,3,0.03033214
+J,Austria,Algeria,1,4,0.00893839
+J,Austria,Algeria,1,5,0.0021072
+J,Austria,Algeria,2,0,0.06785954
+J,Austria,Algeria,2,1,0.07998843
+J,Austria,Algeria,2,2,0.04714258
+J,Austria,Algeria,2,3,0.01852287
+J,Austria,Algeria,2,4,0.00545839
+J,Austria,Algeria,2,5,0.0012868
+J,Austria,Algeria,3,0,0.02762644
+J,Austria,Algeria,3,1,0.03256426
+J,Austria,Algeria,3,2,0.01919232
+J,Austria,Algeria,3,3,0.00754089
+J,Austria,Algeria,3,4,0.00222218
+J,Austria,Algeria,3,5,0.00052387
+J,Austria,Algeria,4,0,0.00843529
+J,Austria,Algeria,4,1,0.00994298
+J,Austria,Algeria,4,2,0.00586007
+J,Austria,Algeria,4,3,0.00230249
+J,Austria,Algeria,4,4,0.00067851
+J,Austria,Algeria,4,5,0.00015996
+J,Austria,Algeria,5,0,0.00206047
+J,Austria,Algeria,5,1,0.00242874
+J,Austria,Algeria,5,2,0.00143142
+J,Austria,Algeria,5,3,0.00056242
+J,Austria,Algeria,5,4,0.00016574
+J,Austria,Algeria,5,5,3.907e-05
+J,Austria,Jordan,0,0,0.07579232
+J,Austria,Jordan,0,1,0.05888741
+J,Austria,Jordan,0,2,0.02995556
+J,Austria,Jordan,0,3,0.00924123
+J,Austria,Jordan,0,4,0.00213818
+J,Austria,Jordan,0,5,0.00039577
+J,Austria,Jordan,1,0,0.11613639
+J,Austria,Jordan,1,1,0.1187415
+J,Austria,Jordan,1,2,0.05224171
+J,Austria,Jordan,1,3,0.01611647
+J,Austria,Jordan,1,4,0.00372892
+J,Austria,Jordan,1,5,0.00069022
+J,Austria,Jordan,2,0,0.10636771
+J,Austria,Jordan,2,1,0.0984427
+J,Austria,Jordan,2,2,0.04555408
+J,Austria,Jordan,2,3,0.01405335
+J,Austria,Jordan,2,4,0.00325157
+J,Austria,Jordan,2,5,0.00060186
+J,Austria,Jordan,3,0,0.06183416
+J,Austria,Jordan,3,1,0.05722716
+J,Austria,Jordan,3,2,0.0264817
+J,Austria,Jordan,3,3,0.00816955
+J,Austria,Jordan,3,4,0.00189022
+J,Austria,Jordan,3,5,0.00034988
+J,Austria,Jordan,4,0,0.02695928
+J,Austria,Jordan,4,1,0.02495066
+J,Austria,Jordan,4,2,0.01154585
+J,Austria,Jordan,4,3,0.00356187
+J,Austria,Jordan,4,4,0.00082412
+J,Austria,Jordan,4,5,0.00015254
+J,Austria,Jordan,5,0,0.00940326
+J,Austria,Jordan,5,1,0.00870266
+J,Austria,Jordan,5,2,0.00402713
+J,Austria,Jordan,5,3,0.00124236
+J,Austria,Jordan,5,4,0.00028745
+J,Austria,Jordan,5,5,5.321e-05
+J,Algeria,Jordan,0,0,0.06625236
+J,Algeria,Jordan,0,1,0.05480326
+J,Algeria,Jordan,0,2,0.03021455
+J,Algeria,Jordan,0,3,0.01006057
+J,Algeria,Jordan,0,4,0.00251241
+J,Algeria,Jordan,0,5,0.00050193
+J,Algeria,Jordan,1,0,0.10432689
+J,Algeria,Jordan,1,1,0.11559051
+J,Algeria,Jordan,1,2,0.05488969
+J,Algeria,Jordan,1,3,0.01827667
+J,Algeria,Jordan,1,4,0.0045642
+J,Algeria,Jordan,1,5,0.00091185
+J,Algeria,Jordan,2,0,0.09993334
+J,Algeria,Jordan,2,1,0.09982468
+J,Algeria,Jordan,2,2,0.04985807
+J,Algeria,Jordan,2,3,0.01660128
+J,Algeria,Jordan,2,4,0.00414581
+J,Algeria,Jordan,2,5,0.00082826
+J,Algeria,Jordan,3,0,0.0605151
+J,Algeria,Jordan,3,1,0.0604493
+J,Algeria,Jordan,3,2,0.03019179
+J,Algeria,Jordan,3,3,0.01005299
+J,Algeria,Jordan,3,4,0.00251051
+J,Algeria,Jordan,3,5,0.00050156
+J,Algeria,Jordan,4,0,0.0274839
+J,Algeria,Jordan,4,1,0.02745402
+J,Algeria,Jordan,4,2,0.01371208
+J,Algeria,Jordan,4,3,0.00456572
+J,Algeria,Jordan,4,4,0.00114019
+J,Algeria,Jordan,4,5,0.00022779
+J,Algeria,Jordan,5,0,0.0099858
+J,Algeria,Jordan,5,1,0.00997495
+J,Algeria,Jordan,5,2,0.00498205
+J,Algeria,Jordan,5,3,0.00165888
+J,Algeria,Jordan,5,4,0.00041427
+J,Algeria,Jordan,5,5,8.276e-05
+K,Portugal,Colombia,0,0,0.09241519
+K,Portugal,Colombia,0,1,0.09981828
+K,Portugal,Colombia,0,2,0.06621683
+K,Portugal,Colombia,0,3,0.02743831
+K,Portugal,Colombia,0,4,0.00852722
+K,Portugal,Colombia,0,5,0.00212006
+K,Portugal,Colombia,1,0,0.09759757
+K,Portugal,Colombia,1,1,0.1363888
+K,Portugal,Colombia,1,2,0.08059906
+K,Portugal,Colombia,1,3,0.03339788
+K,Portugal,Colombia,1,4,0.01037932
+K,Portugal,Colombia,1,5,0.00258053
+K,Portugal,Colombia,2,0,0.06348502
+K,Portugal,Colombia,2,1,0.07891897
+K,Portugal,Colombia,2,2,0.04905254
+K,Portugal,Colombia,2,3,0.02032593
+K,Portugal,Colombia,2,4,0.00631685
+K,Portugal,Colombia,2,5,0.00157051
+K,Portugal,Colombia,3,0,0.02575797
+K,Portugal,Colombia,3,1,0.03202003
+K,Portugal,Colombia,3,2,0.01990223
+K,Portugal,Colombia,3,3,0.0082469
+K,Portugal,Colombia,3,4,0.00256295
+K,Portugal,Colombia,3,5,0.00063721
+K,Portugal,Colombia,4,0,0.00783814
+K,Portugal,Colombia,4,1,0.00974369
+K,Portugal,Colombia,4,2,0.00605624
+K,Portugal,Colombia,4,3,0.00250953
+K,Portugal,Colombia,4,4,0.00077991
+K,Portugal,Colombia,4,5,0.0001939
+K,Portugal,Colombia,5,0,0.00190812
+K,Portugal,Colombia,5,1,0.002372
+K,Portugal,Colombia,5,2,0.00147433
+K,Portugal,Colombia,5,3,0.00061092
+K,Portugal,Colombia,5,4,0.00018986
+K,Portugal,Colombia,5,5,4.72e-05
+K,Portugal,Uzbekistan,0,0,0.12171304
+K,Portugal,Uzbekistan,0,1,0.06310817
+K,Portugal,Uzbekistan,0,2,0.02030882
+K,Portugal,Uzbekistan,0,3,0.00400343
+K,Portugal,Uzbekistan,0,4,0.00059189
+K,Portugal,Uzbekistan,0,5,7.001e-05
+K,Portugal,Uzbekistan,1,0,0.17642879
+K,Portugal,Uzbekistan,1,1,0.11320784
+K,Portugal,Uzbekistan,1,2,0.03182632
+K,Portugal,Uzbekistan,1,3,0.00627385
+K,Portugal,Uzbekistan,1,4,0.00092756
+K,Portugal,Uzbekistan,1,5,0.00010971
+K,Portugal,Uzbekistan,2,0,0.14261016
+K,Portugal,Uzbekistan,2,1,0.08433722
+K,Portugal,Uzbekistan,2,2,0.0249378
+K,Portugal,Uzbekistan,2,3,0.00491593
+K,Portugal,Uzbekistan,2,4,0.0007268
+K,Portugal,Uzbekistan,2,5,8.596e-05
+K,Portugal,Uzbekistan,3,0,0.07449565
+K,Portugal,Uzbekistan,3,1,0.04405546
+K,Portugal,Uzbekistan,3,2,0.01302683
+K,Portugal,Uzbekistan,3,3,0.00256795
+K,Portugal,Uzbekistan,3,4,0.00037966
+K,Portugal,Uzbekistan,3,5,4.49e-05
+K,Portugal,Uzbekistan,4,0,0.02918587
+K,Portugal,Uzbekistan,4,1,0.01726003
+K,Portugal,Uzbekistan,4,2,0.00510364
+K,Portugal,Uzbekistan,4,3,0.00100607
+K,Portugal,Uzbekistan,4,4,0.00014874
+K,Portugal,Uzbekistan,4,5,1.759e-05
+K,Portugal,Uzbekistan,5,0,0.00914754
+K,Portugal,Uzbekistan,5,1,0.0054097
+K,Portugal,Uzbekistan,5,2,0.0015996
+K,Portugal,Uzbekistan,5,3,0.00031533
+K,Portugal,Uzbekistan,5,4,4.662e-05
+K,Portugal,Uzbekistan,5,5,5.51e-06
+K,Portugal,DR Congo,0,0,0.13699114
+K,Portugal,DR Congo,0,1,0.06587095
+K,Portugal,DR Congo,0,2,0.01937595
+K,Portugal,DR Congo,0,3,0.00350635
+K,Portugal,DR Congo,0,4,0.00047589
+K,Portugal,DR Congo,0,5,5.167e-05
+K,Portugal,DR Congo,1,0,0.19044401
+K,Portugal,DR Congo,1,1,0.11189116
+K,Portugal,DR Congo,1,2,0.02887691
+K,Portugal,DR Congo,1,3,0.00522569
+K,Portugal,DR Congo,1,4,0.00070925
+K,Portugal,DR Congo,1,5,7.701e-05
+K,Portugal,DR Congo,2,0,0.14601946
+K,Portugal,DR Congo,2,1,0.07927288
+K,Portugal,DR Congo,2,2,0.02151833
+K,Portugal,DR Congo,2,3,0.00389405
+K,Portugal,DR Congo,2,4,0.00052851
+K,Portugal,DR Congo,2,5,5.739e-05
+K,Portugal,DR Congo,3,0,0.07253994
+K,Portugal,DR Congo,3,1,0.0393814
+K,Portugal,DR Congo,3,2,0.01068993
+K,Portugal,DR Congo,3,3,0.0019345
+K,Portugal,DR Congo,3,4,0.00026256
+K,Portugal,DR Congo,3,5,2.851e-05
+K,Portugal,DR Congo,4,0,0.02702744
+K,Portugal,DR Congo,4,1,0.014673
+K,Portugal,DR Congo,4,2,0.00398293
+K,Portugal,DR Congo,4,3,0.00072077
+K,Portugal,DR Congo,4,4,9.782e-05
+K,Portugal,DR Congo,4,5,1.062e-05
+K,Portugal,DR Congo,5,0,0.00805606
+K,Portugal,DR Congo,5,1,0.00437358
+K,Portugal,DR Congo,5,2,0.00118719
+K,Portugal,DR Congo,5,3,0.00021484
+K,Portugal,DR Congo,5,4,2.916e-05
+K,Portugal,DR Congo,5,5,3.17e-06
+K,Colombia,Uzbekistan,0,0,0.13155226
+K,Colombia,Uzbekistan,0,1,0.06504343
+K,Colombia,Uzbekistan,0,2,0.01976923
+K,Colombia,Uzbekistan,0,3,0.00369126
+K,Colombia,Uzbekistan,0,4,0.00051692
+K,Colombia,Uzbekistan,0,5,5.791e-05
+K,Colombia,Uzbekistan,1,0,0.18548527
+K,Colombia,Uzbekistan,1,1,0.11254598
+K,Colombia,Uzbekistan,1,2,0.02996936
+K,Colombia,Uzbekistan,1,3,0.00559581
+K,Colombia,Uzbekistan,1,4,0.00078363
+K,Colombia,Uzbekistan,1,5,8.779e-05
+K,Colombia,Uzbekistan,2,0,0.14479465
+K,Colombia,Uzbekistan,2,1,0.0811071
+K,Colombia,Uzbekistan,2,2,0.02271618
+K,Colombia,Uzbekistan,2,3,0.00424151
+K,Colombia,Uzbekistan,2,4,0.00059397
+K,Colombia,Uzbekistan,2,5,6.654e-05
+K,Colombia,Uzbekistan,3,0,0.07316764
+K,Colombia,Uzbekistan,3,1,0.04098505
+K,Colombia,Uzbekistan,3,2,0.01147894
+K,Colombia,Uzbekistan,3,3,0.00214332
+K,Colombia,Uzbekistan,3,4,0.00030015
+K,Colombia,Uzbekistan,3,5,3.363e-05
+K,Colombia,Uzbekistan,4,0,0.02772981
+K,Colombia,Uzbekistan,4,1,0.01553293
+K,Colombia,Uzbekistan,4,2,0.0043504
+K,Colombia,Uzbekistan,4,3,0.0008123
+K,Colombia,Uzbekistan,4,4,0.00011375
+K,Colombia,Uzbekistan,4,5,1.274e-05
+K,Colombia,Uzbekistan,5,0,0.00840746
+K,Colombia,Uzbekistan,5,1,0.00470946
+K,Colombia,Uzbekistan,5,2,0.00131901
+K,Colombia,Uzbekistan,5,3,0.00024628
+K,Colombia,Uzbekistan,5,4,3.449e-05
+K,Colombia,Uzbekistan,5,5,3.86e-06
+K,Colombia,DR Congo,0,0,0.14741063
+K,Colombia,DR Congo,0,1,0.06754868
+K,Colombia,DR Congo,0,2,0.01876892
+K,Colombia,DR Congo,0,3,0.00321714
+K,Colombia,DR Congo,0,4,0.00041358
+K,Colombia,DR Congo,0,5,4.253e-05
+K,Colombia,DR Congo,1,0,0.19921298
+K,Colombia,DR Congo,1,1,0.11069312
+K,Colombia,DR Congo,1,2,0.02705909
+K,Colombia,DR Congo,1,3,0.00463813
+K,Colombia,DR Congo,1,4,0.00059626
+K,Colombia,DR Congo,1,5,6.132e-05
+K,Colombia,DR Congo,2,0,0.14753131
+K,Colombia,DR Congo,2,1,0.07586398
+K,Colombia,DR Congo,2,2,0.0195055
+K,Colombia,DR Congo,2,3,0.00334339
+K,Colombia,DR Congo,2,4,0.00042981
+K,Colombia,DR Congo,2,5,4.42e-05
+K,Colombia,DR Congo,3,0,0.07089846
+K,Colombia,DR Congo,3,1,0.03645761
+K,Colombia,DR Congo,3,2,0.00937367
+K,Colombia,DR Congo,3,3,0.00160672
+K,Colombia,DR Congo,3,4,0.00020655
+K,Colombia,DR Congo,3,5,2.124e-05
+K,Colombia,DR Congo,4,0,0.02555352
+K,Colombia,DR Congo,4,1,0.0131402
+K,Colombia,DR Congo,4,2,0.0033785
+K,Colombia,DR Congo,4,3,0.0005791
+K,Colombia,DR Congo,4,4,7.445e-05
+K,Colombia,DR Congo,4,5,7.66e-06
+K,Colombia,DR Congo,5,0,0.00736808
+K,Colombia,DR Congo,5,1,0.00378884
+K,Colombia,DR Congo,5,2,0.00097415
+K,Colombia,DR Congo,5,3,0.00016698
+K,Colombia,DR Congo,5,4,2.147e-05
+K,Colombia,DR Congo,5,5,2.21e-06
+K,Uzbekistan,DR Congo,0,0,0.26593178
+K,Uzbekistan,DR Congo,0,1,0.16590528
+K,Uzbekistan,DR Congo,0,2,0.05694147
+K,Uzbekistan,DR Congo,0,3,0.01256605
+K,Uzbekistan,DR Congo,0,4,0.00207984
+K,Uzbekistan,DR Congo,0,5,0.00027539
+K,Uzbekistan,DR Congo,1,0,0.17209014
+K,Uzbekistan,DR Congo,1,1,0.12408764
+K,Uzbekistan,DR Congo,1,2,0.03905361
+K,Uzbekistan,DR Congo,1,3,0.0086185
+K,Uzbekistan,DR Congo,1,4,0.00142647
+K,Uzbekistan,DR Congo,1,5,0.00018888
+K,Uzbekistan,DR Congo,2,0,0.06110977
+K,Uzbekistan,DR Congo,2,1,0.04045779
+K,Uzbekistan,DR Congo,2,2,0.01339257
+K,Uzbekistan,DR Congo,2,3,0.00295552
+K,Uzbekistan,DR Congo,2,4,0.00048918
+K,Uzbekistan,DR Congo,2,5,6.477e-05
+K,Uzbekistan,DR Congo,3,0,0.01397082
+K,Uzbekistan,DR Congo,3,1,0.0092494
+K,Uzbekistan,DR Congo,3,2,0.00306179
+K,Uzbekistan,DR Congo,3,3,0.00067569
+K,Uzbekistan,DR Congo,3,4,0.00011183
+K,Uzbekistan,DR Congo,3,5,1.481e-05
+K,Uzbekistan,DR Congo,4,0,0.00239549
+K,Uzbekistan,DR Congo,4,1,0.00158594
+K,Uzbekistan,DR Congo,4,2,0.00052499
+K,Uzbekistan,DR Congo,4,3,0.00011586
+K,Uzbekistan,DR Congo,4,4,1.918e-05
+K,Uzbekistan,DR Congo,4,5,2.54e-06
+K,Uzbekistan,DR Congo,5,0,0.00032859
+K,Uzbekistan,DR Congo,5,1,0.00021754
+K,Uzbekistan,DR Congo,5,2,7.201e-05
+K,Uzbekistan,DR Congo,5,3,1.589e-05
+K,Uzbekistan,DR Congo,5,4,2.63e-06
+K,Uzbekistan,DR Congo,5,5,3.5e-07
+L,England,Croatia,0,0,0.14597758
+L,England,Croatia,0,1,0.09456323
+L,England,Croatia,0,2,0.03664297
+L,England,Croatia,0,3,0.00885467
+L,England,Croatia,0,4,0.00160478
+L,England,Croatia,0,5,0.00023267
+L,England,Croatia,1,0,0.16736967
+L,England,Croatia,1,1,0.13259531
+L,England,Croatia,1,2,0.0456954
+L,England,Croatia,1,3,0.01104217
+L,England,Croatia,1,4,0.00200123
+L,England,Croatia,1,5,0.00029016
+L,England,Croatia,2,0,0.10842961
+L,England,Croatia,2,1,0.07860517
+L,England,Croatia,2,2,0.02849209
+L,England,Croatia,2,3,0.00688504
+L,England,Croatia,2,4,0.00124781
+L,England,Croatia,2,5,0.00018092
+L,England,Croatia,3,0,0.04507217
+L,England,Croatia,3,1,0.0326747
+L,England,Croatia,3,2,0.01184363
+L,England,Croatia,3,3,0.00286198
+L,England,Croatia,3,4,0.00051869
+L,England,Croatia,3,5,7.52e-05
+L,England,Croatia,4,0,0.01405175
+L,England,Croatia,4,1,0.0101867
+L,England,Croatia,4,2,0.00369238
+L,England,Croatia,4,3,0.00089225
+L,England,Croatia,4,4,0.00016171
+L,England,Croatia,4,5,2.345e-05
+L,England,Croatia,5,0,0.00350463
+L,England,Croatia,5,1,0.00254065
+L,England,Croatia,5,2,0.00092091
+L,England,Croatia,5,3,0.00022254
+L,England,Croatia,5,4,4.033e-05
+L,England,Croatia,5,5,5.85e-06
+L,England,Ghana,0,0,0.08443413
+L,England,Ghana,0,1,0.03017215
+L,England,Ghana,0,2,0.00711478
+L,England,Ghana,0,3,0.00099576
+L,England,Ghana,0,4,0.00010452
+L,England,Ghana,0,5,8.78e-06
+L,England,Ghana,1,0,0.16727117
+L,England,Ghana,1,1,0.07551164
+L,England,Ghana,1,2,0.015072
+L,England,Ghana,1,3,0.00210943
+L,England,Ghana,1,4,0.00022142
+L,England,Ghana,1,5,1.859e-05
+L,England,Ghana,2,0,0.18111254
+L,England,Ghana,2,1,0.07604392
+L,England,Ghana,2,2,0.01596432
+L,England,Ghana,2,3,0.00223432
+L,England,Ghana,2,4,0.00023453
+L,England,Ghana,2,5,1.969e-05
+L,England,Ghana,3,0,0.12789005
+L,England,Ghana,3,1,0.05369734
+L,England,Ghana,3,2,0.01127298
+L,England,Ghana,3,3,0.00157773
+L,England,Ghana,3,4,0.00016561
+L,England,Ghana,3,5,1.391e-05
+L,England,Ghana,4,0,0.06773081
+L,England,Ghana,4,1,0.02843821
+L,England,Ghana,4,2,0.00597019
+L,England,Ghana,4,3,0.00083557
+L,England,Ghana,4,4,8.771e-05
+L,England,Ghana,4,5,7.37e-06
+L,England,Ghana,5,0,0.02869629
+L,England,Ghana,5,1,0.01204874
+L,England,Ghana,5,2,0.00252946
+L,England,Ghana,5,3,0.00035402
+L,England,Ghana,5,4,3.716e-05
+L,England,Ghana,5,5,3.12e-06
+L,England,Panama,0,0,0.06991666
+L,England,Panama,0,1,0.02650743
+L,England,Panama,0,2,0.00681523
+L,England,Panama,0,3,0.00102965
+L,England,Panama,0,4,0.00011667
+L,England,Panama,0,5,1.058e-05
+L,England,Panama,1,0,0.148339
+L,England,Panama,1,1,0.07241555
+L,England,Panama,1,2,0.01560287
+L,England,Panama,1,3,0.0023573
+L,England,Panama,1,4,0.00026711
+L,England,Panama,1,5,2.421e-05
+L,England,Panama,2,0,0.1738863
+L,England,Panama,2,1,0.07881285
+L,England,Panama,2,2,0.01786071
+L,England,Panama,2,3,0.00269842
+L,England,Panama,2,4,0.00030576
+L,England,Panama,2,5,2.772e-05
+L,England,Panama,3,0,0.13269918
+L,England,Panama,3,1,0.06014505
+L,England,Panama,3,2,0.01363018
+L,England,Panama,3,3,0.00205926
+L,England,Panama,3,4,0.00023334
+L,England,Panama,3,5,2.115e-05
+L,England,Panama,4,0,0.0759508
+L,England,Panama,4,1,0.03442421
+L,England,Panama,4,2,0.00780128
+L,England,Panama,4,3,0.00117863
+L,England,Panama,4,4,0.00013355
+L,England,Panama,4,5,1.211e-05
+L,England,Panama,5,0,0.03477655
+L,England,Panama,5,1,0.01576225
+L,England,Panama,5,2,0.00357207
+L,England,Panama,5,3,0.00053967
+L,England,Panama,5,4,6.115e-05
+L,England,Panama,5,5,5.54e-06
+L,Croatia,Ghana,0,0,0.09836284
+L,Croatia,Ghana,0,1,0.05125876
+L,Croatia,Ghana,0,2,0.01710483
+L,Croatia,Ghana,0,3,0.00345495
+L,Croatia,Ghana,0,4,0.00052339
+L,Croatia,Ghana,0,5,6.343e-05
+L,Croatia,Ghana,1,0,0.16038775
+L,Croatia,Ghana,1,1,0.10553403
+L,Croatia,Ghana,1,2,0.03040034
+L,Croatia,Ghana,1,3,0.00614047
+L,Croatia,Ghana,1,4,0.00093022
+L,Croatia,Ghana,1,5,0.00011274
+L,Croatia,Ghana,2,0,0.14714602
+L,Croatia,Ghana,2,1,0.08916476
+L,Croatia,Ghana,2,2,0.02701519
+L,Croatia,Ghana,2,3,0.00545672
+L,Croatia,Ghana,2,4,0.00082664
+L,Croatia,Ghana,2,5,0.00010018
+L,Croatia,Ghana,3,0,0.08717398
+L,Croatia,Ghana,3,1,0.05282404
+L,Croatia,Ghana,3,2,0.01600466
+L,Croatia,Ghana,3,3,0.00323273
+L,Croatia,Ghana,3,4,0.00048973
+L,Croatia,Ghana,3,5,5.935e-05
+L,Croatia,Ghana,4,0,0.03873348
+L,Croatia,Ghana,4,1,0.02347098
+L,Croatia,Ghana,4,2,0.00711125
+L,Croatia,Ghana,4,3,0.00143638
+L,Croatia,Ghana,4,4,0.0002176
+L,Croatia,Ghana,4,5,2.637e-05
+L,Croatia,Ghana,5,0,0.01376817
+L,Croatia,Ghana,5,1,0.00834297
+L,Croatia,Ghana,5,2,0.00252776
+L,Croatia,Ghana,5,3,0.00051057
+L,Croatia,Ghana,5,4,7.735e-05
+L,Croatia,Ghana,5,5,9.37e-06
+L,Croatia,Panama,0,0,0.08226422
+L,Croatia,Panama,0,1,0.04549764
+L,Croatia,Panama,0,2,0.01652433
+L,Croatia,Panama,0,3,0.00360299
+L,Croatia,Panama,0,4,0.0005892
+L,Croatia,Panama,0,5,7.708e-05
+L,Croatia,Panama,1,0,0.14333086
+L,Croatia,Panama,1,1,0.10206963
+L,Croatia,Panama,1,2,0.03173935
+L,Croatia,Panama,1,3,0.0069205
+L,Croatia,Panama,1,4,0.00113172
+L,Croatia,Panama,1,5,0.00014806
+L,Croatia,Panama,2,0,0.14247921
+L,Croatia,Panama,2,1,0.09319914
+L,Croatia,Panama,2,2,0.03048192
+L,Croatia,Panama,2,3,0.00664632
+L,Croatia,Panama,2,4,0.00108688
+L,Croatia,Panama,2,5,0.00014219
+L,Croatia,Panama,3,0,0.09122302
+L,Croatia,Panama,3,1,0.05967121
+L,Croatia,Panama,3,2,0.0195162
+L,Croatia,Panama,3,3,0.00425534
+L,Croatia,Panama,3,4,0.00069588
+L,Croatia,Panama,3,5,9.104e-05
+L,Croatia,Panama,4,0,0.0438045
+L,Croatia,Panama,4,1,0.0286536
+L,Croatia,Panama,4,2,0.00937151
+L,Croatia,Panama,4,3,0.00204338
+L,Croatia,Panama,4,4,0.00033416
+L,Croatia,Panama,4,5,4.372e-05
+L,Croatia,Panama,5,0,0.01682763
+L,Croatia,Panama,5,1,0.01100736
+L,Croatia,Panama,5,2,0.00360009
+L,Croatia,Panama,5,3,0.00078497
+L,Croatia,Panama,5,4,0.00012837
+L,Croatia,Panama,5,5,1.679e-05
+L,Ghana,Panama,0,0,0.11537622
+L,Ghana,Panama,0,1,0.11354896
+L,Ghana,Panama,0,2,0.06694414
+L,Ghana,Panama,0,3,0.02479587
+L,Ghana,Panama,0,4,0.00688823
+L,Ghana,Panama,0,5,0.00153083
+L,Ghana,Panama,1,0,0.11368747
+L,Ghana,Panama,1,1,0.14098419
+L,Ghana,Panama,1,2,0.07447314
+L,Ghana,Panama,1,3,0.02758459
+L,Ghana,Panama,1,4,0.00766293
+L,Ghana,Panama,1,5,0.00170299
+L,Ghana,Panama,2,0,0.06709814
+L,Ghana,Panama,2,1,0.07455875
+L,Ghana,Panama,2,2,0.04142445
+L,Ghana,Panama,2,3,0.01534347
+L,Ghana,Panama,2,4,0.00426238
+L,Ghana,Panama,2,5,0.00094726
+L,Ghana,Panama,3,0,0.02488148
+L,Ghana,Panama,3,1,0.02764804
+L,Ghana,Panama,3,2,0.01536111
+L,Ghana,Panama,3,3,0.0056897
+L,Ghana,Panama,3,4,0.00158058
+L,Ghana,Panama,3,5,0.00035127
+L,Ghana,Panama,4,0,0.00691996
+L,Ghana,Panama,4,1,0.00768938
+L,Ghana,Panama,4,2,0.00427218
+L,Ghana,Panama,4,3,0.0015824
+L,Ghana,Panama,4,4,0.00043959
+L,Ghana,Panama,4,5,9.769e-05
+L,Ghana,Panama,5,0,0.00153964
+L,Ghana,Panama,5,1,0.00171084
+L,Ghana,Panama,5,2,0.00095053
+L,Ghana,Panama,5,3,0.00035207
+L,Ghana,Panama,5,4,9.781e-05
+L,Ghana,Panama,5,5,2.174e-05
