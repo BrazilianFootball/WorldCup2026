@@ -1568,7 +1568,7 @@ box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 }
 
-@media (prefers-color-scheme: dark) and (max-width: 1024px) {
+@media (prefers-color-scheme: dark) and (max-width: 768px) {
     .menu-toggle span {
         background-color: #ffffff;
     }

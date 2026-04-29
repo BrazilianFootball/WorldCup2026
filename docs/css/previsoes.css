@@ -518,8 +518,9 @@ opacity: 1 !important;
 GROUP STAGE PANEL
 ════════════════════════════════════════ */
 #panel-groups {
-padding: 20px;
-background: #ffffff;
+  padding: 20px;
+  background: #ffffff;
+  min-height: 520px; /* mantém o footer embaixo como nas outras abas */
 }
 
 /* Responsive 3-column grid */
@@ -643,6 +644,51 @@ letter-spacing: 1px;
 /* Favorite team flame badge */
 .g-fav { font-size: 9px; margin-left: 4px; color: #ff9800; }
 
+
+/* FASE DE GRUPOS: 3 colunas na barra (Busca | Toggle | Grupos) */
+.groups-filterbar {
+  grid-template-columns: minmax(0, 1fr) 220px 220px;
+}
+
+/* No modo Partidas: habilita 4 itens (inclui Datas) */
+.groups-filterbar.has-date {
+  grid-template-columns: minmax(0, 1fr) 220px 220px 220px;
+}
+
+/* Dropdown de datas só aparece no modo Partidas */
+.groups-date-dropdown { display: none; }
+.groups-filterbar.has-date .groups-date-dropdown { display: block; }
+
+/* Toggle "Jogos | Partidas" */
+.groups-mode {
+  height: 30px;
+  display: flex;
+  border: 1px solid #cfd9ea;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* TEXTO JOGOS | PARTIDAS */
+.groups-mode-btn {
+  flex: 1;
+  border: 0;
+  background: transparent;
+  padding: 0 10px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  color: #6a7f99;
+}
+
+.groups-mode-btn.active {
+  background: #233b65;
+  color: #fff;
+}
+
+@media (max-width: 920px) {
+  .groups-filterbar { grid-template-columns: 1fr; }
+}
 
 /* ════════════════════════════════════════
 TOOLTIP (floating, pointer-events: none)
@@ -1030,6 +1076,11 @@ PREVISIONS PROBS
     height: 18px;
 }
 
+.score-total.tallest {
+    height: 24px;
+    font-size: 7px;
+}
+
 .score-total-label {
     line-height: 1.05;
     white-space: normal;
@@ -1071,7 +1122,6 @@ PREVISIONS PROBS
 
 @media (max-width: 1180px) {
     .scorecards-grid {
-        /*grid-template-columns: repeat(3, minmax(0, 1fr)); */
         grid-template-columns: 1fr;
     }
 }
@@ -1132,8 +1182,24 @@ PREVISIONS PROBS
     border-radius: 10px;
     display: grid;
     gap: 5px;
-    grid-template-columns: 2.2fr 220px;
+    grid-template-columns: 2.2fr 200px;
     align-items: center;
+}
+
+/* FASE DE GRUPOS: 3 itens na mesma linha (pesquisa + modo + grupos) */
+.filterbar.groups-filterbar{
+  grid-template-columns: minmax(0, 1fr) 220px 220px;
+}
+
+/* FASE DE GRUPOS (modo "Partidas"): 4 colunas (inclui Datas) */
+.filterbar.groups-filterbar.has-date{
+  grid-template-columns: minmax(0, 1fr) 220px 220px 220px;
+}
+
+
+/* permite a coluna de pesquisa encolher sem empurrar os outros */
+.filterbar.groups-filterbar .search-wrap{
+  min-width: 0;
 }
 
 .search-wrap {
@@ -1266,7 +1332,7 @@ PREVISIONS PROBS
     color: #233b65;
     text-align: center;
     font-size: 13px;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 
@@ -1311,19 +1377,44 @@ PREVISIONS PROBS
     .tabs {
         width: 100%;
         display: flex;
-        justify-content: space-between;
-        align-items: stretch;
+        flex-wrap: wrap;
+        justify-content: flex-start;
         gap: 0px;
     }
 
     .tab {
-        flex: 0 1 auto;
-        min-width: unset;
+        flex: 1 1 25%;
+        min-width: 90px;
         padding: 7px 11px;
-        font-size: 8px;
+        font-size: 10px;
         letter-spacing: 0.2px;
         white-space: nowrap;
         text-align: center;
+    }
+
+    .filterbar.groups-filterbar,
+    .filterbar.groups-filterbar.has-date {
+    grid-template-columns: 1fr 140px;
+    grid-template-areas:
+      "search toggle"
+      "groups dates";
+    gap: 8px;
+    }
+
+    .filterbar.groups-filterbar .search-wrap {
+        grid-area: search;
+    }
+
+    .filterbar.groups-filterbar .groups-mode {
+        grid-area: toggle;
+    }
+
+    .filterbar.groups-filterbar .group-dropdown {
+        grid-area: groups;
+    }
+
+    .filterbar.groups-filterbar .groups-date-dropdown {
+        grid-area: dates;
     }
 }
 
