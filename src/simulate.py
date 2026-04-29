@@ -20,7 +20,7 @@ from src.constants import (
     GROUPS,
     TEAM_NAME_MAP,
 )
-from src.export_probs import export_phase_probs
+from src.export_probs import build_stage_dataframe, export_phase_probs
 from src.model import build_model
 from src.tournament import WorldCup2026
 from src.utils import load_wc_results, resolve_team_name
@@ -36,6 +36,7 @@ def print_top_n(
         f"{'Pos':>3}  {'Seleção':<22}"
         f"{'Campeão':>8}  {'Final':>8}  {'Semi':>8}  "
         f"{'Quartas':>8}  {'R16':>8}  {'R32':>8}"
+        f"{'1º grupo':>10}  {'2º grupo':>8}  {'3º grupo':>8}"
     )
     print("\n" + "=" * len(header))
     print(header)
@@ -48,6 +49,9 @@ def print_top_n(
         "quarterfinals",
         "round_of_16",
         "round_of_32",
+        "group_first_place",
+        "group_second_place",
+        "group_third_place",
     ]
     all_teams = results["champion"].keys()
     ranked = sorted(
@@ -63,10 +67,14 @@ def print_top_n(
         qf = results["quarterfinals"][team] / n_sims * 100
         r16 = results["round_of_16"][team] / n_sims * 100
         r32 = results["round_of_32"][team] / n_sims * 100
+        g1p = results["group_first_place"][team] / n_sims * 100
+        g2p = results["group_second_place"][team] / n_sims * 100
+        g3p = results["group_third_place"][team] / n_sims * 100
         print(
             f"{pos:>3}  {team:<22}"
             f"{champ:>7.2f}%  {final:>7.2f}%  {semi:>7.2f}%  "
             f"{qf:>7.2f}%  {r16:>7.2f}%  {r32:>7.2f}%"
+            f"{g1p:>9.2f}%  {g2p:>7.2f}%  {g3p:>7.2f}%"
         )
     print()
 
@@ -208,14 +216,18 @@ def main() -> None:
         "quarterfinals": tr.quarterfinals,
         "round_of_16": tr.round_of_16,
         "round_of_32": tr.round_of_32,
+        "group_first_place": tr.first_place,
+        "group_second_place": tr.second_place,
+        "group_third_place": tr.third_place,
     }
 
     print_top_n(stage_results, args.num_simulations, top_n=args.top)
-    # print_group_probs(stage_results, args.num_simulations)
 
     print("Exportando matrizes de probabilidade...")
     prob_path = export_phase_probs(wc, known)
     print(f"  Salvo em: {prob_path}")
+
+    build_stage_dataframe(stage_results, args.num_simulations)
 
 
 if __name__ == "__main__":

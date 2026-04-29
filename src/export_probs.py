@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+from collections import defaultdict
 from itertools import combinations
 from pathlib import Path
 
@@ -153,7 +154,7 @@ def build_prob_dataframe(
             "home_team": home,
             "away_team": away,
             "date": match_info["date"],
-            **{col: 0.0 for col in ALL_SCORE_COLS},
+            **dict.fromkeys(ALL_SCORE_COLS, 0.0),
             "home_real": match_info["home_real"],
             "away_real": match_info["away_real"],
         }
@@ -190,6 +191,93 @@ def export_phase_probs(
     output_path = DATA_DIR / f"probs_{label}.csv"
     df.to_csv(output_path, index=False)
     return output_path
+
+
+def build_stage_dataframe(
+    results: dict[str, dict[str, int]],
+    n_sims: int,
+    output_path: str = "data/summary.csv",
+) -> pd.DataFrame:
+    stages = [
+        "champion",
+        "final",
+        "semifinals",
+        "quarterfinals",
+        "round_of_16",
+        "round_of_32",
+        "group_first_place",
+        "group_second_place",
+        "group_third_place",
+    ]
+
+    mapped_results = {stage: defaultdict(int) for stage in stages}
+
+    for stage in stages:
+        for team_en, value in results[stage].items():
+            team_pt = TEAM_MAP.get(team_en, team_en)
+            mapped_results[stage][team_pt] += value
+
+    all_teams = mapped_results["champion"].keys()
+
+    ranked = sorted(
+        all_teams,
+        key=lambda t: tuple(mapped_results[s].get(t, 0) for s in stages),
+        reverse=True,
+    )
+
+    rows = []
+
+    for pos, team in enumerate(ranked, 1):
+        rows.append(
+            {
+                "position": pos,
+                "team": team,
+                "champion": mapped_results["champion"].get(team, 0) / n_sims * 100,
+                "final": mapped_results["final"].get(team, 0) / n_sims * 100,
+                "semifinals": mapped_results["semifinals"].get(team, 0) / n_sims * 100,
+                "quarterfinals": mapped_results["quarterfinals"].get(team, 0)
+                / n_sims
+                * 100,
+                "round_of_16": mapped_results["round_of_16"].get(team, 0)
+                / n_sims
+                * 100,
+                "round_of_32": mapped_results["round_of_32"].get(team, 0)
+                / n_sims
+                * 100,
+                "group_first_place": mapped_results["group_first_place"].get(team, 0)
+                / n_sims
+                * 100,
+                "group_second_place": mapped_results["group_second_place"].get(team, 0)
+                / n_sims
+                * 100,
+                "group_third_place": mapped_results["group_third_place"].get(team, 0)
+                / n_sims
+                * 100,
+            }
+        )
+
+    df = pd.DataFrame(rows)
+
+    df = df[
+        [
+            "position",
+            "team",
+            "champion",
+            "final",
+            "semifinals",
+            "quarterfinals",
+            "round_of_16",
+            "round_of_32",
+            "group_first_place",
+            "group_second_place",
+            "group_third_place",
+        ]
+    ]
+
+    df = df.round(2)
+    df.to_csv(output_path, index=False)
+
+    return df
 
 
 def main() -> None:
