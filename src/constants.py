@@ -89,8 +89,6 @@ GROUPS: dict[str, list[str]] = {
 }
 
 TEAM_NAME_MAP: dict[str, str] = {
-    "United States": "United States",
-    "South Korea": "South Korea",
     "Ivory Coast": "Côte d'Ivoire",
     "Curacao": "Curaçao",
     "Cabo Verde": "Cape Verde",
@@ -166,4 +164,97 @@ PHASE_LABELS = {
     "quarterfinals": "quartas_de_final",
     "semifinals": "semifinais",
     "final": "final",
+}
+
+SCORE_MAP = {
+    (1, 0): "one_zero",
+    (2, 0): "two_zero",
+    (3, 0): "three_zero",
+    (4, 0): "four_zero",
+    (4, 1): "four_one",
+    (2, 1): "two_one",
+    (3, 1): "three_one",
+    (3, 2): "three_two",
+    (4, 2): "four_two",
+    (4, 3): "four_three",
+    (0, 0): "zero_zero",
+    (1, 1): "one_one",
+    (2, 2): "two_two",
+    (3, 3): "three_three",
+    (4, 4): "four_four",
+    (0, 1): "zero_one",
+    (0, 2): "zero_two",
+    (0, 3): "zero_three",
+    (0, 4): "zero_four",
+    (1, 2): "one_two",
+    (1, 3): "one_three",
+    (1, 4): "one_four",
+    (2, 3): "two_three",
+    (2, 4): "two_four",
+    (3, 4): "three_four",
+}
+
+ALL_SCORE_COLS = list(SCORE_MAP.values())
+
+TEAM_MAP = {
+    # Group A
+    "Mexico": "México",
+    "South Korea": "Coreia do Sul",
+    "South Africa": "África do Sul",
+    "Czech Republic": "Tchéquia",
+    # Group B
+    "Canada": "Canadá",
+    "Switzerland": "Suíça",
+    "Qatar": "Catar",
+    "Bosnia and Herzegovina": "Bósnia e Herzegovina",
+    # Group C
+    "Brazil": "Brasil",
+    "Morocco": "Marrocos",
+    "Scotland": "Escócia",
+    "Haiti": "Haiti",
+    # Group D
+    "United States": "EUA",
+    "Australia": "Austrália",
+    "Paraguay": "Paraguai",
+    "Turkey": "Turquia",
+    # Group E
+    "Germany": "Alemanha",
+    "Ecuador": "Equador",
+    "Ivory Coast": "Costa do Marfim",
+    "Curaçao": "Curaçao",
+    # Group F
+    "Netherlands": "Países Baixos",
+    "Japan": "Japão",
+    "Tunisia": "Tunísia",
+    "Sweden": "Suécia",
+    # Group G
+    "Belgium": "Bélgica",
+    "Egypt": "Egito",
+    "Iran": "Irã",
+    "New Zealand": "Nova Zelândia",
+    # Group H
+    "Spain": "Espanha",
+    "Uruguay": "Uruguai",
+    "Saudi Arabia": "Arábia Saudita",
+    "Cape Verde": "Cabo Verde",
+    # Group I
+    "France": "França",
+    "Senegal": "Senegal",
+    "Norway": "Noruega",
+    "Iraq": "Iraque",
+    # Group J
+    "Argentina": "Argentina",
+    "Austria": "Áustria",
+    "Algeria": "Argélia",
+    "Jordan": "Jordânia",
+    # Group K
+    "Portugal": "Portugal",
+    "Colombia": "Colômbia",
+    "Uzbekistan": "Uzbequistão",
+    "DR Congo": "República Democrática do Congo",
+    # Group L
+    "England": "Inglaterra",
+    "Croatia": "Croácia",
+    "Ghana": "Gana",
+    "Panama": "Panamá",
 }
