@@ -1,0 +1,55 @@
+name: Run Simulation on Data Change
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "data/world_cup_results.csv"
+  workflow_dispatch:
+
+jobs:
+  simulate:
+    runs-on: ubuntu-latest
+
+    if: github.actor != 'github-actions'
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install uv
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+
+      - name: Setup project
+        run: |
+          uv python install
+          uv sync --extra dev
+
+      - name: Run simulation
+        run: |
+          uv run python -m src.simulate
+
+      - name: Commit changes (if any)
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git add -A
+
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: update simulation results [skip ci]"
+            git push
+          else
+            echo "No changes to commit"
+          fi
