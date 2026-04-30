@@ -1,0 +1,32 @@
+side,round_index,round_label,order,id,home_team,prob_home,away_team,prob_away,winner
+left,0,R32,1,L1,Brasil,82,Coreia do Sul,18,home
+left,0,R32,2,L2,Marrocos,56,Suíça,44,home
+left,0,R32,3,L3,França,86,Iraque,14,home
+left,0,R32,4,L4,Senegal,44,Noruega,56,away
+left,0,R32,5,L5,Espanha,85,Costa do Marfim,15,home
+left,0,R32,6,L6,Alemanha,63,Turquia,37,home
+left,0,R32,7,L7,Países Baixos,66,Equador,34,home
+left,0,R32,8,L8,Bélgica,88,Austrália,12,home
+left,1,Oitavas,9,RL1,Brasil,63,Marrocos,37,home
+left,1,Oitavas,10,RL2,França,68,Noruega,32,home
+left,1,Oitavas,11,RL3,Espanha,56,Alemanha,44,home
+left,1,Oitavas,12,RL4,Países Baixos,53,Bélgica,47,home
+left,2,Quartas,13,QL1,Brasil,54,França,46,home
+left,2,Quartas,14,QL2,Espanha,56,Países Baixos,44,home
+left,3,Semifinal,15,SL,Brasil,58,Espanha,42,home
+right,0,R32,16,R1,Argentina,94,Jordânia,6,home
+right,0,R32,17,R2,Áustria,54,Argélia,46,home
+right,0,R32,18,R3,Portugal,86,Congo,14,home
+right,0,R32,19,R4,Colômbia,77,Uzbequistão,23,
+right,0,R32,20,R5,Inglaterra,82,Gana,18,home
+right,0,R32,21,R6,Croácia,63,Panamá,37,home
+right,0,R32,22,R7,EUA,62,Paraguai,38,home
+right,0,R32,23,R8,Uruguai,54,Japão,46,home
+right,1,Oitavas,24,RR1,Argentina,75,Áustria,25,home
+right,1,Oitavas,25,RR2,Portugal,53,Colômbia,47,home
+right,1,Oitavas,26,RR3,Inglaterra,57,Croácia,43,home
+right,1,Oitavas,27,RR4,EUA,56,Uruguai,44,home
+right,2,Quartas,28,QR1,Argentina,52,Portugal,48,home
+right,2,Quartas,29,QR2,Inglaterra,48,EUA,52,away
+right,3,Semifinal,30,SR,Argentina,64,EUA,36,home
+final,4,Final,31,F,Brasil,55,Argentina,45,home

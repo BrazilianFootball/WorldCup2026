@@ -1,3 +1,4 @@
+// Mapeia cada painel de mata-mata para o texto exibido quando ainda não há confronto definido.
 const PLACEHOLDERS = {
     'panel-r32': 'das <b>Eliminatórias</b>',
     'panel-oitavas': 'das <b>Oitavas de Final</b>',
@@ -6,12 +7,12 @@ const PLACEHOLDERS = {
     'panel-final': 'da <b>Final e Disputa pelo 3º lugar</b>'
 };
 
-
+// Monta o HTML do aviso usado quando as probabilidades daquela fase ainda não estão disponíveis.
 function makePlaceholder(panelId, stageLabel) {
     return `
         <div class="placeholder-box">
             <div class="placeholder-icon-wrap">
-                ⚙️
+                🛠️
             </div>
             <div class="placeholder-title">
                 Probabilidades de placares em breve!
@@ -23,13 +24,14 @@ function makePlaceholder(panelId, stageLabel) {
     `;
 }
 
+// Insere o placeholder no painel informado, se ele existir na página.
 function renderPlaceholder(panelId, stageLabel) {
     const panel = document.getElementById(panelId);
     if (!panel) return;
     panel.innerHTML = makePlaceholder(panelId, stageLabel);
 }
 
-const MATCHES_CSV_URL = 'csv/placares/partidas.csv';
+const MATCHES_CSV_URL = 'csv/previsoes/partidas.csv';
 const FLAGS_CSV_URL = 'images/flags/flag.csv';
 const SCORE_STAGES = [
     {panelId: 'panel-r32',     groupValue: 'R32',       showFilters: true,  gridClass: 'scorecards-grid'},
@@ -39,123 +41,353 @@ const SCORE_STAGES = [
     {panelId: 'panel-final',   groupValue: 'final',     showFilters: false, gridClass: 'scorecards-grid scorecards-grid-two'}
 ];
 
+const NUMBER_WORDS = ['zero', 'one', 'two', 'three', 'four'];
+
+function scoreKey(h, a) {
+    return `${NUMBER_WORDS[h]}_${NUMBER_WORDS[a]}`;
+}
+
+const SCORES = Array.from({ length: 25 }, (_, i) => {
+    const h = Math.floor(i / 5);
+    const a = i % 5;
+    return {
+        h,
+        a,
+        key: scoreKey(h, a),
+        label: `${h}x${a}`
+    };
+});
+
+function escapeHTML(value) {
+    return String(value ?? '')
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+}
+
+// Normaliza textos para busca: remove acentos e ignora maiúsculas/minúsculas.
+function normalizeName(value) {
+    return String(value ?? '')
+        .trim()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase();
+}
+
+// Converte valores percentuais do CSV em número, aceitando vírgula decimal e símbolo %.
+function parseNumber(value) {
+    if (value === undefined || value === null || value === '') return null;
+    const n = Number(String(value).trim().replace('%', '').replace(',', '.'));
+    return Number.isFinite(n) ? n : null;
+}
+
+function formatPct(value) {
+    const rounded = Math.round(value * 10) / 10;
+    return Number.isInteger(rounded) ? String(rounded) : String(rounded);
+}
+
+// Lê um CSV simples, detectando vírgula ou ponto e vírgula e preservando campos entre aspas.
+function parseCSV(text) {
+    const firstLine = text.split(/\r?\n/)[0] || '';
+    const delimiter =
+        (firstLine.match(/;/g) || []).length > (firstLine.match(/,/g) || []).length
+            ? ';'
+            : ',';
+
+    const rows = [];
+    let row = [];
+    let cell = '';
+    let insideQuotes = false;
+
+    for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+        const next = text[i + 1];
+
+        if (char === '"' && next === '"') {
+            cell += '"';
+            i++;
+            continue;
+        }
+
+        if (char === '"') {
+            insideQuotes = !insideQuotes;
+            continue;
+        }
+
+        if (char === delimiter && !insideQuotes) {
+            row.push(cell.trim());
+            cell = '';
+            continue;
+        }
+
+        if ((char === '\n' || char === '\r') && !insideQuotes) {
+            if (cell !== '' || row.length) {
+                row.push(cell.trim());
+                rows.push(row);
+                row = [];
+                cell = '';
+            }
+            if (char === '\r' && next === '\n') i++;
+            continue;
+        }
+
+        cell += char;
+    }
+
+    if (cell !== '' || row.length) {
+        row.push(cell.trim());
+        rows.push(row);
+    }
+
+    if (!rows.length) return [];
+
+    const headers = rows[0].map(h => h.trim());
+
+    return rows.slice(1)
+        .filter(r => r.some(Boolean))
+        .map(r => {
+            const obj = {};
+            headers.forEach((h, i) => {
+                obj[h] = (r[i] ?? '').trim();
+            });
+            return obj;
+        });
+}
+
+// Carrega um arquivo CSV por fetch e devolve as linhas como objetos.
+async function loadCSV(url) {
+    const response = await fetch(url, { cache: 'no-store' });
+    if (!response.ok) throw new Error(`Não foi possível carregar ${url}`);
+    return parseCSV(await response.text());
+}
+
+function normalizeFlagUrl(url) {
+    if (!url) return '';
+
+    let value = String(url).trim();
+
+    if (value.includes('github.com') && value.includes('/blob/')) {
+        value = value
+            .replace('https://github.com/', 'https://raw.githubusercontent.com/')
+            .replace('/blob/', '/');
+    }
+
+    return value;
+}
+
+function getHomeCountry(row) {
+    return row.home_country || row.home_team || row.home || '';
+}
+
+function getAwayCountry(row) {
+    return row.away_country || row.away_team || row.away || '';
+}
+
+function getMatchGroup(row) {
+    return row.group || row.stage || row.round || '';
+}
+
+function getSelectedValues(menu) {
+    return menu
+        ? [...menu.querySelectorAll('input[type="checkbox"]:checked')].map(input => input.value)
+        : [];
+}
+
+function updateDateButton(button, selectedDates) {
+    if (!button) return;
+    const label = selectedDates.length
+        ? `${selectedDates.length} data${selectedDates.length > 1 ? 's' : ''} selecionada${selectedDates.length > 1 ? 's' : ''}`
+        : 'Todas as datas';
+
+    button.innerHTML = `${label}<span>▾</span>`;
+}
+
+function closeOpenDropdowns(except = null) {
+    document.querySelectorAll('.date-dropdown.open').forEach(dropdown => {
+        if (dropdown !== except) dropdown.classList.remove('open');
+    });
+}
+
+function getFilterPanel(target) {
+    return target.closest('#panel-groups, #panel-r32, #panel-oitavas, #panel-quartas, #panel-semis, #panel-final');
+}
+
+function applyUnifiedFilters(panel) {
+    if (!panel) return;
+    if (panel.id === 'panel-groups') {
+        applyGroupFilters(panel);
+        return;
+    }
+    applyScoreFilters(panel);
+}
+
+function handleFilterEvent(event) {
+    const target = event.target?.closest ? event.target : event.target?.parentElement;
+    if (!target) return;
+
+    if (event.type === 'click') {
+        const modeButton = target.closest('.groups-mode-btn');
+        if (modeButton) {
+            window.PrevisoesActions?.setGroupsMode?.(modeButton.dataset.mode);
+            return;
+        }
+
+        const dropdownButton = target.closest('.date-dropdown-btn');
+        if (dropdownButton) {
+            const dropdown = dropdownButton.closest('.date-dropdown');
+            const willOpen = dropdown && !dropdown.classList.contains('open');
+            closeOpenDropdowns(dropdown);
+            if (dropdown) dropdown.classList.toggle('open', willOpen);
+            return;
+        }
+
+        // fechar ao clicar fora (só 1 listener global, mas não duplica)
+        if (!target.closest('.date-dropdown')) {
+            closeOpenDropdowns();
+        }
+
+        return;
+    }
+
+    if (event.type === 'input' && target.matches('.country-filter')) {
+        applyUnifiedFilters(getFilterPanel(target));
+        return;
+    }
+
+    // Datas (modo "Partidas"): ao marcar/desmarcar, aplica filtros
+    if (event.type === 'change' && target.matches('.date-dropdown-menu input[type="checkbox"]')) {
+        applyUnifiedFilters(getFilterPanel(target));
+    }
+}
+
+function installFilterDelegationOnce() {
+    if (document.documentElement.dataset.previsoesFiltersBound) return;
+    ['click', 'input', 'change'].forEach(type => {
+        document.addEventListener(type, handleFilterEvent);
+    });
+    document.documentElement.dataset.previsoesFiltersBound = '1';
+}
+
+// Aplica filtros de texto, grupo e data conforme o modo atual da aba de grupos.
+function applyGroupFilters(panel = document.getElementById('panel-groups')) {
+    if (!panel) return;
+
+    const input = panel.querySelector('.group-country-filter');
+    const menu = panel.querySelector('.group-dropdown-menu');
+    const btn = panel.querySelector('.group-dropdown-btn');
+    const noResults = panel.querySelector('.groups-no-results');
+    const dateMenu = panel.querySelector('.groups-date-dropdown-menu');
+    const dateBtn = panel.querySelector('.groups-date-dropdown-btn');
+    const q = normalizeName(input?.value || '');
+
+    const selectedGroups = getSelectedValues(menu);
+
+    // label do botão
+    if (btn) {
+        const n = selectedGroups.length;
+
+        let label;
+        if (n === 0) {label = 'Todos os grupos';} 
+        else {label = `${n} grupo${n > 1 ? 's' : ''} selecionado${n > 1 ? 's' : ''}`;}
+        btn.innerHTML = `${label}<span>▾</span>`;
+    }
+
+    const mode = panel.dataset.groupsMode || 'games';
+
+    let visible = 0;
+
+    if (mode === 'games') {
+    if (noResults) noResults.textContent = 'Nenhum grupo encontrado com os filtros selecionados.';
+
+    panel.querySelectorAll('#gg .group-card').forEach(card => {
+        const matchGroup =!selectedGroups.length || selectedGroups.includes(card.dataset.group);
+        const matchText = !q || (card.dataset.search || '').includes(q);
+
+        const show = matchGroup && matchText;
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+    });
+    } else {
+    if (noResults) noResults.textContent = 'Nenhuma partida encontrada com os filtros selecionados.';
+
+    const selectedDates = getSelectedValues(dateMenu);
+
+    updateDateButton(dateBtn, selectedDates);
+
+    panel.querySelectorAll('#groups-scorecards .match-card').forEach(card => {
+        const matchGroup = !selectedGroups.length || selectedGroups.includes(card.dataset.group);
+        const matchText = !q || (card.dataset.search || '').includes(q);
+        const matchDate = !selectedDates.length || selectedDates.includes(card.dataset.date);
+        const show = matchGroup && matchText && matchDate;
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+    });
+    }
+
+    if (noResults) noResults.style.display = visible ? 'none' : 'block';
+}
+
+function applyScoreFilters(panel) {
+    const countryInput = panel.querySelector('.country-filter');
+    const dateMenu = panel.querySelector('.date-dropdown-menu');
+    const dateButton = panel.querySelector('.date-dropdown-btn');
+    const noResults = panel.querySelector('.no-results');
+
+    const countryQuery = normalizeName(countryInput?.value || '');
+
+    const selectedDates = getSelectedValues(dateMenu);
+
+    updateDateButton(dateButton, selectedDates);
+
+    let visibleCount = 0;
+
+    panel.querySelectorAll('.match-card').forEach(card => {
+        const matchesCountry =
+            !countryQuery ||
+            card.dataset.search.includes(countryQuery);
+
+        const matchesDate =
+            !selectedDates.length ||
+            selectedDates.includes(card.dataset.date);
+
+        const shouldShow = matchesCountry && matchesDate;
+
+        card.style.display = shouldShow ? '' : 'none';
+
+        if (shouldShow) visibleCount++;
+    });
+
+    if (noResults) {
+        noResults.style.display = visibleCount ? 'none' : 'block';
+    }
+}
+
 // ════════════════════════════════════════
 // GROUP STAGE
 // ════════════════════════════════════════
 
+// Bloco isolado da fase de grupos para evitar variáveis globais desnecessárias.
 (function () {
-    const NUMBER_WORDS = ['zero', 'one', 'two', 'three', 'four'];
     let GROUP_STAGE_ROWS = [];
 
-    function scoreKey(h, a) {
-        return `${NUMBER_WORDS[h]}_${NUMBER_WORDS[a]}`;
-    }
-
-    function normalizeName(value) {
-        return String(value ?? '')
-            .trim()
-            .normalize('NFD')
-            .replace(/[\u0300-\u036f]/g, '')
-            .toLowerCase();
-    }
-
-    function parseNumber(value) {
-        if (value === undefined || value === null || value === '') return null;
-        const n = Number(String(value).trim().replace('%', '').replace(',', '.'));
-        return Number.isFinite(n) ? n : null;
-    }
-
-    function parseCSV(text) {
-        const firstLine = text.split(/\r?\n/)[0] || '';
-        const delimiter =
-            (firstLine.match(/;/g) || []).length > (firstLine.match(/,/g) || []).length
-                ? ';'
-                : ',';
-
-        const rows = [];
-        let row = [];
-        let cell = '';
-        let insideQuotes = false;
-
-        for (let i = 0; i < text.length; i++) {
-            const char = text[i];
-            const next = text[i + 1];
-
-            if (char === '"' && next === '"') {
-                cell += '"';
-                i++;
-                continue;
-            }
-
-            if (char === '"') {
-                insideQuotes = !insideQuotes;
-                continue;
-            }
-
-            if (char === delimiter && !insideQuotes) {
-                row.push(cell.trim());
-                cell = '';
-                continue;
-            }
-
-            if ((char === '\n' || char === '\r') && !insideQuotes) {
-                if (cell !== '' || row.length) {
-                    row.push(cell.trim());
-                    rows.push(row);
-                    row = [];
-                    cell = '';
-                }
-                if (char === '\r' && next === '\n') i++;
-                continue;
-            }
-
-            cell += char;
-        }
-
-        if (cell !== '' || row.length) {
-            row.push(cell.trim());
-            rows.push(row);
-        }
-
-        if (!rows.length) return [];
-
-        const headers = rows[0].map(h => h.trim());
-
-        return rows.slice(1)
-            .filter(r => r.some(Boolean))
-            .map(r => {
-                const obj = {};
-                headers.forEach((h, i) => {
-                    obj[h] = (r[i] ?? '').trim();
-                });
-                return obj;
-            });
-    }
-
-    async function loadCSV(url) {
-        const response = await fetch(url, { cache: 'no-store' });
-        if (!response.ok) throw new Error(`Não foi possível carregar ${url}`);
-        return parseCSV(await response.text());
-    }
-
+    // Soma as probabilidades dos placares em vitória do Home Team, empate e vitória do Away Team.
     function getOutcomeProbs(row) {
         let pHomeWin = 0;
         let pDraw = 0;
         let pAwayWin = 0;
 
-        for (let h = 0; h <= 4; h++) {
-            for (let a = 0; a <= 4; a++) {
-                const key = scoreKey(h, a);
-                const v = parseNumber(row[key]);
-                if (v === null) continue;
+        SCORES.forEach(({ h, a, key }) => {
+            const v = parseNumber(row[key]);
+            if (v === null) return;
 
-                if (h > a) pHomeWin += v;
-                else if (h === a) pDraw += v;
-                else pAwayWin += v;
-            }
-        }
+            if (h > a) pHomeWin += v;
+            else if (h === a) pDraw += v;
+            else pAwayWin += v;
+        });
 
-        // valores em fração (0..1)
+        // valores em fração
         return {
             pHomeWin: pHomeWin / 100,
             pDraw: pDraw / 100,
@@ -163,15 +395,16 @@ const SCORE_STAGES = [
         };
     }
 
+    // Calcula pontos esperados de cada seleção no jogo: 3 por vitória e 1 por empate.
     function expectedPointsForMatch(row) {
         const { pHomeWin, pDraw, pAwayWin } = getOutcomeProbs(row);
-
         return {
             home: (3 * pHomeWin) + (1 * pDraw),
             away: (3 * pAwayWin) + (1 * pDraw)
         };
     }
 
+    // Cria os cards de cada grupo, calcula o ranking por pontos esperados e monta os filtros.
     function buildGroupCards(matchRows) {
         const grid = document.getElementById('gg');
         if (!grid) return;
@@ -182,7 +415,7 @@ const SCORE_STAGES = [
         // cria a barra só uma vez (se já existir, não duplica)
         if (!panel.querySelector('.groups-filterbar')) {
             const note = panel.querySelector('.g-note');
-
+            // HTML da barra de busca, alternância Grupos/Partidas e filtros de grupo/data.
             const filterHTML = `
             <div class="filterbar groups-filterbar">
                 <div class="search-wrap">
@@ -282,6 +515,7 @@ const SCORE_STAGES = [
             card.dataset.group = letter;
             card.dataset.search = normalizeName(teams.join(' ')); // times do grupo
             const favorite = ranking[0]?.name || '';
+            // Cabeçalho do card de grupo com a letra do grupo e a seleção favorita.
             card.innerHTML = `
                 <div class="g-head">
                     Grupo ${letter}
@@ -300,7 +534,7 @@ const SCORE_STAGES = [
 
                 const row = document.createElement('div');
                 row.className = `g-team ${statusClass}`;
-
+                // Linha visual da seleção: posição, nome, probabilidade relativa e barra de progresso.
                 row.innerHTML = `
                     <div class="g-row">
                         <div class="g-badge ${badgeClass}">${label}</div>
@@ -353,6 +587,7 @@ const SCORE_STAGES = [
         setGroupsMode(panel.dataset.groupsMode || 'games');
     }
 
+    // Preenche o dropdown com as letras dos grupos disponíveis no CSV.
     function populateGroupDropdown(groups) {
         const panel = document.getElementById('panel-groups');
         if (!panel) return;
@@ -368,6 +603,7 @@ const SCORE_STAGES = [
         `).join('');
     }
 
+    // Preenche o dropdown de datas usando apenas jogos da fase de grupos.
     function populateGroupsDateDropdown(matchRows) {
         const panel = document.getElementById('panel-groups');
         if (!panel) return;
@@ -387,96 +623,36 @@ const SCORE_STAGES = [
         `).join('');
     }
 
+    // Conecta os eventos de busca, dropdowns e botão de modo na aba de grupos.
     function attachGroupFilters() {
-        const panel = document.getElementById('panel-groups');
-        if (!panel) return;
-
-        const input = panel.querySelector('.group-country-filter');
-        const dropdown = panel.querySelector('.group-dropdown');
-        const btn = panel.querySelector('.group-dropdown-btn');
-        const menu = panel.querySelector('.group-dropdown-menu');
-        const dateDropdown = panel.querySelector('.groups-date-dropdown');
-        const dateBtn = panel.querySelector('.groups-date-dropdown-btn');
-        const dateMenu = panel.querySelector('.groups-date-dropdown-menu');
-
-        if (dateBtn && dateDropdown && !dateBtn.dataset.bound)
-            { dateBtn.addEventListener('click', (e) => { e.stopPropagation(); dateDropdown.classList.toggle('open'); });
-            dateBtn.dataset.bound = '1'; }
-
-        const modeWrap = panel.querySelector('.groups-mode');
-        if (modeWrap && !modeWrap.dataset.bound) {
-        modeWrap.addEventListener('click', (ev) => {
-            const btnMode = ev.target.closest('.groups-mode-btn');
-            if (!btnMode) return;
-            setGroupsMode(btnMode.dataset.mode);
-        });
-        modeWrap.dataset.bound = '1';
-        }
-
-        if (input && !input.dataset.bound) {
-            input.addEventListener('input', applyGroupFilters);
-            input.dataset.bound = '1';
-        }
-
-        if (btn && dropdown && !btn.dataset.bound) {
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                dropdown.classList.toggle('open');
-            });
-            btn.dataset.bound = '1';
-        }
-
-        if (menu && !menu.dataset.bound) {
-            menu.addEventListener('change', (e) => {
-                const checks = [...menu.querySelectorAll('input[type="checkbox"]')];
-                const checked = checks.filter(c => c.checked);
-                applyGroupFilters();
-            });
-            menu.dataset.bound = '1';
-
-            // Datas (modo "Partidas"): ao marcar/desmarcar, aplica filtros
-            if (dateMenu && !dateMenu.dataset.bound) {
-            dateMenu.addEventListener('change', applyGroupFilters);
-            dateMenu.dataset.bound = '1';
-            }
-        }
-
-        // fechar ao clicar fora (só 1 listener global, mas não duplica)
-        if (!document.documentElement.dataset.groupsDropdownBound) {
-            document.addEventListener('click', (ev) => {
-            document.querySelectorAll('#panel-groups .group-dropdown.open, #panel-groups .groups-date-dropdown.open')
-                .forEach(dd => { if (!dd.contains(ev.target)) dd.classList.remove('open'); });
-            });
-            document.documentElement.dataset.groupsDropdownBound = '1';
-        }
-
-        
+        installFilterDelegationOnce();
     }
 
+    // Renderiza os cards de partidas da fase de grupos somente quando o modo Partidas é aberto.
     async function ensureGroupMatchCardsRendered() {
         const panel = document.getElementById('panel-groups');
         const container = panel?.querySelector('#groups-scorecards');
         if (!panel || !container) return;
         if (container.dataset.ready === '1') return;
-
         // só partidas da fase de grupos (A..L)
         const stageRows = GROUP_STAGE_ROWS.filter(r => /^[A-L]$/.test(String(r.group ?? '').trim()));
 
         // usa o renderer existente dos cards de placares
-        if (!window.ScoreCards?.renderScoreCardHTML || !window.ScoreCards?.getFlagRowsOnce) {
+        if (!window.ScoreCards?.renderScoreCardHTML || !window.ScoreCards?.getFlagGetterOnce) {
             container.innerHTML = '';
             container.dataset.ready = '1';
             return;
         }
 
-        const flagRows = await window.ScoreCards.getFlagRowsOnce();
-        container.innerHTML = stageRows.map(r => window.ScoreCards.renderScoreCardHTML(r, flagRows)).join('');
+        const getFlag = await window.ScoreCards.getFlagGetterOnce();
+        container.innerHTML = stageRows.map(r => window.ScoreCards.renderScoreCardHTML(r, getFlag)).join('');
         /* aplica a regra do .score-total.tall também na Fase de Grupos */
         window.ScoreCards.adjustScoreTotalHeights?.(container);
         container.dataset.ready = '1';
-        }
+    }
 
-        async function setGroupsMode(mode) {
+    // Alterna entre visualização de ranking dos grupos e visualização dos cards de partidas.
+    async function setGroupsMode(mode) {
         const panel = document.getElementById('panel-groups');
         if (!panel) return;
 
@@ -507,75 +683,10 @@ const SCORE_STAGES = [
         applyGroupFilters();
     }
 
-    function applyGroupFilters() {
-        const panel = document.getElementById('panel-groups');
-        if (!panel) return;
+    window.PrevisoesActions = window.PrevisoesActions || {};
+    window.PrevisoesActions.setGroupsMode = setGroupsMode;
 
-        const input = panel.querySelector('.group-country-filter');
-        const menu = panel.querySelector('.group-dropdown-menu');
-        const btn = panel.querySelector('.group-dropdown-btn');
-        const noResults = panel.querySelector('.groups-no-results');
-        const dateMenu = panel.querySelector('.groups-date-dropdown-menu');
-        const dateBtn = panel.querySelector('.groups-date-dropdown-btn');
-        const q = normalizeName(input?.value || '');
-
-        const selectedGroups = menu
-            ? [...menu.querySelectorAll('input[type="checkbox"]:checked')].map(i => i.value)
-            : [];
-
-        // label do botão
-        if (btn) {
-            const all = menu ? menu.querySelectorAll('input[type="checkbox"]').length : 0;
-            const n = selectedGroups.length;
-
-            let label;
-            if (n === 0) {label = 'Todos os grupos';} 
-            else {label = `${n} grupo${n > 1 ? 's' : ''} selecionado${n > 1 ? 's' : ''}`;}
-            btn.innerHTML = `${label}<span>▾</span>`;
-        }
-
-        const mode = panel.dataset.groupsMode || 'games';
-
-        let visible = 0;
-
-        if (mode === 'games') {
-        if (noResults) noResults.textContent = 'Nenhum grupo encontrado com os filtros selecionados.';
-
-        panel.querySelectorAll('#gg .group-card').forEach(card => {
-            const matchGroup =!selectedGroups.length || selectedGroups.includes(card.dataset.group);
-            const matchText = !q || (card.dataset.search || '').includes(q);
-
-            const show = matchGroup && matchText;
-            card.style.display = show ? '' : 'none';
-            if (show) visible++;
-        });
-        } else {
-        if (noResults) noResults.textContent = 'Nenhuma partida encontrada com os filtros selecionados.';
-
-        const selectedDates = dateMenu
-        ? [...dateMenu.querySelectorAll('input[type="checkbox"]:checked')].map(i => i.value)
-        : [];
-
-        if (dateBtn) {
-        const label = selectedDates.length
-            ? `${selectedDates.length} data${selectedDates.length > 1 ? 's' : ''} selecionada${selectedDates.length > 1 ? 's' : ''}`
-            : 'Todas as datas';
-        dateBtn.innerHTML = `${label}<span>▾</span>`;
-        }
-
-        panel.querySelectorAll('#groups-scorecards .match-card').forEach(card => {
-            const matchGroup = !selectedGroups.length || selectedGroups.includes(card.dataset.group);
-            const matchText = !q || (card.dataset.search || '').includes(q);
-            const matchDate = !selectedDates.length || selectedDates.includes(card.dataset.date);
-            const show = matchGroup && matchText && matchDate;
-            card.style.display = show ? '' : 'none';
-            if (show) visible++;
-        });
-        }
-
-        if (noResults) noResults.style.display = visible ? 'none' : 'block';
-    }
-
+    // Ponto de entrada da fase de grupos: carrega o CSV e chama a montagem dos cards.
     async function renderGroupStage() {
         try {
             const rows = await loadCSV(MATCHES_CSV_URL);
@@ -607,186 +718,28 @@ const SCORE_STAGES = [
 
 
 (function () {
-    const NUMBER_WORDS = ['zero', 'one', 'two', 'three', 'four'];
-
-    function scoreKey(homeGoals, awayGoals) {
-        return `${NUMBER_WORDS[homeGoals]}_${NUMBER_WORDS[awayGoals]}`;
-    }
-
-    function escapeHTML(value) {
-        return String(value ?? '')
-            .replaceAll('&', '&amp;')
-            .replaceAll('<', '&lt;')
-            .replaceAll('>', '&gt;')
-            .replaceAll('"', '&quot;')
-            .replaceAll("'", '&#039;');
-    }
-
-    function normalizeName(value) {
-        return String(value ?? '')
-            .trim()
-            .normalize('NFD')
-            .replace(/[\u0300-\u036f]/g, '')
-            .toLowerCase();
-    }
-
-    function parseNumber(value) {
-        if (value === undefined || value === null || value === '') return null;
-
-        const n = Number(
-            String(value)
-                .trim()
-                .replace('%', '')
-                .replace(',', '.')
-        );
-
-        return Number.isFinite(n) ? n : null;
-    }
-
-    function formatPct(value) {
-        const rounded = Math.round(value * 10) / 10;
-        return Number.isInteger(rounded) ? String(rounded) : String(rounded);
-    }
-
-    function parseCSV(text) {
-        const firstLine = text.split(/\r?\n/)[0] || '';
-        const delimiter =
-            (firstLine.match(/;/g) || []).length > (firstLine.match(/,/g) || []).length
-                ? ';'
-                : ',';
-
-        const rows = [];
-        let row = [];
-        let cell = '';
-        let insideQuotes = false;
-
-        for (let i = 0; i < text.length; i++) {
-            const char = text[i];
-            const next = text[i + 1];
-
-            if (char === '"' && next === '"') {
-                cell += '"';
-                i++;
-                continue;
-            }
-
-            if (char === '"') {
-                insideQuotes = !insideQuotes;
-                continue;
-            }
-
-            if (char === delimiter && !insideQuotes) {
-                row.push(cell.trim());
-                cell = '';
-                continue;
-            }
-
-            if ((char === '\n' || char === '\r') && !insideQuotes) {
-                if (cell !== '' || row.length) {
-                    row.push(cell.trim());
-                    rows.push(row);
-                    row = [];
-                    cell = '';
-                }
-
-                if (char === '\r' && next === '\n') i++;
-                continue;
-            }
-
-            cell += char;
-        }
-
-        if (cell !== '' || row.length) {
-            row.push(cell.trim());
-            rows.push(row);
-        }
-
-        if (!rows.length) return [];
-
-        const headers = rows[0].map(h => h.trim());
-
-        return rows.slice(1)
-            .filter(r => r.some(Boolean))
-            .map(r => {
-                const obj = {};
-                headers.forEach((h, i) => {
-                    obj[h] = (r[i] ?? '').trim();
-                });
-                return obj;
-            });
-    }
-
-    async function loadCSV(url) {
-        const response = await fetch(url, { cache: 'no-store' });
-
-        if (!response.ok) {
-            throw new Error(`Não foi possível carregar ${url}`);
-        }
-
-        return parseCSV(await response.text());
-    }
-
-    function normalizeFlagUrl(url) {
-        if (!url) return '';
-
-        let value = String(url).trim();
-
-        if (value.includes('github.com') && value.includes('/blob/')) {
-            value = value
-                .replace('https://github.com/', 'https://raw.githubusercontent.com/')
-                .replace('/blob/', '/');
-        }
-
-        return value;
-    }
-
-    function getHomeCountry(row) {
-        return row.home_country || row.home_team || row.home || '';
-    }
-
-    function getAwayCountry(row) {
-        return row.away_country || row.away_team || row.away || '';
-    }
-
-    function getMatchGroup(row) {
-        return row.group || row.stage || row.round || '';
-    }
-
-    function findFlagUrl(flagRows, countryName) {
-        const country = normalizeName(countryName);
-
-        const row = flagRows.find(item =>
-            normalizeName(item.country_pt) === country
-        );
-
-        return row ? normalizeFlagUrl(row.svg_github) : '';
-    }
-
     function getOutcomeGroups(row) {
         const homeWin = [];
         const draw = [];
         const awayWin = [];
 
-        for (let h = 0; h <= 4; h++) {
-            for (let a = 0; a <= 4; a++) {
-                const key = scoreKey(h, a);
-                const value = parseNumber(row[key]);
+        SCORES.forEach(({ h, a, key, label }) => {
+            const value = parseNumber(row[key]);
 
-                if (value === null) continue;
+            if (value === null) return;
 
-                const item = {
-                    key,
-                    label: `${h}x${a}`,
-                    homeGoals: h,
-                    awayGoals: a,
-                    value
-                };
+            const item = {
+                key,
+                label,
+                homeGoals: h,
+                awayGoals: a,
+                value
+            };
 
-                if (h > a) homeWin.push(item);
-                else if (h === a) draw.push(item);
-                else awayWin.push(item);
-            }
-        }
+            if (h > a) homeWin.push(item);
+            else if (h === a) draw.push(item);
+            else awayWin.push(item);
+        });
 
         const byProbability = (a, b) => b.value - a.value;
 
@@ -820,7 +773,7 @@ const SCORE_STAGES = [
                     <div class="score-bar-space">
                         <div class="score-bar" style="--w:${width}%"></div>
                     </div>
-                    <div class="score-value">${formatPct(item.value)}</div>
+                    <div class="score-value">${formatPct(item.value)}%</div>
                 </div>
             `;
         }).join('');
@@ -851,7 +804,7 @@ const SCORE_STAGES = [
         return `<div class="score-flag-fallback">${escapeHTML(country)}</div>`;
     }
 
-    function renderScoreCard(row, flagRows) {
+    function renderScoreCard(row, getFlag) {
         const homeCountry = getHomeCountry(row);
         const awayCountry = getAwayCountry(row);
 
@@ -866,8 +819,8 @@ const SCORE_STAGES = [
         const drawTotal = sumOutcomes(draw);
         const awayTotal = sumOutcomes(awayWin);
 
-        const homeFlag = findFlagUrl(flagRows, homeCountry);
-        const awayFlag = findFlagUrl(flagRows, awayCountry);
+        const homeFlag = getFlag(homeCountry);
+        const awayFlag = getFlag(awayCountry);
 
         const matchTitle = `${homeCountry} X ${awayCountry}`;
         const matchDate = row.date || '';
@@ -946,14 +899,30 @@ const SCORE_STAGES = [
     }
 
     let __flagRowsPromise = null;
+    let __flagGetterPromise = null;
     function getFlagRowsOnce() {
     if (!__flagRowsPromise) __flagRowsPromise = loadCSV(FLAGS_CSV_URL);
     return __flagRowsPromise;
     }
 
+    function getFlagGetterOnce() {
+    if (!__flagGetterPromise) {
+        __flagGetterPromise = getFlagRowsOnce().then(flagRows => {
+            const flagMap = new Map(
+              flagRows.map(row => [normalizeName(row.country_pt), normalizeFlagUrl(row.svg_github)])
+            );
+
+            const getFlag = country => flagMap.get(normalizeName(country)) || '';
+            return getFlag;
+        });
+    }
+    return __flagGetterPromise;
+    }
+
     window.ScoreCards = window.ScoreCards || {};
     window.ScoreCards.renderScoreCardHTML = renderScoreCard;
     window.ScoreCards.getFlagRowsOnce = getFlagRowsOnce;
+    window.ScoreCards.getFlagGetterOnce = getFlagGetterOnce;
     window.ScoreCards.adjustScoreTotalHeights = adjustScoreTotalHeights;
     
     function renderScorePanelShell(panel, stage) {
@@ -1016,74 +985,7 @@ const SCORE_STAGES = [
     }
 
     function attachScoreFilters(panel) {
-        const countryInput = panel.querySelector('.country-filter');
-        const dateButton = panel.querySelector('.date-dropdown-btn');
-        const dateMenu = panel.querySelector('.date-dropdown-menu');
-        const dateDropdown = panel.querySelector('.date-dropdown');
-
-        if (countryInput) {
-            countryInput.addEventListener('input', () => applyScoreFilters(panel));
-        }
-
-        if (dateButton && dateMenu && dateDropdown) {
-            dateButton.addEventListener('click', function (event) {
-                event.stopPropagation();
-                dateDropdown.classList.toggle('open');
-            });
-
-            dateMenu.querySelectorAll('input[type="checkbox"]').forEach(input => {
-                input.addEventListener('change', () => applyScoreFilters(panel));
-            });
-
-            document.addEventListener('click', function (event) {
-                if (!dateDropdown.contains(event.target)) {
-                    dateDropdown.classList.remove('open');
-                }
-            });
-        }
-    }
-
-    function applyScoreFilters(panel) {
-        const countryInput = panel.querySelector('.country-filter');
-        const dateMenu = panel.querySelector('.date-dropdown-menu');
-        const dateButton = panel.querySelector('.date-dropdown-btn');
-        const noResults = panel.querySelector('.no-results');
-
-        const countryQuery = normalizeName(countryInput?.value || '');
-
-        const selectedDates = dateMenu
-            ? [...dateMenu.querySelectorAll('input[type="checkbox"]:checked')].map(input => input.value)
-            : [];
-
-        if (dateButton) {
-            const label = selectedDates.length
-                ? `${selectedDates.length} data${selectedDates.length > 1 ? 's' : ''} selecionada${selectedDates.length > 1 ? 's' : ''}`
-                : 'Todas as datas';
-
-            dateButton.innerHTML = `${label}<span>▾</span>`;
-        }
-
-        let visibleCount = 0;
-
-        panel.querySelectorAll('.match-card').forEach(card => {
-            const matchesCountry =
-                !countryQuery ||
-                card.dataset.search.includes(countryQuery);
-
-            const matchesDate =
-                !selectedDates.length ||
-                selectedDates.includes(card.dataset.date);
-
-            const shouldShow = matchesCountry && matchesDate;
-
-            card.style.display = shouldShow ? '' : 'none';
-
-            if (shouldShow) visibleCount++;
-        });
-
-        if (noResults) {
-            noResults.style.display = visibleCount ? 'none' : 'block';
-        }
+        installFilterDelegationOnce();
     }
 
     function adjustScoreTotalHeights(panel) {
@@ -1102,7 +1004,7 @@ const SCORE_STAGES = [
         });
     }
 
-    function renderScoreStage(stage, matchRows, flagRows) {
+    function renderScoreStage(stage, matchRows, getFlag) {
         const stageRows = matchRows.filter(row =>
             normalizeName(getMatchGroup(row)) === normalizeName(stage.groupValue)
         );
@@ -1123,7 +1025,7 @@ const SCORE_STAGES = [
 
         const container = panel.querySelector('.scorecards-grid');
         const cards = stageRows
-            .map(row => renderScoreCard(row, flagRows))
+            .map(row => renderScoreCard(row, getFlag))
             .join('');
 
         container.innerHTML = cards || `
@@ -1141,13 +1043,13 @@ const SCORE_STAGES = [
 
     async function renderScoreStagePanels() {
         try {
-            const [matchRows, flagRows] = await Promise.all([
+            const [matchRows, getFlag] = await Promise.all([
                 loadCSV(MATCHES_CSV_URL),
-                loadCSV(FLAGS_CSV_URL)
+                getFlagGetterOnce()
             ]);
 
             SCORE_STAGES.forEach(stage => {
-                renderScoreStage(stage, matchRows, flagRows);
+                renderScoreStage(stage, matchRows, getFlag);
             });
         } catch (error) {
             SCORE_STAGES.forEach(stage => {

@@ -7,40 +7,46 @@ padding: 0;
 
 /* ── DESIGN TOKENS ── */
 :root {
-/* Blues */
+--primary-blue: #0f3c68;
+--text-blue: #233b65;
+--soft-border: #dbe3ec;
+--light-bg: #edf2f8;
+--panel-bg: #ffffff;
+
+/* Paleta de azuis usada no layout */
 --navy:  #0b1f3a;
 --navy2: #f7fbff;
 --navy3: #1f4e8c;
 --navy4: #3aa0ff;
 --blue5: #00e0ff;
 
-/* Neon accents */
+/* Cores de destaque com efeito neon */
 --neon-blue: #00d4ff;
 --neon-glow: rgba(0, 212, 255, .35);
 
-/* Gold — champion theme */
+/* Tons dourados usados para campeão e final */
 --gold:      #c9a227;
 --gold2:     #f0c840;
 --gold3:     #fff3b0;
 --gold-glow: rgba(240, 200, 64, .45);
 
-/* Text */
+/* Cores padrão de texto */
 --white: #ffffff;
 --slate: #dbe7f5;
 --muted: #6b8bab;
 --faint: #9fb6cc;
 
-/* UI surfaces */
+/* Cores de superfícies, bordas e cards */
 --border:  #d6e4f2;
 --border2: #ffffff;
 --card:    #ffffff;
 --card2:   #fffaf0;
 
-/* State backgrounds */
+/* Fundos usados para estados visuais */
 --won-bg: linear-gradient(90deg, #1f4e8c, #3aa0ff);
 --hl-bg:  rgb(255, 255, 255);
 
-/* Border radii */
+/* Raios de borda reutilizados */
 --r5: 6px;
 --r8: 10px;
 }
@@ -64,12 +70,15 @@ margin: 0;          /* remove centralização */
 /* ════════════════════════════════════════
 HEADER
 ════════════════════════════════════════ */
+
+/* Cabeçalho principal do dashboard de previsões. */
 .dh {
-background: #0f3c68;
+background: var(--primary-blue);
 padding: 13px 20px 0;
 border-bottom: 3px solid #f0c040;
 }
 
+/* Linha superior do cabeçalho com logo/título e badge. */
 .dh-top {
 display: flex;
 align-items: center;
@@ -77,24 +86,28 @@ gap: 10px;
 padding-bottom: 11px;
 }
 
+/* Ícone exibido no cabeçalho. (logo FGV EMAP) */
 .dh-icon { font-size: 20px; }
 
+/* Título do dashboard dentro do cabeçalho. (COPA DO MUNDO 2026) */
 .dh-ti {
-font-size: 14.5px;
+font-size: 15px;
 font-weight: 900;
 color: #ffffff;
 letter-spacing: .3px;
 }
 
+/* Subtítulo com país-sede, datas e quantidade de seleções/grupos. */
+/* (EUA · Canadá · México...) */
 .dh-su {
-font-size: 9px;
+font-size: 9.5px;
 color: #aac4d8;
 letter-spacing: 1.2px;
 text-transform: uppercase;
 margin-top: 1px;
 }
 
-/* Badge — projected champion */
+/* Badge do campeão projetado no cabeçalho (Retângulo com Troféu) */
 .dh-badge {
 margin-left: auto;
 background: rgba(255, 255, 255, 0.1);
@@ -104,6 +117,7 @@ padding: 5px 11px;
 text-align: right;
 }
 
+/* Texto pequeno do rótulo do campeão projetado. */
 .dh-bl {
 font-size: 7.5px;
 color: #f0c040;
@@ -111,22 +125,25 @@ letter-spacing: 1px;
 text-transform: uppercase;
 }
 
+/* Nome da seleção apontada como campeã projetada. */
 .dh-bv {
 font-size: 13px;
 font-weight: 700;
 color: #ffffff;
 }
 
-/* ── TABS ── */
+/* ── TABS (Chaveamento, Fase de Grupos,...) ── */
+/* Container das abas de navegação internas. */
 .tabs {
 display: flex;
 gap: 1px;
 padding-top: 3px;
 }
 
+/* Botão de aba usado para trocar entre chaveamento, grupos e fases. */
 .tab {
 font-family: inherit;
-font-size: 10.5px;
+font-size: 11px;
 font-weight: 700;
 letter-spacing: 1px;
 text-transform: uppercase;
@@ -141,14 +158,16 @@ position: relative;
 top: 1px;
 }
 
+/* Ao passar o mouse sobre uma aba. */
 .tab:hover {
 color: #ffffff;
 background: rgba(255, 255, 255, 0.1);
 }
 
+/* Aparência da aba atualmente selecionada. */
 .tab.active {
 background: #ffffff;
-color: #0f3c68;
+color: var(--primary-blue);
 box-shadow: 0 -2px 0 #f0c040;
 }
 
@@ -163,12 +182,14 @@ PANELS
 /* ════════════════════════════════════════
 PATH PANEL (champion journey cards)
 ════════════════════════════════════════ */
+
+/* Área que lista o caminho provável do campeão. */
 #bk-pathPanel {
 margin-top: 18px;
-/* border-top: 1.5px solid var(--border); */
 padding-top: 16px;
 }
 
+/* Título do bloco de caminho do campeão. */
 #bk-pathTitle {
 font-size: 12px;
 font-weight: 700;
@@ -181,7 +202,7 @@ align-items: center;
 gap: 10px;
 }
 
-/* Decorative horizontal rule inside the title */
+/* Linha decorativa dentro do título do caminho */
 #bk-pathTitle span {
 flex: 1;
 height: 1px;
@@ -189,6 +210,7 @@ background: var(--border);
 display: block;
 }
 
+/* Container flexível dos cards de caminho. */
 #bk-pathCards {
 display: flex;
 gap: 8px;
@@ -210,7 +232,7 @@ position: relative;
 overflow: hidden;
 }
 
-/* Colored top stripe per round */
+/* Faixa superior colorida por rodada */
 .pc::before {
 content: '';
 position: absolute;
@@ -218,18 +240,19 @@ top: 0; left: 0; right: 0;
 height: 2.5px;
 }
 
-.pc.r32::before { background: #0670c7; }
-.pc.r16::before { background: #0514e6; }
-.pc.qf::before  { background: #0736f1; }
-.pc.sf::before  { background: #0a1af4; }
-.pc.fin::before { background: linear-gradient(90deg, var(--gold), var(--gold3)); }
+.pc.r32::before{background:#0670c7;}
+.pc.r16::before{background:#0514e6;}
+.pc.qf::before{background:#0736f1;}
+.pc.sf::before{background:#0a1af4;}
+.pc.fin::before{background:linear-gradient(90deg,var(--gold),var(--gold3));}
 
-/* Final card gets gold treatment */
+/* Card da final recebe destaque dourado */
 .pc.fin {
 border-color: rgba(252, 220, 92, 0.982);
 background: linear-gradient(135deg, var(--card2), rgb(255, 248, 233));
 }
 
+/* Nome da rodada dentro do card de caminho. */
 .pc-rnd {
 font-size: 10px;
 font-weight: 700;
@@ -239,21 +262,22 @@ color: var(--muted);
 margin-bottom: 9px;
 }
 
-.pc-w  { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
-.pc-wf { font-size: 15px; line-height: 1; }
-.pc-wn { font-size: 12px; font-weight: 700; color: #1a5276; flex: 1; line-height: 1.2; }
-.pc-ws { font-size: 17px; font-weight: 800; color: var(--gold); line-height: 1; }
+.pc-w  {display: flex; align-items: center; gap: 6px; margin-bottom: 4px;} /* Linha do vencedor previsto no card de caminho. */
+.pc-wf {font-size: 15px; line-height: 1;} /* Bandeira do vencedor previsto. */
+.pc-wn {font-size: 12px; font-weight: 700; color: #1a5276; flex: 1; line-height: 1.2;}
+.pc-ws {font-size: 17px; font-weight: 800; color: var(--gold); line-height: 1;} /* Probabilidade ou score do vencedor previsto. */
 
+/* Valor do vencedor na final com maior destaque. */
 .pc.fin .pc-ws { color: var(--gold); font-size: 19px; }
 .pc.fin .pc-wn { color: var(--gold2); }
-
+/* Separador entre vencedor e adversário no card de caminho. */
 .pc-sep { height: 1px; background: var(--border); margin: 5px 0; }
-
+/* Linha do adversário provável. */
 .pc-l  { display: flex; align-items: center; gap: 6px; }
 .pc-lf { font-size: 12px; line-height: 1; opacity: .45; }
 .pc-ln { font-size: 11px; color: var(--muted); flex: 1; }
 .pc-ls { font-size: 13px; font-weight: 700; color: var(--faint); line-height: 1; }
-
+/* Cidade/estádio do confronto no caminho. */
 .pc-city {
 display: inline-flex;
 align-items: center;
@@ -268,7 +292,7 @@ border: 1px solid var(--border2);
 padding: 2px 6px;
 border-radius: 3px;
 }
-
+/* Mensagem quando não há dados para uma rodada do caminho. */
 .pc-empty {
 font-size: 12px;
 color: var(--faint);
@@ -282,7 +306,7 @@ BRACKET
 ════════════════════════════════════════ */
 #panel-bracket { background: #ffffff; padding: 14px 10px; overflow-x: auto; }
 
-/* Disclaimer bar */
+/* Disclaimer bar (Projeção do Modelo FGV EMAp...) */
 .disc {
 font-size: 12px;
 color: #2a4a60;
@@ -294,9 +318,10 @@ margin-bottom: 12px;
 line-height: 1.6;
 }
 
+/* Texto Destaque em negrito dentro da barra de aviso. */
 .disc b { color: #3a5a72; }
 
-/* Bracket outer wrapper — positions the SVG overlay */
+/* Wrapper do chaveamento; posiciona as linhas SVG por cima do layout */
 .bk-wrap {
 position: relative;
 display: flex;
@@ -305,7 +330,7 @@ width: 100%;
 min-width: 980px;
 }
 
-/* SVG connector lines rendered behind the cards */
+/* Linhas SVG que conectam os cards do chaveamento */
 #bsv {
 position: absolute;
 top: 0; left: 0;
@@ -314,23 +339,24 @@ overflow: visible;
 z-index: 0;
 }
 
-/* Left / right bracket halves */
-.half { display: flex; flex: 1; min-width: 240px; } /* era 280px */
+/* Metades esquerda e direita do chaveamento */
+/* Base comum das duas metades do chaveamento. */
+.half { display: flex; flex: 1; min-width: 240px; }
 .lh   { flex-direction: row; }
 .rh   { flex-direction: row-reverse; }
 
-/* Column of match cards per round */
+/* Coluna de cards de partidas por fase */
 .rc {
 display: flex;
 flex-direction: column;
 justify-content: space-around;
 flex: 1;
-min-width: 60px;    /* era 65px */
+min-width: 60px;
 padding: 18px 0 0;
 position: relative;
 }
 
-/* Round label above each column: r32, oitavas, quartas, semifinal, final */
+/* Rótulo da fase acima de cada coluna: r32, oitavas, quartas, semifinal, final */
 .rc::before {
 content: attr(data-l);
 position: absolute;
@@ -350,7 +376,7 @@ white-space: nowrap;
 background: #ffffff;
 border: 1.5px solid #e2e2e2;
 border-radius: 6px;
-margin: 3px 4px;    /* era 3px 6px — reduzido para ganhar espaço horizontal */
+margin: 3px 4px;
 overflow: hidden;
 transition: all .18s;
 position: relative;
@@ -412,7 +438,10 @@ flex-shrink: 0;
 .tr.won .tp  { color: #f6d608; }
 
 /* Flag emoji */
-.tf { font-size: 11px; line-height: 1; flex-shrink: 0; } /* era 12px */
+.tf {width: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center }
 
 /* Team name */
 .tn {
@@ -467,12 +496,14 @@ transition: opacity .18s, filter .18s;
 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
 }
 
+/* Nome da seleção dentro do card da final. */
 .fmc .tn { font-size: 9.5px; color: #1a1a1a; font-weight: 700; }
 .fmc .tp { min-width: 26px; font-size: 9px; color: #c9940a; font-weight: 800; }
+/* Linha de seleção dentro do card da final. */
 .fmc .tr { padding: 5px 6px; border-bottom: 1px solid #f2ece0; }
 .fmc .tr:last-child { border-bottom: none; }
 
-/* Champion summary box below the final card */
+/* Caixa de resumo do campeão abaixo da final */
 .champ {
 background: linear-gradient(140deg, #150e00, #0d0a00);
 border: 1px solid rgba(201, 148, 10, .35);
@@ -482,12 +513,14 @@ text-align: center;
 width: 100%;
 }
 
+/* Bandeira/ícone do campeão projetado. */
 .champ-f { font-size: 24px; line-height: 1; margin: 3px 0 2px; }
 .champ-n { font-size: 12px; font-weight: 900; color: #d4aa30; letter-spacing: .3px; }
-/*.champ-l { font-size: 6.5px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #6a4a10; margin-top: 2px; }*/
 .champ-p { font-size: 9px; color: #162c42; margin-top: 3px; }
 
 /* ── BRACKET LEGEND ── */
+
+/* Legenda do chaveamento. */
 .bk-leg {
 display: flex;
 gap: 14px;
@@ -497,33 +530,35 @@ padding-top: 8px;
 border-top: 1px solid #162c42;
 }
 
+/* Item da legenda. */
 .bk-li  { display: flex; align-items: center; gap: 5px; font-size: 10px; color: #1e3a52; }
 .bk-ln  { width: 16px; height: 2px; border-radius: 1px; }
+/* Traço da legenda para caminho campeão. */
 .bk-ln.g  { background: #c9940a; }
 .bk-ln.gr { background: #162c4242; }
+/* Dica textual da legenda. */
 .bk-hint  { margin-left: auto; font-size: 10px; color: #1e3a52; font-style: italic; }
 
-/* SVG path transition */
+/* Transição suave das linhas SVG */
 #bsv path { transition: all .25s ease; }
 
-/* Champion path highlight class (applied via JS) */
+/* Classe aplicada pelo JS para destacar o caminho do campeão */
 .champion-line {
 stroke: #f0c040 !important;
 stroke-width: 3 !important;
 opacity: 1 !important;
 }
 
-
 /* ════════════════════════════════════════
-GROUP STAGE PANEL
+PAINEL FASE DE GRUPOS
 ════════════════════════════════════════ */
 #panel-groups {
   padding: 20px;
   background: #ffffff;
-  min-height: 520px; /* mantém o footer embaixo como nas outras abas */
+  min-height: 520px; /* mantém o footer embaixo*/
 }
 
-/* Responsive 3-column grid */
+/* grid de 3 colunas responsivo */
 .g-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 
 @media (max-width: 900px) { .g-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -544,9 +579,9 @@ transform: translateY(-2px);
 box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
 }
 
-/* Group card header */
+/* Cabeçalho do card de grupo */
 .g-head {
-background: linear-gradient(90deg, #0f3c68, #1f6fb2);
+background: linear-gradient(90deg, var(--primary-blue), #1f6fb2);
 color: #fff;
 padding: 10px 12px;
 font-size: 11px;
@@ -556,22 +591,17 @@ display: flex;
 justify-content: space-between;
 }
 
-.g-head span { font-size: 9px; opacity: .7; }
+/* Texto auxiliar no cabeçalho do card de grupo. */
+.g-head span { font-size: 10px; opacity: .7; }
 
-.g-note {
-font-size: 10px;
-color: #6a8aaa;
-margin-bottom: 14px;
-line-height: 1.6;
-}
-
-/* Team row inside a group card */
+/* Linha de uma seleção dentro do card do grupo */
 .g-team {
 padding: 8px 12px;
 border-bottom: 1px solid #eef2f6;
 cursor: pointer;
 }
 
+/* Remove borda da última seleção do grupo. */
 .g-team:last-child { border: none; }
 
 .g-team:hover {
@@ -580,33 +610,34 @@ transform: scale(1.01);
 transition: .15s;
 }
 
+/* Alinha posição, nome e probabilidade na mesma linha. */
 .g-row {
 display: flex;
 align-items: center;
 gap: 6px;
 }
 
-/* Position badge */
+/* Indicador de posição no grupo (1, 2, 3, 4) */
 .g-badge { width: 22px; text-align: center; font-size: 11px; font-weight: 900; }
-
+/* Cor de cada posição. */
 .b1 { color: #c9a227; } /* 1st — gold   */
 .b2 { color: #6c8ebf; } /* 2nd — silver */
 .b3 { color: #cd7f32; } /* 3rd — bronze */
-.b4 { color: #bbb;    } /* 4th — grey   */
+.b4 { color: #2e37468d;    } /* 4th — grey   */
 
-.g-name { flex: 1; font-size: 11px; font-weight: 700; color: #1e3a52; }
-.g-prob { font-size: 10px; font-weight: 900; }
+.g-name { flex: 1; font-size: 11.5px; font-weight: 700; color: #1e3a52; } /* Texto da seleção. */
+.g-prob { font-size: 10px; font-weight: 900; } /* Porcentagem exibida ao lado da seleção. */
 
-/* Probability progress bar */
+/* Trilho da barra de probabilidade */
 .g-progress {
 margin-top: 5px;
 height: 5px;
-background: #eef3f8;
+background: #e2e8ed;
 border-radius: 3px;
 overflow: hidden;
 }
 
-/* Bar fill — starts at 0, animated to data-width via JS */
+/* Preenchimento da barra, animado pelo JS a partir de data-width */
 .g-fill {
 height: 100%;
 width: 0;
@@ -614,12 +645,12 @@ background: linear-gradient(90deg, #00c6ff, #0072ff);
 transition: width 1.2s cubic-bezier(.22, 1, .36, 1);
 }
 
-/* Status-specific bar colors */
-.qualify .g-fill { background: linear-gradient(90deg, #00c853, #64dd17); }
-.playoff .g-fill { background: linear-gradient(90deg, #ffb300, #ff6f00); }
-.elim    .g-fill { background: #d0d7e2; }
+/* Cores da barra por status: classificado, repescagem ou eliminado */
+.qualify .g-fill { background: #17dd38; }
+.playoff .g-fill { background: #ff6f00; }
+.elim    .g-fill { background: #00000046; }
 
-/* Top-2 cutoff divider inside a group card */
+/* Divisor visual entre classificados e não classificados */
 .g-cut {
 height: 1px;
 background: linear-gradient(90deg, transparent, #c9a227, transparent);
@@ -627,13 +658,14 @@ margin: 6px 0;
 position: relative;
 }
 
+/* Texto “Top 2 avançam” sobre o divisor. */
 .g-cut::after {
-content: 'Top 2 avançam';
+content: 'Top 2 Avançam';
 position: absolute;
 top: -7px;
 left: 50%;
 transform: translateX(-50%);
-font-size: 7px;
+font-size: 8px;
 background: #fff;
 padding: 0 6px;
 color: #c9a227;
@@ -641,7 +673,7 @@ font-weight: 800;
 letter-spacing: 1px;
 }
 
-/* Favorite team flame badge */
+/* Ícone de favorito ao lado da seleção líder */
 .g-fav { font-size: 9px; margin-left: 4px; color: #ff9800; }
 
 
@@ -655,7 +687,7 @@ letter-spacing: 1px;
   grid-template-columns: minmax(0, 1fr) 220px 220px 220px;
 }
 
-/* Dropdown de datas só aparece no modo Partidas */
+/* Dropdown de Datas só aparece no modo Partidas */
 .groups-date-dropdown { display: none; }
 .groups-filterbar.has-date .groups-date-dropdown { display: block; }
 
@@ -669,7 +701,7 @@ letter-spacing: 1px;
   background: #fff;
 }
 
-/* TEXTO JOGOS | PARTIDAS */
+/* Texto "JOGOS | PARTIDAS" */
 .groups-mode-btn {
   flex: 1;
   border: 0;
@@ -681,6 +713,7 @@ letter-spacing: 1px;
   color: #6a7f99;
 }
 
+/* Botão ativo do seletor Grupos/Partidas. */
 .groups-mode-btn.active {
   background: #233b65;
   color: #fff;
@@ -695,12 +728,12 @@ TOOLTIP (floating, pointer-events: none)
 ════════════════════════════════════════ */
 .tt {
 position: fixed;
-background: #0d1c2c;
-border: 1px solid #1a3452;
-border-radius: 10px;
-padding: 13px 15px;
-width: 244px;
-box-shadow: 0 8px 32px rgba(0, 0, 0, .5);
+background: linear-gradient(135deg, #ffffff, var(--navy2));
+border: 1px solid var(--border);
+border-radius: 12px;
+padding: 5px 5px;
+width: 160px;
+box-shadow: 0 12px 30px rgba(0, 0, 0, .18);
 z-index: 9999;
 display: none;
 pointer-events: none;
@@ -712,51 +745,69 @@ pointer-events: none;
 display: flex;
 align-items: center;
 gap: 8px;
-margin-bottom: 9px;
+margin-bottom: 5px;
 padding-bottom: 8px;
-border-bottom: 1px solid #1a3452;
+border-bottom: 1px solid var(--border);
 }
 
-.tt-flag { font-size: 22px; line-height: 1; }
-.tt-name { font-size: 12.5px; font-weight: 900; color: #d8e8f0; }
-.tt-rank { font-size: 8.5px; color: #2a4a60; margin-top: 2px; }
-
-.tt-lbl {
-font-size: 7px;
-font-weight: 700;
-letter-spacing: 1.5px;
-text-transform: uppercase;
-color: #1e3a52;
-display: block;
-margin-bottom: 2px;
+.tt-flag {
+    width: 25px;
+    height: 16.7px;
+    overflow: hidden;
+    border-radius: 4px;
+    background: var(--navy2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
-.tt-val{ font-size: 10px; color: #6a8aaa; font-weight: 500; line-height: 1.4; }
-.tt-val.it{ font-style: italic; color: #4a6a82; }
-.tt-row{ margin-bottom: 7px; }
-.tt-div{ height: 1px; background: #1a3452; margin: 7px 0; }
-.tt-ph { display: flex; justify-content: space-between; margin-bottom: 2px; }
-.tt-pl { font-size: 7px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #1e3a52; }
-.tt-pv { font-size: 12px; font-weight: 900; color: #c9940a; }
-.tt-ph { display: flex; justify-content: space-between; margin-bottom: 2px; }
-.tt-pl { font-size: 7px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #1e3a52; }
-.tt-pv { font-size: 12px; font-weight: 900; color: #c9940a; }
+.tt-flag .flag-img {
+    object-fit: cover;
+    display: inline-block;
+}
+
+.tt-name {
+font-size: 11px;
+font-weight: 900;
+color: var(--primary-blue);
+line-height: 1.1;
+}
+
+.tt-div { display: none; }
 
 /* Title probability bar */
 .pb-bg { height: 4px; background: #1a3452; border-radius: 2px; overflow: hidden; }
 .pb-f  { height: 100%; border-radius: 2px; background: linear-gradient(90deg, #7a5a08, #f0c040); }
 
 /* World Cup medals */
-.medals { display: flex; gap: 4px; margin-top: 2px; flex-wrap: wrap; }
-.med    { font-size: 7.5px; font-weight: 700; padding: 2px 5px; border-radius: 8px; }
+.medals {
+display: flex;
+gap: 3px;
+flex-wrap: wrap;
+}
+
+.med {
+display: inline-flex;
+align-items: center;
+gap: 3px;
+font-size: 9.5px;
+font-weight: 700;
+line-height: 1;
+padding: 3px 7px;
+border-radius: 999px;
+color: #4a5568;
+}
 .med.g  { background: rgba(240, 192, 40, .12); color: #c9940a; border: 1px solid rgba(201, 148, 10, .25); }
-.med.s  { background: rgba(255, 255, 255, .05); color: #6a8aaa; border: 1px solid rgba(255, 255, 255, .08); }
+.med.s  { background: rgba(40, 47, 240, 0.077); color: #000000b8; border: 1px solid rgba(30, 22, 149, 0.098); }
 .med.b  { background: rgba(160, 90, 30, .1);   color: #8a6030; border: 1px solid rgba(160, 120, 50, .18); }
 
 
 /* ════════════════════════════════════════
 STATS PANEL (below bracket)
 ════════════════════════════════════════ */
+
+/* Painel inferior de estatísticas da seleção selecionada. */
 #stats-panel {
 margin-top: 14px;
 background: linear-gradient(135deg, #ffffff, #f7f9fc);
@@ -767,6 +818,7 @@ min-height: 120px;
 box-shadow: 0 4px 18px rgba(0, 0, 0, .06);
 }
 
+/* Estado vazio do painel de estatísticas. */
 .sp-empty {
 color: #6a8aaa;
 font-size: 11px;
@@ -774,6 +826,7 @@ text-align: center;
 padding: 30px 0;
 }
 
+/* Cabeçalho do painel de estatísticas. */
 .sp-header {
 display: flex;
 align-items: center;
@@ -781,60 +834,58 @@ gap: 10px;
 margin-bottom: 10px;
 }
 
+/* Bandeira no painel de estatísticas. */
 .sp-flag { font-size: 26px; }
-
+/* Nome da seleção no painel de estatísticas. */
 .sp-name {
 font-size: 16px;
 font-weight: 900;
-color: #0f3c68;
+color: var(--primary-blue);
 }
-
+/* Grade de métricas do painel de estatísticas. */
 .sp-grid {
 display: grid;
 grid-template-columns: repeat(2, 1fr);
 gap: 10px;
 }
 
+/* Caixa individual de métrica. */
 .sp-box {
 background: #f0f4f9;
-border-left: 3px solid #0f3c68;
+border-left: 3px solid var(--primary-blue);
 padding: 8px;
 border-radius: 6px;
 }
-
+/* Rótulo da métrica. */
 .sp-label {
 font-size: 10px;
 text-transform: uppercase;
 letter-spacing: 1px;
 color: #6a8aaa;
 }
-
+/* Valor da métrica. */
 .sp-value {
 font-size: 12px;
 font-weight: 700;
 color: #1e3a52;
 }
 
-.placeholder-box {
-    max-width: 560px;
-    /* margin 100px on top and bottom */
-    margin: 150px auto;
-    background: #f8fafc;
-    border: 1px solid #d9e2f1;
-}
 /* ════════════════════════════════════════
-PREVISIONS PROBS
+PROBABILIDADES DE PREVISÃO
 ════════════════════════════════════════ */
+
+/* Painéis das fases de placar têm fundo branco, padding e altura mínima. */
 #panel-r32,
 #panel-oitavas,
 #panel-quartas,
 #panel-semis,
 #panel-final  {
-    background: #ffffff;
+    background: var(--panel-bg);
     padding: 20px;
     min-height: 520px;
 }
 
+/* Grade dos cards de placar. */
 .scorecards-grid {
     width: 100%;
     max-width: 1260px;
@@ -845,12 +896,14 @@ PREVISIONS PROBS
     margin: 0 auto;
 }
 
+/* Grade com duas colunas para fases com menos jogos. (Quartas, Semi e Final) */
 .scorecards-grid.scorecards-grid-two {
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+/* Card de uma partida. */
 .match-card {
-    border: 1px solid #dbe3ec;
+    border: 1px solid var(--soft-border);
     border-radius: 10px;
     overflow: hidden;
     transition: .2s;
@@ -861,8 +914,9 @@ PREVISIONS PROBS
     box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
 }
 
+/* Cabeçalho do card de partida. */
 .match-card .g-head {
-    background: linear-gradient(90deg, #0f3c68, #1f6fb2);
+    background: linear-gradient(90deg, var(--primary-blue), #1f6fb2);
     color: #fff;
     padding: 10px 12px;
     font-size: 11px;
@@ -874,34 +928,25 @@ PREVISIONS PROBS
     gap: 8px;
 }
 
+/* Data no cabeçalho do card de partida. */
 .match-card .g-head span {
     font-size: 9px;
     opacity: .75;
     white-space: nowrap;
 }
 
-/*
+/* Corpo do card de placar. */
 .score-card {
     width: 100%;
-    background: linear-gradient(135deg, #4F66A3, #6A7FC2);
-    color: #ffffff;
-    padding: 13px 11px 10px;
-    font-family: 'Lato', Arial, sans-serif;
-    min-height: 230px;
-}
-*/
-
-.score-card {
-    width: 100%;
-    background: #ffffff;
-    color: #233b65;
+    background: var(--panel-bg);
+    color: var(--text-blue);
     padding: 15px 13px 12px;
     font-family: 'Lato', Arial, sans-serif;
     min-height: 230px;
-    border-left: 1px solid #d8e2f0;
-    border-right: 1px solid #d8e2f0;
+    border-left: 1px solid var(--soft-border);
+    border-right: 1px solid var(--soft-border);
 }
-
+/* Área superior com bandeiras e placar previsto. */
 .score-card-top {
     display: grid;
     grid-template-columns: 54px 1fr 54px;
@@ -909,13 +954,13 @@ PREVISIONS PROBS
     align-items: start;
     margin-bottom: 10px;
 }
-
+/* Centraliza o bloco da bandeira. */
 .score-flag-wrap {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
+/* Moldura da bandeira. */
 .score-flag {
     width: 48px;
     height: 34px;
@@ -925,9 +970,10 @@ PREVISIONS PROBS
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 0.1px solid #99a9b6;
+    border: 0.1px solid #99a9b6; /* Borda para Bandeiras */
 }
 
+/* Imagem da bandeira dentro da moldura. */
 .score-flag img {
     width: 100%;
     height: 100%;
@@ -935,6 +981,7 @@ PREVISIONS PROBS
     display: block;
 }
 
+/* Texto usado quando a bandeira não é encontrada. */
 .score-flag-fallback {
     font-size: 8px;
     font-weight: 700;
@@ -944,40 +991,42 @@ PREVISIONS PROBS
     padding: 3px;
 }
 
+/* Área central do placar mais provável. */
 .score-main {
     text-align: center;
 }
 
+/* Placar mais provável em destaque. */
 .score-main-result {
     font-size: 28px;
     line-height: 1;
     font-weight: 900;
     letter-spacing: .5px;
     /* new */
-    color: #233b65;
+    color: var(--text-blue);
 }
 
+/* Probabilidade do placar mais provável. */
 .score-main-prob {
     margin-top: 5px;
     font-size: 9px;
     line-height: 1;
     font-weight: 700;
-    /* new */
     color: #4e8ccb;
 
 }
 
+/* Colunas de mandante, empate e visitante. */
 .score-columns {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 8px;
 }
 
+/* Card de um tipo de resultado. */
 .score-outcome-card {
     border-radius: 11px;
-    /*background: rgba(255, 255, 255, .14);*/
     background: #f3f6fb;
-    /* new */
     border: 1px solid #dbe4f2;
     padding: 8px 7px 7px;
     display: flex;
@@ -996,14 +1045,16 @@ PREVISIONS PROBS
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #233b65;
+    color: var(--text-blue);
     
 }
 
+/* Lista de placares dentro de um tipo de resultado. */
 .score-outcome-list {
     flex: 1;
 }
 
+/* Linha de placar específico com barra e valor. */
 .score-row {
     display: grid;
     grid-template-columns: 22px 1fr 20px;
@@ -1013,19 +1064,21 @@ PREVISIONS PROBS
     margin-bottom: 2px;
 }
 
-/* 1x0, etc */
+/* Texto do placar, como 1x0. */
 .score-label {
     font-size: 7.5px;
     line-height: 1;
     font-weight: 900;
-    color: #233b65;
+    color: var(--text-blue);
 }
 
+/* Espaço onde a barra horizontal é desenhada. */
 .score-bar-space {
     height: 8px;
     position: relative;
 }
 
+/* Barra proporcional da probabilidade do placar. */
 .score-bar {
     height: 8px;
     width: var(--w);
@@ -1039,12 +1092,12 @@ PREVISIONS PROBS
     line-height: 1;
     font-weight: 500;
     text-align: right;
-    color: #233b65;
+    color: var(--text-blue);
 }
 
 .score-outcome-card.home .score-bar,
 .score-outcome-card.home .score-total {
-    background: #20ab8d8f;
+    background: #0aaa9a ;
 }
 
 .score-outcome-card.draw .score-bar,
@@ -1054,7 +1107,7 @@ PREVISIONS PROBS
 
 .score-outcome-card.away .score-bar,
 .score-outcome-card.away .score-total {
-    background: #f6795ad5;
+    background: #e95e5e;
 }
 
 /* País X: Total | Empate: Total | País Y: Total */
@@ -1072,25 +1125,29 @@ PREVISIONS PROBS
     color: #ffffff;
 }
 
+/* Altura maior para nomes médios. */
 .score-total.tall {
     height: 18px;
 }
 
+/* Altura maior para nomes longos. */
 .score-total.tallest {
     height: 24px;
     font-size: 7px;
 }
 
+/* Nome do resultado no rodapé. */
 .score-total-label {
     line-height: 1.05;
     white-space: normal;
 }
 
+/* Percentual total */
 .score-total-value {
     white-space: nowrap;
 }
 
-
+/* Mensagem de estado vazio ou erro dentro da grade. */
 .score-empty,
 .score-error {
     grid-column: 1 / -1;
@@ -1104,43 +1161,34 @@ PREVISIONS PROBS
     font-weight: 700;
 }
 
+/* Rodapé com resultado real da partida. */
 .real-result {
-    background: #edf2f8;
-    border-top: 1px solid #dbe3ec;
+    background: var(--light-bg);
+    border-top: 1px solid var(--soft-border);
     padding: 3px 12px;
     text-align: center;
     font-size: 11px;
     font-weight: 900;
     letter-spacing: .4px;
-    color: #233b65;
+    color: var(--text-blue);
 }
 
+/* Resultado real. */
 .real-result span {
-    color: #0f3c68;
+    color: var(--primary-blue);
     font-size: 11px;
 }
 
+/* Em telas menores, os cards de placar passam para uma coluna. */
 @media (max-width: 1180px) {
-    .scorecards-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 920px) {
-    .scorecards-grid {
-        grid-template-columns: repeat(1, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 620px) {
-    .scorecards-grid {
+    .scorecards-grid,
+    .scorecards-grid.scorecards-grid-two {
         grid-template-columns: 1fr;
     }
 }
 
 .placeholder-box {
     max-width: 560px;
-    /* margin 100px on top and bottom */
     margin: 150px auto;
     background: #f8fafc;
     border: 1px solid #d9e2f1;
@@ -1149,14 +1197,14 @@ PREVISIONS PROBS
     box-shadow: 0 4px 14px rgba(18, 43, 84, 0.08);
     text-align: center;
 }
-
+/* Título dentro do placeholder. */
 .placeholder-title {
     font-size: 22px;
     font-weight: 700;
     color: #233f77;
     margin-bottom: 8px;
 }
-
+/* Ícone central do placeholder. */
 .placeholder-icon-wrap {
     display: flex;
     justify-content: center;
@@ -1164,16 +1212,15 @@ PREVISIONS PROBS
     line-height: 1;
     font-size: 30px;
 }
-
+/* Texto descritivo do placeholder. */
 .placeholder-text {
     font-size: 15px;
     line-height: 1.5;
     color: #4a5568;
 }
 
-
-/* FILTERS */
-
+/* ── FILTROS ── */
+/* Filtros de busca, data e grupo usados nos painéis */
 .filterbar {
     width: 100%;
     max-width: 1260px;
@@ -1224,7 +1271,7 @@ PREVISIONS PROBS
     padding: 0 12px 0 34px;
     font-size: 12px;
     font-weight: 700;
-    color: #233b65;
+    color: var(--text-blue);
     outline: none;
     background: #ffffff;
 }
@@ -1243,7 +1290,7 @@ PREVISIONS PROBS
     padding: 5px 8px;
     font-size: 11px;
     font-weight: 700;
-    color: #233b65;
+    color: var(--text-blue);
     outline: none;
     background: #ffffff;
 }
@@ -1261,7 +1308,7 @@ PREVISIONS PROBS
     border-radius: 9px;
     padding: 0 12px;
     background: #ffffff;
-    /*color: #233b65;*/
+    /*color: var(--text-blue);*/
     color: #777;
     font-size: 12px;
     font-weight: 700;
@@ -1271,10 +1318,12 @@ PREVISIONS PROBS
     cursor: pointer;
 }
 
+/* Setinha do dropdown herda a cor do botão. */
 .date-dropdown-btn span {
     color: inherit;
 }
 
+/* Menu suspenso do dropdown. */
 .date-dropdown-menu {
     display: none;
     position: absolute;
@@ -1289,6 +1338,7 @@ PREVISIONS PROBS
     padding: 8px;
 }
 
+/* Exibe o menu quando o dropdown está aberto. */
 .date-dropdown.open .date-dropdown-menu {
     display: block;
 }
@@ -1300,6 +1350,7 @@ PREVISIONS PROBS
 }
 
 /* TEXTOS OPÇÕES DE DATAS */
+/* Opção individual do menu. */
 .date-option {
     display: flex;
     align-items: center;

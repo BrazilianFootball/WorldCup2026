@@ -4,40 +4,202 @@
 // wc: [gold, silver, bronze] World Cup medals
 // prob: estimated 2026 title probability (%)
 // ════════════════════════════════════════
-const TD = {
-    'Brasil':        { flag:'🇧🇷', rank:6,  apps:22, best:'Campeão 5× (1958,62,70,94,2002)',         last:'Quartas 2022 — eliminado pela Croácia nos pênaltis', players:'Neymar Jr., Casemiro., Estevão,',              prob:14.2, wc:[5,0,2] },
-    'Marrocos':      { flag:'🇲🇦', rank:11, apps:6,  best:'Semifinal 2022 — primeiro africano',       last:'Semifinal 2022 — eliminado pela França',             players:'Hakimi, En-Nesyri, Ziyech, Ounahi',            prob:3.2,  wc:[0,0,0] },
-    'França':        { flag:'🇫🇷', rank:1,  apps:16, best:'Campeão 2× (1998, 2018)',                  last:'Vice-campeão 2022 — derrota para Argentina na final', players:'Mbappé, Griezmann, Camavinga, Tchouaméni',     prob:12.8, wc:[2,2,2] },
-    'Senegal':       { flag:'🇸🇳', rank:14, apps:4,  best:'Quartas de final (2002)',                   last:'Oitavas 2022 — eliminado pela Inglaterra',           players:'Mané, Koulibaly, Sarr, Diatta',                prob:1.5,  wc:[0,0,0] },
-    'Espanha':       { flag:'🇪🇸', rank:2,  apps:16, best:'Campeão 1× (2010) + Euro 2024',            last:'Oitavas 2022 — eliminada pelo Marrocos nos pênaltis', players:'Yamal, Pedri, Rodri, Morata, Williams',        prob:11.5, wc:[1,1,0] },
-    'Alemanha':      { flag:'🇩🇪', rank:12, apps:20, best:'Campeão 4× (1954,74,90,2014)',             last:'Fase de grupos 2022 — eliminação precoce',            players:'Musiala, Wirtz, Havertz, Kimmich, Rüdiger',    prob:8.8,  wc:[4,4,4] },
-    'Países Baixos': { flag:'🇳🇱', rank:7,  apps:11, best:'Vice-campeão 3× (1974,78,2010)',           last:'Quartas 2022 — eliminado pela Argentina',             players:'Van Dijk, De Jong, Gakpo, Depay',              prob:6.2,  wc:[0,3,1] },
-    'Bélgica':       { flag:'🇧🇪', rank:9,  apps:14, best:'3º lugar (1986)',                          last:'Oitavas 2022 — eliminada pelo Marrocos',              players:'De Bruyne, Lukaku, Tielemans',                 prob:5.5,  wc:[0,0,1] },
-    'Argentina':     { flag:'🇦🇷', rank:3,  apps:18, best:'Campeão 3× (1978,1986,2022)',             last:'Campeão 2022 — venceu a França na final',             players:'Messi, L.Martínez, Mac Allister, De Paul',     prob:11.0, wc:[3,3,0] },
-    'Portugal':      { flag:'🇵🇹', rank:5,  apps:9,  best:'3º lugar 1966 / Euro 2016',               last:'Quartas 2022 — eliminado pelo Marrocos',              players:'Cristiano Ronaldo, Bruno Fernandes, G.Ramos',  prob:7.5,  wc:[0,0,1] },
-    'Inglaterra':    { flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', rank:4,  apps:17, best:'Campeão 1× (1966)',                        last:'Quartas 2022 — eliminada pela França',                players:'Bellingham, Kane, Saka, Foden',                prob:9.5,  wc:[1,0,0] },
-    'EUA':           { flag:'🇺🇸', rank:14, apps:11, best:'3º lugar (1930)',                          last:'Oitavas 2022 — eliminado pelos Países Baixos',        players:'Pulisic, McKennie, Adams, Turner, Reyna',      prob:3.2,  wc:[0,0,1] },
-    'Coreia Sul':    { flag:'🇰🇷', rank:25, apps:11, best:'4º lugar / Semifinal (2002)',              last:'Oitavas 2022 — eliminada pelo Brasil',                players:'Son, Kim Min-Jae, Lee Kang-In',                prob:1.2,  wc:[0,0,1] },
-    'Austrália':     { flag:'🇦🇺', rank:22, apps:6,  best:'Quartas de final (2006)',                  last:'Oitavas 2022 — eliminada pela Argentina',            players:'Leckie, Ryan, Irvine, Duke',                   prob:1.0,  wc:[0,0,0] },
-    'Noruega':       { flag:'🇳🇴', rank:31, apps:3,  best:'Quartas de final (1938)',                  last:'Não se classificou para 2022',                       players:'Haaland, Ödegaard, Ajer',                      prob:1.8,  wc:[0,0,0] },
-    'Suíça':         { flag:'🇨🇭', rank:19, apps:12, best:'Quartas (1934,38,54)',                     last:'Quartas 2022 — eliminada por Portugal',              players:'Xhaka, Embolo, Sommer, Shaqiri',               prob:1.8,  wc:[0,0,0] },
-    'C.Marfim':      { flag:'🇨🇮', rank:46, apps:4,  best:'Fase de grupos (múltiplas)',               last:'Não se classificou para 2022',                       players:'Haller, Zaha, Pépé, Seri',                     prob:0.5,  wc:[0,0,0] },
-    'Turquia':       { flag:'🇹🇷', rank:37, apps:5,  best:'3º lugar (2002)',                          last:'Não se classificou para 2022',                       players:'Çalhanoglu, Demiral, Yıldız, Güler',           prob:1.0,  wc:[0,0,1] },
-    'Equador':       { flag:'🇪🇨', rank:44, apps:4,  best:'Oitavas de final (2006)',                  last:'Fase de grupos 2022',                                players:'Valencia, Caicedo, Plata',                     prob:1.0,  wc:[0,0,0] },
-    'Iraque':        { flag:'🇮🇶', rank:57, apps:2,  best:'Fase de grupos (1986)',                    last:'Retorno histórico após 40 anos',                     players:'Amjed, Shahin, Abbas',                         prob:0.1,  wc:[0,0,0] },
-    'Jordânia':      { flag:'🇯🇴', rank:63, apps:0,  best:'Estreia na Copa do Mundo',                 last:'Primeira participação na história',                   players:'Baha Faisal, Sahel',                           prob:0.1,  wc:[0,0,0] },
-    'Áustria':       { flag:'🇦🇹', rank:24, apps:7,  best:'3º lugar (1954)',                          last:'Não se classificou para 2022',                       players:'Alaba, Arnautovic, Baumgartner',               prob:0.8,  wc:[0,0,1] },
-    'Argélia':       { flag:'🇩🇿', rank:28, apps:4,  best:'Oitavas de final (2014)',                  last:'Não se classificou para 2022',                       players:'Mahrez, Belaïli, Slimani',                     prob:0.5,  wc:[0,0,0] },
-    'Congo':         { flag:'🇨🇩', rank:46, apps:1,  best:'Fase de grupos 1974 (Zaire)',              last:'Retorno histórico após 52 anos',                     players:'Kakuta, Meschack, Inonga',                     prob:0.2,  wc:[0,0,0] },
-    'Colômbia':      { flag:'🇨🇴', rank:13, apps:7,  best:'Quartas de final (2014)',                  last:'Não se classificou para 2022',                       players:'Díaz, Arias, Borja, Cuesta',                   prob:2.5,  wc:[0,0,0] },
-    'Uzbequistão':   { flag:'🇺🇿', rank:50, apps:0,  best:'Estreia na Copa do Mundo',                 last:'Primeira participação na história',                   players:'Shorakhmedov, Shodiev',                        prob:0.1,  wc:[0,0,0] },
-    'Panamá':        { flag:'🇵🇦', rank:33, apps:2,  best:'Fase de grupos (2018)',                    last:'Não se classificou para 2022',                       players:'Godoy, Murillo, Davis',                        prob:0.3,  wc:[0,0,0] },
-    'Gana':          { flag:'🇬🇭', rank:74, apps:4,  best:'Quartas de final (2010)',                  last:'Fase de grupos 2022',                                players:'Kudus, Ayew, Djiku',                           prob:0.4,  wc:[0,0,0] },
-    'Croácia':       { flag:'🇭🇷', rank:10, apps:7,  best:'Vice-campeão 2018 / 3º 2022',             last:'3º lugar 2022',                                      players:'Modrić, Kovačić, Gvardiol',                    prob:3.8,  wc:[0,1,2] },
-    'Paraguai':      { flag:'🇵🇾', rank:33, apps:9,  best:'Quartas de final (1986)',                  last:'Não se classificou para 2022',                       players:'Sanabria, Almirón, Villasanti',                prob:0.5,  wc:[0,0,0] },
-    'Uruguai':       { flag:'🇺🇾', rank:18, apps:14, best:'Campeão 2× (1930,1950)',                   last:'Fase de grupos 2022',                                players:'Valverde, Bentancur, Núñez, Suárez',           prob:3.5,  wc:[2,0,2] },
-    'Japão':         { flag:'🇯🇵', rank:17, apps:7,  best:'Oitavas de final (múltiplas)',             last:'Oitavas 2022 — eliminado pela Croácia nos pênaltis', players:'Minamino, Doan, Morita, Ueda',                 prob:2.2,  wc:[0,0,0] },
-};
+const CHAVEAMENTO_HIST_CSV_URL = 'csv/previsoes/chaveamento_hist.csv';
+const CHAVEAMENTO_PROBS_CSV_URL = 'csv/previsoes/chaveamento_probs.csv';
+const FLAGS_URL = 'images/flags/flag.csv';
+let TD = {};
+
+// Mapa: nome normalizado do país (PT) -> URL do SVG da bandeira
+let flagMap = new Map();
+
+// Normaliza nomes de países para comparação (minúsculas, sem acentos e sem espaços extras).
+function normalizeName(value) {
+    return String(value || '')
+        .trim()
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/\s+/g, ' ');
+}
+
+// Normaliza URLs de SVG para uso direto em <img src="...">.
+function normalizeFlagUrl(value) {
+    const url = String(value || '').trim();
+    if (!url) return '';
+    // Converte link "github.com/.../blob/..." em "raw.githubusercontent.com/..."
+    if (url.includes('github.com') && url.includes('/blob/')) {
+        return url
+            .replace('https://github.com/', 'https://raw.githubusercontent.com/')
+            .replace('/blob/', '/');
+    }
+    return url;
+}
+
+// Busca a URL da bandeira (SVG) para um país em português.
+const getFlag = country => flagMap.get(normalizeName(country)) || '';
+
+// HTML da bandeira: usa SVG se existir; caso contrário, cai para um placeholder simples.
+function flagHTML(country) {
+    const url = getFlag(country);
+    if (!url) return '🏳️';
+    return `<img class="flag-img" src="${url}" alt="${country}">`;
+}
+
+// Lê um CSV simples, detectando vírgula ou ponto e vírgula e preservando campos entre aspas.
+function parseCSV(text) {
+    const firstLine = text.split(/\r?\n/)[0] || '';
+    const delimiter =
+        (firstLine.match(/;/g) || []).length > (firstLine.match(/,/g) || []).length
+            ? ';'
+            : ',';
+
+    const rows = [];
+    let row = [];
+    let cell = '';
+    let insideQuotes = false;
+
+    for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+        const next = text[i + 1];
+
+        if (char === '"' && next === '"') {
+            cell += '"';
+            i++;
+            continue;
+        }
+
+        if (char === '"') {
+            insideQuotes = !insideQuotes;
+            continue;
+        }
+
+        if (char === delimiter && !insideQuotes) {
+            row.push(cell.trim());
+            cell = '';
+            continue;
+        }
+
+        if ((char === '\n' || char === '\r') && !insideQuotes) {
+            if (cell !== '' || row.length) {
+                row.push(cell.trim());
+                rows.push(row);
+                row = [];
+                cell = '';
+            }
+            if (char === '\r' && next === '\n') i++;
+            continue;
+        }
+
+        cell += char;
+    }
+
+    if (cell !== '' || row.length) {
+        row.push(cell.trim());
+        rows.push(row);
+    }
+
+    if (!rows.length) return [];
+
+    const headers = rows[0].map(h => h.trim());
+
+    return rows.slice(1)
+        .filter(r => r.some(Boolean))
+        .map(r => {
+            const obj = {};
+            headers.forEach((h, i) => {
+                obj[h] = (r[i] ?? '').trim();
+            });
+            return obj;
+        });
+}
+
+// Carrega um arquivo CSV por fetch e devolve as linhas como objetos.
+async function loadCSV(url) {
+    const response = await fetch(url, { cache: 'no-store' });
+    if (!response.ok) throw new Error(`Não foi possível carregar ${url}`);
+    return parseCSV(await response.text());
+}
+
+function parseNumber(value) {
+    if (value === undefined || value === null || value === '') return 0;
+    const n = Number(String(value).trim().replace('%', '').replace(',', '.'));
+    return Number.isFinite(n) ? n : 0;
+}
+
+function parseTeamDatabase(rows) {
+    return rows.reduce((acc, row) => {
+        if (!row.team) return acc;
+        acc[row.team] = {
+            flag: row.flag || '🏳️',
+            rank: row.rank === '?' ? '?' : parseNumber(row.rank),
+            apps: parseNumber(row.apps),
+            best: row.best || '—',
+            last: row.last || '—',
+            players: row.players || '—',
+            prob: parseNumber(row.prob),
+            wc: [parseNumber(row.wc_gold), parseNumber(row.wc_silver), parseNumber(row.wc_bronze)]
+        };
+        return acc;
+    }, {});
+}
+
+function parseMatchDatabase(rows) {
+    const bySide = { left: [], right: [] };
+    let finalMatch = null;
+
+    rows
+        .slice()
+        .sort((a, b) => parseNumber(a.order) - parseNumber(b.order))
+        .forEach(row => {
+            const match = {
+                id: row.id,
+                home: row.home_team,
+                pa: parseNumber(row.prob_home),
+                away: row.away_team,
+                pb: parseNumber(row.prob_away),
+                w: row.winner === 'home' ? 'a' : 'b'
+            };
+
+            if (row.side === 'final') {
+                finalMatch = match;
+                return;
+            }
+
+            const side = bySide[row.side];
+            if (!side) return;
+
+            const roundIndex = parseNumber(row.round_index);
+            if (!side[roundIndex]) side[roundIndex] = [];
+            side[roundIndex].push(match);
+        });
+
+    return {
+        ML: bySide.left,
+        MR: bySide.right,
+        MF: finalMatch
+    };
+}
+
+async function loadBracketData() {
+    const [teamRows, matchRows, flagRows] = await Promise.all([
+        loadCSV(CHAVEAMENTO_HIST_CSV_URL),
+        loadCSV(CHAVEAMENTO_PROBS_CSV_URL),
+        loadCSV(FLAGS_URL).catch(() => [])
+    ]);
+
+    // Pré-processa bandeiras para lookup rápido.
+    flagMap = new Map(
+        flagRows.map(row => [normalizeName(row.country_pt), normalizeFlagUrl(row.svg_github)])
+    );
+
+    TD = parseTeamDatabase(teamRows);
+
+    const matchData = parseMatchDatabase(matchRows);
+    ML = matchData.ML;
+    MR = matchData.MR;
+    MF = matchData.MF;
+    ALL = [...ML.flat(), ...MR.flat(), MF].filter(Boolean);
+}
 
 // Safe accessor — returns a blank placeholder for unknown teams
 function gt(name) {
@@ -92,67 +254,19 @@ const RND_CLS = {
 const RL = ['R32', 'Oitavas', 'Quartas', 'Semifinal'];
 
 // Left bracket half (rounds from R32 to SF)
-const ML = [
-    [
-    { id:'L1', a:'Brasil',        pa:82, b:'Coreia Sul',   pb:18, w:'a' },
-    { id:'L2', a:'Marrocos',      pa:56, b:'Suíça',        pb:44, w:'a' },
-    { id:'L3', a:'França',        pa:86, b:'Iraque',       pb:14, w:'a' },
-    { id:'L4', a:'Senegal',       pa:44, b:'Noruega',      pb:56, w:'b' },
-    { id:'L5', a:'Espanha',       pa:85, b:'C.Marfim',     pb:15, w:'a' },
-    { id:'L6', a:'Alemanha',      pa:63, b:'Turquia',      pb:37, w:'a' },
-    { id:'L7', a:'Países Baixos', pa:66, b:'Equador',      pb:34, w:'a' },
-    { id:'L8', a:'Bélgica',       pa:88, b:'Austrália',    pb:12, w:'a' },
-    ],
-    [
-    { id:'RL1', a:'Brasil',        pa:63, b:'Marrocos',     pb:37, w:'a' },
-    { id:'RL2', a:'França',        pa:68, b:'Noruega',      pb:32, w:'a' },
-    { id:'RL3', a:'Espanha',       pa:56, b:'Alemanha',     pb:44, w:'a' },
-    { id:'RL4', a:'Países Baixos', pa:53, b:'Bélgica',      pb:47, w:'a' },
-    ],
-    [
-    { id:'QL1', a:'Brasil',  pa:54, b:'França',        pb:46, w:'a' },
-    { id:'QL2', a:'Espanha', pa:56, b:'Países Baixos', pb:44, w:'a' },
-    ],
-    [
-    { id:'SL', a:'Brasil', pa:58, b:'Espanha', pb:42, w:'a' },
-    ],
-];
+let ML = [];
 
 // Right bracket half
-const MR = [
-    [
-    { id:'R1', a:'Argentina', pa:94, b:'Jordânia',    pb:6,  w:'a' },
-    { id:'R2', a:'Áustria',   pa:54, b:'Argélia',     pb:46, w:'a' },
-    { id:'R3', a:'Portugal',  pa:86, b:'Congo',       pb:14, w:'a' },
-    { id:'R4', a:'Colômbia',  pa:77, b:'Uzbequistão', pb:23, w:'a' },
-    { id:'R5', a:'Inglaterra',pa:82, b:'Gana',        pb:18, w:'a' },
-    { id:'R6', a:'Croácia',   pa:63, b:'Panamá',      pb:37, w:'a' },
-    { id:'R7', a:'EUA',       pa:62, b:'Paraguai',    pb:38, w:'a' },
-    { id:'R8', a:'Uruguai',   pa:54, b:'Japão',       pb:46, w:'a' },
-    ],
-    [
-    { id:'RR1', a:'Argentina', pa:75, b:'Áustria',   pb:25, w:'a' },
-    { id:'RR2', a:'Portugal',  pa:53, b:'Colômbia',  pb:47, w:'a' },
-    { id:'RR3', a:'Inglaterra',pa:57, b:'Croácia',   pb:43, w:'a' },
-    { id:'RR4', a:'EUA',       pa:56, b:'Uruguai',   pb:44, w:'a' },
-    ],
-    [
-    { id:'QR1', a:'Argentina', pa:52, b:'Portugal',  pb:48, w:'a' },
-    { id:'QR2', a:'Inglaterra',pa:48, b:'EUA',       pb:52, w:'b' },
-    ],
-    [
-    { id:'SR', a:'Argentina', pa:64, b:'EUA', pb:36, w:'a' },
-    ],
-];
+let MR = [];
 
 // Final match
-const MF = { id:'F', a:'Brasil', pa:55, b:'Argentina', pb:45, w:'a' };
+let MF = null;
 
 // Projected champion
 const CHAMP = 'Brasil';
 
 // Flat list of all matches — used for path lookups
-const ALL = [...ML.flat(), ...MR.flat(), MF];
+let ALL = [];
 
 // Currently selected (pinned) team
 let selectedTeam = CHAMP;
@@ -163,7 +277,7 @@ let selectedTeam = CHAMP;
 
 // Returns a Set of match IDs in which a given team participates
 function teamMatchIds(team) {
-    return new Set(ALL.filter(m => m.a === team || m.b === team).map(m => m.id));
+    return new Set(ALL.filter(m => m.home === team || m.away === team).map(m => m.id));
 }
 
 // Unified handler: select a team and update all UI sections at once
@@ -210,17 +324,21 @@ function mkRow(name, prob, won, mid) {
     <span class="tn">${name}</span>
     `;
 
-    row.addEventListener('mouseenter', () => {
+    row.addEventListener('mouseenter', (e) => {
     applyHov(name);
     showStats(name);
     showPath(name);
+    showTT(name, e);
     });
+
+    row.addEventListener('mousemove', moveTT);
 
     row.addEventListener('mouseleave', () => {
     // Restore the pinned team when the cursor leaves
     applyHov(selectedTeam);
     showStats(selectedTeam);
     showPath(selectedTeam);
+    hideTT();
     });
 
     row.addEventListener('click', () => selectTeam(name));
@@ -233,12 +351,12 @@ function mkRow(name, prob, won, mid) {
 * Cards involving the projected champion get an extra "cp" class.
 */
 function mkCard(m) {
-    const inCP = m.a === CHAMP || m.b === CHAMP;
+    const inCP = m.home === CHAMP || m.away === CHAMP;
     const card = document.createElement('div');
     card.className  = 'mc' + (inCP ? ' cp' : '');
     card.dataset.id = m.id;
-    card.appendChild(mkRow(m.a, m.pa, m.w === 'a', m.id));
-    card.appendChild(mkRow(m.b, m.pb, m.w === 'b', m.id));
+    card.appendChild(mkRow(m.home, m.pa, m.w === 'a', m.id));
+    card.appendChild(mkRow(m.away, m.pb, m.w === 'b', m.id));
     return card;
 }
 
@@ -273,46 +391,49 @@ function buildFinal() {
     fmc.className = 'fmc';
     fmc.id        = 'fmc';
 
-    ['a', 'b'].forEach(sl => {
-    const name = MF[sl];
-    const prob = sl === 'a' ? MF.pa : MF.pb;
-    const won  = MF.w === sl;
-    const t2   = gt(name);
+    [{ key: 'a', name: MF.home, prob: MF.pa },
+    { key: 'b', name: MF.away, prob: MF.pb }]
+    .forEach(team => {
+        const won = MF.w === team.key;
+        const t2 = gt(team.name);
 
-    const row = document.createElement('div');
-    row.className   = 'tr' + (won ? ' won' : '');
-    row.dataset.team = name;
-    row.dataset.mid  = 'F';
-    row.innerHTML = `
-        <span class="tp">${prob}%</span>
-        <span class="tf">${t2.flag}</span>
-        <span class="tn">${name}</span>
-    `;
+        const row = document.createElement('div');
+        row.className = 'tr' + (won ? ' won' : '');
+        row.dataset.team = team.name;
+        row.dataset.mid = 'F';
+        // PAÍSES DA FINAL
+        row.innerHTML = `
+            <span class="tp">${team.prob}%</span> 
+            <span class="tf">${flagHTML(team.name)}</span>
+            <span class="tn">${team.name}</span>
+        `; //<span class="tf">${t2.flag}</span>
 
-    row.addEventListener('mouseenter', () => {
-        applyHov(name);
-        showStats(name);
-        showPath(name);
+        row.addEventListener('mouseenter', (e) => {
+            applyHov(team.name);
+            showStats(team.name);
+            showPath(team.name);
+            showTT(team.name, e);
+        });
+
+        row.addEventListener('mousemove', moveTT);
+
+        row.addEventListener('mouseleave', () => {
+            applyHov(selectedTeam);
+            showStats(selectedTeam);
+            showPath(selectedTeam);
+            hideTT();
+        });
+
+        row.addEventListener('click', () => selectTeam(team.name));
+
+        fmc.appendChild(row);
     });
 
-    row.addEventListener('mouseleave', () => {
-        applyHov(selectedTeam);
-        showStats(selectedTeam);
-        showPath(selectedTeam);
-    });
-
-    row.addEventListener('click', () => selectTeam(name));
-
-    fmc.appendChild(row);
-    });
-
-    // Champion summary below the Final card
+    // Campeão em Baixo da FINAL
     const cbox = document.createElement('div');
     cbox.innerHTML = `
     <div class="champ-n">${t.flag} ${CHAMP}</div>
-    <div class="champ-p">${t.prob}% Prob. de Título</div>
-    `;
-
+    `; //<div class="champ-n">${flagHTML(CHAMP)} ${CHAMP}</div>
     fc.appendChild(lbl);
     fc.appendChild(fmc);
     fc.appendChild(cbox);
@@ -404,7 +525,7 @@ function connectHalf(rounds, contId, side) {
         if (!tr2) return;
 
         const ty     = rp(tr2).cy;
-        const winner = m.w === 'a' ? m.a : m.b;
+        const winner = m.w === 'a' ? m.home : m.away;
         const isCP   = winner === CHAMP;
 
         let d;
@@ -454,7 +575,7 @@ function drawLines() {
         const tr     = rp(fRows[0]);
         const mx     = sr.right + (tr.left - sr.right) * .5;
         const slMatch = ML[ML.length - 1][0];
-        const winner = slMatch.w === 'a' ? slMatch.a : slMatch.b;
+        const winner = slMatch.w === 'a' ? slMatch.home : slMatch.away;
         const p = mkPathEl(
         `M ${sr.right} ${sr.cy} H ${mx} V ${tr.cy} H ${tr.left}`,
         winner === CHAMP
@@ -468,7 +589,7 @@ function drawLines() {
         const tr     = rp(fRows[1]);
         const mx     = tr.right + (sr.left - tr.right) * .5;
         const srMatch = MR[MR.length - 1][0];
-        const winner = srMatch.w === 'a' ? srMatch.a : srMatch.b;
+        const winner = srMatch.w === 'a' ? srMatch.home : srMatch.away;
         const p = mkPathEl(
         `M ${sr.left} ${sr.cy} H ${mx} V ${tr.cy} H ${tr.right}`,
         winner === CHAMP
@@ -535,36 +656,34 @@ function clearHov() {
 
 function showTT(name, e) {
     const d   = gt(name);
+    const svgUrl = getFlag(name);
+    const ttFlag = svgUrl ? `<img class="flag-img" src="${svgUrl}" alt="${name}">`: d.flag;
     const bw  = Math.min(100, (d.prob / 15) * 100);
     const wc  = d.wc || [0, 0, 0];
-    const medals = [
-    wc[0] ? `<span class="med g">🥇 ${wc[0]}×</span>` : '',
-    wc[1] ? `<span class="med s">🥈 ${wc[1]}×</span>` : '',
-    wc[2] ? `<span class="med b">🥉 ${wc[2]}×</span>` : '',
-    ].filter(Boolean).join('');
 
+    let medals;
+
+    if (!wc[0] && !wc[1] && !wc[2]) {
+    medals = `<div class="medals"><span class="med">Sem títulos ou pódios</span></div>`;
+    } else {
+    medals = `
+        <div class="medals">
+        ${wc[0] ? `<span class="med g">🥇 ${wc[0]}×</span>` : ''}
+        ${wc[1] ? `<span class="med s">🥈 ${wc[1]}×</span>` : ''}
+        ${wc[2] ? `<span class="med b">🥉 ${wc[2]}×</span>` : ''}
+        </div>
+    `;
+    }
+
+    
     const tt = document.getElementById('tt');
     tt.innerHTML = `
     <div class="tt-h">
-        <div class="tt-flag">${d.flag}</div>
-        <div>
+        <div class="tt-flag">${ttFlag}</div>
         <div class="tt-name">${name}</div>
-        <div class="tt-rank">Ranking FIFA: #${d.rank} · ${d.apps} Copa(s)</div>
-        </div>
     </div>
-    ${medals ? `<div class="medals">${medals}</div>` : ''}
+    ${medals}
     <div class="tt-div"></div>
-    <div class="tt-row"><span class="tt-lbl">Melhor Resultado</span><div class="tt-val">${d.best}</div></div>
-    <div class="tt-row"><span class="tt-lbl">Copa 2022</span><div class="tt-val it">${d.last}</div></div>
-    <div class="tt-row"><span class="tt-lbl">Jogadores Destaque</span><div class="tt-val">${d.players}</div></div>
-    <div class="tt-div"></div>
-    <div>
-        <div class="tt-ph">
-        <span class="tt-pl">Prob. Título 2026</span>
-        <span class="tt-pv">${d.prob}%</span>
-        </div>
-        <div class="pb-bg"><div class="pb-f" style="width:${bw}%"></div></div>
-    </div>
     `;
 
     tt.classList.add('on');
@@ -593,7 +712,6 @@ function hideTT() {
 function showStats(name) {
     const d     = gt(name);
     const panel = document.getElementById('stats-panel');
-
     panel.innerHTML = `
     <div class="sp-header">
         <div class="sp-flag">${d.flag}</div>
@@ -604,25 +722,20 @@ function showStats(name) {
         <div class="sp-label">Ranking FIFA</div>
         <div class="sp-value">#${d.rank}</div>
         </div>
+
         <div class="sp-box">
         <div class="sp-label">Copas disputadas</div>
         <div class="sp-value">${d.apps}</div>
         </div>
+
         <div class="sp-box">
         <div class="sp-label">Melhor resultado</div>
         <div class="sp-value">${d.best}</div>
         </div>
+
         <div class="sp-box">
         <div class="sp-label">Última Copa</div>
         <div class="sp-value">${d.last}</div>
-        </div>
-        <div class="sp-box">
-        <div class="sp-label">Jogadores</div>
-        <div class="sp-value">${d.players}</div>
-        </div>
-        <div class="sp-box">
-        <div class="sp-label">Prob. título</div>
-        <div class="sp-value">${d.prob}%</div>
         </div>
     </div>
     `;
@@ -641,7 +754,7 @@ function showPath(name) {
 
     title.innerHTML = `TRAJETÓRIA — ${name.toUpperCase()} <span></span>`;
 
-    const matches = ALL.filter(m => m.a === name || m.b === name);
+    const matches = ALL.filter(m => m.home === name || m.away === name);
     cards.innerHTML = '';
 
     if (!matches.length) {
@@ -650,8 +763,8 @@ function showPath(name) {
     }
 
     matches.forEach(m => {
-    const isA      = m.a === name;
-    const opp      = isA ? m.b : m.a;
+    const isA      = m.home === name;
+    const opp      = isA ? m.away : m.home;
     const myProb   = isA ? m.pa : m.pb;
     const oppProb  = isA ? m.pb : m.pa;
     const oData    = gt(opp);
@@ -662,6 +775,8 @@ function showPath(name) {
 
     const card = document.createElement('div');
     card.className = `pc ${rCls}`;
+    // <span class="pc-wf">${flagHTML(name)}</span>
+    // <span class="pc-lf">${flagHTML(opp)}</span>
     card.innerHTML = `
         <div class="pc-rnd">${rLbl}</div>
         <div class="pc-w">
@@ -685,33 +800,47 @@ function showPath(name) {
 // INIT
 // ════════════════════════════════════════
 
-// Set the pinned team before building the UI so the first render is correct
-selectedTeam = CHAMP;
+async function initChaveamento() {
+    try {
+        await loadBracketData();
 
-buildHalf(ML, 'lh');
-buildHalf(MR, 'rh');
-buildFinal();
+        // Set the pinned team before building the UI so the first render is correct
+        selectedTeam = CHAMP;
 
-// First render: draw lines and apply champion highlight
-requestAnimationFrame(() => {
-    drawLines();
-    applyHov(selectedTeam);
-    showStats(selectedTeam);
-    showPath(selectedTeam);
-});
+        buildHalf(ML, 'lh');
+        buildHalf(MR, 'rh');
+        buildFinal();
 
-// Re-draw SVG lines whenever the viewport is resized
-window.addEventListener('resize', () => requestAnimationFrame(drawLines));
+        // First render: draw lines and apply champion highlight
+        requestAnimationFrame(() => {
+            drawLines();
+            applyHov(selectedTeam);
+            showStats(selectedTeam);
+            showPath(selectedTeam);
+        });
 
-// Clicking outside any match card resets the selection to the champion
-document.addEventListener('click', e => {
-    const clickedInside = e.target.closest('.mc') || e.target.closest('.tr');
-    if (!clickedInside) {
-    selectedTeam = CHAMP;
-    clearHov();
-    drawLines();
-    applyHov(selectedTeam);
-    showStats(selectedTeam);
-    showPath(selectedTeam);
+        // Re-draw SVG lines whenever the viewport is resized
+        window.addEventListener('resize', () => requestAnimationFrame(drawLines));
+
+        // Clicking outside any match card resets the selection to the champion
+        document.addEventListener('click', e => {
+            const clickedInside = e.target.closest('.mc') || e.target.closest('.tr');
+            if (!clickedInside) {
+            selectedTeam = CHAMP;
+            clearHov();
+            drawLines();
+            applyHov(selectedTeam);
+            showStats(selectedTeam);
+            showPath(selectedTeam);
+            }
+        });
+    } catch (error) {
+        console.error(error);
     }
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initChaveamento);
+} else {
+    initChaveamento();
+}

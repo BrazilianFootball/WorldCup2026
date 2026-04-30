@@ -1408,10 +1408,10 @@ box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     font-size: 14px;
 }
 
-.flourish-credit,
+/*.flourish-credit,
 .flourish-footer {
   display: none !important;
-}
+}*/
 
 /* ==========================================================================
    MEDIA QUERIES (CONSOLIDATED AT THE END FOR CORRECT CASCADE)
@@ -1568,8 +1568,8 @@ box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 }
 
-@media (prefers-color-scheme: dark) and (max-width: 768px) {
+@media (prefers-color-scheme: light) and (max-width: 768px) {
     .menu-toggle span {
-        background-color: #ffffff;
+        background-color: #0f3c68;
     }
 }
