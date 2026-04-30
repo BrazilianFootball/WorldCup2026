@@ -664,7 +664,7 @@ function showTT(name, e) {
     let medals;
 
     if (!wc[0] && !wc[1] && !wc[2]) {
-    medals = `<div class="medals"><span class="med">Sem títulos ou pódios</span></div>`;
+    medals = `<div class="medals"><span class="med">Sem títulos / pódios</span></div>`;
     } else {
     medals = `
         <div class="medals">
