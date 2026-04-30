@@ -65,8 +65,180 @@
 					</div>
                     <br>
                     <!-- PLACEHOLDER -->
-                    <iframe src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ch&#47;ChancesnaCopa_2022&#47;Painel1&#47;1_rss.png" style='border: none'
-                    width="880" height="880"></iframe>                    
+                    <div id="chances-table-container">
+                        <div class="table-controls" style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+                            <input type="text" id="searchCountry" placeholder="Buscar Seleção..." style="padding: 10px; border-radius: 5px; border: 1px solid #ccc; width: 100%; max-width: 300px; font-size: 14px; font-family: 'gotham-book';">
+                        </div>
+                        <div style="overflow-x: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); background: white;">
+                            <table id="chancesTable" style="width: 100%; border-collapse: collapse; text-align: center; font-size: 14px; font-family: 'gotham-book', sans-serif;">
+                                <thead>
+                                    <tr style="background: linear-gradient(135deg, #0f3c68 0%, #0072bc 100%); color: white; font-family: 'gotham-bold'; cursor: pointer;">
+                                        <th onclick="sortTable(0)" style="padding: 15px; white-space: nowrap;" title="Ordenar por Posição"># <span class="sort-icon">↕</span></th>
+                                        <th onclick="sortTable(1)" style="padding: 15px; text-align: left; white-space: nowrap;" title="Ordenar por Seleção">Seleção <span class="sort-icon">↕</span></th>
+                                        <th onclick="sortTable(2)" style="padding: 15px; background-color: rgba(255, 215, 0, 0.2); color: #ffd700; border-bottom: 3px solid #ffd700; white-space: nowrap;" title="Ordenar por Chances de Título">Campeão <span class="sort-icon">↕</span></th>
+                                        <th onclick="sortTable(3)" style="padding: 15px; white-space: nowrap;" title="Ordenar por Chances de Chegar à Final">Final <span class="sort-icon">↕</span></th>
+                                        <th onclick="sortTable(4)" style="padding: 15px; white-space: nowrap;" title="Ordenar por Chances de Chegar à Semifinal">Semi <span class="sort-icon">↕</span></th>
+                                        <th onclick="sortTable(5)" style="padding: 15px; white-space: nowrap;" title="Ordenar por Chances de Chegar às Quartas">Quartas <span class="sort-icon">↕</span></th>
+                                        <th onclick="sortTable(6)" style="padding: 15px; white-space: nowrap;" title="Ordenar por Chances de Chegar às Oitavas">Oitavas <span class="sort-icon">↕</span></th>
+                                        <th onclick="sortTable(7)" style="padding: 15px; white-space: nowrap;" title="Ordenar por Chances de Chegar aos 16-avos">16-avos <span class="sort-icon">↕</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="chancesTableBody">
+                                    <!-- Javascript will populate this -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <script>
+                        const data = [
+                            {pos: 1, team: 'Argentina', flag: '🇦🇷', champ: 19.7, final: 29.1, semi: 41.7, qf: 56.7, r16: 70.68, r32: 98.48},
+                            {pos: 2, team: 'Espanha', flag: '🇪🇸', champ: 13.11, final: 22.41, semi: 33.5, qf: 45.11, r16: 66.57, r32: 98.4},
+                            {pos: 3, team: 'Brasil', flag: '🇧🇷', champ: 9.53, final: 17.31, semi: 30.06, qf: 46.19, r16: 66.66, r32: 98.16},
+                            {pos: 4, team: 'Inglaterra', flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', champ: 8.79, final: 15.6, semi: 27.84, qf: 45.32, r16: 66.62, r32: 97.59},
+                            {pos: 5, team: 'França', flag: '🇫🇷', champ: 6.43, final: 12.51, semi: 23.32, qf: 40.15, r16: 64.32, r32: 92.85},
+                            {pos: 6, team: 'Colômbia', flag: '🇨🇴', champ: 5.7, final: 11.04, semi: 20.37, qf: 37.68, r16: 60.82, r32: 89.7},
+                            {pos: 7, team: 'Marrocos', flag: '🇲🇦', champ: 5.02, final: 9.85, semi: 19.3, qf: 34.51, r16: 55.56, r32: 94.5},
+                            {pos: 8, team: 'Portugal', flag: '🇵🇹', champ: 5.0, final: 10.32, semi: 19.69, qf: 36.98, r16: 60.31, r32: 89.6},
+                            {pos: 9, team: 'Alemanha', flag: '🇩🇪', champ: 3.4, final: 7.61, semi: 16.5, qf: 32.09, r16: 62.57, r32: 96.09},
+                            {pos: 10, team: 'Japão', flag: '🇯🇵', champ: 2.65, final: 6.25, semi: 13.86, qf: 26.04, r16: 43.21, r32: 85.48},
+                            {pos: 11, team: 'Uruguai', flag: '🇺🇾', champ: 2.53, final: 6.02, semi: 12.14, qf: 23.0, r16: 39.74, r32: 87.61},
+                            {pos: 12, team: 'Países Baixos', flag: '🇳🇱', champ: 2.32, final: 5.53, semi: 13.4, qf: 25.83, r16: 42.37, r32: 86.18},
+                            {pos: 13, team: 'Equador', flag: '🇪🇨', champ: 2.32, final: 5.24, semi: 12.13, qf: 24.85, r16: 52.1, r32: 91.36},
+                            {pos: 14, team: 'Bélgica', flag: '🇧🇪', champ: 1.88, final: 4.84, semi: 10.87, qf: 27.32, r16: 55.05, r32: 89.0},
+                            {pos: 15, team: 'Noruega', flag: '🇳🇴', champ: 1.64, final: 4.19, semi: 10.32, qf: 23.46, r16: 46.77, r32: 81.24},
+                            {pos: 16, team: 'Croácia', flag: '🇭🇷', champ: 1.57, final: 4.48, semi: 10.86, qf: 21.83, r16: 45.31, r32: 90.02},
+                            {pos: 17, team: 'Suíça', flag: '🇨🇭', champ: 1.36, final: 3.62, semi: 9.68, qf: 24.99, r16: 58.22, r32: 95.44},
+                            {pos: 18, team: 'Senegal', flag: '🇸🇳', champ: 1.07, final: 2.91, semi: 7.26, qf: 17.71, r16: 38.85, r32: 74.07},
+                            {pos: 19, team: 'México', flag: '🇲🇽', champ: 0.78, final: 2.5, semi: 6.57, qf: 16.65, r16: 43.08, r32: 83.86},
+                            {pos: 20, team: 'Canadá', flag: '🇨🇦', champ: 0.78, final: 2.19, semi: 6.84, qf: 19.58, r16: 50.96, r32: 92.18},
+                            {pos: 21, team: 'Austrália', flag: '🇦🇺', champ: 0.67, final: 2.08, semi: 5.65, qf: 15.7, r16: 38.13, r32: 74.76},
+                            {pos: 22, team: 'Áustria', flag: '🇦🇹', champ: 0.47, final: 1.39, semi: 4.37, qf: 11.63, r16: 26.37, r32: 69.69},
+                            {pos: 23, team: 'Argélia', flag: '🇩🇿', champ: 0.35, final: 1.4, semi: 3.78, qf: 10.81, r16: 24.89, r32: 68.4},
+                            {pos: 24, team: 'Irã', flag: '🇮🇷', champ: 0.35, final: 1.27, semi: 4.08, qf: 12.47, r16: 35.24, r32: 73.74},
+                            {pos: 25, team: 'Paraguai', flag: '🇵🇾', champ: 0.35, final: 1.21, semi: 3.49, qf: 10.48, r16: 29.6, r32: 66.42},
+                            {pos: 26, team: 'Egito', flag: '🇪🇬', champ: 0.34, final: 1.29, semi: 3.67, qf: 11.12, r16: 31.97, r32: 69.17},
+                            {pos: 27, team: 'Turquia', flag: '🇹🇷', champ: 0.32, final: 0.96, semi: 3.17, qf: 10.46, r16: 29.14, r32: 65.18},
+                            {pos: 28, team: 'Costa do Marfim', flag: '🇨🇮', champ: 0.29, final: 1.14, semi: 3.73, qf: 11.57, r16: 32.68, r32: 77.26},
+                            {pos: 29, team: 'EUA', flag: '🇺🇸', champ: 0.29, final: 1.11, semi: 3.42, qf: 10.93, r16: 30.05, r32: 67.12},
+                            {pos: 30, team: 'Escócia', flag: '🏴󠁧󠁢󠁳󠁣󠁴󠁿', champ: 0.19, final: 0.84, semi: 3.0, qf: 9.46, r16: 24.89, r32: 69.77},
+                            {pos: 31, team: 'Coreia do Sul', flag: '🇰🇷', champ: 0.19, final: 0.82, semi: 3.32, qf: 10.77, r16: 33.04, r32: 73.68},
+                            {pos: 32, team: 'Tchéquia', flag: '🇨🇿', champ: 0.12, final: 0.48, semi: 1.98, qf: 8.03, r16: 28.19, r32: 68.54},
+                            {pos: 33, team: 'Uzbequistão', flag: '🇺🇿', champ: 0.12, final: 0.38, semi: 1.43, qf: 4.53, r16: 14.04, r32: 41.69},
+                            {pos: 34, team: 'Tunísia', flag: '🇹🇳', champ: 0.1, final: 0.67, semi: 2.01, qf: 6.29, r16: 17.63, r32: 49.35},
+                            {pos: 35, team: 'Suécia', flag: '🇸🇪', champ: 0.1, final: 0.47, semi: 1.73, qf: 6.19, r16: 15.81, r32: 48.83},
+                            {pos: 36, team: 'República Democrática do Congo', flag: '🇨🇩', champ: 0.08, final: 0.4, semi: 1.6, qf: 4.94, r16: 14.05, r32: 41.03},
+                            {pos: 37, team: 'Jordânia', flag: '🇯🇴', champ: 0.03, final: 0.1, semi: 0.33, qf: 1.68, r16: 6.05, r32: 27.14},
+                            {pos: 38, team: 'Gana', flag: '🇬🇭', champ: 0.01, final: 0.1, semi: 0.39, qf: 1.71, r16: 7.04, r32: 35.62},
+                            {pos: 39, team: 'Arábia Saudita', flag: '🇸🇦', champ: 0.01, final: 0.09, semi: 0.5, qf: 2.34, r16: 8.67, r32: 37.22},
+                            {pos: 40, team: 'Panamá', flag: '🇵🇦', champ: 0.01, final: 0.06, semi: 0.24, qf: 1.17, r16: 5.58, r32: 33.96},
+                            {pos: 41, team: 'Bósnia e Herzegovina', flag: '🇧🇦', champ: 0.01, final: 0.05, semi: 0.25, qf: 1.99, r16: 11.3, r32: 44.09},
+                            {pos: 42, team: 'Iraque', flag: '🇮🇶', champ: 0.01, final: 0.05, semi: 0.25, qf: 1.4, r16: 5.91, r32: 21.77},
+                            {pos: 43, team: 'Nova Zelândia', flag: '🇳🇿', champ: 0.01, final: 0.04, semi: 0.43, qf: 2.26, r16: 11.03, r32: 37.22},
+                            {pos: 44, team: 'África do Sul', flag: '🇿🇦', champ: 0.0, final: 0.04, semi: 0.66, qf: 3.13, r16: 14.26, r32: 46.32},
+                            {pos: 45, team: 'Cabo Verde', flag: '🇨🇻', champ: 0.0, final: 0.04, semi: 0.28, qf: 1.81, r16: 6.53, r32: 30.83},
+                            {pos: 46, team: 'Catar', flag: '🇶🇦', champ: 0.0, final: 0.0, semi: 0.02, qf: 0.82, r16: 6.06, r32: 31.09},
+                            {pos: 47, team: 'Curaçao', flag: '🇨🇼', champ: 0.0, final: 0.0, semi: 0.01, qf: 0.1, r16: 1.09, r32: 8.89},
+                            {pos: 48, team: 'Haiti', flag: '🇭🇹', champ: 0.0, final: 0.0, semi: 0.0, qf: 0.22, r16: 0.99, r32: 9.41}
+                        ];
+
+                        let currentSortCol = 0;
+                        let currentSortAsc = true;
+
+                        function formatPercent(val) {
+                            if (val === 0) return "-";
+                            if (val < 0.01) return "<0.01%";
+                            return val.toFixed(2) + "%";
+                        }
+
+                        function renderTable(items) {
+                            const tbody = document.getElementById('chancesTableBody');
+                            tbody.innerHTML = '';
+                            items.forEach((item, index) => {
+                                const isBrasil = item.team === 'Brasil';
+                                const defaultBg = isBrasil ? 'rgba(0, 155, 58, 0.15)' : 'transparent';
+                                const hoverBg = isBrasil ? 'rgba(0, 155, 58, 0.25)' : '#f4f8fa';
+
+                                const tr = document.createElement('tr');
+                                tr.style.borderBottom = isBrasil ? '2px solid #009b3a' : '1px solid #eee';
+                                tr.style.backgroundColor = defaultBg;
+                                tr.style.transition = 'background-color 0.2s';
+                                tr.onmouseover = () => tr.style.backgroundColor = hoverBg;
+                                tr.onmouseout = () => tr.style.backgroundColor = defaultBg;
+                                
+                                tr.innerHTML = `
+                                    <td style="padding: 12px; color: #666;">${item.pos}</td>
+                                    <td style="padding: 12px; text-align: left; font-weight: bold; font-family: 'gotham-bold';">
+                                        <span style="font-size: 18px; margin-right: 8px;">${item.flag}</span> ${item.team}
+                                    </td>
+                                    <td style="padding: 12px; font-weight: bold; background-color: rgba(255, 215, 0, 0.1); color: #d4aa18;">${formatPercent(item.champ)}</td>
+                                    <td style="padding: 12px; color: #444;">${formatPercent(item.final)}</td>
+                                    <td style="padding: 12px; color: #444;">${formatPercent(item.semi)}</td>
+                                    <td style="padding: 12px; color: #444;">${formatPercent(item.qf)}</td>
+                                    <td style="padding: 12px; color: #444;">${formatPercent(item.r16)}</td>
+                                    <td style="padding: 12px; color: #444;">${formatPercent(item.r32)}</td>
+                                `;
+                                tbody.appendChild(tr);
+                            });
+                        }
+
+                        function sortTable(colIndex) {
+                            if (currentSortCol === colIndex) {
+                                currentSortAsc = !currentSortAsc;
+                            } else {
+                                currentSortCol = colIndex;
+                                currentSortAsc = false; // By default sort numbers highest first
+                                if (colIndex === 1) currentSortAsc = true; // Team name sort A-Z by default
+                            }
+
+                            const cols = ['pos', 'team', 'champ', 'final', 'semi', 'qf', 'r16', 'r32'];
+                            const key = cols[colIndex];
+
+                            data.sort((a, b) => {
+                                let valA = a[key];
+                                let valB = b[key];
+                                if (typeof valA === 'string') {
+                                    return currentSortAsc ? valA.localeCompare(valB) : valB.localeCompare(valA);
+                                } else {
+                                    return currentSortAsc ? valA - valB : valB - valA;
+                                }
+                            });
+
+                            const query = document.getElementById('searchCountry').value.toLowerCase();
+                            const filtered = data.filter(d => d.team.toLowerCase().includes(query));
+                            renderTable(filtered);
+                            updateHeaders();
+                        }
+
+                        function updateHeaders() {
+                            const ths = document.querySelectorAll('#chancesTable th');
+                            ths.forEach((th, index) => {
+                                const iconSpan = th.querySelector('.sort-icon');
+                                if (!iconSpan) return;
+                                
+                                if (index === currentSortCol) {
+                                    iconSpan.textContent = currentSortAsc ? '↑' : '↓';
+                                    iconSpan.style.opacity = '1';
+                                } else {
+                                    iconSpan.textContent = '↕';
+                                    iconSpan.style.opacity = '0.5';
+                                }
+                            });
+                        }
+
+                        document.getElementById('searchCountry').addEventListener('input', (e) => {
+                            const query = e.target.value.toLowerCase();
+                            const filtered = data.filter(d => d.team.toLowerCase().includes(query));
+                            renderTable(filtered);
+                        });
+
+                        // Initial Sort (by pos asc)
+                        currentSortCol = 0;
+                        currentSortAsc = true;
+                        
+                        renderTable(data);
+                        updateHeaders();
+                    </script>                    
                 </div>
 				
  
