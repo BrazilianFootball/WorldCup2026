@@ -8,6 +8,7 @@ help:
 	@echo "  make format    — ruff format"
 	@echo "  make test      — pre-commit on all files"
 	@echo "  make run-data  — download match data from Kaggle and preview"
+	@echo "  make update-chances — dynamically updates chances.html with data from summary.csv"
 	@echo "  make clean     — remove caches, build artifacts, and .venv"
 
 local:
@@ -33,6 +34,10 @@ test:
 
 run-data:
 	uv run python src/fetch_kaggle_dataset.py
+
+update-chances:
+	python3 src/update_chances.py
+
 
 clean:
 	find . -type f -name "*.pyc" -delete
