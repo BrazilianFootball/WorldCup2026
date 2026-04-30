@@ -185,10 +185,10 @@ def save_matches_to_prod(
     if path.exists():
         existing = pd.read_csv(path)
         combined = pd.concat([existing, df], ignore_index=True)
-        combined = combined.drop_duplicates(subset=key_cols, keep="first")
+        combined = combined.drop_duplicates(subset=key_cols, keep="last")
     else:
         combined = df.copy()
-        combined = combined.drop_duplicates(subset=key_cols, keep="first")
+        combined = combined.drop_duplicates(subset=key_cols, keep="last")
 
     combined.to_csv(path, index=False)
 
