@@ -20,7 +20,11 @@ from src.constants import (
     GROUPS,
     TEAM_NAME_MAP,
 )
-from src.export_probs import build_stage_dataframe, export_phase_probs
+from src.export_probs import (
+    build_stage_dataframe,
+    export_phase_probs,
+    update_html_from_summary,
+)
 from src.model import build_model
 from src.tournament import WorldCup2026
 from src.utils import load_wc_results, resolve_team_name
@@ -228,6 +232,8 @@ def main() -> None:
     print(f"  Salvo em: {prob_path}")
 
     build_stage_dataframe(stage_results, args.num_simulations)
+
+    update_html_from_summary()
 
 
 if __name__ == "__main__":
