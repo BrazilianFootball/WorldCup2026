@@ -318,9 +318,10 @@ function mkRow(name, prob, won, mid) {
     row.className = 'tr' + (won ? ' won' : '');
     row.dataset.team = name;
     row.dataset.mid  = mid;
+    //{t.flag}
     row.innerHTML = `
     <span class="tp">${prob}%</span>
-    <span class="tf">${t.flag}</span>
+    <span class="tf">${flagHTML(name)}</span>
     <span class="tn">${name}</span>
     `;
 
@@ -674,9 +675,9 @@ function showTT(name, e) {
         </div>
     `;
     }
-
     
     const tt = document.getElementById('tt');
+    // <div class="tt-flag">${ttFlag}</div>
     tt.innerHTML = `
     <div class="tt-h">
         <div class="tt-flag">${ttFlag}</div>
@@ -712,6 +713,7 @@ function hideTT() {
 function showStats(name) {
     const d     = gt(name);
     const panel = document.getElementById('stats-panel');
+    // {flagHTML(name)}
     panel.innerHTML = `
     <div class="sp-header">
         <div class="sp-flag">${d.flag}</div>
@@ -786,7 +788,7 @@ function showPath(name) {
         </div>
         <div class="pc-sep"></div>
         <div class="pc-l">
-        <span class="pc-lf">${oData.flag}</span>
+        <span class="pc-lf">${myData.flag}</span>
         <span class="pc-ln">${opp}</span>
         <span class="pc-ls">${oppProb}%</span>
         </div>

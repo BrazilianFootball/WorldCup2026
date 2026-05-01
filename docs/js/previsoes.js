@@ -211,12 +211,12 @@ function closeOpenDropdowns(except = null) {
 }
 
 function getFilterPanel(target) {
-    return target.closest('#panel-groups, #panel-r32, #panel-oitavas, #panel-quartas, #panel-semis, #panel-final');
+    return target.closest('#panel-grupos, #panel-r32, #panel-oitavas, #panel-quartas, #panel-semis, #panel-final');
 }
 
 function applyUnifiedFilters(panel) {
     if (!panel) return;
-    if (panel.id === 'panel-groups') {
+    if (panel.id === 'panel-grupos') {
         applyGroupFilters(panel);
         return;
     }
@@ -271,7 +271,7 @@ function installFilterDelegationOnce() {
 }
 
 // Aplica filtros de texto, grupo e data conforme o modo atual da aba de grupos.
-function applyGroupFilters(panel = document.getElementById('panel-groups')) {
+function applyGroupFilters(panel = document.getElementById('panel-grupos')) {
     if (!panel) return;
 
     const input = panel.querySelector('.group-country-filter');
@@ -409,7 +409,7 @@ function applyScoreFilters(panel) {
         const grid = document.getElementById('gg');
         if (!grid) return;
 
-        const panel = document.getElementById('panel-groups');
+        const panel = document.getElementById('panel-grupos');
         if (!panel) return;
 
         // cria a barra só uma vez (se já existir, não duplica)
@@ -589,7 +589,7 @@ function applyScoreFilters(panel) {
 
     // Preenche o dropdown com as letras dos grupos disponíveis no CSV.
     function populateGroupDropdown(groups) {
-        const panel = document.getElementById('panel-groups');
+        const panel = document.getElementById('panel-grupos');
         if (!panel) return;
 
         const menu = panel.querySelector('.group-dropdown-menu');
@@ -602,10 +602,24 @@ function applyScoreFilters(panel) {
             </label>
         `).join('');
     }
+    // Converte datas no formato dd/mm ou dd/mm/aaaa para ordenação cronológica.
+    function parseDropdownDate(value) {
+        const [day, month, year] = String(value).trim().split('/').map(Number);
+
+        if (!Number.isFinite(day) || !Number.isFinite(month)) {
+            return Number.POSITIVE_INFINITY;
+        }
+
+        const fullYear = Number.isFinite(year)
+            ? (year < 100 ? 2000 + year : year)
+            : 2026;
+
+        return new Date(fullYear, month - 1, day).getTime();
+    }
 
     // Preenche o dropdown de datas usando apenas jogos da fase de grupos.
     function populateGroupsDateDropdown(matchRows) {
-        const panel = document.getElementById('panel-groups');
+        const panel = document.getElementById('panel-grupos');
         if (!panel) return;
 
         const menu = panel.querySelector('.groups-date-dropdown-menu');
@@ -613,7 +627,7 @@ function applyScoreFilters(panel) {
 
         const stageRows = matchRows.filter(r => /^[A-L]$/.test(String(r.group ?? '').trim()));
         const dates = stageRows.map(r => String(r.date ?? '').trim()).filter(Boolean);
-        const uniqueDates = [...new Set(dates)];
+        const uniqueDates = [...new Set(dates)].sort((a, b) => parseDropdownDate(a) - parseDropdownDate(b));
 
         menu.innerHTML = uniqueDates.map(d => `
             <label class="date-option">
@@ -630,7 +644,7 @@ function applyScoreFilters(panel) {
 
     // Renderiza os cards de partidas da fase de grupos somente quando o modo Partidas é aberto.
     async function ensureGroupMatchCardsRendered() {
-        const panel = document.getElementById('panel-groups');
+        const panel = document.getElementById('panel-grupos');
         const container = panel?.querySelector('#groups-scorecards');
         if (!panel || !container) return;
         if (container.dataset.ready === '1') return;
@@ -653,7 +667,7 @@ function applyScoreFilters(panel) {
 
     // Alterna entre visualização de ranking dos grupos e visualização dos cards de partidas.
     async function setGroupsMode(mode) {
-        const panel = document.getElementById('panel-groups');
+        const panel = document.getElementById('panel-grupos');
         if (!panel) return;
 
         panel.dataset.groupsMode = mode;
@@ -1072,3 +1086,31 @@ function applyScoreFilters(panel) {
 
     document.addEventListener('DOMContentLoaded', renderScoreStagePanels);
 })();
+
+function abrirTabPelaURL() {
+    const tabName = window.location.hash.replace('#', '').trim();
+
+    if (!tabName) return;
+
+    const tabsValidas = ['bracket', 'grupos', 'r32', 'oitavas', 'quartas', 'semis', 'final'];
+
+    if (!tabsValidas.includes(tabName)) return;
+
+    const botao = [...document.querySelectorAll('.tabs .tab')]
+        .find(btn => {
+            const onclick = btn.getAttribute('onclick') || '';
+            return onclick.includes(`'${tabName}'`) || onclick.includes(`"${tabName}"`);
+        });
+
+    if (botao && typeof switchTab === 'function') {
+        switchTab(tabName, botao);
+
+        document.querySelector('.dash')?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+}
+
+window.addEventListener('DOMContentLoaded', abrirTabPelaURL);
+window.addEventListener('hashchange', abrirTabPelaURL);

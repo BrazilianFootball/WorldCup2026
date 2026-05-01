@@ -117,7 +117,7 @@ padding: 5px 11px;
 text-align: right;
 }
 
-/* Texto pequeno do rótulo do campeão projetado. */
+/* Texto pequeno "Campeão Projetado" */
 .dh-bl {
 font-size: 7.5px;
 color: #f0c040;
@@ -438,10 +438,12 @@ flex-shrink: 0;
 .tr.won .tp  { color: #f6d608; }
 
 /* Flag emoji */
-.tf {width: 18px;
+.tf {width: 17px;
     display: inline-flex;
     align-items: center;
-    justify-content: center }
+    justify-content: center;
+    border: 0.1px solid #99a9b6;
+}
 
 /* Team name */
 .tn {
@@ -552,7 +554,7 @@ opacity: 1 !important;
 /* ════════════════════════════════════════
 PAINEL FASE DE GRUPOS
 ════════════════════════════════════════ */
-#panel-groups {
+#panel-grupos {
   padding: 20px;
   background: #ffffff;
   min-height: 520px; /* mantém o footer embaixo*/
@@ -646,8 +648,8 @@ transition: width 1.2s cubic-bezier(.22, 1, .36, 1);
 }
 
 /* Cores da barra por status: classificado, repescagem ou eliminado */
-.qualify .g-fill { background: #17dd38; }
-.playoff .g-fill { background: #ff6f00; }
+.qualify .g-fill { background: #34e124; }
+.playoff .g-fill { background: #ffbb00; }
 .elim    .g-fill { background: #00000046; }
 
 /* Divisor visual entre classificados e não classificados */
@@ -760,7 +762,6 @@ border-bottom: 1px solid var(--border);
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
 }
 
 .tt-flag .flag-img {
@@ -836,7 +837,7 @@ margin-bottom: 10px;
 }
 
 /* Bandeira no painel de estatísticas. */
-.sp-flag { font-size: 26px; }
+.sp-flag { font-size: 26px }
 /* Nome da seleção no painel de estatísticas. */
 .sp-name {
 font-size: 16px;
@@ -1108,7 +1109,7 @@ PROBABILIDADES DE PREVISÃO
 
 .score-outcome-card.away .score-bar,
 .score-outcome-card.away .score-total {
-    background: #e95e5e;
+    background: #e9915e;
 }
 
 /* País X: Total | Empate: Total | País Y: Total */

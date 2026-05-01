@@ -76,7 +76,6 @@ gtag('config', 'UA-119803899-1');
     {"Selecao": "\u00c1frica do Sul", "id": 710, "Posicao": 17, "Continente": "Africa", "Ano": 1998, "P": "Fase de Grupos", "alpha2": "za", "teste": 0.041666666666666664, "name": "South Africa", "alpha3": "zaf"},
     {"Selecao": "\u00c1ustria", "id": 40, "Posicao": 3, "Continente": "Europa", "Ano": 1934, "P": "Semi-Final", "alpha2": "at", "teste": 0.043478260869565216, "name": "Austria", "alpha3": "aut"}]}};
 
-
     const embedOpt = {
         renderer: "svg",
         mode: "vega-lite"
