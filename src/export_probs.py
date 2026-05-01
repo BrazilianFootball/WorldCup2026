@@ -3,6 +3,9 @@
 from __future__ import annotations
 
 import argparse
+import csv
+import json
+import re
 from collections import defaultdict
 from itertools import combinations
 from pathlib import Path
@@ -14,6 +17,7 @@ from src.constants import (
     DATA_DIR,
     DEFAULT_MIN_DATE,
     DEFAULT_SEED,
+    FLAG_MAPPING,
     MAX_GOALS,
     PHASE_LABELS,
     QUARTERFINAL_PAIRS,
@@ -178,7 +182,7 @@ def build_prob_dataframe(
 
 
 def save_matches_to_prod(
-    df: pd.DataFrame, prod_path="docs/csv/placares/partidas.csv"
+    df: pd.DataFrame, prod_path="docs/csv/previsoes/partidas.csv"
 ) -> None:
     path = Path(prod_path)
     key_cols = ["group", "home_team", "away_team"]
@@ -297,6 +301,67 @@ def build_stage_dataframe(
     df.to_csv(output_path, index=False)
 
     return df
+
+
+def get_flag(team_name):
+    return FLAG_MAPPING.get(team_name, "🏳️")
+
+
+def update_html_from_summary(
+    csv_file="data/summary.csv", html_file="docs/chances.html"
+):
+    data = []
+
+    with open(csv_file, encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            team = row["team"]
+            data.append(
+                {
+                    "pos": int(row["position"]),
+                    "team": team,
+                    "flag": get_flag(team),
+                    "champ": float(row["champion"]),
+                    "final": float(row["final"]),
+                    "semi": float(row["semifinals"]),
+                    "qf": float(row["quarterfinals"]),
+                    "r16": float(row["round_of_16"]),
+                    "r32": float(row["round_of_32"]),
+                }
+            )
+
+    js_data = "                        const data = [\n"
+    rows = []
+    for d in data:
+        obj = {
+            "pos": d["pos"],
+            "team": d["team"],
+            "flag": d["flag"],
+            "champ": d["champ"],
+            "final": d["final"],
+            "semi": d["semi"],
+            "qf": d["qf"],
+            "r16": d["r16"],
+            "r32": d["r32"],
+        }
+
+        rows.append(" " * 28 + json.dumps(obj, ensure_ascii=False))
+
+    js_data += ",\n".join(rows)
+    js_data += "\n                        ];"
+
+    with open(html_file, encoding="utf-8") as f:
+        html_content = f.read()
+
+    pattern = r"(// -- DATA START --).*?(// -- DATA END --)"
+    replacement = f"\\1\n{js_data}\n                        \\2"
+
+    new_html = re.sub(pattern, replacement, html_content, flags=re.DOTALL)
+
+    with open(html_file, "w", encoding="utf-8") as f:
+        f.write(new_html)
+
+    print("HTML atualizado com sucesso.")
 
 
 def main() -> None:

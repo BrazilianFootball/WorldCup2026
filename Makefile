@@ -35,10 +35,6 @@ test:
 run-data:
 	uv run python src/fetch_kaggle_dataset.py
 
-update-chances:
-	python3 src/update_chances.py
-
-
 clean:
 	find . -type f -name "*.pyc" -delete
 	find . -type d -name "__pycache__" -delete
