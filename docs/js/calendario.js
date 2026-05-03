@@ -726,3 +726,19 @@
             .replace(/'/g, '&#039;');
     }
 })();
+
+document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.querySelector(".wc-accordion-toggle");
+    const content = document.querySelector(".wc-accordion-content");
+
+    toggle.addEventListener("click", function () {
+        content.classList.toggle("active");
+        toggle.classList.toggle("active");
+
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+        }
+    });
+});

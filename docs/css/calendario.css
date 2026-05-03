@@ -423,6 +423,43 @@
     line-height: 1.3;
 }
 
+.arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    flex: 0 0 16px;
+    margin-right: 0;
+    transition: transform 0.3s ease;
+    transform-origin: center;
+}
+
+.wc-accordion-toggle {
+    background: none;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+}
+
+.wc-accordion-toggle.active .arrow {
+    transform: rotate(90deg);
+}
+
+.wc-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
+
+.wc-accordion-inner {
+    padding: 12px 16px;
+}
+
 @media (max-width: 960px) {
     .wc-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .wc-controls { grid-template-columns: 1fr 1fr; }
