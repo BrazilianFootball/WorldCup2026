@@ -59,17 +59,17 @@
                 <div id="conteudo">
                     <div class="texto max-665 font-16">
                         <p> A partir do histórico de todos os confrontos entre as 222 seleções da FIFA, realizados nos últimos 5 anos, foram gerados parâmetros de defesa e ataque 
-                        para cada seleção, de acordo com os gols marcados ou sofridos. No nosso modelo, nem todos os jogos tem o mesmo peso: 
-                        
+                            para cada seleção, de acordo com os gols marcados ou sofridos. No nosso modelo, nem todos os jogos tem o mesmo peso: 
+                        </p>
                         <ul>
                             <li><b>Fase recente:</b> destaca um peso maior aos jogos mais recentes.</li>
                             <li><b>Importância do jogo:</b> leva em conta a natureza do jogo (um jogo de Copa América vale muito mais que um amistoso, por exemplo).</li>
                         </ul>
-                        
-                        Consideramos que o número de gols marcados por uma equipe segue uma distribuição de Poisson, que depende 
-                        tanto do seu parâmetro de ataque, como da força de defesa do adversário. Uma descrição mais técnica da inspiração do modelo
-			            encontra-se no artigo <a href="Previsoes_Copa_2018.pdf" target="_blank">Previsões para os jogos da Copa do Mundo de 2018</a>. 
-
+                        <p>
+                            Consideramos que o número de gols marcados por uma equipe segue uma distribuição de Poisson, que depende 
+                            tanto do seu parâmetro de ataque, como da força de defesa do adversário. Uma descrição mais técnica da inspiração do modelo
+                            encontra-se no artigo <a href="Previsoes_Copa_2018.pdf" target="_blank">Previsões para os jogos da Copa do Mundo de 2018</a>. 
+                        </p>
 			            <p>Com estas forças podemos simular o confronto entre duas seleções quaisquer.
                            O modelo é probabilistico, ou seja, cada simulação pode apresentar um placar diferente. No entanto, é claro, 
                            os placares mais favoráveis aos times fortes são os que aparecem com maior frequência. 
@@ -87,7 +87,6 @@
                             como campeão é o número que apontamos como a probabilidade do Brasil sagrar-se campeão aa Copa. Com os parâmetros obtidos pré-Copa, obteve-se chance de título de 
                             cerca de 40% para a Seleção Brasileira. Após cada fase, os parâmetros serão atualizados, e toda a tabela será simulada novamente até a final. 
                         </p>
-                     
                     </div>
                 </div>
 
@@ -106,6 +105,7 @@
                     <div class="menu-caixa margin-top-40">
                         <div class="titulo-menu">Explore Outras Ferramentas</div>
                             <ul>
+                                <li><a href="calendario.html" target="_blank">Calendário da Copa</a></li>
                                 <li><a href="https://boleco42.web.app" target="_blank">Bolão Entre Amigos</a></li>
                                 <li><a href="https://albumfigurinhascopa-zkdsn6ezbdhqfsbri9jc6w.streamlit.app/" target="_blank">Simulador p/ Álbum da Copa</a></li>
                             </ul>

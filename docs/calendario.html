@@ -1,0 +1,175 @@
+<!ATUALIZADO EM: 23/04/2022>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="images/favicon.png">
+        <meta charset="UTF-8"/>   
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+        <link rel="stylesheet" href="css/styles.css" type="text/css">
+        <link rel="stylesheet" href="css/calendario.css" type="text/css">
+        <title>EMAp: Calendário</title>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119803899-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-119803899-1');
+        </script>
+    </head>
+    <body>
+        <!-- Início do cabeçalho-->
+        <div class="page">   
+            <header>
+                <div class="container-header">
+                    <div class="logo">
+                        <img src="images/logo.png" />
+                    </div>
+
+                    <div class="menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <nav class="menu">
+                        <ul>
+                            <li> <a href="index.html">Início</a></li>
+                            <li> <a href="modelos.html">Modelos</a></li>
+                            <li><a href="previsoes.html">Previsões</a></li>
+                            <li><a href="chances.html">Chances</a></li>
+                            <li><a href="vis.html">Retrospectiva</a></li>
+                            <li><a href="equipe.html">Equipe</a></li>
+			                <!--<li><a href="na_midia.html">Na Mídia</a></li>-->
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            <!--Final do cabeçalho-->
+
+            <!-- Banner das páginas -->
+            <div class="banner-cabecalho">
+                <div class="texto-banner">Calendário da Copa</div>
+            </div>
+            <!--Fim do banner das páginas-->
+            <!-- Conteudo principal -->
+            <div class="container">
+                <div id="conteudo" style="width: 100%; max-width: 1200px; margin: 0 auto;">
+
+                    <section id="calendario-copa" class="calendario-copa">
+                        <p>Explore o calendário da Copa do Mundo 2026, visualize todos os jogos por data e cidade-sede e filtre exatamente as partidas que você quer acompanhar. <br>
+                            Quer ver os jogos mas é cansativo ficar procurando e lembrando de cada horário? Monte o seu próprio calendário da Copa em poucos segundos e exporte para a sua agenda. 
+                            Siga os seguintes passos:</p>
+                        <ol>
+                            <li>Filtre as partidas desejadas. Por exemplo, se você quer adicionar as partidas do Brasil ao seu calendário, digite "Brasil" no campo de pesquisa.</li>
+                            <li>Se você segue o horário de Brasília (UTC-3), <strong>BRT</strong> deve estar selecionado. <br> Se você segue o horário de Amazonas (UTC-4), <strong>ET</strong> deve estar selecionado.</li>
+                            <li>Clique em <strong>Exportar Agenda</strong> e baixe o arquivo <strong>calendario-copa-2026.ics</strong>.</li>
+                            <li>Use Google Agenda, Apple Calendar, Outlook etc. para importar o arquivo. No Google Agenda, siga o caminho: <br>
+                                <strong>Google Agenda &gt; Configurações &gt; Importar e exportar &gt; Importar &gt; Selecionar arquivo no seu computador</strong>.</li>
+                        </ol>
+                        <br>
+                        <!-- Sumário -->
+                        <div id="wc-summary" class="wc-summary" aria-label="Resumo do calendário"></div>
+                        <!-- Filtros -->
+                        <div class="wc-controls" aria-label="Filtros do calendário">
+                            <div class="wc-field">
+                                <label for="wc-search">Buscar</label>
+                                <input id="wc-search" data-calendar-filter type="search" placeholder="Seleções (ex: Brasil, Portugal)">
+                            </div>
+                            <div class="wc-field">
+                                <label for="wc-filter-phase">Fase</label>
+                                <select id="wc-filter-phase" data-calendar-filter data-all-label="Todas as fases"></select>
+                            </div>
+                            <div class="wc-field">
+                                <label for="wc-filter-group">Grupo</label>
+                                <select id="wc-filter-group" data-calendar-filter data-all-label="Todos os grupos"></select>
+                            </div>
+                            <div class="wc-field">
+                                <label for="wc-filter-region">Região</label>
+                                <select id="wc-filter-region" data-calendar-filter data-all-label="Todas as regiões"></select>
+                            </div>
+                            <div class="wc-field">
+                                <label for="wc-filter-city">Cidade</label>
+                                <select id="wc-filter-city" data-calendar-filter data-all-label="Todas as cidades"></select>
+                            </div>
+                            <button id="wc-reset-filters" class="wc-reset" type="button">Limpar</button>
+                            <small class="wc-search-hint">
+                                Busque uma ou mais seleções na <strong>barra de pesquisa</strong> separando por vírgulas ou espaços.
+                            </small>
+                        </div>
+                        <div class="wc-viewbar">
+                            <div id="wc-result-count" class="wc-result-count">Carregando jogos...</div>
+                            <div class="wc-right-controls">
+                                <div class="wc-view-buttons" aria-label="Alternar fuso horário">
+                                    <button type="button" class="is-active"  data-timezone="brt">BRT
+                                        <svg width="18" height="12" viewBox="0 0 720 504" aria-hidden="true" focusable="false">
+                                            <rect width="720" height="504" fill="#009b3a"/><path d="M360 58 660 252 360 446 60 252z" fill="#ffdf00"/><circle cx="360" cy="252" r="120" fill="#002776"/><path d="M260 230c62-24 162-15 220 33" fill="none" stroke="#fff" stroke-width="18"/>
+                                        </svg>
+                                    </button>
+                                    <button type="button" data-timezone="et">ET 
+                                        <svg width="18" height="12" viewBox="0 0 7410 3900" aria-hidden="true" focusable="false">
+                                            <rect width="7410" height="3900" fill="#b22234"/><path d="M0 450h7410v300H0zm0 600h7410v300H0zm0 600h7410v300H0zm0 600h7410v300H0zm0 600h7410v300H0zm0 600h7410v300H0z" fill="#fff"/><rect width="2964" height="2100" fill="#3c3b6e"/>
+                                            <g fill="#fff"><circle cx="247" cy="175" r="55"/><circle cx="741" cy="175" r="55"/><circle cx="1235" cy="175" r="55"/><circle cx="1729" cy="175" r="55"/><circle cx="2223" cy="175" r="55"/><circle cx="2717" cy="175" r="55"/><circle cx="494" cy="350" r="55"/><circle cx="988" cy="350" r="55"/><circle cx="1482" cy="350" r="55"/><circle cx="1976" cy="350" r="55"/><circle cx="2470" cy="350" r="55"/><circle cx="247" cy="525" r="55"/><circle cx="741" cy="525" r="55"/><circle cx="1235" cy="525" r="55"/><circle cx="1729" cy="525" r="55"/><circle cx="2223" cy="525" r="55"/><circle cx="2717" cy="525" r="55"/></g>
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <div class="wc-view-buttons" aria-label="Alternar visualização">
+                                    <button type="button" class="is-active" data-view="grade">Grade</button>
+                                    <button type="button" data-view="lista">Lista</button>
+                                </div>
+
+                                <div class="wc-view-buttons" aria-label="Exportar agenda">
+                                    <button type="button" id="wc-export-calendar">Exportar Agenda</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Tabela -->
+                        <!-- TOP SCROLL HERE -->
+                        <!--
+                        <div class="wc-scroll-top">
+                            <div class="wc-scroll-inner"></div>
+                        </div> -->
+                        <div id="wc-board-view" class="wc-board-wrap" data-calendar-board></div>
+                        <div id="wc-list-view" class="wc-table-wrap" hidden>
+                            <table class="wc-table">
+                                <thead>
+                                    <tr>
+                                        <th>Jogo</th>
+                                        <th>Data</th>
+                                        <th>Hora</th>
+                                        <th>Fase</th>
+                                        <th>Grupo</th>
+                                        <th>Confronto</th>
+                                        <th>Cidade</th>
+                                        <th>Região</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="wc-table-body"></tbody>
+                            </table>
+                        </div>
+
+                        <p class="wc-notes">As colunas usam a data local (ET) da cidade-sede, como no calendário oficial. Selecione BRT para ver o calendário no horário de Brasília. A programação pode sofrer alterações.</p>
+                    </section>
+                </div>
+
+
+            </div>
+        </div>
+        <!--Final do conteudo-->
+        <footer id="footer">
+            <div class="container">
+                <div class="logo-rodape column-3"><img src="images/logo-rodape.png" /></div>
+                <div class="txt-middle column-3">Praia de Botafogo, 190 - Rio de Janeiro - RJ, <br>
+                    CEP: 22250-900. Tel:+55 21 3799-5917<br>
+                    emap@fgv.br</div>
+                <div class="txt-right column-3">© FGV 2026</div>
+            </div>
+        </footer>
+        <script src="js/main.js"></script>
+        <script src="js/calendario.js"></script>
+    </body>
+</html>
