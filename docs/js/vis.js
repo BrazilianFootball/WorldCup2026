@@ -290,7 +290,7 @@ const BK_ED = {
     host: 'Rússia', champion: 'França', champFlag: '🇫🇷', rounds: [
         [{ a: 'França', af: '🇫🇷', as: 4, b: 'Argentina', bf: '🇦🇷', bs: 3, w: 'a' }, { a: 'Uruguai', af: '🇺🇾', as: 2, b: 'Portugal', bf: '🇵🇹', bs: 1, w: 'a' }, { a: 'Bélgica', af: '🇧🇪', as: 3, b: 'Japão', bf: '🇯🇵', bs: 2, w: 'a' }, { a: 'Brasil', af: '🇧🇷', as: 2, b: 'México', bf: '🇲🇽', bs: 0, w: 'a' }, { a: 'Croácia', af: '🇭🇷', as: 1, b: 'Dinamarca', bf: '🇩🇰', bs: 1, w: 'a', n: 'pens' }, { a: 'Rússia', af: '🇷🇺', as: 1, b: 'Espanha', bf: '🇪🇸', bs: 1, w: 'a', n: 'pens' }, { a: 'Suécia', af: '🇸🇪', as: 1, b: 'Suíça', bf: '🇨🇭', bs: 0, w: 'a' }, { a: 'Colômbia', af: '🇨🇴', as: 1, b: 'Inglaterra', bf: '🇬🇧', bs: 1, w: 'b', n: 'pens' }],
         [{ a: 'França', af: '🇫🇷', as: 2, b: 'Uruguai', bf: '🇺🇾', bs: 0, w: 'a' }, { a: 'Bélgica', af: '🇧🇪', as: 2, b: 'Brasil', bf: '🇧🇷', bs: 1, w: 'a' }, { a: 'Croácia', af: '🇭🇷', as: 2, b: 'Rússia', bf: '🇷🇺', bs: 2, w: 'a', n: 'pens' }, { a: 'Suécia', af: '🇸🇪', as: 0, b: 'Inglaterra', bf: '🇬🇧', bs: 2, w: 'b' }],
-        [{ a: 'França', af: '🇫🇷', as: 1, b: 'Bélgica', bf: '🇧🇪', bs: 0, w: 'a' }, { a: 'Croácia', af: '🇭🇷', as: 2, b: 'Inglaterra', bf: '🇬🇧', bs: 1, w: 'a' }],
+        [{ a: 'França', af: '🇫🇷', as: 1, b: 'Bélgica', bf: '🇧🇪', bs: 0, w: 'a' }, { a: 'Croácia', af: '🇭🇷', as: 2, b: 'Inglaterra', bf: '🇬🇧', bs: 1, w: 'a' , n: 'AET'}],
         [{ a: 'França', af: '🇫🇷', as: 4, b: 'Croácia', bf: '🇭🇷', bs: 2, w: 'a' }]]
     },
     2014: {
@@ -432,6 +432,226 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 
 
+
+/* =========================================================
+    EVOLUÇÃO DOS MASCOTES DA COPA DO MUNDO
+   ========================================================= */
+(function () {
+
+  const MASCOTS = [
+    {
+      year: 2026,
+      name: "Maple, Zayu & Clutch",
+      img: "https://digitalhub.fifa.com/transform/2685c8dc-d642-4941-92b8-266f438d29d4/FIFA-World-Cup-26-mascots-Maple-Zayu-and-Clutch?&io=transform:fill,width:1024&quality=75",
+      desc: "Primeira vez com trio de mascotes representando os três países-sede. Maple é um alce canadense (goleiro nº 1), Zayu é um jaguar mexicano (atacante nº 9), e Clutch é uma águia-careca americana (meia nº 10). Primeira Copa com 48 seleções.",
+      host: "EUA / Canadá / México"
+    },
+    {
+      year: 2022,
+      name: "La'eeb",
+      img: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjO-lnxkfDRwIpw6dsmmuU2zkJcQN8Xfr-hO17IRPDH2KZzJ4SBhXMIvfAvAKcpbW3_Aff3maGAqkuOSFfxvTCFZosmXB09hSNUldtX9bgHV7qhrcxAsRoNA8cAaxpEAcWRxFdNOSjYdbvQc8eRA7x-sXrhakvOAA0jZdPpfWjvTZ17CCWHN_pmP397_A/s300/laeb.png",
+      desc: "Personagem abstrato inspirado no gutra, o tradicional lenço branco do Catar, com olhos e boca expressivos. Flutua no ar e viaja entre mundos paralelos. O nome significa 'jogador super habilidoso' em árabe. Argentina tetracampeã.",
+      host: "Catar"
+    },
+    {
+      year: 2018,
+      name: "Zabivaka",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2aDbsNdVROQeODxs1wkhxErqQw43qKKxRCQ&s",
+      desc: "Lobo cinzento com óculos esportivos, camisa branco-e-azul e calção vermelho. O nome significa 'aquele que marca gols' em russo. Escolhido por voto popular com 53% dos votos entre um milhão de participantes. França bicampeã.",
+      host: "Rússia"
+    },
+    {
+      year: 2014,
+      name: "Fuleco",
+      img: "https://img.olympics.com/images/image/private//t_s_w2440/f_auto/primary/ffobcfhsxhp7qkhlescx",
+      desc: "Tatu-bola azul com detalhes verde e amarelo, espécie ameaçada nativa do Nordeste do Brasil. Nome é junção de 'futebol' e 'ecologia'. Eleito por voto popular e muito presente nos estádios. Alemanha tetracampeã.",
+      host: "Brasil"
+    },
+    {
+      year: 2010,
+      name: "Zakumi",
+      img: "https://img.olympics.com/images/image/private//t_s_w2440/f_auto/primary/y4rfevvtsrw86smh4yhx",
+      desc: "Leopardo com juba verde e uniforme dourado, cores dos esportes sul-africanos. O nome vem de 'ZA' (África do Sul) e 'kumi' (dez, em várias línguas africanas). Primeira Copa realizada no continente africano. Espanha campeã.",
+      host: "África do Sul"
+    },
+    {
+      year: 2006,
+      name: "Goleo VI & Pille",
+      // img: "https://img.olympics.com/images/image/private//t_s_w2440/f_auto/primary/kqimdzxntfprtznqrnpx",
+      img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmLOxIDNIr5LqUUqXb3QgCd5ac-JJLl49nCw&s",
+      desc: "Leão vestindo a camisa alemã com o número '06' e seu parceiro inseparável Pille, uma bola de futebol falante. Criado pela Jim Henson Creature Shop. Polêmico por não usar calça. Itália campeã — Zidane dá a histórica cabeçada em Materazzi.",
+      host: "Alemanha"
+    },
+    {
+      year: 2002,
+      name: "Ato, Kaz & Nik",
+      img: "https://img.olympics.com/images/image/private//t_s_w2440/f_auto/primary/jnsknnvb3a3yrvsntali",
+      desc: "Trio de criaturas futuristas geradas por computador (os 'Spheriks'): Ato (laranja), Kaz (azul) e Nik (roxo). Inspirados em animes e videogames, jogavam um esporte fictício chamado 'Atmosball'. Segunda vez com múltiplos mascotes. Brasil pentacampeão.",
+      host: "Coreia / Japão"
+    },
+    {
+      year: 1998,
+      name: "Footix",
+      img: "https://img.olympics.com/images/image/private//t_s_w2440/f_auto/primary/tyychti2gt90uxcqhjoe",
+      desc: "Galo azul com crista vermelha, símbolo nacional da França. Um dos mascotes mais populares e carismáticos da história — mais de 1 milhão de bonecos vendidos. O nome mistura 'football' e o sufixo '-ix' de Asterix. França campeã em casa.",
+      host: "França"
+    },
+    {
+      year: 1994,
+      name: "Striker",
+      img: "https://digitalhub.fifa.com/transform/1ba820b0-147a-43dc-a365-c1ac0178ff6a/mascot-demo-hof-1994",
+      // https://img.olympics.com/images/image/private//t_s_w2440/f_auto/primary/vm14dnltysmae1jecfio
+      desc: "Cachorro esportista criado pela equipe de animação da Warner Bros., vestindo as cores vermelha, branca e azul dos EUA. Copa que popularizou o futebol no país-sede. Brasil tetracampeão — Baggio perde o pênalti decisivo na final.",
+      host: "Estados Unidos"
+    },
+    {
+      year: 1990,
+      name: "Ciao",
+      img: "https://img.olympics.com/images/image/private//t_s_w2440/f_auto/primary/mminfna6f8f8mkywtzea",
+      desc: "Figura geométrica com corpo nas cores da bandeira italiana (verde, branco, vermelho) e uma bola de futebol como cabeça. Design vanguardista criado por Lucio Boscardin, vencedor de concurso com mais de 50 mil inscritos. Alemanha campeã.",
+      host: "Itália"
+    },
+    {
+      year: 1986,
+      name: "Pique",
+      img: "https://img.olympics.com/images/image/private//t_s_w2440/f_auto/primary/wprzj7sq4k7t9k9vdjak",
+      desc: "Pimenta jalapeño antropomórfica com bigode e sombrero, ícone da culinária mexicana. O nome vem de 'picante'. Controverso no México por estereotipar a cultura local. Copa do México — mão de Deus e gol do século de Maradona.",
+      host: "México"
+    },
+    {
+      year: 1982,
+      name: "Naranjito",
+      img: "https://img.olympics.com/images/image/private//t_s_w2440/f_auto/primary/ppgswcibvytjqfxasshj",
+      desc: "Laranja antropomórfica usando o uniforme da Espanha — fruto abundante e símbolo do país. Primeiro mascote não humano da Copa. Estrelou até um desenho animado de 26 episódios. Rompeu com a tradição de figuras humanas. Itália tricampeã.",
+      host: "Espanha"
+    },
+    {
+      year: 1978,
+      name: "Gauchito",
+      img: "https://img.olympics.com/images/image/private//t_s_w2440/f_auto/primary/lcjaq8qshcijjf3ogqqv",
+      desc: "Menino com traje típico de gaúcho argentino: chapéu de aba larga com 'ARGENTINA 78', lenço no pescoço, calça bombacha e facão. Inspirado no folklore dos campos da América Latina. Argentina campeã em casa pela primeira vez.",
+      host: "Argentina"
+    },
+    {
+      year: 1974,
+      name: "Tip & Tap",
+      img: "https://img.olympics.com/images/image/private//t_s_w2440/f_auto/primary/esyl1omvg9t4fwynexgx",
+      desc: "Dois garotos sorrindo: um com 'WM' (Weltmeisterschaft) na camisa, outro com '74'. Criados para simbolizar a união entre Alemanha Oriental e Ocidental, que competiam no mesmo torneio. Primeira dupla de mascotes da história da Copa. Alemanha Ocidental campeã.",
+      host: "Alemanha Ocidental"
+    },
+    {
+      year: 1970,
+      name: "Juanito",
+      img: "https://img.olympics.com/images/image/private//t_s_w2440/f_auto/primary/e6amdz2lt6zeqoe7e1jj",
+      desc: "Menino de uniforme verde e branco do México, com sombrero estampado 'MEXICO 70'. Primeiro mascote humano da Copa e pioneiro no álbum de figurinhas Panini. Primeira Copa televisionada para o mundo. Pelé ergue a taça pela terceira e última vez.",
+      host: "México"
+    },
+    {
+      year: 1966,
+      name: "World Cup Willie",
+      img: "https://img.olympics.com/images/image/private//t_s_w2440/f_auto/primary/s7pntlrniouix2ehxfmr",
+      desc: "O primeiro mascote oficial da história das Copas. Leão com camisa estampada com a Union Jack e os dizeres 'WORLD CUP'. Criado pelo ilustrador Reg Hoye. Apareceu em centenas de produtos e ganhou música própria com Lonnie Donegan. Inglaterra campeã.",
+      host: "Inglaterra"
+    }
+  ];
+
+  let selectedMascotYear = 2026;
+
+  function renderMascots() {
+    const grid = document.getElementById('mascots-grid');
+    if (!grid) return;
+
+    MASCOTS.forEach((mascot) => {
+      const card = document.createElement('div');
+      card.className = 'mascot-card';
+      card.style.width = '90px';
+      card.style.textAlign = 'center';
+      card.style.cursor = 'pointer';
+
+      const img = document.createElement('img');
+      img.src = mascot.img;
+      img.alt = mascot.name;
+      img.style.width = '72px';
+      img.style.height = '72px';
+      img.style.objectFit = 'contain';
+      img.onerror = function () {
+        this.onerror = null;
+        this.src = `images/mascot-${mascot.year}.png`;
+      };
+
+      const yearEl = document.createElement('div');
+      yearEl.textContent = mascot.year;
+      yearEl.style.fontSize = '12px';
+      yearEl.style.fontWeight = '700';
+
+      const nameEl = document.createElement('div');
+      nameEl.textContent = mascot.name;
+      nameEl.style.fontSize = '11px';
+
+      card.appendChild(img);
+      card.appendChild(yearEl);
+      card.appendChild(nameEl);
+
+      card.addEventListener('click', () => {
+        document.querySelectorAll('.mascot-card').forEach(c => c.classList.remove('mascot-selected'));
+        card.classList.add('mascot-selected');
+        showMascotDetail(mascot);
+      });
+
+      grid.appendChild(card);
+    });
+
+    const defaultMascot = MASCOTS.find(m => m.year === selectedMascotYear);
+    if (defaultMascot) {
+      showMascotDetail(defaultMascot);
+      // Marca o primeiro card (2026) como selecionado
+      setTimeout(() => {
+        const first = document.querySelector('.mascot-card');
+        if (first) first.classList.add('mascot-selected');
+      }, 0);
+    }
+  }
+
+  function showMascotDetail(mascot) {
+    const d = document.getElementById('mascot-detail');
+    d.innerHTML = '';
+    d.style.display = 'flex';
+
+    const img = document.createElement('img');
+    img.src = mascot.img;
+    img.alt = mascot.name;
+    img.style.width = '120px';
+    img.style.height = '120px';
+    img.style.objectFit = 'contain';
+    img.style.flexShrink = '0';
+    img.onerror = function () {
+      this.onerror = null;
+      this.src = `images/mascot-${mascot.year}.png`;
+    };
+
+    const info = document.createElement('div');
+    info.style.flex = '1';
+    info.innerHTML = `
+      <div style="font-size:20px;font-weight:900;color:#1a5276;">
+        ${mascot.year} — ${mascot.name}
+      </div>
+      <div style="font-size:12px;color:#c9940a;margin-bottom:10px;">
+        🏟️ ${mascot.host}
+      </div>
+      <div style="font-size:13px;color:#444;">
+        ${mascot.desc}
+      </div>
+    `;
+
+    d.appendChild(img);
+    d.appendChild(info);
+  }
+
+  document.addEventListener('DOMContentLoaded', renderMascots);
+
+})();
+
+
 /* =========================================================
     EVOLUÇÃO DAS BOLAS DA COPA DO MUNDO
    ========================================================= */
@@ -570,6 +790,12 @@ document.addEventListener('DOMContentLoaded', () => {
       year: 1930, era: '1930-1950', img:"https://images.tcdn.com.br/img/img_prod/311840/camisa_brasil_1930_retro_branca_50832_1_20201130180836.jpg",
         desc: 'Camisa branca com gola em V. O Brasil usava branco antes do amarelo se tornar padrão, após o trauma de 1950.', kit: 'away'
       },
+      {
+        year: 1934, era: '1930-1950', img: "https://images.tcdn.com.br/img/img_prod/311840/camisa_brasil_1930_retro_branca_50832_1_20201130180836.jpg", // Link de referência para visualização
+        desc: 'Similar ao modelo de 1930, manteve o branco como cor principal e a gola polo azul. Foi o uniforme da única partida do Brasil naquela Copa (contra a Espanha).', 
+        kit: 'home'
+      },
+
       {
         year: 1938, era: '1930-1950', img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC81mJb9ExZpDbD_AlrlNd7kzBzzrxrH7Law&s",
         desc: 'Camisa branca com detalhes verdes. Copa da França — Brasil ficou em 3º lugar, com Leônidas artilheiro.', kit: 'away'
