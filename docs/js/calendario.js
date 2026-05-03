@@ -159,6 +159,11 @@
             });
         }
 
+        const exportButton = document.getElementById('wc-export-calendar');
+        if (exportButton) {
+            exportButton.addEventListener('click', exportCalendar);
+        }
+
         document.addEventListener('click', event => {
             if (!event.target.closest('.wc-multiselect')) {
                 closeMultiSelectPanels();
