@@ -7,11 +7,11 @@ import numpy as np
 import pandas as pd
 from cmdstanpy import CmdStanModel
 
-from src.constants import TEAM_MAP_PT_TO_EN, get_pre_tournament_version
+from src.constants import TEAM_MAP_PT_TO_EN, WC_YEAR, get_pre_tournament_version
 from src.data import load_ranking_priors, prepare_cycle_data
-from src.model.bayesian import load_draws
-from src.output import update_html_from_summary
-from src.tournament.bayesian import simulate_stage_and_remaining
+from src.model.bayesian import BayesianDixonColesModel, load_draws
+from src.output import update_chaveamento_probs, update_html_from_summary
+from src.tournament.bayesian import BayesianWorldCup2026, simulate_stage_and_remaining
 
 
 def train_and_save(
@@ -326,7 +326,6 @@ if __name__ == "__main__":
             df_previous_summary = df_previous_summary.reset_index()
             df_previous_summary["position"] = df_previous_summary.index + 1
 
-            df_previous_summary.to_csv("docs/csv/previsoes/summary.csv", index=False)
             df_matches.to_csv(f"docs/csv/previsoes/probs_{stage}.csv", index=False)
             df_matches_third_place.to_csv(
                 "docs/csv/previsoes/probs_third_place.csv", index=False
@@ -353,7 +352,6 @@ if __name__ == "__main__":
             df_previous_summary = df_previous_summary.reset_index()
             df_previous_summary["position"] = df_previous_summary.index + 1
 
-            df_previous_summary.to_csv("docs/csv/previsoes/summary.csv", index=False)
             df_matches.to_csv(f"docs/csv/previsoes/probs_{stage}.csv", index=False)
 
     _stage_to_version = {
@@ -364,7 +362,23 @@ if __name__ == "__main__":
         "final": "Após as Semifinais",
     }
     version = _stage_to_version.get(stage) or get_pre_tournament_version()
-    update_html_from_summary(
-        csv_file="docs/csv/previsoes/summary.csv",
-        version=version,
-    )
+
+    if stage:
+        _wc26 = df_updated[
+            (df_updated["tournament"] == "FIFA World Cup")
+            & (pd.to_datetime(df_updated["date"]).dt.year == WC_YEAR)
+        ]
+        bracket_known = {
+            (r["home_team"], r["away_team"]): (
+                int(r["home_score"]),
+                int(r["away_score"]),
+            )
+            for _, r in _wc26.iterrows()
+        } or None
+        bracket_model = BayesianDixonColesModel(model_path)
+        bracket_sim = BayesianWorldCup2026(bracket_model, known_results=bracket_known)
+        bracket_sim.simulate()
+        if bracket_sim.last_bracket is not None:
+            update_chaveamento_probs(bracket_sim.last_bracket, version)
+
+        update_html_from_summary(df=df_previous_summary, version=version)

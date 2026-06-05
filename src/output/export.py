@@ -403,11 +403,11 @@ def update_html_from_summary(
     csv_file="docs/csv/previsoes/summary.csv",
     tabela_csv="docs/csv/previsoes/tabela_chances.csv",
     version="Antes da Copa",
+    df=None,
 ):
     new_rows = []
-    with open(csv_file, encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
+    if df is not None:
+        for _, row in df.iterrows():
             team = row["team"]
             new_rows.append(
                 {
@@ -423,6 +423,25 @@ def update_html_from_summary(
                     "r32": float(row["round_of_32"]),
                 }
             )
+    else:
+        with open(csv_file, encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                team = row["team"]
+                new_rows.append(
+                    {
+                        "versão": version,
+                        "pos": int(row["position"]),
+                        "team": team,
+                        "flag": get_flag(team),
+                        "champ": float(row["champion"]),
+                        "final": float(row["final"]),
+                        "semi": float(row["semifinals"]),
+                        "qf": float(row["quarterfinals"]),
+                        "r16": float(row["round_of_16"]),
+                        "r32": float(row["round_of_32"]),
+                    }
+                )
 
     tabela_path = Path(tabela_csv)
     fieldnames = [
@@ -455,6 +474,50 @@ def update_html_from_summary(
         writer.writerows(combined)
 
     print(f"tabela_chances.csv atualizado com versão '{version}'.")
+
+
+def update_chaveamento_probs(
+    bracket_df,
+    version,
+    chaveamento_csv="docs/csv/previsoes/chaveamento_probs.csv",
+):
+    """Versiona chaveamento_probs.csv de forma análoga a update_html_from_summary."""
+    fieldnames = [
+        "versão",
+        "side",
+        "round_index",
+        "round_label",
+        "order",
+        "id",
+        "home_team",
+        "prob_home",
+        "away_team",
+        "prob_away",
+        "winner",
+    ]
+
+    new_df = bracket_df.copy()
+    new_df.insert(0, "versão", version)
+    new_rows = new_df[fieldnames].to_dict(orient="records")
+
+    path = Path(chaveamento_csv)
+    existing_rows = []
+    if path.exists():
+        with open(path, encoding="utf-8", newline="") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                v = row.get("versão") or row.get("version", "")
+                if v != version:
+                    existing_rows.append({k: row.get(k, "") for k in fieldnames})
+
+    combined = existing_rows + new_rows
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "w", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(combined)
+
+    print(f"chaveamento_probs.csv atualizado com versão '{version}'.")
 
 
 def main() -> None:
