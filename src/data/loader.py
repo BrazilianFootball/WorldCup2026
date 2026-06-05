@@ -276,7 +276,7 @@ def get_data() -> None:
 
 def treat_dates(results: pd.DataFrame) -> pd.DataFrame:
     results["date"] = pd.to_datetime(results["date"])
-    results.sort_values("date", ascending=True, inplace=True, ignore_index=True)
+    results.sort_values("date", ascending=False, inplace=True, ignore_index=True)
     return results
 
 
