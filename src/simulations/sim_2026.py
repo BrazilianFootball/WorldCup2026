@@ -142,11 +142,10 @@ if __name__ == "__main__":
     )
     print("Sucesso! Dashboard gerado em data/outputs/dashboards/dashboard_2026.html")
 
-    if not CUP_STARTED:
-        update_html_from_summary(
-            csv_file="docs/csv/previsoes/summary.csv",
-            version=get_pre_tournament_version(),
-        )
+    update_html_from_summary(
+        df=df_csv,
+        version=get_pre_tournament_version(),
+    )
 
     # Export all-vs-all matchup probabilities.
     print("\n=== EXPORTANDO all_matchups.csv ===\n")
