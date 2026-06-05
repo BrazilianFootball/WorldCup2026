@@ -48,7 +48,7 @@ Gerado por: `src/simulations/sim_2026.py`
 
 Probabilidades para **todos os 1.128 confrontos possíveis** entre os 48 times (C(48,2)).
 
-Mesmas colunas de probabilidade que `partidas.csv` (`home_win`, `draw`, `away_win`, placar a placar). Para partidas da fase de grupos já realizadas, os valores são sobrescritos com o resultado real (via merge com `partidas.csv`). Para todos os demais confrontos, as probabilidades são calculadas diretamente pelos parâmetros do modelo.
+Mesmas colunas de probabilidade que `partidas.csv` (`home_win`, `draw`, `away_win`, placar a placar). As probabilidades são calculadas diretamente pelos parâmetros do modelo.
 
 Gerado por: `src/simulations/sim_2026.py`
 
@@ -86,22 +86,6 @@ Histórico versionado de probabilidades — cada linha é um snapshot de uma exe
 | `champ`, `final`, `semi`, `qf`, `r16`, `r32` | Probabilidades (%) por fase naquela versão |
 
 Permite comparar a evolução das probabilidades ao longo do torneio. Atualizado por `update_html_from_summary()` em `src/output/export.py`.
-
----
-
-### `probs_final.csv`
-
-Probabilidades do confronto da **grande final**, incluindo resultado e placar a placar.
-
-Mesmas colunas de `partidas.csv`. Gerado por `src/simulations/update_2026.py` quando a fase final é identificada.
-
----
-
-### `probs_third_place.csv`
-
-Probabilidades da **disputa do 3º lugar**, incluindo resultado e placar a placar.
-
-Mesmas colunas de `partidas.csv`. Gerado por `src/simulations/update_2026.py` quando os semifinalistas são conhecidos.
 
 ---
 
