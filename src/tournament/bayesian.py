@@ -350,11 +350,18 @@ class BayesianWorldCup2026(TournamentSimulator):
                 match_date = date_map.get(
                     frozenset([t1_idx, t2_idx]), "Data não encontrada"
                 )
-                g1_g, g2_g = g1[:, g], g2[:, g]
-
                 home_en, away_en, sched_group, sched_date = (
                     _resolve_fixture_orientation(team1, team2, schedule)
                 )
+                if self._known_results and (home_en, away_en) in self._known_results:
+                    kh, ka = self._known_results[(home_en, away_en)]
+                    if team1 == home_en:
+                        g1[:, g] = kh
+                        g2[:, g] = ka
+                    else:
+                        g1[:, g] = ka
+                        g2[:, g] = kh
+                g1_g, g2_g = g1[:, g], g2[:, g]
                 hg, ag = (g1_g, g2_g) if team1 == home_en else (g2_g, g1_g)
                 pair_goals_cache[(home_en, away_en)] = (hg, ag)
 

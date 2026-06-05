@@ -8,15 +8,22 @@ import pandas as pd
 
 from src.constants import (
     ALL_MATCHUPS_EXPORT_COLS,
+    CUP_STARTED,
     DEFAULT_SEED,
     GROUPS,
     PARTIDAS_EXPORT_COLS,
+    REFERENCE_DATE,
     TEAM_MAP_EN_TO_PT,
+    WC_YEAR,
     get_pre_tournament_version,
 )
 from src.data import prepare_cycle_data
 from src.model.bayesian import BayesianDixonColesModel
-from src.output import generate_dashboard, update_html_from_summary
+from src.output import (
+    generate_dashboard,
+    update_chaveamento_probs,
+    update_html_from_summary,
+)
 from src.simulations.utils import build_all_matchups_dataframe_mc
 from src.tournament.bayesian import BayesianWorldCup2026, _sample_posterior
 
@@ -28,13 +35,29 @@ if __name__ == "__main__":
     os.makedirs("data/outputs/dashboards", exist_ok=True)
 
     _, teams_26, _ = prepare_cycle_data(
-        "data/results.csv", "2022-11-19", apply_decay=True
+        "data/results.csv", "2022-11-19", end_date=REFERENCE_DATE, apply_decay=True
     )
 
     model_path = f"data/outputs/models/{MODEL_NAME}"
     print(f"Carregando: {model_path}")
     model = BayesianDixonColesModel(model_path)
-    simulator = BayesianWorldCup2026(model, seed=DEFAULT_SEED)
+
+    _res = pd.read_csv("data/results.csv")
+    _wc26 = _res[
+        (_res["tournament"] == "FIFA World Cup")
+        & (pd.to_datetime(_res["date"]).dt.year == WC_YEAR)
+        & (pd.to_datetime(_res["date"]) <= pd.Timestamp(REFERENCE_DATE))
+        & _res["home_score"].notna()
+        & _res["away_score"].notna()
+    ]
+    known_results = {
+        (r["home_team"], r["away_team"]): (int(r["home_score"]), int(r["away_score"]))
+        for _, r in _wc26.iterrows()
+    } or None
+
+    simulator = BayesianWorldCup2026(
+        model, seed=DEFAULT_SEED, known_results=known_results
+    )
     tr = simulator.simulate(n=N_SIM)
 
     n = tr.counts
@@ -62,16 +85,14 @@ if __name__ == "__main__":
         json.dump(json_output_26, f)
         f.write("\n")
 
-    # Save group-match probability table.
-    if simulator.last_group_matches is not None:
+    # Save group-match probability table (frozen after cup starts).
+    if not CUP_STARTED and simulator.last_group_matches is not None:
         partidas_out = simulator.last_group_matches[PARTIDAS_EXPORT_COLS].round(4)
         partidas_out.to_csv("docs/csv/previsoes/partidas.csv", index=False)
 
-    # Save deterministic display bracket.
+    # Version deterministic display bracket.
     if simulator.last_bracket is not None:
-        simulator.last_bracket.to_csv(
-            "docs/csv/previsoes/chaveamento_probs.csv", index=False
-        )
+        update_chaveamento_probs(simulator.last_bracket, get_pre_tournament_version())
 
     # Build and save the tournament summary CSV.
     rows = []
@@ -99,7 +120,8 @@ if __name__ == "__main__":
         .round(2)
     )
     df_csv.insert(0, "position", df_csv.index + 1)
-    df_csv.to_csv("docs/csv/previsoes/summary.csv", index=False)
+    if not CUP_STARTED:
+        df_csv.to_csv("docs/csv/previsoes/summary.csv", index=False)
 
     stage_labels_26 = {
         "round_of_32": "16 Avos",
@@ -121,7 +143,7 @@ if __name__ == "__main__":
     print("Sucesso! Dashboard gerado em data/outputs/dashboards/dashboard_2026.html")
 
     update_html_from_summary(
-        csv_file="docs/csv/previsoes/summary.csv",
+        df=df_csv,
         version=get_pre_tournament_version(),
     )
 
@@ -140,7 +162,7 @@ if __name__ == "__main__":
     )
     PARTIDAS_PATH = Path("docs/csv/previsoes/partidas.csv")
     output = "docs/csv/previsoes/all_matchups.csv"
-    if PARTIDAS_PATH.exists():
+    if not CUP_STARTED and PARTIDAS_PATH.exists():
         partidas = pd.read_csv(PARTIDAS_PATH)
         prob_cols = [
             c

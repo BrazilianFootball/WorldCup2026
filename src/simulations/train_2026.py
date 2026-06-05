@@ -4,6 +4,7 @@ from concurrent.futures import ProcessPoolExecutor, as_completed
 
 from cmdstanpy import CmdStanModel
 
+from src.constants import REFERENCE_DATE
 from src.data import load_ranking_priors, prepare_cycle_data
 from src.model_sel.validate import train_and_save
 
@@ -46,7 +47,7 @@ if __name__ == "__main__":
     print("=" * 50)
 
     df_26, teams_26, team_map_26 = prepare_cycle_data(
-        "data/results.csv", "2022-11-19", apply_decay=True
+        "data/results.csv", "2022-11-19", end_date=REFERENCE_DATE, apply_decay=True
     )
 
     ranking_priors_26 = load_ranking_priors("data/raw/fifa_ranking_2022.csv", teams_26)
