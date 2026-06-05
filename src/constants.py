@@ -11,6 +11,7 @@ DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 
 WC_2026_FIFA_DATE_START = _date(2026, 5, 29)
 WC_2026_FIFA_DATE_END = _date(2026, 6, 6)
+WC_2026_FREEZE_DATE = _date(2026, 6, 10)
 
 WC_2026_START = _date(2026, 6, 11)
 WC_2026_R32_START = _date(2026, 6, 28)
@@ -20,8 +21,13 @@ WC_2026_SF_START = _date(2026, 7, 14)
 WC_2026_THIRD_PLACE = _date(2026, 7, 18)
 WC_2026_FINAL = _date(2026, 7, 19)
 
+WC_YEAR: int = WC_2026_START.year
+REFERENCE_DATE: _date = _date.today()
+REFERENCE_DATE: _date = _date(2026, 5, 20)
+CUP_STARTED: bool = REFERENCE_DATE >= WC_2026_FREEZE_DATE
 
-def get_pre_tournament_version(today: _date | None = None) -> str:
+
+def get_pre_tournament_version(reference_date: _date | None = None) -> str:
     """Return the tabela_chances.csv version label based on the current date.
 
     Pre-tournament:
@@ -35,19 +41,19 @@ def get_pre_tournament_version(today: _date | None = None) -> str:
     - 14/07–18/07 → 'Após as Quartas'
     - ≥ 19/07    → 'Após as Semifinais'
     """
-    if today is None:
-        today = _date.today()
-    if today < WC_2026_FIFA_DATE_START:
+    if reference_date is None:
+        reference_date = REFERENCE_DATE
+    if reference_date < WC_2026_FIFA_DATE_START:
         return "Antes da Data FIFA"
-    if today <= WC_2026_START:
+    if reference_date <= WC_2026_START:
         return "Antes da Copa - pós data FIFA"
-    if today < WC_2026_R16_START:
+    if reference_date < WC_2026_R16_START:
         return "Após a Fase de Grupos"
-    if today < WC_2026_QF_START:
+    if reference_date < WC_2026_QF_START:
         return "Após os 16-Avos"
-    if today < WC_2026_SF_START:
+    if reference_date < WC_2026_SF_START:
         return "Após as Oitavas"
-    if today < WC_2026_FINAL:
+    if reference_date < WC_2026_FINAL:
         return "Após as Quartas"
     return "Após as Semifinais"
 
