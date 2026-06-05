@@ -1,33 +1,65 @@
-side,round_index,round_label,order,id,home_team,prob_home,away_team,prob_away,winner
-left,0,R32,1,L1,Alemanha,74.84,Escócia,25.16,home
-left,0,R32,2,L2,França,83.23,Irã,16.77,home
-left,0,R32,3,L3,Coreia do Sul,46.06,Canadá,53.94,away
-left,0,R32,4,L4,Países Baixos,46.6,Marrocos,53.4,away
-left,0,R32,5,L5,Portugal,59.33,Croácia,40.67,home
-left,0,R32,6,L6,Espanha,75.85,Áustria,24.15,home
-left,0,R32,7,L7,Austrália,75.87,Bósnia e Herzegovina,24.13,home
-left,0,R32,8,L8,Bélgica,75.64,Tchéquia,24.36,home
-left,1,Oitavas,9,RL1,Alemanha,43.52,França,56.48,away
-left,1,Oitavas,10,RL2,Canadá,28.88,Marrocos,71.12,away
-left,1,Oitavas,11,RL3,Portugal,35.26,Espanha,64.74,away
-left,1,Oitavas,12,RL4,Austrália,43.69,Bélgica,56.31,away
-left,2,Quartas,13,QL1,França,53.51,Marrocos,46.49,home
-left,2,Quartas,14,QL2,Espanha,70.16,Bélgica,29.84,home
-left,3,Semifinal,15,SL,França,42.4,Espanha,57.6,away
-right,0,R32,16,R1,Brasil,52.57,Japão,47.43,home
-right,0,R32,17,R2,Equador,47.76,Noruega,52.24,away
-right,0,R32,18,R3,México,51.21,Senegal,48.79,home
-right,0,R32,19,R4,Inglaterra,76.66,Argélia,23.34,home
-right,0,R32,20,R5,Argentina,66.04,Uruguai,33.96,home
-right,0,R32,21,R6,Paraguai,56.97,Egito,43.03,home
-right,0,R32,22,R7,Suíça,73.03,Costa do Marfim,26.97,home
-right,0,R32,23,R8,Colômbia,75.44,EUA,24.56,home
-right,1,Oitavas,24,RR1,Brasil,58.17,Noruega,41.83,home
-right,1,Oitavas,25,RR2,México,32.38,Inglaterra,67.62,away
-right,1,Oitavas,26,RR3,Argentina,77.86,Paraguai,22.14,home
-right,1,Oitavas,27,RR4,Suíça,37.8,Colômbia,62.2,away
-right,2,Quartas,28,QR1,Brasil,43.15,Inglaterra,56.85,away
-right,2,Quartas,29,QR2,Argentina,62.09,Colômbia,37.91,home
-right,3,Semifinal,30,SR,Inglaterra,45.21,Argentina,54.79,away
-final,4,Final,31,F,Espanha,50.07,Argentina,49.93,home
-terceiro,4,3º Lugar,32,T,França,48.48,Inglaterra,51.52,away
+versão,side,round_index,round_label,order,id,home_team,prob_home,away_team,prob_away,winner
+,left,0,R32,1,L1,Alemanha,74.84,Escócia,25.16,home
+,left,0,R32,2,L2,França,83.23,Irã,16.77,home
+,left,0,R32,3,L3,Coreia do Sul,46.06,Canadá,53.94,away
+,left,0,R32,4,L4,Países Baixos,46.6,Marrocos,53.4,away
+,left,0,R32,5,L5,Portugal,59.33,Croácia,40.67,home
+,left,0,R32,6,L6,Espanha,75.85,Áustria,24.15,home
+,left,0,R32,7,L7,Austrália,75.87,Bósnia e Herzegovina,24.13,home
+,left,0,R32,8,L8,Bélgica,75.64,Tchéquia,24.36,home
+,left,1,Oitavas,9,RL1,Alemanha,43.52,França,56.48,away
+,left,1,Oitavas,10,RL2,Canadá,28.88,Marrocos,71.12,away
+,left,1,Oitavas,11,RL3,Portugal,35.26,Espanha,64.74,away
+,left,1,Oitavas,12,RL4,Austrália,43.69,Bélgica,56.31,away
+,left,2,Quartas,13,QL1,França,53.51,Marrocos,46.49,home
+,left,2,Quartas,14,QL2,Espanha,70.16,Bélgica,29.84,home
+,left,3,Semifinal,15,SL,França,42.4,Espanha,57.6,away
+,right,0,R32,16,R1,Brasil,52.57,Japão,47.43,home
+,right,0,R32,17,R2,Equador,47.76,Noruega,52.24,away
+,right,0,R32,18,R3,México,51.21,Senegal,48.79,home
+,right,0,R32,19,R4,Inglaterra,76.66,Argélia,23.34,home
+,right,0,R32,20,R5,Argentina,66.04,Uruguai,33.96,home
+,right,0,R32,21,R6,Paraguai,56.97,Egito,43.03,home
+,right,0,R32,22,R7,Suíça,73.03,Costa do Marfim,26.97,home
+,right,0,R32,23,R8,Colômbia,75.44,EUA,24.56,home
+,right,1,Oitavas,24,RR1,Brasil,58.17,Noruega,41.83,home
+,right,1,Oitavas,25,RR2,México,32.38,Inglaterra,67.62,away
+,right,1,Oitavas,26,RR3,Argentina,77.86,Paraguai,22.14,home
+,right,1,Oitavas,27,RR4,Suíça,37.8,Colômbia,62.2,away
+,right,2,Quartas,28,QR1,Brasil,43.15,Inglaterra,56.85,away
+,right,2,Quartas,29,QR2,Argentina,62.09,Colômbia,37.91,home
+,right,3,Semifinal,30,SR,Inglaterra,45.21,Argentina,54.79,away
+,final,4,Final,31,F,Espanha,50.07,Argentina,49.93,home
+,terceiro,4,3º Lugar,32,T,França,48.48,Inglaterra,51.52,away
+Antes da Copa - pós data FIFA,left,0,R32,1,L1,Alemanha,74.64,Escócia,25.36,home
+Antes da Copa - pós data FIFA,left,0,R32,2,L2,França,83.15,Irã,16.85,home
+Antes da Copa - pós data FIFA,left,0,R32,3,L3,Coreia do Sul,46.13,Canadá,53.87,away
+Antes da Copa - pós data FIFA,left,0,R32,4,L4,Países Baixos,46.82,Marrocos,53.18,away
+Antes da Copa - pós data FIFA,left,0,R32,5,L5,Portugal,59.27,Croácia,40.73,home
+Antes da Copa - pós data FIFA,left,0,R32,6,L6,Espanha,75.93,Áustria,24.07,home
+Antes da Copa - pós data FIFA,left,0,R32,7,L7,Austrália,75.83,Bósnia e Herzegovina,24.17,home
+Antes da Copa - pós data FIFA,left,0,R32,8,L8,Bélgica,75.68,Tchéquia,24.32,home
+Antes da Copa - pós data FIFA,left,1,Oitavas,9,RL1,Alemanha,43.55,França,56.45,away
+Antes da Copa - pós data FIFA,left,1,Oitavas,10,RL2,Canadá,28.84,Marrocos,71.16,away
+Antes da Copa - pós data FIFA,left,1,Oitavas,11,RL3,Portugal,35.22,Espanha,64.78,away
+Antes da Copa - pós data FIFA,left,1,Oitavas,12,RL4,Austrália,43.53,Bélgica,56.47,away
+Antes da Copa - pós data FIFA,left,2,Quartas,13,QL1,França,53.69,Marrocos,46.31,home
+Antes da Copa - pós data FIFA,left,2,Quartas,14,QL2,Espanha,69.99,Bélgica,30.01,home
+Antes da Copa - pós data FIFA,left,3,Semifinal,15,SL,França,42.52,Espanha,57.48,away
+Antes da Copa - pós data FIFA,right,0,R32,16,R1,Brasil,52.57,Japão,47.43,home
+Antes da Copa - pós data FIFA,right,0,R32,17,R2,Equador,47.78,Noruega,52.22,away
+Antes da Copa - pós data FIFA,right,0,R32,18,R3,México,51.33,Senegal,48.67,home
+Antes da Copa - pós data FIFA,right,0,R32,19,R4,Inglaterra,76.53,Argélia,23.47,home
+Antes da Copa - pós data FIFA,right,0,R32,20,R5,Argentina,65.95,Uruguai,34.05,home
+Antes da Copa - pós data FIFA,right,0,R32,21,R6,Paraguai,57.09,Egito,42.91,home
+Antes da Copa - pós data FIFA,right,0,R32,22,R7,Suíça,73.18,Costa do Marfim,26.82,home
+Antes da Copa - pós data FIFA,right,0,R32,23,R8,Colômbia,75.63,EUA,24.37,home
+Antes da Copa - pós data FIFA,right,1,Oitavas,24,RR1,Brasil,58.08,Noruega,41.92,home
+Antes da Copa - pós data FIFA,right,1,Oitavas,25,RR2,México,32.46,Inglaterra,67.54,away
+Antes da Copa - pós data FIFA,right,1,Oitavas,26,RR3,Argentina,78.04,Paraguai,21.96,home
+Antes da Copa - pós data FIFA,right,1,Oitavas,27,RR4,Suíça,37.87,Colômbia,62.13,away
+Antes da Copa - pós data FIFA,right,2,Quartas,28,QR1,Brasil,43.18,Inglaterra,56.82,away
+Antes da Copa - pós data FIFA,right,2,Quartas,29,QR2,Argentina,62.1,Colômbia,37.9,home
+Antes da Copa - pós data FIFA,right,3,Semifinal,30,SR,Inglaterra,45.34,Argentina,54.66,away
+Antes da Copa - pós data FIFA,final,4,Final,31,F,Espanha,50.15,Argentina,49.85,home
+Antes da Copa - pós data FIFA,terceiro,4,3º Lugar,32,T,França,48.41,Inglaterra,51.59,away
