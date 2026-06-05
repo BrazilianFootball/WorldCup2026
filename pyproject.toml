@@ -19,6 +19,7 @@ dependencies = [
     "scipy>=1.10.0",
     "nbformat>=5.10.4",
     "cmdstanpy>=1.3.0",
+    "matplotlib>=3.7.0",
 ]
 
 [project.optional-dependencies]
