@@ -177,7 +177,7 @@ def prepare_cycle_data(
     # Limit training matches to the requested World Cup cycle.
     date_filter = df["date"] >= start_date
     if end_date:
-        date_filter &= df["date"] < end_date
+        date_filter &= df["date"] <= pd.Timestamp(end_date)
     df_cycle = df[date_filter].copy()
     df_cycle.dropna(subset=["home_score", "away_score"], inplace=True)
 
