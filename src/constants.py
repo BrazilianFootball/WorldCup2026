@@ -23,7 +23,6 @@ WC_2026_FINAL = _date(2026, 7, 19)
 
 WC_YEAR: int = WC_2026_START.year
 REFERENCE_DATE: _date = _date.today()
-REFERENCE_DATE: _date = _date(2026, 6, 24)
 CUP_STARTED: bool = REFERENCE_DATE >= WC_2026_FREEZE_DATE
 
 
