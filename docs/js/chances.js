@@ -201,6 +201,7 @@
             updateVersionButton();
             dropdown.classList.remove('open');
             applyRankingFilters();
+            document.dispatchEvent(new CustomEvent('chancesVersionChange', { detail: { version: selectedVersion } }));
         });
 
         document.addEventListener('click', event => {
@@ -420,6 +421,19 @@
     function init() {
         initChancesTabs();
         initRankingTable();
+
+        document.addEventListener('chancesVersionChange', e => {
+            if (e.detail.version === selectedVersion) return;
+            selectedVersion = e.detail.version;
+            const menu = document.querySelector('.ranking-version-menu');
+            if (menu) {
+                menu.querySelectorAll('input[name="ranking-version"]').forEach(input => {
+                    input.checked = input.value === selectedVersion;
+                });
+            }
+            updateVersionButton();
+            applyRankingFilters();
+        });
     }
 
     if (document.readyState === 'loading') {

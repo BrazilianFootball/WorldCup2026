@@ -257,6 +257,7 @@ function renderBracketVersionDropdown() {
         updateBracketVersionButton();
         dropdown.classList.remove('open');
         rebuildBracket();
+        document.dispatchEvent(new CustomEvent('chancesVersionChange', { detail: { version: selectedBracketVersion } }));
     });
 
     document.addEventListener('click', e => {
@@ -1085,6 +1086,19 @@ async function initChaveamento() {
 
         // Re-draw SVG lines whenever the viewport is resized
         window.addEventListener('resize', () => requestAnimationFrame(drawLines));
+
+        document.addEventListener('chancesVersionChange', e => {
+            if (e.detail.version === selectedBracketVersion) return;
+            selectedBracketVersion = e.detail.version;
+            const menu = document.querySelector('.bracket-version-menu');
+            if (menu) {
+                menu.querySelectorAll('input[name="bracket-version"]').forEach(input => {
+                    input.checked = input.value === selectedBracketVersion;
+                });
+            }
+            updateBracketVersionButton();
+            rebuildBracket();
+        });
 
         // Clicking outside any match card resets the selection to the champion
         document.addEventListener('click', e => {
