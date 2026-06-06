@@ -19,7 +19,7 @@
     let data = [];
     let currentSortCol = 2;
     let currentSortAsc = false;
-    let selectedVersion = PLANNED_VERSIONS[0];
+    let selectedVersion = null;
 
     function escapeHTML(value) {
         return String(value ?? '')
@@ -161,8 +161,8 @@
 
         const versions = availableVersions();
 
-        if (!versions.includes(selectedVersion)) {
-            selectedVersion = PLANNED_VERSIONS.find(v => versions.includes(v)) || versions[0] || '';
+        if (!selectedVersion || !versions.includes(selectedVersion)) {
+            selectedVersion = [...PLANNED_VERSIONS].reverse().find(v => versions.includes(v)) || versions[versions.length - 1] || '';
         }
 
         menu.innerHTML = PLANNED_VERSIONS.map(version => {
