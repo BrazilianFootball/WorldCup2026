@@ -7,6 +7,19 @@
 const CHAVEAMENTO_HIST_CSV_URL = 'csv/previsoes/chaveamento_hist.csv';
 const CHAVEAMENTO_PROBS_CSV_URL = 'csv/previsoes/chaveamento_probs.csv';
 const FLAGS_URL = 'images/flags/flag.csv';
+
+const PLANNED_VERSIONS = [
+    'Antes da data FIFA',
+    'Antes da Copa - pós data FIFA',
+    'Após a Fase de Grupos',
+    'Após os 16-Avos',
+    'Após as Oitavas',
+    'Após as Quartas',
+    'Após as Semifinais'
+];
+let selectedBracketVersion = null;
+let allMatchRows = [];
+
 let TD = {};
 
 // Mapa: nome normalizado do país (PT) -> URL do SVG da bandeira
@@ -143,12 +156,15 @@ function parseTeamDatabase(rows) {
     }, {});
 }
 
-function parseMatchDatabase(rows) {
+function parseMatchDatabase(rows, filterVersion = null) {
+    const toProcess = filterVersion
+        ? rows.filter(r => (r['versão'] || r.version || '') === filterVersion)
+        : rows;
     const bySide = { left: [], right: [] };
     let finalMatch = null;
     let thirdMatch = null;
 
-    rows
+    toProcess
         .slice()
         .sort((a, b) => parseNumber(a.order) - parseNumber(b.order))
         .forEach(row => {
@@ -187,6 +203,89 @@ function parseMatchDatabase(rows) {
     };
 }
 
+function availableBracketVersions() {
+    return [...new Set(
+        allMatchRows
+            .map(r => r['versão'] || r.version || '')
+            .filter(Boolean)
+    )];
+}
+
+function updateBracketVersionButton() {
+    const button = document.querySelector('.bracket-version-btn');
+    if (button) button.innerHTML = `Versão ${selectedBracketVersion || '—'} <span>▾</span>`;
+}
+
+function renderBracketVersionDropdown() {
+    const dropdown = document.querySelector('.bracket-version-dropdown');
+    const menu     = document.querySelector('.bracket-version-menu');
+    const button   = document.querySelector('.bracket-version-btn');
+    if (!dropdown || !menu || !button) return;
+
+    const versions = availableBracketVersions();
+
+    if (selectedBracketVersion && !versions.includes(selectedBracketVersion)) {
+        selectedBracketVersion =
+            PLANNED_VERSIONS.find(v => versions.includes(v)) || versions[0] || null;
+    }
+
+    menu.innerHTML = PLANNED_VERSIONS.map(version => {
+        const available = versions.includes(version);
+        const checked   = version === selectedBracketVersion;
+        return `
+            <label class="date-option ranking-version-option"${available ? '' : ' style="opacity:.45;cursor:not-allowed;"'}>
+                <input type="radio" name="bracket-version" value="${version}"
+                       ${checked ? ' checked' : ''}${available ? '' : ' disabled aria-disabled="true"'}>
+                <span>${version}</span>
+            </label>`;
+    }).join('');
+
+    updateBracketVersionButton();
+
+    button.addEventListener('click', e => {
+        e.stopPropagation();
+        document.querySelectorAll('.date-dropdown.open').forEach(d => {
+            if (d !== dropdown) d.classList.remove('open');
+        });
+        dropdown.classList.toggle('open');
+    });
+
+    menu.addEventListener('change', e => {
+        const input = e.target;
+        if (!input.matches('input[name="bracket-version"]') || input.disabled) return;
+        selectedBracketVersion = input.value;
+        updateBracketVersionButton();
+        dropdown.classList.remove('open');
+        rebuildBracket();
+    });
+
+    document.addEventListener('click', e => {
+        if (!e.target.closest('.bracket-version-dropdown')) dropdown.classList.remove('open');
+    });
+}
+
+function rebuildBracket() {
+    const matchData = parseMatchDatabase(allMatchRows, selectedBracketVersion);
+    ML = matchData.ML; MR = matchData.MR; MF = matchData.MF; MT = matchData.MT;
+    ALL = [...ML.flat(), ...MR.flat(), MF, MT].filter(Boolean);
+
+    document.getElementById('lh').innerHTML = '';
+    document.getElementById('rh').innerHTML = '';
+    document.getElementById('fc').innerHTML = '';
+
+    buildHalf(ML, 'lh');
+    buildHalf(MR, 'rh');
+    buildFinal();
+    buildThirdPlace();
+
+    requestAnimationFrame(() => {
+        drawLines();
+        applyHov(selectedTeam);
+        showStats(selectedTeam);
+        showPath(selectedTeam);
+    });
+}
+
 async function loadBracketData() {
     const [teamRows, matchRows, flagRows] = await Promise.all([
         loadCSV(CHAVEAMENTO_HIST_CSV_URL),
@@ -200,8 +299,16 @@ async function loadBracketData() {
     );
 
     TD = parseTeamDatabase(teamRows);
+    allMatchRows = matchRows;
 
-    const matchData = parseMatchDatabase(matchRows);
+    const available = [...new Set(
+        matchRows.map(r => r['versão'] || r.version || '').filter(Boolean)
+    )];
+    selectedBracketVersion = [...PLANNED_VERSIONS].reverse().find(v => available.includes(v))
+        || available[available.length - 1]
+        || null;
+
+    const matchData = parseMatchDatabase(allMatchRows, selectedBracketVersion);
     ML = matchData.ML;
     MR = matchData.MR;
     MF = matchData.MF;
@@ -437,7 +544,7 @@ function buildFinal() {
         row.dataset.mid = 'F';
         // PAÍSES DA FINAL
         row.innerHTML = `
-            <span class="tp">${team.prob}%</span> 
+            <span class="tp">${team.prob}%</span>
             <span class="tf">${flagHTML(team.name)}</span>
             <span class="tn">${team.name}</span>
         `; //<span class="tf">${t2.flag}</span>
@@ -792,7 +899,7 @@ function showTT(name, e, pin = false) {
         </div>
     `;
     }
-    
+
     const tt = document.getElementById('tt');
 
     tt.innerHTML = `
@@ -958,6 +1065,7 @@ async function initChaveamento() {
     }
     try {
         await loadBracketData();
+        renderBracketVersionDropdown();
 
         // Set the pinned team before building the UI so the first render is correct
         selectedTeam = CHAMP;
