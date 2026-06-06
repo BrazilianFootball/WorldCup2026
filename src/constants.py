@@ -30,7 +30,7 @@ def get_pre_tournament_version(reference_date: _date | None = None) -> str:
     """Return the tabela_chances.csv version label based on the current date.
 
     Pre-tournament:
-    - < 29/05  → 'Antes da Data FIFA'
+    - < 29/05  → 'Antes da data FIFA'
     - 29/05–06/06 → 'Antes da Copa - pós data FIFA'
 
     During the Cup (date-based approximation):
@@ -43,7 +43,7 @@ def get_pre_tournament_version(reference_date: _date | None = None) -> str:
     if reference_date is None:
         reference_date = REFERENCE_DATE
     if reference_date < WC_2026_FIFA_DATE_START:
-        return "Antes da Data FIFA"
+        return "Antes da data FIFA"
     if reference_date <= WC_2026_START:
         return "Antes da Copa - pós data FIFA"
     if reference_date < WC_2026_R16_START:
