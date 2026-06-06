@@ -56,10 +56,11 @@ Gerado por: `src/simulations/sim_2026.py`
 
 ### `chaveamento_probs.csv`
 
-Chaveamento determinístico com as probabilidades de avanço em cada confronto das **fases eliminatórias** (R32 até final e disputa do 3º lugar).
+Histórico versionado das probabilidades de avanço nas **fases eliminatórias** (R32 até final e disputa do 3º lugar) — cada linha pertence a um snapshot de versão, análogo a `tabela_chances.csv`.
 
 | Coluna | Descrição |
 |--------|-----------|
+| `versão` | Rótulo da execução (ex: `"Antes da data FIFA"`, `"Após a Fase de Grupos"`) |
 | `side` | Lado do chaveamento (`left`, `right`, `final`, `terceiro`) |
 | `round_index` | Índice numérico da fase (0 = R32, …, 4 = Final) |
 | `round_label` | Rótulo da fase (`R32`, `Oitavas`, `Quartas`, `Semifinal`, `3º Lugar`, `Final`) |
@@ -69,7 +70,7 @@ Chaveamento determinístico com as probabilidades de avanço em cada confronto d
 | `prob_home`, `prob_away` | Probabilidade (%) de cada time avançar nesse confronto |
 | `winner` | Qual lado (`home`/`away`) tem maior probabilidade de avançar |
 
-Gerado por: `src/simulations/sim_2026.py`
+Permite comparar a evolução do chaveamento ao longo do torneio. Atualizado por `update_chaveamento_probs()` em `src/output/export.py`.
 
 ---
 

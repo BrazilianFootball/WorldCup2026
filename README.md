@@ -35,7 +35,6 @@ There are two modeling tracks in the repo:
 | --- | --- |
 | `README.md` | This guide. |
 | `pyproject.toml` | Python package metadata, core dependencies, Ruff, mypy, pytest, and coverage configuration. |
-| `requirements.txt` | Additional lightweight requirements used by the Stan-oriented scripts, including `cmdstanpy`. |
 | `uv.lock` | Locked dependency resolution for `uv`. |
 | `.python-version` | Python version pinned for the project tooling. |
 | `.pre-commit-config.yaml` | Pre-commit hook configuration. |
@@ -102,7 +101,6 @@ display labels.
 | --- | --- |
 | `train_2026.py` | Compiles Stan models and trains the 2026 posterior; saves draws to `data/outputs/models/`. |
 | `sim_2026.py` | Runs 100 000 tournament simulations from saved draws; writes JSON, CSVs, and the dashboard. |
-| `update_2026.py` | Re-trains and re-simulates after new match results are added to `data/world_cup_results.csv`. |
 | `export_all_matchups.py` | Exports all-vs-all match probability tables. |
 | `sim_2022.py`, `sim_2018.py` | Historical simulation entry points for 2022 and 2018. |
 | `utils.py` | `build_all_matchups_dataframe_mc()` — Monte Carlo all-vs-all match probabilities. |
@@ -119,7 +117,7 @@ display labels.
 
 | Module | Purpose |
 | --- | --- |
-| `export.py` | `export_phase_probs()`, `build_prob_dataframe()`, `build_stage_dataframe()`, `build_all_matchups_dataframe()`, `update_html_from_summary()`, and a `main()` CLI. |
+| `export.py` | `export_phase_probs()`, `build_prob_dataframe()`, `build_stage_dataframe()`, `build_all_matchups_dataframe()`, `update_html_from_summary()`, `update_chaveamento_probs()`, and a `main()` CLI. |
 | `dashboard.py` | `generate_dashboard()`: builds a standalone D3 HTML dashboard from simulation JSON. |
 
 ### `src/analysis/`
@@ -217,14 +215,10 @@ uv run python -m src.simulations.train_2026
 # 3. Simulate 2026 from saved Stan posterior draws (writes JSON, CSVs, dashboard)
 uv run python -m src.simulations.sim_2026
 
-# 4. Re-train and re-simulate after new match results are recorded
-#    (edit data/world_cup_results.csv first, then run:)
-uv run python -m src.simulations.update_2026
-
-# 5. Export current-phase score probabilities and update docs/chances.html
+# 4. Export current-phase score probabilities and update docs/chances.html
 uv run python src/output/export.py --wc-results data/world_cup_results.csv
 
-# 6. Train / evaluate Stan models for 2018 and 2022 validation cycles
+# 5. Train / evaluate Stan models for 2018 and 2022 validation cycles
 uv run python -m src.model_sel.validate
 uv run python -m src.model_sel.evaluate_2018
 uv run python -m src.model_sel.evaluate_2022
@@ -263,8 +257,9 @@ training and simulation scripts. In particular:
 - simulation JSON: `data/outputs/results/sim_results_*.json`;
 - dashboards: `data/outputs/dashboards/dashboard_*.html`;
 - public probability tables: `data/summary.csv`,
-  `docs/csv/previsoes/partidas.csv`, `docs/csv/previsoes/summary.csv`, and
-  `docs/csv/previsoes/chaveamento_probs.csv`;
+  `docs/csv/previsoes/partidas.csv`, `docs/csv/previsoes/summary.csv`,
+  `docs/csv/previsoes/chaveamento_probs.csv` (versioned bracket snapshots), and
+  `docs/csv/previsoes/tabela_chances.csv` (versioned advancement-probability snapshots);
 - evaluation tables and plots: `data/outputs/results/brier_score_*.csv` and
   `data/outputs/results/comparacao_brier_*.png`.
 
@@ -275,8 +270,8 @@ the website.
 
 - Keep source changes in `src/` and `stan_models/` separate from generated
   output changes when possible.
-- Use `data/world_cup_results.csv` to add known 2026 match results and let
-  `src.simulations.update_2026` propagate changes into summaries and site files.
+- Use `data/world_cup_results.csv` to add known 2026 match results and then run
+  `uv run python src/output/export.py --wc-results data/world_cup_results.csv` to propagate changes into summaries and site files.
 - Run formatting and checks (`make check`) before committing source changes.
 - Treat `2022Cup/` as an archive unless intentionally maintaining the legacy
   2022 site or simulations.
