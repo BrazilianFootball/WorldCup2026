@@ -269,6 +269,8 @@ function rebuildBracket() {
     const matchData = parseMatchDatabase(allMatchRows, selectedBracketVersion);
     ML = matchData.ML; MR = matchData.MR; MF = matchData.MF; MT = matchData.MT;
     ALL = [...ML.flat(), ...MR.flat(), MF, MT].filter(Boolean);
+    computeChamp();
+    selectedTeam = CHAMP;
 
     document.getElementById('lh').innerHTML = '';
     document.getElementById('rh').innerHTML = '';
@@ -315,6 +317,7 @@ async function loadBracketData() {
     MF = matchData.MF;
     MT = matchData.MT;
     ALL = [...ML.flat(), ...MR.flat(), MF, MT].filter(Boolean);
+    computeChamp();
 }
 
 // Safe accessor — returns a blank placeholder for unknown teams
@@ -382,14 +385,19 @@ let MF = null;
 // Third-place match
 let MT = null;
 
-// Projected champion
-const CHAMP = 'Espanha';
+// Projected champion — derived from MF after data loads
+let CHAMP = '';
 
 // Flat list of all matches — used for path lookups
 let ALL = [];
 
 // Currently selected (pinned) team
-let selectedTeam = CHAMP;
+let selectedTeam = '';
+
+function computeChamp() {
+    if (!MF) return;
+    CHAMP = MF.pa >= MF.pb ? MF.home : MF.away;
+}
 
 // Controla se o tooltip deve ficar travado no mobile
 let tooltipPinned = false;
