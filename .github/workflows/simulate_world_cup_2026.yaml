@@ -49,10 +49,21 @@ jobs:
       - name: Load data
         run: uv run python -c "from src.data.loader import data_pipeline; data_pipeline()"
 
+      - name: Check if results were updated
+        id: check_results
+        run: |
+          if git diff --name-only | grep -q "data/results.csv"; then
+            echo "updated=true" >> $GITHUB_OUTPUT
+          else
+            echo "updated=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: Train model
+        if: steps.check_results.outputs.updated == 'true'
         run: uv run python -m src.simulations.train_2026
 
       - name: Run simulation
+        if: steps.check_results.outputs.updated == 'true'
         run: uv run python -m src.simulations.sim_2026
 
       - name: Commit changes (if any)
