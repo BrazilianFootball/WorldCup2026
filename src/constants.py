@@ -10,8 +10,7 @@ DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 # ──────────────────────────────────────────────
 
 WC_2026_FIFA_DATE_START = _date(2026, 5, 29)
-WC_2026_FIFA_DATE_END = _date(2026, 6, 6)
-WC_2026_FREEZE_DATE = _date(2026, 6, 10)
+WC_2026_FIFA_DATE_END = _date(2026, 6, 10)
 
 WC_2026_START = _date(2026, 6, 11)
 WC_2026_R32_START = _date(2026, 6, 28)
@@ -23,7 +22,9 @@ WC_2026_FINAL = _date(2026, 7, 19)
 
 WC_YEAR: int = WC_2026_START.year
 REFERENCE_DATE: _date = _date.today()
-CUP_STARTED: bool = REFERENCE_DATE >= WC_2026_FREEZE_DATE
+
+# > para que as probabilidades sejam atualizadas no dia 11 pela manhã
+CUP_STARTED: bool = REFERENCE_DATE > WC_2026_START
 
 
 def get_pre_tournament_version(reference_date: _date | None = None) -> str:
