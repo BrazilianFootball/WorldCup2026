@@ -9,8 +9,6 @@ jobs:
   simulate:
     runs-on: ubuntu-latest
 
-    if: github.actor != 'github-actions'
-
     permissions:
       contents: write
 
