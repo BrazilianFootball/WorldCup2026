@@ -18,7 +18,7 @@
         matches: [],
         filtered: [],
         activeView: 'grade',
-        activeTimezone: 'et'
+        activeTimezone: 'brt'
     };
 
     const BOARD_MIN_ZOOM = 0.62;
@@ -419,7 +419,7 @@
                 html.push(`<div class="wc-cell">${matches.map(matchCard).join('')}</div>`);
             });
         });
-        
+
 
         html.push('</div>');
         container.innerHTML = html.join('');
@@ -763,7 +763,12 @@
     }
 
     function sortMatches(a, b) {
-        return `${a.data} ${a.hora_et} ${String(a.numero).padStart(3, '0')}`.localeCompare(`${b.data} ${b.hora_et} ${String(b.numero).padStart(3, '0')}`);
+        const dateA = getDisplayDate(a);
+        const hourA = getDisplayHour(a);
+        const dateB = getDisplayDate(b);
+        const hourB = getDisplayHour(b);
+        return `${dateA} ${hourA} ${String(a.numero).padStart(3, '0')}`.localeCompare(
+               `${dateB} ${hourB} ${String(b.numero).padStart(3, '0')}`);
     }
 
     function orderedUnique(values, preferredOrder) {
