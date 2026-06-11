@@ -4,7 +4,7 @@ group,A,Coreia do Sul,Tchéquia,,,11/06
 group,B,Canadá,Bósnia e Herzegovina,,,12/06
 group,D,EUA,Paraguai,,,12/06
 group,C,Haiti,Escócia,,,13/06
-group,D,Austrália,Turquia,,,13/06
+group,D,Austrália,Turquia,,,14/06
 group,C,Brasil,Marrocos,,,13/06
 group,B,Catar,Suíça,,,13/06
 group,E,Costa do Marfim,Equador,,,14/06
@@ -18,7 +18,7 @@ group,G,Bélgica,Egito,,,15/06
 group,I,França,Senegal,,,16/06
 group,I,Iraque,Noruega,,,16/06
 group,J,Argentina,Argélia,,,16/06
-group,J,Áustria,Jordânia,,,16/06
+group,J,Áustria,Jordânia,,,17/06
 group,L,Gana,Panamá,,,17/06
 group,L,Inglaterra,Croácia,,,17/06
 group,K,Portugal,República Democrática do Congo,,,17/06
@@ -29,12 +29,12 @@ group,B,Canadá,Catar,,,18/06
 group,A,México,Coreia do Sul,,,18/06
 group,C,Brasil,Haiti,,,19/06
 group,C,Escócia,Marrocos,,,19/06
-group,D,Turquia,Paraguai,,,19/06
+group,D,Turquia,Paraguai,,,20/06
 group,D,EUA,Austrália,,,19/06
 group,E,Alemanha,Costa do Marfim,,,20/06
 group,E,Equador,Curaçao,,,20/06
 group,F,Países Baixos,Suécia,,,20/06
-group,F,Tunísia,Japão,,,20/06
+group,F,Tunísia,Japão,,,21/06
 group,H,Uruguai,Cabo Verde,,,21/06
 group,H,Espanha,Arábia Saudita,,,21/06
 group,G,Bélgica,Irã,,,21/06
@@ -42,7 +42,7 @@ group,G,Nova Zelândia,Egito,,,21/06
 group,I,Noruega,Senegal,,,22/06
 group,I,França,Iraque,,,22/06
 group,J,Argentina,Áustria,,,22/06
-group,J,Jordânia,Argélia,,,22/06
+group,J,Jordânia,Argélia,,,23/06
 group,L,Inglaterra,Gana,,,23/06
 group,L,Panamá,Croácia,,,23/06
 group,K,Portugal,Uzbequistão,,,23/06
@@ -61,8 +61,8 @@ group,D,Turquia,EUA,,,25/06
 group,D,Paraguai,Austrália,,,25/06
 group,I,Noruega,França,,,26/06
 group,I,Senegal,Iraque,,,26/06
-group,G,Egito,Irã,,,26/06
-group,G,Nova Zelândia,Bélgica,,,26/06
+group,G,Egito,Irã,,,27/06
+group,G,Nova Zelândia,Bélgica,,,27/06
 group,H,Cabo Verde,Arábia Saudita,,,26/06
 group,H,Uruguai,Espanha,,,26/06
 group,L,Panamá,Inglaterra,,,27/06
