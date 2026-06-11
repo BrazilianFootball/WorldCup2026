@@ -64,6 +64,10 @@ jobs:
         if: steps.check_results.outputs.updated == 'true'
         run: uv run python -m src.simulations.sim_2026
 
+      - name: Update docs dates
+        if: steps.check_results.outputs.updated == 'true'
+        run: uv run python -m src.output.update_dates
+
       - name: Commit changes (if any)
         run: |
           git config user.name "github-actions"
