@@ -150,6 +150,18 @@ if __name__ == "__main__":
     # Export all-vs-all matchup probabilities.
     print("\n=== EXPORTANDO all_matchups.csv ===\n")
     atk, dfn, rho, et = _sample_posterior(model.draws, N_SIM, seed=DEFAULT_SEED)
+    # Exclude known results from the cache so all_matchups.csv always reflects
+    # model probabilities, not the deterministic actual scores.
+    raw_cache = simulator.last_pair_goals_cache
+    cache_for_all = (
+        {
+            k: v
+            for k, v in raw_cache.items()
+            if known_results is None or k not in known_results
+        }
+        if raw_cache
+        else None
+    )
     df_all = build_all_matchups_dataframe_mc(
         teams_26,
         wc_teams,
@@ -158,7 +170,7 @@ if __name__ == "__main__":
         rho,
         et,
         n_sim=N_SIM,
-        pair_goals_cache=simulator.last_pair_goals_cache,
+        pair_goals_cache=cache_for_all,
     )
     PARTIDAS_PATH = Path("docs/csv/previsoes/partidas.csv")
     output = "docs/csv/previsoes/all_matchups.csv"
