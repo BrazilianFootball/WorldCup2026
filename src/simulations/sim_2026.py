@@ -94,6 +94,55 @@ if __name__ == "__main__":
     if simulator.last_bracket is not None:
         update_chaveamento_probs(simulator.last_bracket, get_pre_tournament_version())
 
+    # Enrich partidas.csv with actual match results from results.csv.
+    # Key includes the match date (YYYY-MM-DD) to correctly disambiguate rematches
+    # between the same pair of teams in different stages (e.g. group vs. knockout).
+    _partidas_path = Path("docs/csv/previsoes/partidas.csv")
+    if _partidas_path.exists():
+        _pt_to_en = {v: k for k, v in TEAM_MAP_EN_TO_PT.items()}
+        _en_lookup = {
+            (r["date"], r["home_team"], r["away_team"]): (
+                int(r["home_score"]),
+                int(r["away_score"]),
+            )
+            for _, r in _wc26.iterrows()
+        }
+
+        def _find_result(date_ddmm: str, home_pt: str, away_pt: str) -> tuple:
+            from datetime import date as _date
+            from datetime import timedelta
+
+            date_iso = f"2026-{date_ddmm[3:5]}-{date_ddmm[:2]}"
+            home_en = _pt_to_en.get(home_pt, home_pt)
+            away_en = _pt_to_en.get(away_pt, away_pt)
+            # Try exact date first, then ±1 day to handle timezone offsets between
+            # the date recorded in results.csv (local) and the BRT date in partidas.csv.
+            for delta in (0, -1, 1):
+                alt = (
+                    _date.fromisoformat(date_iso) + timedelta(days=delta)
+                ).isoformat()
+                result = _en_lookup.get((alt, home_en, away_en))
+                if result is not None:
+                    return result
+            return (None, None)
+
+        _partidas = pd.read_csv(_partidas_path)
+        _partidas["home_real"] = _partidas.apply(
+            lambda row: _find_result(row["date"], row["home_team"], row["away_team"])[
+                0
+            ],
+            axis=1,
+        )
+        _partidas["away_real"] = _partidas.apply(
+            lambda row: _find_result(row["date"], row["home_team"], row["away_team"])[
+                1
+            ],
+            axis=1,
+        )
+        _partidas.to_csv(_partidas_path, index=False)
+        n_real = _partidas["home_real"].notna().sum()
+        print(f"partidas.csv atualizado com {n_real} resultado(s) real(is).")
+
     # Build and save the tournament summary CSV.
     rows = []
     for team in wc_teams:
