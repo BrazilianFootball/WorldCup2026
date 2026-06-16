@@ -127,17 +127,19 @@ if __name__ == "__main__":
             return (None, None)
 
         _partidas = pd.read_csv(_partidas_path)
-        _partidas["home_real"] = _partidas.apply(
-            lambda row: _find_result(row["date"], row["home_team"], row["away_team"])[
-                0
+        _partidas["home_real"] = pd.array(
+            [
+                _find_result(row["date"], row["home_team"], row["away_team"])[0]
+                for _, row in _partidas.iterrows()
             ],
-            axis=1,
+            dtype="Int64",
         )
-        _partidas["away_real"] = _partidas.apply(
-            lambda row: _find_result(row["date"], row["home_team"], row["away_team"])[
-                1
+        _partidas["away_real"] = pd.array(
+            [
+                _find_result(row["date"], row["home_team"], row["away_team"])[1]
+                for _, row in _partidas.iterrows()
             ],
-            axis=1,
+            dtype="Int64",
         )
         _partidas.to_csv(_partidas_path, index=False)
         n_real = _partidas["home_real"].notna().sum()
