@@ -302,7 +302,7 @@ TEAM_MAP_EN_TO_PT = {
     "Ivory Coast": "Costa do Marfim",
     "Curaçao": "Curaçao",
     # Group F
-    "Netherlands": "Países Baixos",
+    "Netherlands": "Holanda",
     "Japan": "Japão",
     "Tunisia": "Tunísia",
     "Sweden": "Suécia",
@@ -352,7 +352,7 @@ FLAG_MAPPING = {
     "Alemanha": "🇩🇪",
     "Japão": "🇯🇵",
     "Uruguai": "🇺🇾",
-    "Países Baixos": "🇳🇱",
+    "Holanda": "🇳🇱",
     "Equador": "🇪🇨",
     "Bélgica": "🇧🇪",
     "Noruega": "🇳🇴",
