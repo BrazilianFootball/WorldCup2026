@@ -7,6 +7,8 @@
     const PLANNED_VERSIONS = [
         'Antes da data FIFA',
         'Antes da Copa - pós data FIFA',
+        'Após primeira rodada da fase de grupos',
+        'Após segunda rodada da fase de grupos',
         'Após a Fase de Grupos',
         'Após os 16-Avos',
         'Após as Oitavas',
