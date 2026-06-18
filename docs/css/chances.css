@@ -310,11 +310,17 @@ body.chances-bracket-active .container > #conteudo {
 /* Layout do ranking: controles ficam na coluna da tabela; sidebar começa na altura da tabela */
 .ranking-content-row {
     display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
     grid-template-rows: auto auto auto;
     column-gap: 40px;
     row-gap: 0;
     width: 100%;
     align-items: start;
+}
+
+#ranking-view > .chance-evolution-section {
+    width: 100%;
+    margin-top: 36px;
 }
 
 /* Permite que os filhos internos sejam posicionados diretamente no grid */
@@ -1779,5 +1785,352 @@ position: relative;
 
     .ranking-expand-link {
         font-size: 11px;
+    }
+}
+
+/* =========================================================
+   EVOLUÇÃO DE CHANCES
+========================================================= */
+.chance-evolution-section {
+    margin-top: 36px;
+    padding-top: 8px;
+}
+
+.chance-evolution-title {
+    font-size: 22px;
+    line-height: 1.2;
+    font-family: 'gotham-bold', sans-serif;
+    font-weight: 700;
+    color: var(--text-blue);
+    margin-bottom: 18px;
+}
+
+.chance-evolution-controls {
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(220px, 0.5fr);
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.chance-evolution-helper {
+    margin-bottom: 12px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #6a7f99;
+    font-family: 'gotham-book', sans-serif;
+}
+
+.chance-evolution-chart-card {
+    position: relative;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 12px 14px 6px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+#chanceEvolutionChart {
+    width: 100%;
+    min-height: 620px;
+}
+
+.chance-evolution-empty {
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #6a7f99;
+    font-family: 'gotham-book', sans-serif;
+    font-size: 14px;
+}
+
+/* ---------- multiselect de seleções ---------- */
+.evolution-team-select {
+    position: relative;
+    min-width: 0;
+}
+
+.evolution-team-select-btn,
+.evolution-phase-btn,
+.evolution-phase-dropdown .date-dropdown-btn {
+    width: 100%;
+    height: 38px;
+    min-height: 38px;
+    border: 1px solid #cfd9ea;
+    border-radius: 10px;
+    background: #ffffff;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    font-family: 'gotham-book', sans-serif;
+    color: var(--text-blue);
+    cursor: pointer;
+}
+
+.evolution-team-select-btn {
+    justify-content: space-between;
+    gap: 10px;
+    text-align: left;
+}
+
+.evolution-team-select-label {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.evolution-team-select-count {
+    flex: none;
+    color: #7b8aa6;
+    font-size: 12px;
+    margin-left: auto;
+    margin-right: 6px;
+}
+
+.evolution-team-select-arrow {
+    flex-shrink: 0;
+    color: #6a7f99;
+}
+
+.evolution-team-placeholder {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.evolution-team-chip-list {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.evolution-team-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    max-width: 180px;
+    padding: 4px 8px;
+    border: 1px solid #d7e1ef;
+    border-radius: 999px;
+    background: #f7faff;
+    color: #223b67;
+    font-size: 13px;
+    line-height: 1;
+}
+
+.evolution-team-chip-flag,
+.evolution-team-option-flag {
+    width: 18px;
+    height: 13px;
+    object-fit: cover;
+    border-radius: 2px;
+    flex: none;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+
+.evolution-team-chip-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.evolution-team-chip-remove {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: #6d7d98;
+    font-size: 15px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    flex: none;
+}
+
+.evolution-team-chip-remove:hover {
+    color: #d64545;
+}
+
+.evolution-team-select-panel {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    width: 100%;
+    z-index: 50;
+    background: #ffffff;
+    border: 1px solid #d7e1ef;
+    border-radius: 12px;
+    box-shadow: 0 10px 28px rgba(15, 60, 104, 0.16);
+    padding: 10px;
+    display: none;
+}
+
+.evolution-team-select.open .evolution-team-select-panel {
+    display: block;
+}
+
+.evolution-team-select-search-wrap {
+    margin-bottom: 8px;
+}
+
+.evolution-team-select-search {
+    width: 100%;
+    height: 34px;
+    border: 1px solid #cfd9ea;
+    border-radius: 8px;
+    padding: 0 12px;
+    outline: none;
+    font-size: 13px;
+    color: var(--text-blue);
+    font-family: 'gotham-book', sans-serif;
+    box-sizing: border-box;
+}
+
+.evolution-team-select-list {
+    max-height: 320px;
+    overflow-y: auto;
+    padding-right: 2px;
+}
+
+.evolution-team-option {
+    width: 100%;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 8px 10px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.15s ease;
+}
+
+.evolution-team-option:hover {
+    background: #f4f8fc;
+}
+
+.evolution-team-option.selected {
+    background: #f7faff;
+}
+
+.evolution-team-option-main {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
+.evolution-team-option-label {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #223b67;
+    font-family: 'gotham-book', sans-serif;
+    font-size: 14px;
+}
+
+.evolution-team-option-action {
+    flex: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #d64545;
+    font-size: 16px;
+    font-family: 'gotham-bold', sans-serif;
+    line-height: 1;
+}
+
+.evolution-phase-dropdown,
+.evolution-phase-btn,
+.evolution-phase-menu {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .chance-evolution-controls {
+        grid-template-columns: 1fr;
+    }
+
+    #chanceEvolutionChart {
+        min-height: 480px;
+    }
+}
+
+/* ---------- tooltip do gráfico ---------- */
+.chance-evolution-tooltip {
+    position: fixed;
+    z-index: 2000;
+    min-width: 180px;
+    max-width: 240px;
+    background: rgba(255,255,255,0.98);
+    border: 1px solid #d7e1ef;
+    border-radius: 10px;
+    box-shadow: 0 10px 24px rgba(15, 60, 104, 0.16);
+    padding: 10px 12px;
+    pointer-events: none;
+    font-family: 'gotham-book', sans-serif;
+    color: #334766;
+}
+
+.chance-evolution-tooltip-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    font-family: 'gotham-bold', sans-serif;
+}
+
+.chance-evolution-tooltip-head img {
+    width: 20px;
+    height: 14px;
+    object-fit: cover;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+}
+
+.chance-evolution-tooltip-row {
+    font-size: 12px;
+    line-height: 1.45;
+    color: #58708f;
+}
+
+.chance-evolution-tooltip-row strong {
+    color: #233b65;
+}
+
+/* ---------- responsivo ---------- */
+@media (max-width: 768px) {
+    .chance-evolution-controls {
+        grid-template-columns: 1fr;
+    }
+
+    #chanceEvolutionChart {
+        min-height: 380px;
+    }
+}
+
+@media (max-width: 768px) {
+    .chance-evolution-chart-card {
+        padding: 8px 4px 4px;
+        overflow: visible;
+    }
+
+    #chanceEvolutionChart {
+        min-height: 460px;
     }
 }

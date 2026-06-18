@@ -11,6 +11,7 @@
         <title>EMAp: Copa do mundo</title>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-119803899-1"></script>
+        <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag() {
@@ -179,6 +180,57 @@
                                 </ul>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <div class="chance-evolution-section">
+                    <div class="texto font-16 chance-evolution-title">
+                        Evolução de Chances
+                    </div>
+
+                    <div class="texto font-16" style="margin-bottom: 16px; font-family: 'Lato', sans-serif;">
+                        Chances de chegar em cada etapa ao longo das versões do modelo. Selecione até 10 seleções.
+                        <!--<strong>
+                            Os resultados representam probabilidades estimadas pelo modelo, não previsões definitivas.
+                        </strong>-->
+                    </div>
+
+                    <div class="chance-evolution-controls">
+                        <div class="evolution-team-select" id="evolutionTeamSelect">
+                            <button type="button" class="evolution-team-select-btn">
+                                <span class="evolution-team-select-label">Selecione de 1 a 10 seleções</span>
+                                <span class="evolution-team-select-count"></span>
+                                <span class="evolution-team-select-arrow">▾</span>
+                            </button>
+
+                            <div class="evolution-team-select-panel">
+                                <div class="evolution-team-select-search-wrap">
+                                    <input
+                                        type="text"
+                                        class="evolution-team-select-search"
+                                        placeholder="Buscar seleção..."
+                                    />
+                                </div>
+                                <div class="evolution-team-select-list"></div>
+                            </div>
+                        </div>
+
+                        <div class="date-dropdown evolution-phase-dropdown">
+                            <button type="button" class="date-dropdown-btn evolution-phase-btn">
+                                Fase <span>▾</span>
+                            </button>
+                            <div class="date-dropdown-menu evolution-phase-menu"></div>
+                        </div>
+                    </div>
+
+                    <!--
+                    <div class="chance-evolution-helper">
+                        Selecione de 1 a 10 seleções para visualizar a evolução das probabilidades.
+                    </div>-->
+
+                    <div class="chance-evolution-chart-card">
+                        <div id="chanceEvolutionChart"></div>
+                        <div id="chanceEvolutionTooltip" class="chance-evolution-tooltip" hidden></div>
                     </div>
                 </div>
             </div>
