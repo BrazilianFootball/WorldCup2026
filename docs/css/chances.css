@@ -68,7 +68,7 @@ CHANCES: controles e alternância de visualização
     width: 100%;
     margin: 0 0 12px;
     display: grid;
-    grid-template-columns: minmax(0, 2fr) minmax(240px, 1fr);
+    grid-template-columns: minmax(0, 1.5fr) minmax(240px, 1fr);
     gap: 8px;
     align-items: center;
 }
@@ -103,21 +103,30 @@ CHANCES: controles e alternância de visualização
     display: block;
 }
 
+/* Container: permite deslizar horizontalmente no mobile */
 .chances-table-scroll {
     overflow-x: auto;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     background: white;
     margin-bottom:32px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
 }
 
+/* Tabela com largura mínima fixa: não comprime no mobile */
 #chancesTable {
     width: 100%;
+    min-width: 829px;
+    table-layout: fixed;
     border-collapse: collapse;
     text-align: center;
     font-size: 14px;
     font-family: 'gotham-book', sans-serif;
 }
+
 
 #chancesTable thead tr {
     background: linear-gradient(135deg, #0f3c68 0%, #0072bc 100%);
@@ -126,36 +135,144 @@ CHANCES: controles e alternância de visualização
     cursor: pointer;
 }
 
+/* Cabeçalho: mantém altura confortável em desktop e mobile */
 #chancesTable th {
-    padding: 15px;
+    padding: 15px 10px !important;
+    height: 52px;
     white-space: nowrap;
+    vertical-align: middle;
 }
 
-#chancesTable th:nth-child(2) {
+/* Linhas da tabela no desktop: volta para uma altura mais parecida com antes */
+#chancesTable td {
+    padding: 12px 10px !important;
+    height: 45px;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+/* Coluna # */
+#chancesTable th:nth-child(1),
+#chancesTable td:nth-child(1) {
+    width: 42px;
+    min-width: 42px;
+    max-width: 42px;
+    padding-right: 4px !important;
+}
+
+/* Cabeçalho da coluna # */
+#chancesTable th:nth-child(1) {
+    padding-left: 14px !important;
+}
+
+/* Números da coluna # */
+#chancesTable td:nth-child(1) {
+    padding-left: 8px !important;
+}
+
+/* Coluna Seleção */
+#chancesTable th:nth-child(2),
+#chancesTable td:nth-child(2) {
+    width: 215px;
+    min-width: 215px;
+    max-width: 215px;
+    overflow: hidden;
     text-align: left;
 }
 
+/* Alinha o texto "Seleção" com o início das bandeiras */
+#chancesTable th:nth-child(2) {
+    padding-left: 44px !important;
+}
+
+/* Mantém o conteúdo das seleções compacto */
+#chancesTable td:nth-child(2) {
+    padding-left: 4px !important;
+    padding-right: 6px !important;
+}
+
+/* Coluna Campeão */
+#chancesTable th:nth-child(3),
+#chancesTable td:nth-child(3) {
+    width: 112px;
+    min-width: 112px;
+    max-width: 112px;
+}
+
+/* Outras colunas numéricas */
+#chancesTable th:nth-child(4),
+#chancesTable td:nth-child(4),
+#chancesTable th:nth-child(5),
+#chancesTable td:nth-child(5),
+#chancesTable th:nth-child(6),
+#chancesTable td:nth-child(6),
+#chancesTable th:nth-child(7),
+#chancesTable td:nth-child(7),
+#chancesTable th:nth-child(8),
+#chancesTable td:nth-child(8) {
+    width: 92px;
+    min-width: 92px;
+    max-width: 92px;
+}
+
+/* Alinhamento interno: variação | bandeira | nome */
 #chancesTable .team-cell-inner {
-    display: flex;
+    display: grid;
+    grid-template-columns: 32px 24px minmax(0, 1fr);
     align-items: center;
-    gap: 8px;
+    column-gap: 8px;
 }
 
+/* Seta de subida/queda */
+#chancesTable .rank-movement {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2px;
+    width: 32px;
+    min-width: 32px;
+    font-family: 'gotham-bold', sans-serif;
+    font-size: 12px;
+    line-height: 1;
+}
+
+#chancesTable .rank-movement .material-icons {
+    font-size: 15px;
+    line-height: 1;
+}
+
+#chancesTable .rank-up {
+    color: #1f9d55;
+}
+
+#chancesTable .rank-down {
+    color: #d64545;
+}
+
+#chancesTable .rank-neutral {
+    visibility: hidden;
+}
+
+/* Bandeiras sempre alinhadas */
 #chancesTable .team-cell-inner .animated-flag {
+    width: 20px;
+    height: 15px;
+    justify-self: center;
     margin-right: 0 !important;
-    vertical-align: middle;
-    flex: 0 0 auto;
+    object-fit: cover;
+    flex: none;
 }
 
-#chancesTable .team-name {
+/* Nome não invade a coluna seguinte */
+#chancesTable .team-name,
+#chancesTable .team-name-two-lines {
     display: inline-block;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
     white-space: nowrap;
     line-height: 1.2;
-}
-
-#chancesTable .team-name-two-lines {
-    white-space: normal;
-    line-height: 1.25;
 }
 
 
@@ -889,7 +1006,6 @@ color: #4a5568;
 .med.s  { background: rgba(40, 47, 240, 0.077); color: #000000b8; border: 1px solid rgba(30, 22, 149, 0.098); }
 .med.b  { background: rgba(160, 90, 30, .1);   color: #8a6030; border: 1px solid rgba(160, 120, 50, .18); }
 
-
 /* ════════════════════════════════════════
 STATS PANEL (below bracket)
 ════════════════════════════════════════ */
@@ -1556,5 +1672,19 @@ position: relative;
     .filterbar.chances-groups-filterbar .group-dropdown {
         width: 100%;
         min-width: 0;
+    }
+}
+
+@media (max-width: 920px) {
+
+    .chances-table-scroll {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #chancesTable {
+        min-width: 829px;
+        table-layout: fixed;
     }
 }

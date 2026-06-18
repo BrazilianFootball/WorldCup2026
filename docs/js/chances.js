@@ -314,11 +314,133 @@
             });
     }
 
+    function getFilteredRows() {
+        const input = document.getElementById('searchCountry');
+        const query = normalizeText(input?.value || '');
+        const key = COLS[currentSortCol];
+
+        return data
+            .filter(row => !selectedVersion || row.version === selectedVersion)
+            .filter(row => !query || normalizeText(row.team).includes(query))
+            .slice()
+            .sort((a, b) => {
+                const valA = a[key];
+                const valB = b[key];
+
+                if (typeof valA === 'string') {
+                    const cmp = currentSortAsc
+                        ? valA.localeCompare(valB)
+                        : valB.localeCompare(valA);
+
+                    if (cmp === 0 && key !== 'r32') {
+                        return currentSortAsc ? a.r32 - b.r32 : b.r32 - a.r32;
+                    }
+
+                    return cmp;
+                }
+
+                if (valA === valB && key !== 'r32') {
+                    return currentSortAsc ? a.r32 - b.r32 : b.r32 - a.r32;
+                }
+
+                return currentSortAsc ? valA - valB : valB - valA;
+            });
+    }
+
+    function getPreviousVersion(version) {
+        const index = PLANNED_VERSIONS.indexOf(version);
+
+        if (index <= 0) return null;
+
+        return PLANNED_VERSIONS[index - 1];
+    }
+
+    function getMovementKey() {
+        const key = COLS[currentSortCol];
+
+        // Se a coluna "Seleção" estiver selecionada, mantém a comparação pelo título.
+        // Para #, usa a própria posição.
+        return key === 'team' ? 'champ' : key;
+    }
+
+    function buildRankMap(version, key) {
+        const rows = data
+            .filter(row => row.version === version)
+            .slice()
+            .sort((a, b) => {
+                if (key === 'pos') {
+                    return a.pos - b.pos;
+                }
+
+                if (a[key] === b[key]) {
+                    return b.r32 - a.r32;
+                }
+
+                return b[key] - a[key];
+            });
+
+        const map = new Map();
+
+        rows.forEach((row, index) => {
+            map.set(normalizeText(row.team), index + 1);
+        });
+
+        return map;
+    }
+
+    function getRankMovementMaps() {
+        const previousVersion = getPreviousVersion(selectedVersion);
+
+        // Primeira versão não compara com nada.
+        if (!previousVersion) return null;
+
+        const key = getMovementKey();
+
+        return {
+            current: buildRankMap(selectedVersion, key),
+            previous: buildRankMap(previousVersion, key)
+        };
+    }
+
+    function getRankMovementHTML(item, movementMaps) {
+        const emptySlot = `
+            <span class="rank-movement rank-neutral" aria-hidden="true"></span>
+        `;
+
+        if (!movementMaps) return emptySlot;
+
+        const teamKey = normalizeText(item.team);
+        const currentRank = movementMaps.current.get(teamKey);
+        const previousRank = movementMaps.previous.get(teamKey);
+
+        if (!currentRank || !previousRank) return emptySlot;
+
+        const diff = previousRank - currentRank;
+
+        if (diff === 0) return emptySlot;
+
+        const amount = Math.abs(diff);
+        const directionClass = diff > 0 ? 'rank-up' : 'rank-down';
+        const icon = diff > 0 ? 'arrow_upward' : 'arrow_downward';
+        const label = diff > 0
+            ? `Subiu ${amount} posição${amount > 1 ? 'ões' : ''}`
+            : `Caiu ${amount} posição${amount > 1 ? 'ões' : ''}`;
+
+        return `
+            <span class="rank-movement ${directionClass}" title="${label}" aria-label="${label}">
+                <span class="material-icons">${icon}</span>
+                <span>${amount}</span>
+            </span>
+        `;
+    }
+
     function renderTable(items) {
         const tbody = document.getElementById('chancesTableBody');
         if (!tbody) return;
 
         tbody.innerHTML = '';
+
+        const movementMaps = getRankMovementMaps();
 
         items.forEach((item, index) => {
             const isBrasil = item.team === 'Brasil';
@@ -356,6 +478,7 @@
                 <td style="padding: 12px; color: #666;">${item.pos}</td>
                 <td style="padding: 12px; text-align: left; font-weight: bold; font-family: 'gotham-bold';">
                     <div class="team-cell-inner">
+                        ${getRankMovementHTML(item, movementMaps)}
                         <img src="${escapeHTML(item.flag)}" class="animated-flag">
                         <span class="${teamNameClass}">${teamNameHtml}</span>
                     </div>

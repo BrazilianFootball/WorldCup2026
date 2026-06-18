@@ -911,8 +911,10 @@ color: red;
 
 .equipe-grid {
     display: grid;
-    grid-template-columns: repeat(5, minmax(150px, 1fr));
+    grid-template-columns: repeat(4, minmax(140px, 1fr));
     gap: 20px;
+    /* começa em 100 e vai gradualmente diminuindo */
+    margin: 0px clamp(20px, 8vw, 100px) 0px clamp(20px, 8vw, 100px);
 }
 
 .membro-card {
@@ -2628,6 +2630,7 @@ box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 
     .equipe-grid {
         grid-template-columns: repeat(4, minmax(100px, 1fr));
+        margin: 0;
     }
 }
 
