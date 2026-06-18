@@ -154,6 +154,73 @@
         button.innerHTML = `Versão ${escapeHTML(selectedVersion)} <span>▾</span>`;
     }
 
+    function updateGroupsVersionButton() {
+        const button = document.querySelector('.groups-version-btn');
+        if (!button) return;
+        button.innerHTML = `Versão ${escapeHTML(selectedVersion)} <span>▾</span>`;
+    }
+
+    function getSummaryRowsForVersion(version) {
+        return data
+            .filter(row => row.version === version)
+            .map(row => ({ team: row.team, round_of_32: String(row.r32) }));
+    }
+
+    function applyGroupsVersion() {
+        const summaryRows = getSummaryRowsForVersion(selectedVersion);
+        window.PrevisoesActions?.rebuildGroupsCards?.(summaryRows);
+    }
+
+    function renderGroupsVersionDropdown() {
+        const dropdown = document.querySelector('.groups-version-dropdown');
+        const menu = document.querySelector('.groups-version-menu');
+        const button = document.querySelector('.groups-version-btn');
+        if (!dropdown || !menu || !button) return;
+
+        const versions = availableVersions();
+
+        menu.innerHTML = PLANNED_VERSIONS.map(version => {
+            const available = versions.includes(version);
+            const checked = version === selectedVersion;
+            const disabledAttrs = available ? '' : ' disabled aria-disabled="true"';
+            const disabledStyle = available ? '' : ' style="opacity:.45; cursor:not-allowed;"';
+            return `
+                <label class="date-option ranking-version-option"${disabledStyle}>
+                    <input type="radio" name="groups-version" value="${escapeHTML(version)}"${checked ? ' checked' : ''}${disabledAttrs}>
+                    <span>${escapeHTML(version)}</span>
+                </label>
+            `;
+        }).join('');
+
+        updateGroupsVersionButton();
+
+        button.addEventListener('click', event => {
+            event.stopPropagation();
+            document.querySelectorAll('.date-dropdown.open').forEach(openDropdown => {
+                if (openDropdown !== dropdown) openDropdown.classList.remove('open');
+            });
+            dropdown.classList.toggle('open');
+        });
+
+        menu.addEventListener('change', event => {
+            const input = event.target;
+            if (!input.matches('input[name="groups-version"]') || input.disabled) return;
+            selectedVersion = input.value;
+            updateGroupsVersionButton();
+            updateVersionButton();
+            dropdown.classList.remove('open');
+            applyRankingFilters();
+            applyGroupsVersion();
+            document.dispatchEvent(new CustomEvent('chancesVersionChange', { detail: { version: selectedVersion } }));
+        });
+
+        document.addEventListener('click', event => {
+            if (!event.target.closest('.groups-version-dropdown')) {
+                dropdown.classList.remove('open');
+            }
+        });
+    }
+
     function renderVersionDropdown() {
         const dropdown = document.querySelector('.ranking-version-dropdown');
         const menu = document.querySelector('.ranking-version-menu');
@@ -355,7 +422,9 @@
             currentSortAsc = false;
 
             renderVersionDropdown();
+            renderGroupsVersionDropdown();
             applyRankingFilters();
+            applyGroupsVersion();
 
             const searchInput = document.getElementById('searchCountry');
             if (searchInput) {
@@ -427,14 +496,22 @@
         document.addEventListener('chancesVersionChange', e => {
             if (e.detail.version === selectedVersion) return;
             selectedVersion = e.detail.version;
-            const menu = document.querySelector('.ranking-version-menu');
-            if (menu) {
-                menu.querySelectorAll('input[name="ranking-version"]').forEach(input => {
+            const rankingMenu = document.querySelector('.ranking-version-menu');
+            if (rankingMenu) {
+                rankingMenu.querySelectorAll('input[name="ranking-version"]').forEach(input => {
+                    input.checked = input.value === selectedVersion;
+                });
+            }
+            const groupsMenu = document.querySelector('.groups-version-menu');
+            if (groupsMenu) {
+                groupsMenu.querySelectorAll('input[name="groups-version"]').forEach(input => {
                     input.checked = input.value === selectedVersion;
                 });
             }
             updateVersionButton();
+            updateGroupsVersionButton();
             applyRankingFilters();
+            applyGroupsVersion();
         });
     }
 

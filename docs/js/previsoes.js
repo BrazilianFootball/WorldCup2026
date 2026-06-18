@@ -476,7 +476,7 @@ function applyScoreFilters(panel) {
                     <span class="groups-prob-note-text">Chances das seleções de passar a fase de grupos.</span>
                 </div>
             `;
-            
+
         const filterHTML = `
             ${noteHTML}
             <div class="${filterbarClasses}">
@@ -485,7 +485,7 @@ function applyScoreFilters(panel) {
                     <input class="country-filter group-country-filter" type="text" placeholder="Buscar Seleção..." autocomplete="off">
                 </div>
 
-                
+
                 ${dateHTML}
 
                 <div class="date-dropdown group-dropdown">
@@ -761,6 +761,12 @@ function applyScoreFilters(panel) {
     window.PrevisoesActions = window.PrevisoesActions || {};
     window.PrevisoesActions.setGroupsMode = setGroupsMode;
 
+    window.PrevisoesActions.rebuildGroupsCards = function(summaryRows) {
+        const panel = document.getElementById('panel-grupos');
+        if (!GROUP_STAGE_ROWS.length || !panel || panel.dataset.groupsSource !== 'chances') return;
+        buildChancesGroupCards(GROUP_STAGE_ROWS, summaryRows);
+    };
+
     // Ponto de entrada da fase de grupos: carrega o CSV e chama a montagem correspondente.
     async function renderGroupStage() {
         const panel = document.getElementById('panel-grupos');
@@ -838,7 +844,7 @@ function applyScoreFilters(panel) {
     }
 
     function sumOutcomes(outcomes) {
-        return outcomes.reduce((sum, item) => sum + item.value, 0); 
+        return outcomes.reduce((sum, item) => sum + item.value, 0);
     }
 
     function getOutcomeTotalFromColumn(row, columnName, fallbackOutcomes) {
@@ -933,7 +939,7 @@ function applyScoreFilters(panel) {
         const searchText = normalizeName(`${homeCountry} ${awayCountry}`);
 
         return `
-            <section 
+            <section
                 class="match-card g-card scorecard-preview"
                 onclick="if(window.openMatchCardModal) window.openMatchCardModal(this)"
                 onkeydown="if((event.key === 'Enter' || event.key === ' ') && window.openMatchCardModal){event.preventDefault();window.openMatchCardModal(this)}"
@@ -1010,7 +1016,7 @@ function applyScoreFilters(panel) {
         const awayCountry = getAwayCountry(row);
         const { homeWin, draw, awayWin } = getOutcomeGroups(row);
         const best = getBestScore(homeWin, draw, awayWin) || { label: '0x0', homeGoals: 0, awayGoals: 0, value: 0 };
-        
+
         const rawHomeTotal = getOutcomeTotalFromColumn(row, 'home_win', homeWin);
         const rawAwayTotal = getOutcomeTotalFromColumn(row, 'away_win', awayWin);
 
@@ -1026,7 +1032,7 @@ function applyScoreFilters(panel) {
             matchGroup = 'Grupo ' + matchGroup;
         }
         const searchText = normalizeName(`${homeCountry} ${awayCountry}`);
-        
+
         const randomRot = (Math.random() * 10 - 5).toFixed(1); // -5 to +5 degrees
         const randomY = (Math.random() * 16 - 8).toFixed(1);   // -8 to +8 px
 
@@ -1047,7 +1053,7 @@ function applyScoreFilters(panel) {
     function renderSticker(row, best, homeFlag, awayFlag, homeTotal, drawTotal, awayTotal, homeCountry, awayCountry, matchDate, matchGroup) {
         let gridHtml = '';
         let maxProb = 0;
-        
+
         for (let a = 4; a >= 0; a--) {
             for (let h = 4; h >= 0; h--) {
                 const key = `${NUMBER_WORDS[h]}_${NUMBER_WORDS[a]}`;
@@ -1056,7 +1062,7 @@ function applyScoreFilters(panel) {
             }
         }
         maxProb = Math.max(maxProb, 1);
-        
+
         for (let h = 4; h >= 0; h--) {
             for (let a = 0; a <= 4; a++) {
                 const key = `${NUMBER_WORDS[h]}_${NUMBER_WORDS[a]}`;
@@ -1065,7 +1071,7 @@ function applyScoreFilters(panel) {
                 const isBest = (h === best.homeGoals && a === best.awayGoals);
                 const bg = isBest ? 'rgba(255, 255, 255, 0.95)' : (prob === 0 ? 'rgba(255, 255, 255, 0.04)' : `rgba(255, 255, 255, ${alpha})`);
                 const probText = prob < 0.1 ? (prob > 0 ? '&lt;0.1%' : '0%') : `${formatPct(prob)}%`;
-                
+
                 gridHtml += `
                     <div class="heatmap-cell ${isBest ? 'best' : ''}" style="background: ${bg}">
                         <div class="prob">${probText}</div>
@@ -1089,13 +1095,13 @@ function applyScoreFilters(panel) {
                 <div class="blur-flag" style="background-image: url('${homeFlag}')"></div>
                 <div class="blur-flag" style="background-image: url('${awayFlag}')"></div>
             </div>
-            
+
             <div class="sticker-glass">
                 <div class="sticker-top-info">
                     <span class="info-group">${escapeHTML(matchGroup)}</span>
                     ${matchDate ? `<span class="info-dot">•</span><span class="info-date">${escapeHTML(matchDate)}</span>` : ''}
                 </div>
-                
+
                 <div class="sticker-header">
                     <div class="team">
                         <div class="sticker-flag">
@@ -1103,12 +1109,12 @@ function applyScoreFilters(panel) {
                         </div>
                         <div class="team-name">${escapeHTML(homeCountry)}</div>
                     </div>
-                    
+
                     <div class="score-center">
                         <div class="most-likely">${escapeHTML(best.label.replace('x', ' - '))}</div>
                         <div class="most-likely-prob">${formatPct(best.value)}%</div>
                     </div>
-                    
+
                     <div class="team">
                         <div class="sticker-flag">
                             ${renderFlag(awayCountry, awayFlag)}
@@ -1116,13 +1122,13 @@ function applyScoreFilters(panel) {
                         <div class="team-name">${escapeHTML(awayCountry)}</div>
                     </div>
                 </div>
-                
+
                 <div class="heatmap-wrapper">
                     <div class="heatmap-grid">
                         ${gridHtml}
                     </div>
                 </div>
-                
+
                 <div class="sticker-footer">
                     <div class="footer-bar-container">
                         <div class="f-bar home" style="width: ${homeTotal}%"></div>
@@ -1167,17 +1173,17 @@ function applyScoreFilters(panel) {
     window.ScoreCards.getFlagRowsOnce = getFlagRowsOnce;
     window.ScoreCards.getFlagGetterOnce = getFlagGetterOnce;
     window.ScoreCards.adjustScoreTotalHeights = adjustScoreTotalHeights;
-    
+
     function renderScorePanelShell(panel, stage) {
         const filtersHTML = stage.showFilters === false ? '' : `
             <div class="filterbar">
                 <div class="filter-field search-field">
                     <div class="search-wrap">
                         <span class="search-icon">🔎</span>
-                        <input 
+                        <input
                             id="${stage.panelId}-country-filter"
-                            class="country-filter" 
-                            type="text" 
+                            class="country-filter"
+                            type="text"
                             placeholder="Buscar Seleção..."
                             autocomplete="off"
                         >
@@ -1303,7 +1309,7 @@ function applyScoreFilters(panel) {
                 loadCSV(MATCHES_CSV_URL),
                 getFlagGetterOnce()
             ]);
-            
+
             window.ScoreCards.matchesData = matchRows;
 
             SCORE_STAGES.forEach(stage => {
@@ -1408,10 +1414,10 @@ function applyScoreFilters(panel) {
     function addSimulationCard(home = '', away = '', triggerAnim = false) {
         cardCounter++;
         const cardId = `sim-card-${cardCounter}`;
-        
+
         const validatedHome = resolveSimulatorCountry(home);
         const validatedAway = resolveSimulatorCountry(away);
-        
+
         const sim = {
             id: cardId,
             homeTeam: validatedHome,
@@ -1456,7 +1462,7 @@ function applyScoreFilters(panel) {
     function startCalculationSequence(sim) {
         const duration = 1500;
         const tickRate = 80;
-        
+
         // Start the HUD random scorelines/probs cycling interval
         const intervalId = setInterval(() => {
             const hudEl = document.querySelector(`#hud-${sim.id}`);
@@ -1621,7 +1627,7 @@ function applyScoreFilters(panel) {
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="card-result-container ${hasResultClass}">
                     ${resultHTML}
                 </div>
@@ -1645,7 +1651,7 @@ function applyScoreFilters(panel) {
                     document.querySelectorAll('.custom-select-dropdown.open').forEach(d => {
                         if (d !== dropdown) d.classList.remove('open');
                     });
-                    
+
                     dropdown.classList.toggle('open');
                     if (dropdown.classList.contains('open')) {
                         searchInput.value = '';
@@ -1666,7 +1672,7 @@ function applyScoreFilters(panel) {
                     opt.addEventListener('click', (e) => {
                         e.stopPropagation();
                         const val = opt.getAttribute('data-value');
-                        
+
                         if (type === 'home') {
                             sim.homeTeam = val;
                         } else {
@@ -1674,7 +1680,7 @@ function applyScoreFilters(panel) {
                         }
 
                         dropdown.classList.remove('open');
-                        
+
                         // If both selected, run animation, else empty
                         if (sim.homeTeam && sim.awayTeam && sim.homeTeam !== sim.awayTeam) {
                             sim.status = 'calculating';
@@ -1895,7 +1901,7 @@ window.openStickerModal = function(element, home, away) {
 
     const container = modal.querySelector('#sticker-modal-card-container');
     container.innerHTML = '';
-    
+
     if (element) {
         const sticker = element.querySelector('.sticker-container').cloneNode(true);
         // Reset transformations on the clone so it displays perfectly in the modal
@@ -1909,7 +1915,7 @@ window.openStickerModal = function(element, home, away) {
 
 window.openStickerFromData = async function(home, away) {
     if (!window.ScoreCards) return;
-    
+
     let row = null;
     if (window.ScoreCards.matchesData) {
         row = window.ScoreCards.matchesData.find(r => r.home_team === home && r.away_team === away);
