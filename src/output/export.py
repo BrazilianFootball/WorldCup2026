@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import argparse
 import csv
-from collections import defaultdict
 from itertools import combinations
 from pathlib import Path
 
@@ -290,93 +289,6 @@ def export_phase_probs(
     return output_path
 
 
-def build_stage_dataframe(
-    results: dict[str, dict[str, int]],
-    n_sims: int,
-    output_path: str = "docs/csv/previsoes/summary.csv",
-) -> pd.DataFrame:
-    stages = [
-        "champion",
-        "final",
-        "semifinals",
-        "quarterfinals",
-        "round_of_16",
-        "round_of_32",
-        "group_first_place",
-        "group_second_place",
-        "group_third_place",
-    ]
-
-    mapped_results = {stage: defaultdict(int) for stage in stages}
-
-    for stage in stages:
-        for team_en, value in results[stage].items():
-            team_pt = TEAM_MAP_EN_TO_PT.get(team_en, team_en)
-            mapped_results[stage][team_pt] += value
-
-    all_teams = mapped_results["champion"].keys()
-
-    ranked = sorted(
-        all_teams,
-        key=lambda t: tuple(mapped_results[s].get(t, 0) for s in stages),
-        reverse=True,
-    )
-
-    rows = []
-
-    for pos, team in enumerate(ranked, 1):
-        rows.append(
-            {
-                "position": pos,
-                "team": team,
-                "champion": mapped_results["champion"].get(team, 0) / n_sims * 100,
-                "final": mapped_results["final"].get(team, 0) / n_sims * 100,
-                "semifinals": mapped_results["semifinals"].get(team, 0) / n_sims * 100,
-                "quarterfinals": mapped_results["quarterfinals"].get(team, 0)
-                / n_sims
-                * 100,
-                "round_of_16": mapped_results["round_of_16"].get(team, 0)
-                / n_sims
-                * 100,
-                "round_of_32": mapped_results["round_of_32"].get(team, 0)
-                / n_sims
-                * 100,
-                "group_first_place": mapped_results["group_first_place"].get(team, 0)
-                / n_sims
-                * 100,
-                "group_second_place": mapped_results["group_second_place"].get(team, 0)
-                / n_sims
-                * 100,
-                "group_third_place": mapped_results["group_third_place"].get(team, 0)
-                / n_sims
-                * 100,
-            }
-        )
-
-    df = pd.DataFrame(rows)
-
-    df = df[
-        [
-            "position",
-            "team",
-            "champion",
-            "final",
-            "semifinals",
-            "quarterfinals",
-            "round_of_16",
-            "round_of_32",
-            "group_first_place",
-            "group_second_place",
-            "group_third_place",
-        ]
-    ]
-
-    df = df.round(2)
-    df.to_csv(output_path, index=False)
-
-    return df
-
-
 def get_flags():
     flags = {}
     try:
@@ -400,48 +312,27 @@ def get_flag(team_name):
 
 
 def update_html_from_summary(
-    csv_file="docs/csv/previsoes/summary.csv",
-    tabela_csv="docs/csv/previsoes/tabela_chances.csv",
-    version="Antes da Copa",
-    df=None,
+    df: pd.DataFrame,
+    tabela_csv: str = "docs/csv/previsoes/tabela_chances.csv",
+    version: str = "Antes da Copa",
 ):
     new_rows = []
-    if df is not None:
-        for _, row in df.iterrows():
-            team = row["team"]
-            new_rows.append(
-                {
-                    "versão": version,
-                    "pos": int(row["position"]),
-                    "team": team,
-                    "flag": get_flag(team),
-                    "champ": float(row["champion"]),
-                    "final": float(row["final"]),
-                    "semi": float(row["semifinals"]),
-                    "qf": float(row["quarterfinals"]),
-                    "r16": float(row["round_of_16"]),
-                    "r32": float(row["round_of_32"]),
-                }
-            )
-    else:
-        with open(csv_file, encoding="utf-8") as f:
-            reader = csv.DictReader(f)
-            for row in reader:
-                team = row["team"]
-                new_rows.append(
-                    {
-                        "versão": version,
-                        "pos": int(row["position"]),
-                        "team": team,
-                        "flag": get_flag(team),
-                        "champ": float(row["champion"]),
-                        "final": float(row["final"]),
-                        "semi": float(row["semifinals"]),
-                        "qf": float(row["quarterfinals"]),
-                        "r16": float(row["round_of_16"]),
-                        "r32": float(row["round_of_32"]),
-                    }
-                )
+    for _, row in df.iterrows():
+        team = row["team"]
+        new_rows.append(
+            {
+                "versão": version,
+                "pos": int(row["position"]),
+                "team": team,
+                "flag": get_flag(team),
+                "champ": float(row["champion"]),
+                "final": float(row["final"]),
+                "semi": float(row["semifinals"]),
+                "qf": float(row["quarterfinals"]),
+                "r16": float(row["round_of_16"]),
+                "r32": float(row["round_of_32"]),
+            }
+        )
 
     tabela_path = Path(tabela_csv)
     fieldnames = [

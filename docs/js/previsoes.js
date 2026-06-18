@@ -32,8 +32,6 @@ function renderPlaceholder(panelId, stageLabel) {
     panel.innerHTML = makePlaceholder(panelId, stageLabel);
 }
 
-//const GROUPS_PROBS = 'https://raw.githubusercontent.com/BrazilianFootball/WorldCup2026/main/data/summary.csv';
-const GROUPS_PROBS = 'csv/previsoes/summary.csv';
 const MATCHES_CSV_URL = 'csv/previsoes/partidas.csv';
 const SIMULATOR_CSV_URL = 'csv/previsoes/all_matchups.csv';
 const FLAGS_CSV_URL = 'images/flags/flag.csv';
@@ -773,15 +771,13 @@ function applyScoreFilters(panel) {
         if (!panel) return;
 
         try {
-            const [matchRows, summaryRows] = await Promise.all([
-                loadCSV(MATCHES_CSV_URL),
-                loadCSV(GROUPS_PROBS)
-            ]);
+            const matchRows = await loadCSV(MATCHES_CSV_URL);
 
             GROUP_STAGE_ROWS = matchRows;
 
             if (panel.dataset.groupsSource === 'chances') {
-                buildChancesGroupCards(matchRows, summaryRows);
+                // Sinaliza que as linhas de partidas estão prontas; chances.js fornece as probabilidades.
+                document.dispatchEvent(new CustomEvent('groupsPhaseReady'));
             } else {
                 buildPrevisoesGroupMatchViews(matchRows);
             }
@@ -791,7 +787,7 @@ function applyScoreFilters(panel) {
                 grid.innerHTML = `
                     <div class="g-card">
                         <div class="g-head">Fase de grupos<span>erro</span></div>
-                        <div class="g-team"><div class="g-name">Erro ao carregar ${MATCHES_CSV_URL} ou ${GROUPS_PROBS}.</div></div>
+                        <div class="g-team"><div class="g-name">Erro ao carregar ${MATCHES_CSV_URL}.</div></div>
                     </div>
                 `;
             }

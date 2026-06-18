@@ -145,7 +145,7 @@ if __name__ == "__main__":
         n_real = _partidas["home_real"].notna().sum()
         print(f"partidas.csv atualizado com {n_real} resultado(s) real(is).")
 
-    # Build and save the tournament summary CSV.
+    # Build the tournament results DataFrame for tabela_chances.csv.
     rows = []
     for team in wc_teams:
         if team not in tr.champion:
@@ -171,8 +171,6 @@ if __name__ == "__main__":
         .round(2)
     )
     df_csv.insert(0, "position", df_csv.index + 1)
-    if not CUP_STARTED:
-        df_csv.to_csv("docs/csv/previsoes/summary.csv", index=False)
 
     stage_labels_26 = {
         "round_of_32": "16 Avos",

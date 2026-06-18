@@ -167,6 +167,7 @@
     }
 
     function applyGroupsVersion() {
+        if (!data.length) return;
         const summaryRows = getSummaryRowsForVersion(selectedVersion);
         window.PrevisoesActions?.rebuildGroupsCards?.(summaryRows);
     }
@@ -492,6 +493,8 @@
     function init() {
         initChancesTabs();
         initRankingTable();
+
+        document.addEventListener('groupsPhaseReady', applyGroupsVersion);
 
         document.addEventListener('chancesVersionChange', e => {
             if (e.detail.version === selectedVersion) return;
