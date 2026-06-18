@@ -23,6 +23,9 @@
     let currentSortAsc = false;
     let selectedVersion = null;
 
+    const RANKING_COLLAPSED_LIMIT = 15;
+    let rankingExpanded = false;
+
     function escapeHTML(value) {
         return String(value ?? '')
             .replaceAll('&', '&amp;')
@@ -194,6 +197,8 @@
         }).join('');
 
         updateGroupsVersionButton();
+        if (dropdown.dataset.groupsVersionBound === '1') return;
+            dropdown.dataset.groupsVersionBound = '1';
 
         button.addEventListener('click', event => {
             event.stopPropagation();
@@ -207,11 +212,10 @@
             const input = event.target;
             if (!input.matches('input[name="groups-version"]') || input.disabled) return;
             selectedVersion = input.value;
-            updateGroupsVersionButton();
+            rankingExpanded = false;
             updateVersionButton();
             dropdown.classList.remove('open');
             applyRankingFilters();
-            applyGroupsVersion();
             document.dispatchEvent(new CustomEvent('chancesVersionChange', { detail: { version: selectedVersion } }));
         });
 
@@ -268,10 +272,12 @@
             if (!input.matches('input[name="ranking-version"]') || input.disabled) return;
 
             selectedVersion = input.value;
+            rankingExpanded = false;
+            updateGroupsVersionButton();
             updateVersionButton();
             dropdown.classList.remove('open');
             applyRankingFilters();
-            document.dispatchEvent(new CustomEvent('chancesVersionChange', { detail: { version: selectedVersion } }));
+            applyGroupsVersion();
         });
 
         document.addEventListener('click', event => {
@@ -434,6 +440,83 @@
         `;
     }
 
+    function ensureRankingExpandControl() {
+        const tableContainer = document.getElementById('chances-table-container');
+        if (!tableContainer) return null;
+
+        let wrap = document.querySelector('.ranking-expand-wrap');
+
+        if (!wrap) {
+            wrap = document.createElement('div');
+            wrap.className = 'ranking-expand-wrap';
+
+            const text = document.createElement('span');
+            text.className = 'ranking-expand-info';
+
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'ranking-expand-link';
+
+            wrap.appendChild(text);
+            wrap.appendChild(button);
+
+            tableContainer.insertAdjacentElement('afterend', wrap);
+        }
+
+        return {
+            wrap,
+            text: wrap.querySelector('.ranking-expand-info'),
+            button: wrap.querySelector('.ranking-expand-link')
+        };
+    }
+
+    function updateRankingExpandControl(totalItems) {
+        const control = ensureRankingExpandControl();
+        const tableContainer = document.getElementById('chances-table-container');
+
+        if (!control || !tableContainer) return;
+
+        const { wrap, text, button } = control;
+
+        if (totalItems <= RANKING_COLLAPSED_LIMIT) {
+            wrap.style.display = 'none';
+            tableContainer.classList.remove('ranking-table-collapsed');
+            return;
+        }
+
+        wrap.style.display = 'flex';
+
+        tableContainer.classList.toggle(
+            'ranking-table-collapsed',
+            !rankingExpanded
+        );
+
+        const visibleCount = rankingExpanded
+            ? totalItems
+            : RANKING_COLLAPSED_LIMIT;
+
+        text.textContent = `Exibindo ${visibleCount} de ${totalItems} seleções`;
+
+        button.textContent = rankingExpanded
+            ? 'Mostrar menos'
+            : 'Ver tabela completa';
+
+        button.setAttribute('aria-expanded', rankingExpanded ? 'true' : 'false');
+
+        button.onclick = () => {
+            rankingExpanded = !rankingExpanded;
+            applyRankingFilters();
+
+            if (!rankingExpanded) {
+                tableContainer.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest'
+                });
+            }
+        };
+    }
+
+
     function renderTable(items) {
         const tbody = document.getElementById('chancesTableBody');
         if (!tbody) return;
@@ -442,7 +525,13 @@
 
         const movementMaps = getRankMovementMaps();
 
-        items.forEach((item, index) => {
+        const visibleItems = rankingExpanded
+            ? items
+            : items.slice(0, RANKING_COLLAPSED_LIMIT);
+
+        updateRankingExpandControl(items.length);
+
+        visibleItems.forEach((item, index) => {
             const isBrasil = item.team === 'Brasil';
             const defaultBg = isBrasil ? 'rgba(0, 155, 58, 0.15)' : 'transparent';
             const hoverBg = isBrasil ? 'rgba(0, 155, 58, 0.25)' : '#f4f8fa';
@@ -546,13 +635,16 @@
             currentSortAsc = false;
 
             renderVersionDropdown();
-            renderGroupsVersionDropdown();
             applyRankingFilters();
-            applyGroupsVersion();
+            applyGroupsVersion(); /* Cria a barra da Fase de Grupos */
+            renderGroupsVersionDropdown(); /* Ativa o dropdown depois que a barra foi criada */
 
             const searchInput = document.getElementById('searchCountry');
             if (searchInput) {
-                searchInput.addEventListener('input', applyRankingFilters);
+                searchInput.addEventListener('input', () => {
+                    rankingExpanded = false;
+                    applyRankingFilters();
+                });
             }
         } catch (error) {
             console.error(error);
@@ -617,7 +709,10 @@
         initChancesTabs();
         initRankingTable();
 
-        document.addEventListener('groupsPhaseReady', applyGroupsVersion);
+        document.addEventListener('groupsPhaseReady', () => {
+            applyGroupsVersion();
+            renderGroupsVersionDropdown();
+        });
 
         document.addEventListener('chancesVersionChange', e => {
             if (e.detail.version === selectedVersion) return;

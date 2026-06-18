@@ -459,6 +459,15 @@ function applyScoreFilters(panel) {
                 </div>
         ` : '';
 
+        const versionHTML = !includeViewToggle ? `
+                <div class="date-dropdown groups-version-dropdown">
+                    <button type="button" class="date-dropdown-btn groups-version-btn">
+                        Versão <span>▾</span>
+                    </button>
+                    <div class="date-dropdown-menu groups-version-menu"></div>
+                </div>
+        ` : '';
+
         const filterbarClasses = includeViewToggle
             ? 'filterbar groups-filterbar has-date'
             : 'filterbar groups-filterbar chances-groups-filterbar';
@@ -492,6 +501,8 @@ function applyScoreFilters(panel) {
                     </button>
                     <div class="date-dropdown-menu group-dropdown-menu"></div>
                 </div>
+
+                ${versionHTML}
 
                 ${modeHTML}
             </div>
