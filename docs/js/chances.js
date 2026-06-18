@@ -622,7 +622,16 @@
             .filter(value => Number.isFinite(value));
     }
 
-    function getDynamicYAxisInfo(traces) {
+    function getNextMultipleOfFiveAbove(value) {
+        if (!Number.isFinite(value)) return 5;
+
+        return Math.min(
+            100,
+            Math.floor(value / 5) * 5 + 5
+        );
+    }
+
+    function getDynamicYAxisInfo(traces, phaseKey = evolutionSelectedPhase) {
         const values = getEvolutionYValues(traces);
 
         if (!values.length) {
@@ -635,25 +644,19 @@
         }
 
         const maxValue = Math.max(...values);
+        const phasesWithMultipleOfFiveLimit = ['qf', 'r16', 'r32'];
+        const axisMax = phasesWithMultipleOfFiveLimit.includes(phaseKey)
+            ? getNextMultipleOfFiveAbove(maxValue)
+            : Math.min(100, Math.max(2, Math.ceil(maxValue + 1)));
 
-        /*
-        guideValue = maior valor + 1
-        axisMax = maior valor + 2
-        Assim a linha de max+1 aparece dentro do gráfico,
-        e ainda sobra espaço visual acima dela.
-        */
-        const guideValue = Math.min(100, Math.floor(maxValue + 1));
-        const axisMax = Math.min(100, Math.max(2, Math.floor(maxValue + 1)));
-
+        const guideValue = axisMax;
         const step = axisMax <= 20 ? 1 : axisMax <= 50 ? 5 : 10;
-
         const tickSet = new Set();
 
         for (let value = 0; value <= axisMax; value += step) {
             tickSet.add(value);
         }
 
-        tickSet.add(guideValue);
         tickSet.add(axisMax);
 
         const tickVals = [...tickSet]
@@ -706,6 +709,9 @@
             return;
         }
 
+        /* Remove a mensagem vazia antes de desenhar o gráfico novamente */
+        chart.querySelectorAll('.chance-evolution-empty').forEach(el => el.remove());
+
         const versions = getEvolutionVersions();
         const selectedKeys = new Set(evolutionSelectedTeams.map(normalizeText));
         const selectedTeams = getUniqueTeams().filter(item =>
@@ -747,7 +753,7 @@
             };
         });
 
-        const yAxisInfo = getDynamicYAxisInfo(traces);
+        const yAxisInfo = getDynamicYAxisInfo(traces, evolutionSelectedPhase);
         const isMobile = isChanceEvolutionMobile();
         const xTickText = isMobile
             ? versions.map(formatEvolutionVersionTick)
