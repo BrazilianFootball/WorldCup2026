@@ -13,9 +13,9 @@ parameters {
   vector[T] attack_raw_std;
   vector[T] defense_raw_std;
   real eta;
-  real<lower=0.01> sigma_att;
-  real<lower=0.01> sigma_def;
-  
+  real<lower=0.01, upper=5> sigma_att;
+  real<lower=0.01, upper=5> sigma_def;
+
   real beta_prior;
   real alpha_prior;
 }
@@ -36,7 +36,7 @@ model {
   eta ~ normal(0, 1);
   beta_prior ~ normal(0, 1);
   alpha_prior ~ normal(0, 1);
-  sigma_att ~ cauchy(0, 2.5); 
+  sigma_att ~ cauchy(0, 2.5);
   sigma_def ~ cauchy(0, 2.5);
 
   for (n in 1:N) {
