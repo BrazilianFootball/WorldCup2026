@@ -10,7 +10,6 @@ from src.output.export import (
     update_chaveamento_probs,
     update_html_from_summary,
 )
-from src.output.update_dates import update_docs_dates
 
 __all__ = [
     "build_all_matchups_dataframe",
@@ -22,6 +21,5 @@ __all__ = [
     "get_phase_matchups",
     "save_matches_to_prod",
     "update_chaveamento_probs",
-    "update_docs_dates",
     "update_html_from_summary",
 ]
