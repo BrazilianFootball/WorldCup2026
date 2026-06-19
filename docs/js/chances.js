@@ -679,9 +679,7 @@
         const mobileLabels = {
             'Antes da data FIFA': 'Antes da<br>data FIFA',
             'Antes da Copa - pós data FIFA': 'Antes da Copa<br>pós data FIFA',
-            'Após primeira rodada da fase de grupos': 'Após 1ª rodada<br>da fase de grupos',
             'Após 1ª rodada da fase de grupos': 'Após 1ª rodada<br>da fase de grupos',
-            'Após segunda rodada da fase de grupos': 'Após 2ª rodada<br>da fase de grupos',
             'Após 2ª rodada da fase de grupos': 'Após 2ª rodada<br>da fase de grupos',
             'Após a Fase de Grupos': 'Após a fase<br>de grupos',
             'Após os 16-Avos': 'Após<br>16-avos',
@@ -828,7 +826,7 @@
                 ...horizontalGuideLines,
                 ...verticalGuideLines
             ],
-            
+
             annotations: mobileYAxisLabel,
             paper_bgcolor: 'rgba(0,0,0,0)',
             plot_bgcolor: '#ffffff',

@@ -13,8 +13,8 @@ WC_2026_FIFA_DATE_START = _date(2026, 5, 29)
 WC_2026_FIFA_DATE_END = _date(2026, 6, 10)
 
 WC_2026_START = _date(2026, 6, 11)
-WC_2026_GROUP_ROUND1_END = _date(2026, 6, 18)  # last sim labeled "após primeira rodada"
-WC_2026_GROUP_ROUND2_END = _date(2026, 6, 24)  # last sim labeled "após segunda rodada"
+WC_2026_GROUP_ROUND1_END = _date(2026, 6, 18)  # last sim labeled "após 1ª rodada"
+WC_2026_GROUP_ROUND2_END = _date(2026, 6, 24)  # last sim labeled "após 2ª rodada"
 WC_2026_R32_START = _date(2026, 6, 28)
 WC_2026_R16_START = _date(2026, 7, 4)
 WC_2026_QF_START = _date(2026, 7, 9)
@@ -37,8 +37,8 @@ def get_pre_tournament_version(reference_date: _date | None = None) -> str:
     - 29/05–11/06  → 'Antes da Copa - pós data FIFA'
 
     During the Cup — group stage:
-    - 12/06–18/06  → 'Após primeira rodada da fase de grupos'
-    - 19/06–24/06  → 'Após segunda rodada da fase de grupos'
+    - 12/06–18/06  → 'Após 1ª rodada da fase de grupos'
+    - 19/06–24/06  → 'Após 2ª rodada da fase de grupos'
     - 25/06–03/07  → 'Após a Fase de Grupos'
 
     Knockout rounds (date-based approximation):
@@ -54,9 +54,9 @@ def get_pre_tournament_version(reference_date: _date | None = None) -> str:
     if reference_date <= WC_2026_START:
         return "Antes da Copa - pós data FIFA"
     if reference_date <= WC_2026_GROUP_ROUND1_END:
-        return "Após primeira rodada da fase de grupos"
+        return "Após 1ª rodada da fase de grupos"
     if reference_date <= WC_2026_GROUP_ROUND2_END:
-        return "Após segunda rodada da fase de grupos"
+        return "Após 2ª rodada da fase de grupos"
     if reference_date < WC_2026_R16_START:
         return "Após a Fase de Grupos"
     if reference_date < WC_2026_QF_START:
