@@ -337,6 +337,7 @@ class BayesianWorldCup2026(TournamentSimulator):
         pts = np.zeros((n, 12, 4))
         sg = np.zeros((n, 12, 4))
         gp = np.zeros((n, 12, 4))
+        pair_goals: dict[tuple[int, int], tuple[np.ndarray, np.ndarray]] = {}
 
         for p1, p2 in pairs:
             i1, i2 = g_indices[:, p1], g_indices[:, p2]
@@ -382,8 +383,34 @@ class BayesianWorldCup2026(TournamentSimulator):
             sg[:, :, p2] += g2 - g1
             gp[:, :, p1] += g1
             gp[:, :, p2] += g2
+            pair_goals[(p1, p2)] = (g1, g2)
 
-        sort_val = pts * 1_000_000 + sg * 1_000 + gp
+        # Tiebreaker 1: head-to-head record among pts-tied teams within the group.
+        # For each pair (p1, p2), h2h stats are added only when both teams share
+        # the same overall points total (the FIFA rule: "among tied teams only").
+        h2h_pts_sum = np.zeros((n, 12, 4))
+        h2h_sg_sum = np.zeros((n, 12, 4))
+        h2h_gp_sum = np.zeros((n, 12, 4))
+        for (p1, p2), (g1_h, g2_h) in pair_goals.items():
+            tied = pts[:, :, p1] == pts[:, :, p2]
+            h2h_pts_sum[:, :, p1] += ((g1_h > g2_h) * 3 + (g1_h == g2_h)) * tied
+            h2h_pts_sum[:, :, p2] += ((g2_h > g1_h) * 3 + (g1_h == g2_h)) * tied
+            h2h_sg_sum[:, :, p1] += (g1_h - g2_h) * tied
+            h2h_sg_sum[:, :, p2] += (g2_h - g1_h) * tied
+            h2h_gp_sum[:, :, p1] += g1_h * tied
+            h2h_gp_sum[:, :, p2] += g2_h * tied
+
+        # Composite sort key: pts → h2h pts → h2h GD → h2h GF → overall GD → overall GF.
+        sort_val = (
+            pts * 1e12
+            + h2h_pts_sum * 1e10
+            + (h2h_sg_sum + 90) * 1e7
+            + h2h_gp_sum * 1e5
+            + (sg + 90) * 1e2
+            + gp
+        )
+        # Cross-group sort for best-third comparison: h2h is irrelevant across groups.
+        cross_group_sort_val = pts * 1_000_000 + sg * 1_000 + gp
         ranks = np.argsort(-sort_val, axis=2)
 
         def count_stage(stage_array: np.ndarray, stage_name: str) -> None:
@@ -399,7 +426,9 @@ class BayesianWorldCup2026(TournamentSimulator):
             firsts[:, g] = g_indices[g, ranks[:, g, 0]]
             seconds[:, g] = g_indices[g, ranks[:, g, 1]]
             all_thirds[:, g] = g_indices[g, ranks[:, g, 2]]
-            third_place_scores[:, g] = sort_val[np.arange(n), g, ranks[:, g, 2]]
+            third_place_scores[:, g] = cross_group_sort_val[
+                np.arange(n), g, ranks[:, g, 2]
+            ]
             count_stage(firsts[:, g], "group_first_place")
             count_stage(seconds[:, g], "group_second_place")
             count_stage(all_thirds[:, g], "group_third_place")
