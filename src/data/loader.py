@@ -284,7 +284,11 @@ def data_pipeline() -> None:
     get_data()
     results = pd.read_csv(DATA_DIR / "results.csv")
     results = treat_dates(results)
-    results.to_csv(DATA_DIR / "results.csv", index=False)
+
+    for col in ("home_score", "away_score"):
+        results[col] = results[col].astype(pd.Int64Dtype())
+
+    results[results["date"] >= "2014-06-11"].to_csv(DATA_DIR / "results.csv", index=False)
 
 
 def load_data() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
