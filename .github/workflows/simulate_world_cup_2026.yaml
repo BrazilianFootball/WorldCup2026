@@ -5,6 +5,8 @@ on:
   #   - cron: "0 */3 * * *"
   workflow_dispatch:
   push:
+    branches:
+      - main
     paths:
       - "data/results.csv"
 
