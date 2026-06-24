@@ -717,11 +717,16 @@ PROBABILIDADES DE PREVISÃO
     line-height: 1;
     font-size: 30px;
 }
-/* Texto descritivo do placeholder. */
-.placeholder-text {
-    font-size: 15px;
+
+/* Texto descritivo do placeholder das abas de confrontos definidos. */
+.placeholder-box .placeholder-text {
+    max-width: 430px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 14px;
     line-height: 1.5;
-    color: #4a5568;
+    color: #808da5;
+    font-weight: 550;
 }
 
 /* ── FILTROS ── */
@@ -1005,9 +1010,12 @@ PROBABILIDADES DE PREVISÃO
         font-size: 24.5px;
     }
 
-    .placeholder-text {
-    font-size: 12px;
-}
+    .placeholder-box .placeholder-text {
+        max-width: 280px;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 11px;
+    }
 }
 
 @media (max-width: 480px) {
