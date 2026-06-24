@@ -16,7 +16,8 @@
         'Após as Semifinais'
     ];
 
-    const COLS = ['pos', 'team', 'champ', 'final', 'semi', 'qf', 'r16', 'r32'];
+    const METRIC_KEYS = ['champ', 'final', 'semi', 'qf', 'r16', 'r32'];
+    const COLS = ['rank', 'team', ...METRIC_KEYS];
     const CHANCE_EVOLUTION_Y_MAX = 20;
     const EVOLUTION_PHASES = [
         { key: 'champ', label: 'Campeão' },
@@ -162,7 +163,6 @@
     function mapCSVRow(row) {
         return {
             version: getVersion(row),
-            pos: parseNumber(row.pos),
             team: row.team || '',
             flag: row.flag || '',
             champ: parseNumber(row.champ),
@@ -197,8 +197,9 @@
     }
 
     function applyGroupsVersion() {
-        if (!data.length) return;
+        if (!data.length || !selectedVersion) return;
         const summaryRows = getSummaryRowsForVersion(selectedVersion);
+        if (!summaryRows.length) return;
         window.PrevisoesActions?.rebuildGroupsCards?.(summaryRows);
     }
 
@@ -238,12 +239,21 @@
         menu.addEventListener('change', event => {
             const input = event.target;
             if (!input.matches('input[name="groups-version"]') || input.disabled) return;
+
             selectedVersion = input.value;
             rankingExpanded = false;
+
+            updateGroupsVersionButton();
             updateVersionButton();
+
             dropdown.classList.remove('open');
+
             applyRankingFilters();
-            document.dispatchEvent(new CustomEvent('chancesVersionChange', { detail: { version: selectedVersion } }));
+            applyGroupsVersion();
+
+            document.dispatchEvent(new CustomEvent('chancesVersionChange', {
+                detail: { version: selectedVersion }
+            }));
         });
 
         document.addEventListener('click', event => {
@@ -943,37 +953,65 @@
         renderChanceEvolutionChart();
     }
 
+    function getSortKeyFromColumn(colIndex) {
+        const key = COLS[colIndex];
+
+        if (METRIC_KEYS.includes(key)) {
+            return key;
+        }
+
+        if (key === 'team') {
+            return 'team';
+        }
+
+        return 'champ';
+    }
+
+    function compareRowsByMetric(a, b, metricKey, asc = false) {
+        const diff = a[metricKey] - b[metricKey];
+
+        if (diff !== 0) {
+            return asc ? diff : -diff;
+        }
+
+        const tieBreakKeys = METRIC_KEYS.filter(key => key !== metricKey);
+
+        for (const tieKey of tieBreakKeys) {
+            const tieDiff = a[tieKey] - b[tieKey];
+
+            if (tieDiff !== 0) {
+                return asc ? tieDiff : -tieDiff;
+            }
+        }
+
+        return normalizeText(a.team).localeCompare(normalizeText(b.team), 'pt-BR');
+    }
+
+    function compareRowsForCurrentSort(a, b) {
+        const key = getSortKeyFromColumn(currentSortCol);
+
+        if (key === 'team') {
+            return currentSortAsc
+                ? a.team.localeCompare(b.team, 'pt-BR')
+                : b.team.localeCompare(a.team, 'pt-BR');
+        }
+
+        return compareRowsByMetric(a, b, key, currentSortAsc);
+    }
+
     function getFilteredRows() {
         const input = document.getElementById('searchCountry');
         const query = normalizeText(input?.value || '');
-        const key = COLS[currentSortCol];
 
         return data
             .filter(row => !selectedVersion || row.version === selectedVersion)
             .filter(row => !query || normalizeText(row.team).includes(query))
             .slice()
-            .sort((a, b) => {
-                const valA = a[key];
-                const valB = b[key];
-
-                if (typeof valA === 'string') {
-                    const cmp = currentSortAsc
-                        ? valA.localeCompare(valB)
-                        : valB.localeCompare(valA);
-
-                    if (cmp === 0 && key !== 'r32') {
-                        return currentSortAsc ? a.r32 - b.r32 : b.r32 - a.r32;
-                    }
-
-                    return cmp;
-                }
-
-                if (valA === valB && key !== 'r32') {
-                    return currentSortAsc ? a.r32 - b.r32 : b.r32 - a.r32;
-                }
-
-                return currentSortAsc ? valA - valB : valB - valA;
-            });
+            .sort(compareRowsForCurrentSort)
+            .map((row, index) => ({
+                ...row,
+                displayRank: index + 1
+            }));
     }
 
     function getPreviousVersion(version) {
@@ -985,28 +1023,18 @@
     }
 
     function getMovementKey() {
-        const key = COLS[currentSortCol];
+        const key = getSortKeyFromColumn(currentSortCol);
 
-        // Se a coluna "Seleção" estiver selecionada, mantém a comparação pelo título.
-        // Para #, usa a própria posição.
-        return key === 'team' ? 'champ' : key;
+        return METRIC_KEYS.includes(key) ? key : 'champ';
     }
 
     function buildRankMap(version, key) {
+        const metricKey = METRIC_KEYS.includes(key) ? key : 'champ';
+
         const rows = data
             .filter(row => row.version === version)
             .slice()
-            .sort((a, b) => {
-                if (key === 'pos') {
-                    return a.pos - b.pos;
-                }
-
-                if (a[key] === b[key]) {
-                    return b.r32 - a.r32;
-                }
-
-                return b[key] - a[key];
-            });
+            .sort((a, b) => compareRowsByMetric(a, b, metricKey, false));
 
         const map = new Map();
 
@@ -1173,7 +1201,7 @@
 
             const multiLineTeams = {
                 'Bósnia e Herzegovina': 'Bósnia e<br>Herzegovina',
-                'República Democrática do Congo': 'República<br>Democrática do Congo'
+                'República Democrática do Congo': 'República<br>Democrática<br>do Congo'
             };
 
             const hasMultiLineName = !!multiLineTeams[item.team];
@@ -1187,7 +1215,7 @@
                 : 'team-name';
 
             tr.innerHTML = `
-                <td style="padding: 12px; color: #666;">${item.pos}</td>
+                <td style="padding: 12px; color: #666;">${item.displayRank}</td>
                 <td style="padding: 12px; text-align: left; font-weight: bold; font-family: 'gotham-bold';">
                     <div class="team-cell-inner">
                         ${getRankMovementHTML(item, movementMaps)}
