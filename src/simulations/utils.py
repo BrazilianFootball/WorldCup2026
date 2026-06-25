@@ -50,12 +50,12 @@ def build_all_matchups_dataframe_mc(
     et: NDArray[np.floating],
     n_sim: int,
     pair_goals_cache: dict[tuple[str, str], tuple[NDArray, NDArray]] | None = None,
-    schedule_path: str | Path = "data/world_cup_results.csv",
+    results_path: str | Path = "data/results.csv",
     batch_size: int = ALL_MATCHUPS_BATCH_SIZE,
 ) -> pd.DataFrame:
     """Monte Carlo match probabilities for every WC team pair using Stan draws."""
     t_to_idx = {name: i for i, name in enumerate(teams_list)}
-    schedule = _load_schedule_orientations(schedule_path)
+    schedule = _load_schedule_orientations(results_path)
     cache = pair_goals_cache or {}
 
     pairs: list[tuple[str, str]] = list(combinations(wc_teams, 2))

@@ -23,10 +23,13 @@ from src.constants import (
     ROUND_OF_16_PAIRS,
     SEMIFINAL_PAIRS,
     TEAM_MAP_EN_TO_PT,
-    TEAM_MAP_PT_TO_EN,
 )
 from src.data import detect_phase, load_wc_results
 from src.model.frequentist import build_model
+from src.tournament.bayesian import (
+    _load_schedule_orientations,
+    _resolve_fixture_orientation,
+)
 from src.tournament.frequentist import WorldCup2026
 
 
@@ -145,50 +148,10 @@ def _build_match_prob_row(
     }
 
 
-def _load_schedule_orientations(
-    results_path: str = "data/world_cup_results.csv",
-) -> dict[frozenset[str], tuple[str, str, str, object]]:
-    """Map unordered pair -> (home_pt, away_pt, group, date)."""
-    results_df = pd.read_csv(results_path)
-    for col in ["home_team", "away_team", "group"]:
-        results_df[col] = results_df[col].astype(str).str.strip()
-
-    orientations: dict[frozenset[str], tuple[str, str, str, object]] = {}
-    for row in results_df.itertuples(index=False):
-        home_pt = row.home_team
-        away_pt = row.away_team
-        orientations[frozenset({home_pt, away_pt})] = (
-            home_pt,
-            away_pt,
-            row.group,
-            row.date,
-        )
-    return orientations
-
-
-def _resolve_fixture_orientation(
-    team_a_en: str,
-    team_b_en: str,
-    schedule: dict[frozenset[str], tuple[str, str, str, object]],
-) -> tuple[str, str, str | None, object | None]:
-    """Return (home_en, away_en, group, date) for a pair of teams."""
-    team_a_pt = TEAM_MAP_EN_TO_PT.get(team_a_en, team_a_en)
-    team_b_pt = TEAM_MAP_EN_TO_PT.get(team_b_en, team_b_en)
-    scheduled = schedule.get(frozenset({team_a_pt, team_b_pt}))
-
-    if scheduled is None:
-        return team_a_en, team_b_en, None, None
-
-    home_pt, away_pt, group, date = scheduled
-    home_en = TEAM_MAP_PT_TO_EN.get(home_pt, home_pt)
-    away_en = TEAM_MAP_PT_TO_EN.get(away_pt, away_pt)
-    return home_en, away_en, group, date
-
-
 def build_all_matchups_dataframe(
     wc: WorldCup2026,
     max_goals: int = MAX_GOALS,
-    results_path: str = "data/world_cup_results.csv",
+    results_path: str = "data/results.csv",
 ) -> pd.DataFrame:
     """Build score probabilities for every unique pair (C(48,2) rows).
 
@@ -219,7 +182,7 @@ def build_prob_dataframe(
     wc: WorldCup2026,
     matchups: list[tuple[str, str, str]],
     max_goals: int = MAX_GOALS,
-    results_path: str = "data/world_cup_results.csv",
+    results_path: str = "data/results.csv",
 ) -> pd.DataFrame:
     schedule = _load_schedule_orientations(results_path)
     rows = []

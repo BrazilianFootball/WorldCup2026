@@ -12,7 +12,7 @@ from src.constants import (
     DEFAULT_SEED,
     GROUPS,
     TEAM_MAP_EN_TO_PT,
-    TEAM_MAP_PT_TO_EN,
+    WC_YEAR,
 )
 from src.model.bayesian import BayesianDixonColesModel
 from src.tournament.base import TournamentResult, TournamentSimulator
@@ -164,22 +164,28 @@ def _aggregate_batch_probs(g1: np.ndarray, g2: np.ndarray) -> list[dict[str, flo
 
 
 def _load_schedule_orientations(
-    results_path: str | Path = "data/world_cup_results.csv",
+    results_path: str | Path = "data/results.csv",
+    wc_year: int = WC_YEAR,
 ) -> dict[frozenset[str], tuple[str, str, str, object]]:
-    """Map unordered PT pair -> (home_pt, away_pt, group, date)."""
-    if isinstance(results_path, pd.DataFrame):
-        results_df = results_path.copy()
-    else:
-        results_df = pd.read_csv(results_path)
-    for col in ["home_team", "away_team", "group"]:
-        results_df[col] = results_df[col].astype(str).str.strip()
-
+    """Map unordered EN pair -> (home_en, away_en, group, date) from results.csv."""
+    results_df = (
+        pd.read_csv(results_path)
+        if not isinstance(results_path, pd.DataFrame)
+        else results_path.copy()
+    )
+    wc = results_df[
+        (results_df["tournament"] == "FIFA World Cup")
+        & (pd.to_datetime(results_df["date"]).dt.year == wc_year)
+    ]
+    team_to_group: dict[str, str] = {t: g for g, teams in GROUPS.items() for t in teams}
     orientations: dict[frozenset[str], tuple[str, str, str, object]] = {}
-    for row in results_df.itertuples(index=False):
-        orientations[frozenset({row.home_team, row.away_team})] = (
-            row.home_team,
-            row.away_team,
-            row.group,
+    for row in wc.itertuples(index=False):
+        home_en, away_en = row.home_team, row.away_team
+        group = team_to_group.get(home_en, team_to_group.get(away_en, ""))
+        orientations[frozenset({home_en, away_en})] = (
+            home_en,
+            away_en,
+            group,
             row.date,
         )
     return orientations
@@ -190,17 +196,10 @@ def _resolve_fixture_orientation(
     team_b_en: str,
     schedule: dict[frozenset[str], tuple[str, str, str, object]],
 ) -> tuple[str, str, str | None, object | None]:
-    team_a_pt = TEAM_MAP_EN_TO_PT.get(team_a_en, team_a_en)
-    team_b_pt = TEAM_MAP_EN_TO_PT.get(team_b_en, team_b_en)
-    scheduled = schedule.get(frozenset({team_a_pt, team_b_pt}))
-
+    scheduled = schedule.get(frozenset({team_a_en, team_b_en}))
     if scheduled is None:
         return team_a_en, team_b_en, None, None
-
-    home_pt, away_pt, group, date = scheduled
-    home_en = TEAM_MAP_PT_TO_EN.get(home_pt, home_pt)
-    away_en = TEAM_MAP_PT_TO_EN.get(away_pt, away_pt)
-    return home_en, away_en, group, date
+    return scheduled
 
 
 def _sample_posterior(
@@ -242,7 +241,7 @@ class BayesianWorldCup2026(TournamentSimulator):
         seed: int = DEFAULT_SEED,
         known_results: dict[tuple[str, str], tuple[int, int]] | None = None,
         host_boost: float = DEFAULT_HOST_BOOST,
-        schedule_path: str | Path = "data/world_cup_results.csv",
+        schedule_path: str | Path = "data/results.csv",
         export_all_matchups: bool = True,
     ) -> None:
         self._model = model
@@ -306,28 +305,12 @@ class BayesianWorldCup2026(TournamentSimulator):
         extra_stages = ["group_first_place", "group_second_place", "group_third_place"]
         stats = {f: np.zeros(n_teams) for f in original_stages + extra_stages}
 
-        # Build date lookup from schedule CSV.
-        df_schedule = (
-            pd.read_csv(self._schedule_path)
-            if isinstance(self._schedule_path, str | Path)
-            else self._schedule_path
-        )
-        df_schedule["home_id"] = (
-            df_schedule["home_team"]
-            .map(TEAM_MAP_PT_TO_EN)
-            .map(t_to_idx)
-            .astype("Int64")
-        )
-        df_schedule["away_id"] = (
-            df_schedule["away_team"]
-            .map(TEAM_MAP_PT_TO_EN)
-            .map(t_to_idx)
-            .astype("Int64")
-        )
+        # Build date lookup from results.csv (WC matches, English names).
         date_map: dict[frozenset, object] = {}
-        for _, row in df_schedule.iterrows():
-            if pd.notna(row["home_id"]) and pd.notna(row["away_id"]):
-                date_map[frozenset([row["home_id"], row["away_id"]])] = row["date"]
+        for pair, (_, _, _, date) in schedule.items():
+            ids = [t_to_idx.get(t) for t in pair]
+            if all(i is not None for i in ids):
+                date_map[frozenset(ids)] = date
 
         # ── Group stage ──────────────────────────────────────────────────────
         match_stats: list[dict] = []
