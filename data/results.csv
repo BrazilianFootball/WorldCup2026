@@ -12,8 +12,8 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2026-06-26,Cape Verde,Saudi Arabia,,,FIFA World Cup,Houston,United States,True
 2026-06-26,New Zealand,Belgium,,,FIFA World Cup,Vancouver,Canada,True
 2026-06-25,Curaçao,Ivory Coast,0,2,FIFA World Cup,Philadelphia,United States,True
-2026-06-25,Paraguay,Australia,,,FIFA World Cup,Santa Clara,United States,True
-2026-06-25,United States,Turkey,,,FIFA World Cup,Inglewood,United States,False
+2026-06-25,Paraguay,Australia,0,0,FIFA World Cup,Santa Clara,United States,True
+2026-06-25,United States,Turkey,2,3,FIFA World Cup,Inglewood,United States,False
 2026-06-25,Ecuador,Germany,2,1,FIFA World Cup,East Rutherford,United States,True
 2026-06-25,Japan,Sweden,1,1,FIFA World Cup,Arlington,United States,True
 2026-06-25,Tunisia,Netherlands,1,3,FIFA World Cup,Kansas City,United States,True
