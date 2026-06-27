@@ -416,6 +416,24 @@ function applyScoreFilters(panel) {
         return value <= 1 ? value * 100 : value;
     }
 
+    function computeGroupStandings(rows) {
+        const stats = new Map();
+        rows.forEach(r => {
+            const h = r.home_team, a = r.away_team;
+            const hg = parseInt(r.home_real, 10), ag = parseInt(r.away_real, 10);
+            if (!h || !a || isNaN(hg) || isNaN(ag)) return;
+            if (!stats.has(h)) stats.set(h, { pts: 0, gd: 0, gf: 0 });
+            if (!stats.has(a)) stats.set(a, { pts: 0, gd: 0, gf: 0 });
+            const hs = stats.get(h), as_ = stats.get(a);
+            hs.gf += hg; hs.gd += hg - ag;
+            as_.gf += ag; as_.gd += ag - hg;
+            if (hg > ag) { hs.pts += 3; }
+            else if (hg === ag) { hs.pts += 1; as_.pts += 1; }
+            else { as_.pts += 3; }
+        });
+        return stats;
+    }
+
     function buildGroup32Map(summaryRows) {
         const map = new Map();
 
@@ -598,12 +616,19 @@ function applyScoreFilters(panel) {
             const rows = matchRows.filter(r => String(r.group ?? '').trim() === letter);
             const teams = [...new Set(rows.flatMap(r => [r.home_team, r.away_team]).filter(Boolean))];
 
+            const standings = computeGroupStandings(rows);
             const ranking = teams
                 .map(t => ({
                     name: t,
-                    pct: getGroupFirstPlaceProbability(t, group32Map)
+                    pct: getGroupFirstPlaceProbability(t, group32Map),
+                    ...( standings.get(t) || { pts: 0, gd: 0, gf: 0 } )
                 }))
-                .sort((a, b) => b.pct - a.pct);
+                .sort((a, b) => {
+                    if (b.pct !== a.pct) return b.pct - a.pct;
+                    if (b.pts !== a.pts) return b.pts - a.pts;
+                    if (b.gd !== a.gd) return b.gd - a.gd;
+                    return b.gf - a.gf;
+                });
 
             const card = document.createElement('div');
             card.className = 'g-card group-card';
