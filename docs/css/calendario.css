@@ -505,6 +505,35 @@
     padding: 12px 16px;
 }
 
+
+.wc-multiselect-group-title {
+    padding: 8px 12px 4px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #273c75;
+    opacity: 0.85;
+}
+
+.wc-multiselect-group-title-past {
+    margin-top: 6px;
+    border-top: 1px solid #e3e8f2;
+    padding-top: 10px;
+    color: #6b7280;
+}
+
+.wc-multiselect-option-past {
+    color: #7a8496;
+    opacity: 0.75;
+}
+
+.wc-multiselect-option-past small {
+    margin-left: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #9aa3b2;
+}
+
 @media (max-width: 960px) {
     .wc-controls {
         grid-template-columns: repeat(2, minmax(0, 1fr));

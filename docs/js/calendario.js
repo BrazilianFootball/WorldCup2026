@@ -177,9 +177,26 @@
 
         document.querySelectorAll('[data-timezone]').forEach(button => {
             button.addEventListener('click', () => {
+                if (state.activeTimezone === button.dataset.timezone) return;
+
                 state.activeTimezone = button.dataset.timezone;
-                document.querySelectorAll('[data-timezone]').forEach(btn => btn.classList.toggle('is-active', btn === button));
-                render();
+
+                document.querySelectorAll('[data-timezone]').forEach(btn => {
+                    btn.classList.toggle('is-active', btn === button);
+                });
+
+                ['wc-filter-hour', 'wc-filter-date'].forEach(id => {
+                    const select = document.getElementById(id);
+
+                    if (select) {
+                        Array.from(select.options).forEach(option => {
+                            option.selected = false;
+                        });
+                    }
+                });
+
+                buildFilters();
+                applyFilters();
             });
         });
 
@@ -206,16 +223,17 @@
             formatter: value => `Grupo ${value}`
         });
 
-        fillMultiSelect('wc-filter-region', orderedUnique(state.matches.map(match => match.regiao), ['Oeste','Central','Leste']), {
-            singular: 'região selecionada',
-            plural: 'regiões selecionadas',
+        fillMultiSelect('wc-filter-hour', orderedUnique(state.matches.map(match => getDisplayHour(match))), {
+            singular: 'horário selecionado',
+            plural: 'horários selecionados',
             formatter: value => value
         });
 
-        fillMultiSelect('wc-filter-city', CITY_ORDER.filter(city => state.matches.some(match => match.cidade === city)), {
-            singular: 'cidade selecionada',
-            plural: 'cidades selecionadas',
-            formatter: value => value
+        fillMultiSelect('wc-filter-date', orderedUnique(state.matches.map(match => getDisplayDate(match))), {
+            singular: 'data selecionada',
+            plural: 'datas selecionadas',
+            formatter: value => formatFilterDate(value),
+            groupPastDates: true
         });
     }
 
@@ -231,6 +249,29 @@
         )).join('');
 
         select.value = current;
+    }
+
+    function buildMultiSelectOptionsHtml(values, previousValues, config) {
+        if (config.groupPastDates) {
+            return buildGroupedDateOptionsHtml(values, previousValues, config);
+        }
+
+        return values.map(value => buildMultiSelectOptionHtml(value, previousValues, config)).join('');
+    }
+
+    function buildMultiSelectOptionHtml(value, previousValues, config, extraClass = '', extraText = '') {
+        const checked = previousValues.includes(value) ? ' checked' : '';
+        const label = config.formatter ? config.formatter(value) : value;
+
+        return `
+            <label class="wc-multiselect-option ${extraClass}">
+                <input type="checkbox" value="${escapeHtml(value)}"${checked}>
+                <span>
+                    ${escapeHtml(label)}
+                    ${extraText ? `<small>${escapeHtml(extraText)}</small>` : ''}
+                </span>
+            </label>
+        `;
     }
 
     function fillMultiSelect(id, values, config) {
@@ -264,15 +305,7 @@
                 <span class="wc-multiselect-arrow">▾</span>
             </button>
             <div class="wc-multiselect-panel" hidden>
-                ${values.map(value => {
-                    const checked = previousValues.includes(value) ? ' checked' : '';
-                    return `
-                        <label class="wc-multiselect-option">
-                            <input type="checkbox" value="${escapeHtml(value)}"${checked}>
-                            <span>${escapeHtml(config.formatter(value))}</span>
-                        </label>
-                    `;
-                }).join('')}
+                ${buildMultiSelectOptionsHtml(values, previousValues, config)}
             </div>
         `;
 
@@ -302,6 +335,47 @@
         });
 
         updateMultiSelectLabel(id);
+    }
+
+    function buildGroupedDateOptionsHtml(values, previousValues, config) {
+        const today = getTodayInActiveTimezone();
+
+        const futureDates = values
+            .filter(date => date >= today)
+            .sort();
+
+        const pastDates = values
+            .filter(date => date < today)
+            .sort()
+            .reverse();
+
+        const parts = [];
+
+        if (futureDates.length) {
+            parts.push(`<div class="wc-multiselect-group-title">Próximas datas</div>`);
+            parts.push(
+                futureDates
+                    .map(value => buildMultiSelectOptionHtml(value, previousValues, config))
+                    .join('')
+            );
+        }
+
+        if (pastDates.length) {
+            parts.push(`<div class="wc-multiselect-group-title wc-multiselect-group-title-past">Datas anteriores</div>`);
+            parts.push(
+                pastDates
+                    .map(value => buildMultiSelectOptionHtml(
+                        value,
+                        previousValues,
+                        config,
+                        'wc-multiselect-option-past',
+                        'já passou'
+                    ))
+                    .join('')
+            );
+        }
+
+        return parts.join('');
     }
 
     function getSelectedValues(id) {
@@ -344,17 +418,22 @@
         const searchTerms = getSearchTerms(query);
         const phases = getSelectedValues('wc-filter-phase');
         const groups = getSelectedValues('wc-filter-group');
-        const regions = getSelectedValues('wc-filter-region');
-        const cities = getSelectedValues('wc-filter-city');
+        const hours = getSelectedValues('wc-filter-hour');
+        const dates = getSelectedValues('wc-filter-date');
 
         state.filtered = state.matches.filter(match => {
-            const matchesText = !query || (searchTerms.length > 0 && searchTerms.some(term => match.searchText.includes(term)));
+            const matchesText = !query || (
+                searchTerms.length > 0 &&
+                searchTerms.some(term => match.searchText.includes(term))
+            );
+
             const matchesPhase = !phases.length || phases.includes(match.fase);
             const matchesGroup = !groups.length || groups.includes(match.grupo);
-            const matchesRegion = !regions.length || regions.includes(match.regiao);
-            const matchesCity = !cities.length || cities.includes(match.cidade);
 
-            return matchesText && matchesPhase && matchesGroup && matchesRegion && matchesCity;
+            const matchesHour = !hours.length || hours.includes(getDisplayHour(match));
+            const matchesDate = !dates.length || dates.includes(getDisplayDate(match));
+
+            return matchesText && matchesPhase && matchesGroup && matchesHour && matchesDate;
         });
 
         render();
@@ -732,18 +811,42 @@
         if (state.activeTimezone === 'brt') {
             return splitDateTime(match.data_brt).date || match.data;
         }
-        return match.data;
+
+        return splitDateTime(match.data_et).date || match.data;
     }
 
     function getDisplayHour(match) {
         if (state.activeTimezone === 'brt') {
             return splitDateTime(match.data_brt).time || match.hora_et;
         }
-        return match.hora_et;
+
+        return splitDateTime(match.data_et).time || match.hora_et;
     }
 
     function getTimezoneLabel() {
         return state.activeTimezone === 'brt' ? 'BRT' : 'ET';
+    }
+
+    function getActiveTimezoneId() {
+        return state.activeTimezone === 'brt'
+            ? 'America/Sao_Paulo'
+            : 'America/New_York';
+    }
+
+    function getTodayInActiveTimezone() {
+        const formatter = new Intl.DateTimeFormat('en-CA', {
+            timeZone: getActiveTimezoneId(),
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit'
+        });
+
+        const parts = formatter.formatToParts(new Date());
+        const year = parts.find(part => part.type === 'year')?.value;
+        const month = parts.find(part => part.type === 'month')?.value;
+        const day = parts.find(part => part.type === 'day')?.value;
+
+        return `${year}-${month}-${day}`;
     }
 
     function splitDateTime(value) {
@@ -785,6 +888,11 @@
     function formatFullDate(dateString) {
         const date = parseDate(dateString);
         return `${WEEKDAYS[date.getDay()]}, ${String(date.getDate()).padStart(2, '0')} ${MONTHS[date.getMonth()]} 2026`;
+    }
+
+    function formatFilterDate(dateString) {
+        const date = parseDate(dateString);
+        return `${String(date.getDate()).padStart(2, '0')}/${MONTHS[date.getMonth()]} (${WEEKDAYS[date.getDay()]})`;
     }
 
     function parseDate(dateString) {
