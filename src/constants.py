@@ -5298,7 +5298,7 @@ TEAM_MAP_EN_TO_PT = {
     "Portugal": "Portugal",
     "Colombia": "Colômbia",
     "Uzbekistan": "Uzbequistão",
-    "DR Congo": "RD do Congo",
+    "DR Congo": "RD Congo",
     # Group L
     "England": "Inglaterra",
     "Croatia": "Croácia",
@@ -5344,7 +5344,7 @@ FLAG_MAPPING = {
     "Uzbequistão": "🇺🇿",
     "Tunísia": "🇹🇳",
     "Suécia": "🇸🇪",
-    "RD do Congo": "🇨🇩",
+    "RD Congo": "🇨🇩",
     "Jordânia": "🇯🇴",
     "Gana": "🇬🇭",
     "Arábia Saudita": "🇸🇦",

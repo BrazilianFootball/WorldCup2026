@@ -1201,7 +1201,7 @@
 
             const multiLineTeams = {
                 'Bósnia e Herzegovina': 'Bósnia e<br>Herzegovina',
-                'RD do Congo': 'República<br>Democrática<br>do Congo'
+                'RD Congo': 'República<br>Democrática<br>do Congo'
             };
 
             const hasMultiLineName = !!multiLineTeams[item.team];

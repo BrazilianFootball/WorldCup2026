@@ -474,7 +474,7 @@ const countries = [
   anos: "2002"
 },
 {
-  /* Competiu como Zaire em 1974; atualmente RD do Congo */
+  /* Competiu como Zaire em 1974; atualmente RD Congo */
   name: "Democratic Republic of the Congo",
   Selecao: "Zaire / R.D. Congo",
   campanha: "Fase de Grupos",
