@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import io
 import json
 import os
 from pathlib import Path
@@ -35,6 +36,46 @@ from src.tournament.bayesian import (
 
 N_SIM = 100_000
 MODEL_NAME = "draws_2026_n_poisson_ranking.npz"
+
+
+def _validate_partidas_write(path: Path, new_df: pd.DataFrame) -> None:
+    """Raise ValueError if new_df would alter any existing non-empty value in the CSV.
+
+    Allowed changes:
+      - filling in empty home_real / away_real
+      - filling in empty probability columns for a row that had none
+      - appending new rows
+    Everything else (editing existing values OR changing their format) is rejected.
+    """
+    if not path.exists():
+        return
+
+    orig = pd.read_csv(path, dtype=str, keep_default_na=False)
+    new = pd.read_csv(
+        io.StringIO(new_df.to_csv(index=False)), dtype=str, keep_default_na=False
+    )
+
+    if len(new) < len(orig):
+        raise ValueError(
+            f"{path}: linhas removidas (tinha {len(orig)}, agora {len(new)})"
+        )
+
+    for i in range(len(orig)):
+        orig_row = orig.iloc[i]
+        new_row = new.iloc[i]
+        home = orig_row.get("home_team", "?")
+        away = orig_row.get("away_team", "?")
+        for col in orig.columns:
+            if col not in new.columns:
+                raise ValueError(f"{path}: coluna '{col}' foi removida")
+            orig_val = orig_row[col]
+            new_val = new_row[col]
+            if orig_val != "" and orig_val != new_val:
+                raise ValueError(
+                    f"{path} linha {i + 2} ({home} vs {away}): "
+                    f"'{col}' alterado de '{orig_val}' para '{new_val}'"
+                )
+
 
 if __name__ == "__main__":
     os.makedirs("data/outputs/results", exist_ok=True)
@@ -94,6 +135,7 @@ if __name__ == "__main__":
     # Save group-match probability table (frozen after cup starts).
     if not CUP_STARTED and simulator.last_group_matches is not None:
         partidas_out = simulator.last_group_matches[PARTIDAS_EXPORT_COLS].round(4)
+        _validate_partidas_write(Path("docs/csv/previsoes/partidas.csv"), partidas_out)
         partidas_out.to_csv("docs/csv/previsoes/partidas.csv", index=False)
 
     # Version deterministic display bracket.
@@ -133,20 +175,14 @@ if __name__ == "__main__":
             return (None, None)
 
         _partidas = pd.read_csv(_partidas_path)
-        _partidas["home_real"] = pd.array(
-            [
-                _find_result(row["date"], row["home_team"], row["away_team"])[0]
-                for _, row in _partidas.iterrows()
-            ],
-            dtype="Int64",
-        )
-        _partidas["away_real"] = pd.array(
-            [
-                _find_result(row["date"], row["home_team"], row["away_team"])[1]
-                for _, row in _partidas.iterrows()
-            ],
-            dtype="Int64",
-        )
+        for _idx, _row in _partidas[_partidas["home_real"].isna()].iterrows():
+            _h, _a = _find_result(_row["date"], _row["home_team"], _row["away_team"])
+            if _h is not None:
+                _partidas.at[_idx, "home_real"] = _h
+                _partidas.at[_idx, "away_real"] = _a
+        for _col in ("home_real", "away_real"):
+            _partidas[_col] = pd.array(_partidas[_col], dtype="Int64")
+        _validate_partidas_write(_partidas_path, _partidas)
         _partidas.to_csv(_partidas_path, index=False)
         n_real = _partidas["home_real"].notna().sum()
         print(f"partidas.csv atualizado com {n_real} resultado(s) real(is).")
@@ -155,6 +191,9 @@ if __name__ == "__main__":
     # (teams defined but probability columns still empty).
     if _partidas_path.exists():
         _partidas = pd.read_csv(_partidas_path)
+        for _col in ("home_real", "away_real"):
+            if _col in _partidas.columns:
+                _partidas[_col] = pd.array(_partidas[_col], dtype="Int64")
         _pt_to_en = {v: k for k, v in TEAM_MAP_EN_TO_PT.items()}
         t_to_idx_ko = {name: i for i, name in enumerate(model.teams)}
         group_labels = set(GROUPS.keys())
@@ -181,6 +220,7 @@ if __name__ == "__main__":
                 for col, val in probs.items():
                     if col in _partidas.columns:
                         _partidas.at[idx, col] = round(val, 4)
+            _validate_partidas_write(_partidas_path, _partidas)
             _partidas.to_csv(_partidas_path, index=False)
             n_ko = int(knockout_no_probs.sum())
             print(f"partidas.csv: probabilidades preenchidas para {n_ko} jogo(s).")
