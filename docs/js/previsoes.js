@@ -205,6 +205,70 @@ function updateDateButton(button, selectedDates) {
     button.innerHTML = `${label}<span>▾</span>`;
 }
 
+function parsePrevisoesDate(value) {
+    const [day, month, year] = String(value).trim().split('/').map(Number);
+
+    if (!Number.isFinite(day) || !Number.isFinite(month)) {
+        return Number.POSITIVE_INFINITY;
+    }
+
+    const fullYear = Number.isFinite(year)
+        ? (year < 100 ? 2000 + year : year)
+        : 2026;
+
+    return new Date(fullYear, month - 1, day, 12, 0, 0).getTime();
+}
+
+function getTodayPrevisoesDate() {
+    const today = new Date();
+    return new Date(
+        today.getFullYear(),
+        today.getMonth(),
+        today.getDate(),
+        12,
+        0,
+        0
+    ).getTime();
+}
+
+function buildDateOptionHTML(date, isPast = false) {
+    return `
+        <label class="date-option ${isPast ? 'date-option-past' : ''}">
+            <input type="checkbox" value="${escapeHTML(date)}">
+            <span class="date-option-text">
+                ${escapeHTML(date)}
+                ${isPast ? '<small class="date-option-status">Já passou</small>' : ''}
+            </span>
+        </label>
+    `;
+}
+
+function buildGroupedDateDropdownHTML(dates) {
+    const today = getTodayPrevisoesDate();
+
+    const futureDates = dates
+        .filter(date => parsePrevisoesDate(date) >= today)
+        .sort((a, b) => parsePrevisoesDate(a) - parsePrevisoesDate(b));
+
+    const pastDates = dates
+        .filter(date => parsePrevisoesDate(date) < today)
+        .sort((a, b) => parsePrevisoesDate(b) - parsePrevisoesDate(a));
+
+    const parts = [];
+
+    if (futureDates.length) {
+        parts.push(`<div class="date-options-title">Próximas datas</div>`);
+        parts.push(futureDates.map(date => buildDateOptionHTML(date)).join(''));
+    }
+
+    if (pastDates.length) {
+        parts.push(`<div class="date-options-title date-options-title-past">Datas anteriores</div>`);
+        parts.push(pastDates.map(date => buildDateOptionHTML(date, true)).join(''));
+    }
+
+    return parts.join('');
+}
+
 function closeOpenDropdowns(except = null) {
     document.querySelectorAll('.date-dropdown.open').forEach(dropdown => {
         if (dropdown !== except) dropdown.classList.remove('open');
@@ -573,12 +637,7 @@ function applyScoreFilters(panel) {
         const dates = stageRows.map(r => String(r.date ?? '').trim()).filter(Boolean);
         const uniqueDates = [...new Set(dates)].sort((a, b) => parseDropdownDate(a) - parseDropdownDate(b));
 
-        menu.innerHTML = uniqueDates.map(d => `
-            <label class="date-option">
-                <input type="checkbox" value="${d}">
-                <span>${d}</span>
-            </label>
-        `).join('');
+        menu.innerHTML = buildGroupedDateDropdownHTML(uniqueDates);
     }
 
     // Conecta os eventos de busca, dropdowns e botão de modo na aba de grupos.
@@ -1254,16 +1313,10 @@ function applyScoreFilters(panel) {
             .map(card => card.dataset.date)
             .filter(Boolean);
 
-        const uniqueDates = [...new Set(dates)];
+        const uniqueDates = [...new Set(dates)]
+            .sort((a, b) => parsePrevisoesDate(a) - parsePrevisoesDate(b));
 
-        dateMenu.innerHTML = uniqueDates
-            .map(date => `
-                <label class="date-option">
-                    <input type="checkbox" value="${escapeHTML(date)}">
-                    <span>${escapeHTML(date)}</span>
-                </label>
-            `)
-            .join('');
+        dateMenu.innerHTML = buildGroupedDateDropdownHTML(uniqueDates);
     }
 
     function attachScoreFilters(panel) {

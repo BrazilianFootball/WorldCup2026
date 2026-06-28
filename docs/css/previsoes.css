@@ -885,6 +885,54 @@ PROBABILIDADES DE PREVISÃO
     accent-color: #1f6fb2;
 }
 
+.date-options-title {
+    padding: 7px 8px 5px;
+    color: var(--text-blue);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.75;
+}
+
+.date-options-title-past {
+    margin-top: 6px;
+    padding-top: 10px;
+    border-top: 1px solid #e3e8f2;
+    color: #7d8798;
+}
+
+.date-option-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+}
+
+.date-option-status {
+    display: block;
+    margin-top: 2px;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #9aa4b4;
+}
+
+.date-option-past {
+    color: #9aa4b4;
+    opacity: 0.82;
+}
+
+.date-option-past:hover {
+    background: #f5f7fb;
+    opacity: 1;
+}
+
+.date-dropdown-menu {
+    max-height: 260px;
+    overflow-y: auto;
+}
+
 .no-results {
     display: none;
     max-width: 1260px;
