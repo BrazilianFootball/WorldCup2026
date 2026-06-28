@@ -25,6 +25,7 @@
     const BOARD_MAX_ZOOM = 1;
 
     let boardZoom = 1;
+    let shouldScrollBoardToYesterdayOnLoad = true;
 
     document.addEventListener('DOMContentLoaded', init);
 
@@ -488,7 +489,9 @@
         const html = [];
         html.push(`<div class="wc-grid" style="--wc-cols:${dates.length}">`);
         html.push('<div class="wc-grid-corner">Sede</div>');
-        dates.forEach(date => html.push(`<div class="wc-date-head">${formatDateHead(date)}</div>`));
+        dates.forEach(date => {
+            html.push(`<div class="wc-date-head" data-date="${escapeHtml(date)}">${formatDateHead(date)}</div>`);
+        });
 
         cities.forEach(city => {
             const region = state.filtered.find(match => match.cidade === city)?.regiao || '';
@@ -505,6 +508,14 @@
         bindBoardDrag();
         bindBoardPinchZoom();
         applyBoardZoom();
+
+        if (shouldScrollBoardToYesterdayOnLoad) {
+            shouldScrollBoardToYesterdayOnLoad = false;
+
+            requestAnimationFrame(() => {
+                scrollBoardToYesterdayDate(dates);
+            });
+        }
 
         // TOP SCROLL HERE
         //const topScroll = document.querySelector('.wc-scroll-top');
@@ -893,6 +904,42 @@
     function formatFilterDate(dateString) {
         const date = parseDate(dateString);
         return `${String(date.getDate()).padStart(2, '0')}/${MONTHS[date.getMonth()]} (${WEEKDAYS[date.getDay()]})`;
+    }
+
+    function formatDateKey(date) {
+        return [
+            date.getFullYear(),
+            String(date.getMonth() + 1).padStart(2, '0'),
+            String(date.getDate()).padStart(2, '0')
+        ].join('-');
+    }
+
+    function addDaysToDateKey(dateString, days) {
+        const date = parseDate(dateString);
+        date.setDate(date.getDate() + days);
+        return formatDateKey(date);
+    }
+
+    function scrollBoardToYesterdayDate(dates) {
+        const board = document.querySelector('.wc-board-wrap');
+        if (!board || !dates.length) return;
+
+        const yesterday = addDaysToDateKey(getTodayInActiveTimezone(), -2);
+
+        const dateToShow =
+            dates.find(date => date >= yesterday) ||
+            dates[dates.length - 1];
+
+        const targetHeader = board.querySelector(`.wc-date-head[data-date="${dateToShow}"]`);
+        if (!targetHeader) return;
+
+        const fixedCityColumnWidth =
+            board.querySelector('.wc-grid-corner')?.offsetWidth || 0;
+
+        board.scrollLeft = Math.max(
+            0,
+            targetHeader.offsetLeft - fixedCityColumnWidth
+        );
     }
 
     function parseDate(dateString) {

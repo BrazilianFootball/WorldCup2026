@@ -263,13 +263,13 @@
     cursor: grabbing;
 }
 
-
 .wc-grid {
     display: grid;
     gap: 1px;
-    grid-template-columns: 190px repeat(var(--wc-cols), minmax(86px, 1fr));
+    grid-template-columns: 190px repeat(var(--wc-cols), minmax(106px, 1fr));
     min-width: max-content;
 }
+
 .wc-grid-corner, .wc-date-head, .wc-city-head, .wc-cell {
     box-sizing: border-box;
 }
