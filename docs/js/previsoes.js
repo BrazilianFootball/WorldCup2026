@@ -1,7 +1,6 @@
 // Mapeia cada painel de mata-mata para o texto exibido quando ainda não há confronto definido.
 const PLACEHOLDERS = {
     'panel-r32': 'da <b>R32</b>',
-    'panel-16-avos': 'da <b>16-Avos</b>',
     'panel-oitavas': 'das <b>Oitavas de Final</b>',
     'panel-quartas': 'das <b>Quartas de Final</b>',
     'panel-semis': 'da <b>Semifinal</b>',
@@ -38,7 +37,6 @@ const SIMULATOR_CSV_URL = 'csv/previsoes/all_matchups.csv';
 const FLAGS_CSV_URL = 'images/flags/flag.csv';
 const SCORE_STAGES = [
     {panelId: 'panel-r32',     groupValue: 'R32',       showFilters: true,  gridClass: 'scorecards-grid'},
-    {panelId: 'panel-16-avos', groupValue: '16-avos',   showFilters: true,  gridClass: 'scorecards-grid'},
     {panelId: 'panel-oitavas', groupValue: 'oitavas',   showFilters: true,  gridClass: 'scorecards-grid'},
     {panelId: 'panel-quartas', groupValue: 'quartas',   showFilters: false, gridClass: 'scorecards-grid scorecards-grid-two'},
     {panelId: 'panel-semis',   groupValue: 'semifinal', showFilters: false, gridClass: 'scorecards-grid scorecards-grid-two'},
@@ -285,7 +283,7 @@ function closeOpenDropdowns(except = null) {
 }
 
 function getFilterPanel(target) {
-    return target.closest('#panel-grupos, #panel-r32, #panel-16-avos, #panel-oitavas, #panel-quartas, #panel-semis, #panel-final');
+    return target.closest('#panel-grupos, #panel-r32, #panel-oitavas, #panel-quartas, #panel-semis, #panel-final');
 }
 
 function applyUnifiedFilters(panel) {
@@ -2261,7 +2259,7 @@ function abrirTabPelaURL() {
         return;
     }
 
-    const tabsValidas = ['grupos', 'r32', '16-avos', 'oitavas', 'quartas', 'semis', 'final'];
+    const tabsValidas = ['grupos', 'r32', 'oitavas', 'quartas', 'semis', 'final'];
 
     if (!tabsValidas.includes(tabName)) return;
 
