@@ -112,8 +112,9 @@
                             </div>
                             <!-- Tab navigation -->
                             <div class="tabs">
-                                <button class="tab active" onclick="switchTab('grupos',this)">⚽ Fase de Grupos</button>
-                                <button class="tab" onclick="switchTab('r32',this)">⚔️ 16-avos</button>
+                                <button class="tab" onclick="switchTab('grupos',this)">⚽ Fase de Grupos</button>
+                                <button class="tab active" onclick="switchTab('r32',this)">⚔️ R32</button>
+                                <button class="tab" onclick="switchTab('16-avos',this)">⚔️ 16-avos</button>
                                 <button class="tab" onclick="switchTab('oitavas',this)">⚔️ Oitavas</button>
                                 <button class="tab" onclick="switchTab('quartas',this)">⚔️ Quartas</button>
                                 <button class="tab" onclick="switchTab('semis',this)">🏅 Semi</button>
@@ -123,11 +124,13 @@
                         <!-- ── BRACKET PANEL ── -->
 
                         <!-- ── GROUP STAGE PANEL ── -->
-                        <div class="panel active" id="panel-grupos" data-groups-source="previsoes">
-                        <div class="g-grid" id="gg"></div>
+                        <div class="panel" id="panel-grupos" data-groups-source="previsoes">
+                            <div class="g-grid" id="gg"></div>
                         </div>
-                        <!-- ── R 32 PANEL ── -->
-                        <div class="panel" id="panel-r32"></div>
+
+                        <div class="panel active" id="panel-r32"></div>
+                        <!-- ── 16 Avos PANEL ── -->
+                        <div class="panel" id="panel-16-avos"></div>
                         <!-- ── OITAVAS PANEL ── -->
                         <div class="panel" id="panel-oitavas"></div>
                         <!-- ── QUARTAS PANEL ── -->

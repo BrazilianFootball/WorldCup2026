@@ -1,6 +1,7 @@
 // Mapeia cada painel de mata-mata para o texto exibido quando ainda não há confronto definido.
 const PLACEHOLDERS = {
-    'panel-r32': 'da <b>16-avos</b>',
+    'panel-r32': 'da <b>R32</b>',
+    'panel-16-avos': 'da <b>16-Avos</b>',
     'panel-oitavas': 'das <b>Oitavas de Final</b>',
     'panel-quartas': 'das <b>Quartas de Final</b>',
     'panel-semis': 'da <b>Semifinal</b>',
@@ -37,6 +38,7 @@ const SIMULATOR_CSV_URL = 'csv/previsoes/all_matchups.csv';
 const FLAGS_CSV_URL = 'images/flags/flag.csv';
 const SCORE_STAGES = [
     {panelId: 'panel-r32',     groupValue: 'R32',       showFilters: true,  gridClass: 'scorecards-grid'},
+    {panelId: 'panel-16-avos', groupValue: '16-avos',   showFilters: true,  gridClass: 'scorecards-grid'},
     {panelId: 'panel-oitavas', groupValue: 'oitavas',   showFilters: true,  gridClass: 'scorecards-grid'},
     {panelId: 'panel-quartas', groupValue: 'quartas',   showFilters: false, gridClass: 'scorecards-grid scorecards-grid-two'},
     {panelId: 'panel-semis',   groupValue: 'semifinal', showFilters: false, gridClass: 'scorecards-grid scorecards-grid-two'},
@@ -196,12 +198,16 @@ function getSelectedValues(menu) {
         : [];
 }
 
+function pluralLabel(count, singular, plural, emptyLabel) {
+    if (!count) return emptyLabel;
+    return `${count} ${count === 1 ? singular : plural}`;
+}
+
 function updateDateButton(button, selectedDates) {
     if (!button) return;
-    const label = selectedDates.length
-        ? `${selectedDates.length} data${selectedDates.length > 1 ? 's' : ''} selecionada${selectedDates.length > 1 ? 's' : ''}`
-        : 'Todas as datas';
-
+    const label = pluralLabel(
+        selectedDates.length,'data selecionada','datas selecionadas','Todas as datas'
+    );
     button.innerHTML = `${label}<span>▾</span>`;
 }
 
@@ -246,27 +252,30 @@ function buildDateOptionHTML(date, isPast = false) {
 function buildGroupedDateDropdownHTML(dates) {
     const today = getTodayPrevisoesDate();
 
-    const futureDates = dates
-        .filter(date => parsePrevisoesDate(date) >= today)
-        .sort((a, b) => parsePrevisoesDate(a) - parsePrevisoesDate(b));
+    const parsedDates = dates.map(date => ({
+        value: date,
+        time: parsePrevisoesDate(date)
+    }));
 
-    const pastDates = dates
-        .filter(date => parsePrevisoesDate(date) < today)
-        .sort((a, b) => parsePrevisoesDate(b) - parsePrevisoesDate(a));
+    const futureDates = parsedDates
+        .filter(item => item.time >= today)
+        .sort((a, b) => a.time - b.time);
 
-    const parts = [];
+    const pastDates = parsedDates
+        .filter(item => item.time < today)
+        .sort((a, b) => b.time - a.time);
 
-    if (futureDates.length) {
-        parts.push(`<div class="date-options-title">Próximas datas</div>`);
-        parts.push(futureDates.map(date => buildDateOptionHTML(date)).join(''));
-    }
+    return [
+        futureDates.length ? `
+            <div class="date-options-title">Próximas datas</div>
+            ${futureDates.map(item => buildDateOptionHTML(item.value)).join('')}
+        ` : '',
 
-    if (pastDates.length) {
-        parts.push(`<div class="date-options-title date-options-title-past">Datas anteriores</div>`);
-        parts.push(pastDates.map(date => buildDateOptionHTML(date, true)).join(''));
-    }
-
-    return parts.join('');
+        pastDates.length ? `
+            <div class="date-options-title date-options-title-past">Datas anteriores</div>
+            ${pastDates.map(item => buildDateOptionHTML(item.value, true)).join('')}
+        ` : ''
+    ].join('');
 }
 
 function closeOpenDropdowns(except = null) {
@@ -276,7 +285,7 @@ function closeOpenDropdowns(except = null) {
 }
 
 function getFilterPanel(target) {
-    return target.closest('#panel-grupos, #panel-r32, #panel-oitavas, #panel-quartas, #panel-semis, #panel-final');
+    return target.closest('#panel-grupos, #panel-r32, #panel-16-avos, #panel-oitavas, #panel-quartas, #panel-semis, #panel-final');
 }
 
 function applyUnifiedFilters(panel) {
@@ -293,13 +302,23 @@ function handleFilterEvent(event) {
     if (!target) return;
 
     if (event.type === 'click') {
+        const scoreModeButton = target.closest('.score-mode .groups-mode-btn');
+
+        if (scoreModeButton) {
+            const panel = getFilterPanel(scoreModeButton);
+            window.PrevisoesActions?.setScoreMode?.(panel, scoreModeButton.dataset.mode);
+            return;
+        }
+
         const modeButton = target.closest('.groups-mode-btn');
+
         if (modeButton) {
             window.PrevisoesActions?.setGroupsMode?.(modeButton.dataset.mode);
             return;
         }
 
         const dropdownButton = target.closest('.date-dropdown-btn');
+
         if (dropdownButton) {
             const dropdown = dropdownButton.closest('.date-dropdown');
             const willOpen = dropdown && !dropdown.classList.contains('open');
@@ -351,11 +370,9 @@ function applyGroupFilters(panel = document.getElementById('panel-grupos')) {
 
     // label do botão
     if (btn) {
-        const n = selectedGroups.length;
-
-        let label;
-        if (n === 0) {label = 'Todos os grupos';}
-        else {label = `${n} grupo${n > 1 ? 's' : ''} selecionado${n > 1 ? 's' : ''}`;}
+        const label = pluralLabel(
+            selectedGroups.length,'grupo selecionado','grupos selecionados','Todos os grupos'
+        );
         btn.innerHTML = `${label}<span>▾</span>`;
     }
 
@@ -610,39 +627,17 @@ function applyScoreFilters(panel) {
         `).join('');
     }
 
-    // Converte datas no formato dd/mm ou dd/mm/aaaa para ordenação cronológica.
-    function parseDropdownDate(value) {
-        const [day, month, year] = String(value).trim().split('/').map(Number);
-
-        if (!Number.isFinite(day) || !Number.isFinite(month)) {
-            return Number.POSITIVE_INFINITY;
-        }
-
-        const fullYear = Number.isFinite(year)
-            ? (year < 100 ? 2000 + year : year)
-            : 2026;
-
-        return new Date(fullYear, month - 1, day).getTime();
-    }
-
     // Preenche o dropdown de datas usando apenas jogos da fase de grupos.
     function populateGroupsDateDropdown(matchRows) {
         const panel = document.getElementById('panel-grupos');
-        if (!panel) return;
-
-        const menu = panel.querySelector('.groups-date-dropdown-menu');
+        const menu = panel?.querySelector('.groups-date-dropdown-menu');
         if (!menu) return;
 
-        const stageRows = matchRows.filter(r => /^[A-L]$/.test(String(r.group ?? '').trim()));
-        const dates = stageRows.map(r => String(r.date ?? '').trim()).filter(Boolean);
-        const uniqueDates = [...new Set(dates)].sort((a, b) => parseDropdownDate(a) - parseDropdownDate(b));
+        const dates = matchRows.filter(row => /^[A-L]$/.test(String(row.group ?? '').trim()))
+            .map(row => String(row.date ?? '').trim()).filter(Boolean);
 
+        const uniqueDates = [...new Set(dates)].sort((a, b) => parsePrevisoesDate(a) - parsePrevisoesDate(b));
         menu.innerHTML = buildGroupedDateDropdownHTML(uniqueDates);
-    }
-
-    // Conecta os eventos de busca, dropdowns e botão de modo na aba de grupos.
-    function attachGroupFilters() {
-        installFilterDelegationOnce();
     }
 
     // Cria os cards de classificação da fase de grupos para a página de Chances.
@@ -742,7 +737,7 @@ function applyScoreFilters(panel) {
         });
 
         populateGroupDropdown(groups);
-        attachGroupFilters();
+        installFilterDelegationOnce();
         applyGroupFilters(panel);
 
         setTimeout(() => {
@@ -781,7 +776,8 @@ function applyScoreFilters(panel) {
                     <button class="scroll-btn right" onclick="this.previousElementSibling.scrollBy({left: 300, behavior: 'smooth'})">❯</button>
                 </div>
             </div>
-            <div id="groups-charts-view" class="groups-display-view">
+
+            <div id="groups-charts-view" class="groups-display-view" style="display: none;">
                 <div class="scorecards-grid">
                     ${scorecards}
                 </div>
@@ -811,7 +807,7 @@ function applyScoreFilters(panel) {
         const groups = getGroupLetters(matchRows);
         populateGroupDropdown(groups);
         populateGroupsDateDropdown(matchRows);
-        attachGroupFilters();
+        installFilterDelegationOnce();
         setGroupsMode(panel.dataset.groupsMode || 'stickers');
     }
 
@@ -1267,7 +1263,13 @@ function applyScoreFilters(panel) {
 
     function renderScorePanelShell(panel, stage) {
         const filtersHTML = stage.showFilters === false ? '' : `
-            <div class="filterbar">
+            <p class="disc groups-prob-note">
+                <span class="groups-prob-note-text">
+                    % = Probabilidade estimada de cada placar. Clique para visualizar.
+                </span>
+            </p>
+
+            <div class="filterbar score-filterbar">
                 <div class="filter-field search-field">
                     <div class="search-wrap">
                         <span class="search-icon">🔎</span>
@@ -1290,6 +1292,15 @@ function applyScoreFilters(panel) {
 
                         <div class="date-dropdown-menu"></div>
                     </div>
+                </div>
+
+                <div class="groups-mode score-mode">
+                    <button type="button" class="groups-mode-btn active" data-mode="stickers">
+                        Figurinhas
+                    </button>
+                    <button type="button" class="groups-mode-btn" data-mode="charts">
+                        Gráficos
+                    </button>
                 </div>
             </div>
         `;
@@ -1319,9 +1330,35 @@ function applyScoreFilters(panel) {
         dateMenu.innerHTML = buildGroupedDateDropdownHTML(uniqueDates);
     }
 
-    function attachScoreFilters(panel) {
-        installFilterDelegationOnce();
+    function setScoreMode(panelOrId, mode = 'stickers') {
+        const panel = typeof panelOrId === 'string'
+            ? document.getElementById(panelOrId)
+            : panelOrId;
+
+        if (!panel) return;
+
+        panel.dataset.scoreMode = mode;
+
+        panel.querySelectorAll('.score-mode .groups-mode-btn').forEach(button => {
+            button.classList.toggle('active', button.dataset.mode === mode);
+        });
+
+        const stickersView = panel.querySelector('.score-stage-stickers-view');
+        const chartsView = panel.querySelector('.score-stage-charts-view');
+
+        if (stickersView) {
+            stickersView.style.display = mode === 'stickers' ? '' : 'none';
+        }
+
+        if (chartsView) {
+            chartsView.style.display = mode === 'charts' ? '' : 'none';
+        }
+
+        applyScoreFilters(panel);
     }
+
+    window.PrevisoesActions = window.PrevisoesActions || {};
+    window.PrevisoesActions.setScoreMode = setScoreMode;
 
     function adjustScoreTotalHeights(panel) {
         panel.querySelectorAll('.score-total').forEach(total => {
@@ -1363,17 +1400,20 @@ function applyScoreFilters(panel) {
         const scorecards = stageRows.map(row => window.ScoreCards.renderScoreCardHTML(row, getFlag)).join('');
 
         container.innerHTML = stickersCards || scorecards ? `
-            <div class="section-title">Figurinhas</div>
-            <div class="stickers-carousel">
-                <button class="scroll-btn left" onclick="this.nextElementSibling.scrollBy({left: -300, behavior: 'smooth'})">❮</button>
-                <div class="stickers-grid">
-                    ${stickersCards}
+            <div class="score-stage-display-view score-stage-stickers-view">
+                <div class="stickers-carousel">
+                    <button class="scroll-btn left" onclick="this.nextElementSibling.scrollBy({left: -300, behavior: 'smooth'})">❮</button>
+                    <div class="stickers-grid">
+                        ${stickersCards}
+                    </div>
+                    <button class="scroll-btn right" onclick="this.previousElementSibling.scrollBy({left: 300, behavior: 'smooth'})">❯</button>
                 </div>
-                <button class="scroll-btn right" onclick="this.previousElementSibling.scrollBy({left: 300, behavior: 'smooth'})">❯</button>
             </div>
-            <div class="section-title">Gráficos Detalhados</div>
-            <div class="${stage.gridClass || 'scorecards-grid'}">
-                ${scorecards}
+
+            <div class="score-stage-display-view score-stage-charts-view" style="display: none;">
+                <div class="${stage.gridClass || 'scorecards-grid'}">
+                    ${scorecards}
+                </div>
             </div>
         ` : `
             <div class="score-empty">
@@ -1383,9 +1423,10 @@ function applyScoreFilters(panel) {
 
         if (stage.showFilters !== false) {
             populateDateFilter(panel);
-            attachScoreFilters(panel);
+            installFilterDelegationOnce();
         }
         adjustScoreTotalHeights(panel);
+        setScoreMode(panel, panel.dataset.scoreMode || 'stickers');
     }
 
     async function renderScoreStagePanels() {
@@ -2220,7 +2261,7 @@ function abrirTabPelaURL() {
         return;
     }
 
-    const tabsValidas = ['grupos', 'r32', 'oitavas', 'quartas', 'semis', 'final'];
+    const tabsValidas = ['grupos', 'r32', '16-avos', 'oitavas', 'quartas', 'semis', 'final'];
 
     if (!tabsValidas.includes(tabName)) return;
 

@@ -381,6 +381,7 @@ PROBABILIDADES DE PREVISÃO
 
 /* Painéis das fases de placar têm fundo branco, padding e altura mínima. */
 #panel-r32,
+#panel-16-avos,
 #panel-oitavas,
 #panel-quartas,
 #panel-semis,
@@ -1070,6 +1071,7 @@ PROBABILIDADES DE PREVISÃO
 
     #panel-grupos,
     #panel-r32,
+    #panel-16-avos,
     #panel-oitavas,
     #panel-quartas,
     #panel-semis,
@@ -2498,6 +2500,39 @@ SIMULADOR DE CONFRONTO
     color: var(--primary-blue);
 }
 
+.score-filterbar {
+    grid-template-columns: minmax(0, 1fr) 240px 240px;
+}
+
+.score-filterbar .search-field {
+    min-width: 0;
+}
+
+.score-filterbar .score-mode {
+    height: 30px;
+}
+
+@media (max-width: 768px) {
+    .score-filterbar {
+        grid-template-columns: 1fr 150px;
+        grid-template-areas:
+            "search search"
+            "dates mode";
+        gap: 8px;
+    }
+
+    .score-filterbar .search-field {
+        grid-area: search;
+    }
+
+    .score-filterbar .date-field {
+        grid-area: dates;
+    }
+
+    .score-filterbar .score-mode {
+        grid-area: mode;
+    }
+}
 
 /* Mantém o scroll horizontal da tabela sem estourar o layout */
 #simulado-view #chances-table-container {
