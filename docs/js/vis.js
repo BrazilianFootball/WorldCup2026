@@ -225,7 +225,7 @@ const countries = [
   campanha: "Quartas de Final",
   aparicoes: 2,
   continente: "Europa",
-  anos: "1958" 
+  anos: "1958"
 },
 { name: "Northern Ireland",
   Selecao: "Irlanda do Norte",
@@ -474,7 +474,7 @@ const countries = [
   anos: "2002"
 },
 {
-  /* Competiu como Zaire em 1974; atualmente República Democrática do Congo */
+  /* Competiu como Zaire em 1974; atualmente RD do Congo */
   name: "Democratic Republic of the Congo",
   Selecao: "Zaire / R.D. Congo",
   campanha: "Fase de Grupos",
@@ -711,7 +711,7 @@ L.tileLayer(
 
 
 /* =========================
- (Natural Earth Map Units — UK já dividido) 
+ (Natural Earth Map Units — UK já dividido)
 ========================= */
 
 fetch("https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_admin_0_map_units.geojson")
@@ -1189,7 +1189,7 @@ function renderPills(){
     el.innerHTML='';
     const label=document.createElement('span');
     label.textContent='Edição:';
-    label.style.cssText='font-size:11px;font-weight:800;text-transform:uppercase;color:#7f8692;letter-spacing:1px;margin-right:8px;';    
+    label.style.cssText='font-size:11px;font-weight:800;text-transform:uppercase;color:#7f8692;letter-spacing:1px;margin-right:8px;';
     el.appendChild(label);
     Object.keys(ED).sort((a,b)=>+b-+a).forEach(y=>{
     const btn=document.createElement('button');
@@ -1647,9 +1647,9 @@ document.addEventListener('DOMContentLoaded',()=>{
     { year: 1934, name: "Federale 102", img:"https://digitalhub.fifa.com/transform/15101f27-81d2-48b2-a1ca-0f42f58bf7e9/1934-FIFA-World-Cup-Italy-Federale-102-match-ball?&io=transform:fill,width:1024&quality=75", panels: "leather", desc: "Bola italiana de couro marrom-alaranjado, mais redonda que a de 1930, com 13 painéis costurados manualmente.", host: "Itália" },
     { year: 1930, name: "T-Model / Tiento", img:"https://digitalhub.fifa.com/transform/30cbf02a-9e51-457f-8169-a30a2eeea3ce/FIFA-World-Cup-Uruguay-1930-ball-T-model?&io=transform:fill,width:1024&quality=75", panels: "leather", desc: "Bola de couro tradicional com painéis costurados. Cada time trouxe sua própria bola; a Argentina jogou o primeiro tempo com a sua, o Uruguai o segundo com a deles.", host: "Uruguai" }
 ];
-  
 
-  let selectedYear = 2026; 
+
+  let selectedYear = 2026;
   function renderBalls() {
     const grid = document.getElementById('balls-grid');
     if (!grid) return;
@@ -1699,7 +1699,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     const defaultBall = BALLS.find(b => b.year === selectedYear);
     if (defaultBall) {
       showBallDetail(defaultBall);
-    }    
+    }
   }
 
     function showBallDetail(ball) {
@@ -1743,14 +1743,14 @@ document.addEventListener('DOMContentLoaded',()=>{
 
   const SHIRTS = [
     {
-      year: 1930, era: '1930-1950', 
+      year: 1930, era: '1930-1950',
       img:"images\\shirts\\wc-shirt-1930.png",
       desc: 'Foi o uniforme usado na primeira Copa do Mundo, realizada no Uruguai. Em relação ao modelo anterior, houve uma mudança na gola da camisa e no escudo da CBD (Confederação Brasileira de Desportos), que permaneceu sem mudanças significativas até 1967.', kit: 'home'
     },
     {
-      year: 1934, era: '1930-1950', 
+      year: 1934, era: '1930-1950',
       img: "images\\shirts\\wc-shirt-1934.png",
-      desc: 'Similar ao modelo de 1930, manteve o branco como cor principal e a gola polo azul. Foi o uniforme da única partida do Brasil naquela Copa (contra a Espanha).', 
+      desc: 'Similar ao modelo de 1930, manteve o branco como cor principal e a gola polo azul. Foi o uniforme da única partida do Brasil naquela Copa (contra a Espanha).',
       kit: 'home'
     },
 
@@ -1765,7 +1765,7 @@ document.addEventListener('DOMContentLoaded',()=>{
       desc: 'Para a primeira Copa do Mundo em casa, a Seleção mudou mais uma vez a gola da camisa, usando o modelo "polo". A seleção perdeu a final para o Uruguai no Maracanã, no episódio conhecido como Maracanazo. O trauma da derrota levou à adoção definitiva da camisa amarela.', kit: 'home'
     },
     {
-      year: 1954, era: '1954-1965', 
+      year: 1954, era: '1954-1965',
       img:"images\\shirts\\wc-shirt-1954.png",
       desc: 'Primeira vez com a amarelinha! A camisa canarinho da Seleção foi ideia do jornalista e desenhista Aldyr Schlee, que venceu um concurso promovido em 1953 pelo jornal carioca “Correio da Manhã". Sua estreia foi nas eliminatórias da Copa daquele ano e marcou o início de um vitorioso legado.', kit: 'home'
     },
@@ -1774,22 +1774,22 @@ document.addEventListener('DOMContentLoaded',()=>{
       desc: 'Com a camisa amarela, Pelé com 17 anos marca seu primeiro gol na Copa. Brasil Campeão na Suécia. A Seleção usou a amarelinha na maior parte da campanha do primeiro título, mas a taça foi conquistada de azul. No improviso: como a Suécia também atuava de amarelo, o chefe da delegação, Paulo Machado de Carvalho, comprou camisas azuis na véspera da final e motivou os atletas dizendo que era a cor do manto de Nossa Senhora Aparecida.', kit: 'home'
     },
     {
-      year: 1962, era: '1954-1965', 
+      year: 1962, era: '1954-1965',
       img:"images\\shirts\\wc-shirt-1962.png",
       desc: 'Brasil bicampeão no Chile. Foi a terceira Copa do Mundo com o mesmo modelo da camisa canarinho, que parecia dar sorte. Após a lesão de Pelé ainda na fase de grupos, Garrincha assumiu o protagonismo da equipe, e o capitão Mauro ergueu a taça usando a amarelinha.', kit: 'home'
     },
     {
-      year: 1966, era: '1954-1965', 
+      year: 1966, era: '1954-1965',
       img:"images\\shirts\\wc-shirt-1966.png",
       desc: 'Na Copa do Mundo daquele ano, na Inglaterra, o primeiro modelo da camisa amarela foi usada pela última vez. Eliminação precoce na fase de grupos pela primeira vez. Pelé sofre muitas faltas e jura não jogar mais Copas.', kit: 'home'
     },
     {
-      year: 1970, era: '1970-1982', 
+      year: 1970, era: '1970-1982',
       img:"images\\shirts\\wc-shirt-1970.png",
       desc: 'Considerado o melhor time da história. Pelé, Jairzinho, Tostão — Tricampeão! Número 10 icônico.', kit: 'home'
     },
     {
-      year: 1974, era: '1970-1982', 
+      year: 1974, era: '1970-1982',
       img:"images\\shirts\\wc-shirt-1974.png",
       desc: 'Geração pós-1970, 4º lugar. Rivelino e Zico presentes.', kit: 'home'
     },
@@ -1802,7 +1802,7 @@ document.addEventListener('DOMContentLoaded',()=>{
       desc: 'A principal mudança é o novo escudo da CBF, que ganhou o desenho da Taça Jules Rimet após concurso na Escola de Belas Artes, no Rio. Para burlar regra da Fifa, o ramo de café foi incluído dentro do símbolo. A inscrição "Brasil" passou a ser adotada abaixo do escudo. Seleção de Zico, Sócrates, Falcão — eliminada pela Itália de Rossi.', kit: 'home'
     },
     {
-      year: 1986, era: '1986-1994', 
+      year: 1986, era: '1986-1994',
       img:"images\\shirts\\wc-shirt-1986.png",
       desc: 'A gola polo voltou a ser usada na camisa. Pela primeira vez a marca do fornecedor do material apareceu na parte frontal. Eliminados pela França nos pênaltis. Zico perde o pênalti. Sócrates também.', kit: 'home'
     },
@@ -1922,7 +1922,7 @@ document.addEventListener('DOMContentLoaded',()=>{
         showShirtDetail(shirt);
       });
 
-      
+
 
       grid.appendChild(card);
     });
