@@ -25,7 +25,13 @@ from src.output import (
     update_html_from_summary,
 )
 from src.simulations.utils import build_all_matchups_dataframe_mc
-from src.tournament.bayesian import BayesianWorldCup2026, _sample_posterior
+from src.tournament.bayesian import (
+    BayesianWorldCup2026,
+    _aggregate_match_probs,
+    _match_lambdas,
+    _sample_posterior,
+    simulate_matches,
+)
 
 N_SIM = 100_000
 MODEL_NAME = "draws_2026_n_poisson_ranking.npz"
@@ -144,6 +150,40 @@ if __name__ == "__main__":
         _partidas.to_csv(_partidas_path, index=False)
         n_real = _partidas["home_real"].notna().sum()
         print(f"partidas.csv atualizado com {n_real} resultado(s) real(is).")
+
+    # Fill in model probabilities for knockout matches that are newly known
+    # (teams defined but probability columns still empty).
+    if _partidas_path.exists():
+        _partidas = pd.read_csv(_partidas_path)
+        _pt_to_en = {v: k for k, v in TEAM_MAP_EN_TO_PT.items()}
+        t_to_idx_ko = {name: i for i, name in enumerate(model.teams)}
+        group_labels = set(GROUPS.keys())
+
+        knockout_no_probs = (
+            ~_partidas["group"].isin(group_labels) & _partidas["home_win"].isna()
+        )
+        if knockout_no_probs.any():
+            atk_ko, dfn_ko, rho_ko, et_ko = _sample_posterior(
+                model.draws, N_SIM, seed=DEFAULT_SEED
+            )
+            for idx, row in _partidas[knockout_no_probs].iterrows():
+                home_en = _pt_to_en.get(row["home_team"], row["home_team"])
+                away_en = _pt_to_en.get(row["away_team"], row["away_team"])
+                if home_en not in t_to_idx_ko or away_en not in t_to_idx_ko:
+                    continue
+                h_i, a_i = t_to_idx_ko[home_en], t_to_idx_ko[away_en]
+                l1, l2 = _match_lambdas(atk_ko, dfn_ko, h_i, a_i, et_ko)
+                rho_exp = rho_ko.reshape(-1, 1) if rho_ko is not None else None
+                g1, g2 = simulate_matches(
+                    l1.reshape(-1, 1), l2.reshape(-1, 1), rho_exp, N_SIM
+                )
+                probs = _aggregate_match_probs(g1[:, 0], g2[:, 0])
+                for col, val in probs.items():
+                    if col in _partidas.columns:
+                        _partidas.at[idx, col] = round(val, 4)
+            _partidas.to_csv(_partidas_path, index=False)
+            n_ko = int(knockout_no_probs.sum())
+            print(f"partidas.csv: probabilidades preenchidas para {n_ko} jogo(s).")
 
     # Build the tournament results DataFrame for tabela_chances.csv.
     rows = []

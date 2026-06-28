@@ -10,6 +10,7 @@ import pandas as pd
 from src.constants import (
     DEFAULT_HOST_BOOST,
     DEFAULT_SEED,
+    FIFA_THIRD_PLACE_TABLE,
     GROUPS,
     TEAM_MAP_EN_TO_PT,
     WC_YEAR,
@@ -22,6 +23,9 @@ _FACTORIALS = np.array(
     [1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800], dtype=np.float32
 )
 _NUM_TO_WORD = {0: "zero", 1: "one", 2: "two", 3: "three", 4: "four"}
+
+_GROUP_LETTERS = "".join(GROUPS.keys())
+_LETTER_TO_IDX = {c: i for i, c in enumerate(_GROUP_LETTERS)}
 
 
 # ── Module-level simulation primitives ───────────────────────────────────────
@@ -436,6 +440,20 @@ class BayesianWorldCup2026(TournamentSimulator):
         def get_allocation(thirds_tuple: tuple) -> list:
             if thirds_tuple in allocation_cache:
                 return allocation_cache[thirds_tuple]
+
+            # Use FIFA official table when the combination is known.
+            thirds_key = frozenset(_GROUP_LETTERS[i] for i in thirds_tuple)
+            if thirds_key in FIFA_THIRD_PLACE_TABLE:
+                fifa = FIFA_THIRD_PLACE_TABLE[thirds_key]
+                alloc_map = {
+                    _LETTER_TO_IDX[slot]: _LETTER_TO_IDX[grp]
+                    for slot, grp in fifa.items()
+                }
+                res = [alloc_map[s] for s in slots_idx]
+                allocation_cache[thirds_tuple] = res
+                return res
+
+            # Fall back to backtracking for unrecognized combinations.
             thirds_list = list(thirds_tuple)
             alloc: dict = {}
 
@@ -636,7 +654,14 @@ class BayesianWorldCup2026(TournamentSimulator):
                     del allocation[slot]
             return False
 
-        if allocate_thirds(0, best_thirds_groups):
+        thirds_key = frozenset(best_thirds_groups)
+        if thirds_key in FIFA_THIRD_PLACE_TABLE:
+            for slot, group_letter in FIFA_THIRD_PLACE_TABLE[thirds_key].items():
+                team_name = next(
+                    t["team"] for t in best_thirds if t["g_name"] == group_letter
+                )
+                assigned_thirds[slot] = team_name
+        elif allocate_thirds(0, best_thirds_groups):
             for slot, group_letter in allocation.items():
                 team_name = next(
                     t["team"] for t in best_thirds if t["g_name"] == group_letter
