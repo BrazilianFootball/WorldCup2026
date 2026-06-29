@@ -321,6 +321,23 @@ def update_html_from_summary(
                     existing_rows.append({k: row.get(k, "") for k in fieldnames})
 
     combined = existing_rows + new_rows
+
+    # Sort within each version: champ → final → semi → qf → r16 → r32 DESC, team ASC
+    sort_cols = ["champ", "final", "semi", "qf", "r16", "r32"]
+    version_order = list(dict.fromkeys(r["versão"] for r in combined))
+    combined_df = pd.DataFrame(combined)
+    for col in sort_cols:
+        combined_df[col] = pd.to_numeric(combined_df[col], errors="coerce").fillna(0.0)
+    combined_df["_vorder"] = combined_df["versão"].map(
+        {v: i for i, v in enumerate(version_order)}
+    )
+    combined_df = combined_df.sort_values(
+        by=["_vorder", *sort_cols, "team"],
+        ascending=[True, *[False] * len(sort_cols), True],
+    ).drop(columns=["_vorder"])
+    combined_df["pos"] = combined_df.groupby("versão", sort=False).cumcount() + 1
+    combined = combined_df[fieldnames].to_dict("records")
+
     tabela_path.parent.mkdir(parents=True, exist_ok=True)
     with open(tabela_path, "w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
