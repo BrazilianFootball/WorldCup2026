@@ -596,7 +596,7 @@
     function buildCalendarEvent(match, timezoneId, timezoneLabel) {
         const startDate = getDisplayDate(match);
         const startTime = getDisplayHour(match);
-        const durationHours = match.fase === 'Fase de grupos' ? 2 : 3;
+        const durationHours = match.fase === 'Fase de grupos' ? 1.5 : 2.5;
         const end = addHoursToLocalDateTime(startDate, startTime, durationHours);
         const summary = `[Copa do Mundo] ${match.mandante} x ${match.visitante}`;
         const description = [
