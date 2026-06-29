@@ -39,13 +39,13 @@ def get_pre_tournament_version(reference_date: _date | None = None) -> str:
     During the Cup — group stage:
     - 12/06–18/06  → 'Após 1ª rodada da fase de grupos'
     - 19/06–24/06  → 'Após 2ª rodada da fase de grupos'
-    - 25/06–03/07  → 'Após a Fase de Grupos'
+    - 25/06–27/06  → 'Após a Fase de Grupos'
 
     Knockout rounds (date-based approximation):
-    - 04/07–08/07  → 'Após os 16-Avos'
-    - 09/07–13/07  → 'Após as Oitavas'
-    - 14/07–18/07  → 'Após as Quartas'
-    - ≥ 19/07      → 'Após as Semifinais'
+    - 28/06–03/07  → 'Após os 16-Avos'
+    - 04/07–08/07  → 'Após as Oitavas'
+    - 09/07–13/07  → 'Após as Quartas'
+    - ≥ 14/07      → 'Após as Semifinais'
     """
     if reference_date is None:
         reference_date = REFERENCE_DATE
@@ -57,13 +57,13 @@ def get_pre_tournament_version(reference_date: _date | None = None) -> str:
         return "Após 1ª rodada da fase de grupos"
     if reference_date <= WC_2026_GROUP_ROUND2_END:
         return "Após 2ª rodada da fase de grupos"
-    if reference_date < WC_2026_R16_START:
+    if reference_date <= WC_2026_R32_START:
         return "Após a Fase de Grupos"
-    if reference_date < WC_2026_QF_START:
+    if reference_date <= WC_2026_R16_START:
         return "Após os 16-Avos"
-    if reference_date < WC_2026_SF_START:
+    if reference_date <= WC_2026_QF_START:
         return "Após as Oitavas"
-    if reference_date < WC_2026_FINAL:
+    if reference_date <= WC_2026_SF_START:
         return "Após as Quartas"
     return "Após as Semifinais"
 
