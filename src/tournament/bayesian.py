@@ -531,6 +531,28 @@ class BayesianWorldCup2026(TournamentSimulator):
             rho_r = np.repeat(rho[:, None], k, axis=1) if uses_dc else None
             ga, gb = simulate_matches(la, lb, rho_r, n)
             wins = (ga > gb) | ((ga == gb) & (np.random.rand(n, k) < 0.5))
+            if self._known_results:
+                for slot in range(k):
+                    a_col, b_col = a[:, slot], b[:, slot]
+                    # Only override when all simulations agree on the matchup
+                    if not (np.all(a_col == a_col[0]) and np.all(b_col == b_col[0])):
+                        continue
+                    ta = self._model.teams[a_col[0]]
+                    tb = self._model.teams[b_col[0]]
+                    if (ta, tb) in self._known_results:
+                        sh, sa = self._known_results[(ta, tb)]
+                        if sh > sa:
+                            wins[:, slot] = True
+                        elif sh < sa:
+                            wins[:, slot] = False
+                        # draw → went to penalties, keep random
+                    elif (tb, ta) in self._known_results:
+                        sh, sa = self._known_results[(tb, ta)]
+                        if sh > sa:
+                            wins[:, slot] = False
+                        elif sh < sa:
+                            wins[:, slot] = True
+                        # draw → went to penalties, keep random
             return np.where(wins, a, b)
 
         r16 = play_round(r32)
