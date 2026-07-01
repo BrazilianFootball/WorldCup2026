@@ -7,11 +7,11 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2026-07-02,Portugal,Croatia,,,FIFA World Cup,Toronto,Canada,True
 2026-07-02,Spain,Austria,,,FIFA World Cup,Inglewood,United States,True
 2026-07-01,United States,Bosnia and Herzegovina,,,FIFA World Cup,Santa Clara,United States,False
-2026-07-01,Belgium,Senegal,,,FIFA World Cup,Seattle,United States,True
-2026-07-01,England,DR Congo,,,FIFA World Cup,Atlanta,United States,True
-2026-06-30,France,Sweden,,,FIFA World Cup,East Rutherford,United States,True
-2026-06-30,Ivory Coast,Norway,,,FIFA World Cup,Arlington,United States,True
-2026-06-30,Mexico,Ecuador,,,FIFA World Cup,Mexico City,Mexico,False
+2026-07-01,Belgium,Senegal,3,2,FIFA World Cup,Seattle,United States,True
+2026-07-01,England,DR Congo,2,1,FIFA World Cup,Atlanta,United States,True
+2026-06-30,France,Sweden,3,0,FIFA World Cup,East Rutherford,United States,True
+2026-06-30,Ivory Coast,Norway,1,2,FIFA World Cup,Arlington,United States,True
+2026-06-30,Mexico,Ecuador,2,0,FIFA World Cup,Mexico City,Mexico,False
 2026-06-29,Netherlands,Morocco,1,1,FIFA World Cup,Guadalupe,Mexico,True
 2026-06-29,Germany,Paraguay,1,1,FIFA World Cup,Foxborough,United States,True
 2026-06-29,Brazil,Japan,2,1,FIFA World Cup,Houston,United States,True
