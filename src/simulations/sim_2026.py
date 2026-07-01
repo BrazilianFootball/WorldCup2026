@@ -102,8 +102,23 @@ if __name__ == "__main__":
         for _, r in _wc26.iterrows()
     } or None
 
+    _shootouts = pd.read_csv("data/shootouts.csv")
+    _wc26_draws = _wc26[_wc26["home_score"] == _wc26["away_score"]]
+    _wc26_shootouts = _wc26_draws.merge(
+        _shootouts[["date", "home_team", "away_team", "winner"]],
+        on=["date", "home_team", "away_team"],
+        how="inner",
+    )
+    known_ko_winners = {
+        (r["home_team"], r["away_team"]): r["winner"]
+        for _, r in _wc26_shootouts.iterrows()
+    } or None
+
     simulator = BayesianWorldCup2026(
-        model, seed=DEFAULT_SEED, known_results=known_results
+        model,
+        seed=DEFAULT_SEED,
+        known_results=known_results,
+        known_ko_winners=known_ko_winners,
     )
     tr = simulator.simulate(n=N_SIM)
 

@@ -244,6 +244,7 @@ class BayesianWorldCup2026(TournamentSimulator):
         *,
         seed: int = DEFAULT_SEED,
         known_results: dict[tuple[str, str], tuple[int, int]] | None = None,
+        known_ko_winners: dict[tuple[str, str], str] | None = None,
         host_boost: float = DEFAULT_HOST_BOOST,
         schedule_path: str | Path = "data/results.csv",
         export_all_matchups: bool = True,
@@ -251,6 +252,7 @@ class BayesianWorldCup2026(TournamentSimulator):
         self._model = model
         self._seed = seed
         self._known_results = known_results
+        self._known_ko_winners = known_ko_winners
         self._host_boost = host_boost
         self._schedule_path = schedule_path
         self._export_all_matchups = export_all_matchups
@@ -545,14 +547,28 @@ class BayesianWorldCup2026(TournamentSimulator):
                             wins[:, slot] = True
                         elif sh < sa:
                             wins[:, slot] = False
-                        # draw → went to penalties, keep random
+                        elif self._known_ko_winners:
+                            winner = self._known_ko_winners.get(
+                                (ta, tb)
+                            ) or self._known_ko_winners.get((tb, ta))
+                            if winner == ta:
+                                wins[:, slot] = True
+                            elif winner == tb:
+                                wins[:, slot] = False
                     elif (tb, ta) in self._known_results:
                         sh, sa = self._known_results[(tb, ta)]
                         if sh > sa:
                             wins[:, slot] = False
                         elif sh < sa:
                             wins[:, slot] = True
-                        # draw → went to penalties, keep random
+                        elif self._known_ko_winners:
+                            winner = self._known_ko_winners.get(
+                                (tb, ta)
+                            ) or self._known_ko_winners.get((ta, tb))
+                            if winner == ta:
+                                wins[:, slot] = True
+                            elif winner == tb:
+                                wins[:, slot] = False
             return np.where(wins, a, b)
 
         r16 = play_round(r32)

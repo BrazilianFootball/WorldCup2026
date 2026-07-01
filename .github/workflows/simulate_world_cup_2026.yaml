@@ -9,6 +9,7 @@ on:
       - main
     paths:
       - "data/results.csv"
+      - "data/shootouts.csv"
 
 jobs:
   simulate:
