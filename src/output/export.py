@@ -347,12 +347,29 @@ def update_html_from_summary(
     print(f"tabela_chances.csv atualizado com versão '{version}'.")
 
 
+# A rodada correspondente a cada versão já ocorreu por definição (a própria
+# versão marca o fim dela), então deixa de ser escrita no CSV a partir dali —
+# independentemente de todos os jogos daquela rodada já terem sido disputados.
+# Mantém a mesma ordem/rótulos de PLANNED_VERSIONS em docs/js/chaveamento.js.
+_VERSION_MIN_ROUND_INDEX = {
+    "Após os 16-Avos": 1,
+    "Após as Oitavas": 2,
+    "Após as Quartas": 3,
+    "Após as Semifinais": 4,
+}
+
+
 def update_chaveamento_probs(
     bracket_df,
     version,
     chaveamento_csv="docs/csv/previsoes/chaveamento_probs.csv",
 ):
-    """Versiona chaveamento_probs.csv de forma análoga a update_html_from_summary."""
+    """Versiona chaveamento_probs.csv de forma análoga a update_html_from_summary.
+
+    Rodadas já concluídas pela própria definição de ``version`` (ex.: R32 na
+    versão "Após os 16-Avos") não são mais gravadas, mesmo que algum jogo
+    daquela rodada ainda não tenha ocorrido.
+    """
     fieldnames = [
         "versão",
         "side",
@@ -367,8 +384,11 @@ def update_chaveamento_probs(
         "winner",
     ]
 
+    min_round_index = _VERSION_MIN_ROUND_INDEX.get(version, 0)
+
     new_df = bracket_df.copy()
     new_df.insert(0, "versão", version)
+    new_df = new_df[new_df["round_index"] >= min_round_index]
     new_rows = new_df[fieldnames].to_dict(orient="records")
 
     path = Path(chaveamento_csv)

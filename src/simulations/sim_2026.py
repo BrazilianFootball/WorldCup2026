@@ -153,7 +153,9 @@ if __name__ == "__main__":
         _validate_partidas_write(Path("docs/csv/previsoes/partidas.csv"), partidas_out)
         partidas_out.to_csv("docs/csv/previsoes/partidas.csv", index=False)
 
-    # Version deterministic display bracket.
+    # Version deterministic display bracket. Rounds already implied as past by
+    # the version label itself (e.g. R32 once past "Após os 16-Avos") are
+    # excluded from the rows written for this version.
     if simulator.last_bracket is not None:
         update_chaveamento_probs(simulator.last_bracket, get_pre_tournament_version())
 

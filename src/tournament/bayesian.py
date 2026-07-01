@@ -288,6 +288,33 @@ class BayesianWorldCup2026(TournamentSimulator):
     def last_pair_goals_cache(self) -> dict | None:
         return self._last_pair_goals_cache
 
+    def _known_winner(self, t1: str, t2: str) -> str | None:
+        """Return the already-decided winner of ``t1`` vs ``t2``, if known.
+
+        Consults ``known_results`` (real score, either order) and, for a
+        drawn knockout match, ``known_ko_winners`` (shootout result).
+        Returns ``None`` when the match hasn't been played yet.
+        """
+        if not self._known_results:
+            return None
+        if (t1, t2) in self._known_results:
+            home, away = t1, t2
+            sh, sa = self._known_results[(t1, t2)]
+        elif (t2, t1) in self._known_results:
+            home, away = t2, t1
+            sh, sa = self._known_results[(t2, t1)]
+        else:
+            return None
+        if sh > sa:
+            return home
+        if sh < sa:
+            return away
+        if self._known_ko_winners:
+            return self._known_ko_winners.get(
+                (home, away)
+            ) or self._known_ko_winners.get((away, home))
+        return None
+
     def simulate(self, n: int = 100_000) -> TournamentResult:
         """Run *n* simulations; populate ``last_group_matches`` and ``last_bracket``."""
         draws = self._model.draws
@@ -541,34 +568,11 @@ class BayesianWorldCup2026(TournamentSimulator):
                         continue
                     ta = self._model.teams[a_col[0]]
                     tb = self._model.teams[b_col[0]]
-                    if (ta, tb) in self._known_results:
-                        sh, sa = self._known_results[(ta, tb)]
-                        if sh > sa:
-                            wins[:, slot] = True
-                        elif sh < sa:
-                            wins[:, slot] = False
-                        elif self._known_ko_winners:
-                            winner = self._known_ko_winners.get(
-                                (ta, tb)
-                            ) or self._known_ko_winners.get((tb, ta))
-                            if winner == ta:
-                                wins[:, slot] = True
-                            elif winner == tb:
-                                wins[:, slot] = False
-                    elif (tb, ta) in self._known_results:
-                        sh, sa = self._known_results[(tb, ta)]
-                        if sh > sa:
-                            wins[:, slot] = False
-                        elif sh < sa:
-                            wins[:, slot] = True
-                        elif self._known_ko_winners:
-                            winner = self._known_ko_winners.get(
-                                (tb, ta)
-                            ) or self._known_ko_winners.get((ta, tb))
-                            if winner == ta:
-                                wins[:, slot] = True
-                            elif winner == tb:
-                                wins[:, slot] = False
+                    winner = self._known_winner(ta, tb)
+                    if winner == ta:
+                        wins[:, slot] = True
+                    elif winner == tb:
+                        wins[:, slot] = False
             return np.where(wins, a, b)
 
         r16 = play_round(r32)
@@ -817,12 +821,21 @@ class BayesianWorldCup2026(TournamentSimulator):
                     else "final"
                 )
 
+                known_winner = (
+                    None if t1 == "TBD" or t2 == "TBD" else self._known_winner(t1, t2)
+                )
+
                 if t1 == "TBD" or t2 == "TBD":
                     prob_t1 = 100.0 if t1 != "TBD" else 0.0
                     prob_t2 = 100.0 - prob_t1
                     winner = t1 if t1 != "TBD" else t2
                     loser = t2 if winner == t1 else t1
                     prob_adv_t1, prob_adv_t2 = prob_t1, prob_t2
+                elif known_winner is not None:
+                    prob_adv_t1 = 100.0 if known_winner == t1 else 0.0
+                    prob_adv_t2 = 100.0 - prob_adv_t1
+                    winner = known_winner
+                    loser = t2 if winner == t1 else t1
                 else:
                     idx1 = t_to_idx.get(t1)
                     idx2 = t_to_idx.get(t2)
