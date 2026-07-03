@@ -1,5 +1,6 @@
 date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2026-07-06,United States,Belgium,,,FIFA World Cup,Seattle,United States,False
+2026-07-06,Portugal,Spain,,,FIFA World Cup,Dallas,United States,True
 2026-07-05,Mexico,England,,,FIFA World Cup,Mexico City,Mexico,False
 2026-07-05,Brazil,Norway,,,FIFA World Cup,East Rutherford,United States,True
 2026-07-04,Paraguay,France,,,FIFA World Cup,Philadelphia,United States,True
@@ -7,12 +8,12 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2026-07-03,Colombia,Ghana,,,FIFA World Cup,Kansas City,United States,True
 2026-07-03,Argentina,Cape Verde,,,FIFA World Cup,Miami Gardens,United States,True
 2026-07-03,Australia,Egypt,,,FIFA World Cup,Arlington,United States,True
-2026-07-02,Switzerland,Algeria,,,FIFA World Cup,Vancouver,Canada,True
-2026-07-02,Portugal,Croatia,,,FIFA World Cup,Toronto,Canada,True
-2026-07-02,Spain,Austria,,,FIFA World Cup,Inglewood,United States,True
+2026-07-02,Portugal,Croatia,2,1,FIFA World Cup,Toronto,Canada,True
+2026-07-02,Spain,Austria,3,0,FIFA World Cup,Inglewood,United States,True
+2026-07-02,Switzerland,Algeria,2,0,FIFA World Cup,Vancouver,Canada,True
+2026-07-01,United States,Bosnia and Herzegovina,2,0,FIFA World Cup,Santa Clara,United States,False
 2026-07-01,Belgium,Senegal,3,2,FIFA World Cup,Seattle,United States,True
 2026-07-01,England,DR Congo,2,1,FIFA World Cup,Atlanta,United States,True
-2026-07-01,United States,Bosnia and Herzegovina,2,0,FIFA World Cup,Santa Clara,United States,False
 2026-06-30,Mexico,Ecuador,2,0,FIFA World Cup,Mexico City,Mexico,False
 2026-06-30,France,Sweden,3,0,FIFA World Cup,East Rutherford,United States,True
 2026-06-30,Ivory Coast,Norway,1,2,FIFA World Cup,Arlington,United States,True
@@ -389,8 +390,8 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2026-01-18,Grenada,Jamaica,0,1,Friendly,St. George's,Grenada,False
 2026-01-18,Bolivia,Panama,1,1,Friendly,Tarija,Bolivia,False
 2026-01-17,Egypt,Nigeria,0,0,African Cup of Nations,Casablanca,Morocco,True
-2026-01-14,Morocco,Nigeria,0,0,African Cup of Nations,Rabat,Morocco,False
 2026-01-14,Senegal,Egypt,1,0,African Cup of Nations,Tangier,Morocco,True
+2026-01-14,Morocco,Nigeria,0,0,African Cup of Nations,Rabat,Morocco,False
 2026-01-10,Egypt,Ivory Coast,3,2,African Cup of Nations,Agadir,Morocco,True
 2026-01-10,Algeria,Nigeria,0,2,African Cup of Nations,Marrakesh,Morocco,True
 2026-01-09,Morocco,Cameroon,2,0,African Cup of Nations,Rabat,Morocco,False
@@ -783,12 +784,12 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2025-10-09,Poland,New Zealand,1,0,Friendly,Chorzów,Poland,False
 2025-10-09,England,Wales,3,0,Friendly,London,England,False
 2025-10-09,Cyprus,Bosnia and Herzegovina,2,2,FIFA World Cup qualification,Larnaca,Cyprus,False
-2025-10-09,Liberia,Namibia,3,1,FIFA World Cup qualification,Monrovia,Liberia,False
+2025-10-09,Nicaragua,Haiti,0,3,FIFA World Cup qualification,Managua,Nicaragua,False
 2025-10-09,Czech Republic,Croatia,0,0,FIFA World Cup qualification,Prague,Czech Republic,False
 2025-10-09,Thailand,Taiwan,2,0,AFC Asian Cup qualification,Bangkok,Thailand,False
 2025-10-09,Honduras,Costa Rica,0,0,FIFA World Cup qualification,San Pedro Sula,Honduras,False
-2025-10-09,Nicaragua,Haiti,0,3,FIFA World Cup qualification,Managua,Nicaragua,False
 2025-10-09,Tajikistan,Maldives,2,0,AFC Asian Cup qualification,Hisor,Tajikistan,False
+2025-10-09,Liberia,Namibia,3,1,FIFA World Cup qualification,Monrovia,Liberia,False
 2025-10-09,Vietnam,Nepal,3,1,AFC Asian Cup qualification,Ho Chi Minh City,Vietnam,False
 2025-10-09,Syria,Myanmar,5,1,AFC Asian Cup qualification,Al Hofuf,Saudi Arabia,True
 2025-10-09,Pakistan,Afghanistan,0,0,AFC Asian Cup qualification,Islamabad,Pakistan,False
@@ -3090,12 +3091,12 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2023-09-10,El Salvador,Trinidad and Tobago,2,3,CONCACAF Nations League,San Salvador,El Salvador,False
 2023-09-10,Guatemala,Panama,1,1,CONCACAF Nations League,Guatemala City,Guatemala,False
 2023-09-10,Gambia,Congo,2,2,African Cup of Nations qualification,Marrakesh,Morocco,True
-2023-09-10,Kazakhstan,Northern Ireland,1,0,UEFA Euro qualification,Astana,Kazakhstan,False
+2023-09-10,San Marino,Slovenia,0,4,UEFA Euro qualification,Serravalle,San Marino,False
 2023-09-10,Greece,Gibraltar,5,0,UEFA Euro qualification,Athens,Greece,False
 2023-09-10,Finland,Denmark,0,1,UEFA Euro qualification,Helsinki,Finland,False
 2023-09-10,Lebanon,India,1,0,King's Cup,Chiang Mai,Thailand,True
-2023-09-10,San Marino,Slovenia,0,4,UEFA Euro qualification,Serravalle,San Marino,False
 2023-09-10,Faroe Islands,Moldova,0,1,UEFA Euro qualification,Tórshavn,Faroe Islands,False
+2023-09-10,Kazakhstan,Northern Ireland,1,0,UEFA Euro qualification,Astana,Kazakhstan,False
 2023-09-10,Thailand,Iraq,2,2,King's Cup,Chiang Mai,Thailand,False
 2023-09-10,Lithuania,Serbia,1,3,UEFA Euro qualification,Kaunas,Lithuania,False
 2023-09-10,Montenegro,Bulgaria,2,1,UEFA Euro qualification,Podgorica,Montenegro,False
@@ -10072,10 +10073,10 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2015-11-30,Ethiopia,Tanzania,1,1,CECAFA Cup,Addis Ababa,Ethiopia,False
 2015-11-28,Uganda,Burundi,1,0,CECAFA Cup,Hawassa,Ethiopia,True
 2015-11-28,Ethiopia,Tanzania,1,1,CECAFA Cup,Hawassa,Ethiopia,False
-2015-11-27,Rwanda,Somalia,3,0,CECAFA Cup,Hawassa,Ethiopia,True
-2015-11-27,Djibouti,Sudan,0,4,CECAFA Cup,Bahir Dar,Ethiopia,True
 2015-11-27,Zanzibar,Kenya,3,1,CECAFA Cup,Hawassa,Ethiopia,True
 2015-11-27,South Sudan,Malawi,2,0,CECAFA Cup,Bahir Dar,Ethiopia,True
+2015-11-27,Rwanda,Somalia,3,0,CECAFA Cup,Hawassa,Ethiopia,True
+2015-11-27,Djibouti,Sudan,0,4,CECAFA Cup,Bahir Dar,Ethiopia,True
 2015-11-25,Malawi,Djibouti,3,0,CECAFA Cup,Bahir Dar,Ethiopia,True
 2015-11-25,Kenya,Burundi,1,1,CECAFA Cup,Hawassa,Ethiopia,True
 2015-11-25,Ethiopia,Somalia,2,0,CECAFA Cup,Hawassa,Ethiopia,False
@@ -10088,45 +10089,46 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2015-11-22,Kenya,Uganda,2,0,CECAFA Cup,Addis Ababa,Ethiopia,True
 2015-11-21,Ethiopia,Rwanda,0,1,CECAFA Cup,Addis Ababa,Ethiopia,False
 2015-11-21,Burundi,Zanzibar,1,0,CECAFA Cup,Addis Ababa,Ethiopia,True
-2015-11-17,Estonia,Saint Kitts and Nevis,3,0,Friendly,Tallinn,Estonia,False
+2015-11-17,Ghana,Comoros,2,0,FIFA World Cup qualification,Kumasi,Ghana,False
 2015-11-17,Timor-Leste,Saudi Arabia,0,10,FIFA World Cup qualification,Dili,Timor-Leste,False
 2015-11-17,Egypt,Chad,4,0,FIFA World Cup qualification,Alexandria,Egypt,False
 2015-11-17,England,France,2,0,Friendly,London,England,False
-2015-11-17,Congo,Ethiopia,2,1,FIFA World Cup qualification,Brazzaville,Congo,False
-2015-11-17,Italy,Romania,2,2,Friendly,Bologna,Italy,False
-2015-11-17,Ghana,Comoros,2,0,FIFA World Cup qualification,Kumasi,Ghana,False
+2015-11-17,Estonia,Saint Kitts and Nevis,3,0,Friendly,Tallinn,Estonia,False
+2015-11-17,Ivory Coast,Liberia,3,0,FIFA World Cup qualification,Abidjan,Ivory Coast,False
 2015-11-17,Guam,Iran,0,6,FIFA World Cup qualification,Dededo,Guam,False
 2015-11-17,Honduras,Mexico,0,2,FIFA World Cup qualification,San Pedro Sula,Honduras,False
 2015-11-17,Hong Kong,China,0,0,FIFA World Cup qualification,Kowloon,Hong Kong,False
-2015-11-17,Ivory Coast,Liberia,3,0,FIFA World Cup qualification,Abidjan,Ivory Coast,False
+2015-11-17,Italy,Romania,2,2,Friendly,Bologna,Italy,False
+2015-11-17,Congo,Ethiopia,2,1,FIFA World Cup qualification,Brazzaville,Congo,False
 2015-11-17,Denmark,Sweden,2,2,UEFA Euro qualification,Copenhagen,Denmark,False
-2015-11-17,Uruguay,Chile,3,0,FIFA World Cup qualification,Montevideo,Uruguay,False
+2015-11-17,Myanmar,Kuwait,3,0,FIFA World Cup qualification,Bangkok,Thailand,True
 2015-11-17,Colombia,Argentina,0,1,FIFA World Cup qualification,Barranquilla,Colombia,False
 2015-11-17,Cape Verde,Kenya,2,0,FIFA World Cup qualification,Praia,Cape Verde,False
 2015-11-17,Cameroon,Niger,0,0,FIFA World Cup qualification,Yaoundé,Cameroon,False
 2015-11-17,Cambodia,Japan,0,2,FIFA World Cup qualification,Phnom Penh,Cambodia,False
-2015-11-17,Myanmar,Kuwait,3,0,FIFA World Cup qualification,Bangkok,Thailand,True
+2015-11-17,Kyrgyzstan,Jordan,1,0,FIFA World Cup qualification,Bishkek,Kyrgyzstan,False
 2015-11-17,Burkina Faso,Benin,2,0,FIFA World Cup qualification,Ouagadougou,Burkina Faso,False
 2015-11-17,Brazil,Peru,3,0,FIFA World Cup qualification,Salvador,Brazil,False
 2015-11-17,Bhutan,Qatar,0,3,FIFA World Cup qualification,Thimphu,Bhutan,False
 2015-11-17,Bangladesh,Australia,0,4,FIFA World Cup qualification,Dhaka,Bangladesh,False
 2015-11-17,Azerbaijan,Moldova,2,1,Friendly,Baku,Azerbaijan,False
 2015-11-17,Austria,Switzerland,1,2,Friendly,Vienna,Austria,False
-2015-11-17,Kyrgyzstan,Jordan,1,0,FIFA World Cup qualification,Bishkek,Kyrgyzstan,False
+2015-11-17,Algeria,Tanzania,7,0,FIFA World Cup qualification,Blida,Algeria,False
 2015-11-17,North Korea,Bahrain,2,0,FIFA World Cup qualification,Pyongyang,North Korea,False
-2015-11-17,Yemen,Uzbekistan,1,3,FIFA World Cup qualification,Doha,Qatar,True
+2015-11-17,Uruguay,Chile,3,0,FIFA World Cup qualification,Montevideo,Uruguay,False
 2015-11-17,Laos,South Korea,0,5,FIFA World Cup qualification,Vientiane,Laos,False
-2015-11-17,Luxembourg,Portugal,0,2,Friendly,Luxembourg,Luxembourg,False
+2015-11-17,Slovenia,Ukraine,1,1,UEFA Euro qualification,Maribor,Slovenia,False
 2015-11-17,Taiwan,Iraq,0,2,FIFA World Cup qualification,Kaohsiung,Taiwan,False
 2015-11-17,Saint Vincent and the Grenadines,Guatemala,0,4,FIFA World Cup qualification,Kingstown,Saint Vincent and the Grenadines,False
 2015-11-17,Panama,Costa Rica,1,2,FIFA World Cup qualification,Panama City,Panama,False
 2015-11-17,Haiti,Jamaica,0,1,FIFA World Cup qualification,Port-au-Prince,Haiti,False
+2015-11-17,Yemen,Uzbekistan,1,3,FIFA World Cup qualification,Doha,Qatar,True
 2015-11-17,Venezuela,Ecuador,1,3,FIFA World Cup qualification,Ciudad Guayana,Venezuela,False
 2015-11-17,Turkmenistan,Oman,2,1,FIFA World Cup qualification,Ashgabat,Turkmenistan,False
 2015-11-17,Turkey,Greece,0,0,Friendly,Istanbul,Turkey,False
 2015-11-17,Tunisia,Mauritania,2,1,FIFA World Cup qualification,Radès,Tunisia,False
+2015-11-17,Luxembourg,Portugal,0,2,Friendly,Luxembourg,Luxembourg,False
 2015-11-17,South Africa,Angola,1,0,FIFA World Cup qualification,Durban,South Africa,False
-2015-11-17,Slovenia,Ukraine,1,1,UEFA Euro qualification,Maribor,Slovenia,False
 2015-11-17,Slovakia,Iceland,3,1,Friendly,Žilina,Slovakia,False
 2015-11-17,Singapore,Syria,1,2,FIFA World Cup qualification,Kallang,Singapore,False
 2015-11-17,Senegal,Madagascar,3,0,FIFA World Cup qualification,Dakar,Senegal,False
@@ -10138,7 +10140,6 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2015-11-17,Mali,Botswana,2,0,FIFA World Cup qualification,Bamako,Mali,False
 2015-11-17,Malaysia,United Arab Emirates,1,2,FIFA World Cup qualification,Shah Alam,Malaysia,False
 2015-11-17,North Macedonia,Lebanon,0,1,Friendly,Skopje,North Macedonia,False
-2015-11-17,Algeria,Tanzania,7,0,FIFA World Cup qualification,Blida,Algeria,False
 2015-11-16,Republic of Ireland,Bosnia and Herzegovina,2,0,UEFA Euro qualification,Dublin,Republic of Ireland,False
 2015-11-16,Albania,Georgia,2,2,Friendly,Tirana,Albania,False
 2015-11-15,Hungary,Norway,2,1,UEFA Euro qualification,Budapest,Hungary,False
@@ -10185,60 +10186,60 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2015-11-13,Peru,Paraguay,1,0,FIFA World Cup qualification,Lima,Peru,False
 2015-11-13,Northern Ireland,Latvia,1,0,Friendly,Belfast,Northern Ireland,False
 2015-11-13,Slovakia,Switzerland,3,2,Friendly,Trnava,Slovakia,False
-2015-11-12,Chile,Colombia,1,1,FIFA World Cup qualification,Santiago,Chile,False
+2015-11-12,China,Bhutan,12,0,FIFA World Cup qualification,Changsha,China,False
 2015-11-12,South Korea,Myanmar,4,0,FIFA World Cup qualification,Suwon,South Korea,False
+2015-11-12,Afghanistan,Cambodia,3,0,FIFA World Cup qualification,Tehran,Iran,True
 2015-11-12,Iran,Turkmenistan,3,1,FIFA World Cup qualification,Tehran,Iran,False
 2015-11-12,India,Guam,1,0,FIFA World Cup qualification,Bengaluru,India,False
 2015-11-12,Ecuador,Uruguay,2,1,FIFA World Cup qualification,Quito,Ecuador,False
-2015-11-12,China,Bhutan,12,0,FIFA World Cup qualification,Changsha,China,False
 2015-11-12,Bolivia,Venezuela,4,2,FIFA World Cup qualification,La Paz,Bolivia,False
-2015-11-12,Afghanistan,Cambodia,3,0,FIFA World Cup qualification,Tehran,Iran,True
+2015-11-12,Chile,Colombia,1,1,FIFA World Cup qualification,Santiago,Chile,False
 2015-11-12,Burundi,DR Congo,2,3,FIFA World Cup qualification,Bujumbura,Burundi,False
 2015-11-12,Benin,Burkina Faso,2,1,FIFA World Cup qualification,Cotonou,Benin,False
 2015-11-12,Australia,Kyrgyzstan,3,0,FIFA World Cup qualification,Canberra,Australia,False
 2015-11-12,Andorra,Saint Kitts and Nevis,0,1,Friendly,Sant Julià de Lòria,Andorra,False
 2015-11-12,North Macedonia,Montenegro,4,1,Friendly,Skopje,North Macedonia,False
 2015-11-12,Lebanon,Laos,7,0,FIFA World Cup qualification,Sidon,Lebanon,False
-2015-11-12,Singapore,Japan,0,3,FIFA World Cup qualification,Kallang,Singapore,False
+2015-11-12,Namibia,Guinea,0,1,FIFA World Cup qualification,Windhoek,Namibia,False
 2015-11-12,Maldives,Hong Kong,0,1,FIFA World Cup qualification,Malé,Maldives,False
 2015-11-12,Tajikistan,Bangladesh,5,0,FIFA World Cup qualification,Dushanbe,Tajikistan,False
 2015-11-12,Morocco,Equatorial Guinea,2,0,FIFA World Cup qualification,Agadir,Morocco,False
-2015-11-12,Uzbekistan,North Korea,3,1,FIFA World Cup qualification,Tashkent,Uzbekistan,False
 2015-11-12,United Arab Emirates,Timor-Leste,8,0,FIFA World Cup qualification,Abu Dhabi,United Arab Emirates,False
 2015-11-12,Togo,Uganda,0,1,FIFA World Cup qualification,Lomé,Togo,False
 2015-11-12,Thailand,Taiwan,4,2,FIFA World Cup qualification,Bangkok,Thailand,False
+2015-11-12,Uzbekistan,North Korea,3,1,FIFA World Cup qualification,Tashkent,Uzbekistan,False
+2015-11-12,Singapore,Japan,0,3,FIFA World Cup qualification,Kallang,Singapore,False
 2015-11-12,Philippines,Yemen,0,1,FIFA World Cup qualification,Manila,Philippines,False
 2015-11-12,Palestine,Malaysia,6,0,FIFA World Cup qualification,Amman,Jordan,True
 2015-11-12,Oman,New Zealand,0,1,Friendly,Seeb,Oman,False
 2015-11-12,Norway,Hungary,0,1,UEFA Euro qualification,Oslo,Norway,False
-2015-11-12,Namibia,Guinea,0,1,FIFA World Cup qualification,Windhoek,Namibia,False
 2015-11-11,Sudan,Zambia,0,1,FIFA World Cup qualification,Khartoum,Sudan,False
 2015-11-11,Mozambique,Gabon,1,0,FIFA World Cup qualification,Maputo,Mozambique,False
 2015-11-11,Jordan,Malta,2,0,Friendly,Istanbul,Turkey,True
 2015-11-11,Estonia,Georgia,3,0,Friendly,Tallinn,Estonia,False
 2015-11-10,Vanuatu,Fiji,2,1,Friendly,Port Vila,Vanuatu,False
 2015-11-09,Palestine,Saudi Arabia,0,0,FIFA World Cup qualification,Amman,Jordan,True
+2015-11-07,Vanuatu,Fiji,1,1,Friendly,Port Vila,Vanuatu,False
 2015-11-07,Namibia,Zambia,0,0,Friendly,Luanda,Angola,True
 2015-11-07,Hong Kong,Myanmar,5,0,Friendly,Kowloon,Hong Kong,False
 2015-11-07,Angola,DR Congo,1,0,Friendly,Luanda,Angola,False
-2015-11-07,Vanuatu,Fiji,1,1,Friendly,Port Vila,Vanuatu,False
 2015-11-06,DR Congo,Zambia,3,0,Friendly,Luanda,Angola,True
 2015-11-06,Angola,Namibia,1,0,Friendly,Luanda,Angola,False
 2015-11-05,United Arab Emirates,Turkmenistan,5,1,Friendly,Abu Dhabi,United Arab Emirates,False
 2015-11-03,Cambodia,Brunei,6,1,Friendly,Phnom Penh,Cambodia,False
 2015-10-17,Eswatini,Djibouti,2,1,FIFA World Cup qualification,Lobamba,Swaziland,False
-2015-10-13,Guinea-Bissau,Liberia,1,3,FIFA World Cup qualification,Bissau,Guinea-Bissau,False
-2015-10-13,Timor-Leste,Malaysia,0,3,FIFA World Cup qualification,Dili,Timor-Leste,False
-2015-10-13,Ecuador,Bolivia,2,0,FIFA World Cup qualification,Quito,Ecuador,False
-2015-10-13,El Salvador,Guatemala,1,1,Friendly,Carson,United States,True
-2015-10-13,North Korea,Yemen,1,0,FIFA World Cup qualification,Pyongyang,North Korea,False
-2015-10-13,Iran,Japan,1,1,Friendly,Tehran,Iran,False
-2015-10-13,Italy,Norway,2,1,UEFA Euro qualification,Rome,Italy,False
-2015-10-13,Jordan,Tajikistan,3,0,FIFA World Cup qualification,Irbid,Jordan,False
-2015-10-13,Congo,Benin,2,1,Friendly,Brazzaville,Congo,False
+2015-10-13,Kuwait,Lebanon,0,0,FIFA World Cup qualification,Kuwait City,Kuwait,False
 2015-10-13,Cyprus,Bosnia and Herzegovina,2,3,UEFA Euro qualification,Nicosia,Cyprus,False
-2015-10-13,Qatar,Maldives,4,0,FIFA World Cup qualification,Doha,Qatar,False
+2015-10-13,North Korea,Yemen,1,0,FIFA World Cup qualification,Pyongyang,North Korea,False
+2015-10-13,Jordan,Tajikistan,3,0,FIFA World Cup qualification,Irbid,Jordan,False
+2015-10-13,Italy,Norway,2,1,UEFA Euro qualification,Rome,Italy,False
+2015-10-13,Iran,Japan,1,1,Friendly,Tehran,Iran,False
+2015-10-13,Guinea-Bissau,Liberia,1,3,FIFA World Cup qualification,Bissau,Guinea-Bissau,False
+2015-10-13,El Salvador,Guatemala,1,1,Friendly,Carson,United States,True
+2015-10-13,Ecuador,Bolivia,2,0,FIFA World Cup qualification,Quito,Ecuador,False
+2015-10-13,Timor-Leste,Malaysia,0,3,FIFA World Cup qualification,Dili,Timor-Leste,False
 2015-10-13,Burundi,Seychelles,2,0,FIFA World Cup qualification,Bujumbura,Burundi,False
+2015-10-13,Congo,Benin,2,1,Friendly,Brazzaville,Congo,False
 2015-10-13,Myanmar,Laos,3,1,FIFA World Cup qualification,Bangkok,Thailand,True
 2015-10-13,Bulgaria,Azerbaijan,2,0,UEFA Euro qualification,Sofia,Bulgaria,False
 2015-10-13,Brazil,Venezuela,3,1,FIFA World Cup qualification,Fortaleza,Brazil,False
@@ -10247,117 +10248,117 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2015-10-13,Belgium,Israel,3,1,UEFA Euro qualification,Brussels,Belgium,False
 2015-10-13,Bahrain,Philippines,2,0,FIFA World Cup qualification,Riffa,Bahrain,False
 2015-10-13,Algeria,Senegal,1,0,Friendly,Algiers,Algeria,False
-2015-10-13,Kuwait,Lebanon,0,0,FIFA World Cup qualification,Kuwait City,Kuwait,False
 2015-10-13,South Korea,Jamaica,3,0,Friendly,Seoul,South Korea,False
-2015-10-13,Syria,Afghanistan,5,2,FIFA World Cup qualification,Seeb,Oman,True
+2015-10-13,Qatar,Maldives,4,0,FIFA World Cup qualification,Doha,Qatar,False
 2015-10-13,Kyrgyzstan,Bangladesh,2,0,FIFA World Cup qualification,Bishkek,Kyrgyzstan,False
-2015-10-13,Paraguay,Argentina,0,0,FIFA World Cup qualification,Asunción,Paraguay,False
+2015-10-13,Peru,Chile,3,4,FIFA World Cup qualification,Lima,Peru,False
+2015-10-13,Latvia,Kazakhstan,0,1,UEFA Euro qualification,Riga,Latvia,False
+2015-10-13,Wales,Andorra,2,0,UEFA Euro qualification,Cardiff,Wales,False
 2015-10-13,Vietnam,Thailand,0,3,FIFA World Cup qualification,Hanoi,Vietnam,False
 2015-10-13,Uruguay,Colombia,3,0,FIFA World Cup qualification,Montevideo,Uruguay,False
 2015-10-13,Turkmenistan,Guam,1,0,FIFA World Cup qualification,Ashgabat,Turkmenistan,False
 2015-10-13,Turkey,Iceland,1,0,UEFA Euro qualification,Konya,Turkey,False
-2015-10-13,Latvia,Kazakhstan,0,1,UEFA Euro qualification,Riga,Latvia,False
 2015-10-13,Singapore,Cambodia,2,1,FIFA World Cup qualification,Kallang,Singapore,False
 2015-10-13,Sierra Leone,Chad,2,1,FIFA World Cup qualification,Port Harcourt,Nigeria,True
-2015-10-13,Peru,Chile,3,4,FIFA World Cup qualification,Lima,Peru,False
-2015-10-13,Wales,Andorra,2,0,UEFA Euro qualification,Cardiff,Wales,False
+2015-10-13,Syria,Afghanistan,5,2,FIFA World Cup qualification,Seeb,Oman,True
+2015-10-13,Paraguay,Argentina,0,0,FIFA World Cup qualification,Asunción,Paraguay,False
 2015-10-13,Oman,India,3,0,FIFA World Cup qualification,Muscat,Oman,False
 2015-10-13,Niger,Somalia,4,0,FIFA World Cup qualification,Niamey,Niger,False
+2015-10-13,Lesotho,Comoros,1,1,FIFA World Cup qualification,Maseru,Lesotho,False
 2015-10-13,Netherlands,Czech Republic,2,3,UEFA Euro qualification,Amsterdam,Netherlands,False
 2015-10-13,Namibia,Gambia,2,1,FIFA World Cup qualification,Windhoek,Namibia,False
 2015-10-13,Mauritania,South Sudan,4,0,FIFA World Cup qualification,Nouakchott,Mauritania,False
 2015-10-13,Malta,Croatia,0,1,UEFA Euro qualification,Attard,Malta,False
 2015-10-13,Madagascar,Central African Republic,2,2,FIFA World Cup qualification,Antananarivo,Madagascar,False
-2015-10-13,Lesotho,Comoros,1,1,FIFA World Cup qualification,Maseru,Lesotho,False
-2015-10-12,Lithuania,England,0,3,UEFA Euro qualification,Vilnius,Lithuania,False
-2015-10-12,Austria,Liechtenstein,3,0,UEFA Euro qualification,Vienna,Austria,False
+2015-10-12,Luxembourg,Slovakia,2,4,UEFA Euro qualification,Luxembourg,Luxembourg,False
 2015-10-12,Belarus,North Macedonia,0,0,UEFA Euro qualification,Borisov,Belarus,False
 2015-10-12,Estonia,Switzerland,0,1,UEFA Euro qualification,Tallinn,Estonia,False
 2015-10-12,Gabon,DR Congo,1,2,Friendly,Mons,Belgium,True
-2015-10-12,Luxembourg,Slovakia,2,4,UEFA Euro qualification,Luxembourg,Luxembourg,False
+2015-10-12,Lithuania,England,0,3,UEFA Euro qualification,Vilnius,Lithuania,False
+2015-10-12,Austria,Liechtenstein,3,0,UEFA Euro qualification,Vienna,Austria,False
 2015-10-12,Morocco,Guinea,1,1,Friendly,Agadir,Morocco,False
-2015-10-12,Russia,Montenegro,2,0,UEFA Euro qualification,Moscow,Russia,False
 2015-10-12,San Marino,Slovenia,0,2,UEFA Euro qualification,Serravalle,San Marino,False
 2015-10-12,Sweden,Moldova,2,0,UEFA Euro qualification,Solna,Sweden,False
 2015-10-12,Ukraine,Spain,0,1,UEFA Euro qualification,Kyiv,Ukraine,False
-2015-10-11,Germany,Georgia,2,1,UEFA Euro qualification,Leipzig,Germany,False
+2015-10-12,Russia,Montenegro,2,0,UEFA Euro qualification,Moscow,Russia,False
+2015-10-11,Gibraltar,Scotland,0,6,UEFA Euro qualification,Faro,Portugal,True
 2015-10-11,Armenia,Albania,0,3,UEFA Euro qualification,Yerevan,Armenia,False
 2015-10-11,Denmark,France,1,2,Friendly,Copenhagen,Denmark,False
 2015-10-11,Egypt,Zambia,3,0,Friendly,Abu Dhabi,United Arab Emirates,True
 2015-10-11,Ethiopia,São Tomé and Príncipe,3,0,FIFA World Cup qualification,Addis Ababa,Ethiopia,False
 2015-10-11,Faroe Islands,Romania,0,3,UEFA Euro qualification,Tórshavn,Faroe Islands,False
 2015-10-11,Finland,Northern Ireland,1,1,UEFA Euro qualification,Helsinki,Finland,False
+2015-10-11,Germany,Georgia,2,1,UEFA Euro qualification,Leipzig,Germany,False
 2015-10-11,Greece,Hungary,4,3,UEFA Euro qualification,Piraeus,Greece,False
-2015-10-11,Gibraltar,Scotland,0,6,UEFA Euro qualification,Faro,Portugal,True
 2015-10-11,Kenya,Mauritius,0,0,FIFA World Cup qualification,Nairobi,Kenya,False
 2015-10-11,Malawi,Tanzania,1,0,FIFA World Cup qualification,Blantyre,Malawi,False
 2015-10-11,Nigeria,Cameroon,3,0,Friendly,Brussels,Belgium,True
 2015-10-11,Poland,Republic of Ireland,2,1,UEFA Euro qualification,Warsaw,Poland,False
 2015-10-11,Serbia,Portugal,1,2,UEFA Euro qualification,Belgrade,Serbia,False
-2015-10-10,Bosnia and Herzegovina,Wales,2,0,UEFA Euro qualification,Zenica,Bosnia and Herzegovina,False
-2015-10-10,Croatia,Bulgaria,3,0,UEFA Euro qualification,Zagreb,Croatia,False
-2015-10-10,Chad,Sierra Leone,1,0,FIFA World Cup qualification,N'Djamena,Chad,False
 2015-10-10,Eritrea,Botswana,0,2,FIFA World Cup qualification,Asmara,Eritrea,False
-2015-10-10,Azerbaijan,Italy,1,3,UEFA Euro qualification,Baku,Azerbaijan,False
 2015-10-10,Andorra,Belgium,1,4,UEFA Euro qualification,Sant Julià de Lòria,Andorra,False
+2015-10-10,Azerbaijan,Italy,1,3,UEFA Euro qualification,Baku,Azerbaijan,False
+2015-10-10,Bosnia and Herzegovina,Wales,2,0,UEFA Euro qualification,Zenica,Bosnia and Herzegovina,False
+2015-10-10,Chad,Sierra Leone,1,0,FIFA World Cup qualification,N'Djamena,Chad,False
+2015-10-10,Croatia,Bulgaria,3,0,UEFA Euro qualification,Zagreb,Croatia,False
 2015-10-10,Czech Republic,Turkey,0,2,UEFA Euro qualification,Prague,Czech Republic,False
-2015-10-10,Norway,Malta,2,0,UEFA Euro qualification,Oslo,Norway,False
 2015-10-10,Iceland,Latvia,2,2,UEFA Euro qualification,Reykjavík,Iceland,False
 2015-10-10,Kazakhstan,Netherlands,1,2,UEFA Euro qualification,Astana,Kazakhstan,False
 2015-10-10,Kosovo,Equatorial Guinea,2,0,Friendly,Pristina,Kosovo,False
 2015-10-10,Madagascar,Central African Republic,3,0,FIFA World Cup qualification,Antananarivo,Madagascar,False
+2015-10-10,Norway,Malta,2,0,UEFA Euro qualification,Oslo,Norway,False
 2015-10-10,United States,Mexico,2,3,Friendly,Pasadena,United States,False
 2015-10-10,Israel,Cyprus,1,2,UEFA Euro qualification,Jerusalem,Israel,False
-2015-10-09,Montenegro,Austria,2,3,UEFA Euro qualification,Podgorica,Montenegro,False
+2015-10-09,England,Estonia,2,0,UEFA Euro qualification,London,England,False
+2015-10-09,Moldova,Russia,1,2,UEFA Euro qualification,Chișinău,Moldova,False
 2015-10-09,Algeria,Guinea,1,2,Friendly,Algiers,Algeria,False
 2015-10-09,Burkina Faso,Mali,1,4,Friendly,Troyes,France,True
 2015-10-09,Djibouti,Eswatini,0,6,FIFA World Cup qualification,Djibouti,Djibouti,False
 2015-10-09,Gambia,Namibia,1,1,FIFA World Cup qualification,Bakau,Gambia,False
 2015-10-09,Liechtenstein,Sweden,0,2,UEFA Euro qualification,Vaduz,Liechtenstein,False
 2015-10-09,North Macedonia,Ukraine,0,2,UEFA Euro qualification,Skopje,North Macedonia,False
-2015-10-09,Moldova,Russia,1,2,UEFA Euro qualification,Chișinău,Moldova,False
-2015-10-09,England,Estonia,2,0,UEFA Euro qualification,London,England,False
+2015-10-09,Montenegro,Austria,2,3,UEFA Euro qualification,Podgorica,Montenegro,False
 2015-10-09,Morocco,Ivory Coast,0,1,Friendly,Agadir,Morocco,False
+2015-10-09,Slovakia,Belarus,0,1,UEFA Euro qualification,Žilina,Slovakia,False
 2015-10-09,Slovenia,Lithuania,1,1,UEFA Euro qualification,Ljubljana,Slovenia,False
 2015-10-09,Somalia,Niger,0,2,FIFA World Cup qualification,Addis Ababa,Ethiopia,True
 2015-10-09,Spain,Luxembourg,4,0,UEFA Euro qualification,Logroño,Spain,False
 2015-10-09,Switzerland,San Marino,7,0,UEFA Euro qualification,St. Gallen,Switzerland,False
 2015-10-09,Thailand,Hong Kong,1,0,Friendly,Bangkok,Thailand,False
 2015-10-09,Tunisia,Gabon,3,3,Friendly,Radès,Tunisia,False
-2015-10-09,Slovakia,Belarus,0,1,UEFA Euro qualification,Žilina,Slovakia,False
 2015-10-08,Timor-Leste,Palestine,0,3,FIFA World Cup qualification,Dili,Timor-Leste,False
 2015-10-08,North Korea,Philippines,0,0,FIFA World Cup qualification,Pyongyang,North Korea,False
 2015-10-08,Jordan,Australia,2,0,FIFA World Cup qualification,Amman,Jordan,False
 2015-10-08,Republic of Ireland,Germany,1,0,UEFA Euro qualification,Dublin,Republic of Ireland,False
 2015-10-08,Hungary,Faroe Islands,2,1,UEFA Euro qualification,Budapest,Hungary,False
 2015-10-08,Georgia,Gibraltar,4,0,UEFA Euro qualification,Tbilisi,Georgia,False
-2015-10-08,Albania,Serbia,0,2,UEFA Euro qualification,Elbasan,Albania,False
 2015-10-08,France,Armenia,4,0,Friendly,Nice,France,False
-2015-10-08,Bolivia,Uruguay,0,2,FIFA World Cup qualification,La Paz,Bolivia,False
+2015-10-08,Albania,Serbia,0,2,UEFA Euro qualification,Elbasan,Albania,False
+2015-10-08,Kyrgyzstan,Tajikistan,2,2,FIFA World Cup qualification,Bishkek,Kyrgyzstan,False
 2015-10-08,Colombia,Peru,2,0,FIFA World Cup qualification,Barranquilla,Colombia,False
 2015-10-08,Chile,Brazil,2,0,FIFA World Cup qualification,Santiago,Chile,False
 2015-10-08,Myanmar,Lebanon,0,2,FIFA World Cup qualification,Bangkok,Thailand,True
+2015-10-08,Bolivia,Uruguay,0,2,FIFA World Cup qualification,La Paz,Bolivia,False
 2015-10-08,Bhutan,Maldives,3,4,FIFA World Cup qualification,Thimphu,Bhutan,False
 2015-10-08,Bahrain,Uzbekistan,0,4,FIFA World Cup qualification,Riffa,Bahrain,False
 2015-10-08,Argentina,Ecuador,0,2,FIFA World Cup qualification,Buenos Aires,Argentina,False
-2015-10-08,Kyrgyzstan,Tajikistan,2,2,FIFA World Cup qualification,Bishkek,Kyrgyzstan,False
 2015-10-08,Kuwait,South Korea,0,1,FIFA World Cup qualification,Kuwait City,Kuwait,False
-2015-10-08,Qatar,China,1,0,FIFA World Cup qualification,Doha,Qatar,False
+2015-10-08,Liberia,Guinea-Bissau,1,1,FIFA World Cup qualification,Monrovia,Liberia,False
 2015-10-08,Laos,Malaysia,1,3,Friendly,Pathum Thani,Thailand,True
 2015-10-08,Saudi Arabia,United Arab Emirates,2,1,FIFA World Cup qualification,Jeddah,Saudi Arabia,False
-2015-10-08,Liberia,Guinea-Bissau,1,1,FIFA World Cup qualification,Monrovia,Liberia,False
 2015-10-08,Vietnam,Iraq,1,1,FIFA World Cup qualification,Hanoi,Vietnam,False
 2015-10-08,Venezuela,Paraguay,0,1,FIFA World Cup qualification,Ciudad Guayana,Venezuela,False
 2015-10-08,Turkmenistan,India,2,1,FIFA World Cup qualification,Ashgabat,Turkmenistan,False
 2015-10-08,Syria,Japan,0,3,FIFA World Cup qualification,Seeb,Oman,True
-2015-10-08,Scotland,Poland,2,2,UEFA Euro qualification,Glasgow,Scotland,False
 2015-10-08,Singapore,Afghanistan,1,0,FIFA World Cup qualification,Kallang,Singapore,False
-2015-10-08,São Tomé and Príncipe,Ethiopia,1,0,FIFA World Cup qualification,São Tomé,São Tomé and Príncipe,False
+2015-10-08,Scotland,Poland,2,2,UEFA Euro qualification,Glasgow,Scotland,False
 2015-10-08,Romania,Finland,1,1,UEFA Euro qualification,Bucharest,Romania,False
-2015-10-08,Portugal,Denmark,1,0,UEFA Euro qualification,Braga,Portugal,False
-2015-10-08,Oman,Iran,1,1,FIFA World Cup qualification,Muscat,Oman,False
+2015-10-08,São Tomé and Príncipe,Ethiopia,1,0,FIFA World Cup qualification,São Tomé,São Tomé and Príncipe,False
 2015-10-08,Northern Ireland,Greece,3,1,UEFA Euro qualification,Belfast,Northern Ireland,False
 2015-10-08,Nigeria,DR Congo,0,2,Friendly,Visé,Belgium,True
+2015-10-08,Qatar,China,1,0,FIFA World Cup qualification,Doha,Qatar,False
+2015-10-08,Oman,Iran,1,1,FIFA World Cup qualification,Muscat,Oman,False
+2015-10-08,Portugal,Denmark,1,0,UEFA Euro qualification,Braga,Portugal,False
 2015-10-07,Tanzania,Malawi,2,0,FIFA World Cup qualification,Dar es Salaam,Tanzania,False
 2015-10-07,South Sudan,Mauritania,1,1,FIFA World Cup qualification,Juba,South Sudan,False
 2015-10-07,Seychelles,Burundi,0,1,FIFA World Cup qualification,Roche Caiman,Seychelles,False
@@ -10367,31 +10368,31 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2015-10-02,Oman,Syria,2,1,Friendly,Muscat,Oman,False
 2015-09-30,Botswana,Ethiopia,2,3,Friendly,Gaborone,Botswana,False
 2015-09-12,Rwanda,Gabon,0,1,Friendly,Kigali,Rwanda,False
-2015-09-08,Moldova,Montenegro,0,2,UEFA Euro qualification,Chișinău,Moldova,False
 2015-09-08,Hong Kong,Qatar,2,3,FIFA World Cup qualification,Kowloon,Hong Kong,False
 2015-09-08,Malaysia,Saudi Arabia,0,3,FIFA World Cup qualification,Shah Alam,Malaysia,False
 2015-09-08,North Macedonia,Spain,0,1,UEFA Euro qualification,Skopje,North Macedonia,False
 2015-09-08,Lithuania,San Marino,2,1,UEFA Euro qualification,Vilnius,Lithuania,False
+2015-09-08,Mexico,Argentina,2,2,Friendly,Arlington,United States,True
 2015-09-08,Liechtenstein,Russia,0,7,UEFA Euro qualification,Vaduz,Liechtenstein,False
-2015-09-08,United States,Brazil,1,4,Friendly,Foxborough,United States,False
 2015-09-08,Lebanon,South Korea,0,3,FIFA World Cup qualification,Sidon,Lebanon,False
 2015-09-08,Laos,Kuwait,0,2,FIFA World Cup qualification,Vientiane,Laos,False
 2015-09-08,India,Iran,0,3,FIFA World Cup qualification,Bengaluru,India,False
+2015-09-08,Cambodia,Syria,0,6,FIFA World Cup qualification,Phnom Penh,Cambodia,False
 2015-09-08,Guam,Oman,0,0,FIFA World Cup qualification,Dededo,Guam,False
 2015-09-08,England,Switzerland,2,0,UEFA Euro qualification,London,England,False
 2015-09-08,El Salvador,Curaçao,1,0,FIFA World Cup qualification,San Salvador,El Salvador,False
 2015-09-08,Ecuador,Honduras,2,0,Friendly,Quito,Ecuador,False
 2015-09-08,China,Maldives,3,0,FIFA World Cup qualification,Shenyang,China,False
-2015-09-08,Cambodia,Syria,0,6,FIFA World Cup qualification,Phnom Penh,Cambodia,False
 2015-09-08,Belarus,Luxembourg,2,0,UEFA Euro qualification,Borisov,Belarus,False
-2015-09-08,Bangladesh,Jordan,0,4,FIFA World Cup qualification,Dhaka,Bangladesh,False
+2015-09-08,Moldova,Montenegro,0,2,UEFA Euro qualification,Chișinău,Moldova,False
 2015-09-08,Afghanistan,Japan,0,6,FIFA World Cup qualification,Tehran,Iran,True
-2015-09-08,Mexico,Argentina,2,2,Friendly,Arlington,United States,True
-2015-09-08,South Africa,Senegal,1,0,Friendly,Johannesburg,South Africa,False
+2015-09-08,United States,Brazil,1,4,Friendly,Foxborough,United States,False
+2015-09-08,Bangladesh,Jordan,0,4,FIFA World Cup qualification,Dhaka,Bangladesh,False
 2015-09-08,Nigeria,Niger,2,0,Friendly,Port Harcourt,Nigeria,False
+2015-09-08,Palestine,United Arab Emirates,0,0,FIFA World Cup qualification,Al-Ram,Palestine,False
 2015-09-08,Zambia,Gabon,1,1,Friendly,Lusaka,Zambia,False
 2015-09-08,Colombia,Peru,1,1,Friendly,Harrison,United States,True
-2015-09-08,Palestine,United Arab Emirates,0,0,FIFA World Cup qualification,Al-Ram,Palestine,False
+2015-09-08,Philippines,Uzbekistan,1,5,FIFA World Cup qualification,Bocaue,Philippines,False
 2015-09-08,Nicaragua,Jamaica,0,2,FIFA World Cup qualification,Managua,Nicaragua,False
 2015-09-08,Haiti,Grenada,3,0,FIFA World Cup qualification,Port-au-Prince,Haiti,False
 2015-09-08,Guatemala,Antigua and Barbuda,2,0,FIFA World Cup qualification,Guatemala City,Guatemala,False
@@ -10399,81 +10400,81 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2015-09-08,Aruba,Saint Vincent and the Grenadines,2,1,FIFA World Cup qualification,Oranjestad,Aruba,False
 2015-09-08,Taiwan,Vietnam,1,2,FIFA World Cup qualification,Taipei,Taiwan,False
 2015-09-08,Yemen,Bahrain,0,4,FIFA World Cup qualification,Doha,Qatar,True
-2015-09-08,Thailand,Iraq,2,2,FIFA World Cup qualification,Bangkok,Thailand,False
-2015-09-08,Tajikistan,Australia,0,3,FIFA World Cup qualification,Dushanbe,Tajikistan,False
-2015-09-08,Sweden,Austria,1,4,UEFA Euro qualification,Solna,Sweden,False
 2015-09-08,Slovenia,Estonia,1,0,UEFA Euro qualification,Maribor,Slovenia,False
-2015-09-08,Slovakia,Ukraine,0,0,UEFA Euro qualification,Žilina,Slovakia,False
-2015-09-08,Philippines,Uzbekistan,1,5,FIFA World Cup qualification,Bocaue,Philippines,False
 2015-09-08,Venezuela,Panama,1,1,Friendly,Puerto Ordaz,Venezuela,False
+2015-09-08,Slovakia,Ukraine,0,0,UEFA Euro qualification,Žilina,Slovakia,False
+2015-09-08,South Africa,Senegal,1,0,Friendly,Johannesburg,South Africa,False
+2015-09-08,Tajikistan,Australia,0,3,FIFA World Cup qualification,Dushanbe,Tajikistan,False
+2015-09-08,Thailand,Iraq,2,2,FIFA World Cup qualification,Bangkok,Thailand,False
+2015-09-08,Sweden,Austria,1,4,UEFA Euro qualification,Solna,Sweden,False
+2015-09-07,Republic of Ireland,Georgia,1,0,UEFA Euro qualification,Dublin,Republic of Ireland,False
 2015-09-07,France,Serbia,2,1,Friendly,Bordeaux,France,False
 2015-09-07,Albania,Portugal,0,1,UEFA Euro qualification,Elbasan,Albania,False
 2015-09-07,Armenia,Denmark,0,0,UEFA Euro qualification,Yerevan,Armenia,False
 2015-09-07,Myanmar,New Zealand,1,1,Friendly,Yangon,Myanmar,False
 2015-09-07,Finland,Faroe Islands,1,0,UEFA Euro qualification,Helsinki,Finland,False
 2015-09-07,Poland,Gibraltar,8,1,UEFA Euro qualification,Warsaw,Poland,False
-2015-09-07,Republic of Ireland,Georgia,1,0,UEFA Euro qualification,Dublin,Republic of Ireland,False
 2015-09-07,Northern Ireland,Hungary,1,1,UEFA Euro qualification,Belfast,Northern Ireland,False
 2015-09-07,Romania,Greece,0,0,UEFA Euro qualification,Bucharest,Romania,False
 2015-09-07,Scotland,Germany,2,3,UEFA Euro qualification,Glasgow,Scotland,False
 2015-09-06,Benin,Mali,1,1,African Cup of Nations qualification,Cotonou,Benin,False
 2015-09-06,Latvia,Czech Republic,1,2,UEFA Euro qualification,Riga,Latvia,False
 2015-09-06,Iceland,Kazakhstan,0,0,UEFA Euro qualification,Reykjavík,Iceland,False
+2015-09-06,Gambia,Cameroon,0,1,African Cup of Nations qualification,Bakau,Gambia,False
 2015-09-06,Cyprus,Belgium,0,1,UEFA Euro qualification,Nicosia,Cyprus,False
-2015-09-06,Italy,Bulgaria,1,0,UEFA Euro qualification,Palermo,Italy,False
 2015-09-06,Central African Republic,DR Congo,2,0,African Cup of Nations qualification,Bangui,Central African Republic,False
 2015-09-06,Bosnia and Herzegovina,Andorra,3,0,UEFA Euro qualification,Zenica,Bosnia and Herzegovina,False
 2015-09-06,Raetia,Franconia,6,0,Benedikt Fontana Cup,Chur,Switzerland,False
 2015-09-06,Lesotho,Algeria,1,3,African Cup of Nations qualification,Maseru,Lesotho,False
 2015-09-06,Kenya,Zambia,1,2,African Cup of Nations qualification,Nairobi,Kenya,False
-2015-09-06,Gambia,Cameroon,0,1,African Cup of Nations qualification,Bakau,Gambia,False
+2015-09-06,Italy,Bulgaria,1,0,UEFA Euro qualification,Palermo,Italy,False
 2015-09-06,Libya,Cape Verde,1,2,African Cup of Nations qualification,Cairo,Egypt,True
-2015-09-06,Madagascar,Angola,0,0,African Cup of Nations qualification,Antananarivo,Madagascar,False
-2015-09-06,Malta,Azerbaijan,2,2,UEFA Euro qualification,Attard,Malta,False
-2015-09-06,Mauritius,Mozambique,1,0,African Cup of Nations qualification,Curepipe,Mauritius,False
-2015-09-06,Norway,Croatia,2,0,UEFA Euro qualification,Oslo,Norway,False
 2015-09-06,Sierra Leone,Ivory Coast,0,0,African Cup of Nations qualification,Port Harcourt,Nigeria,True
-2015-09-06,Eswatini,Malawi,2,2,African Cup of Nations qualification,Lobamba,Swaziland,False
-2015-09-06,Zimbabwe,Guinea,1,1,African Cup of Nations qualification,Harare,Zimbabwe,False
-2015-09-06,Turkey,Netherlands,3,0,UEFA Euro qualification,Konya,Turkey,False
 2015-09-06,Wales,Israel,0,0,UEFA Euro qualification,Cardiff,Wales,False
-2015-09-05,Comoros,Uganda,0,1,African Cup of Nations qualification,Mitsamiouli,Comoros,False
-2015-09-05,Liberia,Tunisia,1,0,African Cup of Nations qualification,Monrovia,Liberia,False
-2015-09-05,Guinea-Bissau,Congo,2,4,African Cup of Nations qualification,Bissau,Guinea-Bissau,False
-2015-09-05,Gabon,Sudan,4,0,Friendly,Libreville,Gabon,False
-2015-09-05,Estonia,Lithuania,1,0,UEFA Euro qualification,Tallinn,Estonia,False
-2015-09-05,Costa Rica,Brazil,0,1,Friendly,Harrison,United States,True
-2015-09-05,Argentina,Bolivia,7,0,Friendly,Houston,United States,True
-2015-09-05,Chile,Paraguay,3,2,Friendly,Santiago,Chile,False
-2015-09-05,Burundi,Niger,2,0,African Cup of Nations qualification,Bujumbura,Burundi,False
-2015-09-05,Botswana,Burkina Faso,1,0,African Cup of Nations qualification,Francistown,Botswana,False
-2015-09-05,Austria,Moldova,1,0,UEFA Euro qualification,Vienna,Austria,False
+2015-09-06,Turkey,Netherlands,3,0,UEFA Euro qualification,Konya,Turkey,False
+2015-09-06,Zimbabwe,Guinea,1,1,African Cup of Nations qualification,Harare,Zimbabwe,False
+2015-09-06,Eswatini,Malawi,2,2,African Cup of Nations qualification,Lobamba,Swaziland,False
+2015-09-06,Madagascar,Angola,0,0,African Cup of Nations qualification,Antananarivo,Madagascar,False
+2015-09-06,Norway,Croatia,2,0,UEFA Euro qualification,Oslo,Norway,False
+2015-09-06,Mauritius,Mozambique,1,0,African Cup of Nations qualification,Curepipe,Mauritius,False
+2015-09-06,Malta,Azerbaijan,2,2,UEFA Euro qualification,Attard,Malta,False
 2015-09-05,Mauritania,South Africa,3,1,African Cup of Nations qualification,Nouakchott,Mauritania,False
+2015-09-05,Argentina,Bolivia,7,0,Friendly,Houston,United States,True
+2015-09-05,Austria,Moldova,1,0,UEFA Euro qualification,Vienna,Austria,False
+2015-09-05,Botswana,Burkina Faso,1,0,African Cup of Nations qualification,Francistown,Botswana,False
+2015-09-05,Burundi,Niger,2,0,African Cup of Nations qualification,Bujumbura,Burundi,False
+2015-09-05,Chile,Paraguay,3,2,Friendly,Santiago,Chile,False
+2015-09-05,Comoros,Uganda,0,1,African Cup of Nations qualification,Mitsamiouli,Comoros,False
+2015-09-05,Costa Rica,Brazil,0,1,Friendly,Harrison,United States,True
+2015-09-05,Estonia,Lithuania,1,0,UEFA Euro qualification,Tallinn,Estonia,False
+2015-09-05,Gabon,Sudan,4,0,Friendly,Libreville,Gabon,False
+2015-09-05,Liberia,Tunisia,1,0,African Cup of Nations qualification,Monrovia,Liberia,False
 2015-09-05,Luxembourg,North Macedonia,1,0,UEFA Euro qualification,Luxembourg,Luxembourg,False
+2015-09-05,Guinea-Bissau,Congo,2,4,African Cup of Nations qualification,Bissau,Guinea-Bissau,False
 2015-09-05,Montenegro,Liechtenstein,2,0,UEFA Euro qualification,Podgorica,Montenegro,False
-2015-09-05,Tanzania,Nigeria,0,0,African Cup of Nations qualification,Dar es Salaam,Tanzania,False
-2015-09-05,Russia,Sweden,1,0,UEFA Euro qualification,Moscow,Russia,False
-2015-09-05,Rwanda,Ghana,0,1,African Cup of Nations qualification,Kigali,Rwanda,False
-2015-09-05,San Marino,England,0,6,UEFA Euro qualification,Serravalle,San Marino,False
-2015-09-05,São Tomé and Príncipe,Morocco,0,3,African Cup of Nations qualification,São Tomé,São Tomé and Príncipe,False
 2015-09-05,Seychelles,Ethiopia,1,1,African Cup of Nations qualification,Victoria,Seychelles,False
-2015-09-05,South Sudan,Equatorial Guinea,1,0,African Cup of Nations qualification,Juba,South Sudan,False
-2015-09-05,Spain,Slovakia,2,0,UEFA Euro qualification,Oviedo,Spain,False
-2015-09-05,Switzerland,Slovenia,3,2,UEFA Euro qualification,Basel,Switzerland,False
-2015-09-05,Namibia,Senegal,0,2,African Cup of Nations qualification,Windhoek,Namibia,False
 2015-09-05,Ukraine,Belarus,3,1,UEFA Euro qualification,Lviv,Ukraine,False
-2015-09-04,Faroe Islands,Northern Ireland,1,3,UEFA Euro qualification,Tórshavn,Faroe Islands,False
-2015-09-04,Gibraltar,Republic of Ireland,0,4,UEFA Euro qualification,Faro,Portugal,True
-2015-09-04,Germany,Poland,3,1,UEFA Euro qualification,Frankfurt,Germany,False
-2015-09-04,Georgia,Scotland,1,0,UEFA Euro qualification,Tbilisi,Georgia,False
+2015-09-05,Namibia,Senegal,0,2,African Cup of Nations qualification,Windhoek,Namibia,False
+2015-09-05,Switzerland,Slovenia,3,2,UEFA Euro qualification,Basel,Switzerland,False
+2015-09-05,Spain,Slovakia,2,0,UEFA Euro qualification,Oviedo,Spain,False
+2015-09-05,South Sudan,Equatorial Guinea,1,0,African Cup of Nations qualification,Juba,South Sudan,False
+2015-09-05,Tanzania,Nigeria,0,0,African Cup of Nations qualification,Dar es Salaam,Tanzania,False
+2015-09-05,São Tomé and Príncipe,Morocco,0,3,African Cup of Nations qualification,São Tomé,São Tomé and Príncipe,False
+2015-09-05,San Marino,England,0,6,UEFA Euro qualification,Serravalle,San Marino,False
+2015-09-05,Rwanda,Ghana,0,1,African Cup of Nations qualification,Kigali,Rwanda,False
+2015-09-05,Russia,Sweden,1,0,UEFA Euro qualification,Moscow,Russia,False
 2015-09-04,Hungary,Romania,0,0,UEFA Euro qualification,Budapest,Hungary,False
-2015-09-04,Djibouti,Togo,0,2,African Cup of Nations qualification,Djibouti,Djibouti,False
-2015-09-04,Denmark,Albania,0,0,UEFA Euro qualification,Copenhagen,Denmark,False
-2015-09-04,Curaçao,El Salvador,0,1,FIFA World Cup qualification,Willemstad,Curaçao,False
 2015-09-04,American Samoa,Cook Islands,2,0,FIFA World Cup qualification,‘Atele,Tonga,True
+2015-09-04,Curaçao,El Salvador,0,1,FIFA World Cup qualification,Willemstad,Curaçao,False
+2015-09-04,Denmark,Albania,0,0,UEFA Euro qualification,Copenhagen,Denmark,False
+2015-09-04,Djibouti,Togo,0,2,African Cup of Nations qualification,Djibouti,Djibouti,False
+2015-09-04,Georgia,Scotland,1,0,UEFA Euro qualification,Tbilisi,Georgia,False
+2015-09-04,Germany,Poland,3,1,UEFA Euro qualification,Frankfurt,Germany,False
+2015-09-04,Gibraltar,Republic of Ireland,0,4,UEFA Euro qualification,Faro,Portugal,True
 2015-09-04,Greece,Finland,0,1,UEFA Euro qualification,Piraeus,Greece,False
 2015-09-04,Grenada,Haiti,1,3,FIFA World Cup qualification,St. George's,Grenada,False
-2015-09-04,Serbia,Armenia,2,0,UEFA Euro qualification,Novi Sad,Serbia,False
+2015-09-04,Faroe Islands,Northern Ireland,1,3,UEFA Euro qualification,Tórshavn,Faroe Islands,False
+2015-09-04,Portugal,France,0,1,Friendly,Lisbon,Portugal,False
 2015-09-04,Tonga,Samoa,0,3,FIFA World Cup qualification,‘Atele,Tonga,False
 2015-09-04,Venezuela,Honduras,0,3,Friendly,Puerto Ordaz,Venezuela,False
 2015-09-04,Antigua and Barbuda,Guatemala,1,0,FIFA World Cup qualification,North Sound,Antigua and Barbuda,False
@@ -10481,48 +10482,48 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2015-09-04,Jamaica,Nicaragua,2,3,FIFA World Cup qualification,Kingston,Jamaica,False
 2015-09-04,Saint Vincent and the Grenadines,Aruba,2,0,FIFA World Cup qualification,Kingstown,Saint Vincent and the Grenadines,False
 2015-09-04,United States,Peru,2,1,Friendly,"Washington, D.C.",United States,False
-2015-09-04,Portugal,France,0,1,Friendly,Lisbon,Portugal,False
-2015-09-03,Japan,Cambodia,3,0,FIFA World Cup qualification,Saitama,Japan,False
+2015-09-04,Serbia,Armenia,2,0,UEFA Euro qualification,Novi Sad,Serbia,False
 2015-09-03,Cyprus,Wales,0,1,UEFA Euro qualification,Nicosia,Cyprus,False
-2015-09-03,Israel,Andorra,4,0,UEFA Euro qualification,Haifa,Israel,False
+2015-09-03,Italy,Malta,1,0,UEFA Euro qualification,Florence,Italy,False
 2015-09-03,Iraq,Taiwan,5,1,FIFA World Cup qualification,Tehran,Iran,True
 2015-09-03,Iran,Guam,6,0,FIFA World Cup qualification,Tehran,Iran,False
 2015-09-03,Czech Republic,Kazakhstan,2,1,UEFA Euro qualification,Plzeň,Czech Republic,False
-2015-09-03,Azerbaijan,Croatia,0,0,UEFA Euro qualification,Baku,Azerbaijan,False
+2015-09-03,Bahrain,North Korea,0,1,FIFA World Cup qualification,Riffa,Bahrain,False
 2015-09-03,China,Hong Kong,0,0,FIFA World Cup qualification,Shenzhen,China,False
 2015-09-03,Bulgaria,Norway,0,1,UEFA Euro qualification,Sofia,Bulgaria,False
 2015-09-03,Belgium,Bosnia and Herzegovina,3,1,UEFA Euro qualification,Brussels,Belgium,False
-2015-09-03,Bahrain,North Korea,0,1,FIFA World Cup qualification,Riffa,Bahrain,False
-2015-09-03,Australia,Bangladesh,5,0,FIFA World Cup qualification,Perth,Australia,False
-2015-09-03,Italy,Malta,1,0,UEFA Euro qualification,Florence,Italy,False
 2015-09-03,Jordan,Kyrgyzstan,0,0,FIFA World Cup qualification,Irbid,Jordan,False
-2015-09-03,United Arab Emirates,Malaysia,10,0,FIFA World Cup qualification,Abu Dhabi,United Arab Emirates,False
-2015-09-03,Saudi Arabia,Timor-Leste,7,0,FIFA World Cup qualification,Jeddah,Saudi Arabia,False
-2015-09-03,Uzbekistan,Yemen,1,0,FIFA World Cup qualification,Tashkent,Uzbekistan,False
+2015-09-03,Azerbaijan,Croatia,0,0,UEFA Euro qualification,Baku,Azerbaijan,False
+2015-09-03,Australia,Bangladesh,5,0,FIFA World Cup qualification,Perth,Australia,False
+2015-09-03,Japan,Cambodia,3,0,FIFA World Cup qualification,Saitama,Japan,False
+2015-09-03,Israel,Andorra,4,0,UEFA Euro qualification,Haifa,Israel,False
 2015-09-03,South Korea,Laos,8,0,FIFA World Cup qualification,Hwaseong,South Korea,False
-2015-09-03,Thailand,Afghanistan,2,0,Friendly,Bangkok,Thailand,False
-2015-09-03,Syria,Singapore,1,0,FIFA World Cup qualification,Muscat,Oman,True
-2015-09-03,Turkey,Latvia,1,1,UEFA Euro qualification,Konya,Turkey,False
-2015-09-03,Qatar,Bhutan,15,0,FIFA World Cup qualification,Doha,Qatar,False
-2015-09-03,Philippines,Maldives,2,0,Friendly,Manila,Philippines,False
-2015-09-03,Oman,Turkmenistan,3,1,FIFA World Cup qualification,Seeb,Oman,False
-2015-09-03,Netherlands,Iceland,0,1,UEFA Euro qualification,Amsterdam,Netherlands,False
 2015-09-03,Kuwait,Myanmar,9,0,FIFA World Cup qualification,Doha,Qatar,True
-2015-09-02,Tonga,American Samoa,1,2,FIFA World Cup qualification,‘Atele,Tonga,False
+2015-09-03,Netherlands,Iceland,0,1,UEFA Euro qualification,Amsterdam,Netherlands,False
+2015-09-03,Oman,Turkmenistan,3,1,FIFA World Cup qualification,Seeb,Oman,False
+2015-09-03,Philippines,Maldives,2,0,Friendly,Manila,Philippines,False
+2015-09-03,Qatar,Bhutan,15,0,FIFA World Cup qualification,Doha,Qatar,False
+2015-09-03,Saudi Arabia,Timor-Leste,7,0,FIFA World Cup qualification,Jeddah,Saudi Arabia,False
+2015-09-03,Syria,Singapore,1,0,FIFA World Cup qualification,Muscat,Oman,True
+2015-09-03,Thailand,Afghanistan,2,0,Friendly,Bangkok,Thailand,False
+2015-09-03,Turkey,Latvia,1,1,UEFA Euro qualification,Konya,Turkey,False
+2015-09-03,United Arab Emirates,Malaysia,10,0,FIFA World Cup qualification,Abu Dhabi,United Arab Emirates,False
+2015-09-03,Uzbekistan,Yemen,1,0,FIFA World Cup qualification,Tashkent,Uzbekistan,False
 2015-09-02,Cook Islands,Samoa,1,0,FIFA World Cup qualification,‘Atele,Tonga,True
+2015-09-02,Tonga,American Samoa,1,2,FIFA World Cup qualification,‘Atele,Tonga,False
 2015-09-01,Congo,Ghana,2,3,Friendly,Brazzaville,Congo,False
 2015-08-31,Tonga,Cook Islands,0,3,FIFA World Cup qualification,‘Atele,Tonga,False
 2015-08-31,Samoa,American Samoa,3,2,FIFA World Cup qualification,‘Atele,Tonga,True
 2015-08-31,Lebanon,Palestine,0,0,Friendly,Sidon,Lebanon,False
 2015-08-31,India,Nepal,0,0,Friendly,Pune,India,False
 2015-08-30,Niger,Burkina Faso,0,0,Friendly,Niamey,Niger,False
-2015-08-29,Laos,Cambodia,2,1,Friendly,Bangkok,Thailand,True
 2015-08-29,Malaysia,Bangladesh,0,0,Friendly,Shah Alam,Malaysia,False
-2015-08-28,Rwanda,Ethiopia,3,1,Friendly,Kigali,Rwanda,False
+2015-08-29,Laos,Cambodia,2,1,Friendly,Bangkok,Thailand,True
 2015-08-28,Oman,Yemen,1,0,Friendly,Seeb,Oman,False
-2015-08-28,Qatar,Singapore,4,0,Friendly,Doha,Qatar,False
-2015-08-28,Tanzania,Libya,1,2,Friendly,Kartepe,Turkey,True
 2015-08-28,United Arab Emirates,Myanmar,1,0,Friendly,Abu Dhabi,United Arab Emirates,False
+2015-08-28,Tanzania,Libya,1,2,Friendly,Kartepe,Turkey,True
+2015-08-28,Rwanda,Ethiopia,3,1,Friendly,Kigali,Rwanda,False
+2015-08-28,Qatar,Singapore,4,0,Friendly,Doha,Qatar,False
 2015-08-27,Fiji,American Samoa,6,0,Friendly,Nadi,Fiji,False
 2015-08-26,Lebanon,Iraq,2,3,Friendly,Sidon,Lebanon,False
 2015-08-20,Cambodia,Bhutan,2,0,Friendly,Phnom Penh,Cambodia,False
@@ -10539,14 +10540,14 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2015-08-04,Réunion,Comoros,3,0,Indian Ocean Island Games,Réunion,Réunion,False
 2015-08-04,Seychelles,Mayotte,0,1,Indian Ocean Island Games,Réunion,Réunion,True
 2015-08-04,Maldives,Madagascar,0,4,Indian Ocean Island Games,Réunion,Réunion,True
+2015-08-02,Comoros,Mauritius,0,3,Indian Ocean Island Games,Réunion,Réunion,True
+2015-08-02,Mayotte,Madagascar,1,1,Indian Ocean Island Games,Réunion,Réunion,True
 2015-08-02,Seychelles,Maldives,1,2,Indian Ocean Island Games,Réunion,Réunion,True
 2015-08-02,North Korea,Japan,2,1,EAFF Championship,Wuhan,China,True
 2015-08-02,China,South Korea,0,2,EAFF Championship,Wuhan,China,False
-2015-08-02,Mayotte,Madagascar,1,1,Indian Ocean Island Games,Réunion,Réunion,True
-2015-08-02,Comoros,Mauritius,0,3,Indian Ocean Island Games,Réunion,Réunion,True
-2015-07-31,Réunion,Mauritius,1,0,Indian Ocean Island Games,Réunion,Réunion,False
 2015-07-31,Maldives,Mayotte,1,3,Indian Ocean Island Games,Réunion,Réunion,True
 2015-07-31,Seychelles,Madagascar,3,0,Indian Ocean Island Games,Réunion,Réunion,True
+2015-07-31,Réunion,Mauritius,1,0,Indian Ocean Island Games,Réunion,Réunion,False
 2015-07-26,Jamaica,Mexico,1,3,Gold Cup,Philadelphia,United States,True
 2015-07-25,United States,Panama,1,1,Gold Cup,Chester,United States,False
 2015-07-22,United States,Jamaica,1,2,Gold Cup,Atlanta,United States,False
@@ -10557,8 +10558,8 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2015-07-18,Haiti,Jamaica,0,1,Gold Cup,Baltimore,United States,True
 2015-07-15,Trinidad and Tobago,Mexico,4,4,Gold Cup,Charlotte,United States,True
 2015-07-15,Guatemala,Cuba,0,1,Gold Cup,Charlotte,United States,True
-2015-07-14,Jamaica,El Salvador,1,0,Gold Cup,Toronto,Canada,True
 2015-07-14,Canada,Costa Rica,0,0,Gold Cup,Toronto,Canada,False
+2015-07-14,Jamaica,El Salvador,1,0,Gold Cup,Toronto,Canada,True
 2015-07-13,United States,Panama,1,1,Gold Cup,Kansas City,United States,False
 2015-07-13,Honduras,Haiti,0,1,Gold Cup,Kansas City,United States,True
 2015-07-12,Trinidad and Tobago,Cuba,2,0,Gold Cup,Glendale,United States,True
@@ -10567,239 +10568,239 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2015-07-11,Costa Rica,El Salvador,1,1,Gold Cup,Houston,United States,True
 2015-07-10,United States,Haiti,1,0,Gold Cup,Foxborough,United States,False
 2015-07-10,Honduras,Panama,1,1,Gold Cup,Foxborough,United States,True
-2015-07-09,Mexico,Cuba,6,0,Gold Cup,Chicago,United States,True
-2015-07-09,Trinidad and Tobago,Guatemala,3,1,Gold Cup,Chicago,United States,True
 2015-07-09,Luhansk PR,Donetsk PR,3,1,Friendly,Luhansk,Ukraine,False
+2015-07-09,Trinidad and Tobago,Guatemala,3,1,Gold Cup,Chicago,United States,True
+2015-07-09,Mexico,Cuba,6,0,Gold Cup,Chicago,United States,True
 2015-07-08,El Salvador,Canada,0,0,Gold Cup,Carson,United States,True
 2015-07-08,Costa Rica,Jamaica,2,2,Gold Cup,Carson,United States,True
-2015-07-07,United States,Honduras,2,1,Gold Cup,Frisco,United States,False
 2015-07-07,Panama,Haiti,1,1,Gold Cup,Frisco,United States,True
+2015-07-07,United States,Honduras,2,1,Gold Cup,Frisco,United States,False
 2015-07-06,Malawi,Uganda,1,0,Friendly,Blantyre,Malawi,False
 2015-07-04,Chile,Argentina,0,0,Copa América,Santiago,Chile,False
-2015-07-03,Peru,Paraguay,2,0,Copa América,Concepción,Chile,True
 2015-07-03,Guernsey,Isle of Man,3,0,Island Games,St Helier,Jersey,True
 2015-07-03,Menorca,Shetland,1,0,Island Games,St. Peter,Jersey,True
+2015-07-03,Peru,Paraguay,2,0,Copa América,Concepción,Chile,True
+2015-07-02,Isle of Wight,Greenland,1,2,Island Games,St. Clement,Jersey,True
 2015-07-02,Gibraltar,Åland Islands,0,0,Island Games,St. Brelade,Jersey,True
 2015-07-02,Hitra,Alderney,5,1,Island Games,St. Ouen,Jersey,True
 2015-07-02,Gotland,Saare County,2,3,Island Games,St. Ouen,Jersey,True
 2015-07-02,Falkland Islands,Western Isles,1,2,Island Games,St. Brelade,Jersey,True
-2015-07-02,Menorca,Guernsey,1,2,Island Games,St Helier,Jersey,True
-2015-07-02,Jersey,Ynys Môn,1,0,Island Games,St. Clement,Jersey,False
-2015-07-02,Isle of Wight,Greenland,1,2,Island Games,St. Clement,Jersey,True
 2015-07-02,Shetland,Isle of Man,1,3,Island Games,St Helier,Jersey,True
+2015-07-02,Jersey,Ynys Môn,1,0,Island Games,St. Clement,Jersey,False
+2015-07-02,Menorca,Guernsey,1,2,Island Games,St Helier,Jersey,True
 2015-07-01,Honduras,Mexico,0,0,Friendly,Houston,United States,True
-2015-06-30,Åland Islands,Menorca,1,3,Island Games,St. Clement,Jersey,True
-2015-06-30,Greenland,Saare County,2,1,Island Games,Grouville,Jersey,True
-2015-06-30,Gibraltar,Guernsey,0,4,Island Games,St Helier,Jersey,True
 2015-06-30,Argentina,Paraguay,6,1,Copa América,Concepción,Chile,True
+2015-06-30,Åland Islands,Menorca,1,3,Island Games,St. Clement,Jersey,True
+2015-06-30,Gibraltar,Guernsey,0,4,Island Games,St Helier,Jersey,True
 2015-06-30,Gotland,Ynys Môn,2,3,Island Games,St. Peter,Jersey,True
+2015-06-30,Greenland,Saare County,2,1,Island Games,Grouville,Jersey,True
 2015-06-30,Isle of Wight,Hitra,3,1,Island Games,St. Lawrence,Jersey,True
+2015-06-30,Falkland Islands,Shetland,0,5,Island Games,St. Peter,Jersey,True
 2015-06-30,Jersey,Isle of Man,1,2,Island Games,St. John,Jersey,False
 2015-06-30,Alderney,Western Isles,2,3,Island Games,St. Peter,Jersey,True
-2015-06-30,Falkland Islands,Shetland,0,5,Island Games,St. Peter,Jersey,True
-2015-06-29,Isle of Man,Alderney,7,0,Island Games,St. Ouen,Jersey,True
 2015-06-29,Menorca,Saare County,3,0,Island Games,St. Clement,Jersey,True
-2015-06-29,Chile,Peru,2,1,Copa América,Santiago,Chile,False
-2015-06-29,Åland Islands,Greenland,0,2,Island Games,St. Clement,Jersey,True
+2015-06-29,Isle of Man,Alderney,7,0,Island Games,St. Ouen,Jersey,True
 2015-06-29,Jersey,Western Isles,3,0,Island Games,St Helier,Jersey,False
+2015-06-29,Åland Islands,Greenland,0,2,Island Games,St. Clement,Jersey,True
+2015-06-29,Chile,Peru,2,1,Copa América,Santiago,Chile,False
 2015-06-29,Guernsey,Gotland,3,0,Island Games,St. Brelade,Jersey,True
 2015-06-29,Gibraltar,Ynys Môn,1,1,Island Games,St Helier,Jersey,True
 2015-06-29,Isle of Wight,Falkland Islands,3,0,Island Games,St. Ouen,Jersey,True
 2015-06-29,Hitra,Shetland,1,4,Island Games,St. Brelade,Jersey,True
 2015-06-28,Greenland,Menorca,2,2,Island Games,Grouville,Jersey,True
-2015-06-28,Jersey,Alderney,6,0,Island Games,St Helier,Jersey,False
-2015-06-28,Western Isles,Isle of Man,0,9,Island Games,St. Lawrence,Jersey,True
-2015-06-28,Shetland,Isle of Wight,0,0,Island Games,St. Lawrence,Jersey,True
-2015-06-28,Falkland Islands,Hitra,2,1,Island Games,St. John,Jersey,True
-2015-06-28,Ynys Môn,Guernsey,2,5,Island Games,St. Peter,Jersey,True
-2015-06-28,Gibraltar,Gotland,2,1,Island Games,St. Peter,Jersey,True
 2015-06-28,Saare County,Åland Islands,1,2,Island Games,Grouville,Jersey,True
-2015-06-27,Brazil,Paraguay,1,1,Copa América,Concepción,Chile,True
+2015-06-28,Gibraltar,Gotland,2,1,Island Games,St. Peter,Jersey,True
+2015-06-28,Ynys Môn,Guernsey,2,5,Island Games,St. Peter,Jersey,True
+2015-06-28,Falkland Islands,Hitra,2,1,Island Games,St. John,Jersey,True
+2015-06-28,Shetland,Isle of Wight,0,0,Island Games,St. Lawrence,Jersey,True
+2015-06-28,Western Isles,Isle of Man,0,9,Island Games,St. Lawrence,Jersey,True
+2015-06-28,Jersey,Alderney,6,0,Island Games,St Helier,Jersey,False
 2015-06-27,Mexico,Costa Rica,2,2,Friendly,Orlando,United States,True
+2015-06-27,Brazil,Paraguay,1,1,Copa América,Concepción,Chile,True
 2015-06-26,Argentina,Colombia,0,0,Copa América,Viña del Mar,Chile,True
 2015-06-25,Bolivia,Peru,1,3,Copa América,Temuco,Chile,True
 2015-06-24,Chile,Uruguay,1,0,Copa América,Santiago,Chile,False
+2015-06-21,Brazil,Venezuela,2,1,Copa América,Santiago,Chile,True
 2015-06-21,Ellan Vannin,Felvidék,1,1,CONIFA European Football Cup,Debrecen,Hungary,True
 2015-06-21,Colombia,Peru,0,0,Copa América,Temuco,Chile,True
-2015-06-21,Brazil,Venezuela,2,1,Copa América,Santiago,Chile,True
 2015-06-21,County of Nice,Padania,1,4,CONIFA European Football Cup,Debrecen,Hungary,True
 2015-06-20,Padania,Felvidék,5,0,CONIFA European Football Cup,Debrecen,Hungary,True
 2015-06-20,County of Nice,Ellan Vannin,3,1,CONIFA European Football Cup,Debrecen,Hungary,True
 2015-06-20,Uruguay,Paraguay,1,1,Copa América,La Serena,Chile,True
 2015-06-20,Argentina,Jamaica,1,0,Copa América,Viña del Mar,Chile,True
-2015-06-19,Mexico,Ecuador,1,2,Copa América,Rancagua,Chile,True
 2015-06-19,Székely Land,Romani people,2,4,CONIFA European Football Cup,Debrecen,Hungary,False
 2015-06-19,Padania,Ellan Vannin,1,0,CONIFA European Football Cup,Debrecen,Hungary,True
 2015-06-19,Felvidék,County of Nice,1,4,CONIFA European Football Cup,Debrecen,Hungary,True
+2015-06-19,Mexico,Ecuador,1,2,Copa América,Rancagua,Chile,True
 2015-06-19,Chile,Bolivia,5,0,Copa América,Santiago,Chile,False
-2015-06-18,Peru,Venezuela,1,0,Copa América,Valparaíso,Chile,True
-2015-06-18,Székely Land,Felvidék,1,3,CONIFA European Football Cup,Debrecen,Hungary,False
 2015-06-18,Romani people,Ellan Vannin,1,3,CONIFA European Football Cup,Debrecen,Hungary,True
-2015-06-17,Padania,Romani people,3,2,CONIFA European Football Cup,Debrecen,Hungary,True
+2015-06-18,Székely Land,Felvidék,1,3,CONIFA European Football Cup,Debrecen,Hungary,False
+2015-06-18,Peru,Venezuela,1,0,Copa América,Valparaíso,Chile,True
 2015-06-17,Székely Land,County of Nice,2,3,CONIFA European Football Cup,Debrecen,Hungary,False
 2015-06-17,Brazil,Colombia,0,1,Copa América,Santiago,Chile,True
-2015-06-16,Japan,Singapore,0,0,FIFA World Cup qualification,Saitama,Japan,False
-2015-06-16,Grenada,Puerto Rico,2,0,FIFA World Cup qualification,St. George's,Grenada,False
-2015-06-16,Italy,Portugal,0,1,Friendly,Geneva,Switzerland,True
-2015-06-16,Hong Kong,Maldives,2,0,FIFA World Cup qualification,Kowloon,Hong Kong,False
-2015-06-16,Guam,India,2,1,FIFA World Cup qualification,Dededo,Guam,False
-2015-06-16,Bhutan,China,0,6,FIFA World Cup qualification,Thimphu,Bhutan,False
-2015-06-16,Cambodia,Afghanistan,0,1,FIFA World Cup qualification,Phnom Penh,Cambodia,False
-2015-06-16,Myanmar,South Korea,0,2,FIFA World Cup qualification,Bangkok,Thailand,True
-2015-06-16,Bangladesh,Tajikistan,1,1,FIFA World Cup qualification,Dhaka,Bangladesh,False
-2015-06-16,Argentina,Uruguay,1,0,Copa América,La Serena,Chile,True
-2015-06-16,North Korea,Uzbekistan,4,2,FIFA World Cup qualification,Pyongyang,North Korea,False
+2015-06-17,Padania,Romani people,3,2,CONIFA European Football Cup,Debrecen,Hungary,True
 2015-06-16,Jordan,Trinidad and Tobago,3,0,Friendly,Irbid,Jordan,False
+2015-06-16,Argentina,Uruguay,1,0,Copa América,La Serena,Chile,True
+2015-06-16,Bangladesh,Tajikistan,1,1,FIFA World Cup qualification,Dhaka,Bangladesh,False
+2015-06-16,Bhutan,China,0,6,FIFA World Cup qualification,Thimphu,Bhutan,False
+2015-06-16,Myanmar,South Korea,0,2,FIFA World Cup qualification,Bangkok,Thailand,True
+2015-06-16,Cambodia,Afghanistan,0,1,FIFA World Cup qualification,Phnom Penh,Cambodia,False
 2015-06-16,Timor-Leste,United Arab Emirates,0,3,FIFA World Cup qualification,Shah Alam,Malaysia,True
+2015-06-16,Grenada,Puerto Rico,2,0,FIFA World Cup qualification,St. George's,Grenada,False
+2015-06-16,Guam,India,2,1,FIFA World Cup qualification,Dededo,Guam,False
+2015-06-16,Hong Kong,Maldives,2,0,FIFA World Cup qualification,Kowloon,Hong Kong,False
+2015-06-16,Italy,Portugal,0,1,Friendly,Geneva,Switzerland,True
+2015-06-16,Japan,Singapore,0,0,FIFA World Cup qualification,Saitama,Japan,False
+2015-06-16,North Korea,Uzbekistan,4,2,FIFA World Cup qualification,Pyongyang,North Korea,False
+2015-06-16,Canada,Dominica,4,0,FIFA World Cup qualification,Toronto,Canada,False
 2015-06-16,Kyrgyzstan,Australia,1,2,FIFA World Cup qualification,Bishkek,Kyrgyzstan,False
+2015-06-16,Laos,Lebanon,0,2,FIFA World Cup qualification,Vientiane,Laos,False
 2015-06-16,Malaysia,Palestine,0,6,FIFA World Cup qualification,Kuala Lumpur,Malaysia,False
 2015-06-16,Paraguay,Jamaica,1,0,Copa América,Antofagasta,Chile,True
 2015-06-16,Poland,Greece,0,0,Friendly,Gdańsk,Poland,False
 2015-06-16,South Africa,Angola,2,1,Friendly,Cape Town,South Africa,False
 2015-06-16,Suriname,Nicaragua,1,3,FIFA World Cup qualification,Paramaribo,Suriname,False
-2015-06-16,Taiwan,Thailand,0,2,FIFA World Cup qualification,Taipei,Taiwan,False
 2015-06-16,Turkmenistan,Iran,1,1,FIFA World Cup qualification,Daşoguz,Turkmenistan,False
 2015-06-16,Yemen,Philippines,0,2,FIFA World Cup qualification,Doha,Qatar,True
-2015-06-16,Laos,Lebanon,0,2,FIFA World Cup qualification,Vientiane,Laos,False
-2015-06-16,Canada,Dominica,4,0,FIFA World Cup qualification,Toronto,Canada,False
 2015-06-16,El Salvador,Saint Kitts and Nevis,4,1,FIFA World Cup qualification,San Salvador,El Salvador,False
+2015-06-16,Taiwan,Thailand,0,2,FIFA World Cup qualification,Taipei,Taiwan,False
 2015-06-15,Chile,Mexico,3,3,Copa América,Santiago,Chile,False
 2015-06-15,Ecuador,Bolivia,2,3,Copa América,Valparaíso,Chile,True
 2015-06-15,Bermuda,Guatemala,0,1,FIFA World Cup qualification,Devonshire Parish,Bermuda,False
-2015-06-14,Liechtenstein,Moldova,1,1,UEFA Euro qualification,Vaduz,Liechtenstein,False
-2015-06-14,Belarus,Spain,0,1,UEFA Euro qualification,Borisov,Belarus,False
-2015-06-14,Brazil,Peru,2,1,Copa América,Temuco,Chile,True
-2015-06-14,Cameroon,Mauritania,1,0,African Cup of Nations qualification,Yaoundé,Cameroon,False
-2015-06-14,Colombia,Venezuela,0,1,Copa América,Rancagua,Chile,True
-2015-06-14,Congo,Kenya,1,1,African Cup of Nations qualification,Owando,Congo,False
 2015-06-14,DR Congo,Madagascar,2,1,African Cup of Nations qualification,Kinshasa,DR Congo,False
-2015-06-14,Cuba,Curaçao,1,1,FIFA World Cup qualification,Havana,Cuba,False
-2015-06-14,Barbados,Aruba,0,3,FIFA World Cup qualification,Bridgetown,Barbados,False
-2015-06-14,Egypt,Tanzania,3,0,African Cup of Nations qualification,Alexandria,Egypt,False
-2015-06-14,Equatorial Guinea,Benin,1,1,African Cup of Nations qualification,Bata,Equatorial Guinea,False
-2015-06-14,Estonia,San Marino,2,0,UEFA Euro qualification,Tallinn,Estonia,False
 2015-06-14,Gabon,Ivory Coast,0,0,Friendly,Libreville,Gabon,False
+2015-06-14,Estonia,San Marino,2,0,UEFA Euro qualification,Tallinn,Estonia,False
+2015-06-14,Equatorial Guinea,Benin,1,1,African Cup of Nations qualification,Bata,Equatorial Guinea,False
+2015-06-14,Egypt,Tanzania,3,0,African Cup of Nations qualification,Alexandria,Egypt,False
+2015-06-14,Cuba,Curaçao,1,1,FIFA World Cup qualification,Havana,Cuba,False
+2015-06-14,Liechtenstein,Moldova,1,1,UEFA Euro qualification,Vaduz,Liechtenstein,False
+2015-06-14,Congo,Kenya,1,1,African Cup of Nations qualification,Owando,Congo,False
+2015-06-14,Colombia,Venezuela,0,1,Copa América,Rancagua,Chile,True
+2015-06-14,Cameroon,Mauritania,1,0,African Cup of Nations qualification,Yaoundé,Cameroon,False
+2015-06-14,Brazil,Peru,2,1,Copa América,Temuco,Chile,True
+2015-06-14,Belarus,Spain,0,1,UEFA Euro qualification,Borisov,Belarus,False
+2015-06-14,Barbados,Aruba,0,3,FIFA World Cup qualification,Bridgetown,Barbados,False
 2015-06-14,Ghana,Mauritius,7,1,African Cup of Nations qualification,Accra,Ghana,False
-2015-06-14,Sudan,Sierra Leone,1,0,African Cup of Nations qualification,Khartoum,Sudan,False
-2015-06-14,Lithuania,Switzerland,1,2,UEFA Euro qualification,Vilnius,Lithuania,False
 2015-06-14,Togo,Liberia,2,1,African Cup of Nations qualification,Lomé,Togo,False
+2015-06-14,Lithuania,Switzerland,1,2,UEFA Euro qualification,Vilnius,Lithuania,False
+2015-06-14,Sweden,Montenegro,3,1,UEFA Euro qualification,Solna,Sweden,False
+2015-06-14,Mozambique,Rwanda,0,1,African Cup of Nations qualification,Maputo,Mozambique,False
 2015-06-14,Ethiopia,Lesotho,2,1,African Cup of Nations qualification,Bahir Dar,Ethiopia,False
-2015-06-14,Antigua and Barbuda,Saint Lucia,4,1,FIFA World Cup qualification,North Sound,Antigua and Barbuda,False
 2015-06-14,Guyana,Saint Vincent and the Grenadines,4,4,FIFA World Cup qualification,Providence,Guyana,False
 2015-06-14,Belize,Dominican Republic,3,0,FIFA World Cup qualification,Belmopan,Belize,False
-2015-06-14,Mozambique,Rwanda,0,1,African Cup of Nations qualification,Maputo,Mozambique,False
 2015-06-14,Ukraine,Luxembourg,3,0,UEFA Euro qualification,Lviv,Ukraine,False
-2015-06-14,Sweden,Montenegro,3,1,UEFA Euro qualification,Solna,Sweden,False
+2015-06-14,Antigua and Barbuda,Saint Lucia,4,1,FIFA World Cup qualification,North Sound,Antigua and Barbuda,False
+2015-06-14,Sudan,Sierra Leone,1,0,African Cup of Nations qualification,Khartoum,Sudan,False
 2015-06-14,Slovenia,England,2,3,UEFA Euro qualification,Ljubljana,Slovenia,False
 2015-06-14,Slovakia,North Macedonia,2,1,UEFA Euro qualification,Žilina,Slovakia,False
 2015-06-14,Russia,Austria,0,1,UEFA Euro qualification,Moscow,Russia,False
 2015-06-14,Niger,Namibia,1,0,African Cup of Nations qualification,Niamey,Niger,False
-2015-06-13,Faroe Islands,Greece,2,1,UEFA Euro qualification,Tórshavn,Faroe Islands,False
-2015-06-13,Burkina Faso,Comoros,2,0,African Cup of Nations qualification,Ouagadougou,Burkina Faso,False
-2015-06-13,Denmark,Serbia,2,0,UEFA Euro qualification,Copenhagen,Denmark,False
-2015-06-13,Cape Verde,São Tomé and Príncipe,7,1,African Cup of Nations qualification,Praia,Cape Verde,False
 2015-06-13,Albania,France,1,0,Friendly,Elbasan,Albania,False
-2015-06-13,Armenia,Portugal,2,3,UEFA Euro qualification,Yerevan,Armenia,False
-2015-06-13,Argentina,Paraguay,2,2,Copa América,La Serena,Chile,True
-2015-06-13,Angola,Central African Republic,4,0,African Cup of Nations qualification,Lubango,Angola,False
 2015-06-13,Gibraltar,Germany,0,7,UEFA Euro qualification,Faro,Portugal,True
-2015-06-13,Finland,Hungary,0,1,UEFA Euro qualification,Helsinki,Finland,False
 2015-06-13,Algeria,Seychelles,4,0,African Cup of Nations qualification,Blida,Algeria,False
+2015-06-13,Angola,Central African Republic,4,0,African Cup of Nations qualification,Lubango,Angola,False
+2015-06-13,Argentina,Paraguay,2,2,Copa América,La Serena,Chile,True
+2015-06-13,Armenia,Portugal,2,3,UEFA Euro qualification,Yerevan,Armenia,False
+2015-06-13,Burkina Faso,Comoros,2,0,African Cup of Nations qualification,Ouagadougou,Burkina Faso,False
+2015-06-13,Cape Verde,São Tomé and Príncipe,7,1,African Cup of Nations qualification,Praia,Cape Verde,False
+2015-06-13,Denmark,Serbia,2,0,UEFA Euro qualification,Copenhagen,Denmark,False
+2015-06-13,Faroe Islands,Greece,2,1,UEFA Euro qualification,Tórshavn,Faroe Islands,False
+2015-06-13,Finland,Hungary,0,1,UEFA Euro qualification,Helsinki,Finland,False
+2015-06-13,Mali,South Sudan,2,0,African Cup of Nations qualification,Bamako,Mali,False
 2015-06-13,Republic of Ireland,Scotland,1,1,UEFA Euro qualification,Dublin,Republic of Ireland,False
 2015-06-13,South Africa,Gambia,0,0,African Cup of Nations qualification,Durban,South Africa,False
-2015-06-13,Zambia,Guinea-Bissau,0,0,African Cup of Nations qualification,Ndola,Zambia,False
+2015-06-13,Malawi,Zimbabwe,1,2,African Cup of Nations qualification,Blantyre,Malawi,False
 2015-06-13,Uruguay,Jamaica,1,0,Copa América,Antofagasta,Chile,True
 2015-06-13,Uganda,Botswana,2,0,African Cup of Nations qualification,Kampala,Uganda,False
-2015-06-13,Malawi,Zimbabwe,1,2,African Cup of Nations qualification,Blantyre,Malawi,False
+2015-06-13,Zambia,Guinea-Bissau,0,0,African Cup of Nations qualification,Ndola,Zambia,False
 2015-06-13,Senegal,Burundi,3,1,African Cup of Nations qualification,Dakar,Senegal,False
-2015-06-13,Northern Ireland,Romania,0,0,UEFA Euro qualification,Belfast,Northern Ireland,False
 2015-06-13,Poland,Georgia,4,0,UEFA Euro qualification,Warsaw,Poland,False
-2015-06-13,Mali,South Sudan,2,0,African Cup of Nations qualification,Bamako,Mali,False
+2015-06-13,Northern Ireland,Romania,0,0,UEFA Euro qualification,Belfast,Northern Ireland,False
 2015-06-12,Malta,Bulgaria,0,1,UEFA Euro qualification,Attard,Malta,False
+2015-06-12,Andorra,Cyprus,1,3,UEFA Euro qualification,Sant Julià de Lòria,Andorra,False
 2015-06-12,Bosnia and Herzegovina,Israel,3,1,UEFA Euro qualification,Zenica,Bosnia and Herzegovina,False
 2015-06-12,Croatia,Italy,1,1,UEFA Euro qualification,Split,Croatia,False
 2015-06-12,Guinea,Eswatini,1,2,African Cup of Nations qualification,Casablanca,Morocco,True
 2015-06-12,Iceland,Czech Republic,2,1,UEFA Euro qualification,Reykjavík,Iceland,False
 2015-06-12,Kazakhstan,Turkey,0,1,UEFA Euro qualification,Almaty,Kazakhstan,False
 2015-06-12,Latvia,Netherlands,0,2,UEFA Euro qualification,Riga,Latvia,False
-2015-06-12,Andorra,Cyprus,1,3,UEFA Euro qualification,Sant Julià de Lòria,Andorra,False
+2015-06-12,Wales,Belgium,1,0,UEFA Euro qualification,Cardiff,Wales,False
 2015-06-12,Mexico,Bolivia,0,0,Copa América,Viña del Mar,Chile,True
 2015-06-12,Norway,Azerbaijan,0,0,UEFA Euro qualification,Oslo,Norway,False
-2015-06-12,Wales,Belgium,1,0,UEFA Euro qualification,Cardiff,Wales,False
+2015-06-12,Morocco,Libya,1,0,African Cup of Nations qualification,Agadir,Morocco,False
 2015-06-12,Puerto Rico,Grenada,1,0,FIFA World Cup qualification,Bayamón,Puerto Rico,False
 2015-06-12,Guatemala,Bermuda,0,0,FIFA World Cup qualification,Guatemala City,Guatemala,False
 2015-06-12,Tunisia,Djibouti,8,1,African Cup of Nations qualification,Tunis,Tunisia,False
-2015-06-12,Morocco,Libya,1,0,African Cup of Nations qualification,Agadir,Morocco,False
-2015-06-11,Guam,Turkmenistan,1,0,FIFA World Cup qualification,Dededo,Guam,False
-2015-06-11,Japan,Iraq,4,0,Kirin Challenge Cup,Yokohama,Japan,False
-2015-06-11,India,Oman,1,2,FIFA World Cup qualification,Bengaluru,India,False
-2015-06-11,Hong Kong,Bhutan,7,0,FIFA World Cup qualification,Kowloon,Hong Kong,False
-2015-06-11,Cambodia,Singapore,0,4,FIFA World Cup qualification,Phnom Penh,Cambodia,False
 2015-06-11,Dominican Republic,Belize,1,2,FIFA World Cup qualification,Santo Domingo,Dominican Republic,False
-2015-06-11,Chile,Ecuador,2,0,Copa América,Santiago,Chile,False
-2015-06-11,Laos,Myanmar,2,2,FIFA World Cup qualification,Vientiane,Laos,False
-2015-06-11,Bangladesh,Kyrgyzstan,1,3,FIFA World Cup qualification,Dhaka,Bangladesh,False
-2015-06-11,Afghanistan,Syria,0,6,FIFA World Cup qualification,Mashhad,Iran,True
 2015-06-11,South Korea,United Arab Emirates,3,0,Friendly,Kuala Lumpur,Malaysia,True
-2015-06-11,Maldives,Qatar,0,1,FIFA World Cup qualification,Malé,Maldives,False
+2015-06-11,Japan,Iraq,4,0,Kirin Challenge Cup,Yokohama,Japan,False
+2015-06-11,Hong Kong,Bhutan,7,0,FIFA World Cup qualification,Kowloon,Hong Kong,False
+2015-06-11,Guam,Turkmenistan,1,0,FIFA World Cup qualification,Dededo,Guam,False
+2015-06-11,Bangladesh,Kyrgyzstan,1,3,FIFA World Cup qualification,Dhaka,Bangladesh,False
+2015-06-11,Chile,Ecuador,2,0,Copa América,Santiago,Chile,False
+2015-06-11,Cambodia,Singapore,0,4,FIFA World Cup qualification,Phnom Penh,Cambodia,False
 2015-06-11,Lebanon,Kuwait,0,1,FIFA World Cup qualification,Sidon,Lebanon,False
+2015-06-11,Afghanistan,Syria,0,6,FIFA World Cup qualification,Mashhad,Iran,True
+2015-06-11,Laos,Myanmar,2,2,FIFA World Cup qualification,Vientiane,Laos,False
+2015-06-11,India,Oman,1,2,FIFA World Cup qualification,Bengaluru,India,False
 2015-06-11,Malaysia,Timor-Leste,3,0,FIFA World Cup qualification,Kuala Lumpur,Malaysia,False
 2015-06-11,Philippines,Bahrain,2,1,FIFA World Cup qualification,Bocaue,Philippines,False
 2015-06-11,Saudi Arabia,Palestine,3,2,FIFA World Cup qualification,Dammam,Saudi Arabia,False
 2015-06-11,Spain,Costa Rica,2,1,Friendly,León,Spain,False
 2015-06-11,Tajikistan,Jordan,1,3,FIFA World Cup qualification,Dushanbe,Tajikistan,False
 2015-06-11,Uzbekistan,Iran,0,1,Friendly,Tashkent,Uzbekistan,False
+2015-06-11,Yemen,North Korea,0,3,FIFA World Cup qualification,Doha,Qatar,True
 2015-06-11,Dominica,Canada,0,2,FIFA World Cup qualification,Roseau,Dominica,False
 2015-06-11,Saint Kitts and Nevis,El Salvador,2,2,FIFA World Cup qualification,Basseterre,Saint Kitts and Nevis,False
-2015-06-11,Yemen,North Korea,0,3,FIFA World Cup qualification,Doha,Qatar,True
-2015-06-10,Brazil,Honduras,1,0,Friendly,Porto Alegre,Brazil,False
+2015-06-11,Maldives,Qatar,0,1,FIFA World Cup qualification,Malé,Maldives,False
 2015-06-10,Switzerland,Liechtenstein,3,0,Friendly,Thun,Switzerland,False
+2015-06-10,Brazil,Honduras,1,0,Friendly,Porto Alegre,Brazil,False
 2015-06-10,Curaçao,Cuba,0,0,FIFA World Cup qualification,Willemstad,Curaçao,False
 2015-06-10,Germany,United States,1,2,Friendly,Cologne,Germany,False
+2015-06-10,Aruba,Barbados,0,2,FIFA World Cup qualification,Oranjestad,Aruba,False
 2015-06-10,Antigua and Barbuda,Saint Lucia,1,3,FIFA World Cup qualification,North Sound,Antigua and Barbuda,False
 2015-06-10,Saint Vincent and the Grenadines,Guyana,2,2,FIFA World Cup qualification,Kingstown,Saint Vincent and the Grenadines,False
-2015-06-10,Aruba,Barbados,0,2,FIFA World Cup qualification,Oranjestad,Aruba,False
 2015-06-09,Uganda,Gambia,1,1,Friendly,Kampala,Uganda,False
 2015-06-09,Luxembourg,Moldova,0,0,Friendly,Luxembourg,Luxembourg,False
 2015-06-09,Georgia,Ukraine,1,2,Friendly,Linz,Austria,True
 2015-06-09,Finland,Estonia,0,2,Friendly,Turku,Finland,False
 2015-06-09,DR Congo,Cameroon,1,1,Friendly,Mons,Belgium,True
+2015-06-08,Malta,Lithuania,2,0,Friendly,Attard,Malta,False
+2015-06-08,Egypt,Malawi,2,1,Friendly,Alexandria,Egypt,False
 2015-06-08,Ghana,Togo,1,0,Friendly,Accra,Ghana,False
 2015-06-08,Denmark,Montenegro,2,1,Friendly,Viborg,Denmark,False
-2015-06-08,Egypt,Malawi,2,1,Friendly,Alexandria,Egypt,False
-2015-06-08,Turkey,Bulgaria,4,0,Friendly,Istanbul,Turkey,False
-2015-06-08,Malta,Lithuania,2,0,Friendly,Attard,Malta,False
 2015-06-08,Norway,Sweden,0,0,Friendly,Oslo,Norway,False
-2015-06-07,Republic of Ireland,England,0,0,Friendly,Dublin,Republic of Ireland,False
+2015-06-08,Turkey,Bulgaria,4,0,Friendly,Istanbul,Turkey,False
+2015-06-07,Kenya,South Sudan,2,0,Friendly,Kigali,Rwanda,True
 2015-06-07,Brazil,Mexico,2,0,Friendly,São Paulo,Brazil,False
 2015-06-07,Croatia,Gibraltar,4,0,Friendly,Varaždin,Croatia,False
 2015-06-07,Ethiopia,Zambia,0,1,Friendly,Addis Ababa,Ethiopia,False
+2015-06-07,Republic of Ireland,England,0,0,Friendly,Dublin,Republic of Ireland,False
 2015-06-07,France,Belgium,3,4,Friendly,Saint-Denis,France,False
-2015-06-07,Nicaragua,Suriname,1,0,FIFA World Cup qualification,Managua,Nicaragua,False
-2015-06-07,Kenya,South Sudan,2,0,Friendly,Kigali,Rwanda,True
 2015-06-07,Russia,Belarus,4,2,Friendly,Khimki,Russia,False
 2015-06-07,Rwanda,Tanzania,2,0,Friendly,Kigali,Rwanda,False
 2015-06-07,Serbia,Azerbaijan,4,1,Friendly,Sankt Pölten,Austria,True
-2015-06-06,Guinea,Chad,2,1,Friendly,Saint-Leu-la-Forêt,France,True
+2015-06-07,Nicaragua,Suriname,1,0,FIFA World Cup qualification,Managua,Nicaragua,False
+2015-06-06,Malaysia,Hong Kong,0,0,Friendly,Shah Alam,Malaysia,False
 2015-06-06,Andorra,Equatorial Guinea,0,1,Friendly,Sant Julià de Lòria,Andorra,False
-2015-06-06,Argentina,Bolivia,5,0,Friendly,San Juan,Argentina,False
 2015-06-06,Burkina Faso,Cameroon,2,3,Friendly,Colombes,France,True
 2015-06-06,Colombia,Costa Rica,1,0,Friendly,Buenos Aires,Argentina,True
 2015-06-06,Ecuador,Panama,4,0,Friendly,Portoviejo,Ecuador,False
-2015-06-06,Singapore,Brunei,5,1,Friendly,Jurong West,Singapore,False
-2015-06-06,Malaysia,Hong Kong,0,0,Friendly,Shah Alam,Malaysia,False
-2015-06-06,Paraguay,Honduras,2,2,Friendly,Asunción,Paraguay,False
-2015-06-06,Rwanda,Kenya,0,0,Friendly,Kigali,Rwanda,False
-2015-06-06,Uruguay,Guatemala,5,1,Friendly,Montevideo,Uruguay,False
+2015-06-06,Guinea,Chad,2,1,Friendly,Saint-Leu-la-Forêt,France,True
+2015-06-06,Argentina,Bolivia,5,0,Friendly,San Juan,Argentina,False
 2015-06-06,Niger,Gabon,2,1,Friendly,Niamey,Niger,False
+2015-06-06,Rwanda,Kenya,0,0,Friendly,Kigali,Rwanda,False
+2015-06-06,Singapore,Brunei,5,1,Friendly,Jurong West,Singapore,False
+2015-06-06,Uruguay,Guatemala,5,1,Friendly,Montevideo,Uruguay,False
+2015-06-06,Paraguay,Honduras,2,2,Friendly,Asunción,Paraguay,False
+2015-06-05,Thailand,Bahrain,1,1,Friendly,Bangkok,Thailand,False
+2015-06-05,Scotland,Qatar,1,0,Friendly,Edinburgh,Scotland,False
+2015-06-05,Oman,Syria,1,2,Friendly,Muscat,Oman,False
 2015-06-05,Netherlands,United States,3,4,Friendly,Amsterdam,Netherlands,False
-2015-06-05,Cambodia,Myanmar,1,0,Friendly,Samut Sakhon,Thailand,True
-2015-06-05,Curaçao,Trinidad and Tobago,1,0,Friendly,Willemstad,Curaçao,False
 2015-06-05,Jordan,Kuwait,2,2,Friendly,Istanbul,Turkey,True
 2015-06-05,Hungary,Lithuania,4,0,Friendly,Debrecen,Hungary,False
-2015-06-05,Oman,Syria,1,2,Friendly,Muscat,Oman,False
-2015-06-05,Scotland,Qatar,1,0,Friendly,Edinburgh,Scotland,False
-2015-06-05,Thailand,Bahrain,1,1,Friendly,Bangkok,Thailand,False
+2015-06-05,Curaçao,Trinidad and Tobago,1,0,Friendly,Willemstad,Curaçao,False
+2015-06-05,Cambodia,Myanmar,1,0,Friendly,Samut Sakhon,Thailand,True
 2015-06-03,Peru,Mexico,1,1,Friendly,Lima,Peru,False
 2015-06-03,Panama,Ecuador,1,1,Friendly,Panama City,Panama,False
 2015-06-02,Cambodia,Laos,1,1,Friendly,Phnom Penh,Cambodia,False
@@ -10808,21 +10809,21 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2015-05-31,Northern Ireland,Qatar,1,1,Friendly,Crewe,England,True
 2015-05-31,El Salvador,Honduras,0,2,Friendly,"Washington, D.C.",United States,True
 2015-05-31,Ellan Vannin,Felvidék,3,1,Niamh Challenge Cup,Douglas,Isle of Man,False
-2015-05-30,Jordan,Lebanon,0,0,Friendly,Irbid,Jordan,False
-2015-05-30,Mexico,Guatemala,3,0,Friendly,Tuxtla Gutiérrez,Mexico,False
-2015-05-30,Bangladesh,Singapore,1,2,Friendly,Dhaka,Bangladesh,False
-2015-05-30,Madagascar,Botswana,2,1,COSAFA Cup,Saulspoort,South Africa,True
-2015-05-30,Bahrain,Oman,0,0,Friendly,Riffa,Bahrain,False
-2015-05-30,Namibia,Mozambique,2,0,COSAFA Cup,Saulspoort,South Africa,True
-2015-05-30,Alderney,Felvidék,1,2,Niamh Challenge Cup,Douglas,Isle of Man,True
 2015-05-30,Ellan Vannin,Panjab,8,1,Niamh Challenge Cup,Douglas,Isle of Man,False
+2015-05-30,Alderney,Felvidék,1,2,Niamh Challenge Cup,Douglas,Isle of Man,True
+2015-05-30,Namibia,Mozambique,2,0,COSAFA Cup,Saulspoort,South Africa,True
+2015-05-30,Mexico,Guatemala,3,0,Friendly,Tuxtla Gutiérrez,Mexico,False
+2015-05-30,Madagascar,Botswana,2,1,COSAFA Cup,Saulspoort,South Africa,True
+2015-05-30,Jordan,Lebanon,0,0,Friendly,Irbid,Jordan,False
+2015-05-30,Bangladesh,Singapore,1,2,Friendly,Dhaka,Bangladesh,False
+2015-05-30,Bahrain,Oman,0,0,Friendly,Riffa,Bahrain,False
 2015-05-29,Zambia,Malawi,0,1,COSAFA Cup,Phokeng,South Africa,True
 2015-05-29,Laos,Afghanistan,0,2,Friendly,Vientiane,Laos,False
 2015-05-29,Corsica,Burkina Faso,1,0,Friendly,Bastia,France,False
-2015-05-28,Botswana,Mozambique,1,2,COSAFA Cup,Saulspoort,South Africa,True
 2015-05-28,Namibia,Madagascar,3,2,COSAFA Cup,Saulspoort,South Africa,True
-2015-05-27,Zambia,Ghana,3,0,COSAFA Cup,Saulspoort,South Africa,True
+2015-05-28,Botswana,Mozambique,1,2,COSAFA Cup,Saulspoort,South Africa,True
 2015-05-27,South Africa,Malawi,0,0,COSAFA Cup,Saulspoort,South Africa,False
+2015-05-27,Zambia,Ghana,3,0,COSAFA Cup,Saulspoort,South Africa,True
 2015-05-25,Mozambique,Malawi,2,2,COSAFA Cup,Phokeng,South Africa,True
 2015-05-25,Ghana,Madagascar,1,2,COSAFA Cup,Phokeng,South Africa,True
 2015-05-24,Zambia,Namibia,0,0,COSAFA Cup,Saulspoort,South Africa,True
@@ -10843,32 +10844,32 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2015-05-17,Zimbabwe,Mauritius,2,0,COSAFA Cup,Saulspoort,South Africa,True
 2015-05-17,Vietnam,North Korea,1,1,Friendly,Hanoi,Vietnam,False
 2015-05-17,Namibia,Seychelles,0,0,COSAFA Cup,Saulspoort,South Africa,True
-2015-05-16,Saint Lucia,Grenada,0,2,Windward Islands Tournament,Vieux Fort,Saint Lucia,False
 2015-05-16,Lesotho,South Africa,1,1,Friendly,Maseru,Lesotho,False
+2015-05-16,Saint Lucia,Grenada,0,2,Windward Islands Tournament,Vieux Fort,Saint Lucia,False
 2015-05-16,Guernsey,Jersey,2,3,Muratti Vase,Guernsey,Guernsey,False
+2015-05-14,Abkhazia,Donetsk PR,1,0,Friendly,Sukhumi,Georgia,False
 2015-05-14,Saint Lucia,Saint Vincent and the Grenadines,1,2,Windward Islands Tournament,Vieux Fort,Saint Lucia,False
 2015-05-14,Lesotho,South Africa,0,0,Friendly,Maseru,Lesotho,False
 2015-05-14,Grenada,Dominica,1,2,Windward Islands Tournament,Vieux Fort,Saint Lucia,True
-2015-05-14,Abkhazia,Donetsk PR,1,0,Friendly,Sukhumi,Georgia,False
 2015-05-13,Dominican Republic,Cayman Islands,6,0,Friendly,Santiago de los Caballeros,Dominican Republic,False
 2015-05-12,Kazakhstan,Burkina Faso,0,0,Friendly,Almaty,Kazakhstan,False
 2015-05-10,Zambia,Malawi,2,0,Friendly,Lusaka,Zambia,False
 2015-05-10,Barbados,Saint Kitts and Nevis,1,3,Friendly,Bridgetown,Barbados,False
 2015-05-05,Abkhazia,Luhansk PR,1,0,Friendly,Sukhumi,Georgia,False
 2015-04-15,United States,Mexico,2,0,Friendly,San Antonio,United States,False
-2015-03-31,Mauritania,Niger,2,0,Friendly,Nouakchott,Mauritania,False
 2015-03-31,Iraq,DR Congo,1,0,Friendly,Sharjah,United Arab Emirates,True
 2015-03-31,South Korea,New Zealand,1,0,Friendly,Seoul,South Korea,False
 2015-03-31,Japan,Uzbekistan,5,1,Friendly,Chōfu,Japan,False
 2015-03-31,Italy,England,1,1,Friendly,Turin,Italy,False
 2015-03-31,Israel,Belgium,0,1,UEFA Euro qualification,Jerusalem,Israel,False
-2015-03-31,Argentina,Ecuador,2,1,Friendly,East Rutherford,United States,True
+2015-03-31,Mauritania,Niger,2,0,Friendly,Nouakchott,Mauritania,False
 2015-03-31,Ghana,Mali,1,1,Friendly,Paris,France,True
 2015-03-31,Estonia,Iceland,1,1,Friendly,Tallinn,Estonia,False
 2015-03-31,China,Tunisia,1,1,Friendly,Nanjing,China,False
 2015-03-31,Austria,Bosnia and Herzegovina,1,1,Friendly,Vienna,Austria,False
-2015-03-31,Liechtenstein,San Marino,1,0,Friendly,Eschen,Liechtenstein,False
+2015-03-31,Argentina,Ecuador,2,1,Friendly,East Rutherford,United States,True
 2015-03-31,Luxembourg,Turkey,1,2,Friendly,Luxembourg,Luxembourg,False
+2015-03-31,Liechtenstein,San Marino,1,0,Friendly,Eschen,Liechtenstein,False
 2015-03-31,Montserrat,Curaçao,2,2,FIFA World Cup qualification,Lookout,Montserrat,False
 2015-03-31,Singapore,Guam,2,2,Friendly,Kallang,Singapore,False
 2015-03-31,Ukraine,Latvia,1,1,Friendly,Lviv,Ukraine,False
@@ -10892,9 +10893,9 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2015-03-30,Saudi Arabia,Jordan,2,1,Friendly,Dammam,Saudi Arabia,False
 2015-03-30,Thailand,Cameroon,2,3,Friendly,Nonthaburi,Thailand,False
 2015-03-29,Hungary,Greece,0,0,UEFA Euro qualification,Budapest,Hungary,False
-2015-03-29,Albania,Armenia,2,1,UEFA Euro qualification,Elbasan,Albania,False
 2015-03-29,Anguilla,Nicaragua,0,3,FIFA World Cup qualification,The Valley,Anguilla,False
 2015-03-29,Bermuda,Bahamas,3,0,FIFA World Cup qualification,Hamilton,Bermuda,False
+2015-03-29,Albania,Armenia,2,1,UEFA Euro qualification,Elbasan,Albania,False
 2015-03-29,Botswana,Mozambique,1,2,Friendly,Lobatse,Botswana,False
 2015-03-29,Brazil,Chile,1,0,Friendly,London,England,True
 2015-03-29,Dominica,British Virgin Islands,0,0,FIFA World Cup qualification,Roseau,Dominica,False
@@ -10905,14 +10906,14 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2015-03-29,Tanzania,Malawi,1,1,Friendly,Mwanza,Tanzania,False
 2015-03-29,Republic of Ireland,Poland,1,1,UEFA Euro qualification,Dublin,Republic of Ireland,False
 2015-03-29,Scotland,Gibraltar,6,1,UEFA Euro qualification,Glasgow,Scotland,False
-2015-03-29,Cayman Islands,Belize,1,1,FIFA World Cup qualification,George Town,Cayman Islands,False
 2015-03-29,Ivory Coast,Equatorial Guinea,1,1,Friendly,Abidjan,Ivory Coast,False
-2015-03-29,South Africa,Nigeria,1,1,Friendly,Nelspruit,South Africa,False
 2015-03-29,Zambia,Rwanda,2,0,Friendly,Lusaka,Zambia,False
+2015-03-29,South Africa,Nigeria,1,1,Friendly,Nelspruit,South Africa,False
+2015-03-29,Cayman Islands,Belize,1,1,FIFA World Cup qualification,George Town,Cayman Islands,False
 2015-03-29,Romania,Faroe Islands,1,0,UEFA Euro qualification,Ploiești,Romania,False
 2015-03-29,Portugal,Serbia,2,1,UEFA Euro qualification,Lisbon,Portugal,False
 2015-03-29,Northern Ireland,Finland,2,1,UEFA Euro qualification,Belfast,Northern Ireland,False
-2015-03-28,Ghana,Senegal,1,2,Friendly,Le Havre,France,True
+2015-03-28,Hong Kong,Guam,1,0,Friendly,Kowloon,Hong Kong,False
 2015-03-28,Argentina,El Salvador,2,0,Friendly,Summerfield,United States,True
 2015-03-28,Andorra,Bosnia and Herzegovina,0,3,UEFA Euro qualification,Sant Julià de Lòria,Andorra,False
 2015-03-28,Azerbaijan,Malta,2,0,UEFA Euro qualification,Baku,Azerbaijan,False
@@ -10920,8 +10921,8 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2015-03-28,Bulgaria,Italy,2,2,UEFA Euro qualification,Sofia,Bulgaria,False
 2015-03-28,Croatia,Norway,5,1,UEFA Euro qualification,Zagreb,Croatia,False
 2015-03-28,Czech Republic,Latvia,1,1,UEFA Euro qualification,Prague,Czech Republic,False
+2015-03-28,Ghana,Senegal,1,2,Friendly,Le Havre,France,True
 2015-03-28,Iraq,DR Congo,2,1,Friendly,Sharjah,United Arab Emirates,True
-2015-03-28,Hong Kong,Guam,1,0,Friendly,Kowloon,Hong Kong,False
 2015-03-28,Israel,Wales,0,3,UEFA Euro qualification,Haifa,Israel,False
 2015-03-28,Kazakhstan,Iceland,0,3,UEFA Euro qualification,Astana,Kazakhstan,False
 2015-03-28,Mauritius,Togo,1,1,Friendly,Mapou,Mauritius,False
@@ -10931,18 +10932,18 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2015-03-27,Liechtenstein,Austria,0,5,UEFA Euro qualification,Vaduz,Liechtenstein,False
 2015-03-27,Canada,Guatemala,1,0,Friendly,Fort Lauderdale,United States,True
 2015-03-27,China,Haiti,2,2,Friendly,Changsha,China,False
+2015-03-27,Curaçao,Montserrat,2,1,FIFA World Cup qualification,Willemstad,Curaçao,False
 2015-03-27,England,Lithuania,4,0,UEFA Euro qualification,London,England,False
 2015-03-27,Gambia,Mauritania,1,0,Friendly,Bakau,Gambia,False
 2015-03-27,Japan,Tunisia,2,0,Kirin Challenge Cup,Ōita,Japan,False
 2015-03-27,South Korea,Uzbekistan,1,1,Friendly,Daejeon,South Korea,False
-2015-03-27,Curaçao,Montserrat,2,1,FIFA World Cup qualification,Willemstad,Curaçao,False
 2015-03-27,North Macedonia,Belarus,1,2,UEFA Euro qualification,Skopje,North Macedonia,False
+2015-03-27,Moldova,Sweden,0,2,UEFA Euro qualification,Chișinău,Moldova,False
 2015-03-27,Slovakia,Luxembourg,3,0,UEFA Euro qualification,Žilina,Slovakia,False
 2015-03-27,Slovenia,San Marino,6,0,UEFA Euro qualification,Ljubljana,Slovenia,False
 2015-03-27,Spain,Ukraine,1,0,UEFA Euro qualification,Seville,Spain,False
 2015-03-27,Switzerland,Estonia,3,0,UEFA Euro qualification,Lucerne,Switzerland,False
 2015-03-27,Trinidad and Tobago,Panama,0,1,Friendly,Couva,Trinidad and Tobago,False
-2015-03-27,Moldova,Sweden,0,2,UEFA Euro qualification,Chișinău,Moldova,False
 2015-03-26,Maldives,Tajikistan,0,2,Friendly,Malé,Maldives,False
 2015-03-26,Bahrain,Colombia,0,6,Friendly,Riffa,Bahrain,False
 2015-03-26,Chile,Iran,0,2,Friendly,Sankt Pölten,Austria,True
@@ -10950,42 +10951,42 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2015-03-26,France,Brazil,1,3,Friendly,Saint-Denis,France,False
 2015-03-26,Ivory Coast,Angola,2,0,Friendly,Abidjan,Ivory Coast,False
 2015-03-26,Jordan,Syria,0,1,Friendly,Amman,Jordan,False
-2015-03-26,Oman,Malaysia,6,0,Friendly,Seeb,Oman,False
-2015-03-26,Qatar,Algeria,1,0,Friendly,Doha,Qatar,False
-2015-03-26,Thailand,Singapore,2,0,Friendly,Nakhon Ratchasima,Thailand,False
 2015-03-26,United States Virgin Islands,Barbados,0,4,FIFA World Cup qualification,Charlotte Amalie,United States Virgin Islands,False
+2015-03-26,Oman,Malaysia,6,0,Friendly,Seeb,Oman,False
+2015-03-26,Thailand,Singapore,2,0,Friendly,Nakhon Ratchasima,Thailand,False
 2015-03-26,Dominica,British Virgin Islands,3,2,FIFA World Cup qualification,Roseau,Dominica,False
 2015-03-26,Turks and Caicos Islands,Saint Kitts and Nevis,2,6,FIFA World Cup qualification,Providenciales,Turks and Caicos Islands,False
+2015-03-26,Qatar,Algeria,1,0,Friendly,Doha,Qatar,False
 2015-03-25,Germany,Australia,2,2,Friendly,Kaiserslautern,Germany,False
 2015-03-25,Denmark,United States,3,2,Friendly,Aarhus,Denmark,False
 2015-03-25,Dominican Republic,Cuba,0,3,Friendly,Santiago de los Caballeros,Dominican Republic,False
 2015-03-25,French Guiana,Honduras,3,1,Gold Cup qualification,Cayenne,French Guiana,False
 2015-03-25,Gabon,Mali,4,3,Friendly,Beauvais,France,True
 2015-03-25,Georgia,Malta,2,0,Friendly,Tbilisi,Georgia,False
-2015-03-25,Botswana,Lesotho,2,0,Friendly,Gaborone,Botswana,False
+2015-03-25,Mauritius,Burundi,2,2,Friendly,Curepipe,Mauritius,False
 2015-03-25,Indonesia,Cameroon,0,1,Friendly,Sidoarjo,Indonesia,False
 2015-03-25,Nigeria,Uganda,0,1,Friendly,Uyo,Nigeria,False
 2015-03-25,Scotland,Northern Ireland,1,0,Friendly,Glasgow,Scotland,False
 2015-03-25,Eswatini,South Africa,1,3,Friendly,Lobamba,Swaziland,False
 2015-03-25,Bahamas,Bermuda,0,5,FIFA World Cup qualification,Nassau,Bahamas,False
-2015-03-25,Mauritius,Burundi,2,2,Friendly,Curepipe,Mauritius,False
-2015-03-23,Saint Kitts and Nevis,Turks and Caicos Islands,6,2,FIFA World Cup qualification,Basseterre,Saint Kitts and Nevis,False
+2015-03-25,Botswana,Lesotho,2,0,Friendly,Gaborone,Botswana,False
 2015-03-23,Nicaragua,Anguilla,5,0,FIFA World Cup qualification,Managua,Nicaragua,False
 2015-03-23,Pakistan,Yemen,0,0,FIFA World Cup qualification,Isa Town,Bahrain,True
-2015-03-22,Barbados,United States Virgin Islands,0,1,FIFA World Cup qualification,Bridgetown,Barbados,False
+2015-03-23,Saint Kitts and Nevis,Turks and Caicos Islands,6,2,FIFA World Cup qualification,Basseterre,Saint Kitts and Nevis,False
 2015-03-22,Antigua and Barbuda,British Virgin Islands,1,0,Friendly,St. John's,Antigua and Barbuda,False
-2015-03-17,Macau,Cambodia,1,1,FIFA World Cup qualification,Taipa,Macau,False
-2015-03-17,Bhutan,Sri Lanka,2,1,FIFA World Cup qualification,Thimphu,Bhutan,False
-2015-03-17,Brunei,Taiwan,0,2,FIFA World Cup qualification,Bandar Seri Begawan,Brunei,False
-2015-03-17,Mongolia,Timor-Leste,3,0,FIFA World Cup qualification,Ulaanbaatar,Mongolia,False
+2015-03-22,Barbados,United States Virgin Islands,0,1,FIFA World Cup qualification,Bridgetown,Barbados,False
 2015-03-17,Nepal,India,0,0,FIFA World Cup qualification,Kathmandu,Nepal,False
+2015-03-17,Mongolia,Timor-Leste,3,0,FIFA World Cup qualification,Ulaanbaatar,Mongolia,False
+2015-03-17,Macau,Cambodia,1,1,FIFA World Cup qualification,Taipa,Macau,False
+2015-03-17,Brunei,Taiwan,0,2,FIFA World Cup qualification,Bandar Seri Begawan,Brunei,False
+2015-03-17,Bhutan,Sri Lanka,2,1,FIFA World Cup qualification,Thimphu,Bhutan,False
 2015-03-15,Antigua and Barbuda,Dominica,1,0,Friendly,St. John's,Antigua and Barbuda,False
-2015-03-12,Taiwan,Brunei,0,1,FIFA World Cup qualification,Kaohsiung,Taiwan,False
 2015-03-12,Yemen,Pakistan,3,1,FIFA World Cup qualification,Doha,Qatar,True
-2015-03-12,Sri Lanka,Bhutan,0,1,FIFA World Cup qualification,Colombo,Sri Lanka,False
 2015-03-12,India,Nepal,2,0,FIFA World Cup qualification,Guwahati,India,False
-2015-03-12,Timor-Leste,Mongolia,0,3,FIFA World Cup qualification,Dili,Timor-Leste,False
 2015-03-12,Cambodia,Macau,3,0,FIFA World Cup qualification,Phnom Penh,Cambodia,False
+2015-03-12,Timor-Leste,Mongolia,0,3,FIFA World Cup qualification,Dili,Timor-Leste,False
+2015-03-12,Taiwan,Brunei,0,1,FIFA World Cup qualification,Kaohsiung,Taiwan,False
+2015-03-12,Sri Lanka,Bhutan,0,1,FIFA World Cup qualification,Colombo,Sri Lanka,False
 2015-03-08,Bermuda,Grenada,2,0,Friendly,Hamilton,Bermuda,False
 2015-03-08,Antigua and Barbuda,United States Virgin Islands,2,0,Friendly,St. John's,Antigua and Barbuda,False
 2015-02-18,Kazakhstan,Moldova,1,1,Friendly,Antalya,Turkey,True
@@ -10994,8 +10995,8 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2015-02-07,Equatorial Guinea,DR Congo,0,0,African Cup of Nations,Malabo,Equatorial Guinea,False
 2015-02-06,Pakistan,Afghanistan,2,1,Friendly,Lahore,Pakistan,False
 2015-02-05,Equatorial Guinea,Ghana,0,3,African Cup of Nations,Malabo,Equatorial Guinea,False
-2015-02-04,Honduras,Venezuela,2,3,Friendly,San Pedro Sula,Honduras,False
 2015-02-04,DR Congo,Ivory Coast,1,3,African Cup of Nations,Bata,Equatorial Guinea,True
+2015-02-04,Honduras,Venezuela,2,3,Friendly,San Pedro Sula,Honduras,False
 2015-02-02,Bangladesh,Sri Lanka,1,0,Friendly,Dhaka,Bangladesh,False
 2015-02-01,Suriname,Aruba,1,0,ABCS Tournament,Paramaribo,Suriname,False
 2015-02-01,Ivory Coast,Algeria,3,1,African Cup of Nations,Malabo,Equatorial Guinea,True
@@ -11010,16 +11011,16 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2015-01-28,Guinea,Mali,1,1,African Cup of Nations,Mongomo,Equatorial Guinea,True
 2015-01-28,Chile,United States,3,2,Friendly,Rancagua,Chile,False
 2015-01-28,Cameroon,Ivory Coast,0,1,African Cup of Nations,Malabo,Equatorial Guinea,True
-2015-01-27,South Africa,Ghana,1,2,African Cup of Nations,Mongomo,Equatorial Guinea,True
 2015-01-27,Senegal,Algeria,0,2,African Cup of Nations,Malabo,Equatorial Guinea,True
 2015-01-27,Australia,United Arab Emirates,2,0,AFC Asian Cup,Newcastle,Australia,False
+2015-01-27,South Africa,Ghana,1,2,African Cup of Nations,Mongomo,Equatorial Guinea,True
 2015-01-26,DR Congo,Tunisia,1,1,African Cup of Nations,Bata,Equatorial Guinea,True
 2015-01-26,Cape Verde,Zambia,0,0,African Cup of Nations,Ebebiyín,Equatorial Guinea,True
 2015-01-26,South Korea,Iraq,2,0,AFC Asian Cup,Sydney,Australia,True
 2015-01-25,Equatorial Guinea,Gabon,2,0,African Cup of Nations,Bata,Equatorial Guinea,False
 2015-01-25,Congo,Burkina Faso,2,1,African Cup of Nations,Ebebiyín,Equatorial Guinea,True
-2015-01-24,Ivory Coast,Mali,1,1,African Cup of Nations,Malabo,Equatorial Guinea,True
 2015-01-24,Cameroon,Guinea,1,1,African Cup of Nations,Malabo,Equatorial Guinea,True
+2015-01-24,Ivory Coast,Mali,1,1,African Cup of Nations,Malabo,Equatorial Guinea,True
 2015-01-23,South Africa,Senegal,1,1,African Cup of Nations,Mongomo,Equatorial Guinea,True
 2015-01-23,Japan,United Arab Emirates,1,1,AFC Asian Cup,Sydney,Australia,True
 2015-01-23,Iran,Iraq,3,3,AFC Asian Cup,Canberra,Australia,True
@@ -11029,12 +11030,12 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2015-01-22,South Korea,Uzbekistan,2,0,AFC Asian Cup,Melbourne,Australia,True
 2015-01-22,Cape Verde,DR Congo,0,0,African Cup of Nations,Ebebiyín,Equatorial Guinea,True
 2015-01-22,Australia,China,2,0,AFC Asian Cup,Brisbane,Australia,False
-2015-01-21,Equatorial Guinea,Burkina Faso,0,0,African Cup of Nations,Bata,Equatorial Guinea,False
 2015-01-21,Gabon,Congo,0,1,African Cup of Nations,Bata,Equatorial Guinea,True
-2015-01-20,Mali,Cameroon,1,1,African Cup of Nations,Malabo,Equatorial Guinea,True
-2015-01-20,Japan,Jordan,2,0,AFC Asian Cup,Melbourne,Australia,True
+2015-01-21,Equatorial Guinea,Burkina Faso,0,0,African Cup of Nations,Bata,Equatorial Guinea,False
 2015-01-20,Ivory Coast,Guinea,1,1,African Cup of Nations,Malabo,Equatorial Guinea,True
 2015-01-20,Iraq,Palestine,2,0,AFC Asian Cup,Canberra,Australia,True
+2015-01-20,Mali,Cameroon,1,1,African Cup of Nations,Malabo,Equatorial Guinea,True
+2015-01-20,Japan,Jordan,2,0,AFC Asian Cup,Melbourne,Australia,True
 2015-01-19,Qatar,Bahrain,1,2,AFC Asian Cup,Sydney,Australia,True
 2015-01-19,Iran,United Arab Emirates,1,0,AFC Asian Cup,Brisbane,Australia,True
 2015-01-19,Ghana,Senegal,1,2,African Cup of Nations,Mongomo,Equatorial Guinea,True
@@ -11043,8 +11044,8 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2015-01-19,Algeria,South Africa,3,1,African Cup of Nations,Mongomo,Equatorial Guinea,True
 2015-01-18,Tunisia,Cape Verde,1,1,African Cup of Nations,Ebebiyín,Equatorial Guinea,True
 2015-01-18,China,North Korea,2,1,AFC Asian Cup,Canberra,Australia,True
-2015-01-18,Zambia,DR Congo,1,1,African Cup of Nations,Ebebiyín,Equatorial Guinea,True
 2015-01-18,Uzbekistan,Saudi Arabia,3,1,AFC Asian Cup,Melbourne,Australia,True
+2015-01-18,Zambia,DR Congo,1,1,African Cup of Nations,Ebebiyín,Equatorial Guinea,True
 2015-01-17,Yemen,Nigeria,0,2,Friendly,Dubai,United Arab Emirates,True
 2015-01-17,Oman,Kuwait,1,0,AFC Asian Cup,Newcastle,Australia,True
 2015-01-17,Equatorial Guinea,Congo,1,1,African Cup of Nations,Bata,Equatorial Guinea,False
@@ -11059,16 +11060,16 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2015-01-14,Mali,South Africa,0,3,Friendly,Libreville,Gabon,True
 2015-01-14,North Korea,Saudi Arabia,1,4,AFC Asian Cup,Melbourne,Australia,True
 2015-01-14,China,Uzbekistan,2,1,AFC Asian Cup,Brisbane,Australia,True
+2015-01-13,Australia,Oman,4,0,AFC Asian Cup,Sydney,Australia,False
 2015-01-13,Senegal,Guinea,5,2,Friendly,Casablanca,Morocco,True
 2015-01-13,Kuwait,South Korea,0,1,AFC Asian Cup,Canberra,Australia,True
 2015-01-13,Botswana,Burkina Faso,0,2,Friendly,Nelspruit,South Africa,True
-2015-01-13,Australia,Oman,4,0,AFC Asian Cup,Sydney,Australia,False
-2015-01-12,Jordan,Iraq,0,1,AFC Asian Cup,Brisbane,Australia,True
 2015-01-12,Japan,Palestine,4,0,AFC Asian Cup,Newcastle,Australia,True
-2015-01-11,Iran,Bahrain,2,0,AFC Asian Cup,Melbourne,Australia,True
+2015-01-12,Jordan,Iraq,0,1,AFC Asian Cup,Brisbane,Australia,True
 2015-01-11,Nigeria,Ivory Coast,0,1,Friendly,Abu Dhabi,United Arab Emirates,True
-2015-01-11,Tunisia,Algeria,1,1,Friendly,Radès,Tunisia,False
+2015-01-11,Iran,Bahrain,2,0,AFC Asian Cup,Melbourne,Australia,True
 2015-01-11,United Arab Emirates,Qatar,4,1,AFC Asian Cup,Canberra,Australia,True
+2015-01-11,Tunisia,Algeria,1,1,Friendly,Radès,Tunisia,False
 2015-01-10,Uzbekistan,North Korea,1,0,AFC Asian Cup,Sydney,Australia,True
 2015-01-10,Saudi Arabia,China,0,1,AFC Asian Cup,Brisbane,Australia,True
 2015-01-10,South Korea,Oman,1,0,AFC Asian Cup,Canberra,Australia,True
@@ -11112,12 +11113,12 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2014-11-25,Vietnam,Laos,3,0,AFF Championship,Hanoi,Vietnam,False
 2014-11-25,Philippines,Indonesia,4,0,AFF Championship,Hanoi,Vietnam,True
 2014-11-25,United Arab Emirates,Oman,1,0,Gulf Cup,Riyadh,Saudi Arabia,True
-2014-11-23,Oman,Qatar,1,3,Gulf Cup,Riyadh,Saudi Arabia,True
 2014-11-23,Saudi Arabia,United Arab Emirates,3,2,Gulf Cup,Riyadh,Saudi Arabia,False
+2014-11-23,Oman,Qatar,1,3,Gulf Cup,Riyadh,Saudi Arabia,True
 2014-11-23,Singapore,Thailand,1,2,AFF Championship,Kallang,Singapore,False
 2014-11-23,Malaysia,Myanmar,0,0,AFF Championship,Kallang,Singapore,True
-2014-11-22,Philippines,Laos,4,1,AFF Championship,Hanoi,Vietnam,True
 2014-11-22,Vietnam,Indonesia,2,2,AFF Championship,Hanoi,Vietnam,False
+2014-11-22,Philippines,Laos,4,1,AFF Championship,Hanoi,Vietnam,True
 2014-11-20,Kuwait,Oman,0,5,Gulf Cup,Riyadh,Saudi Arabia,True
 2014-11-20,United Arab Emirates,Iraq,2,0,Gulf Cup,Riyadh,Saudi Arabia,True
 2014-11-19,Ethiopia,Malawi,0,0,African Cup of Nations qualification,Addis Ababa,Ethiopia,False
@@ -11216,15 +11217,15 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2014-11-14,China,New Zealand,1,1,Friendly,Nanchang,China,False
 2014-11-14,Botswana,Tunisia,0,0,African Cup of Nations qualification,Gaborone,Botswana,False
 2014-11-14,Ivory Coast,Sierra Leone,5,1,African Cup of Nations qualification,Abidjan,Ivory Coast,False
-2014-11-14,United Arab Emirates,Oman,0,0,Gulf Cup,Riyadh,Saudi Arabia,True
+2014-11-14,Serbia,Denmark,1,3,UEFA Euro qualification,Belgrade,Serbia,False
 2014-11-14,Jordan,South Korea,0,1,Friendly,Amman,Jordan,False
 2014-11-14,Paraguay,Peru,2,1,Friendly,Luque,Paraguay,False
 2014-11-14,Philippines,Cambodia,3,0,Friendly,Manila,Philippines,False
 2014-11-14,Portugal,Armenia,1,0,UEFA Euro qualification,Faro,Portugal,False
 2014-11-14,Romania,Northern Ireland,2,0,UEFA Euro qualification,Bucharest,Romania,False
 2014-11-14,Scotland,Republic of Ireland,1,0,UEFA Euro qualification,Glasgow,Scotland,False
-2014-11-14,Serbia,Denmark,1,3,UEFA Euro qualification,Belgrade,Serbia,False
 2014-11-14,Martinique,Haiti,0,3,CFU Caribbean Cup,Montego Bay,Jamaica,True
+2014-11-14,United Arab Emirates,Oman,0,0,Gulf Cup,Riyadh,Saudi Arabia,True
 2014-11-14,United States,Colombia,1,2,Friendly,London,England,True
 2014-11-13,Saudi Arabia,Qatar,1,1,Gulf Cup,Riyadh,Saudi Arabia,False
 2014-11-13,Curaçao,Cuba,2,3,CFU Caribbean Cup,Montego Bay,Jamaica,True
@@ -11417,14 +11418,14 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2014-09-10,Uganda,Guinea,2,0,African Cup of Nations qualification,Kampala,Uganda,False
 2014-09-10,Lesotho,Gabon,1,1,African Cup of Nations qualification,Maseru,Lesotho,False
 2014-09-09,Indonesia,Yemen,0,0,Friendly,Yogyakarta,Indonesia,False
-2014-09-09,Andorra,Wales,1,2,UEFA Euro qualification,Sant Julià de Lòria,Andorra,False
+2014-09-09,Azerbaijan,Bulgaria,1,2,UEFA Euro qualification,Baku,Azerbaijan,False
 2014-09-09,Bosnia and Herzegovina,Cyprus,1,2,UEFA Euro qualification,Zenica,Bosnia and Herzegovina,False
 2014-09-09,China,Jordan,1,1,Friendly,Harbin,China,False
 2014-09-09,Croatia,Malta,2,0,UEFA Euro qualification,Zagreb,Croatia,False
 2014-09-09,Czech Republic,Netherlands,2,1,UEFA Euro qualification,Prague,Czech Republic,False
 2014-09-09,Haiti,Chile,0,1,Friendly,Fort Lauderdale,United States,True
 2014-09-09,Iceland,Turkey,3,0,UEFA Euro qualification,Reykjavík,Iceland,False
-2014-09-09,Azerbaijan,Bulgaria,1,2,UEFA Euro qualification,Baku,Azerbaijan,False
+2014-09-09,Andorra,Wales,1,2,UEFA Euro qualification,Sant Julià de Lòria,Andorra,False
 2014-09-09,Japan,Venezuela,2,2,Friendly,Yokohama,Japan,False
 2014-09-09,Kuwait,Bahrain,0,1,Friendly,Al Farwaniyah,Kuwait,False
 2014-09-09,Mexico,Bolivia,1,0,Friendly,Commerce City,United States,True
@@ -11448,60 +11449,60 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2014-09-07,Bonaire,Barbados,1,4,CFU Caribbean Cup qualification,Fort-de-France,Martinique,True
 2014-09-07,Burundi,Tanzania,2,0,Friendly,Bujumbura,Burundi,False
 2014-09-07,Costa Rica,Panama,2,2,UNCAF Cup,Dallas,United States,True
+2014-09-07,Denmark,Armenia,2,1,UEFA Euro qualification,Copenhagen,Denmark,False
 2014-09-07,Dominica,Saint Lucia,1,2,CFU Caribbean Cup qualification,Basseterre,Saint Kitts and Nevis,True
 2014-09-07,Faroe Islands,Finland,1,3,UEFA Euro qualification,Tórshavn,Faroe Islands,False
 2014-09-07,French Guiana,Curaçao,0,0,CFU Caribbean Cup qualification,Bayamón,Puerto Rico,True
 2014-09-07,Georgia,Republic of Ireland,1,2,UEFA Euro qualification,Tbilisi,Georgia,False
 2014-09-07,Germany,Scotland,2,1,UEFA Euro qualification,Dortmund,Germany,False
-2014-09-07,Denmark,Armenia,2,1,UEFA Euro qualification,Copenhagen,Denmark,False
 2014-09-07,Greece,Romania,0,1,UEFA Euro qualification,Piraeus,Greece,False
-2014-09-07,Paraguay,United Arab Emirates,0,0,Friendly,Villach,Austria,True
-2014-09-07,Serbia,France,1,1,Friendly,Belgrade,Serbia,False
-2014-09-07,Portugal,Albania,0,1,UEFA Euro qualification,Aveiro,Portugal,False
-2014-09-07,Hungary,Northern Ireland,1,2,UEFA Euro qualification,Budapest,Hungary,False
-2014-09-07,Puerto Rico,Grenada,2,2,CFU Caribbean Cup qualification,Bayamón,Puerto Rico,False
-2014-09-07,Morocco,Libya,3,0,Friendly,Marrakesh,Morocco,False
-2014-09-07,Mali,Malawi,2,0,African Cup of Nations qualification,Bamako,Mali,False
 2014-09-07,Kosovo,Oman,1,0,Friendly,Pristina,Kosovo,False
+2014-09-07,Mali,Malawi,2,0,African Cup of Nations qualification,Bamako,Mali,False
+2014-09-07,Morocco,Libya,3,0,Friendly,Marrakesh,Morocco,False
+2014-09-07,Paraguay,United Arab Emirates,0,0,Friendly,Villach,Austria,True
+2014-09-07,Portugal,Albania,0,1,UEFA Euro qualification,Aveiro,Portugal,False
+2014-09-07,Puerto Rico,Grenada,2,2,CFU Caribbean Cup qualification,Bayamón,Puerto Rico,False
+2014-09-07,Serbia,France,1,1,Friendly,Belgrade,Serbia,False
+2014-09-07,Hungary,Northern Ireland,1,2,UEFA Euro qualification,Budapest,Hungary,False
+2014-09-06,Gabon,Angola,1,0,African Cup of Nations qualification,Libreville,Gabon,False
 2014-09-06,Niger,Cape Verde,1,3,African Cup of Nations qualification,Niamey,Niger,False
 2014-09-06,Burkina Faso,Lesotho,2,0,African Cup of Nations qualification,Ouagadougou,Burkina Faso,False
 2014-09-06,DR Congo,Cameroon,0,2,African Cup of Nations qualification,Lubumbashi,DR Congo,False
 2014-09-06,Ethiopia,Algeria,1,2,African Cup of Nations qualification,Addis Ababa,Ethiopia,False
-2014-09-06,Gabon,Angola,1,0,African Cup of Nations qualification,Libreville,Gabon,False
-2014-09-06,Ghana,Uganda,1,1,African Cup of Nations qualification,Kumasi,Ghana,False
 2014-09-06,Ivory Coast,Sierra Leone,2,1,African Cup of Nations qualification,Abidjan,Ivory Coast,False
 2014-09-06,Mexico,Chile,0,0,Friendly,Santa Clara,United States,True
-2014-09-06,Palestine,Taiwan,7,3,Philippine Peace Cup,Manila,Philippines,True
+2014-09-06,Ghana,Uganda,1,1,African Cup of Nations qualification,Kumasi,Ghana,False
 2014-09-06,Nigeria,Congo,2,3,African Cup of Nations qualification,Calabar,Nigeria,False
 2014-09-06,Philippines,Myanmar,2,3,Philippine Peace Cup,Manila,Philippines,False
 2014-09-06,Singapore,Papua New Guinea,2,1,Friendly,Hougang,Singapore,False
 2014-09-06,Tunisia,Botswana,2,1,African Cup of Nations qualification,Monastir,Tunisia,False
 2014-09-06,Vietnam,Hong Kong,3,1,Friendly,Haiphong,Vietnam,False
 2014-09-06,Zambia,Mozambique,0,0,African Cup of Nations qualification,Ndola,Zambia,False
+2014-09-06,Palestine,Taiwan,7,3,Philippine Peace Cup,Manila,Philippines,True
 2014-09-05,Puerto Rico,French Guiana,1,2,CFU Caribbean Cup qualification,Bayamón,Puerto Rico,False
+2014-09-05,Curaçao,Grenada,2,1,CFU Caribbean Cup qualification,Bayamón,Puerto Rico,True
 2014-09-05,Guinea,Togo,2,1,African Cup of Nations qualification,Casablanca,Morocco,True
 2014-09-05,Japan,Uruguay,0,2,Kirin Challenge Cup,Sapporo,Japan,False
 2014-09-05,Brazil,Colombia,1,0,Friendly,Miami Gardens,United States,True
-2014-09-05,Curaçao,Grenada,2,1,CFU Caribbean Cup qualification,Bayamón,Puerto Rico,True
 2014-09-05,Kazakhstan,Kyrgyzstan,7,1,Friendly,Astana,Kazakhstan,False
 2014-09-05,South Korea,Venezuela,3,1,Friendly,Bucheon,South Korea,False
 2014-09-05,Saint Lucia,Guyana,2,0,CFU Caribbean Cup qualification,Basseterre,Saint Kitts and Nevis,True
 2014-09-05,Senegal,Egypt,2,0,African Cup of Nations qualification,Dakar,Senegal,False
+2014-09-05,Saint Kitts and Nevis,Dominica,5,0,CFU Caribbean Cup qualification,Basseterre,Saint Kitts and Nevis,False
 2014-09-05,Saint Vincent and the Grenadines,Anguilla,4,0,CFU Caribbean Cup qualification,St. John's,Antigua and Barbuda,True
 2014-09-05,Sudan,South Africa,0,3,African Cup of Nations qualification,Omdurman,Sudan,False
 2014-09-05,Suriname,Bonaire,2,3,CFU Caribbean Cup qualification,Rivière-Pilote,Martinique,True
-2014-09-05,Saint Kitts and Nevis,Dominica,5,0,CFU Caribbean Cup qualification,Basseterre,Saint Kitts and Nevis,False
-2014-09-04,France,Spain,1,0,Friendly,Saint-Denis,France,False
-2014-09-04,Belarus,Tajikistan,6,1,Friendly,Borisov,Belarus,False
-2014-09-04,Belgium,Australia,2,0,Friendly,Liège,Belgium,False
 2014-09-04,Bosnia and Herzegovina,Liechtenstein,3,0,Friendly,Tuzla,Bosnia and Herzegovina,False
 2014-09-04,China,Kuwait,3,1,Friendly,Anshan,China,False
+2014-09-04,France,Spain,1,0,Friendly,Saint-Denis,France,False
+2014-09-04,Belgium,Australia,2,0,Friendly,Liège,Belgium,False
 2014-09-04,Croatia,Cyprus,2,0,Friendly,Pula,Croatia,False
+2014-09-04,Belarus,Tajikistan,6,1,Friendly,Borisov,Belarus,False
 2014-09-04,Iraq,Peru,0,2,Friendly,Dubai,United Arab Emirates,True
-2014-09-04,Italy,Netherlands,2,0,Friendly,Bari,Italy,False
 2014-09-04,Slovakia,Malta,1,0,Friendly,Žilina,Slovakia,False
 2014-09-04,Sweden,Estonia,2,0,Friendly,Solna,Sweden,False
 2014-09-04,Uzbekistan,Jordan,2,0,Friendly,Tashkent,Uzbekistan,False
+2014-09-04,Italy,Netherlands,2,0,Friendly,Bari,Italy,False
 2014-09-03,Guyana,Dominica,0,0,CFU Caribbean Cup qualification,Basseterre,Saint Kitts and Nevis,True
 2014-09-03,Myanmar,Palestine,4,1,Philippine Peace Cup,Manila,Philippines,True
 2014-09-03,Costa Rica,Nicaragua,3,0,UNCAF Cup,"Washington, D.C.",United States,True
@@ -11510,18 +11511,18 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2014-09-03,England,Norway,1,0,Friendly,London,England,False
 2014-09-03,Germany,Argentina,2,4,Friendly,Düsseldorf,Germany,False
 2014-09-03,Grenada,French Guiana,1,1,CFU Caribbean Cup qualification,Bayamón,Puerto Rico,True
-2014-09-03,Ukraine,Moldova,1,0,Friendly,Kyiv,Ukraine,False
-2014-09-03,Republic of Ireland,Oman,2,0,Friendly,Dublin,Republic of Ireland,False
-2014-09-03,Philippines,Taiwan,5,1,Friendly,Manila,Philippines,False
-2014-09-03,Russia,Azerbaijan,4,0,Friendly,Khimki,Russia,False
-2014-09-03,Puerto Rico,Curaçao,2,2,CFU Caribbean Cup qualification,Bayamón,Puerto Rico,False
 2014-09-03,Latvia,Armenia,2,0,Friendly,Riga,Latvia,False
-2014-09-03,Morocco,Qatar,0,0,Friendly,Rabat,Morocco,False
+2014-09-03,Republic of Ireland,Oman,2,0,Friendly,Dublin,Republic of Ireland,False
 2014-09-03,Lithuania,United Arab Emirates,1,1,Friendly,Matrei in Osttirol,Austria,True
+2014-09-03,Morocco,Qatar,0,0,Friendly,Rabat,Morocco,False
+2014-09-03,Philippines,Taiwan,5,1,Friendly,Manila,Philippines,False
+2014-09-03,Puerto Rico,Curaçao,2,2,CFU Caribbean Cup qualification,Bayamón,Puerto Rico,False
+2014-09-03,Russia,Azerbaijan,4,0,Friendly,Khimki,Russia,False
+2014-09-03,Ukraine,Moldova,1,0,Friendly,Kyiv,Ukraine,False
 2014-09-02,Niger,Uganda,2,0,Friendly,Niamey,Niger,False
 2014-08-31,Zambia,Sudan,3,1,Friendly,Lusaka,Zambia,False
-2014-08-30,El Salvador,Dominican Republic,2,0,Friendly,San Salvador,El Salvador,False
 2014-08-30,Egypt,Kenya,1,0,Friendly,Aswan,Egypt,False
+2014-08-30,El Salvador,Dominican Republic,2,0,Friendly,San Salvador,El Salvador,False
 2014-08-28,Saint Lucia,Martinique,0,1,Friendly,Gros Islet,Saint Lucia,False
 2014-08-28,Seychelles,Sri Lanka,3,0,Friendly,Victoria,Seychelles,False
 2014-08-27,Norway,United Arab Emirates,0,0,Friendly,Stavanger,Norway,False
@@ -11529,8 +11530,8 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2014-08-26,Seychelles,Sri Lanka,1,2,Friendly,Victoria,Seychelles,False
 2014-08-24,French Guiana,Suriname,0,1,Friendly,Saint-Laurent-du-Maroni,French Guiana,False
 2014-08-23,Guatemala,Cuba,1,0,Friendly,Guatemala City,Guatemala,False
-2014-08-20,Azerbaijan,Uzbekistan,0,0,Friendly,Baku,Azerbaijan,False
 2014-08-20,Panama,Cuba,4,0,Friendly,Panama City,Panama,False
+2014-08-20,Azerbaijan,Uzbekistan,0,0,Friendly,Baku,Azerbaijan,False
 2014-08-16,British Virgin Islands,Saint Martin,2,4,Friendly,Road Town,British Virgin Islands,False
 2014-08-14,Guatemala,Nicaragua,3,0,Friendly,Antigua Guatemala,Guatemala,False
 2014-08-13,Angola,Botswana,0,0,Friendly,Luanda,Angola,False
@@ -11542,27 +11543,27 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2014-08-03,Mozambique,Tanzania,2,1,African Cup of Nations qualification,Maputo,Mozambique,False
 2014-08-03,Mauritania,Uganda,0,1,African Cup of Nations qualification,Nouakchott,Mauritania,False
 2014-08-03,Kenya,Lesotho,0,0,African Cup of Nations qualification,Nairobi,Kenya,False
-2014-08-02,Malawi,Benin,1,0,African Cup of Nations qualification,Blantyre,Malawi,False
-2014-08-02,Guinea-Bissau,Botswana,1,1,African Cup of Nations qualification,Bissau,Guinea-Bissau,False
 2014-08-02,Rwanda,Congo,2,0,African Cup of Nations qualification,Kigali,Rwanda,False
+2014-08-02,Guinea-Bissau,Botswana,1,1,African Cup of Nations qualification,Bissau,Guinea-Bissau,False
+2014-08-02,Malawi,Benin,1,0,African Cup of Nations qualification,Blantyre,Malawi,False
 2014-07-27,Gabon,Rwanda,0,1,Friendly,Libreville,Gabon,False
-2014-07-25,Macau,Mongolia,3,2,EAFF Championship,Dededo,Guam,True
 2014-07-25,Guam,Northern Mariana Islands,5,0,EAFF Championship,Dededo,Guam,False
+2014-07-25,Macau,Mongolia,3,2,EAFF Championship,Dededo,Guam,True
 2014-07-23,Northern Mariana Islands,Macau,2,1,EAFF Championship,Dededo,Guam,True
 2014-07-23,Guam,Mongolia,2,0,EAFF Championship,Dededo,Guam,False
 2014-07-21,Mongolia,Northern Mariana Islands,4,0,EAFF Championship,Dededo,Guam,True
 2014-07-21,Guam,Macau,0,0,EAFF Championship,Dededo,Guam,False
 2014-07-20,Benin,Malawi,1,0,African Cup of Nations qualification,Cotonou,Benin,False
-2014-07-20,Congo,Rwanda,2,0,African Cup of Nations qualification,Pointe-Noire,Congo,False
 2014-07-20,Tanzania,Mozambique,2,2,African Cup of Nations qualification,Dar es Salaam,Tanzania,False
 2014-07-20,Lesotho,Kenya,1,0,African Cup of Nations qualification,Maseru,Lesotho,False
-2014-07-19,Uganda,Mauritania,2,0,African Cup of Nations qualification,Kampala,Uganda,False
+2014-07-20,Congo,Rwanda,2,0,African Cup of Nations qualification,Pointe-Noire,Congo,False
 2014-07-19,Sierra Leone,Seychelles,2,0,African Cup of Nations qualification,Freetown,Sierra Leone,False
 2014-07-19,Botswana,Guinea-Bissau,2,0,African Cup of Nations qualification,Gaborone,Botswana,False
+2014-07-19,Uganda,Mauritania,2,0,African Cup of Nations qualification,Kampala,Uganda,False
 2014-07-15,Uganda,Malawi,0,0,Friendly,Kampala,Uganda,False
 2014-07-15,Kenya,Burundi,0,0,Friendly,Nairobi,Kenya,False
-2014-07-14,Botswana,Lesotho,2,0,Friendly,Gaborone,Botswana,False
 2014-07-14,Qatar,Indonesia,2,2,Friendly,Al Wakrah,Qatar,False
+2014-07-14,Botswana,Lesotho,2,0,Friendly,Gaborone,Botswana,False
 2014-07-13,Germany,Argentina,1,0,FIFA World Cup,Rio de Janeiro,Brazil,True
 2014-07-12,Rwanda,Gabon,1,0,Friendly,Kigali,Rwanda,False
 2014-07-12,Brazil,Netherlands,0,3,FIFA World Cup,Brasília,Brazil,False
@@ -11572,29 +11573,29 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2014-07-06,Malawi,Mozambique,1,1,Friendly,Lilongwe,Malawi,False
 2014-07-05,Netherlands,Costa Rica,0,0,FIFA World Cup,Salvador,Brazil,True
 2014-07-05,Argentina,Belgium,1,0,FIFA World Cup,Brasília,Brazil,True
-2014-07-04,Brazil,Colombia,2,1,FIFA World Cup,Fortaleza,Brazil,False
 2014-07-04,France,Germany,0,1,FIFA World Cup,Rio de Janeiro,Brazil,True
+2014-07-04,Brazil,Colombia,2,1,FIFA World Cup,Fortaleza,Brazil,False
 2014-07-02,Vietnam,Myanmar,6,0,Friendly,Thủ Dầu Một,Vietnam,False
-2014-07-01,Argentina,Switzerland,1,0,FIFA World Cup,São Paulo,Brazil,True
 2014-07-01,Belgium,United States,2,1,FIFA World Cup,Salvador,Brazil,True
+2014-07-01,Argentina,Switzerland,1,0,FIFA World Cup,São Paulo,Brazil,True
 2014-06-30,Germany,Algeria,2,1,FIFA World Cup,Porto Alegre,Brazil,True
 2014-06-30,France,Nigeria,2,0,FIFA World Cup,Brasília,Brazil,True
-2014-06-29,Netherlands,Mexico,2,1,FIFA World Cup,Fortaleza,Brazil,True
 2014-06-29,Costa Rica,Greece,1,1,FIFA World Cup,Recife,Brazil,True
 2014-06-29,China,Mali,1,3,Friendly,Shenzhen,China,False
-2014-06-28,Brazil,Chile,1,1,FIFA World Cup,Belo Horizonte,Brazil,False
+2014-06-29,Netherlands,Mexico,2,1,FIFA World Cup,Fortaleza,Brazil,True
 2014-06-28,Colombia,Uruguay,2,0,FIFA World Cup,Rio de Janeiro,Brazil,True
-2014-06-26,South Korea,Belgium,0,1,FIFA World Cup,São Paulo,Brazil,True
-2014-06-26,Algeria,Russia,1,1,FIFA World Cup,Curitiba,Brazil,True
+2014-06-28,Brazil,Chile,1,1,FIFA World Cup,Belo Horizonte,Brazil,False
 2014-06-26,United States,Germany,0,1,FIFA World Cup,Recife,Brazil,True
 2014-06-26,Portugal,Ghana,2,1,FIFA World Cup,Brasília,Brazil,True
-2014-06-25,Nigeria,Argentina,2,3,FIFA World Cup,Porto Alegre,Brazil,True
+2014-06-26,South Korea,Belgium,0,1,FIFA World Cup,São Paulo,Brazil,True
+2014-06-26,Algeria,Russia,1,1,FIFA World Cup,Curitiba,Brazil,True
 2014-06-25,Indonesia,Nepal,2,0,Friendly,Malang,Indonesia,False
 2014-06-25,Honduras,Switzerland,0,3,FIFA World Cup,Manaus,Brazil,True
-2014-06-25,Ecuador,France,0,0,FIFA World Cup,Rio de Janeiro,Brazil,True
 2014-06-25,Bosnia and Herzegovina,Iran,3,1,FIFA World Cup,Salvador,Brazil,True
-2014-06-24,Costa Rica,England,0,0,FIFA World Cup,Belo Horizonte,Brazil,True
+2014-06-25,Nigeria,Argentina,2,3,FIFA World Cup,Porto Alegre,Brazil,True
+2014-06-25,Ecuador,France,0,0,FIFA World Cup,Rio de Janeiro,Brazil,True
 2014-06-24,Greece,Ivory Coast,2,1,FIFA World Cup,Fortaleza,Brazil,True
+2014-06-24,Costa Rica,England,0,0,FIFA World Cup,Belo Horizonte,Brazil,True
 2014-06-24,Italy,Uruguay,0,1,FIFA World Cup,Natal,Brazil,True
 2014-06-24,Japan,Colombia,1,4,FIFA World Cup,Cuiabá,Brazil,True
 2014-06-23,Netherlands,Chile,2,0,FIFA World Cup,São Paulo,Brazil,True
@@ -11605,13 +11606,13 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2014-06-22,South Korea,Algeria,2,4,FIFA World Cup,Porto Alegre,Brazil,True
 2014-06-22,China,North Macedonia,0,0,Friendly,Jinan,China,False
 2014-06-22,Belgium,Russia,1,0,FIFA World Cup,Rio de Janeiro,Brazil,True
-2014-06-21,Nigeria,Bosnia and Herzegovina,1,0,FIFA World Cup,Cuiabá,Brazil,True
 2014-06-21,Indonesia,Pakistan,4,0,Friendly,Surabaya,Indonesia,False
-2014-06-21,Germany,Ghana,2,2,FIFA World Cup,Fortaleza,Brazil,True
 2014-06-21,Argentina,Iran,1,0,FIFA World Cup,Belo Horizonte,Brazil,True
+2014-06-21,Germany,Ghana,2,2,FIFA World Cup,Fortaleza,Brazil,True
+2014-06-21,Nigeria,Bosnia and Herzegovina,1,0,FIFA World Cup,Cuiabá,Brazil,True
+2014-06-20,Switzerland,France,2,5,FIFA World Cup,Salvador,Brazil,True
 2014-06-20,Italy,Costa Rica,0,1,FIFA World Cup,Recife,Brazil,True
 2014-06-20,Honduras,Ecuador,1,2,FIFA World Cup,Curitiba,Brazil,True
-2014-06-20,Switzerland,France,2,5,FIFA World Cup,Salvador,Brazil,True
 2014-06-19,Uruguay,England,2,1,FIFA World Cup,São Paulo,Brazil,True
 2014-06-19,Japan,Greece,0,0,FIFA World Cup,Natal,Brazil,True
 2014-06-19,Colombia,Ivory Coast,2,1,FIFA World Cup,Brasília,Brazil,True
@@ -11619,20 +11620,20 @@ date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
 2014-06-18,China,North Macedonia,2,0,Friendly,Shenyang,China,False
 2014-06-18,Cameroon,Croatia,0,4,FIFA World Cup,Manaus,Brazil,True
 2014-06-18,Australia,Netherlands,2,3,FIFA World Cup,Curitiba,Brazil,True
-2014-06-17,Russia,South Korea,1,1,FIFA World Cup,Cuiabá,Brazil,True
 2014-06-17,Brazil,Mexico,0,0,FIFA World Cup,Fortaleza,Brazil,False
 2014-06-17,Belgium,Algeria,2,1,FIFA World Cup,Belo Horizonte,Brazil,True
+2014-06-17,Russia,South Korea,1,1,FIFA World Cup,Cuiabá,Brazil,True
+2014-06-16,Iran,Nigeria,0,0,FIFA World Cup,Curitiba,Brazil,True
 2014-06-16,Ghana,United States,1,2,FIFA World Cup,Natal,Brazil,True
 2014-06-16,Germany,Portugal,4,0,FIFA World Cup,Salvador,Brazil,True
-2014-06-16,Iran,Nigeria,0,0,FIFA World Cup,Curitiba,Brazil,True
+2014-06-15,Switzerland,Ecuador,2,1,FIFA World Cup,Brasília,Brazil,True
 2014-06-15,France,Honduras,3,0,FIFA World Cup,Porto Alegre,Brazil,True
 2014-06-15,Argentina,Bosnia and Herzegovina,2,1,FIFA World Cup,Rio de Janeiro,Brazil,True
-2014-06-15,Switzerland,Ecuador,2,1,FIFA World Cup,Brasília,Brazil,True
 2014-06-14,Uruguay,Costa Rica,1,3,FIFA World Cup,Fortaleza,Brazil,True
 2014-06-14,Ivory Coast,Japan,2,1,FIFA World Cup,Recife,Brazil,True
 2014-06-14,England,Italy,1,2,FIFA World Cup,Manaus,Brazil,True
 2014-06-14,Colombia,Greece,3,0,FIFA World Cup,Belo Horizonte,Brazil,True
+2014-06-13,Mexico,Cameroon,1,0,FIFA World Cup,Natal,Brazil,True
 2014-06-13,Chile,Australia,3,1,FIFA World Cup,Cuiabá,Brazil,True
 2014-06-13,Spain,Netherlands,1,5,FIFA World Cup,Salvador,Brazil,True
-2014-06-13,Mexico,Cameroon,1,0,FIFA World Cup,Natal,Brazil,True
 2014-06-12,Brazil,Croatia,3,1,FIFA World Cup,São Paulo,Brazil,False
