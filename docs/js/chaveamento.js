@@ -162,6 +162,13 @@ function parseMatchDatabase(rows, filterVersion = null) {
     const toProcess = filterVersion
         ? rows.filter(r => (r['versão'] || r.version || '') === filterVersion)
         : rows;
+
+    // Descobre a menor round_index presente no mata-mata desta versão
+    // (ignora final/terceiro, que não fazem parte da progressão de colunas)
+    const bracketRows = toProcess.filter(r => r.side === 'left' || r.side === 'right');
+    const roundIndices = bracketRows.map(r => parseNumber(r.round_index));
+    const minRound = roundIndices.length ? Math.min(...roundIndices) : 0;
+
     const bySide = { left: [], right: [] };
     let finalMatch = null;
     let thirdMatch = null;
@@ -179,23 +186,20 @@ function parseMatchDatabase(rows, filterVersion = null) {
                 w: row.winner === 'home' ? 'a' : 'b'
             };
 
-            if (row.side === 'final') {
-                finalMatch = match;
-                return;
-            }
-
-            if (row.side === 'terceiro') {
-                thirdMatch = match;
-                return;
-            }
+            if (row.side === 'final') { finalMatch = match; return; }
+            if (row.side === 'terceiro') { thirdMatch = match; return; }
 
             const side = bySide[row.side];
             if (!side) return;
 
-            const roundIndex = parseNumber(row.round_index);
+            // normaliza para que a primeira rodada da versão sempre comece em 0
+            const roundIndex = parseNumber(row.round_index) - minRound;
             if (!side[roundIndex]) side[roundIndex] = [];
             side[roundIndex].push(match);
         });
+
+    // 👇 atualiza os rótulos das colunas com base na rodada inicial detectada
+    RL = ROUND_DEFS.slice(minRound).map(r => r.label);
 
     return {
         ML: bySide.left,
@@ -372,8 +376,15 @@ const RND_CLS = {
 //   pa/pb — win probabilities (%)
 //   w    — 'a' or 'b' (projected winner)
 // ════════════════════════════════════════
+const ROUND_DEFS = [
+    { key: 'r32',       label: 'R32' },
+    { key: 'oitavas',   label: 'Oitavas' },
+    { key: 'quartas',   label: 'Quartas' },
+    { key: 'semifinal', label: 'Semifinal' },
+];
 
-const RL = ['R32', 'Oitavas', 'Quartas', 'Semifinal'];
+// Rótulos atualmente exibidos — recalculado sempre que uma versão é carregada
+let RL = ROUND_DEFS.map(r => r.label);
 
 // Left bracket half (rounds from R32 to SF)
 let ML = [];
