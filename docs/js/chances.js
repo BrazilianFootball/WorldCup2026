@@ -16,6 +16,14 @@
         'Após as Semifinais'
     ];
 
+    const GROUP_VERSIONS = [
+        'Antes da data FIFA',
+        'Antes da Copa - pós data FIFA',
+        'Após 1ª rodada da fase de grupos',
+        'Após 2ª rodada da fase de grupos',
+        'Após a Fase de Grupos',
+    ];
+
     const METRIC_KEYS = ['champ', 'final', 'semi', 'qf', 'r16', 'r32'];
     const COLS = ['rank', 'team', ...METRIC_KEYS];
     const CHANCE_EVOLUTION_Y_MAX = 20;
@@ -211,7 +219,7 @@
 
         const versions = availableVersions();
 
-        menu.innerHTML = PLANNED_VERSIONS.map(version => {
+        menu.innerHTML = GROUP_VERSIONS.map(version => {
             const available = versions.includes(version);
             const checked = version === selectedVersion;
             const disabledAttrs = available ? '' : ' disabled aria-disabled="true"';
@@ -1286,6 +1294,16 @@
             currentSortAsc = false;
 
             renderVersionDropdown();
+            if (document.getElementById('groups-phase-view')?.classList.contains('active')) {
+                const versions = availableVersions();
+
+                selectedVersion = versions.includes('Após a Fase de Grupos')
+                    ? 'Após a Fase de Grupos'
+                    : [...GROUP_VERSIONS].reverse().find(v => versions.includes(v)) || selectedVersion;
+
+                updateVersionButton();
+                updateGroupsVersionButton();
+            }
             applyRankingFilters();
             applyGroupsVersion(); /* Cria a barra da Fase de Grupos */
             renderGroupsVersionDropdown(); /* Ativa o dropdown depois que a barra foi criada */
@@ -1330,6 +1348,35 @@
             });
 
             document.body.classList.toggle('chances-bracket-active', view === 'bracket');
+
+            if (view === 'groups-phase' && data.length) {
+                const versions = availableVersions();
+
+                selectedVersion = versions.includes('Após a Fase de Grupos')
+                    ? 'Após a Fase de Grupos'
+                    : [...GROUP_VERSIONS].reverse().find(v => versions.includes(v)) || selectedVersion;
+
+                rankingExpanded = false;
+
+                document
+                    .querySelectorAll('input[name="groups-version"]')
+                    .forEach(input => {
+                        input.checked = input.value === selectedVersion;
+                    });
+
+                document
+                    .querySelectorAll('input[name="ranking-version"]')
+                    .forEach(input => {
+                        input.checked = input.value === selectedVersion;
+                    });
+
+                updateGroupsVersionButton();
+                updateVersionButton();
+
+                applyRankingFilters();
+                applyGroupsVersion();
+                renderGroupsVersionDropdown();
+            }
 
             if (view === 'bracket' && typeof window.drawLines === 'function') {
                 requestAnimationFrame(() => requestAnimationFrame(window.drawLines));

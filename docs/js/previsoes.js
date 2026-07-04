@@ -699,8 +699,14 @@ function applyScoreFilters(panel) {
                 const position = idx + 1;
                 const label = position === 1 ? '1º' : position === 2 ? '2º' : position === 3 ? '3º' : '4º';
                 const badgeClass = position === 1 ? 'b1' : position === 2 ? 'b2' : position === 3 ? 'b3' : 'b4';
-                const statusClass = position <= 2 ? 'qualify' : position === 3 ? 'playoff' : 'elim';
                 const probDisplay = Math.round(t.pct * 10) / 10;
+                const statusClass = probDisplay >= 100
+                        ? 'qualify'
+                        : position <= 2
+                            ? 'qualify'
+                            : position === 3
+                                ? 'playoff'
+                                : 'elim';
                 const probText = Number.isInteger(probDisplay) ? `${probDisplay.toFixed(0)}%` : `${probDisplay}%`;
 
                 const row = document.createElement('div');
