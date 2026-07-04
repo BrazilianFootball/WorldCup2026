@@ -48,7 +48,7 @@
     let currentSortAsc = false;
     let selectedVersion = null;
 
-    const RANKING_COLLAPSED_LIMIT = 15;
+    const RANKING_COLLAPSED_LIMIT = 16;
     let rankingExpanded = false;
 
     let evolutionSelectedTeams = [];
