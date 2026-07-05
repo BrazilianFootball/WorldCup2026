@@ -103,7 +103,12 @@ if __name__ == "__main__":
     } or None
 
     _shootouts = pd.read_csv("data/shootouts.csv")
-    _wc26_draws = _wc26[_wc26["home_score"] == _wc26["away_score"]]
+    _wc26_draws = _wc26[_wc26["home_score"] == _wc26["away_score"]].copy()
+    # results.csv dates are "M/D/YYYY" while shootouts.csv dates are ISO
+    # "YYYY-MM-DD" — normalize both before merging, otherwise the merge always
+    # returns zero rows and every drawn knockout match is treated as undecided.
+    _wc26_draws["date"] = pd.to_datetime(_wc26_draws["date"]).dt.strftime("%Y-%m-%d")
+    _shootouts["date"] = pd.to_datetime(_shootouts["date"]).dt.strftime("%Y-%m-%d")
     _wc26_shootouts = _wc26_draws.merge(
         _shootouts[["date", "home_team", "away_team", "winner"]],
         on=["date", "home_team", "away_team"],
