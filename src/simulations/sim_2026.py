@@ -274,48 +274,26 @@ if __name__ == "__main__":
             print(f"partidas.csv: probabilidades preenchidas para {n_ko} jogo(s).")
 
     # Build the tournament results DataFrame for tabela_chances.csv.
-    #
-    # A team is already eliminated (as of *this* run's known results) when it
-    # certainly reached some stage (100%) but certainly did not reach the next
-    # one (0%) -- e.g. round_of_16 == 100 and quarterfinals == 0 means the
-    # team played and lost its round-of-16 match. Such teams have zero chance
-    # of appearing in any later stage, and are dropped from this version's
-    # snapshot instead of lingering in tabela_chances.csv with stale/zero odds.
-    _STAGE_PROGRESSION = [
-        "round_of_32",
-        "round_of_16",
-        "quarterfinals",
-        "semifinals",
-        "final",
-        "champion",
-    ]
-
-    def _is_eliminated(pct: dict[str, float]) -> bool:
-        for curr_stage, next_stage in zip(
-            _STAGE_PROGRESSION, _STAGE_PROGRESSION[1:], strict=False
-        ):
-            if pct[curr_stage] >= 99.999 and pct[next_stage] <= 0.001:
-                return True
-        return False
-
+    # All 48 teams are always included (same as every other version) -- the
+    # frontend keys its per-team trend lines across versions by team name, so
+    # dropping rows for eliminated teams here would leave holes in that chart.
+    # What matters is that eliminated teams' stats are correctly zeroed out for
+    # every stage past their exit, which the simulator already guarantees once
+    # known_results/known_ko_winners correctly capture every played match
+    # (see the aet_winners.csv handling above).
     rows = []
     for team in wc_teams:
         if team not in tr.champion:
             continue
-        pct = {
-            "champion": tr.champion.get(team, 0) / n * 100,
-            "final": tr.final.get(team, 0) / n * 100,
-            "semifinals": tr.semifinals.get(team, 0) / n * 100,
-            "quarterfinals": tr.quarterfinals.get(team, 0) / n * 100,
-            "round_of_16": tr.round_of_16.get(team, 0) / n * 100,
-            "round_of_32": tr.round_of_32.get(team, 0) / n * 100,
-        }
-        if _is_eliminated(pct):
-            continue
         rows.append(
             {
                 "team": TEAM_MAP_EN_TO_PT.get(team, team),
-                **pct,
+                "champion": tr.champion.get(team, 0) / n * 100,
+                "final": tr.final.get(team, 0) / n * 100,
+                "semifinals": tr.semifinals.get(team, 0) / n * 100,
+                "quarterfinals": tr.quarterfinals.get(team, 0) / n * 100,
+                "round_of_16": tr.round_of_16.get(team, 0) / n * 100,
+                "round_of_32": tr.round_of_32.get(team, 0) / n * 100,
                 "group_first_place": tr.first_place.get(team, 0) / n * 100,
                 "group_second_place": tr.second_place.get(team, 0) / n * 100,
                 "group_third_place": tr.third_place.get(team, 0) / n * 100,
