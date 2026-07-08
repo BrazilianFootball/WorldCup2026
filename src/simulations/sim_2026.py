@@ -117,7 +117,28 @@ if __name__ == "__main__":
     known_ko_winners = {
         (r["home_team"], r["away_team"]): r["winner"]
         for _, r in _wc26_shootouts.iterrows()
-    } or None
+    }
+
+    # results.csv only records the 90-minute score. A knockout match still
+    # level after 90 minutes can be decided in extra time WITHOUT reaching
+    # penalties (e.g. a stoppage-time-of-extra-time goal) -- that case has no
+    # row in shootouts.csv (correctly: it wasn't a shootout) but the winner is
+    # still fully known. data/aet_winners.csv records those matches so the
+    # simulator treats the winner as certain instead of re-simulating a match
+    # that has already been decided.
+    _aet_path = Path("data/aet_winners.csv")
+    if _aet_path.exists():
+        _aet = pd.read_csv(_aet_path)
+        _aet["date"] = pd.to_datetime(_aet["date"]).dt.strftime("%Y-%m-%d")
+        _wc26_aet = _wc26_draws.merge(
+            _aet[["date", "home_team", "away_team", "winner"]],
+            on=["date", "home_team", "away_team"],
+            how="inner",
+        )
+        for _, r in _wc26_aet.iterrows():
+            known_ko_winners[(r["home_team"], r["away_team"])] = r["winner"]
+
+    known_ko_winners = known_ko_winners or None
 
     simulator = BayesianWorldCup2026(
         model,
@@ -170,12 +191,17 @@ if __name__ == "__main__":
     _partidas_path = Path("docs/csv/previsoes/partidas.csv")
     if _partidas_path.exists():
         _pt_to_en = {v: k for k, v in TEAM_MAP_EN_TO_PT.items()}
+        # _wc26["date"] is the raw results.csv string ("M/D/YYYY"); normalize to
+        # ISO ("YYYY-MM-DD") so it matches the ISO dates _find_result looks up
+        # below -- otherwise the two formats never compare equal and no result
+        # is ever found, silently leaving already-played knockout matches blank.
+        _wc26_dates_iso = pd.to_datetime(_wc26["date"]).dt.strftime("%Y-%m-%d")
         _en_lookup = {
-            (r["date"], r["home_team"], r["away_team"]): (
+            (date_iso, r["home_team"], r["away_team"]): (
                 int(r["home_score"]),
                 int(r["away_score"]),
             )
-            for _, r in _wc26.iterrows()
+            for date_iso, (_, r) in zip(_wc26_dates_iso, _wc26.iterrows(), strict=True)
         }
 
         def _find_result(date_ddmm: str, home_pt: str, away_pt: str) -> tuple:
@@ -248,19 +274,48 @@ if __name__ == "__main__":
             print(f"partidas.csv: probabilidades preenchidas para {n_ko} jogo(s).")
 
     # Build the tournament results DataFrame for tabela_chances.csv.
+    #
+    # A team is already eliminated (as of *this* run's known results) when it
+    # certainly reached some stage (100%) but certainly did not reach the next
+    # one (0%) -- e.g. round_of_16 == 100 and quarterfinals == 0 means the
+    # team played and lost its round-of-16 match. Such teams have zero chance
+    # of appearing in any later stage, and are dropped from this version's
+    # snapshot instead of lingering in tabela_chances.csv with stale/zero odds.
+    _STAGE_PROGRESSION = [
+        "round_of_32",
+        "round_of_16",
+        "quarterfinals",
+        "semifinals",
+        "final",
+        "champion",
+    ]
+
+    def _is_eliminated(pct: dict[str, float]) -> bool:
+        for curr_stage, next_stage in zip(
+            _STAGE_PROGRESSION, _STAGE_PROGRESSION[1:], strict=False
+        ):
+            if pct[curr_stage] >= 99.999 and pct[next_stage] <= 0.001:
+                return True
+        return False
+
     rows = []
     for team in wc_teams:
         if team not in tr.champion:
             continue
+        pct = {
+            "champion": tr.champion.get(team, 0) / n * 100,
+            "final": tr.final.get(team, 0) / n * 100,
+            "semifinals": tr.semifinals.get(team, 0) / n * 100,
+            "quarterfinals": tr.quarterfinals.get(team, 0) / n * 100,
+            "round_of_16": tr.round_of_16.get(team, 0) / n * 100,
+            "round_of_32": tr.round_of_32.get(team, 0) / n * 100,
+        }
+        if _is_eliminated(pct):
+            continue
         rows.append(
             {
                 "team": TEAM_MAP_EN_TO_PT.get(team, team),
-                "champion": tr.champion.get(team, 0) / n * 100,
-                "final": tr.final.get(team, 0) / n * 100,
-                "semifinals": tr.semifinals.get(team, 0) / n * 100,
-                "quarterfinals": tr.quarterfinals.get(team, 0) / n * 100,
-                "round_of_16": tr.round_of_16.get(team, 0) / n * 100,
-                "round_of_32": tr.round_of_32.get(team, 0) / n * 100,
+                **pct,
                 "group_first_place": tr.first_place.get(team, 0) / n * 100,
                 "group_second_place": tr.second_place.get(team, 0) / n * 100,
                 "group_third_place": tr.third_place.get(team, 0) / n * 100,
