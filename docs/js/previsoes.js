@@ -39,7 +39,7 @@ const SCORE_STAGES = [
     {panelId: 'panel-r32',     groupValue: 'R32',       showFilters: true,  gridClass: 'scorecards-grid'},
     {panelId: 'panel-oitavas', groupValue: 'oitavas',   showFilters: true,  gridClass: 'scorecards-grid'},
     {panelId: 'panel-quartas', groupValue: 'quartas',   showFilters: true,  gridClass: 'scorecards-grid'},
-    {panelId: 'panel-semis',   groupValue: 'semifinais', showFilters: false, gridClass: 'scorecards-grid scorecards-grid-two'},
+    {panelId: 'panel-semis',   groupValue: 'semifinais', showFilters: true,  gridClass: 'scorecards-grid scorecards-grid-two'},
     {panelId: 'panel-final',   groupValue: 'final',     showFilters: false, gridClass: 'scorecards-grid scorecards-grid-two'}
 ];
 
