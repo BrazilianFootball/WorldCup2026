@@ -25,8 +25,9 @@ Este documento descreve a organização interna do repositório, a estrutura dos
 | `docs/csv/` | Arquivos CSV consumidos pelas páginas do site e visualizações JavaScript. |
 | `docs/css/`, `docs/js/`, `docs/images/` | Estilização, comportamento client-side, fontes, bandeiras, fotos de seleções, mascotes, camisas e assets visuais. |
 | `notebooks/` | Notebooks exploratórios para limpeza de dados, experimentação com modelos e exemplos. |
+| `tests/` | Testes automatizados (pytest) para módulos de análise/lógica pura, sem dependência de CmdStan. |
 | `src/` | Pacote Python principal: carregamento de dados, modelagem, simulação, exportação, análise e dashboards. |
-| `src/analysis/` | Avaliação de Brier score e visualização de força das seleções. |
+| `src/analysis/` | Avaliação de Brier score, visualização de força das seleções e análise de confrontos simulados. |
 | `src/data/` | Download do dataset Kaggle, ponderação por decaimento temporal e preparação do frame de treinamento. |
 | `src/model/` | Classe base abstrata, wrapper Bayesiano e modelo frequentista Dixon-Coles. |
 | `src/model_sel/` | Scripts de validação e avaliação de Brier score para os torneios de 2018 e 2022. |
@@ -65,7 +66,7 @@ Constantes centrais: caminhos de dados, pesos do torneio, grupos de 2026, regras
 | --- | --- |
 | `base.py` | Dataclasses `GroupStanding`, `TournamentResult` e classe base abstrata `TournamentSimulator`. |
 | `frequentist.py` | `WorldCup2026`: simulador do torneio de 48 seleções usando um `DixonColesModel` ajustado. Trata classificação em grupos, alocação de terceiros colocados, rodada de 32 e fases eliminatórias. |
-| `bayesian.py` | `BayesianWorldCup2026`: simulador Monte Carlo vetorizado (padrão 100 000 execuções) orientado por draws posteriores Stan. `simulate_stage_and_remaining()` para atualizações de fase durante o torneio. |
+| `bayesian.py` | `BayesianWorldCup2026`: simulador Monte Carlo vetorizado (padrão 100 000 execuções) orientado por draws posteriores Stan. `simulate_stage_and_remaining()` para atualizações de fase durante o torneio. Expõe `last_stage_arrays`: os índices de seleção por simulação em cada fase eliminatória (pares consecutivos = partidas daquela fase), usados por `src.analysis.matchup_events` para contar confrontos específicos. |
 
 ### `src/simulations/`
 
@@ -73,6 +74,7 @@ Constantes centrais: caminhos de dados, pesos do torneio, grupos de 2026, regras
 | --- | --- |
 | `train_2026.py` | Compila modelos Stan e treina o posterior de 2026; salva draws em `data/outputs/models/`. |
 | `sim_2026.py` | Executa 100 000 simulações do torneio a partir dos draws salvos; gera JSON, CSVs e dashboard. |
+| `analyze_matchup_events.py` | Treina o modelo até uma data de corte (`--cutoff-date`), simula o torneio e reporta (1) a frequência de eventos configuráveis em `EVENTS` (confrontos específicos ou conjuntos por fase) e (2) as top-N combinações de jogos mais prováveis por fase (`--top-n`), com probabilidade conjunta para fases com mais de uma partida simultânea. |
 | `export_all_matchups.py` | Exporta tabelas de probabilidade de todos os confrontos possíveis. |
 | `sim_2022.py`, `sim_2018.py` | Pontos de entrada de simulação histórica para 2022 e 2018. |
 | `utils.py` | `build_all_matchups_dataframe_mc()` — probabilidades Monte Carlo de todos os confrontos. |
@@ -99,6 +101,7 @@ Constantes centrais: caminhos de dados, pesos do torneio, grupos de 2026, regras
 | `evaluation.py` | `calculate_model_brier()`: calcula resumos de Brier score para draws posteriores salvos. |
 | `forces.py` | Gera gráficos de distribuição posterior da força das seleções a partir dos draws Stan. |
 | `weights.py` | Helpers de peso por importância de partida e decaimento temporal. |
+| `matchup_events.py` | `count_matchup_event()` / `analyze_events()`: frequência de confrontos específicos (ou conjuntos) por fase. `top_matchups_by_stage()` / `top_matchups_all_stages()`: top-N combinações de jogos mais prováveis por fase, com probabilidade conjunta para fases com mais de uma partida simultânea. Opera sobre `last_stage_arrays` de `BayesianWorldCup2026`. |
 
 ## Track de Modelos Stan
 
@@ -116,7 +119,7 @@ O modelo em produção para 2026 é o `n_poisson_ranking`.
 
 Vários arquivos em `data/`, `docs/csv/` e `data/outputs/` são gerados pelos scripts de treinamento e simulação:
 
-- draws do modelo: `data/outputs/models/*.npz`;
+- draws do modelo: `data/outputs/models/*.npz`, incluindo `draws_2026_<cutoff_date>_<model>.npz` por data de corte gerado por `analyze_matchup_events.py`;
 - JSON de simulação: `data/outputs/results/sim_results_*.json`;
 - dashboards: `data/outputs/dashboards/dashboard_*.html`;
 - tabelas públicas de probabilidades: `data/summary.csv`, `docs/csv/previsoes/partidas.csv`, `docs/csv/previsoes/summary.csv`, `docs/csv/previsoes/chaveamento_probs.csv` (snapshots versionados do chaveamento) e `docs/csv/previsoes/tabela_chances.csv` (snapshots versionados das probabilidades de avanço);

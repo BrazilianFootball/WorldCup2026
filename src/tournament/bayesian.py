@@ -262,6 +262,13 @@ class BayesianWorldCup2026(TournamentSimulator):
         self._last_pair_goals_cache: (
             dict[tuple[str, str], tuple[np.ndarray, np.ndarray]] | None
         ) = None
+        # Raw per-simulation team-index arrays for each knockout round, keyed
+        # by stage name. In each array (shape n_sim x k), consecutive pairs
+        # (0,1), (2,3), ... are the matches actually played in that round --
+        # this is what lets downstream analysis count specific matchups
+        # (e.g. "Spain vs France in the semifinal") instead of just per-team
+        # advancement probabilities. Populated by simulate().
+        self._last_stage_arrays: dict[str, np.ndarray] | None = None
 
         # Resolve WC group teams using the model's team list.
         self.groups: dict[str, list[str]] = {}
@@ -287,6 +294,19 @@ class BayesianWorldCup2026(TournamentSimulator):
     @property
     def last_pair_goals_cache(self) -> dict | None:
         return self._last_pair_goals_cache
+
+    @property
+    def last_stage_arrays(self) -> dict[str, np.ndarray] | None:
+        """Raw per-simulation team-index arrays from the last simulate() call.
+
+        Keys: "round_of_32", "round_of_16", "quarterfinals", "semifinals",
+        "final". Each array has shape (n_sim, k); consecutive pairs
+        (0, 1), (2, 3), ... are the matches played in that round. Indices
+        refer to positions in ``self._model.teams``. Use together with
+        ``src.analysis.matchup_events`` to count how often specific
+        matchups occur at a given stage.
+        """
+        return self._last_stage_arrays
 
     def _known_winner(self, t1: str, t2: str) -> str | None:
         """Return the already-decided winner of ``t1`` vs ``t2``, if known.
@@ -585,6 +605,14 @@ class BayesianWorldCup2026(TournamentSimulator):
         count_stage(fin, "finalists")
         champ = play_round(fin)
         count_stage(champ, "champion")
+
+        self._last_stage_arrays = {
+            "round_of_32": r32,
+            "round_of_16": r16,
+            "quarterfinals": qf,
+            "semifinals": sf,
+            "final": fin,
+        }
 
         # ── Build group-match and bracket DataFrames ─────────────────────────
         df_matches = pd.DataFrame(match_stats)

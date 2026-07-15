@@ -72,7 +72,37 @@ uv run python src/output/export.py --wc-results data/world_cup_results.csv
 uv run python -m src.model_sel.validate
 uv run python -m src.model_sel.evaluate_2018
 uv run python -m src.model_sel.evaluate_2022
+
+# 6. Treinar o modelo até uma data de corte e analisar confrontos simulados
+uv run python -m src.simulations.analyze_matchup_events --cutoff-date 2026-07-14
 ```
+
+## Análise de Confrontos
+
+`src/simulations/analyze_matchup_events.py` treina o modelo com os dados disponíveis até uma data de corte (`--cutoff-date`), simula o torneio `--n-sim` vezes (padrão 100 000) e reporta duas coisas:
+
+- **Frequência de eventos configuráveis**: uma lista `EVENTS` editável no topo do arquivo define confrontos a acompanhar em qualquer fase eliminatória (`round_of_32`, `round_of_16`, `quarterfinals`, `semifinals`, `final`). Um evento com um único par (ex.: Espanha x França) conta em quantas simulações esse confronto específico ocorreu naquela fase; um evento com múltiplos pares (ex.: Espanha x França **e** Inglaterra x Argentina) conta a ocorrência **conjunta** — as duas partidas na mesma simulação.
+- **Top N combinações mais prováveis por fase** (`--top-n`, padrão 3): para fases com mais de um jogo simultâneo (tudo antes da final), reporta a probabilidade **conjunta** de todos os jogos daquela fase acontecerem juntos na mesma simulação, não apenas cada confronto isoladamente. Para a final, que tem um único jogo, reduz-se a um ranking simples de confrontos.
+
+```bash
+uv run python -m src.simulations.analyze_matchup_events \
+  --cutoff-date 2026-07-14 \
+  --n-sim 100000 \
+  --top-n 3 \
+  --output-csv data/outputs/results/matchup_events.csv \
+  --top-matchups-csv data/outputs/results/top_matchups.csv
+```
+
+Exemplo de saída para a semifinal (uma linha = combinação conjunta dos dois jogos):
+
+```
+-- semifinals --
+  1. Spain vs France & England vs Argentina: 3.85% (3850/100000 simulações)
+  2. Spain vs France & Brazil vs Germany: 2.10% (2100/100000 simulações)
+  3. England vs Argentina & Brazil vs Germany: 1.42% (1420/100000 simulações)
+```
+
+Somente resultados conhecidos até a data de corte são tratados como fixos; tudo depois (mesmo partidas já disputadas na realidade após essa data) é simulado pelo modelo — útil para "voltar no tempo" a um ponto anterior do torneio. Modelos treinados por data de corte são cacheados em `data/outputs/models/draws_2026_<cutoff_date>_<model>.npz` e reaproveitados em execuções seguintes (use `--force-retrain` para forçar um novo treino).
 
 ## Site
 
