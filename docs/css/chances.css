@@ -1086,18 +1086,41 @@ color: #1e3a52;
 }
 
 @media (max-width: 920px) {
-    .ranking-content-row {
+    /* Makes the ranking panel control the order of all three sections */
+    #ranking-view.chances-view-panel.active {
         display: flex;
         flex-direction: column;
     }
 
+    /*
+    Removes the intermediate layout box, allowing its children
+    to participate directly in the flex layout of #ranking-view.
+    */
+    .ranking-content-row {
+        display: contents;
+    }
+
+    /* 1. Intro, controls and ranking table */
     .ranking-table-area {
         display: block;
         width: 100%;
+        order: 1;
     }
 
+    /* 2. Evolution chart */
+    #ranking-view > .chance-evolution-section {
+        width: 100%;
+        order: 2;
+        margin-top: 36px;
+    }
+
+    /* 3. Information sidebar */
     #ranking-view #barra-lateral-direita {
         width: 100%;
+        order: 3;
+        margin-top: 40px;
+        margin-left: 0;
+        padding: 0;
     }
 }
 
@@ -2126,7 +2149,7 @@ position: relative;
 
 @media (max-width: 768px) {
     .chance-evolution-chart-card {
-        padding: 8px 4px 4px;
+        padding: 0px;
         overflow: visible;
     }
 

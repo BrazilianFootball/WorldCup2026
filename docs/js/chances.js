@@ -695,11 +695,11 @@
 
     function formatEvolutionVersionTick(version) {
         const mobileLabels = {
-            'Antes da data FIFA': 'Antes da<br>data FIFA',
-            'Antes da Copa - pós data FIFA': 'Antes da Copa<br>pós data FIFA',
-            'Após 1ª rodada da fase de grupos': 'Após 1ª rodada<br>da fase de grupos',
-            'Após 2ª rodada da fase de grupos': 'Após 2ª rodada<br>da fase de grupos',
-            'Após a Fase de Grupos': 'Após a fase<br>de grupos',
+            'Antes da data FIFA': 'Antes<br>da data<br>FIFA',
+            'Antes da Copa - pós data FIFA': 'Pré-Copa<br>pós data<br> FIFA',
+            'Após 1ª rodada da fase de grupos': 'Após 1ª<br>rodada',
+            'Após 2ª rodada da fase de grupos': 'Após 2ª<br>rodada',
+            'Após a Fase de Grupos': 'Após<br>fase de<br>grupos',
             'Após os 16-Avos': 'Após<br>16-avos',
             'Após as Oitavas': 'Após<br>oitavas',
             'Após as Quartas': 'Após<br>quartas',
@@ -848,9 +848,9 @@
             annotations: mobileYAxisLabel,
             paper_bgcolor: 'rgba(0,0,0,0)',
             plot_bgcolor: '#ffffff',
-            height: isMobile ? 460 : 620,
+            height: isMobile ? 500 : 620,
             margin: isMobile
-                ? { t: 58, r: 8, b: 132, l: 34 }
+                ? { t: 50, r: 4, b: 90, l: 28 }
                 : { t: 24, r: 24, b: 100, l: 68 },
             hovermode: 'closest',
             font: {
@@ -884,7 +884,7 @@
 
                 tickangle: isMobile ? 0 : 20,
                 tickfont: {
-                    size: isMobile ? 11 : 12
+                    size: isMobile ? 9 : 12
                 },
 
                 automargin: true,
