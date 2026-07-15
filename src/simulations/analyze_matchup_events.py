@@ -229,7 +229,7 @@ def run(
     for stage in stages:
         stage_rows = df_top[df_top["stage"] == stage]
         print(f"\n-- {stage} --")
-        for _, row in stage_rows.iterrows():
+        for row in stage_rows.itertuples(index=False):
             print(
                 f"  {int(row.rank)}. {row.games}: "
                 f"{row.probability_pct:.2f}% "
