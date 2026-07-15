@@ -101,5 +101,5 @@ numero,fase,rodada,grupo,data,data_et,hora_et,data_brt,cidade,regiao,mandante_co
 100,Quartas de final,Mata-mata,,2026-07-11,2026-07-11,21:00,2026-07-11 22:00,Kansas City,Central,ARG,Argentina,SUI,Suíça,
 101,Semifinal,Mata-mata,,2026-07-14,2026-07-14,15:00,2026-07-14 16:00,Dallas,Central,FRA,França,ESP,Espanha,
 102,Semifinal,Mata-mata,,2026-07-15,2026-07-15,15:00,2026-07-15 16:00,Atlanta,Leste,ENG,Inglaterra,ARG,Argentina,
-103,Disputa de 3º lugar,Mata-mata,,2026-07-18,2026-07-18,17:00,2026-07-18 18:00,Miami,Leste,,Perdedor do jogo 101,,Perdedor do jogo 102,
+103,Disputa de 3º lugar,Mata-mata,,2026-07-18,2026-07-18,17:00,2026-07-18 18:00,Miami,Leste,FRA,França,,Perdedor do jogo 102,
 104,Final,Mata-mata,,2026-07-19,2026-07-19,15:00,2026-07-19 16:00,Nova York/Nova Jersey,Leste,,Vencedor do jogo 101,,Vencedor do jogo 102,
