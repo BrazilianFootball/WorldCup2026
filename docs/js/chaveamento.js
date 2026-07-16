@@ -356,7 +356,7 @@ const RND_LBL = {
     RL1:'Oitavas', RL2:'Oitavas', RL3:'Oitavas', RL4:'Oitavas',
     RR1:'Oitavas', RR2:'Oitavas', RR3:'Oitavas', RR4:'Oitavas',
     QL1:'Quartas', QL2:'Quartas', QR1:'Quartas', QR2:'Quartas',
-    SL:'Semifinal', SR:'Semifinal', F:'Final · 19 Jul', T:'3º Lugar · 19 Jul',
+    SL:'Semifinal', SR:'Semifinal', F:'Final · 19 Jul', T:'3º Lugar · 18 Jul',
 };
 
 // CSS class applied to path cards, controlling the top-stripe color
@@ -625,7 +625,7 @@ function buildThirdPlace() {
 
     const lbl = document.createElement('div');
     lbl.className = 'tp-lbl';
-    lbl.textContent = '3º LUGAR · 19/Jul · Miami';
+    lbl.textContent = '3º LUGAR · 18/Jul · Miami';
 
     const tmc = document.createElement('div');
     tmc.className = 'tmc';

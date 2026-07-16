@@ -36,11 +36,11 @@ const MATCHES_CSV_URL = 'csv/previsoes/partidas.csv';
 const SIMULATOR_CSV_URL = 'csv/previsoes/all_matchups.csv';
 const FLAGS_CSV_URL = 'images/flags/flag.csv';
 const SCORE_STAGES = [
-    {panelId: 'panel-r32',     groupValue: 'R32',       showFilters: true,  gridClass: 'scorecards-grid'},
-    {panelId: 'panel-oitavas', groupValue: 'oitavas',   showFilters: true,  gridClass: 'scorecards-grid'},
-    {panelId: 'panel-quartas', groupValue: 'quartas',   showFilters: true,  gridClass: 'scorecards-grid'},
-    {panelId: 'panel-semis',   groupValue: 'semifinais', showFilters: true,  gridClass: 'scorecards-grid scorecards-grid-two'},
-    {panelId: 'panel-final',   groupValue: 'final',     showFilters: false, gridClass: 'scorecards-grid scorecards-grid-two'}
+    {panelId: 'panel-r32',     groupValue: 'R32',       showFilters: true},
+    {panelId: 'panel-oitavas', groupValue: 'oitavas',   showFilters: true},
+    {panelId: 'panel-quartas', groupValue: 'quartas',   showFilters: true},
+    {panelId: 'panel-semis',   groupValue: 'semifinais', showFilters: true},
+    {panelId: 'panel-final',   groupValue: ['final', 'terceiro'],     showFilters: true}
 ];
 
 const NUMBER_WORDS = ['zero', 'one', 'two', 'three', 'four'];
@@ -758,7 +758,12 @@ function applyScoreFilters(panel) {
         if (!panel || !container) return;
         if (container.dataset.ready === '1') return;
 
-        const stageRows = GROUP_STAGE_ROWS.filter(r => /^[A-L]$/.test(String(r.group ?? '').trim()));
+        const stageRows = GROUP_STAGE_ROWS.filter(
+            r => /^[A-L]$/.test(String(r.group ?? '').trim()));
+        
+        const hideDesktopArrows = stageRows.length <= 4
+            ? 'hide-desktop-arrows'
+            : '';
 
         if (!window.ScoreCards?.renderScoreCardHTML || !window.ScoreCards?.getFlagGetterOnce) {
             container.innerHTML = '';
@@ -772,7 +777,7 @@ function applyScoreFilters(panel) {
         // <div class="section-title">Figurinhas</div> <div class="section-title">Gráficos Detalhados</div>
         container.innerHTML = `
             <div id="groups-stickers-view" class="groups-display-view">
-                <div class="stickers-carousel">
+                <div class="stickers-carousel ${hideDesktopArrows}">
                     <button class="scroll-btn left" onclick="this.nextElementSibling.scrollBy({left: -300, behavior: 'smooth'})">❮</button>
                     <div class="stickers-grid">
                         ${stickersCards}
@@ -1381,9 +1386,19 @@ function applyScoreFilters(panel) {
     }
 
     function renderScoreStage(stage, matchRows, getFlag) {
+        const acceptedGroups = Array.isArray(stage.groupValue)
+            ? stage.groupValue
+            : [stage.groupValue];
+
+        const normalizedGroups = acceptedGroups.map(normalizeName);
+
         const stageRows = matchRows.filter(row =>
-            normalizeName(getMatchGroup(row)) === normalizeName(stage.groupValue)
+            normalizedGroups.includes(normalizeName(getMatchGroup(row)))
         );
+
+        const hideDesktopArrows = stageRows.length <= 4
+            ? 'hide-desktop-arrows'
+            : '';
 
         // Se não houver partidas → mostrar placeholder automaticamente
         if (!stageRows.length) {
@@ -1405,7 +1420,7 @@ function applyScoreFilters(panel) {
 
         container.innerHTML = stickersCards || scorecards ? `
             <div class="score-stage-display-view score-stage-stickers-view">
-                <div class="stickers-carousel">
+                <div class="stickers-carousel ${hideDesktopArrows}">
                     <button class="scroll-btn left" onclick="this.nextElementSibling.scrollBy({left: -300, behavior: 'smooth'})">❮</button>
                     <div class="stickers-grid">
                         ${stickersCards}
@@ -1415,7 +1430,7 @@ function applyScoreFilters(panel) {
             </div>
 
             <div class="score-stage-display-view score-stage-charts-view" style="display: none;">
-                <div class="${stage.gridClass || 'scorecards-grid'}">
+                <div class="scorecards-grid">
                     ${scorecards}
                 </div>
             </div>

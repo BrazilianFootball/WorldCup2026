@@ -401,11 +401,6 @@ PROBABILIDADES DE PREVISÃO
     margin: 0 auto;
 }
 
-/* Grade com duas colunas para fases com menos jogos. (Quartas, Semi e Final) */
-.scorecards-grid.scorecards-grid-two {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
 /* Card de uma partida. */
 .match-card {
     border: 1px solid var(--soft-border);
@@ -686,8 +681,7 @@ PROBABILIDADES DE PREVISÃO
 
 /* Em telas menores, os cards de placar passam para uma coluna. */
 @media (max-width: 1180px) {
-    .scorecards-grid,
-    .scorecards-grid.scorecards-grid-two {
+    .scorecards-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
@@ -968,6 +962,12 @@ PROBABILIDADES DE PREVISÃO
     }
 }
 
+@media (min-width: 720px) {
+    .stickers-carousel.hide-desktop-arrows .scroll-btn {
+        display: none;
+    }
+}
+
 @media (max-width: 768px) {
     .dh {
         padding-left: 0;
@@ -1002,7 +1002,7 @@ PROBABILIDADES DE PREVISÃO
         text-align: center;
     }
 
-    .scorecards-grid, .scorecards-grid.scorecards-grid-two{
+    .scorecards-grid {
         grid-template-columns: 1fr;
     }
 
