@@ -66,6 +66,13 @@ img {
 .bold{
     font-weight: bold;
 }
+
+.novo {
+    margin-left: 8px;
+    color: red;
+    font-size: 0.85em;
+    font-weight: normal;
+}
 /* ============= CABEÇALHO =================*/
 header {
     padding: 30px 10% 0 10%;
