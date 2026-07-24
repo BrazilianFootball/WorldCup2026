@@ -1,6 +1,6 @@
 # Copa do Mundo 2026
 
-Modelagem preditiva, simulação, avaliação e assets de site estático para o projeto FIFA Copa do Mundo 2026, desenvolvido no contexto das atividades de previsão de futebol da EMAp/FGV.
+Modelagem preditiva, simulação, avaliação e assets de site estático para o projeto FIFA Copa do Mundo 2026, desenvolvido no contexto das atividades de previsão de futebol da EMAp/FGV. Veja o site em: https://brazilianfootball.github.io/WorldCup2026.
 
 O projeto estima a força das seleções nacionais a partir de resultados recentes de partidas internacionais e usa essas estimativas para simular torneios da Copa do Mundo. As principais saídas são:
 
