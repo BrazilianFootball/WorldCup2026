@@ -6,7 +6,7 @@ import pandas as pd
 from src.data import prepare_cycle_data
 
 # Create the output directory if it doesn't exist
-output_dir = "data/outputs/results"
+output_dir = "data/outputs/backtesting/results"
 os.makedirs(output_dir, exist_ok=True)
 
 # Load data with weights and dates

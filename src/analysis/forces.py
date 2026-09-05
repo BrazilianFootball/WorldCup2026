@@ -1,3 +1,5 @@
+import os
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -48,4 +50,5 @@ plt.ylabel("Seleção", fontsize=12)
 plt.grid(axis="x", linestyle="--", alpha=0.5)
 
 plt.tight_layout()
-plt.savefig("data/outputs/results/distribuicao_strength.png", dpi=150)
+os.makedirs("data/outputs/backtesting/results", exist_ok=True)
+plt.savefig("data/outputs/backtesting/results/distribuicao_strength.png", dpi=150)
