@@ -23,7 +23,7 @@ All imports use the `src.*` namespace (e.g., `from src.model.frequentist import 
 
 | Module | Key Symbols |
 | --- | --- |
-| `loader.py` | `get_data()`, `data_pipeline()` — Kaggle download and CSV refresh; `load_data()` — returns `(results, shootouts, goalscorers)` DataFrames; `prepare_cycle_data()` — builds the weighted training frame for Stan; `load_ranking_priors()` — loads normalized FIFA ranking priors; `resolve_team_name()` — fuzzy team-name resolution. |
+| `loader.py` | `get_data()`, `data_pipeline()` — Kaggle download and CSV refresh; `load_data()` — returns `(results, shootouts)` DataFrames; `prepare_cycle_data()` — builds the weighted training frame for Stan; `load_ranking_priors()` — loads normalized FIFA ranking priors; `resolve_team_name()` — fuzzy team-name resolution. |
 
 ## `src/model/`
 
