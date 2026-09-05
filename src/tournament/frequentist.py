@@ -27,11 +27,17 @@ from src.tournament.base import GroupStanding, TournamentResult, TournamentSimul
 
 
 class WorldCup2026(TournamentSimulator):
-    """Simulate the FIFA World Cup 2026 tournament (frequentist parameterization)."""
+    """Simulate a 48-team, 12-group World-Cup-2026-shaped tournament.
 
-    _THIRD_SLOTS: list[tuple[int, str]] = [
-        (i, sb) for i, (_, sb) in enumerate(ROUND_OF_32_FIXED) if sb.startswith("3_")
-    ]
+    Defaults to the actual FIFA World Cup 2026 groups and bracket, but every
+    competition-specific piece (groups, host teams/boost, round-of-32 slots,
+    and the knockout pairings for each later round) can be overridden via the
+    constructor so the same 48-team/12-group/32-team-knockout *shape* can be
+    reused for a differently-drawn competition. A competition with a
+    different team count or bracket depth (e.g. a 24-team Euro) is not
+    supported by this class -- its bracket-resolution logic is written for
+    exactly this shape.
+    """
 
     _SERIES_CHUNK = 512
 
@@ -41,10 +47,37 @@ class WorldCup2026(TournamentSimulator):
         seed: int = 42,
         known_results: dict[tuple[str, str], tuple[int, int]] | None = None,
         host_boost: float = DEFAULT_HOST_BOOST,
+        groups: dict[str, list[str]] | None = None,
+        host_teams: set[str] | None = None,
+        round_of_32_fixed: list[tuple[str, str]] | None = None,
+        round_of_16_pairs: list[tuple[int, int]] | None = None,
+        quarterfinal_pairs: list[tuple[int, int]] | None = None,
+        semifinal_pairs: list[tuple[int, int]] | None = None,
+        max_goals: int = MAX_GOALS,
     ) -> None:
         self.rng = np.random.default_rng(seed)
         self._host_boost = host_boost
         self._strength_row: int | None = None
+
+        groups = GROUPS if groups is None else groups
+        host_teams = HOST_TEAMS if host_teams is None else host_teams
+        self._round_of_32_fixed = (
+            ROUND_OF_32_FIXED if round_of_32_fixed is None else round_of_32_fixed
+        )
+        self._round_of_16_pairs = (
+            ROUND_OF_16_PAIRS if round_of_16_pairs is None else round_of_16_pairs
+        )
+        self._quarterfinal_pairs = (
+            QUARTERFINAL_PAIRS if quarterfinal_pairs is None else quarterfinal_pairs
+        )
+        self._semifinal_pairs = (
+            SEMIFINAL_PAIRS if semifinal_pairs is None else semifinal_pairs
+        )
+        self._third_slots: list[tuple[int, str]] = [
+            (i, sb)
+            for i, (_, sb) in enumerate(self._round_of_32_fixed)
+            if sb.startswith("3_")
+        ]
 
         if isinstance(params, TournamentParamsSeries):
             self.fixed_params: TournamentModelParams | None = None
@@ -56,7 +89,7 @@ class WorldCup2026(TournamentSimulator):
             universe = params.teams
 
         self.groups: dict[str, list[str]] = {}
-        for gname, teams in GROUPS.items():
+        for gname, teams in groups.items():
             self.groups[gname] = [resolve_team_name(t, universe) for t in teams]
 
         self.all_teams: list[str] = []
@@ -69,7 +102,7 @@ class WorldCup2026(TournamentSimulator):
         self._third_cache: dict[frozenset[str], dict[int, str]] = {}
 
         self._host_indices: set[int] = set()
-        for ht in HOST_TEAMS:
+        for ht in host_teams:
             try:
                 resolved = resolve_team_name(ht, universe)
                 self._host_indices.add(self._team_idx[resolved])
@@ -86,14 +119,15 @@ class WorldCup2026(TournamentSimulator):
                 self._known[(ia, ib)] = (sa, sb)
                 self._known[(ib, ia)] = (sb, sa)
 
-        self._mg = MAX_GOALS + 1
+        self._max_goals = max_goals
+        self._mg = max_goals + 1
         self._mg2 = self._mg * self._mg
 
         if self.series_params is not None:
             if list(self.series_params.team_order) != self.all_teams:
                 raise ValueError(
                     "TournamentParamsSeries.team_order must equal the resolved "
-                    "World Cup list WorldCup2026.all_teams (same order as GROUPS)."
+                    "World Cup list WorldCup2026.all_teams (same order as groups)."
                 )
             self._flat_probs = None
             self._flat_probs_et = None
@@ -122,6 +156,7 @@ class WorldCup2026(TournamentSimulator):
         hb = self._host_boost
         hi = self._host_indices
         fp = self.fixed_params
+        mg = self._max_goals
         for i in range(nt):
             for j in range(i + 1, nt):
                 ti, tj = self.all_teams[i], self.all_teams[j]
@@ -129,22 +164,28 @@ class WorldCup2026(TournamentSimulator):
                 j_host = j in hi and i not in hi
 
                 if i_host:
-                    p = fp.match_probs(ti, tj, home_boost=hb)
-                    pe = fp.match_probs(ti, tj, home_boost=hb, lambda_scale=1 / 3)
+                    p = fp.match_probs(ti, tj, home_boost=hb, max_goals=mg)
+                    pe = fp.match_probs(
+                        ti, tj, home_boost=hb, max_goals=mg, lambda_scale=1 / 3
+                    )
                     self._flat_probs[i, j] = p.ravel()
                     self._flat_probs[j, i] = p.T.ravel()
                     self._flat_probs_et[i, j] = pe.ravel()
                     self._flat_probs_et[j, i] = pe.T.ravel()
                 elif j_host:
-                    p = fp.match_probs(tj, ti, home_boost=hb)
-                    pe = fp.match_probs(tj, ti, home_boost=hb, lambda_scale=1 / 3)
+                    p = fp.match_probs(tj, ti, home_boost=hb, max_goals=mg)
+                    pe = fp.match_probs(
+                        tj, ti, home_boost=hb, max_goals=mg, lambda_scale=1 / 3
+                    )
                     self._flat_probs[j, i] = p.ravel()
                     self._flat_probs[i, j] = p.T.ravel()
                     self._flat_probs_et[j, i] = pe.ravel()
                     self._flat_probs_et[i, j] = pe.T.ravel()
                 else:
-                    p = fp.match_probs(ti, tj, neutral=True)
-                    pe = fp.match_probs(ti, tj, neutral=True, lambda_scale=1 / 3)
+                    p = fp.match_probs(ti, tj, neutral=True, max_goals=mg)
+                    pe = fp.match_probs(
+                        ti, tj, neutral=True, max_goals=mg, lambda_scale=1 / 3
+                    )
                     self._flat_probs[i, j] = p.ravel()
                     self._flat_probs[j, i] = p.T.ravel()
                     self._flat_probs_et[i, j] = pe.ravel()
@@ -171,18 +212,18 @@ class WorldCup2026(TournamentSimulator):
             gamma = effective_home_gamma_vec(he_c, True, hb)
             hl = attack_c[:, ia] * defense_c[:, ib] * gamma * lambda_scale
             al = attack_c[:, ib] * defense_c[:, ia] * lambda_scale
-            m = score_probability_matrix_batched(hl, al, rho_c, MAX_GOALS)
+            m = score_probability_matrix_batched(hl, al, rho_c, self._max_goals)
             return m.reshape(m.shape[0], -1)
         if j_host:
             gamma = effective_home_gamma_vec(he_c, True, hb)
             hl = attack_c[:, ib] * defense_c[:, ia] * gamma * lambda_scale
             al = attack_c[:, ia] * defense_c[:, ib] * lambda_scale
-            m = score_probability_matrix_batched(hl, al, rho_c, MAX_GOALS)
+            m = score_probability_matrix_batched(hl, al, rho_c, self._max_goals)
             m = np.transpose(m, (0, 2, 1))
             return m.reshape(m.shape[0], -1)
         hl = attack_c[:, ia] * defense_c[:, ib] * lambda_scale
         al = attack_c[:, ib] * defense_c[:, ia] * lambda_scale
-        m = score_probability_matrix_batched(hl, al, rho_c, MAX_GOALS)
+        m = score_probability_matrix_batched(hl, al, rho_c, self._max_goals)
         return m.reshape(m.shape[0], -1)
 
     def _sample_from_probs_rows(self, flat: np.ndarray, mg2: int) -> np.ndarray:
@@ -259,12 +300,12 @@ class WorldCup2026(TournamentSimulator):
         key = frozenset(thirds.keys())
         if key not in self._third_cache:
             self._third_cache[key] = self._match_thirds(
-                self._THIRD_SLOTS, set(thirds.keys())
+                self._third_slots, set(thirds.keys())
             )
         assignment = self._third_cache[key]
 
         matchups: list[tuple[int, int]] = []
-        for i, (sa, sb) in enumerate(ROUND_OF_32_FIXED):
+        for i, (sa, sb) in enumerate(self._round_of_32_fixed):
             a = winners[sa[1]] if sa[0] == "1" else runners[sa[1]]
             if sb.startswith("3_"):
                 b = thirds[assignment[i]]
@@ -387,16 +428,12 @@ class WorldCup2026(TournamentSimulator):
         best_thirds = self._pick_best_thirds(standings)
         third_group_to_team: dict[str, str] = dict(best_thirds)
 
-        third_slots: list[tuple[int, str]] = [
-            (i, slot_b)
-            for i, (_, slot_b) in enumerate(ROUND_OF_32_FIXED)
-            if slot_b.startswith("3_")
-        ]
-
-        assignment = self._match_thirds(third_slots, set(third_group_to_team.keys()))
+        assignment = self._match_thirds(
+            self._third_slots, set(third_group_to_team.keys())
+        )
 
         matchups: list[tuple[str, str]] = []
-        for i, (slot_a, slot_b) in enumerate(ROUND_OF_32_FIXED):
+        for i, (slot_a, slot_b) in enumerate(self._round_of_32_fixed):
             team_a = self._resolve_simple_slot(slot_a, winners, runners)
             if slot_b.startswith("3_"):
                 assigned_group = assignment[i]
@@ -495,19 +532,19 @@ class WorldCup2026(TournamentSimulator):
             result[t] = 2
 
         r16_winners = []
-        for ia, ib in ROUND_OF_16_PAIRS:
+        for ia, ib in self._round_of_16_pairs:
             w = self._simulate_knockout_match(r32_winners[ia], r32_winners[ib])
             r16_winners.append(w)
             result[w] = 3
 
         qf_winners = []
-        for ia, ib in QUARTERFINAL_PAIRS:
+        for ia, ib in self._quarterfinal_pairs:
             w = self._simulate_knockout_match(r16_winners[ia], r16_winners[ib])
             qf_winners.append(w)
             result[w] = 4
 
         sf_winners = []
-        for ia, ib in SEMIFINAL_PAIRS:
+        for ia, ib in self._semifinal_pairs:
             w = self._simulate_knockout_match(qf_winners[ia], qf_winners[ib])
             sf_winners.append(w)
             result[w] = 5
@@ -655,7 +692,7 @@ class WorldCup2026(TournamentSimulator):
                     r32w[a],
                     r32w[b],
                 )
-                for a, b in ROUND_OF_16_PAIRS
+                for a, b in self._round_of_16_pairs
             ]
             for x in r16w:
                 qf_c[x] += 1
@@ -670,7 +707,7 @@ class WorldCup2026(TournamentSimulator):
                     r16w[a],
                     r16w[b],
                 )
-                for a, b in QUARTERFINAL_PAIRS
+                for a, b in self._quarterfinal_pairs
             ]
             for x in qfw:
                 sf_c[x] += 1
@@ -685,7 +722,7 @@ class WorldCup2026(TournamentSimulator):
                     qfw[a],
                     qfw[b],
                 )
-                for a, b in SEMIFINAL_PAIRS
+                for a, b in self._semifinal_pairs
             ]
             for x in sfw:
                 final_c[x] += 1
@@ -816,15 +853,19 @@ class WorldCup2026(TournamentSimulator):
             for x in r32w:
                 r16_c[x] += 1
 
-            r16w = [self._ko(r32w[a], r32w[b], sim=sim) for a, b in ROUND_OF_16_PAIRS]
+            r16w = [
+                self._ko(r32w[a], r32w[b], sim=sim) for a, b in self._round_of_16_pairs
+            ]
             for x in r16w:
                 qf_c[x] += 1
 
-            qfw = [self._ko(r16w[a], r16w[b], sim=sim) for a, b in QUARTERFINAL_PAIRS]
+            qfw = [
+                self._ko(r16w[a], r16w[b], sim=sim) for a, b in self._quarterfinal_pairs
+            ]
             for x in qfw:
                 sf_c[x] += 1
 
-            sfw = [self._ko(qfw[a], qfw[b], sim=sim) for a, b in SEMIFINAL_PAIRS]
+            sfw = [self._ko(qfw[a], qfw[b], sim=sim) for a, b in self._semifinal_pairs]
             for x in sfw:
                 final_c[x] += 1
 
