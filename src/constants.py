@@ -160,6 +160,16 @@ TEAM_NAME_MAP: dict[str, str] = {
 }
 
 # ──────────────────────────────────────────────
+# Historical backtest cycles (32-team format), shared by
+# src/simulations/sim_2018.py, sim_2022.py, and src/model_sel/evaluate_*.py.
+# ──────────────────────────────────────────────
+
+CYCLE_CUTOFFS: dict[int, tuple[str, str]] = {
+    2018: ("2014-06-11", "2018-06-13"),
+    2022: ("2018-06-13", "2022-11-20"),
+}
+
+# ──────────────────────────────────────────────
 # Round-of-32 fixed slots (FIFA regulations)
 # 1X = winner of group X, 2X = runner-up of group X
 # 3{...} = best 3rd-place from one of the listed groups
