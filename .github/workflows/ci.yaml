@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install uv
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: Install Python
+        run: uv python install
+
+      - name: Install dependencies
+        run: uv sync --extra dev
+
+      # `make check` also runs `ruff check` on notebooks/ and `mypy` on src/,
+      # both of which currently fail on main for reasons unrelated to any
+      # given PR (see #19). Once those are fixed, switch this step to
+      # `make check` to cover them too.
+      - name: Lint (ruff)
+        run: uv run ruff check src/
+
+      - name: Run tests
+        run: uv run pytest
