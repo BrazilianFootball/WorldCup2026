@@ -3,10 +3,11 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 
+from src.constants import CYCLE_CUTOFFS
 from src.data import prepare_cycle_data
 
 _, teams_26, _ = prepare_cycle_data(
-    "data/raw/results.csv", "2022-11-19", apply_decay=True
+    "data/raw/results.csv", CYCLE_CUTOFFS[2026][0], apply_decay=True
 )
 npz_path = "data/outputs/models/draws_2026_n_poisson_ranking.npz"
 stan_data = np.load(npz_path)

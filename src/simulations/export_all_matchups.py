@@ -6,7 +6,12 @@ from pathlib import Path
 
 import pandas as pd
 
-from src.constants import ALL_MATCHUPS_EXPORT_COLS, GROUPS, PARTIDAS_EXPORT_COLS
+from src.constants import (
+    ALL_MATCHUPS_EXPORT_COLS,
+    CYCLE_CUTOFFS,
+    GROUPS,
+    PARTIDAS_EXPORT_COLS,
+)
 from src.data import prepare_cycle_data
 from src.model.bayesian import BayesianDixonColesModel
 from src.simulations.utils import build_all_matchups_dataframe_mc
@@ -19,7 +24,7 @@ PARTIDAS_PATH = Path("docs/csv/previsoes/partidas.csv")
 
 if __name__ == "__main__":
     _, teams_26, _ = prepare_cycle_data(
-        "data/results.csv", "2022-11-19", apply_decay=True
+        "data/results.csv", CYCLE_CUTOFFS[2026][0], apply_decay=True
     )
     model = BayesianDixonColesModel(f"data/outputs/models/{MODEL_NAME}")
     atk, dfn, rho, et = _sample_posterior(
