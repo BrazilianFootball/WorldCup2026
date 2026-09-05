@@ -52,8 +52,8 @@ Entry points for the full pipeline. Run as modules with `uv run python -m src.si
 | `train_2026.py` | Compiles Stan models and trains the 2026 posterior in parallel; saves draws to `data/outputs/models/draws_2026_n_poisson_ranking.npz`. |
 | `sim_2026.py` | Loads saved draws, runs 100 000 simulations, and writes `data/outputs/results/sim_results_2026.json`, `docs/csv/previsoes/summary.csv`, `docs/csv/previsoes/partidas.csv`, `docs/csv/previsoes/chaveamento_probs.csv`, `docs/csv/previsoes/all_matchups.csv`, `docs/csv/previsoes/tabela_chances.csv`, and `data/outputs/dashboards/dashboard_2026.html`. |
 | `export_all_matchups.py` | Standalone export of all-vs-all match probability tables. |
-| `sim_2022.py`, `sim_2018.py` | Historical simulation entry points for 2022 and 2018. |
-| `utils.py` | `build_all_matchups_dataframe_mc()` — Monte Carlo all-vs-all match probability builder. |
+| `run_cycle.py` | Generic CLI for every 32-team/8-group tournament cycle (`python -m src.simulations.run_cycle {wc2018,wc2022,wwc2027} [--n-sim N]`) — one script plus a `COMPETITIONS` registry instead of one file per competition. Backtest cycles (`wc2018`, `wc2022`) delegate to `run_backtest_simulation()`; placeholder cycles (`wwc2027`, not yet real -- see its `placeholder_note`) simulate with uniform team strength and only print a summary. |
+| `utils.py` | `run_backtest_simulation()` — shared backtest pipeline for a completed 32-team cycle. `simulate_world_cup_2022()` — the 32-team/8-group Monte Carlo bracket engine reused by `run_cycle.py`. `build_all_matchups_dataframe_mc()` — Monte Carlo all-vs-all match probability builder. |
 
 ## `src/model_sel/`
 

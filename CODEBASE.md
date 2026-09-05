@@ -76,8 +76,8 @@ Constantes centrais: caminhos de dados, pesos do torneio, grupos de 2026, regras
 | `sim_2026.py` | Executa 100 000 simulações do torneio a partir dos draws salvos; gera JSON, CSVs e dashboard. |
 | `analyze_matchup_events.py` | Treina o modelo até uma data de corte (`--cutoff-date`), simula o torneio e reporta (1) a frequência de eventos configuráveis em `EVENTS` (confrontos específicos ou conjuntos por fase) e (2) as top-N combinações de jogos mais prováveis por fase (`--top-n`), com probabilidade conjunta para fases com mais de uma partida simultânea. |
 | `export_all_matchups.py` | Exporta tabelas de probabilidade de todos os confrontos possíveis. |
-| `sim_2022.py`, `sim_2018.py` | Pontos de entrada de simulação histórica para 2022 e 2018. |
-| `utils.py` | `build_all_matchups_dataframe_mc()` — probabilidades Monte Carlo de todos os confrontos. |
+| `run_cycle.py` | CLI genérica para qualquer ciclo de 32 times/8 grupos (`python -m src.simulations.run_cycle {wc2018,wc2022,wwc2027} [--n-sim N]`) — um script só, com um registro `COMPETITIONS`, em vez de um arquivo por competição. Ciclos de backtest (`wc2018`, `wc2022`) delegam para `run_backtest_simulation()`; ciclos provisórios (`wwc2027`, ainda não real — ver `placeholder_note`) simulam com força uniforme e só imprimem um resumo. |
+| `utils.py` | `run_backtest_simulation()` — pipeline compartilhado de backtest para um ciclo de 32 times já encerrado. `simulate_world_cup_2022()` — motor Monte Carlo de bracket 32 times/8 grupos reaproveitado por `run_cycle.py`. `build_all_matchups_dataframe_mc()` — probabilidades Monte Carlo de todos os confrontos. |
 
 ### `src/model_sel/`
 

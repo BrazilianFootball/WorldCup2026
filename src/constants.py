@@ -160,6 +160,55 @@ TEAM_NAME_MAP: dict[str, str] = {
 }
 
 # ──────────────────────────────────────────────
+# Historical backtest cycles (32-team format), shared by
+# src/simulations/run_cycle.py and src/model_sel/evaluate_*.py.
+# ──────────────────────────────────────────────
+
+CYCLE_CUTOFFS: dict[int, tuple[str, str]] = {
+    2018: ("2014-06-11", "2018-06-13"),
+    2022: ("2018-06-13", "2022-11-20"),
+}
+
+GROUPS_2018: dict[str, list[str]] = {
+    "A": ["Russia", "Saudi Arabia", "Egypt", "Uruguay"],
+    "B": ["Portugal", "Spain", "Morocco", "Iran"],
+    "C": ["France", "Australia", "Peru", "Denmark"],
+    "D": ["Argentina", "Iceland", "Croatia", "Nigeria"],
+    "E": ["Brazil", "Switzerland", "Costa Rica", "Serbia"],
+    "F": ["Germany", "Mexico", "Sweden", "South Korea"],
+    "G": ["Belgium", "Panama", "Tunisia", "England"],
+    "H": ["Poland", "Senegal", "Colombia", "Japan"],
+}
+
+GROUPS_2022: dict[str, list[str]] = {
+    "A": ["Qatar", "Ecuador", "Senegal", "Netherlands"],
+    "B": ["England", "Iran", "United States", "Wales"],
+    "C": ["Argentina", "Saudi Arabia", "Mexico", "Poland"],
+    "D": ["France", "Australia", "Denmark", "Tunisia"],
+    "E": ["Spain", "Costa Rica", "Germany", "Japan"],
+    "F": ["Belgium", "Canada", "Morocco", "Croatia"],
+    "G": ["Brazil", "Serbia", "Switzerland", "Cameroon"],
+    "H": ["Portugal", "Ghana", "Uruguay", "South Korea"],
+}
+
+# Dashboard labels use public-facing stage names.
+STAGE_LABELS_2018: dict[str, str] = {
+    "avancou_grupos": "Oitavas de Final",
+    "quarter_finalists": "Quartas de Final",
+    "semi_finalists": "Semifinais",
+    "finalists": "Finalistas",
+    "champion": "Campeão",
+}
+
+STAGE_LABELS_2022: dict[str, str] = {
+    "avancou_grupos": "Fase de Grupos",
+    "quarter_finalists": "Oitavas",
+    "semi_finalists": "Quartas",
+    "finalists": "Semis",
+    "champion": "Campeão",
+}
+
+# ──────────────────────────────────────────────
 # PROVISIONAL -- 2027 FIFA Women's World Cup (Brazil, 24 Jun-25 Jul 2027).
 # 32 teams, 8 groups of 4, top 2 per group advance straight to the round of
 # 16 (same bracket shape as the pre-2026 men's World Cup / simulate_world_
@@ -183,6 +232,14 @@ GROUPS_WWC2027_PLACEHOLDER: dict[str, list[str]] = {
     "F": ["Algeria", "Morocco", "TBD 9", "TBD 10"],
     "G": ["Cameroon", "Malawi", "TBD 11", "TBD 12"],
     "H": ["Denmark", "Philippines", "TBD 13", "TBD 14"],
+}
+
+STAGE_LABELS_WWC2027: dict[str, str] = {
+    "avancou_grupos": "Fase de Grupos",
+    "quarter_finalists": "Oitavas de Final",
+    "semi_finalists": "Quartas de Final",
+    "finalists": "Semifinais",
+    "champion": "Campeã",
 }
 
 # ──────────────────────────────────────────────

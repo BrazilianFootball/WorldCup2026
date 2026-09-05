@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import gc
+import json
+import os
 from itertools import combinations
 from pathlib import Path
 
@@ -15,6 +17,9 @@ from src.constants import (
     PARTIDAS_EXPORT_COLS,
     TEAM_MAP_EN_TO_PT,
 )
+from src.data import prepare_cycle_data
+from src.model.bayesian import load_draws
+from src.output import generate_dashboard
 from src.tournament.bayesian import (
     _aggregate_batch_probs,
     _load_schedule_orientations,
@@ -233,3 +238,76 @@ def simulate_world_cup_2022(
     count_stage(champ, "champion")
 
     return {stage: stats[stage] / n_sim for stage in stats}
+
+
+def run_backtest_simulation(
+    year: int,
+    groups: dict[str, list[str]],
+    cutoff_start: str,
+    cutoff_end: str,
+    stage_labels: dict[str, str],
+    dashboard_title: str,
+    csv_path: str = "data/raw/results.csv",
+    model_name: str | None = None,
+    output_dir: str = "data/outputs",
+    n_sim: int = 100_000,
+) -> Path:
+    """Backtest a historical (32-team) World Cup cycle and render its dashboard.
+
+    Shared by the wc2018/wc2022 entries in run_cycle.py's COMPETITIONS
+    registry, which only differ in the year, groups, training cutoff dates,
+    and dashboard labels/title passed in here.
+
+    Results/dashboards are written under ``{output_dir}/backtesting/`` (kept
+    separate from the live competition's outputs), while the trained model
+    is still looked up in the shared ``{output_dir}/models/``.
+    """
+    backtest_dir = f"{output_dir}/backtesting"
+    os.makedirs(f"{backtest_dir}/results", exist_ok=True)
+    os.makedirs(f"{backtest_dir}/dashboards", exist_ok=True)
+
+    print(f"\n--- SIMULANDO {year} ---")
+
+    # Rebuild the team order used when the model for this cycle was trained.
+    _, teams, _ = prepare_cycle_data(
+        csv_path, cutoff_start, cutoff_end, apply_decay=True
+    )
+
+    if model_name is None:
+        model_name = f"draws_{year}_n_poisson_ranking.npz"
+    model_path = f"{output_dir}/models/{model_name}"
+    print(f"Carregando: {model_path}")
+    draws = load_draws(model_path)
+
+    probs = simulate_world_cup_2022(draws, teams, groups, n_sim=n_sim)
+
+    # Dashboard generator expects probabilities grouped by stage.
+    json_output = {
+        stage: [
+            {"team": teams[i], "probability": probs[stage][i]}
+            for i in range(len(teams))
+        ]
+        for stage in probs
+    }
+
+    results_path = f"{backtest_dir}/results/sim_results_{year}.json"
+    with open(results_path, "w") as f:
+        json.dump(json_output, f)
+
+    participants = {
+        team for teams_in_group in groups.values() for team in teams_in_group
+    }
+
+    dashboard_path = f"{backtest_dir}/dashboards/dashboard_{year}.html"
+    generate_dashboard(
+        results_path,
+        dashboard_path,
+        stage_labels,
+        participants,
+        8,
+        dashboard_title,
+        model_name,
+    )
+
+    print(f"Sucesso! Dashboard gerado em {dashboard_path}")
+    return Path(dashboard_path)
