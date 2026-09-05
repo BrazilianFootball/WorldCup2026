@@ -19,9 +19,6 @@ from src.constants import (
     PARTIDAS_EXPORT_COLS,
     PARTIDAS_SCORE_COLS,
     PHASE_LABELS,
-    QUARTERFINAL_PAIRS,
-    ROUND_OF_16_PAIRS,
-    SEMIFINAL_PAIRS,
     TEAM_MAP_EN_TO_PT,
 )
 from src.data import detect_phase, load_wc_results
@@ -83,19 +80,19 @@ def get_phase_matchups(
         return [(a, b, "") for a, b in r32]
 
     r32w = _get_ko_winners(r32, known)
-    r16 = [(r32w[a], r32w[b]) for a, b in ROUND_OF_16_PAIRS]
+    r16 = [(r32w[a], r32w[b]) for a, b in wc._round_of_16_pairs]
 
     if phase == "round_of_16":
         return [(a, b, "") for a, b in r16]
 
     r16w = _get_ko_winners(r16, known)
-    qf = [(r16w[a], r16w[b]) for a, b in QUARTERFINAL_PAIRS]
+    qf = [(r16w[a], r16w[b]) for a, b in wc._quarterfinal_pairs]
 
     if phase == "quarterfinals":
         return [(a, b, "") for a, b in qf]
 
     qfw = _get_ko_winners(qf, known)
-    sf = [(qfw[a], qfw[b]) for a, b in SEMIFINAL_PAIRS]
+    sf = [(qfw[a], qfw[b]) for a, b in wc._semifinal_pairs]
 
     if phase == "semifinals":
         return [(a, b, "") for a, b in sf]
