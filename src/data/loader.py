@@ -291,15 +291,13 @@ def data_pipeline() -> None:
     results[results["date"] >= "2014-06-11"].to_csv(DATA_DIR / "results.csv", index=False)
 
 
-def load_data() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+def load_data() -> tuple[pd.DataFrame, pd.DataFrame]:
     results_path = DATA_DIR / "results.csv"
     shootouts_path = DATA_DIR / "shootouts.csv"
-    goalscorers_path = DATA_DIR / "goalscorers.csv"
 
-    if not all(p.is_file() for p in (results_path, shootouts_path, goalscorers_path)):
+    if not all(p.is_file() for p in (results_path, shootouts_path)):
         data_pipeline()
 
     results = pd.read_csv(results_path, parse_dates=["date"])
     shootouts = pd.read_csv(shootouts_path, parse_dates=["date"])
-    goalscorers = pd.read_csv(goalscorers_path, parse_dates=["date"])
-    return results, shootouts, goalscorers
+    return results, shootouts

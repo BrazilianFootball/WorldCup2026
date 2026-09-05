@@ -131,7 +131,7 @@ COLUMNS = [
 # Kaggle dataset
 # ──────────────────────────────────────────────
 KAGGLE_DATASET = "martj42/international-football-results-from-1872-to-2017"
-DATASET_FILES = ("results.csv", "shootouts.csv", "goalscorers.csv")
+DATASET_FILES = ("results.csv", "shootouts.csv")
 
 # ──────────────────────────────────────────────
 # Groups (draw Dec 5 2025 + playoffs Mar 31 2026)
