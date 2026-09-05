@@ -19,7 +19,7 @@ def evaluate_brier(
     results_file: str | None = None,
     csv_path: str = "data/raw/results.csv",
     models_dir: str = "data/outputs/models/",
-    output_dir: str = "data/outputs/results",
+    output_dir: str = "data/outputs/backtesting/results",
 ) -> pd.DataFrame | None:
     """Evaluate every saved posterior-draw model for one historical cycle.
 
