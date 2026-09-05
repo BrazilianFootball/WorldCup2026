@@ -76,7 +76,9 @@ class TestRunBacktestSimulation:
             n_sim=200,
         )
 
-        results_path = tmp_path / "outputs" / "results" / "sim_results_2018.json"
+        results_path = (
+            tmp_path / "outputs" / "backtesting" / "results" / "sim_results_2018.json"
+        )
         assert results_path.exists()
         with open(results_path) as f:
             results = json.load(f)
@@ -96,9 +98,8 @@ class TestRunBacktestSimulation:
         champion_total = sum(e["probability"] for e in results["champion"])
         assert champion_total == pytest.approx(1.0)
 
-        assert (
-            dashboard_path
-            == tmp_path / "outputs" / "dashboards" / "dashboard_2018.html"
+        assert dashboard_path == (
+            tmp_path / "outputs" / "backtesting" / "dashboards" / "dashboard_2018.html"
         )
         assert dashboard_path.exists()
         html = dashboard_path.read_text(encoding="utf-8")

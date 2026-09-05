@@ -256,9 +256,14 @@ def run_backtest_simulation(
 
     Shared by sim_2018.py/sim_2022.py, which only differ in the year, groups,
     training cutoff dates, and dashboard labels/title passed in here.
+
+    Results/dashboards are written under ``{output_dir}/backtesting/`` (kept
+    separate from the live competition's outputs), while the trained model
+    is still looked up in the shared ``{output_dir}/models/``.
     """
-    os.makedirs(f"{output_dir}/results", exist_ok=True)
-    os.makedirs(f"{output_dir}/dashboards", exist_ok=True)
+    backtest_dir = f"{output_dir}/backtesting"
+    os.makedirs(f"{backtest_dir}/results", exist_ok=True)
+    os.makedirs(f"{backtest_dir}/dashboards", exist_ok=True)
 
     print(f"\n--- SIMULANDO {year} ---")
 
@@ -284,7 +289,7 @@ def run_backtest_simulation(
         for stage in probs
     }
 
-    results_path = f"{output_dir}/results/sim_results_{year}.json"
+    results_path = f"{backtest_dir}/results/sim_results_{year}.json"
     with open(results_path, "w") as f:
         json.dump(json_output, f)
 
@@ -292,7 +297,7 @@ def run_backtest_simulation(
         team for teams_in_group in groups.values() for team in teams_in_group
     }
 
-    dashboard_path = f"{output_dir}/dashboards/dashboard_{year}.html"
+    dashboard_path = f"{backtest_dir}/dashboards/dashboard_{year}.html"
     generate_dashboard(
         results_path,
         dashboard_path,
