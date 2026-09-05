@@ -161,9 +161,11 @@ TEAM_NAME_MAP: dict[str, str] = {
 
 # ──────────────────────────────────────────────
 # National-team competition cycles: training cutoff dates shared by
-# src/simulations/sim_2018.py, sim_2022.py, sim_2026.py, train_2026.py, and
-# src/model_sel/evaluate_*.py/validate.py. A cycle's end date is None while
-# it's still live (train against REFERENCE_DATE instead of a fixed date).
+# src/simulations/{sim_2018,sim_2022,sim_2026,train_2026,
+# analyze_matchup_events,export_all_matchups}.py, src/analysis/{weights,
+# forces}.py, and src/model_sel/{evaluate_*,validate}.py. A cycle's end
+# date is None while it's still live (train against REFERENCE_DATE instead
+# of a fixed date).
 # ──────────────────────────────────────────────
 
 CYCLE_CUTOFFS: dict[int, tuple[str, str | None]] = {

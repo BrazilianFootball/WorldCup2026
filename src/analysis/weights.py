@@ -3,6 +3,7 @@ import os
 import matplotlib.pyplot as plt
 import pandas as pd
 
+from src.constants import CYCLE_CUTOFFS
 from src.data import prepare_cycle_data
 
 # Create the output directory if it doesn't exist
@@ -11,7 +12,7 @@ os.makedirs(output_dir, exist_ok=True)
 
 # Load data with weights and dates
 df_cycle, _, _ = prepare_cycle_data(
-    "data/raw/results.csv", "2022-11-19", apply_decay=True
+    "data/raw/results.csv", CYCLE_CUTOFFS[2026][0], apply_decay=True
 )
 
 # Convert date column to datetime type and set it as index

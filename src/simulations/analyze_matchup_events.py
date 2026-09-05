@@ -36,7 +36,7 @@ import pandas as pd
 from cmdstanpy import CmdStanModel
 
 from src.analysis.matchup_events import analyze_events, top_matchups_all_stages
-from src.constants import DEFAULT_SEED, WC_YEAR
+from src.constants import CYCLE_CUTOFFS, DEFAULT_SEED, WC_YEAR
 from src.data import load_ranking_priors, prepare_cycle_data
 from src.model.bayesian import BayesianDixonColesModel
 from src.model_sel.validate import train_and_save
@@ -93,7 +93,10 @@ def train_model_up_to(
 
     print(f"Preparando dados do ciclo 2026 até {cutoff_date} ...")
     df, teams, team_map = prepare_cycle_data(
-        "data/results.csv", "2022-11-19", end_date=cutoff_date, apply_decay=True
+        "data/results.csv",
+        CYCLE_CUTOFFS[2026][0],
+        end_date=cutoff_date,
+        apply_decay=True,
     )
     ranking_priors = load_ranking_priors("data/raw/fifa_ranking_2022.csv", teams)
 

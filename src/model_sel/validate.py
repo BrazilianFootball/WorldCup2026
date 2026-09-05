@@ -4,6 +4,7 @@ from concurrent.futures import ProcessPoolExecutor, as_completed
 import numpy as np
 from cmdstanpy import CmdStanModel
 
+from src.constants import CYCLE_CUTOFFS
 from src.data import load_ranking_priors, prepare_cycle_data
 
 
@@ -80,8 +81,9 @@ if __name__ == "__main__":
     print("PREPARANDO DADOS DO CICLO 2018")
     print("=" * 50)
 
+    cutoff_start_18, cutoff_end_18 = CYCLE_CUTOFFS[2018]
     df_18, teams_18, team_map_18 = prepare_cycle_data(
-        "data/raw/results.csv", "2014-06-11", "2018-06-13", apply_decay=True
+        "data/raw/results.csv", cutoff_start_18, cutoff_end_18, apply_decay=True
     )
 
     ranking_priors_18 = load_ranking_priors("data/raw/fifa_ranking_2014.csv", teams_18)
@@ -92,8 +94,9 @@ if __name__ == "__main__":
     print("PREPARANDO DADOS DO CICLO 2022")
     print("=" * 50)
 
+    cutoff_start_22, cutoff_end_22 = CYCLE_CUTOFFS[2022]
     df_22, teams_22, team_map_22 = prepare_cycle_data(
-        "data/raw/results.csv", "2018-06-13", "2022-11-20", apply_decay=True
+        "data/raw/results.csv", cutoff_start_22, cutoff_end_22, apply_decay=True
     )
 
     ranking_priors_22 = load_ranking_priors("data/raw/fifa_ranking_2018.csv", teams_22)

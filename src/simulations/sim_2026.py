@@ -10,6 +10,7 @@ import pandas as pd
 from src.constants import (
     ALL_MATCHUPS_EXPORT_COLS,
     CUP_STARTED,
+    CYCLE_CUTOFFS,
     DEFAULT_SEED,
     GROUPS,
     PARTIDAS_EXPORT_COLS,
@@ -82,7 +83,10 @@ if __name__ == "__main__":
     os.makedirs("data/outputs/dashboards", exist_ok=True)
 
     _, teams_26, _ = prepare_cycle_data(
-        "data/results.csv", "2022-11-19", end_date=REFERENCE_DATE, apply_decay=True
+        "data/results.csv",
+        CYCLE_CUTOFFS[2026][0],
+        end_date=REFERENCE_DATE,
+        apply_decay=True,
     )
 
     model_path = f"data/outputs/models/{MODEL_NAME}"
