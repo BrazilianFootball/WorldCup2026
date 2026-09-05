@@ -160,6 +160,32 @@ TEAM_NAME_MAP: dict[str, str] = {
 }
 
 # ──────────────────────────────────────────────
+# PROVISIONAL -- 2027 FIFA Women's World Cup (Brazil, 24 Jun-25 Jul 2027).
+# 32 teams, 8 groups of 4, top 2 per group advance straight to the round of
+# 16 (same bracket shape as the pre-2026 men's World Cup / simulate_world_
+# cup_2022, no round-of-32/best-thirds complexity).
+#
+# As of writing, only 18 of 32 slots are confirmed and FIFA has not
+# scheduled the group draw yet. The 18 confirmed teams below are real
+# (source: FIFA/ESPN reporting, Sep 2026); the 14 "TBD n" placeholders and
+# the group assignments themselves are NOT official -- they exist only so
+# the 32-team/8-group simulation pipeline can be exercised end to end.
+# Replace this constant with the real draw once FIFA publishes it, and
+# update WWC2027 slots as playoff winners are confirmed.
+# ──────────────────────────────────────────────
+
+GROUPS_WWC2027_PLACEHOLDER: dict[str, list[str]] = {
+    "A": ["Brazil", "Germany", "France", "TBD 1"],
+    "B": ["Spain", "Argentina", "Colombia", "TBD 2"],
+    "C": ["Japan", "South Korea", "TBD 3", "TBD 4"],
+    "D": ["China", "North Korea", "TBD 5", "TBD 6"],
+    "E": ["Australia", "New Zealand", "TBD 7", "TBD 8"],
+    "F": ["Algeria", "Morocco", "TBD 9", "TBD 10"],
+    "G": ["Cameroon", "Malawi", "TBD 11", "TBD 12"],
+    "H": ["Denmark", "Philippines", "TBD 13", "TBD 14"],
+}
+
+# ──────────────────────────────────────────────
 # Round-of-32 fixed slots (FIFA regulations)
 # 1X = winner of group X, 2X = runner-up of group X
 # 3{...} = best 3rd-place from one of the listed groups
