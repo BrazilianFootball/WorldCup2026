@@ -1,8 +1,9 @@
 """Unit tests for src.simulations.utils.run_backtest_simulation.
 
-Exercises the helper shared by sim_2018.py/sim_2022.py end-to-end (data prep,
-bracket simulation, JSON + dashboard export) using a small synthetic 32-team
-"historical cycle" instead of a real trained Stan model.
+Exercises the helper shared by the wc2018/wc2022 entries in run_cycle.py
+end-to-end (data prep, bracket simulation, JSON + dashboard export) using a
+small synthetic 32-team "historical cycle" instead of a real trained Stan
+model.
 """
 
 from __future__ import annotations

@@ -46,8 +46,8 @@ Artefatos gerados pelos scripts do projeto. Os arquivos da Copa 2026 são sobres
 | Arquivo | Conteúdo | Utilização |
 |---------|----------|------------|
 | `sim_results_2026.json` | Probabilidades por fase para todos os 48 times. Estrutura: `{stage: [{team, probability}]}`. Fases: `round_of_32`, `round_of_16`, `quarter_finalists`, `semi_finalists`, `finalists`, `champion`. | Lido por `generate_dashboard()` para construir o dashboard interativo. |
-| `sim_results_2018.json` | Mesmo formato, Copa 2018. | Gerado por `sim_2018.py` (backtesting); não lido por nenhum outro script. |
-| `sim_results_2022.json` | Mesmo formato, Copa 2022. | Gerado por `sim_2022.py` (backtesting); não lido por nenhum outro script. |
+| `sim_results_2018.json` | Mesmo formato, Copa 2018. | Gerado por `run_cycle.py wc2018` (backtesting); não lido por nenhum outro script. |
+| `sim_results_2022.json` | Mesmo formato, Copa 2022. | Gerado por `run_cycle.py wc2022` (backtesting); não lido por nenhum outro script. |
 | `brier_score_2018.csv` | Métricas Brier Score por fase para o modelo na Copa 2018. | Gerado por `evaluate_2018.py`; não lido por nenhum outro script. |
 | `brier_score_2022.csv` | Métricas Brier Score por fase para o modelo na Copa 2022. | Gerado por `evaluate_2022.py`; não lido por nenhum outro script. |
 | `comparacao_brier_2018.png` | Gráfico comparativo de Brier Score entre variantes do modelo — Copa 2018. | Gerado por `evaluate_2018.py`; não referenciado no frontend. |
@@ -65,5 +65,5 @@ Artefatos gerados pelos scripts do projeto. Os arquivos da Copa 2026 são sobres
 | Arquivo | Conteúdo | Utilização |
 |---------|----------|------------|
 | `dashboard_2026.html` | Dashboard interativo D3.js com probabilidades por fase para a Copa 2026. | Visualização principal gerada por `generate_dashboard()` em `sim_2026.py`. |
-| `dashboard_2018.html` | Dashboard histórico — Copa 2018. | Gerado por `sim_2018.py` (backtesting); não referenciado no frontend. |
-| `dashboard_2022.html` | Dashboard histórico — Copa 2022. | Gerado por `sim_2022.py` (backtesting); não referenciado no frontend. |
+| `dashboard_2018.html` | Dashboard histórico — Copa 2018. | Gerado por `run_cycle.py wc2018` (backtesting); não referenciado no frontend. |
+| `dashboard_2022.html` | Dashboard histórico — Copa 2022. | Gerado por `run_cycle.py wc2022` (backtesting); não referenciado no frontend. |

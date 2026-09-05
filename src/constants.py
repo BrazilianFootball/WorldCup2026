@@ -161,7 +161,7 @@ TEAM_NAME_MAP: dict[str, str] = {
 
 # ──────────────────────────────────────────────
 # Historical backtest cycles (32-team format), shared by
-# src/simulations/sim_2018.py, sim_2022.py, and src/model_sel/evaluate_*.py.
+# src/simulations/run_cycle.py and src/model_sel/evaluate_*.py.
 # ──────────────────────────────────────────────
 
 CYCLE_CUTOFFS: dict[int, tuple[str, str]] = {

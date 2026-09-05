@@ -254,8 +254,9 @@ def run_backtest_simulation(
 ) -> Path:
     """Backtest a historical (32-team) World Cup cycle and render its dashboard.
 
-    Shared by sim_2018.py/sim_2022.py, which only differ in the year, groups,
-    training cutoff dates, and dashboard labels/title passed in here.
+    Shared by the wc2018/wc2022 entries in run_cycle.py's COMPETITIONS
+    registry, which only differ in the year, groups, training cutoff dates,
+    and dashboard labels/title passed in here.
 
     Results/dashboards are written under ``{output_dir}/backtesting/`` (kept
     separate from the live competition's outputs), while the trained model
