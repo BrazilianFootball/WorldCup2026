@@ -160,6 +160,19 @@ TEAM_NAME_MAP: dict[str, str] = {
 }
 
 # ──────────────────────────────────────────────
+# National-team competition cycles: training cutoff dates shared by
+# src/simulations/sim_2018.py, sim_2022.py, sim_2026.py, train_2026.py, and
+# src/model_sel/evaluate_*.py/validate.py. A cycle's end date is None while
+# it's still live (train against REFERENCE_DATE instead of a fixed date).
+# ──────────────────────────────────────────────
+
+CYCLE_CUTOFFS: dict[int, tuple[str, str | None]] = {
+    2018: ("2014-06-11", "2018-06-13"),
+    2022: ("2018-06-13", "2022-11-20"),
+    2026: ("2022-11-19", None),
+}
+
+# ──────────────────────────────────────────────
 # Round-of-32 fixed slots (FIFA regulations)
 # 1X = winner of group X, 2X = runner-up of group X
 # 3{...} = best 3rd-place from one of the listed groups
